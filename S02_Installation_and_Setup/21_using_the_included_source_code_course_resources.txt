@@ -1,0 +1,111 @@
+Hello everyone in this video I'd like to show you how to use the source code that's provided with the
+
+course.
+
+Each section of the Course contains a compressed zip file that contains a workspace and all the projects
+
+that I've created in that workspace.
+
+So for example Suppose it were working on Section 8 will be a Section 8 zip file.
+
+It may be a different name but it'll have everything you need in there.
+
+And once you can do here is just extract that file and I'll extract here and I'm simply going to extract
+
+it right to my desktop.
+
+You can see the folders have all been extracted.
+
+So if I double click on Section 8 you can see all the projects in there.
+
+Now there's one special file you'll see done at the bottom here it's called Section 8 and it's a workspace
+
+file.
+
+If you right click on that you can open with code like and open up the workspace in code like.
+
+And once the workspace is open you have access to all the projects in there.
+
+So that's one way to do it.
+
+Another way to do this is once you've extracted the file just open code like
+
+OK.
+
+So now once code light is opened you can choose to open a workspace right over here.
+
+So select that open workspace and then you can just navigate to the workspace you want to open in this
+
+case.
+
+It's an it's Section 8 workspace you just simply select that file and you can see the workspace opens
+
+up right here with all your projects.
+
+Now I'm going to close the workspace and show you another way to do it would be right up here you just
+
+come to workspace.
+
+If you have a workspace that's already open you can simply workspace close.
+
+It wouldn't be great out to be right there in this case I just want to open a workspace.
+
+And I again you navigate to the workspace you want to open select it and there it is.
+
+So now I've got Section 8 workspace with all the projects that I created and provided for you in order
+
+to run these projects you simply double click the project you are interested in.
+
+So suppose I'm interested in this uro's project you can see the source code and all you really need
+
+to do is build and run.
+
+But I'd suggest that you clean it first especially if you're going from Windows to PC to Linux.
+
+I'm developing on Windows you're on a Mac or Linux machine or even a Windows machine it's always a good
+
+idea to clean the project and what you can do you can right click and clean or you can come up to here
+
+where it says build clean or clean the project that removes all the object files that X Files and just
+
+gets rid of a bunch of stuff that you may need depending on your system.
+
+Now that we've got that ready we can simply build and run and we should be get to go euros to us dollars
+
+so we'll type in 100.
+
+$119 is 100 euros.
+
+So that's it.
+
+It's really pretty straightforward.
+
+What I would suggest is you create obviously your ordinate way of organizing your files.
+
+I'd use folders or directory structures and also something that's important to understand as well with
+
+code like code like does things a little differently.
+
+So suppose that you've got projects in another workspace and then you select the workspace here and
+
+you say add existing project.
+
+Well what happens here is it doesn't actually copy that project into the workspace.
+
+It'll create a new project in this workspace but the files will still be where they were before.
+
+So you see Peepy files in your header files and everything will still be where they were.
+
+So think of this more of a logical project rather than a physical copy of it.
+
+OK but once you play around with it you'll understand exactly what's going on.
+
+So really straightforward.
+
+You've got the zip files that we're providing.
+
+Unzip them.
+
+You have a folder structure and then just open that workspace file in there.
+
+All your projects should come in no problem at all.

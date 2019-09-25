@@ -1,0 +1,41 @@
+In this section we'll look at how we can create build and execute C++ programs using only a simple editor
+
+and the command line.
+
+All we need on our system is a simple text editor.
+
+It's important to note that word processors such as Microsoft Word and Apple pages are not usually used
+
+to enter program code.
+
+Instead we use basic text editors or programmers text editors these types of editors are much simpler
+
+than integrated development environments.
+
+We also need an installed C++ compiler like GCC or Ms.
+
+GW on Windows and Apple's command line compilers on Mac.
+
+That's it.
+
+At this point we can create the C++ program using the text editor and compile and run it by typing commands
+
+into the command line.
+
+This may sound intimidating at first but it's actually quite easy and efficient.
+
+That said this is a workflow that's more commonly seen with experienced developers.
+
+However you may wish to consider this approach if you find the ideas too complex or too difficult to
+
+understand.
+
+You might also consider this approach if your computer hardware resources are insufficient to run an
+
+idea.
+
+In any case this is another option that you may use in the next several videos.
+
+I'll show you how to edit build and execute C++ programs using only the command line and a simple editor.
+
+There will be separate videos for Windows Macs and Ubuntu Linux for your reference.

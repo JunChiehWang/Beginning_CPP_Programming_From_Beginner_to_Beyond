@@ -1,0 +1,52 @@
+* lldb to debug
+
+* Compile with g++ :
+g++ -Wall -std=c++14 main.cpp -o main.exe
+
+* web-based c++ compiler :
+http://cpp.sh/
+https://www.onlinegdb.com/
+https://aws.amazon.com/cloud9/
+
+* undefined reference to '...'
+it means linker error, cannot find the file, wrong path, ....
+
+* std::cout << "....."
+<< is string insertion operator, insert whatever on the right hand side of it
+into that stream on the left.
+>> is string extraction operator, take something from the consol on the left
+and store it in the variable on the right
+
+* cout and << doesn't automatically add line breaks
+  cout << "aa" << data << endl;
+  cout << "aa" << data << "\n";
+endl(end line operator) will also flush the stream. if the stream is buffered it may not get
+written to the console until it's flushed.
+
+* preprocessor doesn't understand c++
+
+* comments:
+preprocessor strip out the comments so the compiler never sees it.
+(1) single-line comment: //
+(2) multi-line comment: /*
+                               */
+(3) don't comment obvious
+(4) use the style of the comments consistent
+(5) don't use comment to do version control, use a real version control
+    system
+
+* namespace:
+(1) explicitly using namespace
+(2) using namespace directive
+(3) qualified using namespace
+
+
+* global variable:
+(1) initialized to 0
+(2) local variable with the same name shadows the global variable
+(3) can potentially cause problems
+
+
+* use single quotes instead of double quotes to initialize a character data
+type "char" (which hold a single character). double quotes would make it a
+string.

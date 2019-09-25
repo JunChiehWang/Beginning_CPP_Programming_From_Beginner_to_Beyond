@@ -1,0 +1,107 @@
+This video show you a couple of options that allow you to run your C++ programs read in a web browser.
+
+This is pretty nice because sometimes we're on the road you don't have your computer with you and you
+
+want to take the course and try out some examples maybe you had an idea about an example you want to
+
+try it up and nothing is available or to your friends house and there's no computer available there
+
+except the browser.
+
+All you need is a browser to run these.
+
+One example is if you open up your favorite browser using Chrome here you can type in c p p s h that
+
+C U R L and you get the C plus plus shell.
+
+Now both of these examples I'm going to show you are rather limited compared to obviously running on
+
+your own computer with an idea and so forth but they're really really handy when you need to try something
+
+out really quickly without having to install a thing.
+
+So in this case SH is the C++ shell you could type your program right in here on the browser and you
+
+could see here I've typed in the hello world program and you could set options so you can set your C
+
+plus plus 14 options your warnings to w all like we have in the examples and if you want to run your
+
+program you can just select Run and it's going to compile and run it at the same time which is pretty
+
+nice.
+
+Also if the program asks for input which will get to a little bit later in the course you can sit that
+
+to interactive mode so it'll be able to be able to type into the program which is kind of nice as well.
+
+So in this case I want to run the program and you could see it's compiling program is running and the
+
+output is hello world right here and the exit code is 0 which is our return 0.
+
+That's pretty nice.
+
+Now you can get a U R L which gets a u r l to what you did and you can click on that you were all you
+
+got the program that you wrote back.
+
+So that's obviously it storing it somewhere.
+
+I'm not sure where or how long it's going to be available but you could figure that out if you like.
+
+That's one example.
+
+Another example is web compiler Dom cloud app.
+
+This is a visual C++ compiler running in the web hits from Microsoft compiler and you can see that they've
+
+given you a sample program here.
+
+Now this text is pretty small.
+
+Again it's a browser.
+
+I'm going to make my browser a little bit bigger.
+
+So you can see it and then make it a little smaller again to run it.
+
+So you could see here it's including IO stream it's using a name space which we'll talk about a little
+
+bit later and it's outputting Hello world.
+
+And that might make this a little smaller again so when you run the program by clicking this purple
+
+button down here there's your output right up here and this black window here.
+
+Hello world.
+
+Which is pretty nice.
+
+And you can set your compiler flags however you like so in this case I'm setting the warnings to all
+
+and I'm setting my standard compile with a C plus plus 14.
+
+I'll close that down as soon as you can see.
+
+This is a pretty nice option here.
+
+We can get a compiler error.
+
+Let's say we forget that semi-colon and we run then the compiler error shows up down here.
+
+It says in function main on line 7.
+
+Right here there is a semi-colon expected to actually get a little red little X there has you there's
+
+right around here somewhere.
+
+So you could fix your air and run it again.
+
+And there you go there's your hello world.
+
+So again these are some web based options.
+
+They're not perfect.
+
+You can't really save things and edit and do all kinds of good stuff but you can run a lot of the programs
+
+that we're going to talk about in this class right in the C++ show on the web.

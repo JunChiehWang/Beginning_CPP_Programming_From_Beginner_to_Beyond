@@ -1,0 +1,175 @@
+This video will go over the steps necessary to create our own custom project template.
+
+The idea here is that we can create our own project templates and when we create our projects we can
+
+use this template as the starting point.
+
+That way we'll have a proper main that CBP file will have all our switches set.
+
+We'll have our environments set.
+
+All right.
+
+So let's get started.
+
+First thing I need to do is open up a workspace I've got a workspace already open.
+
+I've already created I should say I'm going to open it now I'm going to say open workspace.
+
+If you don't have a workspace at all you could just say file new workspace.
+
+So open the workspace that I've got it's on my desktop and it's called C-p workspace so open that and
+
+the first thing you want to do is you want to add a project she want to right click on your workspace
+
+in say New new project.
+
+Now here you've got the new project wizard and you've got different examples you can create GUI applications
+
+console applications you can have user templates and so forth.
+
+What we want to do is we want to use the simple executive Bill G plus plus template that comes with
+
+code like.
+
+And we want to tweak that our own way into what we want to do is to create our own template and here
+
+that we can choose.
+
+And we could put it in Consolo we can put it here and use for templates we could put it wherever we
+
+like.
+
+But before we do that we need to create a project so let's do that.
+
+I'm going to sit a console and let's use the G plus plus simple executive Konsole template a press next
+
+the project name it does it really matter.
+
+I'll just say sample since we're going to save it as a template anyway and I'll select next we want
+
+to make sure our compilers is set up correctly.
+
+Here I'm using Mingy W and the gdb debugger.
+
+So like finish and that creates our project.
+
+You can see here's the source file.
+
+Here's the file which is really C-code and that's C++ code.
+
+But we'll fix all this in a minute.
+
+So first thing we want to do is we want to get rid of this and let's write simple C++ program to simple
+
+when we've been writing all along so we'll say include IO stream we'll include IO stream since we could
+
+probably use it in most of the projects that we write.
+
+Then we have our main function and again its int main open close friends and then an open Kerley which
+
+will be automatically closed by code like here we can indented by just pressing tab and we could say
+
+SDD to Kolins C out and then the insertion operator followed by the string Hello world.
+
+And you can type anything you like here for Hello world.
+
+And we'll do also as tiddy to Coleen's and Del.
+
+This prince a new line that way when we display hello world the cursor will go to the next line on the
+
+console.
+
+And then finally we'll just return 0 like we always do.
+
+That's it.
+
+I'm going to save this so that press control us here so I've just done that and saved it.
+
+Now we'll set some compiler settings that will do this the one time that will save it as a project template.
+
+So let's go to the sample project.
+
+The actual project name and we're right click go down to settings global settings and we want to make
+
+sure we've got these two compiler options set so we get to right click on those three little dots here
+
+on the button you want to select that button and click and we want to make sure that we've got are all
+
+warnings enabled on and our C++ 14 standard on press.
+
+OK.
+
+Then you want to come towards his code completion and select that and select enable C++ 14 standard
+
+apply.
+
+And that's it.
+
+Now what we can do is we can come to the project again right click and say save as template so select
+
+that and what's the project name.
+
+This could be anything we want we could just say Frank template or template for course or any name you
+
+like.
+
+Rather than that I'm just going to say Frank.
+
+Let's see.
+
+Plus plus console
+
+template I think it's pretty picky about spaces in cities those dashes and it is a console application
+
+that if you leave it as console it'll be in the console group.
+
+I'm actually going to change that to user template and then you can give it a description you want I'll
+
+just say Frank's console template
+
+it says like OK.
+
+And now we've got a new template that's stored.
+
+So if I go back to my workspace and I want to create a new project now we close all this up I'm going
+
+to right click and say new project and now you can go onto your templates and go down to user templates
+
+right here and you should see that one we just created right here.
+
+So we just select that next I'll just say Project 1 select next.
+
+Keep the defaults for the compilers and finish at this point.
+
+You can double click here to make that project the active project and we'll look at the main CGP you
+
+could see it's the main see that we just typed.
+
+Also if you right click on the project and you go out to the settings you can see code completion is
+
+C++ 14 and the global settings have the appropriate compiler flags that we need.
+
+That's it will test this real quick that's run build and execute.
+
+And hello world.
+
+That's it.
+
+So now you've got a project draw set up you can create as many of these as you like tweak the settings
+
+as far as you like.
+
+It's really up to you to decide what you want to do with the project templates but for this course include
+
+IO stream.
+
+Give yourself a man you may or may not want this line right here since you know you've probably got
+
+to get rid of it anyway.
+
+When we start writing other code but at a minimum do something like that when you create a new project
+
+you'll be ready to start coding.
+
+

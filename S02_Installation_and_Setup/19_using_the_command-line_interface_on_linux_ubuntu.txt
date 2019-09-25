@@ -1,0 +1,265 @@
+It this video will go over the steps necessary to create build and run a C++ program on Ubuntu Linux
+
+using only a text editor and the command line.
+
+So in this video we won't be using any integrated development environment.
+
+First of all I've created a folder on my desktop called C-p projects and in that folder I've created
+
+another folder called Project 1.
+
+This is where we're going to store our C++ program.
+
+In this case it's just going to be a man a real simple test.
+
+So I'd like to close this up and the first thing we need to do is we need some sort of editor to type
+
+in our program now on Linux.
+
+We've got it.
+
+I could just come to search my computer and type g at it and we can use that text editor which is a
+
+fine text editor it's real simple.
+
+It's comes with your installation.
+
+There are many other text editors and programmer text editors that you can use like brackets Adam and
+
+many others but this one is already here so you may as well use it and it works just fine.
+
+I've gone ahead and gone to Edit Preferences and I just turned on line numbers and you can set all kinds
+
+of different settings that you like.
+
+I made the font also a little bigger so you could see it.
+
+So it may look a little different when you start yours.
+
+So the first thing we want to do is we want to write this C++ program.
+
+So let's do include
+
+IO streams just like we've done before.
+
+I'll leave a space a little say into main two parentheses.
+
+The open curly and are close to Curly while I'm at it.
+
+And now we'll just say we could just press tab will say as t d to Colon's C out the insertion operator
+
+which is to less than signs bright together with no spaces.
+
+Now I'll say hello who buntu command line will close the string.
+
+We'll put another insertion operator and let's put a new line at the end that we have our cursor will
+
+go to the next line when we do the output and that's e and d l followed by a semi-colon and then we
+
+return 0.
+
+Just like we always do.
+
+That's it.
+
+That's our C++ program.
+
+Now it's important that we save this with the DOT extension and not a t xt the extension the C++ compiler
+
+does not like to seek extensions and you're going to get all kinds of weird errors.
+
+OK so let's do that let's go to File Save As we'll find where we want to say that we want to save toward
+
+desktop projects.
+
+Project 1 that's where we would like to save it and I'll give it to name as main Dotsie Peepy.
+
+Now you'll notice a couple of things when I named the file C.P the editor's smart realizes that this
+
+is not a regular text file to see post-box text file.
+
+So I'll save it and notice what happened here.
+
+Notice the color coding it knows C++.
+
+Again it's not an integrated development environment so it doesn't have a lot of hooks to the compiler
+
+and so forth but you can see that now it's really helping me because I can see that my string is terminated.
+
+For example if I get rid of that guy then that's black and it shouldn't be black it should be a magenta
+
+color.
+
+So again I'm going to press control as to save that file.
+
+Now we'd like to compile and run it.
+
+So in order to do that we need to open up a terminal so I come up back up here and say terminal and
+
+that will open up a terminal which I'll pull down just right by here so we can run them together.
+
+Now one of the things that you'll notice is that if you do a PWT which prints your working directory
+
+I'm in home.
+
+Frank I don't want to be at home Frank I want to be in this directory right up here that you can see
+
+desktop C-p project's Project 1.
+
+So I need to change into that directory and could use a CD command to change directories.
+
+So I want to go to my desktop and you can press tab for completion auto completion and press enter.
+
+Then I want to press that I want to type CD see projects and then finally Project 1 and you can do this
+
+all in one line if you like.
+
+I just did it in three steps.
+
+So now I'm in the correct directory if I want to know what's in that directory or I could just type
+
+LS which gives me a list of the directory.
+
+And you could see that my main file is there.
+
+That's the one that I want to compile.
+
+So let me make this thing a little bit wider so you can see what I'm typing here.
+
+So the first thing I want to do is I want to execute the compiler so I want to say G plus plus that
+
+calls the compiler.
+
+That's the new C++ compiler and I want to set some options.
+
+These are the same options that we would set with the ID here we're just going to set them as switches
+
+right at the command line.
+
+So when I say capital W A L L that turns on all warnings then I want to say dash s t d equals C plus
+
+plus 14 that's going to use the for the 2014 C post-Bush standard which is the latest one that's out
+
+there.
+
+Now we supply what do you want to compile.
+
+I want to compile the main but c file main Dotsie P.P..
+
+That's it.
+
+So it's going to execute the compiler turn on all warnings.
+
+Use the latest standard and compile that one file made C.P Precentor.
+
+I got back no messages which is good as they say no news is good news.
+
+If you have errors it'll tell you if you don't it will be nice and quiet.
+
+At this point I'll do it again to see what's in our directory.
+
+You can see that it's created a file called a dot out.
+
+That's the common normal file executable file that's created.
+
+What you don't say hey create Mainer create some other name to run it.
+
+You just type dot slash dot out and there you go it says hello to command line exactly what we typed
+
+up here in our program.
+
+If you don't want the 8. out and you want your own executive will then you could type that in and show
+
+you how to do that.
+
+What I'm doing now is I'm pressing the up arrow and the down arrow.
+
+You can go through what you've typed in that what you want to type it all in again.
+
+So you want to go back to the statement where you compiled just type a dash lowercase O and the name
+
+of the file that you want to create.
+
+So in this case this is the same man that will be my executive will Precentor.
+
+I'll do ls again.
+
+Now you can see that there's a main file right there and I can outrun man and I get the same output.
+
+OK.
+
+Simple as that it really is very straightforward.
+
+Now what are the things that you have to keep in mind.
+
+Since this is not an idea you've got two things going on here separately right.
+
+You've got your editors here and your command line tool here.
+
+They're not really sync together.
+
+You're the one that's sinking them together.
+
+So if I remove the semi-colon from my text editor and I compile again I expect an error right.
+
+I didn't get an error.
+
+The reason I didn't get the air was because I never saved the file.
+
+You have to be sure to save the file and then compile the ID sort of handle that magically behind the
+
+scenes they realize that you've made a change so it's going to compile the latest changes you made.
+
+This is different since sort out in sync.
+
+So you want to be sure that you can come up here and save file save or control S..
+
+Now I've saved it now a compile.
+
+Now I see the error.
+
+So you could see the errors it's expecting a semi-colon would check and replace.
+
+If I get rid of this quote mark and control some saving again.
+
+Now I run over to get a different error.
+
+Something about a terminating quote character is missing so I can put that back in control S and save
+
+and compile again and we can run main.
+
+One more time.
+
+That's it.
+
+So that's it.
+
+It's pretty straightforward.
+
+These are the steps necessary when you have a plain text editor and the command line.
+
+If you cannot install an ID for some reason maybe you've got minimal hardware requirements you just
+
+don't like IDS or you find them too confusing.
+
+Don't let that stop you from learning C plus plus you could still use a simple text editor like this
+
+and a command line tool and you could see the command.
+
+You could see the command right there.
+
+It's really really straightforward.
+
+If you've got multiple C++ files which we will later on in the course you just type them all in here.
+
+File one that C.P. file to the DPP and so forth.
+
+It will compile everything linked everything and run it for you.
+
+It many times you are if you're a consultant and you're working out there you'll show up at a place
+
+and there's no idea you you're working as a consultant.
+
+All you need is an editor and a command line in your business.
+
+OK so that wraps up this video.

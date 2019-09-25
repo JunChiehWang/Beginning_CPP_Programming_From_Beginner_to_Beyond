@@ -1,0 +1,57 @@
+In this video I'd like to go over the content in this section of the course.
+
+This is a very important section since we describe the installation of the tools necessary to create,
+
+build, and execute C++ programs.
+
+We wanted to make this course accessible to as many students as possible
+
+who want to learn C++.
+
+So, if you're running Microsoft Windows, Mac OSX, or Ubuntu Linux, we have videos detailing the steps
+
+necessary to get set up and running on your platforms.
+
+The following section includes videos for installing the C++ compiler, the CodeLite IDE and how to configure
+
+the CodeLite IDE for each specific operating system.
+
+Then we go over how to create a default CodeLite project template that you can use when you want to
+
+create a new C++ project.
+
+This makes it really easy to start new projects quickly since all the required settings will be ready
+
+to go. In all the videos we use are a real simple C++ program to test the installations. All of the elements
+
+of the C++ program will be explained in detail as we progress through the course.
+
+In this section, just type along and follow along to ensure that your installation is complete.
+
+In addition to using the CodeLite IDE, we want to be sure that students can learn and build C++ programs
+
+even though they may not be able to install an IDE due to hardware limitations.
+
+So we created a section that uses just a simple text editor and the command line tools to do just that.
+
+If you're unable to use an IDE then please don't let that stop you from learning C++.
+
+You could still use the command line just fine.
+
+So we created a video for the command line for Windows , for Ubuntu Linux, and for Mac OSX.
+
+Finally, we include a video that uses a web site that has a C++ compiler available that you can use to
+
+write and execute basic C++ programs.
+
+This has some limitations, but it's great if you're on the road or away from your own PC.
+
+All you need is a web browser and you can run much of the code presented in this course.
+
+As the Course evolves we'd like to include videos for Xcode on Mac, Microsoft Visual Studio on Windows,
+
+Eclipse,
+
+NetBeans, and other major IDEs.
+
+We want this to be the most complete beginning C++ course available.

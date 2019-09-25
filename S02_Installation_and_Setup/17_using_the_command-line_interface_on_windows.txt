@@ -1,0 +1,289 @@
+In this video we'll use the command line tools to compile and run our C++ programs on the Windows platform.
+
+Now obviously we need some sort of editor to type in our code.
+
+I'm just going to use Notepad which is built into Windows and it's really really easy to use.
+
+Couple of things first.
+
+I've created a folder on my desktop called C.P. projects in there.
+
+There's another folder called Project 1 inside Project 1 is where we're going to put our C++ file our
+
+source code.
+
+Now there's nothing in there right now.
+
+I just wanted to show you where I'm going to be putting everything.
+
+OK so the first thing I want to do is I just want to open up Notepad
+
+and as you know Notepad is just a real simple text editor and I want to type in my C++ program right
+
+into this textedit.
+
+I'm just going to make a little bit smaller and open up another window in a moment.
+
+So let's type in that main program that we should probably know by heart now.
+
+So I'm going to say include IO stream
+
+that I'm going to say int main.
+
+Open and close parentheses.
+
+Open curly bracket.
+
+I'll close the curly bracket at the bottom.
+
+Remember this is not an integrated development environment so it's not really getting help me with syntax
+
+or with you no closing open brackets automatically and so forth.
+
+I'll indent over a couple of spaces and I'll say c d to Kolins C out
+
+to less than signs next to each other.
+
+Which is the insertion operator and will say hello Windows command line.
+
+It will close the string then we can also print a new line at the end.
+
+That's all just say CD.
+
+Colin Colin E and D L semi-colon that are just print a new line the precursor to the next line in the
+
+output.
+
+Here will say return 0.
+
+Like we always do and then we just clean this up a little bit.
+
+That's it we're done.
+
+We don't need to save that program into that CPV projects projects one folder that I mentioned a minute
+
+ago.
+
+At this point you have to be a little careful because notepad works with text files so it's going to
+
+use to fix the extensions.
+
+We don't want to see extensions we want p extension so I'm going to go to File Save As and then I'm
+
+going to go to my desktop.
+
+My C-p projects and my project one folder Lolas here was this file named stardate text that's what I
+
+don't want.
+
+So I want to save as file type or just say all files that gets rid of the extension.
+
+Now we could just Semaine that C-p that's going to save my file as main data.
+
+And I'm going to save it so if I go to my directory structure now you'll see I have C.P projects projects
+
+Project 1 and there's my main.
+
+Now we need to compile and run this the way we do that and I'm going to leave this window open on here
+
+on the left for a moment.
+
+The way we do that is with the command shell or a command prompt and all you need to do is just run
+
+command and you'll see where it says command prompt.
+
+That's what we want to do.
+
+We'll just press enter and run it and we get this window here and I'm just going to move it over here
+
+on the right.
+
+That way it's nice and big.
+
+I notice first of all I'm in the wrong directory when the users Frank directory.
+
+I want to be in that folder that I created so we can use the CD command to change directory.
+
+This case I want to change directory to desktop and press enter.
+
+And now you can see that I'm at the desktop.
+
+They don't want to change into CPP projects and you can press tab and it will autocomplete for you someone
+
+to press tab or to say CPV projects and then I want to go into project one.
+
+There we go there and see if I want to see what's in that folder or just have Deodhar for directory
+
+listing and you could see right there is my main TPP.
+
+At this point I want to compile the way we compile is and then make this a little bit bigger so the
+
+whole line will fit on here.
+
+We want to use the C++ compiler the GWC plus plus compiler that I'm assuming is already installed.
+
+We need to have that compiler installed plus plus that's the compiler.
+
+Now we need to have those options Dasch w capital W all that turns your warnings on then s t d equals
+
+sorry dash as to the equals C plus plus 14 that's using the C plus plus version 14 standard and then
+
+the file we want to compile which in this case is main CPB that's it.
+
+Now when I do this if there are no errors it's going to create an executive file called a doc xes.
+
+So let's do that then we get a clean compile member.
+
+No news is good news.
+
+So no messages that's a good thing and we'll do Deodhar again.
+
+You can see right here we have a file.
+
+A dot see that's our executive.
+
+I can run it by just typing.
+
+And it says hello Windows command line which is exactly what our program is supposed to do if you want
+
+a different name for the output.
+
+We could just put another option on the command line.
+
+And what I'm doing here now is I'm pressing the up arrow and it's going to go back through everything
+
+I typed that went off to type everything again.
+
+So we can go up or down you see up and down arrows.
+
+So what I'm doing here is same thing I'm saying call my compiler turn on all warnings use to see post
+
+plus 14 standard.
+
+Compile this file right your main C.P and then you can use the dash.
+
+Little o lowercase O.
+
+And then the name of the file that you want to create the executive.
+
+So let's say you want main got the X-C or whatever you like press enter and let me clear the screen
+
+you can clear with CLX and I'll do it and the directory listing.
+
+So now you can see I have an ADHD X-Sea and a main body X-C and I can simply run man that say this is
+
+really really straightforward.
+
+If you have issues with IDS if you have issues with hardware resources that you can't run an idea you
+
+just don't like ideas.
+
+You could certainly run C++ programs this way.
+
+One thing to remember here when you type your program into an editor such as Notepad you may have syntax
+
+errors.
+
+So the way syntax errors will show up and let me get rid of that semi-colon there.
+
+Now if I just say
+
+compile again.
+
+Notice I got a clean compile.
+
+How can that be I took off a semicolon that shouldn't compile.
+
+I forgot to save it.
+
+You've got to be sure to save one of the things that the IDs do as they kind of do that automatically
+
+for you so you don't have to think about it but when you're working in a workflow like this you've got
+
+to be sure that whenever you edit your file you come up to a file save or control less.
+
+Now you can compile again and there's your air.
+
+So this is the way that you would work in this environment.
+
+Obviously since it's not an integrated development environment it's not going to get a little arrow
+
+here that says red and shows you where the error was because he thinks that two separate programs that
+
+really aren't talking to one another.
+
+But there's the air you can fix your error if you make another error let's say you forgot this quote
+
+mark right here.
+
+Again I'm saving the program I just did a control S and I can compile again and it says warning missing
+
+terminating quote character.
+
+OK you can fix that.
+
+I'll save again and compile one more time.
+
+We've got a clean compile.
+
+We run main.
+
+We get the output OK.
+
+That's great.
+
+So that's pretty much what there is to it.
+
+It's not a big deal.
+
+Obviously if you type G plus plus and this is a normal message right here fatal error no input files
+
+it's you know it's asking me what you want to compile.
+
+You haven't told me what you want but if you get a program not found error then go back to the installation
+
+video from GW that I created and make sure that your path is set correctly because what's happening
+
+is that Windows can't find C++.
+
+OK so that takes care of Notepad.
+
+Now there's another editor out there and I'm going to close this real quick.
+
+There's another editor that's free it's called notepad plus plus and I've installed it on the system
+
+on my computer here and you can see it's right here notepad plus plus on Precentor.
+
+This is a programmer's editor.
+
+And let me open the file I had a previous one opened all up it up and you can see file open you know
+
+and open that C++ right here.
+
+There you go.
+
+So you can see that this is doing syntax highlighting it's doing code filtering it's got line numbers.
+
+This is a programmer's editor and again it's called notepad plus plus it's absolutely free.
+
+You can install.
+
+You could do a google search and install it on your system.
+
+Again it's not an I.D. but it's a more advanced programmer's editor which is really really nice.
+
+And it's actually it's a lot nicer than Notepad Notepad was never intended to write code with but you
+
+can certainly write code with it.
+
+I'd recommend you use something like Notepad or bracket's or atom or one of the paid ones like sublime.
+
+There's a lot of really good text editors out there that you can find.
+
+OK so that wraps up this video.
+
+As you can see if you've got issues with an idea or if you've got issues with hardware resources don't
+
+let that stop you.
+
+You can still learn C++ and you can still get your programs to compile and run really easily.

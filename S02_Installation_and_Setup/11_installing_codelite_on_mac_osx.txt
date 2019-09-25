@@ -1,0 +1,49 @@
+Now that we've downloaded and installed the command line tools and the C++ compiler will now install
+
+the code light ID code light as an integrated development environment that's cross-platform open source.
+
+It runs on Mac OS 10 Linux and Windows in this video we're going to install it on Mac OS 10.
+
+So open up your favorite browser and go to code light dot org.
+
+That's Cod LITV dot org and you'll see a web page similar to this.
+
+You want to find the download link.
+
+You can see one here at the top bar menu and there's also this big blue button which is the one I'm
+
+going to click on select that.
+
+And you take you to a page where you can contribute to the developers if you wish or you could just
+
+go straight to the downloads and I'll do that.
+
+So I said I tried here not now.
+
+Take me to the download.
+
+Now here we've got some options that we can install for Windows for Mac for Linux and so forth.
+
+We're interested in Mac in this example.
+
+So the third one down says code like 11.0 app bundle for OS 10 that's the one I want and I'm going to
+
+select the direct link to begin the download.
+
+The file is not very large but the download quite slow from the site.
+
+I'll post a video of the download occurs once the download is complete.
+
+You can see that it's downloaded a compressed archive file.
+
+So what I'll do is open that
+
+and I'll double click on it to compress it.
+
+There is my code Light App which I just drag to my Applications folder.
+
+That's it.
+
+Code lights now on our system in the next video will run code like and configure it to use C++ compilers
+
+on Mac OS 10.

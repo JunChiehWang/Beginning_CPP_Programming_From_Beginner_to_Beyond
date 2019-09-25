@@ -1,0 +1,225 @@
+This video we'll go over the steps necessary to write build and execute C++ programs from the command
+
+line on a Mac.
+
+All we really need is a terminal session and an editor.
+
+Now as far as the editor is concerned there are a bunch of editors out there some of them are free some
+
+of them are paid editors.
+
+The one I'm going to use in this example is called Atom A T O M and you can download it from the Internet
+
+and it's absolutely free.
+
+And it's a fine text editor.
+
+Now before I do that I'm going to create a folder on my desktop and I'm going to call it CVP projects.
+
+And within that folder I'm going to create another folder called Project 1
+
+and this is where we're going to store our source files.
+
+Ok so now what we need is we need an editor and we need a terminal window so let's create both of them
+
+first let's create the terminal session.
+
+So get a spotlight search and type terminal and press enter.
+
+And what I'm going to do is I'm going to move this terminal over here on the right so that it's right
+
+doc just perfectly and I'm going to run the Adam editor Now again you can run any editor you like.
+
+And there's the Adam editor and all closed down so these tabs here so that we're here from scratch.
+
+Perfect.
+
+And again I'm going to just dump this over here on the left side.
+
+OK so now what we want to do is we want to create a file in that folder that we just created.
+
+So let's go to a file new file and it's going to be a C++ file so I'm going to save this right now so
+
+that Adam knows it it's a C++ file missing file save as
+
+and I want to put this on my desk top
+
+in my CGP projects project one folder and I want to name the file name that C.P
+
+That said I'll save it.
+
+And now we can start typing our C++ program.
+
+It's really straightforward that simple hello world program is what we're going to write so we're going
+
+to say pound include and you could see that we've saved it as a dot file Adam knows and it's C++.
+
+So it's going to allow us to you know it's going to help us out with the code highlighting and syntax
+
+highlighting some of the include IO stream.
+
+Then I'm going to have my main I'll say and main open close friends and open Cur-Lee which it completes
+
+forming.
+
+Now here all I'm going to say is SCD.
+
+Colon's seek out it followed by the insertion operator which did to less than signs together and I'll
+
+just say any string.
+
+I'll just say hello Mac command line and I'll terminate that string and then I'll put a new line at
+
+the end so the cursor goes to the next line when we do the output.
+
+So that's the end DL It will return 0.
+
+That's it.
+
+That's the program will save it.
+
+Now we need to go over to our terminal to compile and run it.
+
+When you open up the terminal it defaults in your home directory so you can see if you type D that prints
+
+the working directory which is users followed by your user name.
+
+That's not where I want to be.
+
+I want to be in the desktop folder that we created so we can use a CD command to change directory and
+
+I'll just type desktop and you can press tab to autocomplete.
+
+Sonam in the desktop directory that I want to go to my CPV projects directory and finally to my project
+
+one directory.
+
+That's where I'm at now if I want to know what's in there.
+
+Just type LS which gives you a file listing and you can see there's maned not see Peepy that's this
+
+file we just created in the editor what we want to do now is we want to compile this file.
+
+So what we want to do is when to type G plus plus that's the name of the compiler that will execute
+
+the compiler.
+
+Then we want to provide the compiler the same switches that we did in the ID so will say dash capital
+
+W o l.
+
+So it turns on all warnings.
+
+Do we want to write dash s t d equals C++ 14.
+
+That'll tell us.
+
+Tell it to use modern C plus plus the 14 standard.
+
+Now we tell it what files you want to compile.
+
+In this case I only have one main dot CTP.
+
+If you have more than one you would just list them all separated by spaces.
+
+But here we've got main Dotsie peepee.
+
+That's it that's all you need to do.
+
+You press enter.
+
+We get no error messages.
+
+No news is good news.
+
+Would do an ls again and you can see that now we've got a new file created called a dot out.
+
+That's the default executor files name when you don't provide a name in order to run this.
+
+You just type a dot slash aid out out when I press Enter we should see.
+
+Hello Matt.
+
+Command line.
+
+That's exactly what we see.
+
+That's this statement right here executing.
+
+It's as simple as that.
+
+Now if you don't like 8. out you want to provide your own file name you can come up in what I'm doing
+
+here as I'm pressing the up arrow and the down arrow you can see it's going through what I've typed.
+
+So you want to go back to the statement where you ran the compiler and just type a dash lowercase O
+
+and whatever name you want.
+
+Your executor put a B in the press center.
+
+Now if we do a directory listing you can see that main is there if you want to run main dot slash main
+
+and that's it.
+
+We've created a file a C++ program.
+
+We compiled it and we ran it using only the command line.
+
+No IDs and as I mentioned there's a whole bunch of editors out there that you can use add them brackets
+
+text Wrangler text mate sublime and there's a bunch much more you can just do a search on on Google
+
+and you can come up with a bunch of examples of text editors.
+
+OK so let's talk about compiler errors now.
+
+I'm going to clear the screen here and I can do that in the terminal by just type clear and let's get
+
+rid of that semi-colon at the end here.
+
+Now if I run the compiler again you can see I've got a clean compile that makes no sense because I created
+
+an error here by removing the semi-colon while the issue is that I never saved this file.
+
+When you work with the IDs the IDs sync everything up.
+
+So they realize that your source code has changed so they're going to compile the latest version of
+
+it.
+
+Here these two are two separate programs and not saying.
+
+You're the person that has to sync them together by making sure you save it.
+
+So in this case I'm going to come here and do file save or command s.
+
+Now when I come back here and compile again I'll see the error which says I'm missing a semi-colon so
+
+I'll add that semi-colon.
+
+If I put a semi-colon in here at the end of IO stream which I should not have.
+
+I'll save it and then I'll go compile it again.
+
+You can see this an extra token at the end of the line.
+
+It's complaining about it so I can go back here.
+
+Command us again to save.
+
+And I can recompile this time I'll get a clean compile and I can run my main.
+
+That's it.
+
+It's as simple as that.
+
+If you don't have the resources to run an ID or you do like the idea or you feel the idea is confusing
+
+you and not really allow you to focus on the C++.
+
+This is a great alternative.
+
+Pretty easy pretty fast.
+
+Go be a business real quick.

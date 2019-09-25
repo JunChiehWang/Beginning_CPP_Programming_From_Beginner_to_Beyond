@@ -1,0 +1,121 @@
+This video I'll take you through the steps necessary to install the C++ compiler on the Windows operating
+
+system.
+
+We're going to use the Minimalist GNU for Windows.
+
+GNU stands for GNUs not Unix.
+
+It's basically a compiler collection called GCC that includes the C compiler, C++ compiler, Fortran compiler,
+
+and an Ada compiler.
+
+We're only going to be using the C++ compiler in this class so we'll only install that .
+
+Open up your favorite browser and you go to mingw.org. You'll see a page similar to this and what you want
+
+to do on this page is click on the button at the top right here called 'Download Installer'.
+
+So I'm going to select that and that'll automatically start a download of the MinGW installer.
+
+It's a pretty small file, so it should be a quick download depending on your internet connection.
+
+Ok so I'm finished downloading.
+
+And what I want to do is just run that installer.
+
+So I'm just going to double click on it and I'll close down the browser.
+
+OK so what we're going to do here is we're basically just going to follow the installation wizard.
+
+I'm going to install and I want to install in C:\MinGW
+
+Now certainly this could be a different drive letter but don't change the name of the installation directory
+
+and certainly don't put spaces or anything in there.
+
+I'd suggest that you just keep the default if you can. Keep all the default settings and press continue
+
+and this will start the download of the installation manager.
+
+Now once the installation manager is downloaded then we can continue and we can start downloading and
+
+installing the actual compiler.
+
+OK, so when the download is complete, you can see that on my system it processed 113 items and it only
+
+took a couple of minutes.
+
+I sped up the video.
+
+so you didn't have to wait through the installation.
+
+Once you're finished, just press continue and you're going to be shown a window which is the installation
+
+manager.
+
+Now here what you want to do is you want to click Basic Set up on the left and you want to select three
+
+of these packages on the right. You want to select the msys-base down near the bottom and you select
+
+mark for installation.
+
+You want to select the mingw32-gcc-g++
+
+package. That package contains the C and the C++ compilers and will mark for
+
+installation as well.
+
+And you want to select the mingw-base package and we'll mark that for installation.
+
+Now once you've got those three selected, you can come back up here to the installation menu and press
+
+apply changes.
+
+Now at this point we can click apply and it's going to download and install the new compiler.
+
+OK, so that's the installation.
+
+It only took a couple of minutes on my machine. I'll select to close.
+
+And at this point we're done installing the compiler.
+
+Now there's one step that you should take. In this case we want to set the path variable on our Windows
+
+system to the binary directory.
+
+So let me show you how to do that.
+
+Open up your control panel. You can open it up down here or you can open it up right here. I've just got
+
+a shortcut on my desktop and you can search your control panel for ENV for environment variables.
+
+I'll just type ENV and you can select Edit the system environment variables.
+
+OK.
+
+Now at this point you want to come down here to where it says 'environment variables' and press that and then
+
+down to 'system variables' and select the path right there and you want to edit the path. And what you
+
+want to do is you want to add a new variable to the path.
+
+So going to select new and at this point you want to browse and find the directory where you installed
+
+the compiler libraries.
+
+So in this case it was my C-Drive
+
+and it was the MinGW directory and you want to go to the bin subdirectory and select that. That's where
+
+the binaries are for the executive files and then press OK and OK one more time.
+
+And just finish off and close everything up.
+
+That's it.
+
+The compiler system is now installed and we're ready to compile. The next step is if you're going to
+
+install an integrated development environment or IDE now your compiler is all set up and you can proceed
+
+with that step.

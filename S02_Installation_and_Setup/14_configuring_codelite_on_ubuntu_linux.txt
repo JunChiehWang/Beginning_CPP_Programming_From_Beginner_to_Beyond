@@ -1,0 +1,297 @@
+Now that code light is installed we need to run it configure it and then run a little test program to
+
+make sure our configuration is correct.
+
+So the first thing we want to do is we want to find code like.
+
+And you could just type code in the search and you'll find code light and DoubleClick.
+
+Now the first time it runs you make it a small window like this and it's probably a good idea just to
+
+make it a little larger.
+
+OK now sometimes when you run it the first time you'll get a setup wizard that runs.
+
+Sometimes you don't.
+
+We'd like to run the setup wizard so if it doesn't show up you can go to help run the setup wizard and
+
+select that and you get a window that pops up.
+
+So I'll select next now here.
+
+Code like supports ph and node and a few other technologies.
+
+We really don't want all that clutter on our ID.
+
+We want to strictly concentrate on C++.
+
+So I would suggest that we clear all the plug ins and then turn on only the C++ plug ins.
+
+So you can see now that not everything is checked.
+
+Only the plus plus plugins are checked and will select next.
+
+Now we'll scan our computer for any installed compilers so we'll scan the computer and it's found GCC
+
+across GCC.
+
+I'm going to select GCC.
+
+Gcc stands for the new compiler collection which includes C C++ Fortran ADA and a few others.
+
+Select next as far as the editor theme.
+
+This is really a preference for you.
+
+This dark monocoque theme is really easy on the eyes but it doesn't show up too well on video so I'm
+
+going to select the classic eclipse look for the videos you can choose whatever your preferences not
+
+pressed next.
+
+I'll leave these defaults as is and press finish.
+
+OK now sometimes it opens up to Windows like you see here so I want to save an exit and I want to shut
+
+down all the versions that I've got going.
+
+I don't know why it does this but does it a few times and I'll save and exit again.
+
+All right so now let's.
+
+Now we're back to normal Let's try that again.
+
+So run code like
+
+and it's make this full screen again.
+
+Perfect.
+
+OK.
+
+So now what we need to do is we need to create a workspace.
+
+A workspace is an area where we can have our C++ projects so we can have many C++ projects in one workspace.
+
+We can do that by selecting this button here called new workspace or we can go up to file new new workspace
+
+either place some of us like this button here and it's going to ask for the workspace name.
+
+This could be any name you like.
+
+I'm going to say BPP workspace and I'm going to put this on my desktop.
+
+You can store it anywhere you like as long as you remember where it's at.
+
+So going to put this on my desktop
+
+I want to create the workspace under a separate directory that help me organize my files better and
+
+press OK.
+
+That's it.
+
+Now we've got a workspace which you can see here on the left side.
+
+I can right click on that now and create a new project.
+
+Again I can also go up file new project.
+
+So I'll do that.
+
+Now we've got some options here as to which template to use to create the project.
+
+We're going to stick to the console template which is just basically a terminal window and we want a
+
+G plus plus that's the C++ compiler.
+
+It's called C++ because it's the new C++ compiler I'll select next.
+
+What's my project name.
+
+It could be anything you like.
+
+Don't use spaces for any of these project name so I'll just say test one.
+
+And again I want to create a project in a separate directory under the workspace so I select next.
+
+Now I was going to ask you which compiler do you want to use.
+
+You may have a lot of different compilers on your system.
+
+Just select the one that you used in the setup wizard and you'll be fine.
+
+And these defaults are perfectly fine.
+
+Select finish and that creates a test project under the C.P. workspace and you can see it's called it's
+
+created a source directory and in there it's kind of main CGP file.
+
+That's our C plus plus source code and we'll get to that in a second.
+
+We need to do a couple of bits of configuration before we do anything else.
+
+Let's go to our project test one in this case and we'll right click and we'll go down to the bottom
+
+where it settings will select that and then we'll get to where it says compiler options.
+
+And notice I mean the global settings that's pretty important I mean the global settings compiler options
+
+and then I'll select these three little dots here on the button and I want to make sure that w all is
+
+selected that way we always get warnings and I want to make sure that the C++ standard C plus plus 14
+
+is selected.
+
+That's the latest standard for C++.
+
+That'll make sure that we're using the modern C++ compiler at that point.
+
+You can click OK apply.
+
+OK good.
+
+Now we can go to our workspace and right click on that and come down to workspace settings and you'll
+
+see environment and code completion.
+
+Go to the code completion and select enable C++ 14 standard code completion is a tool that the integrated
+
+development environment uses that tries to figure out what I'm typing and what I want to type when it
+
+helps predict what I want to do so it can help me so I don't have to type so much and it can do some
+
+checking as it goes.
+
+In this case I'm just telling you to use the modern C++ compiler.
+
+I'll select OK and that's it.
+
+Now I can run a simple test program will double click the main CGP file and this is actually C-code
+
+not see post post code so we'll delete this in a minute but that aunt is a little small so in my case
+
+since I'm doing this on video I'm going to get a settings colors and fonts and I'm just going to set
+
+that to about 16
+
+and see
+
+that's much better.
+
+You should see that much better.
+
+OK so let's delete all of this and we'll write a really simple C++ program as we go through the course.
+
+I'll talk about the anatomy of a C plus plus program and will go into detail as to what everything I'm
+
+going to be typing here means.
+
+But for now just type along and let's get a clean run so that we know our environments are set up.
+
+So the first thing we want to write is we want to write.
+
+LB include and I O stream inside angle brackets and we'll press Enter then we'll say int main and open
+
+and close friends that will create them will typeless left curly and the Integrated Development Environment
+
+will automatically close that for me and here want to do a say as T.D. to Colon's and seek out the insertion
+
+operator which is two less than signs with no space in between.
+
+And just some strange saying hello testin or anything else you like that has to be in double quotes.
+
+And then finally we'll put a semi-colon on the end of that to terminate.
+
+And then finally the last statement will be returned zero.
+
+That means that the program terminated correctly.
+
+That's it.
+
+That's our first really simple C++ program.
+
+And like I said in the beginning of the course I go through what all of this means and we'll go through
+
+the anatomy of a C++ program and in great detail I'll save this.
+
+Another option you may like is if you come up here to the menu you say view and say toggle minimal view
+
+and you can see it's putting a bunch of buttons up here if you like this.
+
+This is great because you know you can run and compile and do all kinds of things just by clicking on
+
+a button.
+
+I'm not going to use that because I find that pretty distracting to the video.
+
+So what I'm going to do is I'm just going to shut that off on my end.
+
+But feel free to use it.
+
+I'm going to use command keys and I'll also just come up here and say you know build in that with very
+
+explicit what I'm doing rather than just clicking on a button.
+
+So that's it.
+
+So let's run this.
+
+Now what we'll do is I say build.
+
+First thing I want to do is I want to clean this project that way there's no remnants of anything left
+
+over.
+
+It'll put it into a stable state that's good to go.
+
+So I clean the project all the messages will show up down here then I'll say build and I'll just say
+
+run and it's going to ask me do I just want to run it or do I want to build it and run it.
+
+Well in this case I have to build it and run it because I haven't built it yet.
+
+So I select to build and execute.
+
+And if all goes well we'll get a window that pops up that says Hello.
+
+Testing exactly what we typed here.
+
+Press any key to continue Osaki press enter to continue which I'm going to press now.
+
+The window goes away and we're done.
+
+Now several things could go wrong here.
+
+You may have an error in your program you might have forgotten to type this exactly right.
+
+So you may have forgotten the semi-colon in which case when you go to build and run.
+
+You'll see this red line here that's a compiler error.
+
+You'll also see a red arrow over here telling you there's something wrong here.
+
+And the compiler is telling you that it's expecting a semi-colon before the return.
+
+So put it in there.
+
+Just be really careful.
+
+Talk about debugging and fixing syntax errors throughout the entire course.
+
+But at this point save it make sure it's right.
+
+Again be very careful you may have extra quote marks and the compiler won't like it.
+
+You might only have a single less than sign here and it's not going to like it.
+
+So just be sure it's exactly like this.
+
+Once you've got it set up build run build and execute.
+
+There's a clean run and there's my terminal.
+
+OK.
+
+So that's it we're all set to learn C++.

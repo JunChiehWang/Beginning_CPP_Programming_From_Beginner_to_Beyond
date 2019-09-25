@@ -1,0 +1,53 @@
+This video we'll go over the steps necessary to install the command line tools which includes the C++
+
+compiler on the Mac OS 10 platform in order to do this we need to have a terminal window.
+
+So let's go over to spotlight's search and type in terminal and we'll get a terminal window running
+
+at this point.
+
+We want to type X code dash select dash dash install
+
+and press enter.
+
+If you get a dialog box that pops up as I do that means that the command line tools and the compiler
+
+are not currently installed.
+
+If you get a message saying that they are currently installed then you're done and you can move on to
+
+installing the Integrated Development Environment.
+
+In this case I have the choice of installing the full X code integrated development environment or simply
+
+install the command line tools.
+
+I'm only going to install the command line tools which again includes the compiler.
+
+So select install all agree to the license agreement
+
+and that software will be downloaded and installed.
+
+It's a pretty quick process.
+
+After a few minutes you'll see a message saying the software was installed and the installation is complete.
+
+You can test out the installation by simply typing G plus plus dash dash version at the terminal and
+
+you'll see the version number of the C++ compiler.
+
+Which means it's all set.
+
+And good to go at this point you'll keep the command line tools up to date through the App Store so
+
+you could select AppStore
+
+updates and you can see your command line tool update to appear here.
+
+Right now I've got no updates available because I just installed the latest.
+
+That's it.
+
+We've installed the command line tools our compilers are all set up and we're good to go.
+
+The next step is to install the Integrated Development Environment.

@@ -1,0 +1,77 @@
+This video will go over the steps necessary to download and install the CodeLite integrated development
+
+environment for C++ on the Windows platform.
+
+CodeLite is a free, open source, cross-platform integrated development environment that works across
+
+Windows, Mac, and Linux.
+
+And this is the IDE that I'm going to use in this class. In order to download it,
+
+open up your favorite browser and go to codelite, C O D E L I T E dot org.
+
+You'll get a page that looks similar to this and what you want to do is find a download link.
+
+You can find it up here on the menu bar or you can find it right here as well, on the big blue button.
+
+So I'll select that and it takes you to a page where you can make a donation to the developers if you wish.
+
+If not, just take me straight to the downloads and I'll sect that.
+
+And you've got a couple of options here for Windows. if you want to download the weekly builds you can
+
+download that for the 64 bit Windows machines right here at the top.
+
+And currently it's CodeLite 10.0.7. That's the one I've been using and it's very
+
+very stable.
+
+You can also download the stable release 10.0 for Windows 64 or 32 bit.
+
+Now if you're not sure whether you have a 64 bit machine or a 32 bit machine. Go over to your Control
+
+Panel and select System and Security and then System. And in the System information right here you'll see
+
+System type and it will say 64 bit operating system or 32 bit operating system depending what you've
+
+got.
+
+So I'll close this down. In my case I have a 64 bit system so I'm going to use the stable release
+
+for Windows 64 bit and I can just click the direct link and that'll start the download. The download
+
+can take some time.
+
+It's not a big file.
+
+But the connection tends to be slow to the site, so I'll pause the video while that occurs.
+
+So the download is now complete.
+
+What I'm going to do is open it up in the folder and it's basically a compressed file which I'm going
+
+to extract right to here and then I'm going to run the installer.
+
+But before I do that I'm going to close the browser. Let's run that installer.
+
+I'm going to allow the app to make changes to my device and I'm going to close this folder just to clear
+
+up some of the clutter.
+
+Now what you want to do here is just basically follow the setup wizard.
+
+So, I'm going to select Next. I'm going to accept the GNU license agreement and press Next. I'm going
+
+to install this to the default location C:\ Program Files\CodeLite and press Next and press Next again.
+
+And I want to create a desktop icon just to make it easier for myself and I'll press Next one more time.
+
+And then finally we can install the installation. It's really quick.
+
+And once it's done it's going to ask you if you want to launch CodeLite.
+
+I'm not going to launch it yet.
+
+I'm just going to finish the installation and in the next video will go over the launching and the configuration
+
+of CodeLite.

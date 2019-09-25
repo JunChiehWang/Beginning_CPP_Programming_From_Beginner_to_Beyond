@@ -1,0 +1,285 @@
+This video will run and configure code light on Mac OS 10 and we've already installed the compiler tools
+
+and we've installed code like.
+
+So let's run code like will come up to Spotlight search and type code light and double click on the
+
+icon
+
+will allow it to run.
+
+Now the first time that code light runs a couple of things will happen.
+
+You get the small code like windows show up and then you get a setup wizard we just leave that window
+
+smallest will make it larger in a minute it's not really going to get in our way right now.
+
+What's important is that we run this set up wizard if the setup wizard does not start come up to code
+
+lights menu and go up to help and then run the setup wizard and run it manually.
+
+OK.
+
+But here in this case it did pop up.
+
+So let's select next
+
+code like uses a bunch of plugins to allow support for HP and know it and other technologies.
+
+We don't really want all that.
+
+We only want the C++ plug.
+
+The rest are just going to clutter up our interface.
+
+So what we can do here is we can press clear and then just toggle the C++ plugins that way.
+
+Only some of these will show up which is exactly what we want.
+
+We just want to concentrate on C++.
+
+So like next.
+
+Now we can scan our computer for any installed compilers we can press this button here and you can see
+
+it's found GCC clang and across GCC we're going to use gcc.
+
+They're really the same but we'll use gcc here and press next.
+
+Now the customisation of the theme is really up to you.
+
+This is your personal preference the moniker dark theme is real nice and easy on the eyes but it doesn't
+
+show up too well on video so I'm going to select the classic eclipse theme and select next will keep
+
+these defaults and press finish.
+
+Now what we can do here is we can say Save and Exit you want to be sure that you save so we can save
+
+the changes we've made
+
+and we can run code light again.
+
+OK so this time I want to make this window nice and big
+
+and we've got a couple of options that we still need to contribute.
+
+But before we do that we need to create a workspace.
+
+You can create a workspace by clicking this button here or by coming up to file new workspace.
+
+Either place works fine.
+
+A workplace is just an area where we can have our C++ projects so we can have multiple projects in a
+
+workspace.
+
+So I'm going to select a new workspace and the workspace name could be anything you like.
+
+I'm going to say the workspace don't use any spaces here just keep it all together and I want to create
+
+the workspace under a separate directory so I can keep my files organized.
+
+Select OK and you can see that it's created the workspace over here on the left pane.
+
+Now we need to create a C++ project so you can right click on that and select new project or you can
+
+select the workspace and then come up to file new project.
+
+Either way now we've got some options.
+
+We're going to create a console project and simple executable plus plus right here and that's the compiler
+
+we're going to use and we'll select next the project name again don't use any spaces here just create
+
+your name the name for your project whatever you'd like.
+
+Again I'm going to create a separate directory for each project and I'll select next as far as the compiler
+
+would want to use the gcc compiler but the debugger we don't want to use the new debugger we want to
+
+use the l l DB debugger.
+
+That's the apple divider.
+
+So let's finish and you can see over here on the left that we've created a project called Test 1 and
+
+it's just short directory and it's got a file there called main C.
+
+Now before we run that file there's a couple of things that we need to set up.
+
+First click on the project.
+
+In this case test one right click and then come down to settings and select that then done here to toward
+
+the bottom where you see global settings come up to compiler options and select the right side and then
+
+you'll see this little button right here with the three dots select.
+
+And what we want to do here is we want to check a couple of options when we scroll all the way up and
+
+I want to like enable all compiler warnings wall and I want to enable C plus plus 14 features.
+
+That's the latest standard that's modern C++.
+
+Want to make sure that that's enabled.
+
+And this guy doesn't come on but you can see that it is there.
+
+Sometimes it doesn't check on.
+
+You can see that the command line is correct.
+
+So just click OK I'll apply and click OK.
+
+Perfect.
+
+Now go to the workspace select it right click on it and come down to workspace settings and you'll see
+
+we have environment and code completion slide code completion.
+
+And check the Enable C++ 14 standard.
+
+The integrated development environments.
+
+Use code completion they try to figure out what you're typing and what you want to do and where you
+
+want to go and really help you out with suggestions.
+
+In this case we're simply telling code like to use the C++ 14 standard for those suggestions click OK
+
+and that's it for the set up.
+
+Now let's modify this C++ file and run it.
+
+That's double click on that and that's font is really small so I'm going to do is I'm going to make
+
+it a little larger so it shows up better on the video.
+
+Most likely you won't have to touch it at all.
+
+But I'm just going to come to settings colors and fonts and I'll set the font to let's say 18
+
+I'll apply that and that should be much more readable.
+
+OK so now let's modify this file.
+
+This is actually C-code Nazi posts plus code.
+
+So let's get rid of all this and we'll type a simple C plus plus program that will test our installation
+
+during this course.
+
+Will go in detail through the anatomy of a C++ program and everything I'll be typing here will be explained.
+
+But for now just follow along type along to make sure we've got a clean install.
+
+So the first thing you want to do is win a type pounde include and we want to put IO stream in angle
+
+brackets and press Enter then int space main left and right person then we want to open up a left Kerley
+
+and you can see that the IEEE has closed it for me.
+
+And then what I want to do here is I just want to say as T.G. to call in side by side no spaces and
+
+then seek out the insertion operator which is to signs again together with no spaces and anything you
+
+want to type here as far as hello testing we want to type of string inside double quotes and a semi-colon
+
+at the end and then next line will be returned 0.
+
+That's it.
+
+That's the entire program.
+
+When we run this program what we want to do is we want to display hello testing to the console.
+
+That's all it's going to do.
+
+I'll save this
+
+under File at this point on your end you may want to do.
+
+You toggle minimal view and that will display.
+
+We do that again that will display some buttons and things up here which you might find useful.
+
+I'm not going to do that because it clutters up the screen and I don't want any distractions when I'm
+
+teaching the class to toggle that away.
+
+And what I'll do is rather than click on the buttons I'll be really explicit as to click on build run
+
+build clean and so forth.
+
+That way you can see exactly what's going on.
+
+Once you get familiar with the ID you can use those buttons.
+
+That's it.
+
+So I've saved it.
+
+Now I want to run this first thing I want to do is I want to go to build and clean the project when
+
+we clean a project we're basically just wiping out everything that's been done in the past except the
+
+source code.
+
+So the project is in a state that's ready to go so I'm going to clean it and then I'm going to come
+
+back up to build and I'm going to say run now it's going to give me an option that says Would you like
+
+to build the active project before executing it.
+
+Of course I do because I haven't built yet in this case so I'm going to select build and execute and
+
+that will compile the program and open up a window and there's the output right there.
+
+Hello testing.
+
+So this terminal window is running the program that I just wrote.
+
+That's it.
+
+It's as simple as that.
+
+Some things could go wrong though.
+
+Suppose that you forgot this semi-colon here and I'll say it and then I'll do the same I'll do run build
+
+and execute and you can see if I move this window just slightly up you can see that I've got a compiler
+
+error and this is what compiler errors look like.
+
+You see the read text here and it says error expected a semi-colon after an expression.
+
+Also you'll see that little red arrow right here telling you just something wrong here.
+
+And basically what you need to do is put a semi-colon there just type the program really carefully exactly
+
+like I did and you won't have any problems.
+
+But you know you could have things missing like this.
+
+Quote The first quote is missing.
+
+This time I have three less than signs.
+
+There's all kinds of little things that could go wrong with the program but if you'd just be very careful
+
+type it in save it and come back up to build and run build and execute and you can click on there if
+
+you like that we don't have to keep doing it all the time.
+
+And there's a run.
+
+That's it.
+
+We're all set on Mac.
+
+We've installed the command line tools we've installed code like we've configured code light and we're
+
+good to go.
+
+Now let's start learning C++.

@@ -1,0 +1,117 @@
+This video we'll be installing the code light ID or integrated development environment on the Ubuntu
+
+Linux platform code like is a free open source cross-platform.
+
+Ideally that works with C++ and it works across Windows Linux as well as Mac.
+
+So we'll start by opening up your favorite browser and going to code light that c o d e I t DRG and
+
+you'll get a web page similar to this and you want to find a download link.
+
+Now there's one at the top menu.
+
+There's also this big blue button here.
+
+That's the one I'm going to use.
+
+So I'm just going to select Code like to download and you can give a contribution to the developers
+
+if you wish or you can go straight to the downloads which is what I'll do here.
+
+Now we're we're going to download code like 11.0 which is a stable release and we're going to download
+
+this for Ubuntu.
+
+Now you can see here you've got a Windows Installer Noas 10 installer and so forth and you can refer
+
+to those videos if that's the platform you're on.
+
+But this specific video is for butu Linux so you can see here it says set up code like repository for
+
+Ubuntu that's the one I'm going to select a word of caution.
+
+These commands are run as super user as you can see here with a.
+
+So be very careful when you type things and make sure you're typing things exactly correctly.
+
+What I'm doing is I'm not even going to type I'm simply going to copy and paste.
+
+That way I know that I'm making no mistakes.
+
+OK.
+
+So first step is to copy this one line right here.
+
+And basically what we've got to do is a lot of information on this page regarding official and unofficial
+
+and so forth and I'll show you the one that worked great for me.
+
+So what we're going to do is we're going to copy this line of code here then we're going to copy this
+
+line of code here.
+
+And the version I've got is email universe so that's the one I'm going to.
+
+Sixteen point zero for about two.
+
+So that's the one I'm going to choose.
+
+And then we're going to do a couple more lines and that's it.
+
+Now the install takes quite a while.
+
+The last time I did this install it was about 10 minutes 15 minutes on my machine.
+
+So I'm going to pause the video as the install happens and we're going to do the installing a terminal
+
+window so you can see the terminal windows here.
+
+I've opened it up so I'm going to make this just a little smaller so we can do both at once.
+
+You can see what's going on.
+
+OK.
+
+Perfect.
+
+So let's get started.
+
+Let's copy this first line right here and I'm going to copy and paste it over here.
+
+Press enter and it's going to ask you for your password.
+
+Obviously you have to have root access or be super user to install this code.
+
+So I want to press enter.
+
+And that takes care of the first line.
+
+I'm going to scroll down and get the second line now.
+
+Make sure that you replace this string here with the correct distribution of your bunch of mine is Zino
+
+So that's when I'm going to use.
+
+I'm going to copy this just like that.
+
+I'll paste it.
+
+This time it won't ask me for my password then I'll go down to the third line which is the update
+
+copy that and paste as well.
+
+That'll just take us a few minutes.
+
+OK that's done.
+
+Now the last line is one that takes a long time to install someone to copy paste Precentor.
+
+And I'll go have a cup of coffee and a little bit it says here after this operation we need 451 megabytes
+
+of space.
+
+I've got plenty of space so that's fine and I'll just say continue yes and I'll pause the video now
+
+and be back in about 10 minutes.
+
+At this point cold light has now been installed and the next video will run it and configure.

@@ -1,0 +1,363 @@
+In this video we're going to configure the code light idea that we just installed to work on our windows
+
+system with C++.
+
+So the first thing we want to do is we want to start code like.
+
+So I'm just going to double click on the icon and the first time that you run code like you'll probably
+
+get a little setup wizard pop up and here it is.
+
+You may also get a window that says you want to update to the latest version which you can certainly
+
+do.
+
+I'm going to cancel for this video.
+
+And here's the setup wizard.
+
+Now it's important that you run through this setup wizard.
+
+If this does not show up for the first time you can always find it appear you can still like help and
+
+then you can run the setup wizard here.
+
+But in this case it does show up.
+
+So I'm going to go through this and only have to do this one time.
+
+I'm going to select next.
+
+Now here the way that code works is it uses a lot of plugins to support ph C C plus plus and so forth.
+
+We only care about C++ in this case.
+
+So what we want to do is we want to clear these plugins so you can see all the checkmarks are gone and
+
+then we want to toggle the C++ plugins only someone to select that until only the C++ ones show up.
+
+OK so that's what we need to do.
+
+Just make sure that not all of them are set up just some of them you can use that toggle to do it or
+
+select next.
+
+Now we want to set up the compiler.
+
+Now remember if you've already installed the Mingy w compiler then you could just click scan if you
+
+haven't go back to the video and install it.
+
+I wouldn't install it from this option because it installs an older version of the GW compiler.
+
+So I'm going to scan and it should find it.
+
+There it is.
+
+So I want to select it and press next.
+
+Now here you can customize the colors to whatever you like.
+
+This dark moniker chi theme is kind of nice on the vision it's not so hard in your eyes but for the
+
+video.
+
+I'm going to use the classic eclipse look that way I think it shows up a little better on video so I
+
+select next will leave these defaults as is and will press finish.
+
+OK now at this point you want to save and exit.
+
+It's going to ask you this every time you make a change and it gets pretty annoying.
+
+So I'm just going to say remember my answer and don't ask me again and every time I make a change I
+
+want to save and exit soft save and exit.
+
+OK so it saves it and it opens it up again and now the settings that I set were applied.
+
+And again I'll cancel the new download here.
+
+So let me make this full screen here.
+
+And as I mentioned before if that setup wizard does not show up you can started here.
+
+Run the setup wizard.
+
+OK so now what we want to do is we want to create a new workspace and once we create the new workspace
+
+We'll run.
+
+I have a couple of settings to do and then once that's done it will be all set.
+
+So let's create a new workspace.
+
+A workspace is basically an area where you can have different C++ projects in.
+
+So the first thing we want to do is create a new workspace I'll select that.
+
+You can also say file new workspace.
+
+OK so I'll do it right here and it's going to ask me for the name of the workspace so I'll just say
+
+see workspace.
+
+You can do this whatever you like if you want to have a workspace rather the section one exercises section
+
+2 Section 3 or whatever you like whatever makes sense for you.
+
+I'm going to put it in my documents folder and I want to create the workspace under a separate directory.
+
+That just helps me organize my files.
+
+I'll select OK.
+
+Good now you can see here on the left pane of my workspace view I've got a workspace now the workspace
+
+in and of itself.
+
+Is it real useful.
+
+I need to create a project within the workspace so I can right click on workspace and say new project.
+
+So I'll do that and select new project.
+
+At this point we've got some options.
+
+We're going to select the console option and then simple execrable G plus plus that's basically the
+
+C++ compiler.
+
+It's called C++ because it's from a canoe.
+
+So I'll select that next.
+
+And then you give your project a name.
+
+This could be again any name you like.
+
+Avoid spaces just to be safe.
+
+Just simple name so I'll say test one let's say.
+
+And again I want to create a project under in a separate directory or press.
+
+Next here you can choose the compiler has probably already chosen it for you if you've got multiple
+
+compilers.
+
+You can set individual compilers on a per project level but we're using the GW compiler and we're using
+
+the good debugger.
+
+The build system will be default and select to finish.
+
+So it's gone off and created a new project you could see it here on the left side it's called Test 1.
+
+And as I explode these you can see that there's my main file.
+
+That's the program that it's created for me by fault the dots BPP extension means that it's a C++ file.
+
+I'm going to double click on that and you can see my fondest.
+
+Pretty small here because I just installed this let me increase my font.
+
+You may not have to do this on your end but it's going to show up better on video if I do it.
+
+Someone to go to settings colors and fonts and not just set it to 16.
+
+It should be nice ply can go that way it's much easier for you to see.
+
+Now what we want to do is we want to delete all this.
+
+This is actually C-code not C++ code.
+
+So let's delete all of that and let's write a real simple test from scratch.
+
+So the first thing we'll do is we'll include IO stream.
+
+This allows us to do input and output.
+
+And we'll talk much more about what these include directives mean in a future video.
+
+In this example just type along and make sure that the environment is working.
+
+So you want to say pound include and IO stream in angle brackets.
+
+Then we want to say int space main.
+
+This is our main function to Prendes and we'll create a couple of Curley's curly braces then in here
+
+we're going to say is s t d colon colon.
+
+Seek out the insertion operator which is two less than signs followed by a low testing or anything you
+
+like.
+
+And then a semi-colon at the end and then finally return 0.
+
+That's it.
+
+That's a simple test.
+
+Again will be a separate video where I go over the anatomy of a C++ program and we'll go over all this
+
+in detail.
+
+So in this case again we're including IO stream.
+
+We've got our main function and we're printing hello testing to the screen where we're turning zero
+
+which means programs successful.
+
+I'm going to save this and I'm not going to do this on the videos but you can certainly do this at home
+
+if you come up to view and you can toggle the minimal view.
+
+When you do that you'll get some icons up here you can use these icons to build and say for example
+
+that's a safe right there.
+
+I'm not going to do that because I don't want as much screen real estate as possible on the videos so
+
+I'll just toggle that off.
+
+OK.
+
+So I'm going to file say.
+
+And at this point we're ready to run the program but we need to make a couple of changes just because
+
+we want to use modern C++.
+
+So what we can do is we can click on the project test one in this example and all right click and then
+
+at the bottom you'll see settings.
+
+So select settings and you can see right down here at the bottom where global settings.
+
+I want to select that and where it says C++ compiler options.
+
+You can click right in there and then you'll see these three little dots here and the buttons are useless
+
+and other menus you can select that.
+
+And we want to make sure that a couple of things are set.
+
+We want to be sure that C plus plus 14 is checked.
+
+That means we're using the latest version of the standard which is modern C++.
+
+We also want to be sure that the w h l l all warnings is checked.
+
+OK.
+
+So that's it for now.
+
+That will be fine.
+
+We will select OK
+
+and we'll apply and.
+
+Okay perfect.
+
+Now I also want to click on the workspace itself and right click on that and come down to workspace
+
+settings and select that.
+
+And when you come to code completion you want to be sure that C++ 14 standard is enabled code completion
+
+is something that the ID does as you type is trying to figure out what you want to do and help you out
+
+so you don't have to do a lot of typing.
+
+And in this case we want to tell it to use the foreignness C++ 14 standard so when it's trying to figure
+
+things out.
+
+So I select OK.
+
+Now at this point we should be ready to try this out.
+
+Someone expand this little window down here at the bottom and I'm going to come up to it says build
+
+and then we'll select clean project then we'll go back to build and just say run at this point it's
+
+going to say what do you want to do.
+
+Do you just want to run it or you want to build it and run it.
+
+In this case I want to build it and run and not talk more about the workflow that's used for cleaning
+
+and compiling and so forth a little bit later on in the course.
+
+So in this case I want to say build and execute and it will compile and run the program.
+
+If there are no errors it'll run and you'll get a window pop up with the output.
+
+Hello testing in there.
+
+If there are errors let me show you what they might look like.
+
+Just in case you do see them.
+
+Suppose I forget that semi-colon at the end there and I'm going to say build run build and execute and
+
+you can see this red down here that says error.
+
+I expected a semi-colon before the return.
+
+You also get a read error here and it says again semi-colon expected So basically you just put the semi-colon
+
+in there save it and then go back up to build and run build and execute.
+
+You can click on here for it to remember to always build and execute or just execute again.
+
+Don't do that yet.
+
+We'll do that as the course progresses and I'll show you the different workflows we can use.
+
+Build and execute.
+
+There we go.
+
+Now if at this point you get a error that says that some DLF can't be found then what you want to do
+
+is you want to go back to the project right click and go down to settings.
+
+And remember you only have to do this if you get some kind of runtime error that says some C-p PDL file
+
+was not found and go to global settings and then would you want to do is you want to go to the linker
+
+options and just select write on there and click that little button and down here at the bottom what
+
+you want to do is you just want to add a couple of lines you can say Dasch static dash lib GCC and then
+
+press center and that Dasch static dash lib.
+
+S t d.
+
+C plus plus.
+
+OK so what will happen here is now the linker is going to statically link the files and not have to
+
+use dynamically linked libraries or DL else.
+
+Again you only have to do this if you if you get that error if you don't get the error you can do it
+
+also and it's not going to hurt but still like to OK apply and let's do a build rebuild.
+
+Let's do a clean first.
+
+Whenever you change any kind of settings you want to clean the project which really just cleans everything
+
+up and gives you a starting place.
+
+So will clean the project and then we'll just say run build and execute.
+
+In this case it's going to statically link it which is just as good and hello testing.
+
+We're all set at this point.
+
+We've got a grid install it's configured and we're ready to use code like to start learning C++.
