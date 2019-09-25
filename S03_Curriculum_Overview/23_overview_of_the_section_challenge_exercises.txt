@@ -1,0 +1,43 @@
+In this video I'd like to take a few minutes and talk about the challenge exercises in this course.
+
+Most sections of the course will have a challenge exercise that you can attempt to solve the challenges
+
+will range from simple at the beginning of the course to very very challenging toward the end of the
+
+course.
+
+These challenges are programming challenges in which will typically be given a description of the challenge
+
+and the project files to start you off.
+
+In addition to the challenge description I'll also explain the challenge and video and walk you through
+
+the expected output these challenges are a great opportunity for you to apply what you've learned in
+
+each section and Kotas C++ solution that works and solves the challenge once you complete the challenge.
+
+You can watch a video of my solution to the challenge so you can compare to your own.
+
+Remember there are many many ways to solve the same problem and my solution is just one way but it will
+
+provide a solution to the same problem that you can learn from.
+
+I encourage you to make up self challenges as well.
+
+The more code you write and the more you practice the more comfortable you'll become with C++ and the
+
+better your code will become.
+
+It's OK if you can't fully complete the challenge.
+
+They're not called challenges for nothing.
+
+Do the challenges at your own pace.
+
+No pressure.
+
+Have fun experiment and keep trying.
+
+Even if you get frustrated before you know it you will be solving complex problems and creating your
+
+own Object-Oriented programs.

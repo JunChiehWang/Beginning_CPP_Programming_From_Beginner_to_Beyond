@@ -1,0 +1,197 @@
+When I take a course I always like to know what will be covered in that course so I know what to expect.
+
+In this video I'd like to go over the curriculum for this course.
+
+The curriculum has been developed in such a way that students with little to no programming background
+
+can get started programming quickly in C++.
+
+C++ is a very complex language.
+
+Probably one of the most complex programming languages use today.
+
+That doesn't mean that learning the basics should be impossible to grasp.
+
+In fact all programming languages provide the same general constructs that we use to build programs.
+
+This is a beginning modern C++ course.
+
+There are many many topics in C++ that are at an intermediate or advanced level.
+
+I won't be covering those topics in this course.
+
+My goal in this course is to teach the basics of C++ so that you can write C++ programs that solve problems.
+
+More importantly this course lays the foundation necessary to go forward and learn more advanced C++
+
+concepts.
+
+This foundation will also allow you to read C++ code written by other programmers C++ frameworks are
+
+used everywhere.
+
+For example if you want to program games in C++ using the Unreal Engine then you'll have the background
+
+necessary to use their frameworks.
+
+If you want to use the popular C++ Boost libraries you'll be able to use them and understand many of
+
+their a prize.
+
+OK so let's talk about the curriculum and what you can expect in this course.
+
+We'll begin our C++ training by going over the code like IDS interface and writing a C++ program using
+
+code like as we do this will understand how to compile build and run a C++ program.
+
+Also talk a bit about some areas you may encounter.
+
+I know what you're thinking.
+
+Geez she's already talking about errors already.
+
+I haven't even started learning to program yet and he's talking about errors.
+
+Is this going to be that difficult.
+
+Don't worry.
+
+The sooner we talk about errors kinds of errors why they happen and how to fix them.
+
+The sooner errors will become normal and expected.
+
+I've seen students get turned off from programming because they get errors.
+
+Expect the errors fix them and move on.
+
+Then we'll talk about the structure of a basic C++ program.
+
+I'll explain LB include name spaces comments.
+
+The main function see in and see out.
+
+These are the elements that nearly every C++ program will have.
+
+Then we'll talk about variables and concepts and how to use them.
+
+You can't write a C++ program that does much of anything unless it has variables and constants.
+
+We'll go over how to declare them use them Name them and much more.
+
+We'll also discuss C++.
+
+Basic types which allow you to use integers floating point numbers characters and more.
+
+Now that we know of variables are will group a bunch of variables together into collection of variables
+
+called an array.
+
+Now we'll be storing and using multiple variables like a bunch of test scores or temperatures for the
+
+last 7 days.
+
+These collections are called arrays and vectors and will learn how to create them and use them.
+
+Also learn how to use multi dimensional structures so we can model things like grids boards and spreadsheets.
+
+Then we'll learn about strings and C++ strings or collections of characters like my named Frank which
+
+is f r a and k strings are used extensively in C++ and we go over the basics in this section in the
+
+following section will learn how to write program statements.
+
+These statements are made up of expressions will also go over some of the C++ operators like plus minus
+
+multiply divide and so forth.
+
+At the end of this section you'll be able to write C++ statements that tell the computer what to do
+
+in order.
+
+Now we get to the real powerful stuff control flow.
+
+It's nice to be able to write a bunch of statements one after the other but to really have power we
+
+need to be able to make decisions and repeat things more than once.
+
+This is control flow.
+
+This will open up the world of programming and give you so much power in the next section we'll learn
+
+how to write functions a function let's as group a bunch of statements into a single construct.
+
+It helps us organize our code and think more abstractly.
+
+Following functions We'll talk about C++ pointers and references.
+
+You may have heard horror stories about C++ pointers don't worry I'll walk you through how and why do
+
+you use them and you'll see the incredible power they give you over your hardware.
+
+Finally now that we know the basics of procedural programming and C++ will dive into object oriented
+
+programming or O P O P is awesome and lets you model your program in terms of real world objects.
+
+C++ is after all an object oriented language and that's how we want to use it.
+
+Once we understand the basics of AP we'll learn about operator overloading which allows us to define
+
+how the built in C++ operators can be defined so that they work with our own classes so they feel like
+
+are part of the standard language.
+
+Then you'll learn about inheritance and the power that it provides.
+
+Imagine reusing existing code by inheriting what you need from it and just modifying the parts that
+
+you need to solve your problem.
+
+We'll wrap up our with polymorphism.
+
+Polymorphism allows your program to determine its behavior at runtime and really let you think in general
+
+so you don't have to be concerned about details.
+
+The last several sections of the Course are slightly more advanced but they're so important that I wanted
+
+to include them in this course.
+
+The first is smart pointers.
+
+We'll talk a lot about C++ pointers since every C++ programmer really needs to understand raw pointers
+
+but C++ also provides smart pointers which make memory management much simpler and make your program
+
+safer to use.
+
+Then we'll talk about the C++ standard template library C++ provides a standard C++ template library
+
+with a rich set of containers iterators and algorithms that are ready to use.
+
+Why reinvent the wheel when you can use the wheels you have Aguayo over the basic FCL elements so that
+
+you can put them together and solve complex problems.
+
+Will finish off the course by talking about input and output to files in Exception handling exception
+
+handling allows you to deal with exceptional conditions that might occur in your program.
+
+What if a file doesn't exist or you try an operation and it fails.
+
+It's important to understand how to write your code so that it's aware that something has gone wrong
+
+so you can recover from it.
+
+Wow that's a lot of material.
+
+Some of these topics can be covered by an entire course dedicated just to them but don't worry we aren't
+
+going to get into every possible option or explain every construct from a theoretical computer science
+
+perspective.
+
+This course is practical and it's about learning beginning C++ so that you can further explore this
+
+amazing programming language and use it in real world applications in the next videos.
+
+I briefly discuss the challenge exercises and the quizzes that are included in the course sections.

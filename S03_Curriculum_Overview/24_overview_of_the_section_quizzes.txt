@@ -1,0 +1,25 @@
+Programming isn't just about getting in front of a computer and writing code.
+
+There are syntax and rules to follow best practices and lots of thought involved.
+
+We also have to learn how to handle errors and know what they mean and how to fix them and more.
+
+So we've included quizzes at the end of most of the sections in this course.
+
+The quizzes are for you to see how well you can apply the concepts presented in each section and to
+
+reinforce the material presented.
+
+Some questions are easy and some are more difficult.
+
+I urge you to go through the quizzes I think you'll find them challenging but still fun.
+
+Each quiz has 10 questions and there are multiple choice and fill in the blank type questions.
+
+The quizzes are more concept oriented where the section challenge exercises are more code oriented.
+
+But sometimes the quiz questions may ask you about a specific piece of code and what you think it displays.
+
+I hope you find the quizzes as well as the challenge exercises useful for your learning experience.
+
+Ok frank enough talk let's get started learning C++.
