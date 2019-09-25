@@ -1,0 +1,123 @@
+Hello and welcome to beginning C++ programming.
+
+Thank you very much for enrolling in this course and placing your confidence in the Learn Programming
+
+Academy team and in me for your training. In this video I'd like to introduce you to the course.
+
+But first I'd like to introduce myself.
+
+My name is Frank Mitropoulos and I'll be your instructor for this course.
+
+You can read more about me in the course bio.
+
+But I want you to be sure that I will do everything I can to make sure the course content is correct,
+
+relevant, understandable, and hopefully fun.
+
+I've been a University computer science professor for many years.
+
+I've also worked in industry as a programmer, software engineer, and project manager. I've taugh thousands of students
+
+in both academia and industry how to program using many programming languages but C++ is my favorite
+
+language to teach.
+
+I first learned C++ back in 1988 and I've used it ever since.
+
+That's quite a long time ago and C++ has evolved greatly since then.
+
+I'm very excited to teach this course.
+
+I hope you're also excited about learning C++ in this course.
+
+I assume that you're completely new to C++.
+
+I also assume that you have little if any programming experience with other programming languages.
+
+If you do have programming experience that's great.
+
+This course is still for you since you'll definitely learn C++. The course curriculum has been developed
+
+in a way that introduces new topics in a specific order.
+
+I encourage you to follow along one section at a time and before you know it you'll be writing C++ programs
+
+that solve problems. In this course.
+
+I'll cover modern C++.
+
+I'll talk more about just exactly what modern C++ is as we go through the course.
+
+But rest assured that you'll be learning C++ as it should be used today.
+
+Over the years I've worked with many many students and I can only remember a few that just didn't get
+
+programming.
+
+I still think that if they tried a little harder then program it would have clicked at some point.
+
+If you're new to programming you will at some point in this course feel frustrated.
+
+This is perfectly normal.
+
+Programming is a skill that must be learned and practiced.
+
+Do uou play a musical instrument?
+
+Do you remember what it sounded like the first time you played?
+
+Do you remember wanting to smash that guitar or a piano because you just couldn't get it?
+
+Programming is similar.
+
+You must practice and practice to get better.
+
+If you get frustrated take a break and try again a bit later.
+
+Remember we've all been there.
+
+I still remember the first program I ever wrote it was back in 1980 using a programming language called
+
+Fortran 77.
+
+I was so excited that I was able to program a computer to do exactly what I wanted it to do.
+
+The program was pretty simple.
+
+It asked the user for an amount in US dollars and then displayed how many quarters, dimes, nickels, and
+
+pennies it would take to add up to that entered amount. We'll do the same problem in this course.
+
+I also remember that it took me a couple.
+
+OK maybe more than a couple of attempts before it was correct but man what a great feeling when it ran
+
+correctly!! In this course.
+
+each section ends with a challenge exercise.
+
+These will help reinforce the concepts presented in the section to help in learning the material.
+
+Once you finish the challenge don't stop there.
+
+Challenge yourself.
+
+Come up with similar problems on your own and solve them. Then do it again and again.
+
+Make it fun.
+
+Make the problems silly if you want to.
+
+It doesn't matter it's all about practice.
+
+Finally if you have any questions at all please ask them in the forums.
+
+I will personally monitor the forums and respond to questions. Before you post though, browse the already
+
+answered questions since your question may already have an answer.
+
+Well enough talk.
+
+I look forward to working with everyone.
+
+Let's start learning C++.

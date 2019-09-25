@@ -1,0 +1,127 @@
+One question that students often ask when they're considering a career in software development is what
+
+programming language should I learn.
+
+There's really no easy answer that question.
+
+Experienced professional programmers generally know many programming languages and use them based on
+
+many factors.
+
+The question I'd like to address in this video is why learn C++?
+
+Let's start with C++'s popularity much if not most of the software written today is still written in
+
+C++ and this has been the case for many many years.
+
+There are many programming language popularity indexes that use different criteria for ranking the popularity
+
+of programming languages.
+
+Let's head over to a browser and we'll look at a few of them.
+
+I've opened up a browser and I've loaded several sites that rank programming languages based on popularity
+
+all of the data I'm showing is current as of November 2017.
+
+So depending on when you access the site your results may differ. Each site uses their own criteria and
+
+I encourage you to browse through these sites. I've provided you URLs for these sites in the course resources.
+
+First let's look at the Tiobe index as you can see C++ is currently ranked third.
+
+If you select that row you can learn more about C++'s popularity since 2001.
+
+It's pretty impressive for a language to be ranked so consistently for so long considering how many
+
+new languages and frameworks appear on the scene.
+
+The next site is the white PYPL popularity index. As you can see C++ is currently ranked sixth.
+
+Next we'll look at the IEEE spectrum rankings. On IEEE spectrum, C++ is ranked number four. The
+
+redmonk ranking has C++ at number six.
+
+And finally we'll take a look at the ZDNet rankings.
+
+They combine popular indexes and create an ensemble ranking which shows C++ at number four.
+
+They also provide an analysis of the data
+
+that's a good read.
+
+Let's return to the slides. As you can see from these sites.
+
+C++ is still a very popular language among software developers and the ranking is consistently high.
+
+If you go to GitHub you'll see that there is a huge number of active C++ repositories. And C++ is also
+
+extremely active on stack overflow.
+
+Popularity is important but C++ is also a relevant language.
+
+There are many many leading software titles written entirely or partly in C++.
+
+These include the Windows, Linux, and MacOSX operating systems.
+
+Many of the Adobe products such as Photoshop and Illustrator.
+
+The MySQL and MongoDB database engines and many many more. Leading tech companies use C++ for many
+
+of their products and internal research and development.
+
+These include Amazon, Apple, Microsoft, PayPal, Google, Facebook, Oracle and more.
+
+Finally, the types of projects that C++ is being used on are pretty cool.
+
+In many cases these are the engines that drive many popular frameworks.
+
+For example engines for virtual reality, the Unreal game engine, machine learning, network and telecom
+
+and more.
+
+There are many reasons why C++ is so popular and relevant but the main reason is because it's so powerful.
+
+What do I mean by powerful?
+
+C++ is super fast.
+
+It's a general purpose programming language that supports both procedural and object oriented programming
+
+making it very flexible.
+
+It scales easily and it can also be portable. C++ can do many things in other languages just can't.
+
+That's why nearly every major language has a way to interface with the code written in C++.
+
+With all this power and flexibility comes complexity. There's no question that C++ is one of the most
+
+complex programming languages out there.
+
+But learning the basics is pretty easy and that's what this course is all about.
+
+Finally, you probably heard that C++ programmer's command higher salaries.
+
+This is true! You may have even heard the phrase C++ = Salary++. Career opportunities
+
+are out there for C++ programmers.
+
+I've consulted for many years with major US corporations on the hiring of software developers.
+
+This includes full stack developers, Java developers, iOS and Android developers and C++ developers. Having
+
+C++ skills on your resume is often like a badge of honor among software developers and many times it
+
+will get you that job interview.
+
+Why?
+
+Because C++ programmers have a skill set that sets them apart from many other programmers.
+
+One final thought. Since so many programming languages are influenced by C++, learning new languages is
+
+often easier since you already have solid foundation in a root programming language like C++.
+
+As you can see you've made a good choice in learning C++. In the next video we'll briefly look at the
+
+evolution of C++ and the C++ standard.

@@ -1,0 +1,63 @@
+In this video we'll take a brief look at the history of C++ based on some major language milestones.
+
+In the early 1970s Dennis Ritchie created the C programming language at Bell Labs.
+
+The development of C was closely tied to the development of the Unix operating system, In 1979,
+
+Bjarne Stroustrup started working on what became C++.
+
+He initially called it C with classes.
+
+His idea was to add to C object-oriented features that he knew from a language called Simula.
+
+In 1983, the name was changed to C++ and the first commercial release was in 1989. In 1998,
+
+The C++ standards committee published the first C++ standard informally known as C++ 98.
+
+Multiple issues with C++ 98 were addressed and the C++ 03 standard was released. Then in mid-2011 the
+
+C++ 11 standard was released and then after that C++ 14 and C ++ 17. As you can see C++
+
+has been around for quite some time.
+
+Notice that I've bolded and italicized the last three standards.
+
+These standards are sort of a renaissance for C++ that changed the language going forward.
+
+These changes are what modern C++ is all about. Generally C++
+
+that's based on the language as defined before the C++ 11 standard is considered classical C++ and C++
+
+based on C++ 11 and forward is considered Modern C++.
+
+That's fine but what does that mean.
+
+Well, modern C++ is a way of saying that it's C++ as defined today. With new ways of managing objects
+
+and memory, lambdas, smart shared pointers, threading and more.
+
+These terms may not mean anything to you yet, but modern C++ feels like a new programming language when
+
+compared to classical C++.
+
+In fact, Bjarne Stroustrup described modern C++ as a new language, one with modern abstractions for ease
+
+of use and power. Along with the language features themselves, modern C++ is also about best practices
+
+and core guidelines and this course will be using modern C++. As we go through the course.
+
+I'll sometimes mention that this feature was introduced in C++ 11 or C++ 14 and so forth.
+
+I'll do that for a few reasons, but the most important is that you know where to look for this feature
+
+as your C++ studies continue after you've finished this course.
+
+I'll also show you best practices and gotchas that you should be aware of.
+
+If you're new to programming you may be wondering how all this works.
+
+After all, it sometimes seems like magic.
+
+How can we get a computer to do what we want it to do using a programming language.
+
+Let's see in the next video.
