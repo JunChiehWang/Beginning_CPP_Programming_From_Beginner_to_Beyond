@@ -1,0 +1,27 @@
+In this section of the Course will learn about variables and constants.
+
+It's virtually impossible to write a C++ program without using variables.
+
+Variables are a fundamental concept in programming languages.
+
+First we're learned variables are in how to declare them so we can use them.
+
+There are rules for how we name our variables and there are also styled issues to discuss as we go along.
+
+Then we'll go over some of the primitive types in C++ such as integers floating point numbers booleans
+
+and characters.
+
+We'll also learn how to determine how much storage is allocated to variables by using the size of operator.
+
+Then we'll add about constants what they are and what they're used and why they're so important to keeping
+
+our code correct and modifiable.
+
+We learn how to declare and use constants understand literals and constant expressions.
+
+This section is very straightforward and easy to understand.
+
+However the concepts you'll learn in this section serve as fundamental building blocks in C++ programming
+
+since nearly every program you write will have variables and constants get started.

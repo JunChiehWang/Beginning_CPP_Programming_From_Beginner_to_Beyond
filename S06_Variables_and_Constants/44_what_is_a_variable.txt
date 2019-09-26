@@ -1,0 +1,83 @@
+In this video we'll learn what variables are from a conceptual perspective.
+
+This will allow you to better understand how to use variables in your programs.
+
+I'm assuming in this course that everyone is familiar with the basic architecture of a typical computer
+
+system that is memory a CPQ and a bus that allows the movement of data between the CPQ in memory random
+
+access memory or RAM is a contiguous block of storage used by the computer to store information.
+
+This information can include computer instructions as well as data.
+
+RAM can be thought of as having memory cells where each cell has an associated location.
+
+If we had to program using the specific memory locations it wouldn't be a lot of fun and we'd likely
+
+have a lot of programmer errors.
+
+Imagine saying something like move 21:2 memory location 1002 in many very low level languages.
+
+This is sometimes what we do.
+
+However most programming languages allow you to associate a name with a memory location.
+
+Let's see the same example using a variable.
+
+In this example you can see that the memory location 1002 has been associated with the name age in computing
+
+This is called the binding and we can move 21 to age.
+
+This allows us not to have to worry about what exact memory location age is associated with.
+
+If we run the program again age will likely be associated with a different memory address and that's
+
+ok since we never knew about it in the first place.
+
+Our code will still work.
+
+Also thinking of names that makes sense to us makes writing and reading programs much easier.
+
+That's the basic idea behind names and variables.
+
+Of course since age is a variable.
+
+That means that its contents can vary.
+
+So if we turn 22 years old we can change the value of age from 21 to 22.
+
+So to recap a variable is an abstraction for a memory location.
+
+We use abstractions all the time in programming to make it easier for us to deal with complexity variables
+
+allow us to use a meaningful name to represent a value.
+
+It's important to understand that variables have two main properties first or type.
+
+The compiler needs to know what types of values are legal to store in age in the first code snippet
+
+on the left which tell the compiler to store Twenty-One in age but we never told the compiler what is
+
+valid to store an age.
+
+This will produce a compiler error telling us that age has been declared in the code snippet on the
+
+right.
+
+We first declare age to be an integer.
+
+Now the compiler knows that only integers are allowed to be stored in h.
+
+This is called static typing because the compiler is enforcing these rules.
+
+When the program is compiled rather than when the program is executing.
+
+So remember variables must be declared before you use them in C++ their value or contents may change
+
+as the program executes the next video will learn how to declare and initialize variables so they're
+
+ready to use in our programs.
+
+Let's go there next.
+
+

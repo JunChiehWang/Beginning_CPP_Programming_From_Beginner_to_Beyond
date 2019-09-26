@@ -1,0 +1,93 @@
+In our example programs we've declared are variables within the curly braces of the main function these
+
+variables are called local variables because their scope or visibility is limited to the statements
+
+in the main function that follow the declaration of the variable.
+
+This is generally what you want to do.
+
+However sometimes you see variables declared outside of any function.
+
+These variables are called global variables and they can be accessed from any part of your program.
+
+Unlike local variables global variables are automatically initialized to 0.
+
+We'll talk more about scope and visibility as the course progresses.
+
+However I wanted to introduce you to this concept here since there is a lot of code out there aimed
+
+at getting C++ programmers that uses global variables in their examples.
+
+Global variables have their place but they also come with some potential problems.
+
+Since global variables could be accessed by any part of the program this means that can potentially
+
+be changed from any part of the program.
+
+So if you've got a program that's thousands of lines of code this can make finding errors and debugging
+
+more difficult.
+
+Let me show you the example of using global variables in case you see code like this out there as you
+
+study C++.
+
+I'm in the code like ID and you can see that I've declared a variable called age and age is declared
+
+right here and it's within the scope of main.
+
+What that means is that this is a local variable.
+
+In other words it's local to this function so I can use age within this function.
+
+So for example here I'm using age and the compiler is going to say OK which age are we talking about.
+
+And is going to find the age right here so if I run this it will replace age with 18.
+
+This is the way we're going to program in this course.
+
+However you may see code out there that looks a little bit different.
+
+Let me show you how that works.
+
+You may see code out there where this is not declared inside of main.
+
+Instead it's declared outside of main.
+
+This makes age a global variable which means that it can be accessed from anywhere in the program.
+
+So now what happens when the compiler sees age here.
+
+First it looks locally to see if it has a declaration of age.
+
+In this case it does not.
+
+Then it looks globally to see if H has been declared at the global level.
+
+It has it finds it right here and now it prints out a teen.
+
+OK so that's an example of a global variable.
+
+It's the concept again is pretty straightforward and it's possible to have both global variables and
+
+local variables so I could do something like this.
+
+I could say it age is 16 and notice that now I have two variables named age.
+
+I've got one that's local and one that's global.
+
+When the compiler sees the use of age in the output statement first it looks locally.
+
+It looks right here it finds this age and it's going to use 16 here.
+
+It will not use this one so this one shadows the outer global variable.
+
+That's really all there is to global variables.
+
+Lots of times you'll see code as I mentioned where you won't see this here at all and everything is
+
+global.
+
+They're OK for teaching purposes but it's really not a good practice to start using global variables
+
+all of your code.

@@ -1,0 +1,425 @@
+It this video will learn how to declare and initialize variables.
+
+Then we'll head over to code like and declare and initialize some variables in life code.
+
+The syntax for a variable declaration in C++ is very simple.
+
+First you tell the compiler what the type of the variable is.
+
+Then you tell the compiler what the name of the variable is.
+
+And finally you terminate the Declaration with a semi-colon later in this section.
+
+I'll go over some of the basic C++ types but here are a few is a preview.
+
+Intice an integer or a whole number.
+
+A double is a floating point number and a string is a sequence of characters that you would see in my
+
+name.
+
+Frank also noticed that we can declare variables of non-C plus plus built in types.
+
+One of the very powerful features of C++ is object oriented programming which allows us to create our
+
+own types so we can create variables that represent an account or a person using the same syntax as
+
+we used for integers and doubles.
+
+This is great since it makes our program so much more readable in the next slide.
+
+We'll talk about some of the rules that you must follow when you named variables.
+
+Remember in C++ we must declare our variables before we use them.
+
+So let's take a look at some of the variable naming rules the rules for naming C++ variables are very
+
+very simple C++.
+
+Variable names can contain letters numbers and underscores.
+
+However the first letter of the name cannot be a number.
+
+It can be an underscore or letter as discussed previously C++.
+
+Keywords are also reserve words so you can't use those names.
+
+You can't use it you can't use double as your own names.
+
+Also you cannot declare a variable name that's already been declared in the same scope.
+
+So if you declared x to be an integer you can't do that again.
+
+Remember C++ is case sensitive so the name age in uppercase is considered different from the name age
+
+in lowercase.
+
+Let's take a look at a few examples.
+
+In the left column of the table you can see some legal C plus plus variable names.
+
+Since C++ is case sensitive age beginning with an uppercase A is considered a different name from age
+
+beginning with a lower case.
+
+We can begin our variable names with underscores or letters and we can also have underscores and numbers
+
+within the variable name.
+
+The right column has some examples of a legal variable names.
+
+The first example is lowercase and this is not allowed since lowercase.
+
+It is a reserve word in C++.
+
+We cannot have special characters like the dollar sign or mathematical characters but the plus sign.
+
+Also notice that variable names cannot have spaces in them.
+
+Now let's talk about C out see out is a little different.
+
+C out is a legal name because it conforms to the variable naming rules.
+
+However if you include IO stream in your program then C out it's already defined somewhere else it's
+
+defined by the standard library so it no longer becomes a valid name since it's been defined somewhere
+
+you cannot redeclare it yourself.
+
+So the rules that the C++ compiler enforces for variable names are pretty simple as you can see.
+
+Now let's take a look at variable naming style and best practices.
+
+The most important thing you can do is to be consistent with whatever naming convention you choose to
+
+use.
+
+There are many style guides and naming conventions out there.
+
+In many cases you'll be working for a company and they have a specific style of naming convention that
+
+you have to use.
+
+This has nothing to do with the C++ compiler but it's still very important.
+
+For example Google has a published C++ style guide as do many other companies one of the first decisions
+
+you make with regard to variable naming is whether you want to use camel case or underscores two separate
+
+words.
+
+Both styles make the text more readable by avoiding long streams of lower case letters which are harder
+
+to read camel case.
+
+Capitalize the first letter of every word in your name and does it use underscores the other style is
+
+to use underscores to separate words either style is fine.
+
+The important thing is to be consistent in this course.
+
+I'll use the underscore style please use meaningful names don't use obscure abbreviations for example
+
+instead of using the variable name.
+
+M o e to represent the mass of the earth.
+
+Just use the real name mass of earth with underscores or camel case.
+
+Either way.
+
+Sure it's a little bit more typing but your program becomes so much more readable and maintainable.
+
+Never use variable names before initializing them uninitialized variables can cause all kinds of unexpected
+
+results in C++.
+
+I'll show you an example of this when we head over to the ID.
+
+Finally it's best practice to declare your variables as close to when you need them as possible.
+
+In other words if your program uses 10 variables don't declare all 10 of them at the top of the file
+
+and then use them later.
+
+Instead declare them right before you use them.
+
+There are many many more programming best practices and we'll discuss them throughout the course.
+
+So let's talk about initializing variables.
+
+Notice the first line of code in this example.
+
+It age this is a variable declaration that's uninitialized.
+
+You have no idea what the value of h is.
+
+And that's the problem.
+
+If you try to display age or perhaps use in some calculation you'll run into problems because it was
+
+never initialized so its value could be anything uninitialized variables or a very common source of
+
+programming errors.
+
+C++ provides three ways to initialize variables.
+
+All three are equivalent and they're related to the way that C++ has evolved over the years.
+
+The first is to use an assignment operator.
+
+That's the equal sign.
+
+This will assign 21 to age right when it's created so it will be immediately initialized.
+
+The second uses parentheses around the value in this case 21.
+
+This is a constructor style initialization.
+
+We'll talk about constructors when we talk about object oriented programming.
+
+The final initialization statement is the C++ 11 initialization syntax.
+
+This style of initialization is consistent across different types in C++ and has some benefits that
+
+we'll discuss later in this course.
+
+I encourage you to use this style of initialization.
+
+Now let's head over to code and see some of these examples in life code.
+
+Ok so now I'm in code light and let's write a real simple program that calculates the area of a room
+
+and square feet.
+
+So the idea is to use or for the length of the room and the width of the room and then we'll multiply
+
+those two together to calculate the square footage of the room the area of the room.
+
+OK.
+
+Now obviously we need to Varians But before we do that let me show you one of the issues with uninitialized
+
+variables as we talked about in the previous slides.
+
+Let's create a real simple variable here called age just like we did before and I'm not going to initialize
+
+it on purpose.
+
+And what I want to do is just output that value to see out.
+
+Let's build this and I'll execute it.
+
+And you can see the printing out here you can see there is h I'm outputting age and that's the value
+
+that's in H right now not what we expected for sure.
+
+The problem is that we never initialize the variable age so the value that's in that variable could
+
+be anything and in this case it is anything.
+
+OK so let me show you how that works.
+
+So let's go back to our conceptual model.
+
+Here's our memory.
+
+I've got a memory location let's say that that's maybe location 2000 that could be anything.
+
+And age is associated with that location now in there there are a series of zeros and ones that's how
+
+we store values in computers whatever value happens to be in there is the value that will be displayed
+
+on the console.
+
+Remember when I output age the compiler is going to grab whatever this value is in here and replace
+
+it right in there.
+
+In this case we've got that we've got that really strange very large number.
+
+The idea is we really want to initialize this guy to something even zero before we use it.
+
+So you can see here I'm using it before I initialize it.
+
+That's not a good idea.
+
+OK so let me clear this.
+
+And if we now initialize this to let's say 0 or 21 or whatever we like I use 21 here now a build and
+
+run
+
+you can see now it's printing out 21.
+
+OK so that gives you an idea and also when we did not initialize it the compiler did give us a warning
+
+just right click here and compile notice the warning that the compiler is giving be done here it's saying
+
+warning.
+
+Age is used uninitialized in this function.
+
+That's occlude don't ignore those warnings.
+
+The computer is telling you be careful you're using something that you never initialized.
+
+OK.
+
+So that gives you an idea of what's going on with uninitialized variables.
+
+All right so let me race this and let's write our program.
+
+So what we need here is we need to ask the user for the length of the room and the width of the room.
+
+We'll grab those two values from C in them or multiply them together and we'll display the square footage
+
+of the room.
+
+Really really simple program but let's get started.
+
+So what we'll do is we'll say see out and remember I don't have to use standard scope resolution operator
+
+here because I'm using namespace.
+
+So I say enter the width of the room and assume this is in feet.
+
+Or put a semi-colon at the end of that line to terminate it.
+
+Now we need to read something into a variable right.
+
+So we need to do in into something.
+
+What we need to declare that variable Let's declare it right appear.
+
+We could call it with and it's going to be in integers that say Remember we've got to say the type followed
+
+by the name of the variable followed by a semi-colon.
+
+This is perfectly fine with is probably not a great name something like room with is better provides
+
+much more information to whoever's going to come later and modify this code.
+
+So now we've got the room with and I'm going to enter the room with and I'm going to read it into room
+
+with.
+
+Right now we've got our variable.
+
+Now notice a couple of things.
+
+One is we never initialized room with in this case it's probably OK because I'm going to read something
+
+into it before I use it.
+
+But best practice is let's initialize that.
+
+We'll set it to zero.
+
+Now we need another variable right.
+
+We need the length of the room so I'll just cut and paste this to save a little time here and I'm going
+
+to say and the length of the room and we're going to read that into another variable called Room length
+
+and we will initialize that to zero.
+
+In this case 0 is fine you could initialize it to anything that makes sense in your application.
+
+All right so now I will read that went into room length so I'll just change this variable name right
+
+here.
+
+So look at what's going on here.
+
+We've initialized two variables.
+
+Room with en route length.
+
+They're both integers.
+
+Again notice the syntax the type name as integer followed by the name of the variable.
+
+And in this case where initializing it.
+
+I'm prompting the use of trencher the width of the room and I'm reading that integer into room with
+
+then I'm prompting the user to enter the length of the room and I'm reading that integer into room length.
+
+All I have left to do now is just say see out and I'll say the area of the room is.
+
+And we'll do the calculation here right in line.
+
+It's going to be room with times room length.
+
+And we may as well say square feet.
+
+That's it.
+
+We'll complete this with an end line
+
+and clean a little bit of space up just to make it a little bit more readable.
+
+That's it for returns zero at the end.
+
+Now let's build and run this.
+
+We get a clean compile and it says enter the width of the room that said the with is 10 feet and for
+
+the length of the room let's say it's five feet.
+
+Always remember we know what to expect.
+
+Expect a 50 percenter.
+
+It says the area of the room is 50 square feet.
+
+So we get back what we expected.
+
+Always think about what you're going to get back before you do this otherwise you may have errors that
+
+you didn't think about or press any key to continue.
+
+That's it.
+
+That's a pretty straightforward solution.
+
+You can see how we use variables how we can initialize variables how you can read into variables.
+
+Now a best practice would be rather than declare these two variables.
+
+Up here what we could do is we could declare them closer to where we're using them.
+
+So in this case this is the first use of room with.
+
+So I could modify this by taking this line here and I'll just cut it and I'll paste it right in here
+
+and I'll do the same with room length.
+
+I'll cut it from here and I'll paste it right in here.
+
+And I just cleaned up the code a little bit get rid of some of this extra white space.
+
+Now now you can see what's happening.
+
+I'm prompting the user declaring that variable I'm reading into it prompting the user for the length
+
+I'm declaring the variable I'm reading into.
+
+So this is basically what we talked about in the previous slides.
+
+You could see this is a really simple example.
+
+Try it out.
+
+Play around with it.
+
+There'll be a challenge exercise at the end of this section that's going to extend this a little bit.
+
+So that's the end of this video.
+
+This shows you how to initialize variables use the variables in the next video.
+
+We'll talk a little bit about scope and global variables.
+
+
