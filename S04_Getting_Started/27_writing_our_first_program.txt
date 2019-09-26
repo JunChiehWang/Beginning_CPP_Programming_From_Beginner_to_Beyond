@@ -1,0 +1,259 @@
+This video.
+
+All right.
+
+Our very first program.
+
+So what we want to do is we want to create a project so again I'm in this section for workspace and
+
+I'm going to right click on there and say new new project I'm going to select my default template again
+
+and it's going to call this first program.
+
+And I select next and finish.
+
+Now I noticed that project 1 is the active project so I want to be sure that first program is the active
+
+project so I can just double click on it and I can open up that C++ file.
+
+That's it.
+
+So this is a source code for the first program.
+
+Now what I want to do is I want to be racists and I want you to really just type it in that way you
+
+get used to typing these things in at the beginning and that's probably the best way to do it.
+
+Just to follow along.
+
+So let me tell you what this program is about.
+
+This program is going to ask the user to enter their favorite number a number between 1 and 100 and
+
+then it's going to display.
+
+Wow that's amazing.
+
+That's my favorite number two.
+
+That's it.
+
+OK.
+
+So let's start first thing we need to do is we need to do pound include of IO stream.
+
+Now as I type I going to press.
+
+Oh then when I press S.
+
+You could see that the code completion is helping me out is trying to figure out what I want and it's
+
+giving me a guess as to what I want and I want those dreams.
+
+I'm just going to select it and close it.
+
+There is no semi-colon here on this statement.
+
+These pounde directives and will talk more about what these preprocessor directives are.
+
+In Section 5.
+
+But they don't take semi-colons at the end.
+
+So I'm going to press enter in that we want to create our main function.
+
+Remember the main function is the main entry point.
+
+This is the place where execution begins.
+
+So we're going to say int main left Purab right Pirenne and then we're going to put a left curly and
+
+the ID will terminate that left curly with the right Curly.
+
+We'll talk more about style as we go.
+
+But some programmers like to line up their braces like this.
+
+Others like to line them up like that.
+
+Right now it doesn't matter.
+
+Just line them up like this.
+
+All right.
+
+So what do we need to do we need to prompt the user to enter their favorite number.
+
+So how do I do that.
+
+I do that with a C statement.
+
+So I'm going to say s t d to Colon's then C out and we'll do the insertion operator which inserts something
+
+into that stream remember C out is typically tied to your consul your terminal.
+
+So the user can type things in and we're going to display enter your favorite number between let's say
+
+100 and I'll just put a colon there.
+
+Now you'll notice that you've got a quote mark and then a terminating quote mark.
+
+This is called a string.
+
+This is called the string literal.
+
+This will be displayed exactly as is.
+
+Now this is a statement.
+
+So all statements and the semi-colon remember main returns an integer and that integer is zero.
+
+If everything is good so I'm going to return 0.
+
+Right so if I run this program now it's all of it's going to say is enter your favorite number between
+
+1 to 100 that say it's not going to grab the number from anywhere.
+
+It's not going to display anything else.
+
+We need to somehow read what the user types in on the keyboard.
+
+So just like C out writes to the console C in reads from the console.
+
+So we're going to do here is we're going to say as t d c m and now we're going to use the extraction
+
+operator because we're able to extract information and it's the same as the insertion operator except
+
+going the other way.
+
+But now what we're saying is we want to grab whatever the user types in and we want to store it somewhere.
+
+Where do we store that.
+
+Well this is where variables come in.
+
+And what do a lot of talking about variables in section 6.
+
+I'll talk about how do you declare them how you initialize them the rules for naming them and so forth
+
+but declaring variables is very strict for so let's do that here.
+
+What we do is we tell the compiler remember the compiler is really dumb it's not guessing.
+
+It does exactly what we tell it to do.
+
+So what I'm going to do is I'm going to tell it that I want a variable name and that name is called
+
+favorite number.
+
+That's where I want you to store what the user typed in.
+
+And you also have to tell it what kind of data that is.
+
+Is it a string is it some big huge structure.
+
+No in this case it's just a whole number and integer.
+
+So we're going to say int space favorite underscore number semi-colon.
+
+That's it.
+
+That's a variable declaration.
+
+You've just told the compiler that this variable name right here favorite number is an integer.
+
+Now I can read information into that so I can say as T.T. to Colon's.
+
+And again yesterday We'll explain later on.
+
+It's a namespace but we definitely need it here as TDC in into favorite number.
+
+Now again I'm going to type f a V and the code completion we'll try to figure out what I want.
+
+So it's going to use favorite number record Precentor semi-colon on the end.
+
+So notice what we've done so far we've included IO stream.
+
+Why did we include IO stream because we need the input output libraries.
+
+We can't do IO without it.
+
+So we're including it now the compiler understands about input and output it understands C out and C
+
+in they are defined in here great.
+
+So I'm out putting end to your favorite number between 1 and 100.
+
+Now the user is going to type something at the keyboard and whatever they type we're going to store
+
+it into favorite number.
+
+This guy right there right now we just need to say see out and I can say something like amazing
+
+That's my favorite number two.
+
+Here we can do and line.
+
+So we flush the buffers and print out to the next line.
+
+That's it.
+
+So let's go through this again one more time.
+
+We've got a main function.
+
+This is the entry point.
+
+This is where execution begins.
+
+All C++ programs must have a main function.
+
+All C++ programs must only have exactly one main function.
+
+So when the program begins to execute this is where it starts.
+
+Here I've defined a variable called favorite number and it's an integer.
+
+It can only hold whole numbers.
+
+I'm outputting to the console and to your favorite number between 1 and 100 the user is not going to
+
+put something into the console number and I'm going to read it and store it into that location into
+
+that variable into that box then I'm going to say seek out.
+
+Amazing That's my favorite number two and I'm just going to print and line at the end of flesh out the
+
+buffers and move the cursor over to the next line.
+
+Finally I return 0.
+
+Everything's good.
+
+Now next thing to do is to build this program.
+
+Programs are not going to run by itself.
+
+We need to compile it.
+
+We need to link it and then we need to execute it.
+
+That whole process of compiling and linking is called building.
+
+Now you'll notice that when you right click on that source file right here made CPV you see it says
+
+compile.
+
+Now if I press that it's going to compile our program and you can see here zero errors zero warnings.
+
+We'll talk about what happens if you get errors and warnings a little bit later.
+
+Also notice that we're using the C++ 14 standard which is what we want to use.
+
+That's what we did when we set up that default template if you recall what we need to do next is to
+
+build the project by compiling and linking.
+
+That's going to create the eaks file on Windows or the executive files on the Linux and Mac and we'll
+
+do that in the next video.

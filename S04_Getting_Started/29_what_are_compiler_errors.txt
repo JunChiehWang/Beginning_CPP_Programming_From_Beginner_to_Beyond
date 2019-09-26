@@ -1,0 +1,307 @@
+This video what talk about compiler errors and why they can happen.
+
+Programming languages have very specific rules about how to write code so that the compiler can translate
+
+that code to machine code.
+
+These rules involve both structure and meaning.
+
+For example C++ says that all variable declarations must end with a semi-colon.
+
+If we don't add the semi-colon at the end or we put it in the middle instead then we have a syntax error.
+
+The compiler is complaining that the structure is not correct.
+
+In the first example we didn't terminate the string error with a trailing quote character in the second
+
+example we left out the semi-colon at the end of the return 0 statement.
+
+Both of these are syntax errors or something wrong with the structure of the code.
+
+Now these syntax errors are pretty easy to fix and the compiler errors usually give us pretty good information
+
+about what's going on.
+
+Semantic errors are a little different in this case the syntax or structure is correct but the meaning
+
+of the code doesn't make sense to the compiler.
+
+Suppose we want to add two variables A and B.
+
+If the variables are both integers then Miss makes perfect sense.
+
+But what happens if one of the variables is a person and the other variable is an integer.
+
+Does it make sense to add a person and an integer.
+
+Probably not in this case the compiler generates an error.
+
+What do we think of compiler errors.
+
+We really think about both of these classes of errors.
+
+Remember compilers are very very picky.
+
+Why.
+
+Because their job is to translate your code that you wrote into machine code that functions as you said.
+
+If the compiler has any problem understanding the meaning of your code then it won't guess it will generate
+
+an error.
+
+Let's head over to code like and see some of these errors.
+
+So Dhami code like and I created a project called compiler errors and I created it right from our template.
+
+So it's just a simple hello world program it's just printing out Hello world.
+
+Now what we want to do is introduce it some compiler errors into this program so you can see what they're
+
+like.
+
+Now let's do some.
+
+First let's do some syntax errors.
+
+Simple stuff like.
+
+OK we forgot this quote right here and I can save and compile and you'll see that I'll get an error
+
+that says missing terminating character and if you click on here it takes you here.
+
+Now in this case we've got another error.
+
+This is expected.
+
+Primary expression before return.
+
+This happens sometimes the compiler gets confused.
+
+It sees that first error and that is trying to figure out what's going on and it goes to the next line
+
+and it says I don't know where I'm at and it creates an error.
+
+Many times when you fix that first error many of the subsequent errors go away.
+
+So let's put that quote back in.
+
+We'll save and let's recompile.
+
+Now we've got a clean compile so that would be my my advice when you're first learning.
+
+Start out at the beginning get that first syntax error fixed recompile and very likely a whole bunch
+
+of others just went away.
+
+OK so that's an example of a syntax error.
+
+The compiler is expecting a string and it knows it's got a rule that says all strings have to have a
+
+quote character.
+
+A bunch of characters and then a quote character a dn to terminate it.
+
+It didn't see that it didn't like that and there's the syntax error.
+
+Really easy to fix.
+
+Other times you may have things that are misspelled.
+
+So for example let's say I spelt and L here raw I put an extra L in there.
+
+Now when I compile it saying error and L L is not a member of the standard namespace so it knows that
+
+C is and L is but and L-L is not.
+
+So in this case this error message kind of leads you to the place where the problem is just.
+
+Oh of course I have a typo so you can fix that as well.
+
+Another example of a compiler error syntax error is forgetting the semi-colon here let's say that the
+
+returns 0.
+
+All statements have to end with a semi-colon so we just forgot it.
+
+That violates one of the rules that the compiler knows about and it doesn't like it.
+
+So what we'll do here again will compile and you could see it says error.
+
+Expecting a semi-colon before that.
+
+So there's the curly and it's expecting a semi-colon.
+
+Sure is because of that.
+
+OK now suppose we just say return semi-colon.
+
+Now this is problematic because we've told the compiler in our code that main returns an integer.
+
+But here we're just returning when not returning an integer.
+
+So let's see what it says.
+
+Let's compile and it says error return statement with no value in function returning integer.
+
+Pretty good statement right.
+
+It's telling you I've got a function.
+
+You told me it's returning an integer but you're not returning any value now.
+
+So I can return 0.
+
+OK.
+
+So let me show you an example of a semantic error something like this.
+
+This is perfectly valid.
+
+I can return an integer I can return a string I can return a lot of things.
+
+The problem is that doesn't make sense to the compiler because you've told it here that you're returning
+
+an integer but now you're returning a string.
+
+So let's run that and see what you get.
+
+Here you go error.
+
+Invalid conversion from a character star which is a string to an integer so the compiler is trying to
+
+figure out how do I convert that Joe to an integer IDE or no I don't have.
+
+I have no idea.
+
+I'll just throw the air.
+
+And that's up to you now to fix it.
+
+So in this case again I'll fix it to return 0.
+
+Now let's do another one let's get rid of that first Curly.
+
+This is a real interesting compiler and I'll compile it and then we'll talk about it.
+
+Let's compile and you can see that I've got three errors from that.
+
+What's happening is the compiler is totally lost here.
+
+The policy.
+
+Int main.
+
+And then it's expecting a Kerley and it's processing more and more stuff kind of hoping to see that
+
+left Karlee eventually and it's not seeing it so it's seeing other things and it's throwing errors it's
+
+saying I don't know what's going on before the SCD.
+
+I've got an unexpected unqualified something before return.
+
+I'm lost.
+
+OK.
+
+So when you see these kinds of errors I mean this is a tiny little program and I've got three compiler
+
+errors.
+
+Sometimes you'll compile something you know 20 40 errors and many times when you fix that first one
+
+most of them will go away.
+
+So in this case all it's missing is that that curly so I'll compile and we should have a clean compiler.
+
+Now we do sometimes add extra Curley's at the end which again is illegal.
+
+So I'll compile
+
+and there it is an error.
+
+I'm expecting something before that token doesn't know what you're doing.
+
+So we'll get rid of that.
+
+OK so let's do one more semantic air.
+
+Let's say that we've got hello world in here and I want to apprentice around it and I'm going to divide
+
+it by 125 and I put a print this year on that.
+
+Just simple math.
+
+OK.
+
+That's pretty weird.
+
+I've got something here divided by something here that's valid.
+
+I can divide two things.
+
+The division operator which is that Slash is a binary operator works on two things right.
+
+So four divided by two is two eight divided by two is four and so forth.
+
+But in this case the syntax is correct but the compiler is going to say I have no idea what you want
+
+me to do here.
+
+You're telling me to divide hello world by 125.
+
+I don't even know what that means.
+
+So let's compile that and the error is something like Error invalid operands.
+
+So the division operator the slash operator has got invalid operands is two operands right.
+
+One is a string.
+
+The other one is an integer and it's say I don't know what to do here.
+
+So these are some simple examples of compiler errors.
+
+Don't be afraid of the compiler errors.
+
+You're going to get them.
+
+Don't let them frustrate you if you have any that you can't figure out.
+
+Please post to the forums and I'll be glad to help you out.
+
+It's just something that we have to learn to work with because we're going to get compiler errors.
+
+We all make mistakes.
+
+Sometimes we're prototyping with trying new things and forgetting getting errors sometimes are just
+
+silly mistakes and they're hard to find sometimes.
+
+Sometimes you'll be looking at your own code.
+
+I can tell you this this little error here with the the and double L.
+
+This is a good error message that you got.
+
+But if you're looking at this code and you've been coding for a few hours I don't think you'll see those
+
+too.
+
+Most likely they look like one L..
+
+So you know this is the kind of thing that programming is about one of the important things is getting
+
+rid of all these compiler errors.
+
+Once we get rid of the compiler errors then we can test our code and we could look for logic errors
+
+and so forth.
+
+OK so that wraps up this video in the next video.
+
+We'll talk a little bit about compiler warnings.
+
+They're a little different from yours because they're not true errors but they're telling you something
+
+that you should look out for.

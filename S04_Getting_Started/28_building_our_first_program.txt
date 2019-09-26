@@ -1,0 +1,375 @@
+This video we'll take our first program which we've compiled to show that it's got no errors and we'll
+
+build it.
+
+Now if you recall building means compiling linking together with extra libraries and external files
+
+if we need to.
+
+And creating an executor file that's what building is all about.
+
+There are several steps involved with building the first one obviously is compiling.
+
+If we can't get a clean compile then there's no way we're going to build a system.
+
+So we want to be able to compile and then link to create to each file.
+
+Finally we can run our executable.
+
+So in this case you notice here's the source code and there's a lot of space in here.
+
+Normally we don't have all the space in here.
+
+I just put it in because it makes it a little bit easier for you to read when you're first learning.
+
+So let's just keep it like that.
+
+This program is exactly the same as it was before we're entering.
+
+We're asking the user to enter their favorite number between 1 and 100.
+
+We're getting that number and storing it in a variable called favorite number.
+
+And then we're just saying amazing That's my favorite number two but it's really really simple program.
+
+And we've already compiled it.
+
+There's a couple of ways to compile.
+
+One is you can come to the source file itself right click compile or you can come up to build compile
+
+current file and that's only taking care of the compilation.
+
+There's also a lot of things you could do at the project level right here so if I select a project and
+
+right click you can see that it says build rebuild clean stop build and so forth.
+
+Let's talk about clean first.
+
+Now think about this.
+
+When I compile a C++ program I'm converting the source code.
+
+This source code you see here to an object format right a machine language or a binary format that's
+
+going to create a dot o file or a dot RBJ file as we mentioned in previous lectures.
+
+That's the purpose of compiling.
+
+Now as your programs are compiled there you have many of these dot object files.
+
+The clean process removes all those object files and puts your project in a clean state.
+
+In other words source code only no object files.
+
+Now why is this important.
+
+It's important because when you compile your programs and build your programs sometimes you want to
+
+do a clean build.
+
+What that means is I want to start from a position where nothing has been billed as want to clean everything
+
+up.
+
+Now when we're working with a single file like here it's pretty much a moot point because it's just
+
+one file but typically C++ programs are very large and you've got a lot of C++ files.
+
+Each one of them is being compiled to an object format and when you say hey compiler built forming the
+
+compiler is only going to build exactly what it needs to build.
+
+So if it realizes that this source code already has an object file associated with it and the source
+
+code hasn't changed then why bother building it again right.
+
+So it's not going to build it and it does that to be efficient which makes a lot of sense.
+
+But occasionally you want to do a clean that removes all of that stuff.
+
+It removes the X-C that was created and then you want to build again.
+
+So now we're going to get a clean build again.
+
+This is really not an issue here when we've got one C.P. file but if you've got thousands and thousands
+
+and thousands of files there can be a significant difference in the amount of time that it takes to
+
+do that build.
+
+OK so in this case I can come over here to the project.
+
+I could right click and I can say clean and you'll see here that clean is complete.
+
+All it did was remove any object files on the X Files.
+
+Then I can say Build Now when I say build by saying build project here pressing f7 or on Mac whatever
+
+the option command option is work and right click on the project and say build now what's going to happen
+
+here is it's going to go through your project.
+
+Looking at all the C++ files and only build what it needs to build.
+
+OK.
+
+Now in this case it's going to build everything because it's just the one file and I haven't built it
+
+yet but it's going to not build.
+
+What it does it need to build and that's important to understand rebuild is the combination of a clean
+
+and a build.
+
+So when you say hey rebuild the project it's going to do a clean it's going to clean everything out
+
+and then it's going to build it again for the beginning of this course.
+
+All of these are going to be just fine.
+
+You can use rebuilds because we're going to be pretty quick.
+
+Finally once we get a build we can run the project the way we do that is we come up.
+
+Again remember we've got the active project here.
+
+I can come up to build and run.
+
+Now if I do that now we have an option.
+
+We can simply execute the EFC file if there if there is one there or we can choose to build and execute.
+
+I would generally tell you to select build and execute and probably remember my answer.
+
+Don't ask me again would be a pretty good idea because most of the time our files are going to be fairly
+
+small and a build is not going to take any time at all.
+
+So we can build and execute.
+
+So that's how you run.
+
+But say I want to do that now I want to say build and execute and there's my program.
+
+It says enter your favorite number between 1 and 100 that say I type in 24 press center.
+
+It says amazing That's my favorite number two.
+
+Now this time elapsed is how long the program took to run.
+
+This is being displayed in the latest version of Code light prior to this last version you didn't see
+
+that and I think it's Windows the it's being displayed.
+
+I didn't see that display on a Mac.
+
+When you run the taxi filed it's created from the command line you don't see that.
+
+That's just mostly for a flyby so that you can tell as a developer.
+
+You know if there's something wrong and how quick your programs write.
+
+Press any key to continue I'm done.
+
+Now one of the things that I want to show you notice this workspace view which is where I'm at right
+
+now and again I've got three projects here.
+
+Each one has a main Where's the X Files were the object files.
+
+Where is all that stuff that they should be there right.
+
+Absolutely there they should be there they are there.
+
+The Ids generally hide that information from you because you don't need to know about it really.
+
+I mean do you care that there's an object file or an easy file really what you care about is these error
+
+messages and and so forth.
+
+But we have this explorer tab and that will let you see all that.
+
+I want to show you what that looks like.
+
+You can click on the Explorer tab and then you can drag any folder from your operating system from your
+
+file system on to here so I can just right click open folder and I'm going to select from my desktop
+
+C-p examples that section for for do that's where my workspace is selected.
+
+So you can see if I expand this.
+
+You could see a bunch more stuff.
+
+Now I've got a dot code like folder that has things that are related to my favorites and compilation
+
+and refactoring and so forth.
+
+I've also got my three projects first program project one project to.
+
+I've got to make file I've got my workspace file.
+
+But let's look at first program for a second.
+
+Now you can see a little extra stuff going on right before all we saw was main C.P. And now we see all
+
+this other stuff.
+
+These are the files and the configuration files that code light is using behind the scenes.
+
+The ideal workspace here abstracts that out since you don't really need to know all that information
+
+to build your system.
+
+It's building it for you.
+
+But if you really want to see them you can or you can just look right in your file system.
+
+Now if I look in my first program debug folder you'll see that there's my X-C first program doddy you
+
+see it right here and there you can see my dot object files and data files and all kinds of stuff that's
+
+going on.
+
+Now you'll see it first again.
+
+First program debug.
+
+Now what I'm going to do now is I'm going to clean first program and all of this stuff should be removed.
+
+So again I'm going to go to build clean project now if I refreshed this view by right clicking appear
+
+refresh and go back to first program you can see it's all gone the entire debug folder is gone the object
+
+files are gone the files are gone everything's gone.
+
+So now when I rebuild all that will be created again and I noticed that debug folder right.
+
+If I come back to my workspace There's my first program.
+
+Notice that we've got build configurations here and there's a couple.
+
+You've got debug and release.
+
+You can choose either one.
+
+We're going to use Debug through out the entire course because that's what we're doing we're basically
+
+developing right here release is when you want to release the file from two productions for users to
+
+use.
+
+So in this case debug creates that debug folder that you solve that a bit ago.
+
+If we do this in release mode we'll get a release folder as well so we'll have to eat xes.
+
+Now the difference is the debug configuration creates object files that has debugging information in
+
+them.
+
+It's got all those variable names and stuff so later on when we debug our program we can have all that
+
+information available to us and it makes us very very productive and really helps us debug and test
+
+our code.
+
+The release configuration removes all of that stuff and it does more optimizations and it just makes
+
+your Ex-Sea leaner and meaner so you don't need all that debugging information at runtime.
+
+So like I said we're going to use Debug.
+
+You can certainly use this if you like.
+
+If you do use this because you're curious or you want to see what's going on don't modify anything from
+
+in here.
+
+I mean as a matter of fact if I try to open up this makefile you'll see it says auto generated by code
+
+like don't change it or even if you do change it we're going to blow it away anyway.
+
+And so you really don't need any of that.
+
+This is where we're going to be working in the workspace mode.
+
+But I just wanted to show you how that clean really really works.
+
+OK so again let's recap here.
+
+I can select first program right click clean that will remove all my object files in the file.
+
+I can rebuild in which case it will clean and build or I can simply build and that will only build what
+
+needs to be built.
+
+Hopefully that makes sense it's little difference between them but it said you should understand it's
+
+not that big that big a difference.
+
+Now finally we want to run.
+
+We come here to run.
+
+So let's do this one more time build and execute.
+
+And your favorite number my favorite number is 100 does time.
+
+Amazing That's my favorite number too.
+
+That's exactly what our program is supposed to do.
+
+Now you'll notice a couple of things here.
+
+One is we're really not using favorite number are we.
+
+I mean the users typing it in but we're not really saying wow that's a great number 13 that you answer
+
+or 100 that you enter that you'll do that in the challenge exercise in this section.
+
+But right now we were grabbing at we're storing it into that variable but we're not really using it
+
+afterward.
+
+And like I said in the Challenge video you will use it.
+
+So that's it.
+
+That's pretty much the build process the compile process the run process.
+
+It's fairly straightforward if you've got the toolbar you can click on buttons to do this but in this
+
+course I'll come up here and do these things are all just right click here and do what I need to do
+
+here as well.
+
+That's it.
+
+Remember you can also come up to the workspace and right click on the workspace you can build the entire
+
+workspace or clean the entire workspace and create the files for all the projects all in one shot.
+
+OK that's it for that.
+
+Now in the next video what we'll do is we'll talk about compiler errors and compiler warnings and we'll
+
+mess around with this program a little bit and I'll show you some of the common errors and some of the
+
+common warnings that you could get as well as why they happen throughout the course.
+
+We're obviously going to see a lot of compiler errors.
+
+I make it a point that when I teach I'm just coding along with you.
+
+So I hope I make some mistakes so you can see some of the common compiler errors.
+
+I'm not trying to make them intentionally but sometimes you know you forget a semi-colon or you forget
+
+to do this.
+
+This is the wrong type.
+
+So that's important that you see these types of errors happening and you can know how to fix them.
+
+All right so I'll see you in the next video.

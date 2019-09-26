@@ -1,0 +1,19 @@
+  It this video.
+
+Talk about run time errors and why they can happen.
+
+As the name suggests runtime errors or errors that happen when the program is executing these types
+
+of errors can be difficult to predict when we're writing our program.
+
+These areas include divide by zero errors.
+
+File not found errors out of memory errors and many many more.
+
+Some runtime errors can cause your program to crash.
+
+We use exception handling to help us know when runtime errors happen so we can try to recover from them.
+
+We'll see examples of runtime errors later in this course when we work with files will also work with
+
+exception handling toward the end of the course.

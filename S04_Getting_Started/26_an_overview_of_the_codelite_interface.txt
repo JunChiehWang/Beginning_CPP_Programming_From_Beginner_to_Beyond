@@ -1,0 +1,463 @@
+In this video we'll take a look at the main elements of the code light idea or integrated development
+
+environment now integrated development environments are really nice because they allow you to build
+
+and compile and edit and debug and do everything from a common interface but they can be pretty complicated
+
+as well.
+
+Now the code like ID is a fairly simple idea as far as ideas go.
+
+If you use Microsoft Visual Studio or if you use X code and Eclipse and others they're much more complicated
+
+and they've got a lot more bells and whistles but code like is a great idea for C++ especially when
+
+we're learning.
+
+So let me go over some of the main elements here.
+
+When you first start code like you have an interface that looks like this.
+
+This is the main default interface or perspective as it's called in in code like over here on the left
+
+you have the workspace pain which is this little rectangular area right here.
+
+Here we this large area we've got our editing pane.
+
+This is we're going to be editing and typing our source code.
+
+Then we've got an output pane down at the bottom and you can see that each one of these has a lot of
+
+little tabs in there and I'll break that up so you can see it a little better.
+
+So here we've got a workspace tab and explorer tab and so forth.
+
+And I'll go over what those do in just a moment.
+
+Now at the moment there is no workspace at all.
+
+So we need to create a workspace and then we need to add projects to that workspace.
+
+So let's do that let's create a new workspace and we can do it right here.
+
+We like you workspace right on the main menu here.
+
+Or we could go up to workspace new workspace or we could get a file new new workspace you can choose
+
+whichever one you like I'll choose this one right here.
+
+I don't get the workspace name.
+
+In this case I'm going to call it Section 4 because this is a video in Section 4 and that where we can
+
+create our section for projects right within this workspace.
+
+The path for the workspace you need to provide.
+
+I'm going to select my CPE examples folder which is on my desktop.
+
+Select that this will create that workspace within that folder and I'll select OK.
+
+Now you can see that we've got a workspace here called Section 4 and a couple of other things have popped
+
+up here you can see there's a de-bug down and book Atwal that is just a bit.
+
+So at this point we need to create some projects.
+
+Notice that there is nothing to edit here in those window.
+
+It's empty because there are no C++ files ready for editing yet.
+
+So let's create a project.
+
+This is going to be very similar to the way we created the projects in the installation videos of the
+
+previous sections.
+
+Some would have right click on section for workspace.
+
+I'm going to say new project at this point I'm going to select that default project template that we
+
+created in this case I called it Frank default posts plus project summary select that press next.
+
+And I want to get this project today and I'm just simply going to call it Project 1
+
+select next 0.
+
+Except these defaults which is my compiler debugger and also like to finish.
+
+Now you can see I've got a project named Project 1 under my section for workspace.
+
+And you can see there's the main CPV file.
+
+If I double clicked that it will open up in the editor and it's just going to say hello world.
+
+What gets a building and running this in the next video.
+
+But for now let's create another project because remember we can have multiple projects in our workspace
+
+someone to go back up to my workspace right click again.
+
+New project I'll use the same template and I'll just call this project to and press next and finish.
+
+So now you can see that we've got two projects within the work space also noticed that project one is
+
+italicized and it's bold.
+
+This tells you that this is the current project or the active project.
+
+Now I can select the main C.P. and project 2 and you can see here we've got two C plus plus files one
+
+for each project.
+
+Now you'll notice that when I select these tabs you'll let us select this tab and this highlights right
+
+here.
+
+So this tells you that this is the main C-p for Project 1.
+
+When I select this tab here on the right this means GPP lights up for project 2.
+
+If you're not getting that behavior then this little link right here is probably not selected.
+
+If that's unselective then you'll click on these and this won't change at all on the left side here
+
+in the workspace for you.
+
+So you want to make sure that that's selected that way at least the editor to the workspace files so
+
+there you go.
+
+We can switch between them very easily.
+
+So let's change the source code I'm going to select this file right here and I'm just going to say hello
+
+project one.
+
+And I'm going to save it with control as your commands and I want to select this guy right here and
+
+I'm going to say hello project to that we will be able to see the difference when we run them.
+
+And I I'm saying that we could also do file save.
+
+That's it.
+
+Now suppose I want to change between projects.
+
+So here.
+
+Notice that project 1 is the active project.
+
+You can select the active project just by choosing it here from the download list.
+
+You can see when I when I hover over it as select the active project.
+
+So that's as simple as that.
+
+You can also double click on the project name.
+
+So if I double click on project to project to is now the active project project one is now the active
+
+project that was active project mean.
+
+Well when I build a project let's say I come up to my build and I say build something run something
+
+clean something and get to all this in the next video.
+
+It's going to apply it to the currently active project.
+
+It's real important because suppose that now you're here and you're modifying the source code here and
+
+then you build and you see nothing's changed.
+
+Well that's because this project too is not active.
+
+Project 1 is the active project.
+
+So when you build and run it's going to run project 1.
+
+It may seem like this is pretty hard to keep track of but it's really not it's really easy to keep track
+
+of what project is active and using this little link editor.
+
+You can obviously see which file you're working on so it's pretty easy to do.
+
+There's a couple of other things that I want to talk about here in the editor window here.
+
+You can see that we've got line numbers selected and so the idea is displaying line numbers for us.
+
+This is handy because the compiler errors will give you line numbers and will also throw you a little
+
+error right here.
+
+I'll show you some red a little mark that says hey the error is here which is kind of nice.
+
+I'm going to keep the line numbers on for me.
+
+You can choose to not use them if it distracts you.
+
+But in the course I'll refer to a line number 7 line number 5.
+
+That way it's much easier for you to follow along if you want to get rid of those line numbers.
+
+You could just go up to settings preferences and read an editor you could say show line numbers in the
+
+margin and you could just uncheck that.
+
+It's a whole bunch of other options.
+
+Yeah the thing you might notice is you'll notice right here to the left of the end there's a little
+
+triangle that's called the code folding triangle.
+
+So if I select that you can see what happens is notice I've got active right now lines three four.
+
+Well I've got all my lines right from 1 to 8 when I select that.
+
+It hides lines 4 5 and 6 and you get this horizontal line showing you that yeah there is stuff in here.
+
+I'm just hiding it right now.
+
+This is called code folding.
+
+It basically just hides that code.
+
+This is real handy when you've got hundreds and hundreds of lines of code in your file and you're scrolling
+
+through trying to find things.
+
+It's really really nice to be able to just fold some stuff up.
+
+In other words I'm working on this function right now.
+
+I don't need to see all the other ones I just fold them out of the way.
+
+We'll get to use these features later on as our programs get bigger.
+
+But if you find yourself in the position where you've clicked on that by accident you see this line
+
+and you're thinking well my goodness where did my source code go.
+
+Don't worry the source code is still there.
+
+Again if you see that horizontal line just click on that little triangle or show it for you also notice
+
+that the editor uses color coding to display certain things.
+
+So for example you could see that INT and return are a purple color and you can also see that halo project
+
+to here is in this dark blue color.
+
+We've also got things in dark green light green and so forth.
+
+Also notice that the integer 0 is red.
+
+So there's rules that the idea is using behind the scenes to make it easier for you to figure out what's
+
+going on.
+
+So one of the rules that is saying hey you know what if you're seeing a reserve word or one of the keywords
+
+in C++ make it purple.
+
+You can tweak all of this by going to settings colors and fonts select C++ here on the left and you
+
+can customize the font that you want to use for your keywords and so forth.
+
+I recommend you just leave this alone unless you have a real problem with some of the colors that are
+
+there.
+
+OK.
+
+So that makes it really easy to figure out what's going on.
+
+So for example let's say I forgot this quote right here.
+
+You could see that that entire thing is now dark blue that you something is not right.
+
+So we can always use that coloring to help us out.
+
+It's the idea trying to make life easier for you.
+
+The output pane down at the bottom this is where our compiler messages will be displayed when we build
+
+code it will tell us what we're building the status of the build and so forth.
+
+It'll also be handy for doing global search and replaces both at the workspace level and at the project
+
+level.
+
+Sometimes we want to change a name from hello to hello there and it's really easy to do a global search
+
+and replace.
+
+There's a bunch of other tabs here.
+
+These tabs we're not going to use most of them.
+
+I'm basically just going to leave them alone.
+
+But if they bother you you want to get rid of them.
+
+You can click on these three horizontal dots right here these three vertical dots rather right here
+
+and you could select to hide certain things.
+
+So let's say we don't want to see the build queue tab just select build queue and it hides.
+
+You can always bring it back if you like.
+
+Like I said I'm just going to leave him alone.
+
+But if your if your screen real estate is small or your monitor or small you're having trouble fitting
+
+all this stuff in.
+
+This is a really easy way to do it.
+
+We're going to use the most are build and output and obviously search and replace or can come in very
+
+handy.
+
+Ok now in the workspace view we've also got some tabs.
+
+Now here I spread this you could see it a little bit.
+
+The only ones we're really going to use here are workspace Explorer and tabs.
+
+These last three tabbed groups see make help and W X craftier we're not really going to use them.
+
+So what we can do is we can hide those.
+
+So I get I'll select the three dots and hide W X craftier hide C make and hide tab groups.
+
+That's it.
+
+That makes it a little less cluttered and it's kind of nice too to see it all there.
+
+This little drop down arrow here.
+
+If I'm in tabs and I select download I can go to work space.
+
+If you only have three tabs it's not really a big deal but if you've got a lot of tabs and it's really
+
+nice to be able to do that especially when they're hidden and you can't see them in situations like
+
+this so the last thing I want to do is I want to show you that you can actually move these pains around.
+
+Now this is the default perspective that you get out of the can.
+
+Some people don't like the workspace view on the left.
+
+They prefer it on the right.
+
+So you could just grab the workspace view tab right here just move it over drag it to the right and
+
+you'll see it light up.
+
+You can see here if I wanted to put it down here it lights up the area that it's going to be in lights
+
+up again at the top.
+
+You could choose to put it wherever you like.
+
+Let's say you like it over here on the right.
+
+And some people like this workflow a little better.
+
+So now you've got your workspace here on the right and your editor on the left you can do the same thing
+
+with this output view.
+
+I mean suppose I want to put my output view right under my workspace for you.
+
+I could do that and I've got a really large editing area.
+
+It's totally up to you.
+
+The perspective that you use this is a real personal decision.
+
+I've worked on teams where everybody on the team teams have hundreds everybody's got their own way of
+
+doing things.
+
+So everybody tweaks the environment their way.
+
+The nice thing about this is that if you download some project and it's got this perspective saved you
+
+can always come up to perspective and click on default laya.
+
+That'll bring it right back to the default.
+
+So I could just select that and here I am back to back to scratch just like you came out of the can.
+
+If you prefer your layout to be a specific way let's say I like it like this and I want to move this
+
+over just a little bit here.
+
+And these guys appear like that again however you want to do it.
+
+You can come up to perspective and then save current layout as.
+
+So let's just say I want to call this Frank Dodd lay out
+
+and I can save it so I can switch between the default layout and if I want to go back to my own laya
+
+I can go back to Frank lay out really really easy to do.
+
+There's two lay outs that come already pre-configured.
+
+One is the default layout which is the one I've shown you before and the other one is a debug play out.
+
+This is the layout that's used when you're doing debugging.
+
+So if I select debug layout you can see that I've got an output view pane on the left and a debugger
+
+pane on the right and code like will switch to this automatically when you go into debug mode.
+
+Again if you have a better way of doing it that works for you you can tweak this and save that perspective.
+
+So I switched back to the default perspective and we can also use the view options to hide or view different
+
+page.
+
+So for example if I don't want to see the output pane or the workspace pane I can certainly hide them
+
+and view them.
+
+I can also do that here by closing up with that little X right there to close up the workspace view.
+
+I can also make the workspace really large by clicking this icon right here.
+
+So you've got all these options you encourage you to play around with the environment and set it up
+
+to a place where you feel comfortable working.
+
+Recall we talked about this in one of the installation videos that we can show a toolbar so we can build
+
+and run and save and have all kinds of options by just clicking on these toolbar icons.
+
+I'm not going to use that since it really clutters things up for me and I want to be able to explain
+
+exactly what I'm doing.
+
+So for example that icon right there says run active project that one says start or continue debugger
+
+so they can be confusing at first.
+
+I'm not going to use those.
+
+I'm simply going to come up here and tell you exactly what I'm doing.
+
+So I'm going to close the toolbar down.
+
+But again feel free to use it.
+
+And that wraps up this quick tour of the code like ID.
+
+We are certainly going to use more features as decors progresses in the next video we'll create our
+
+first C++ program that goes a little bit beyond the hello world program and we'll use that program to
+
+understand how the build process works within the code like I-T.

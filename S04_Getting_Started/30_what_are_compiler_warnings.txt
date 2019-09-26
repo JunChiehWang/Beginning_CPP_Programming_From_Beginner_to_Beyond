@@ -1,0 +1,121 @@
+In this video we'll talk about compiler warnings and why they happen.
+
+Big tip don't ignore compiler warnings.
+
+We'll talk more about that in a minute.
+
+The compiler has noticed a potential problem in your code and it's warning you about it.
+
+That's what compiler warnings are all about.
+
+It's only a warning because the compiler is still able to understand your code and produce object code
+
+from it.
+
+However it's that you know to be aware that something could be problematic.
+
+In this example we've declared a variable called miles driven and it's an integer it can hold any kind
+
+of whole number.
+
+Then on the next line we display the value of miles driven to the con..
+
+The compiler produces a warning here it's warning us that you've used the variable miles driven but
+
+you never initialized it.
+
+So in other words the value that it contains could be anything.
+
+Once again don't ignore compiler warnings.
+
+Many programmers treat them as errors and fix the potential issues up front.
+
+Let's head over to code light and we'll see some of these warnings.
+
+So now I'm back in code like I've created a project called compiler warnings and again it's a default
+
+project just simple Hello World.
+
+Now what I'd like to do is let's use that favorite number variable again so let's create that here.
+
+I'm going to say int space and the name of my variable let's call it.
+
+Favorite number.
+
+Perfect.
+
+Now suppose I want to print out that favorite number.
+
+So I'm going to remove this hello world right here and I'm just going to replace it with favorite number
+
+so that's all I want to do.
+
+I've got a favorite number I'm going to print it out now if I try to compile this syntactically there's
+
+nothing wrong with this program but there is a problem with the compiler warning you right here.
+
+It's saying favorite number is used uninitialized in this function.
+
+So in other words you haven't told the compiler what the value of favorite number is.
+
+You have asked the user to put anything into favorite number and you're going to print the compiler
+
+telling you be careful because anything could print here and in this case anything will print here so
+
+let's run this you can see what it looks like.
+
+I'm going to run build and execute and look at what favorite number is for 0 0 9 7 1.
+
+Probably not what you expected.
+
+That's the reason for the warning.
+
+The compiler is telling you you never set that variable to any specific value.
+
+So when I.
+
+Who knows what is going to be in there.
+
+OK we'll talk more about that when we talk about variables.
+
+So that's one of the issues that you could have another issue you can have is that me go back to hello
+
+world here.
+
+Another issue you can have is suppose that in this case.
+
+Now we do assign something to that favorite number.
+
+This is a favorite number is I don't know a hundred.
+
+So look what we've done now.
+
+We've created a variable.
+
+We've assigned a value to the variable.
+
+We haven't used it.
+
+So the computer's thinking wait a minute did you plan to use that variable.
+
+Why did you create a variable and not use it at all.
+
+So will compile and the warning is variable favorite number set but not used.
+
+OK so it's telling you are you sure you want this.
+
+There's no reason for you to create a value and then not use it.
+
+And similarly if I get rid of favorite number here and I just do something like that and compile There's
+
+the warning again unused variable you've created a variable which you haven't even used it.
+
+So what do you want.
+
+The idea is you should have a no warnings policy in your code.
+
+You should have a clean compiler with no warnings.
+
+Now there's many many more warnings and will run into them when we talk about if statements and looping
+
+and assigning and doing math and we'll talk more about those mornings when we get there.

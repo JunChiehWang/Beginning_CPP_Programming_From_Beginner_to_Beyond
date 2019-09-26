@@ -1,0 +1,157 @@
+Welcome back I hope you were able to solve the challenge.
+
+Let's go over together and I'll give you my solution to it.
+
+This is a pretty simple challenge but it's important that you get it because we have to be able to compile
+
+build link and run.
+
+Obviously we don't want any compiler errors we don't want any compiler warnings.
+
+So let's start here.
+
+What I've done is I've created a challenge solution project based on the template and here's my main
+
+CPPCC just a simple hello world.
+
+So this is the one I'm going to modify.
+
+All right.
+
+So let me change a little bit of this and to get rid of that statement right here and we'll totally
+
+start from scratch.
+
+I remember we need to include the IO stream library.
+
+This is how we do input and output.
+
+This is how we do our scenes in RC outs.
+
+So first thing I want to do is I want to prompt the user I want to say as TDD to call INS and see out
+
+and there is my insertion operator I'm just going to simply say enter your favorite number
+
+between let's say 100 and we'll put a call in there and a semi-colon on the end that will prompt the
+
+user.
+
+Now we want to be able to read that number from the user.
+
+Remember when we read something we need to store it somewhere.
+
+So we need to store that in a variable.
+
+In this case it's going to be a whole number so we're going to use an integer so I'm just going to say
+
+it.
+
+Favorite number just like we did with that first program we run.
+
+So that's my favorite number.
+
+Perfect.
+
+Now I can read into that variable so I can say as t d from CN.
+
+I want to extract some you see the operator going the other way into favorite number.
+
+OK so at this point I've prompted the user they've typed in a number I've read that number and I store
+
+that number in this favorite number variable right here.
+
+Last thing to do is to print out those two statements so for someone to say seek out
+
+and I'll say amazing.
+
+That's my favorite number two.
+
+And we'll print a new line here so we can go to the next line let's say and.
+
+Followed by a semi-colon and this is the only difference now between this program and the one that we
+
+were previously.
+
+We want to be able to display the number say no really whatever you entered was.
+
+Where is my favorite number.
+
+So in this case let's do that again with us today and we'll do again see out and we're going to right
+
+to that stream and I'll say no really
+
+and I put a comma here followed by a space because we want this to be spaced out nicely and I'll show
+
+you what the problems may be if you don't do that in a second.
+
+And at this point we're going to insert our favorite number right in here.
+
+And we'll do another insertion operator remember we can stream all these things together we do as many
+
+as we want and we'll say space is my favorite number
+
+and we'll finish it off with the new line.
+
+Let's try that.
+
+We're up to build run and build the next hit.
+
+We get a clean compile and it's running into your favorite number between 1 and 100 and say it's 10.
+
+Amazing.
+
+That's my favorite number too.
+
+No really.
+
+10 is my favorite number.
+
+Perfect.
+
+That's exactly what we wanted to solve.
+
+Now the reason that I put in these little spaces here is because I say I don't put that space in there
+
+and I don't put the space in here just like that.
+
+Now let's run this again.
+
+Now you can see that the output is not going to look right.
+
+So in this case say it's attempt in 25 and you could see amazing.
+
+That's my favorite number two that's fine.
+
+But now look.
+
+No really common 25.
+
+No space between 25 and the little eye for the lowercase I for is my favorite number so you can see
+
+that the output doesn't really look very nice.
+
+So all we're doing is just formatting it.
+
+We'll talk more about writing to streams and using manipulators so that we can really get more fine
+
+grained control of what we want this to look like.
+
+But for now we could just put spaces right in here and we'll try that again build and run.
+
+My favorite number is 10 though really 10 is my favorite number.
+
+Perfect.
+
+So that's it.
+
+And that's that's the solution to this challenge.
+
+So I said it's a pretty simple challenge but there's a lot of pieces here that come together in the
+
+next few sections We'll talk about the structure of the C++ program as well as variables.
+
+We'll talk a lot about variables how we declare them how we define them how we initialize them and how
+
+we use them.
+
+But you got a taste of it here.

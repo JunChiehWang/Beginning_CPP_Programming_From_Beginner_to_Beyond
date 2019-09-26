@@ -1,0 +1,59 @@
+In this video we'll talk about logic errors and why they can happen.
+
+Logic errors or errors or bugs in your code that cause your program to run incorrectly.
+
+Logic errors are mistakes made by a programmer.
+
+Sometimes the mistakes are careless other times mistakes are because the programmers have incomplete
+
+or incorrect information other times mistakes occur when one programmer modifies another programmer's
+
+code to fix or add something and they introduce an error as they do this.
+
+There are many many causes for logic errors.
+
+It doesn't matter what the cause is though.
+
+They need to be corrected.
+
+We need to test our code and debug it to find and correct errors.
+
+Suppose we have a program that determines if a person can vote in an election.
+
+And you must be 18 years old or older to vote.
+
+We haven't talked about statements yet in this class but they're very intuitive and I'm sure you'll
+
+follow this little piece of code.
+
+First we test to see if the age is greater than 18.
+
+If it is then we execute the code that's inside those curly braces.
+
+Do you see the air.
+
+It's pretty easy to see it here because the code is isolated.
+
+And I told you there was an error.
+
+However in reality this much more code typically involved in this may just be a small part of a much
+
+larger program.
+
+The problem in this code is that the test conditions should be greater than or equal to 18 or greater
+
+than 17.
+
+Either one will work as it's written now.
+
+18 year olds would not be able to vote.
+
+What talk about testing throughout the course in the context of learning C++ and best practices.
+
+Well that wraps up this section.
+
+Next you can take the section quiz and attempt the challenge exercise to see how you do.
+
+I'm sure you'll do great if you have any questions please post them to the Course forum.
+
+

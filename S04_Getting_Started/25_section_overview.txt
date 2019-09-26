@@ -1,0 +1,31 @@
+   In this section of the course we'll take a quick tour of the code like ID interface.
+
+It's important to feel comfortable with the environment that we're using to create our C++ programs.
+
+So I'll walk you through the major functionality of the code like ID so you can get up and running quickly.
+
+All write our first C++ program.
+
+It will be a pretty simple program that simply ask the user for their favorite number and then displays
+
+it on the console.
+
+We'll use this program to look at the build options provided by code like.
+
+And I'll show you how they work and what they do.
+
+Finally we'll introduce some problems into our program so that you can see some of the typical errors
+
+and warnings that you'll probably encounter as you write C++ programs and understand them and know how
+
+to fix them.
+
+That's it.
+
+This section short it's simple but very very important since it lays the foundation for writing building
+
+and running C++ programs in the code like I.T..
+
+Let's get started.
+
+

@@ -1,0 +1,133 @@
+In this video we'll talk about linker errors and why they can happen.
+
+Linker errors occur when the linker is trying to put all the pieces of a program together to create
+
+an executive will and one or more pieces are missing.
+
+Typically this can happen with an object file or libraries can't be found by the linker.
+
+Fixing linker errors can be tricky.
+
+Sometimes it's just a matter of getting the paths correct so that the linker knows where the missing
+
+pieces are.
+
+Let's head over to code light and we'll force a program to have a linker errors.
+
+You can see what the error message looks like.
+
+So I mean code light and I've created a project called linker error based on the template that we use
+
+so all I've got is a main C.P. file that says Hello world.
+
+Now we're going to force a linker error here.
+
+This is not something you want to do normally but I'm going to do it to show you what the error looks
+
+like.
+
+So what I'm going to say is I'm going to say extern and C but let's just say X and I'll explain all
+
+this to you in just a second.
+
+And then in the body of the main I want to try to use that X right there.
+
+It's just an integer and let's say I want to print it out.
+
+I just want to print out x.
+
+Simple as that.
+
+I'm going to save this.
+
+Now you see if I compiled this program you'll see what happens and what a reichlich compile I get a
+
+clean compile there's nothing wrong with the program.
+
+But when I try to build and run it
+
+you could see the linker error.
+
+This is classic linker error undefined reference to something in this case it just happens to be X..
+
+Also you'll notice that the linker returned one here L.D. returns one which is the next status.
+
+So something was wrong with the link.
+
+Obviously the compile was fine because we got no compiler errors that we do that again there's the compiler
+
+no errors no warnings.
+
+So let me explain to you what's going on here.
+
+Let me grab my stylus here real quick.
+
+And what's going on here is I've got my main CVP file here and it's going to be compiled to make oh
+
+let's say or made object in here we have a reference to an X..
+
+You can see it right there.
+
+You could see it right there.
+
+So in here I've got a reference to an X which I'm going to use.
+
+Now we also have our IO stream libraries.
+
+So the linker needs to grab those libraries and I'll just type IO stream here.
+
+You know what I'm talking about.
+
+The linker needs to put these two together to create my main you see or in this case I believe it would
+
+be linker error.
+
+But you know what I mean.
+
+So the compile is fine we've created our object file this library exists.
+
+The problem is that I've told the compiler here that this X is not in me it's somewhere else.
+
+It's defined by somebody else.
+
+Well obviously it is defined by someone else because that kind of forced the issue here.
+
+So now the linker needs to resolve that X and saying OK where do I get that value to print.
+
+Because that's what you asked me to do right here right.
+
+I wanted to print the value of x where where is X but can't find it.
+
+That's the linker error.
+
+That's exactly what's going on.
+
+And let me build this again so you can see the error message one more time.
+
+And it's build it run it
+
+and there's the error message it's saying undefined reference to X..
+
+You can see Zackery what's going on.
+
+Can't find x.
+
+Now this is not a compiler error.
+
+This is a linker air that's really important.
+
+Understand linker errors are tricky to fix.
+
+A lot of times the files that you need to link are missing they're in the wrong places.
+
+You don't have to worry about that using code lightning in this course we're going to basically do everything
+
+ourselves.
+
+But if you're using libraries from third parties this is the kind of thing we'll talk about in a more
+
+intermediate or advanced course.
+
+But I just wanted to show your linker errors in case you do come up with one posted in the forum and
+
+we'll work through it together.
