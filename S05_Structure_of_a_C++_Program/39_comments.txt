@@ -1,0 +1,219 @@
+This video we're going to talk about comments in source code.
+
+Now comments apply to just about every programming language out there.
+
+C++ has two kinds of comments.
+
+But before we talk about those comments let's talk about what comments are in general comments.
+
+Our program are readable explanations in the source code explanations notes annotations.
+
+Anything that adds meaning to what the program is doing.
+
+One thing that's very important to understand is that the comments never make it to the compiler in
+
+C++.
+
+The preprocessor strips out the comment so that the compiler never sees them may sound kind of weird
+
+that we're reading something that the compiler is never going to see.
+
+That's the whole point.
+
+This is human readable.
+
+This is for the next programmer that's coming down the pipe or for yourself when you have to go back
+
+and modify code.
+
+You can leave comments in the code explaining what you did and why you did C++ has two styles of comments.
+
+The first one is of just a single line comment that I'll show you what that looks like.
+
+It's basically two forward slashes side by side and then everything after that until the end of the
+
+line will be ignored.
+
+So this is a comment and the compiler will never see that comment.
+
+That's only for your eyes only or for the eyes of programmers coming after you.
+
+So that's a single line comment.
+
+Typically you see these comments done like this or you may see them for example here right after this
+
+variable declaration here for favorite number.
+
+We could do something like slash slash.
+
+This is where my favorite number is stored or something like that.
+
+That's kind of a silly comment.
+
+Now talk more about using these things wisely.
+
+The computer is never going to see this because the preprocessor will see the comment and strip it out
+
+and just replace it with a single space.
+
+OK so that's one style of comment that's a single line comment.
+
+The other kind of comment is a multi-line comment and that's a slash.
+
+Again a forward slash followed by an asterisk and then an asterisk followed by a Ford slash.
+
+So everything between those two elements is a comment and will be ignored.
+
+So this could be this once spreads across lines so this could be a multiple line comment like that.
+
+Do anything you like.
+
+And again it's totally free form.
+
+You can make it look however you want.
+
+You could indent you could you could do anything you want here.
+
+Everything in here will be ignored.
+
+Ok so now let's took up a little bit more about these comments and what makes sense what does that make
+
+sense.
+
+The idea behind programming is literate programming.
+
+Basically your code should be self-documenting.
+
+Does that mean we don't write comments.
+
+Well no.
+
+So you want to be sure that what you write makes sense.
+
+In this case here's my code.
+
+Here's my main and that's the block of code that I've written.
+
+This is pretty self-explanatory and I'll leave this comment in here.
+
+I've fixed that typo here but there is an integer called favorite number.
+
+You're outputting to the console and try a number you're reading from the console and you're printing
+
+out some stuff.
+
+This code doesn't need any commenting it's very very clear what it's doing.
+
+That's not always the case.
+
+Sometimes code is very complicated it's using some complex algorithms maybe using some really clever
+
+efficiency tweak to make it run faster but it makes it less obvious what it's doing.
+
+Those are good examples of where you should use comments don't comment the obvious for example right
+
+here you don't want to say returns 0.
+
+That's silly.
+
+I mean I don't want to return here.
+
+I just said it in the code.
+
+So those kinds of comments you really don't want to use.
+
+Also if you're adding a and b you don't want to put a comment that says adding a and b it's pretty obvious
+
+from a plus b what you're doing.
+
+So you really want to explain more complicated code.
+
+You also want to keep the style of the comments consistent.
+
+So for example I will have this line comment here which goes to the end of a line over here.
+
+I really don't want to do this style comment
+
+and do something like that you want to keep your style consistent.
+
+Now the multi-line comments are often seen at the top of files so I'll do this.
+
+And in this case code like kind of helps me out over it a bit but I'll do that so many times you'll
+
+see code that looks like this.
+
+You'll see a bunch of asterisks on top and then you'll see a much faster start here created with a little
+
+header block.
+
+Now notice I've got to be getting comment here and the end of the comment here everything in here will
+
+be ignored but in here you'll see stuff like author
+
+and I'll say Frank you know dates things like that copyrights license information a lot of that is very
+
+commonly seen in a multi-line comment at the top of the source file.
+
+Another good example of a good comment would be supposed that inside this function I'm doing some kind
+
+of algorithm and I've tweaked the algorithm so I could do something like using a modified
+
+version of Dijkstra's algorithm that say
+
+to improve space efficiency or anything somethin like that.
+
+Now the program are coming after you understand that you're using dogs just outgrow them and you've
+
+modified it somewhat dioecious algorithm it's a fairly well understood algorithm so you've tweaked it
+
+somehow to improve space efficiency.
+
+Maybe in the body of that algorithm you can comment what exactly you've done.
+
+So that's an example of a good comment.
+
+So again don't comment.
+
+The obvious good commenting doesn't justify bad code.
+
+Obviously you don't want to write really bad code and then put a good comment in there saying something
+
+silly.
+
+One of the dangers with comments is that many times programmers use comments as version control.
+
+So up here you'll see something like say 11 11 2017 and you'll see something like Frank fixed a bug
+
+in something and then another program will come across the 11:13 20:17.
+
+Maybe it's Joe and Joe added function to do something that's not a good idea.
+
+If you want to use version and use version control use something like subversion or get don't write
+
+your versioning here.
+
+The problem with this is some some programmers will do it some programmers won't know this for they
+
+won't be reflective of all the changes that actually occurred in the file.
+
+OK so again don't you don't do this.
+
+This is not a good idea.
+
+Use a real version control system.
+
+Finally if you go back and modify code make sure you look at the comments and modify the comments if
+
+necessary.
+
+There's nothing worse than a programmer looking at some code and seeing a comment that looks like this.
+
+And then you look at the code and it doesn't look anything like dextrous algorithm because another programmer
+
+changed it to something else and didn't change the comment.
+
+So it's really important that you keep your comments and your code in sync as you go along.
+
+OK that's pretty much it for comments in the next video will talk about the main function itself and
+
+talk a little bit about what's going on there.

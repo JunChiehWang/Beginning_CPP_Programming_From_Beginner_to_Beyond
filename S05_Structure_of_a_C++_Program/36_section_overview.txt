@@ -1,0 +1,25 @@
+In this section of the course will take a look at the basic structure of a simple C++ program.
+
+First we'll look at the basic components of a C++ program.
+
+These includes things like keywords identifiers operators punctuation comments and syntax.
+
+Then we'll discuss the preprocessor directives that C++ uses.
+
+These are the statements that begin with the pound sign or the hash tag.
+
+And we'll discuss what they do and how they work.
+
+Well then take a look at the main function specifically and functions in general.
+
+Then we'll discuss what C++ namespace is in way we use the standard shape space so often that's the
+
+best T-word reviews throughout.
+
+Well then learn about the types of comments that C++ supports and why we use comments in our code at
+
+all.
+
+Finally we'll talk about basic stream input output using C in and C out.
+
+Let's get started.

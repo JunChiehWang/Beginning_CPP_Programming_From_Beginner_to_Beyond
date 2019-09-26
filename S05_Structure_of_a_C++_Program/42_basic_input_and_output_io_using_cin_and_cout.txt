@@ -1,0 +1,613 @@
+In this video we'll look at basic input output using See in and see out see out C in C air and see logger
+
+defined in the C plus plus standard to use them you must include IO stream.
+
+C++ uses a stream abstraction to handle IO and devices like the console and keyboard out is an output
+
+stream that defaults to the console or the screen.
+
+See air and see log or Also output streams that default to standard error and standard log respectively.
+
+And finally Sienna's an input stream that defaults to the keyboard.
+
+The insertion operator is used without put streams and the extraction operator is used with input streams.
+
+Let's look at how we can you see out and the insertion operator the insertion operator inserts the value
+
+of the operand to its right.
+
+In this case the variable data into the output stream since C out is by default the console the value
+
+of data will be displayed on the screen.
+
+Since we're using stream abstraction we can change multiple insertions in the same statement.
+
+This makes basic IO very very easy to do.
+
+It's important to understand that the insertion operator does not automatically add line breaks to move
+
+to the next line on the console.
+
+You must do this explicitly either by using the line manipulator or by including a newline character
+
+the slash and you see in the last example if you use the on line stream manipulator It will also flush
+
+the stream.
+
+This is important to know since if the stream is buffered it may not get written to the console until
+
+it's flushed.
+
+We'll talk more about this when we talk about file streams since it's more applicable there.
+
+Let's see how the extraction operator works with CN the extraction operator extracts information from
+
+the CNN stream which defaults to the keyboard and stores the information into the variable to the right
+
+of the extraction operator.
+
+The way in which the information is interpreted is based on the type of the variable.
+
+So in this case if data is an integer then an integer representation will be read from the keyboard.
+
+If data is a double then a real number will be read and stored.
+
+If data is a string a sequence of characters will be read and stored.
+
+Extraction operators can also be changed in the second example two variables data one and data two will
+
+be assigned values read from the keyboard based on their type the characters entered using the keyboard
+
+will only be processed when the enter key is pressed.
+
+See in extraction uses whitespace that is spaces tabs.
+
+New lines as terminating the value being extracted.
+
+That's important to understand so if you put spaces between the things that you type in the spaces will
+
+be ignored.
+
+It's possible that the extraction operator could fail.
+
+For example suppose you want to read an integer and the user enters my name Frank in this case the operation
+
+fails and the data will have an undetermined value c and extraction is very easy and useful.
+
+However we'll later learn about other methods we can use with CN that give us more control over the
+
+data that's being input.
+
+Finally we can use the same operators to insert and extract data from file streams.
+
+This is pretty cool since the syntax is already familiar and the behavior is very similar.
+
+We'll work with files later in this course.
+
+Now let's head over to the code line idea and go over some examples in life code.
+
+Ok so now I'm back in the code like ID and I've got a section 5 workspace within the workspace I've
+
+created a basic IO project and this is the main file for that project.
+
+Now what we're going to do is we're going to do some basic IO using C and in C out and I'll show you
+
+some of the nuances so that you really understand what's going on here.
+
+First of all remember four we've got to include IO stream and on line 6 I'm using namespace standards
+
+just to make the code a little bit easier to read.
+
+Best practice would be to actually include standard scope resolution operator C out and so forth as
+
+we talked about in the last lecture.
+
+So first thing we'll talk about is the statement on line 10 right here.
+
+C out insertion operator a string Hello world.
+
+We've got another insertion operator and then we've got the end line manipulator.
+
+What this does is it prints hello world to the console and that advances the cursor to the next line.
+
+OK I'm going to run this and I want to run it by pressing control F5 which is the same as run here.
+
+So when we build and run you could see it prints out to the screen hello world and then it goes to the
+
+next line and this time elapsed message prints out after that.
+
+OK.
+
+Pretty straightforward.
+
+If I leave out the end line and I'll do that really quickly and I'll run it again.
+
+You could see that it prints out Hello world.
+
+It does not advance to the next line and then everything just prints out right after that.
+
+OK so that's pretty straightforward.
+
+Let's take a look at a couple of other examples.
+
+Look at this example here and what uncomment this out.
+
+First I'm displaying hello and then I'm displaying world and them the and line at the end.
+
+Notice that there is no end line after the first hello.
+
+So you would expect that these two should run together with no spaces so we should see Hello world all
+
+bunched together.
+
+So let's try that and you can see that that's exactly what happens.
+
+You can see Hello here followed by world with no spaces.
+
+It does advance to the end to the next line because we have that line manipulator here.
+
+OK.
+
+So let's do a few more.
+
+And as you can see by default right here when we use the insertion operator with a string in this case
+
+hello.
+
+It does not advance to the next line until unless we do it specifically and explicitly.
+
+So that's what line does.
+
+So here for more output statements the first one just says out Hello world just like we've done before
+
+and advances line the next one change the insertion operators.
+
+So you could see that I'm putting hello on the output stream then I'm putting world on the output stream
+
+you can see there's a space right before that W there and then I'm printing a new mine.
+
+So getting the same effect as the previous one.
+
+Same here I could say hello world but here in this case you can see that I'm using a slash and a backslash
+
+in this character right here is a newline character.
+
+So what happens is you can embed that newline character in the string and it will advance to the next
+
+line.
+
+So it's similar to lime.
+
+It doesn't flush the buffer but it still advances to the next line.
+
+And then the last line you can see you can see that just a couple things going on here.
+
+You can see that I've got a new line here.
+
+New line here and a new line here.
+
+So you expect this to print out hello and then go to the new line
+
+and then print out here.
+
+Then go to that in advance of the next line and print out there and then advance to the next line here.
+
+So that's what we expect we expect the first three statements.
+
+On lines 15 through 17 to pre-done exactly the same day in that December effect.
+
+And the last one would be a little bit different.
+
+So let's try this out and we'll compile and run here.
+
+And you can see Hello World Hello World Hello world.
+
+Exactly the same and then we have Hello out there.
+
+One word per line.
+
+And remember even though that this is all in one string that are all here we still have the slot machines
+
+in there which That's how they work you embed them inside those strings.
+
+OK so now let's do a little bit with variables.
+
+We'll talk a lot about variables in the next section but I'm going to declare three variables right
+
+here and I'll explain that to you real quick.
+
+They're really easy in this case I'm declaring three variables.
+
+Number one number two and them three.
+
+Those are the names.
+
+Number one is an integer and number two is an integer and then number three is a double.
+
+That's a floating point number like 2.5 or eight hundred point seven.
+
+A real number will use them two and them three or a little bit later but right now we're only going
+
+to use someone someone to comment this line.
+
+Uncomment this line and you can see what's happening here.
+
+I'm saying I'm prompting the user enter an integer.
+
+Then I'm reading an integer using the extraction operator I'm extracting an integer from the input stream
+
+and I'm storing it in.
+
+No one can see it's going right in here.
+
+And then I'm simply going to output you entered whatever they typed in.
+
+So let me explain how this works.
+
+Here's your keyboard and remember CNN is by default tied to your keyboard.
+
+We can redirect it as we wish but by default it's the keyboard.
+
+Now what happens is characters are read from your keyboard and they're not read directly by CNN they're
+
+stored in a buffer.
+
+This is done to make the program more efficient.
+
+So if I type in 123 on the keyboard then what happens is the numbers are read from the buffer the characters
+
+in this case are read from the buffer and the compiler knows that number one is an integer.
+
+So it's going to read those characters and it's only going to process what makes sense to be an integer.
+
+So in this case it's going to read to one and say yeah it's going to read the two.
+
+Yep going to read the three.
+
+Yup.
+
+Now we're done.
+
+So we've got 123.
+
+So 123 gets stored into number one and that will print out here.
+
+OK.
+
+Now you need to press enter.
+
+When you do this on the keyboard and also whitespace is ignored.
+
+So if I type in like 10 whites you know 10 spaces or tabs or anything that's considered whitespace and
+
+then I type in 123 then I type in a whole bunch more whitespace it'll all be ignored.
+
+OK so let's take a look at that in action and I'll just clear this real quick and let's run this and
+
+it's going to say enter an integer.
+
+So I'm going to type in 123.
+
+Press Enter member have to press enter and it says you entered 123 just what we'd expect.
+
+Run it one more time and this time I'm going to type in a bunch of spaces and pressing the spacebar
+
+and pressing tab then I'll press 123 and I'll type in some more spaces.
+
+Now when I press enter you can see you still entered 123.
+
+All that beginning whitespace is ignored and everything after the three is considered not an integer.
+
+So this is where if you read from C in again it's going to start right after that three OK.
+
+So that gives you an idea of what's going on there.
+
+And let me comment that out again and we'll keep going through some more examples.
+
+In this case we're going to read two numbers.
+
+We're going to say enter a first integer and we're going to read that into number one and to a second
+
+integer and we're going to read that into number two.
+
+And then we're just simply going to say you entered number one and number two remember in this case
+
+here number one and number two right here.
+
+Will be replaced by whatever values the user typed in.
+
+OK so let's do this let's run this one and you'll see it's exactly what you would expect.
+
+And that's the obsession of commented these guys out that me and comment them and let's try that again.
+
+So enter a first integer.
+
+So we want to type in 100 and I'm going to press enter enter a second integer 200 press enter again
+
+you entered 100 and 200 again.
+
+Just what we expected.
+
+Now let me show you something that you might not expect.
+
+Let me run this one more time.
+
+And then when I enter 100 followed by a space followed by 200 and press enter you can see my output
+
+statement work that says you entered 100 and 200 but the output looks a little different right.
+
+Well you can see what's happening.
+
+I ventured to integers.
+
+So what happens is when I read those integers from the standard input right via the extraction operator
+
+is going to grab both of them.
+
+It's not going to wait because it's got both of them in there already.
+
+So again it's not going away for me to press Enter 2 times because it's got him in there.
+
+Let me show you what that looks like.
+
+So you can better understand.
+
+All right.
+
+So let's say that we're here and we just ran this program and we entered 100 followed by a space and
+
+I'll just use that character for a space followed by 200.
+
+And so right here it's waiting for me what I did was I entered 100 spaced 200 and I pressed enter the
+
+extraction operator realizes that no one is an integer so it's going to try to read an integer from
+
+the stream here seem to start right here and it's going to say I've got a 1 0 1 0.
+
+Boom I hit a white space.
+
+That must mean that my integers done.
+
+So it's going to take 100 and store it right into number one.
+
+Now it's going to output end to another integer and is going to try to read that second integer from
+
+the input stream.
+
+Well it's already in there right so it's going to start right here and it's going to say to 0 0.
+
+Hit the end.
+
+That's 200.
+
+It's not going to wait for me to press enter because there's already data in that buffer.
+
+So in this case the 200 it's put into number two and this will produce 100 and 200.
+
+So your output will be correct.
+
+But the way that the prompts are displayed is a little different because it's got data in that buffer
+
+already.
+
+Same thing with I mean run this one more time and I'll show you a little bit of a different example.
+
+Same thing with space.
+
+One hundred space tab 200 or 200.
+
+You can see you entered 100 and 200 is just ignoring all that space but it's got those two values in
+
+that stream.
+
+It's just going to process the stream doesn't wait for you to press enter twice.
+
+OK.
+
+So a comment goes out and
+
+we can chain the extraction operator just like we had we can change the assertion operator.
+
+So in this case you could see that we've got the C in followed by an extraction operator right there
+
+followed by another extraction operator.
+
+So what I'm doing here is the output statement for the users a little different it just says Enter two
+
+integers separated with a space.
+
+So let's say ancho 100 a space and then 200.
+
+Now this guy's going to read two integers from the input stream and it will assign 100 here and 200
+
+here.
+
+OK let's do that.
+
+And you could see right here into two integers separated with a space remember I could put leading spaces
+
+too if I want but in this case I'll just say 100 spaced 200 and it says here you entered 100 and 200.
+
+This is actually a really handy way to get information from the user when you want them to you know
+
+enter more than one number you know entered three numbers separated by spaces that's really easy for
+
+them to do.
+
+Rather than say enter Number 1 enter Number 2 Enter number three and so forth.
+
+OK.
+
+So that's another option you've got.
+
+OK so I'll come this out and now we'll process some doubles.
+
+In this case if you remember me scroll up just a little bit if you remember number three was a double
+
+right so it's a floating point number a real number.
+
+And what I'll do here is I'll just uncomment this out and the prompt to the user is enter a double right
+
+here and you're going to read the double into number three from the input stream.
+
+Again here's the input stream.
+
+Suppose I typed in twelve point five.
+
+That's a real number.
+
+It realizes that it needs to read a real number from the input stream because number three was defined
+
+up top as a double.
+
+So it's going to come here to read of one it's going to get the two it's going to see the decimal point
+
+that's valid in a real number and it's going to read the 5 then it's done.
+
+And twelve point five will be assigned here and it will be displayed down here.
+
+OK.
+
+So let's run that
+
+into my double press.
+
+Twelve point five and enter and it says right there you enter twelve point five just like we expected.
+
+OK so let's do this last one and I'll show you what could go wrong here.
+
+There's always something that could go wrong right.
+
+So the uncomment that.
+
+And look at this example here.
+
+This one is saying enter an integer and you're going to read the integer into number one and then it's
+
+saying to redouble and you're going to read the double And number three.
+
+OK.
+
+Now if we run this and I type in let's say 10 and 12.
+
+Space twelve point five.
+
+That's not a problem at all right because it's going to read the integer and it's going to say 1 0.
+
+I see a space.
+
+I'm done.
+
+The ten goes into number one then it's going to read a double here num three is going to say one two
+
+decimal point five twelve point five.
+
+Perfect it's going to go in here.
+
+The integer is 10.
+
+The double is twelve point five and that will work just fine.
+
+Then we run that just so you can see that.
+
+And then we'll do one more example a couple more examples where you can see some of the issues here.
+
+So there's my integer that say it's 10 and the double is twelve point five and you can see the integer
+
+is 10 and a double is twelve point five.
+
+OK.
+
+But what happens if I enter something like let's say ten point five
+
+something like that.
+
+Think about this logically you're probably guessing what's going to happen.
+
+It's going to read an integer.
+
+So it's going to see that the one in the 0 and it's going to say Yep that's an integer when it sees
+
+the decimal point.
+
+It knows it can't be an integer anymore.
+
+So it's just going to take the 10 and store it here.
+
+Then you're going to say well read me a double.
+
+What's going to start at the decimal point and he's going to read point five point five is a double
+
+right.
+
+So it's going to store point five here sir output is going to be 10 and 0.5.
+
+Maybe not what you expected but you can see the behavior makes perfect sense you're telling it what
+
+to do.
+
+You typed in ten point five tens and integer and point five is a double and I can read those.
+
+So let's try that with ten point five and we'll see what that looks like.
+
+So let's enter the integer ten point five.
+
+Now remember there's going to be THAT point five left in the buffer.
+
+So it's not going to ask me it's going to ask me to enter the double but it's not going to wait for
+
+me to press enter because it's already got data in the buffer so I press enter.
+
+And you can see and try a double right it's not waiting for me here.
+
+The manager is 10 and the double is 0.5.
+
+Now the last example is that's run this one more time and we'll do something really weird here we'll
+
+just type Frank.
+
+Now that's really what I want because you've just told it that you're going to read an integer in a
+
+double and you just gave it a string of characters here.
+
+So if I press enter you can see what's going on here.
+
+The integer is 0 and the double is some undefined crazy small number here.
+
+OK well what happens is when it tried to read the integer it got the F and Frank in its lost.
+
+So the input failed and it goes into a failed state.
+
+From that point on everything that's happening is unreliable.
+
+You can see that the integer got zero got basically initialized to zero there.
+
+But everything else after that point is completely unreliable.
+
+You've got to be really careful now in real world programs.
+
+We're not really using cn to read characters we're using strings we're reading them with strings and
+
+then we're trying to convert those strings to numbers or whatever else we really need.
+
+But they're really really handy and easy to use and that's what we're going to do for the vast majority
+
+of this course.
+
+We're going to use C-n and seek out so that we can read numbers and we can output numbers or strings
+
+or whatever we like.
+
+So that finishes off this video.
+
+This is basic I O using CNN.
+
+You can see it's pretty straightforward.
+
+Don't worry about mistakes right now as we're working through these programs.
+
+If it says enter an integer enter the integer says enter a string enter the string.
+
+Don't worry about error handling that comes later.
+
+

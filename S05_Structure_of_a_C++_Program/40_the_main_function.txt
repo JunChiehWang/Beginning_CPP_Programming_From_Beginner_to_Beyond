@@ -1,0 +1,85 @@
+This video will briefly go over the C++ main function every C++ program must have exactly one main function
+
+somewhere a C++ program can consist of hundreds of files.
+
+But one of those files must contain the main function.
+
+Note that the named main must be written in lower case letters.
+
+When a C++ program executes the main function is called by the operating system and the code between
+
+the curly braces executes when execution hits the return statement the program returns the integer value
+
+to the operating system.
+
+If the return value is 0 then the program terminated successfully if the return value is not 0.
+
+Then the operating system can check the value returned and determined what went wrong.
+
+There are two versions of Main and they're both valid as per the C++ specification.
+
+So far we've only seen the version on the left which returns an integer and has nothing between the
+
+two parentheses.
+
+This version of main expects no information from the operating system in order to run.
+
+This is the version that will use mostly in this course.
+
+The second version of Main is the one on the right that is version main expects information from the
+
+operating system.
+
+So suppose that when you execute the program you need to pass information into the program from the
+
+command line.
+
+This is very very common for command line applications.
+
+In this case we tell the compiler that we need two pieces of information.
+
+First we need the number of pieces of information that were passed in.
+
+That's Argosy we can use any variable name here but historically we use args C which stands for argument
+
+count.
+
+The second piece of information is the actual arguments that we passed in into the program.
+
+This is captured by arger V which is the argument vector.
+
+The syntax for R V looks a little strange but it all makes sense as the course progresses.
+
+It's basically a bunch of strings such as programs that DXi argument one argument to in this example.
+
+We'll talk more about strings and vectors as we move forward.
+
+But I wanted to show you both versions of the main function.
+
+In case you're looking at code out there you see the second version.
+
+Both are perfectly valid and both are commonly seen.
+
+Note that main must always return an integer.
+
+Main happens to be an example of a function.
+
+A function is basically a name that we can use to reference a block of code.
+
+In this example maned is everything between the curly braces.
+
+Functions are very commonly used and will write her own functions as the course progresses.
+
+There'll be an entire section of the course devoted to functions but Maine is a very special function
+
+as we learn C++.
+
+Our entire program will be contained inside the main function and as our programs become more complex
+
+we'll write our own functions and then classes to better modularize and organize our code in the next
+
+video.
+
+We'll talk about name spaces and see how we can use them in our first program.
+
+

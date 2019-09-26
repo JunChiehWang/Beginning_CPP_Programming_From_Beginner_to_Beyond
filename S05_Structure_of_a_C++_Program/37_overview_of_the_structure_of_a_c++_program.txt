@@ -1,0 +1,119 @@
+In this section we'll talk about keywords identifiers punctuation operators and syntax in programming
+
+languages.
+
+Most languages have keywords keywords are part of the vocabulary of a programming language in most languages
+
+the keywords are also reserved.
+
+This means that you the programmer cannot redefine their meaning and you can't use them in a way in
+
+which they were not intended.
+
+C++ has lots of keywords in a browser I've opened up a web page for CGP reference dot com that lists
+
+the C++ keywords without a frame of reference.
+
+It's difficult to know that this is a lot of keywords.
+
+There are around 90 keywords in C++
+
+Java has around 50
+
+C has 32 and Python has 33.
+
+90 is a lot of keywords now.
+
+In general the more keywords that a language has the more complex the programming language grammar.
+
+However there are many keywords in C++ that are rarely used.
+
+I've been using C++ for a very long time and there are some keywords in this list that I've never used.
+
+There's no need to sit down and memorize all these keywords will use the keywords as we need them and
+
+you'll learn them along the way.
+
+Notice that some of the keywords in this list we've already used for example we've used it and we've
+
+used return years and right here and Heeres return right here.
+
+We use that in our first program.
+
+Also notice that LB include main favorite number standard and line C in and C out are not in this list.
+
+That's because they're not keywords.
+
+We'll talk about them next.
+
+What's important to remember here is that C++ has a set of keywords that it's defined in the language
+
+and these words are reserved.
+
+Now let's go to code light and see the reserve words in our first program.
+
+So going back and code later I'm looking at the same program that we did in the previous section.
+
+The one with the favorite number you can see that I mentioned that main and LB include in favorite number
+
+and so forth were not keywords.
+
+Same with standard out c out C in and so forth than in line all of these.
+
+These are not keywords.
+
+These are called identifiers and there's an important distinction between identifiers and keywords and
+
+identifier is something that the programmer names these names have been created by programmers to create
+
+something that represents something meaningful to them.
+
+There are rules about how to name identifiers and will go into all those in the later section.
+
+C++ also has operators it's got a lot of operators.
+
+It's got the operators that you used to.
+
+In addition multiplication subtraction division and so forth.
+
+But in this case we're using some nonstandard operators for example this guy right here that little
+
+Chevron is this dream insertion operator.
+
+We're going to insert whatever's on the right hand side of it into that stream in this case it's an
+
+output stream that gets displayed to the console.
+
+Same thing with the string extraction operator.
+
+This one takes something from the console and stores it into a variable.
+
+In this case favorite number there is also that double colon right here.
+
+That's the scope resolution operator will talk about all of these operators as we go on to Section 9
+
+in the course.
+
+C++ also has punctuation things like semi-colons at the end of statements Curley's open and close quotes
+
+parentheses it's got all kinds of punctuation when you put all of these elements together in a program
+
+you end up with something called syntax syntax is the syntax of the programming language the structure
+
+and the meaning of what you want the compiler to understand.
+
+The compiler is taking your code and translating it to machine code and it's translated here based on
+
+what you told it you wanted to be done.
+
+It's not going to guess.
+
+This may sound a little intimidating at this point but it comes pretty quickly with a little bit of
+
+practice.
+
+Well that completes this video in the next video.
+
+We'll talk about the C++ preprocessor and we'll learn more about that preprocessor directive pounde
+
+include.

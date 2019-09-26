@@ -1,0 +1,109 @@
+This video we're briefly go over using C++ name spaces C++ name spaces can be a little confusing when
+
+you first see them as our C++ programs become more and more complex.
+
+Our programs become a combination of our own code the C++ standard libraries and their code and libraries
+
+from third party developers and their code.
+
+So as you can imagine sooner or later we're going to run into this situation where Company X named something
+
+the same as Company Y when we use that name in our program the C++ compiler doesn't know which one to
+
+use.
+
+So we have something called the naming conflict.
+
+For example suppose another library that we're using has defined a name called out.
+
+Well that's a big problem right because now C++ doesn't know which C out to use.
+
+C++ allows developers to use name spaces as containers to group their code entities into a namespace
+
+scope.
+
+That means that I could create a namespace called Frank and I could define C out within that namespace.
+
+Now if a programmer wanted to use my version of C out all they had to do is say Frank double colon C
+
+out that's it.
+
+If they wanted to use the one in the standard library they would just say standard double call and see
+
+out.
+
+It's as simple as that.
+
+Name spaces are used to reduce the possibility of naming conflicts.
+
+The double colon operator is called the scope resolution operator.
+
+It's used to resolve which name we want to use.
+
+However many programmers find it tedious to type as t d colon colon all the time when using C in C out
+
+and buy in and so forth.
+
+So C++ provides a few mechanisms to help in that regard.
+
+In this sample code you can see that we're explicitly telling the compiler to use see in C out and N
+
+line from the C++ standard namespace using as Tedi followed by the scope resolution operator.
+
+This is how we've written code to this point.
+
+Now let's take a look at another way we can do this without so much typing.
+
+In this case we can use the using namespace directive followed by the name of the namespace we wish
+
+to use.
+
+In this case the standard namespace.
+
+Notice that I no longer have to use as c d followed by the scope resolution operator.
+
+When I refer to C and C and line the compiler now knows which one to use based on the using namespace
+
+directive.
+
+This is pretty easy to use and it's the way I'll do it in this course from this point forward since
+
+it reduces code clutter and it's better from a teacher's perspective.
+
+However this may not be the best solution for large programs using namespace standard.
+
+Not only brings in C in C out and line it brings in a bunch of other names that are defined in that
+
+namespace.
+
+So the possibility exists that you may still have a naming conflict.
+
+C++ provides another variant of the using namespace directive.
+
+Let's take a look at that.
+
+In this case we have a qualified using namespace variant in which we tell the compiler exactly the names
+
+I want to use from a specific namespace.
+
+In this case you can see am using Threet using directives each qualified for a specific name in a specific
+
+namespace.
+
+The advantage of this approach is that we can still use C in C out and line in our code without the
+
+namespace in scope resolution operator.
+
+And we're not getting any other names from the C plus for standard namespace for the examples in this
+
+course.
+
+You can use the namespace standard directive from the previous slide with no problem but keep in mind
+
+that it may not be the best practice in larger programs.
+
+That wraps up namespace in the next video.
+
+We'll take a quick look at basic IO with C in and see out.
+
+

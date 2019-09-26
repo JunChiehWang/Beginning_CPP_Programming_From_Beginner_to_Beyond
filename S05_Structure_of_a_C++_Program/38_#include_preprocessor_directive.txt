@@ -1,0 +1,53 @@
+It this video will briefly go over the C++ preprocessor and preprocessor directives.
+
+What does the C plus plus preprocess the C plus plus preprocess or is a program.
+
+That process is your source code before the compiler sees it.
+
+The C++ preprocess are first strip's all the comments from the source file and replaces each comment
+
+with a single space that it looks for preprocessor directives and executes them.
+
+Preprocessor directives or lines in the source code that begin with a pound or hash tag simple as you
+
+can see in this slide there are quite a few preprocessor directives available.
+
+The most commonly used preprocessor directive is the include directive when the preprocessor sees this
+
+directive.
+
+It replaces the power to include line with the file that it's referring to that it recursively processes
+
+that file as well.
+
+So by the time the compiler sees the source code all comments are stripped out and all preprocessor
+
+directives have been processed and removed preprocessor directives are commonly used to conditionally
+
+compile code.
+
+For example suppose you only want to compile a portion of your source code.
+
+If you're on the Windows operating system in this case you would use a preprocessor directive to test
+
+to see if you are on Windows and that perhaps includes some Windows specific libraries.
+
+If you're not on Windows then maybe you want to include some Macalester 10 libraries or use the air
+
+directive to abort the compile with an error message conditional compilation is beyond the scope of
+
+this course but will use several preprocessor directives as we move on in the course.
+
+One final note it's very important to understand the C++ preprocessor does not understand C++.
+
+Let me say that again.
+
+The C++ preprocessor does not understand C++.
+
+It simply follows the preprocessor directives and gets the source code ready for the compiler.
+
+The compiler is the program that does understand C++.
+
+OK that wraps up this video.
+
+And the next video will talk about comments and C++.
