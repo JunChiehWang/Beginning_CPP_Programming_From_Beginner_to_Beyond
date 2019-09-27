@@ -1,0 +1,33 @@
+In this section of the Course will learn about our first compound data type compound type has a type
+
+that's made up of other types.
+
+First we'll learn about arrays what they are and why we use them.
+
+We'll go over the syntax for declaring and initializing arrays and we'll learn how to access the individual
+
+elements of an array.
+
+Then we'll talk about multi dimensional arrays.
+
+These can be two dimensional or three dimensional arrays or they can be as many dimensions as you need
+
+they can be very useful for modeling grids boards and much more complex data types.
+
+Then we'll learn about vectors.
+
+Vectors are better than arrays in so many ways and we'll discuss their advantages.
+
+In fact in modern C++ we rarely use raw arrays.
+
+Instead we use vectors.
+
+So why cover arrays at all.
+
+I think it's important to understand arrays since there's so much legacy C++ code out there and conceptually
+
+they're easy to understand and they'll add to your overall knowledge of C++.
+
+OK so let's get started learning about our first compound data type arrays.
+
+

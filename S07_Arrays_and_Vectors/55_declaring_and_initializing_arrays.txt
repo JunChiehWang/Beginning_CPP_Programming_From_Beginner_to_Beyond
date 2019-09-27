@@ -1,0 +1,87 @@
+This video will look at the syntax for declaring an initialising a race.
+
+The syntax for an array declaration is very simple.
+
+First we write the type of each element in the array.
+
+This is followed by the name of the array variable.
+
+Then we provide square brackets which is the array indexing operator and then the square brackets.
+
+We provide the size that we want the array to be.
+
+Remember this size is fixed so the compiler must know the size of whatever in the square brackets at
+
+compile time.
+
+So this can be a constant literal.
+
+It can be a declared constant or constant expression.
+
+In the first example we're declaring an array named.
+
+Test scores of five integers.
+
+The second example declares an array named high scores per level of 10 integers.
+
+And the third example declares an array named high temperatures of 365 doubles.
+
+Notice that days and years are declared constant so the compiler knows its value.
+
+Also note that in all three cases the arrays have not been initialized.
+
+This means that the contents of the array elements could be anything.
+
+Best practice is to always initialize arrays when you declared them.
+
+Let's see how we can do that.
+
+We can also initialize raise when we declare them and it's good practice to do so.
+
+The syntax is similar to when we initialize primitive variables.
+
+The syntax is similar to when we initialize primitive variables.
+
+We include an initialization list after the declaration and this list we can provide as many initial
+
+errors just as we like.
+
+Separated by commas in the first example.
+
+Test scores is initialized to 100 95.
+
+99 97 and 88 the initialization works as you would expect.
+
+The test scores array element at index 0 is initialized to 100.
+
+The element at index 1 to 95 and so on.
+
+In the second example you see that we declared an array named high scores per level of 10 integers but
+
+we only provided two values in the initializer list 3 and 5.
+
+In this case the first two elements of the array are initialized at 3 and 5 respectively and the remaining
+
+8 array elements will be initialized to zero.
+
+In the third example all of the elements of the array high temperatures are initialized to zero.
+
+This is a very handy initialiser that's used very often.
+
+The final example is a little bit different.
+
+In this case I didn't provide any number for the size of the array inside the square brackets.
+
+Instead I'm letting the compiler determine the size of the array based on the number of elements in
+
+the initializer list.
+
+This form is also often seen in this case.
+
+Another array will be of size 5 integers and they'll each be initialized from 1 to 5.
+
+As you can see the syntax for declaring and initializing arrays is very straight forward in the next
+
+video will look at the syntax for accessing individual array elements.
+
+

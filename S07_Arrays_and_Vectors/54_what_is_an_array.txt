@@ -1,0 +1,135 @@
+In this video we'll learn about a raise and their characteristics will also see the typical use case
+
+for an array an array is a compound data type or a structured data type.
+
+This means that it's a data type that's made up of other data types.
+
+For example a collection of test scores were.
+
+Each test scores an integer is considered a compound data type made up of integers.
+
+We say that this is an array of integers.
+
+It's important to understand that all elements of an array must be of the same type and each element
+
+can be accessed directly.
+
+We'll see some other array characteristics shortly but first let's see why we use arrays and why they're
+
+so useful.
+
+Suppose we need to model my test scores in a class that's pretty easy.
+
+We've already seen how to use variables and this would be a perfect use of variables.
+
+So suppose to have three test scores that I need to track and they're all graded as integers out of
+
+100.
+
+I can simply declare three variables as integers give them meaningful names initialize them to zero
+
+or whatever values I wish.
+
+But what if I need to model more than just a few test scores suppose I'm a school administrator and
+
+I need to model the test scores for 100 students so that I could do some statistics on them modeling
+
+each one of them as its own variable with its own name can quickly get out of control.
+
+Now I have to keep track of 100 variable names.
+
+You could still do it but it becomes tedious and error prone.
+
+What if I had 10000 test scores to model.
+
+You get the idea.
+
+This is a typical use case for an array and that's when they're really really useful arrays allow you
+
+to tell the compiler to give you a collection of as many elements as you want and give the entire collection
+
+a single name.
+
+So you no longer have to name each individual element.
+
+Let's go over some of the characteristics or properties of arrays.
+
+Arrays are fixed in size.
+
+Once you create an array of a specific size the size cannot change.
+
+So if you create an array of 100 test scores then you need space for more than that.
+
+You'd have to go back to your source code.
+
+Change the max size and recompile the size of the array is fixed arrays will not grow or shrink on their
+
+own while the program is running.
+
+As mentioned earlier all the elements of an array must be of the same type.
+
+So we can have arrays of integers arrays of doubles race of persons arrays of accounts and so forth.
+
+A race is stored continuously in memory.
+
+So if you tell the compiler that you need an array of 100 integers the compiler will generate code that
+
+allocates exactly 100 integers did are contiguous in memory.
+
+That means that the memory will be allocated as one chunk.
+
+Array elements are individually accessible so I can access any test score that I wish you could do that
+
+using the position or index of that array element.
+
+So I could tell the compiler to give me the second element in the array or the 1308 element in the array.
+
+Be aware that array indexes start at zero.
+
+This means that the first element in an array is a position zero not a position one and the last element
+
+is a position size minus one.
+
+You can see an example in the figure on the right.
+
+Here we have an array of 10 test scores.
+
+The array is named test scores and it's indexed from 0 to 9.
+
+Many many programming languages have compound data types like arrays and the majority of them start
+
+their array indexes in zero.
+
+I know that most of us start counting at 1 with arrays.
+
+You must started 0.
+
+This is a common cause of errors and programs especially with beginning programmers.
+
+It's also important to understand that C++ arrays are not bounds checked.
+
+That means that there is no check to make sure that when you access the individual array element that
+
+it's between zero and size minus one.
+
+It's the programmer's responsibility to be sure that you don't go over bounds.
+
+If you go over bounds your program may have strange behavior and you could even crash finally in a few
+
+sections.
+
+We'll talk about iteration or looping.
+
+As you can imagine looping is used all the time with arrays since we often need to loop through the
+
+arrays and process every element just like variables always initialize the raise or they'll contain
+
+unknown values.
+
+Arrays are extremely efficient in C++ since they are bare bones raw arrays.
+
+Later in this section we'll talk about C++ vectors which are super powerful dynamic and safer to use
+
+in a race in the next video.
+
+We'll see how to declare arrays.

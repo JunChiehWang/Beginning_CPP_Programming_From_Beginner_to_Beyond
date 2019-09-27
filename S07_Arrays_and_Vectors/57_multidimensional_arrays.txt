@@ -1,0 +1,81 @@
+This video we'll look at the syntax for multi dimensional arrays and C++ will focus on two dimensional
+
+arrays but you can use as many dimensions as are supported by your system.
+
+While there's no real limit to the number of dimensions you can have for a raise.
+
+Be aware that some compilers do place limits on this bill the limits are quite high and you're unlikely
+
+to reach them.
+
+The syntax for declaring multi dimensional arrays just involves adding another set of square brackets
+
+with the new dimension inside them.
+
+In this example you can see we're declaring a two dimensional array named movie rating.
+
+This survey has three rows and four columns which means that the total size of the array is 12 integers.
+
+We have not initialized this survey so we should assume that the array elements contain garbage data
+
+until initialized.
+
+Let's see how we might model real world data using this to the array.
+
+Suppose we want to collect movie ratings.
+
+We have movie reviewers and each reviews a series of movies with an integer rating from zero to five.
+
+We have three reviewers and each has to review the same four movies.
+
+We could choose to model this data by having one array of movie ratings for each reviewer so we could
+
+declare three arrays of four integers each and solve our problem like that.
+
+Another option is to use a two dimensional array.
+
+The first dimension or row in our grid is the reviewer and there would be four columns in the grid one
+
+for each movie.
+
+This is similar to the layout of a spreadsheet in the figure the reviewer is the first index or row
+
+of our re-enabled in red and the movie is the second index or column of our array labeled in green.
+
+Now its pretty easy to go to a specific row and column and get or set that movie rating for that specific
+
+reviewer and that specific movie accessing the specific movie rating is easy.
+
+I can ask the user to enter a movie rating as integer and story and movie ratings are one step two.
+
+Suppose these are inchers five this update that specific element in the array.
+
+I can also display that element to the console using the same syntax.
+
+Initialising multi dimensional arrays uses the same initializer syntax that we saw with one dimensional
+
+the race in this case we provide in the initialiser list the rows of columns you could do this in a
+
+single line but it's much more readable if you split it across lines as I've done here.
+
+You can see the initializers providing three rows of four integers each which is exactly how we declared
+
+the array while one and two dimensional arrays are by far the most commonly used arrays in programming.
+
+Extending the syntax to three dimensions and more is just as you would expect.
+
+Don't forget that the same characteristics holds for multidimensional arrays as for single dimensional
+
+arrays.
+
+We'll see well two dimensional arrays again when we talk about iteration in C++.
+
+So that's a look at C++ arrays.
+
+If you see them at existing code you'll understand how they work what they look like and their syntax.
+
+Remember at the beginning of the section I mentioned that we rarely use C++ arrays in modern C++.
+
+Instead we use vectors that take a quick look at C plus plus vectors.
+
+

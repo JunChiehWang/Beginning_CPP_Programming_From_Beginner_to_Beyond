@@ -1,0 +1,425 @@
+In this video we'll look at the syntax for accessing individual array elements.
+
+The syntax is probably very much like what you expected.
+
+We use the name of the array followed by square brackets with the index of the array element we want
+
+inside the square brackets.
+
+This is called the array subscripting for example test score one refers to the element at index 1 in
+
+the test scores array in the code example at the bottom.
+
+You can see that we've declared the test scores array of five integers and initialize those integers.
+
+Then we have 5 output statements that each displays one of those array elements.
+
+Remember that arrays subscripting or indexing starts at zero.
+
+So the first element of an array is at index 0.
+
+We use the same syntax for storing values and arrangements in this example.
+
+We're getting input from the user via the console and updating the individual array elements from index
+
+0 to 4.
+
+We could then display them as we did in the previous slide.
+
+We'll talk about assignment statements in an upcoming section but here you can see that I'm assigning
+
+90 to the first element of the test scores array.
+
+Notice that the syntax is the same.
+
+That pretty much covers the basics of a race but you might be wondering how this works behind the scenes.
+
+Let's see in C++ the name of the array represents the location or address in memory of the first element
+
+in the array that is Yellam with index zero where we access an array element using the subscript operator
+
+and provide an index in the square brackets.
+
+The compiler knows that you want the element that is at that offset from the beginning of the array.
+
+So all the compiler has to do is a pretty simple calculation.
+
+For example if you want the element an index to all the compiler has to do is go to integers away from
+
+the beginning of the array and there it is.
+
+Or two doubles or two whatevers.
+
+The compiler uses the size of operator to determine where the element will be.
+
+This is one reason why raw raised and C++ are so efficient.
+
+But remember there is no bounds checking so be careful if you have an array of 5 integers and you asked
+
+the compiler for the integer at the tenth index it will gladly do the calculation and give you whatever
+
+happens to be at that location.
+
+It's your responsibility to be sure that you're within the bounds of the array.
+
+Now let's head over to code right and use what we learned and write some code with a race.
+
+OK so now I mean code light and I mean the section 7 workspace and the arrays project.
+
+And here's my main CBP file what I've done is I've created some examples where I am declaring and initializing
+
+some arrays I'm accessing array elements I'm reading from them storing values in them and so forth.
+
+And that way you can go through this step by step so you can really understand what's going on.
+
+I've also commented a bunch of this out and what I'll do is uncomment as I go and we'll build on this
+
+little by little.
+
+So the first thing we're doing here is I'm creating an array right here named vowels that's that a.m.-I
+
+array follows.
+
+You'll notice that right in those square brackets I'm not providing any information.
+
+So what I'm telling the compiler is hey you figure out how big this is based on the initializer.
+
+OK so in this case I've got five characters that I'm initialising this to.
+
+So the array will be size 5 so was going to happen is I have an array of 5 characters and I'm initializing
+
+them to a T.
+
+Oh and you write the name of this array is vowels.
+
+So I can treat it as such and it's indexed from 0 to 4.
+
+Remember there is no 5 here.
+
+So don't let that confuse you.
+
+Fine.
+
+Now in this case I'm saying the first vow is and I'm using an output statement and grabbing vowels Sub-Zero
+
+that's right there.
+
+That's the little AA.
+
+So I expect this to print out a little AA in this case I'm using vowels for which is the little you
+
+right here.
+
+Lowercase U.
+
+All right so let's run this and see what we get.
+
+So what I'm going to do is I'm pressing control 5 to build and run and the output is the first Vout
+
+is a and I'll move this over here is you could see the first is lowercase say the last five was a lowercase
+
+you exactly what we expect.
+
+Now what would happen be clear this real quick what would happen if I tried to read from the console
+
+and I want to store whatever character I read into vowels 5 recall.
+
+There is no vowel so 5 right it goes 0 1 2 3 4.
+
+What happens here really depends on a lot of things.
+
+Obviously I'm going to read a character and stored in a location that's not part of the array so there
+
+could be something important there.
+
+And I just blew it away.
+
+My program will likely crash depending on what operating system you're on and what you're running your
+
+crash may look different from mine.
+
+So let me run this and hopefully it'll crash it may not.
+
+You never really know this.
+
+OK there's first vowel is little AA second bell is lowercase you know I'm going to read someone to type
+
+in that say capital A.
+
+And when I press Enter that's my crash.
+
+Hopefully you can see that this is a phrase that he has stopped working PLO's program depending on again
+
+what operating system you're working on it may look different.
+
+But in this case this is a good thing my program crashed.
+
+I'm able to fix it.
+
+And obviously what happened here was and I'll comment this out and I'll leave it coming.
+
+It won't keep crashing hoops on me.
+
+Do that again.
+
+And I'll write something like know out of bounds that way when you download the example you'll know
+
+what's going on and I'll say don't do this or be very careful with that.
+
+OK so that gives you an idea of what happens it could be a pretty serious problem.
+
+And the real problem is that it may not happen every time you may clobber some information that's just
+
+not even important but you may Klepper some information that's real important.
+
+OK.
+
+So let's move on in this example here.
+
+I mean uncomment this code and I'll walk you through this example here I'm doing something very similar
+
+I'm creating an array called high temps and you can see that the name of the arrays right there high
+
+temps.
+
+Again I'm not providing the size of the array because I'm letting the compiler figure it out based on
+
+my initializer list.
+
+There are one two three four initializers.
+
+So I going to create an array of four doubles.
+
+The first one being ninety point one that second when being eighty nine point eight and so forth here
+
+I'm saying pre-adult high temps Sub-Zero right.
+
+Remember this would be 0 1 2 and 3.
+
+So in this case this will predestine ninety point one.
+
+Now I'm saying high temps Sub-Zero is one hundred point seven.
+
+So what I just did was I just changed the ninety point one to 100 point seven.
+
+This is an assignment statement we're going to talk a lot about assignments statements in an upcoming
+
+section but they're really really straightforward when you see them like this.
+
+All it says is move this guy into that guy.
+
+OK so that's what we're doing.
+
+We're just overriding that ninety eight point one.
+
+Two hundred point seven.
+
+And then when I display it it's going to display a hundred point seven now.
+
+So what I expect here is the first time I put that guy it's going to give me ninety point one.
+
+Now I'm going to get 100 point seven.
+
+So let's try this out and see if that's exactly what we get.
+
+We build and run the first high temperature is ninety point one.
+
+The first high temperature is now one hundred point seven.
+
+So here you could see some examples of declaring initialising and accessing array elements.
+
+Now here's another example here.
+
+I'm like come at this out as well.
+
+In this case right here what I've done is I've asked the compiler again to give me an array of five
+
+integers and call it test scores.
+
+What's happening here is I'm getting an array of five integers.
+
+Just like that it's called test scores
+
+again they're indexed from 0 1 2 3 and 4.
+
+However I never initialize them.
+
+So what you have in here is junk or garbage memory whatever happens to be in there whatever bit pattern
+
+happens to be in there is still in there.
+
+So with this code right here is doing is it's displaying each one of those array elements.
+
+It's starting the development at index 0 going all the way through the element index for this is what
+
+we'll do later on with looping.
+
+We can do all this in one statement with looping and we'll learn how to do it a little bit later.
+
+Now when I do this I'm expecting junk.
+
+I have no idea what's in those cells so I don't know what's going to print out.
+
+So let's try it and see.
+
+And you can see that chunk right here 41 9 9 1 3 6 and so forth because there's zero in there.
+
+The point is you cannot rely on those values you really don't know what's in there.
+
+So what do we do.
+
+Well we can just put a couple of curly braces there and initialize that will initialize everything to
+
+zero.
+
+So if I run this again I expect to see all zeros.
+
+I do.
+
+That's exactly what I want always initialized to a race.
+
+Never assume that they've got any value in there until you put the value in yourself.
+
+I could also put a hardcoded zero in there and I'll have the same effect.
+
+But what if I had to 100.
+
+This is this piece confuses beginning programmers sometimes you may think that it's going to put 100
+
+or all of those elements but that's not the case.
+
+Let me run it and you'll see what happens.
+
+You see that it put a 100 in the first element and then the rest are zeroed out.
+
+That's the behavior you can get put in less initializers than you have so much.
+
+Now if I put a 90 here then what's going to happen is it's going to set this element right here.
+
+It's going to set this element right here to 100 this element to 90 and then 0 0 0.
+
+So that's the behavior when you provide less than the size of the array.
+
+As far as initializers are concerned.
+
+So again I'll run this real quick.
+
+And what you'll see is 190 000.
+
+Let me clear the screen real quick.
+
+In this case what I'm doing here is I'm reading integers from the console and storing them into those
+
+array elements from 0 to 4.
+
+So whatever was in here before is going to be removed now so I'm going to initialize this to 100.
+
+It just goes straight down by 10 70 and 60.
+
+So 198 1760s how initialising this too.
+
+I have a 5 here I don't really need that 5.
+
+There I think just get rid of it like that.
+
+I did it before so you can see how it initializes zeros.
+
+So I'll just get rid of that five right there.
+
+It's still going to create an array of five integers and initialize them to 190 80 1760.
+
+Now what I'm going to do is I'm just going to enter different numbers and then we'll display those new
+
+numbers right here with this code which is the same code as we used before.
+
+OK so let's do that real quick.
+
+Well built and run.
+
+So there is our original array one hundred ninety 1876.
+
+So suppose I want to go now 10 20 30 40 and 50 and I print them out.
+
+Now you can see that array Sub-Zero is 10 and the next one is 20 30 40 and 50 as you can see that those
+
+values are read from the console and stored in the array.
+
+The last thing we'll do is this may give you a little bit of a different effect than you thought.
+
+Suppose that I want to output just the name of the array.
+
+You'll notice test scores right here.
+
+I'm not saying test scores Sub-Zero or test scores 1.
+
+I'm just saying test scores.
+
+Let's run this and then I'll show you exactly what's going on when we come back.
+
+So I'm going to run this.
+
+And again let's just enter those scores again
+
+and notice what happens here says.
+
+Notice what the value of the array name is.
+
+And you get some hexadecimal number that number is actually the memory address the storage location
+
+where the array is located.
+
+This is the way that C++ works or the race the name of the array is the location of the array.
+
+Now that's a strange number to write so I'll just use a thousand for it that way we can make it a little
+
+bit easier to explain.
+
+So let's take a look at how this works.
+
+I've created that array right test scores and test scores is five integers just like we saw before.
+
+Again indexed 0 1 2 3 and 4.
+
+This is called test scores.
+
+Now when I say test scores what's it going to do.
+
+Well it's going to take the address of that variable that variable is an address so let's say that the
+
+address is a thousand and then this address is a thousand for assuming that we have 4 byte integers
+
+and this is 0 0 0 0 8.
+
+This is a thousand 12 and so forth.
+
+What prints out here will be 1000.
+
+And the calculation that C++ is doing that we mentioned in the slides.
+
+So for example when I say test scores one is I'm saying here what is going to do is it's going to take
+
+test scores which is a thousand and it's going to add one integer to it.
+
+Or in other words go one integer away from it and it's Jer's 4 bytes.
+
+There you go.
+
+That's the address.
+
+That's the calculation it's doing.
+
+This is why when test scores of five is referenced it's going to do the calculation and come up with
+
+that number right there and it's going to try to put to work with this guy.
+
+Well this is not part of the array right.
+
+The array ends here but just no real boundaries around there it's not like protected or anything.
+
+So in this case something is going to change and it may be a bad thing you might crash your program.
+
+OK so hopefully this example helps you understand a little bit about the syntax of a raise how to initialize
+
+them how to use them in a little bit more about how they're laid out in memory and some of the issues
+
+that you can have with them.

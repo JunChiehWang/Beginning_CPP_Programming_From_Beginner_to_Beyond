@@ -1,0 +1,177 @@
+This video will learn about C++ vectors.
+
+Suppose we want to store test scores for students in a class but registration hasn't started yet.
+
+So I don't know how many students I have to class.
+
+Also students drop and add as the semester progresses.
+
+How can I model this information using an array as we've seen to this point.
+
+Remember C++ arrays are fixed in size and I need to specify a size when I declare them.
+
+So what are my options.
+
+Well I can always set the fixed size of the array to a size large enough so that it's unlikely I'll
+
+have more than that number of students many times.
+
+This option is OK but you'll probably make it too big in a way space.
+
+For example we may have 30 students in the class but we allocated 50 students in the array.
+
+Not only have I wasted storage space but now I need to keep track of how many students are actually
+
+in the array.
+
+And of course sooner or later you'll get that one student that exceeds the size of the array.
+
+So what do we do.
+
+Well we can use a dynamic array such as a vector to solve some of these problems.
+
+A C++ vector is part of the C++ standard template library.
+
+This is a library of powerful containers.
+
+Algorithms functions and iterators.
+
+This means that we have available to us pre-written pre-tested easy to use components that we can use
+
+to help us solve our problems.
+
+We'll go over the main components of the standard template library toward the end of this course.
+
+We've talked about C++ being an object oriented language well when we create a C++ vector we are creating
+
+a C++ object and we can ask the object to perform operations for us.
+
+Vectors can grow and shrink in size at runtime so it's a perfect choice to model my students.
+
+Vectors also provide syntax and semantics similar to a race.
+
+So what we've learned about arrays understanding vectors will be pretty easy.
+
+In addition to the array like syntax we can also use lots of really powerful functions like short reverse
+
+erase find and more vectors also give us the ability to use methods that provide bounds checking if
+
+we wish.
+
+Let's see how we can declare vectors.
+
+There are several ways to declare a vector.
+
+The syntax for declaring a vector changes slightly from that of declaring an array because vectors are
+
+objects.
+
+First we must include the vector library also the vector type is part of the standard library so we
+
+must either use the namespace or use standard in the scope resolution operator.
+
+We can create a vector of any type we want just like we did with arrays.
+
+Here's a syntax for vectors.
+
+Don't worry at this point what the differences are will cover this in a future section.
+
+Since the vector is an object oriented template class we must include the type of the elements of the
+
+vector inside the angle brackets.
+
+So for example vowels is a vector or a collection of characters.
+
+Test scores is a factor of integers.
+
+Both these examples create an empty vector that contains no elements.
+
+Let's look at a few other ways to declare vectors in the first example we declared vowels to be a vector
+
+containing five characters.
+
+In this case I'm not providing an initializer list would do that in the next slide.
+
+Instead I'm using constructor initialization syntax which provides information inside parentheses.
+
+This tells the compiler that you want 5 characters in the second example we declare a vector named Test
+
+scores of 10 integers.
+
+Unlike arrays these ten integers will be automatically set to zero.
+
+I don't have to do that explicitly myself.
+
+We can also use initializer lists as we did with a raise to initialize vector elements in this first
+
+example.
+
+We declare vowels to be a vector containing five characters in the first example we declare and an issue
+
+Alais the vowels vector to the characters.
+
+I o you note that there are single quotes around the character literals not double quotes.
+
+In the second example we declare and initialize a vector name.
+
+Test scores to the integers.
+
+198.
+
+89 85 and 93 is a third example.
+
+Notice it or two values in the parentheses.
+
+The first value a parameter is the initial size of the vector.
+
+In this case 365 the second value is what you want to initialize all the 365 doubles to.
+
+In this case we're declaring a vector of 365 doubles and we're initializing all of those doubles to
+
+eighty point zero degrees Fahrenheit.
+
+There are also many other ways to declare victory.
+
+You could declare a vector to be a copy of an array or a copy of another vector.
+
+I think you're beginning to see how powerful vectors can be compared to arrays.
+
+So let's do a quick recap about vectors.
+
+We learned that vectors are an object oriented container defined in the standard template library.
+
+We must include the vector include file to use them and they belong to the standard namespace like arrays.
+
+Vectors allow you to tell the compiler to give you a collection of as many elements as you want and
+
+give the entire collection a single name.
+
+Vectors are dynamic and size which means they can grow and shrink as needed at runtime like arrays.
+
+Vector data is stored contiguously in memory vector elements are individually accessible.
+
+Vector indexes started 0 and end up position size minus one.
+
+If you use the subscript operator that's the square brackets to access vector elements then vectors
+
+will provide no bounds checking this provides the same behavior as arrays.
+
+However vectors provide a rich set of functions that do provide type checking.
+
+As a programmer you can decide what you need to use unlike arrays when you declare a vector.
+
+The vector elements will automatically be initialized to zero unless you specify otherwise.
+
+So if you declare a vector of 10 integers these integers will be initialized to 0.
+
+They won't contain garbage.
+
+Vectors are very efficient.
+
+And finally we commonly use iteration or looping to process vectors just like we do in a race.
+
+Later in this section we'll talk about C++ vectors in the next video we'll look at how we can access
+
+individual vector elements and will also see a few of those useful vector functions I mentioned.
+
+
