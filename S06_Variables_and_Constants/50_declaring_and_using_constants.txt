@@ -1,0 +1,545 @@
+This video we'll apply some of the concepts that we've learned in this section to solve a problem but
+
+will do for us is will solve the problem using literal constants.
+
+And then what we'll do as well refactored to use declared constants and along the way you'll see how
+
+much better it is used declared constants.
+
+OK so here's the problem we're going to solve.
+
+Frank has a carpet cleaning service that charges $30 per room and there's a sales tax rate of 6 percent.
+
+All the estimates are valid for 30 days.
+
+So our program is really we're going to prompt the user for the number of rooms that would like cleaned
+
+and we're going to provide an estimate.
+
+Decimal looks something like this.
+
+You can see here starting at line 13 estimate for carpet cleaning service number of rooms too.
+
+That's the number that the user entered price per room $30 cost $60.
+
+Obviously that would be $30 per room times two rooms.
+
+The tax which would be 6 percent based on the $60 which would be $3 is 60 cents then the total estimate
+
+would be sixty three dollars and sixty cents and then you print out this estimate is valid for 30 days.
+
+Now I'm using dollars you could use euros you could use any currency you like.
+
+Also I know that the formatting is that right.
+
+Obviously three dollars and sixty cents would be three point six zero.
+
+Don't worry about that right now let's worry about solving this problem and using literal constants
+
+and using declared constants.
+
+Worry about output formatting in a different section and we'll go over a bunch different ways to do
+
+formatting including currency formatting based on your locale.
+
+All right.
+
+So let's think about how we're going to solve this problem.
+
+Programmers often use something called pseudo code pseudo code is like in English like or your own natural
+
+spoken language like representation of the algorithm or the steps necessary to solve the problem.
+
+In this example I wrote down some pseudo code and pseudo code that don't let anybody tell you that is
+
+a right way and a wrong way to do pseudo code that really isn't.
+
+It's not a programming language.
+
+This is something that organizes your thoughts and allows you to solve the problem.
+
+Remember if you can't solve the problem in pseudocode there's no way you're going to solve it in C or
+
+in Java or in any other programming language.
+
+So in this case this is my.
+
+These are the steps that I want to take to solve this problem.
+
+The first thing I want to do and you can see here on 9:23 is prompt the user to enter the number of
+
+rooms.
+
+Great.
+
+I want to display the number of rooms to the user display the price per room.
+
+Didn't want to display the cost which is the number of firms times the price per room.
+
+I want to display the tax which is the number of rooms times the price per room times the tax rate.
+
+They don't want to display the total estimate the total estimate of course is the cost plus the tax.
+
+They I want to display at the end.
+
+This estimate is valid for 30 days.
+
+So what we want to do is we want to mimic this sample output right here.
+
+OK so let's get started.
+
+What we'll do first is we'll do this using literal constants and then we'll refactor it using declared
+
+constants.
+
+So the first thing I'm saying is hello.
+
+Welcome to Frank's carpet cleaning service.
+
+That's my little introduction.
+
+Now I need to ask the user again look at the pseudo code.
+
+Ask the user how many rooms they buy to be clean.
+
+OK so that's you that will say seek out and we'll say how many rooms would you like clean
+
+and I'm going to type this along and if I make typos and errors that's fine I'll fix them along the
+
+way.
+
+And you probably make the same kinds of errors so you'll see how to fix them.
+
+Semi-colon at the end.
+
+And there's a typo right here.
+
+So how many rooms would you like cleaned.
+
+Now let's run this.
+
+And what I'm doing is in pressing control F5 which is build and run and you can see here.
+
+Hello.
+
+Welcome to Frank's carpet cleaning service.
+
+How many rooms would you like cleaned.
+
+Perfect.
+
+Now I'd like to put a space between the first line and the second line of output.
+
+Now there's a couple of ways I can do that I can come down here and I could just add another line and
+
+that will print two new lines at the end which would be fine.
+
+I could also just say see out and line here which prints out a line.
+
+Let's run that machine with that looks like.
+
+Now you can see that there's a line between the first line and the second line.
+
+And I can also use a character literal constant right here at the front of the house if you put a slash
+
+and a backslash in that's a new line.
+
+And I can get rid of this and it has the same effect.
+
+So it's going to happen here is it's going to print a new line before it prints the how.
+
+So if I run this now you can see I get the same effect.
+
+So this is an example of embedding those escape codes as I mentioned in the PowerPoint slides into String
+
+literals.
+
+So now we're here.
+
+Next step is to read in the number of rooms from the user so obviously we need to use the extraction
+
+operator with the C in object but we need to store that somewhere.
+
+So let's create an integer will create a variable here and we'll call it number of rooms.
+
+Best practice is to initialize it so I'm going to initialize it to 0 and see in and get the number of
+
+rooms from CNN.
+
+OK so again let's see where we're at.
+
+We've outputted our prompt and the user has entered the number of rooms.
+
+Now we've got all the information that we need to do our calculations.
+
+We know that it's $30 per room and we know that it's a 6 percent tax rate.
+
+That's all I need.
+
+So let's create some output statements and I'm going to close this down here just to create a little
+
+bit more room.
+
+All right.
+
+So let's go here and we're going to say see out and that's put a slash and here too.
+
+I'd like a space right here.
+
+So I'm going to say estimate for carpet cleaning service
+
+will create a new line here.
+
+Now we want to display the number of rooms to the user.
+
+Say number of rooms and I'll put a dollar sign in here I'm not too worried about the formatting I'm
+
+just using dollars so might as well put the dollar sign here.
+
+And I want to display the number of firms where do I get that like that right from here.
+
+That variable right there the user just entered a number and I stored it in there so that can it contain
+
+whatever they entered.
+
+So there's a number of rooms and then and line.
+
+All right.
+
+Let's run this trial at.
+
+And I've got an error that says I forgot to put an L at the end of the line.
+
+There we go.
+
+So let's run this again.
+
+How many rooms would you like clean that say two rooms clean and estimate for carpet cleaning services
+
+number of rooms.
+
+I don't want a dollar there.
+
+I want dollar for prices so that I'll fix that error.
+
+Two rooms.
+
+Perfect.
+
+OK so now let's start doing some of the calculations but first we need to print out the price per room
+
+and that's a given that was given to us as $30.
+
+So we'll say price per room here we'll put a dollar sign and we'll say 30 we'll use a literal right
+
+in there and we'll say in line.
+
+All right so that's it.
+
+Then we'll say what's the cost.
+
+We'll have to do a calculation.
+
+We'll see see out would be cost.
+
+And again I'll put a dollar sign in here.
+
+And what's the costs going to be while the cost is going to be 30 times the number of rooms.
+
+Right.
+
+$30 per room times the number of rooms and we'll put in new line of DNA.
+
+Let's test this out as we go.
+
+So let's run it.
+
+I went to rooms clean so I expect the costs at this point to be $60.
+
+So two rooms $30 per room cost $60 so we're good.
+
+All right so let's continue and we'll say seek out what's my tax or my sales tax is again I'll use dollar
+
+and my sales tax is going to be the same calculation right thirty times the number of rooms.
+
+And again next you'll cook character right here to get rid of it.
+
+Thirty times the number of rooms times 0.06 which is the tax rate and bine.
+
+I'll save this.
+
+Let's run one more time.
+
+Two rooms cleaned $30 it's $60 six per cent of 60 is $3 to 60 cents.
+
+OK so we're good.
+
+Now we're going to calculate the total estimate which is going to be the costs plus the tax.
+
+But first I just want to print out a nice little line that separates everything together.
+
+That's long enough and up and line at the end.
+
+All right so now let's say what the total estimate is and then we just need to say the estimate is valid
+
+for 30 days and we're done so see out we'll say total estimate and again in dollars is going to be OK
+
+with it to do the calculation again.
+
+So we're going to say 30 times the number of rooms which gives us the cost.
+
+Right.
+
+And I'm going to put some parens around that because I need to add to that.
+
+Plus 30 times the number of rooms times 0.06 which is my sales tax.
+
+So that's my cost plus my sales tax and a newline at the end.
+
+Last thing is that say seek out this estimate is valid for however many days and we said 30
+
+and I put a space in front of the Deja's we have a little room on the line here and I think we're good.
+
+Let me clean this up a little bit down here.
+
+So it all fits a little better.
+
+All right so let's run it and then we'll go over it real quick.
+
+I'm going to save it and run it with control of 5.
+
+How many rooms would you like clean two rooms number of rooms is to the price per room is 30.
+
+The cost is 60.
+
+The taxes 360.
+
+So you would expect the total estimate to be 60 360 which it is this estimate is valid for 30 days.
+
+Let's try it again.
+
+Let's run it again with one room this time.
+
+One room is $30.
+
+The cost is $30 the taxes adulterating total estimate 30 180.
+
+So it looks good.
+
+Don't forget to test with zero so zero rooms cleaned zero cost the Rotax zero estimate.
+
+Great.
+
+Don't worry about testing with illegal values we'll learn how to deal with illegal values later.
+
+So for example expected to use this in a type zero or something positive in the number of rooms that
+
+are going to type in negative 1 or Joe or Frank or anything like that.
+
+As I said we'll deal with exceptions as the course progresses.
+
+So that's it.
+
+That's the program.
+
+It's it works.
+
+It's pretty easy to understand it follows our pseudocode.
+
+But there's a couple of issues here.
+
+First suppose that I want to increase my cost per room or my price per room to $32 and 50 cents.
+
+What do I do.
+
+Well I could do a search and replace.
+
+Right.
+
+Let's do that.
+
+I'll do a search find and replace
+
+and I want to look for 30 and I want to replace it with 30 to 50.
+
+And I want to do it everywhere replace all done close up and run it
+
+so I want to do two rooms two times 30 to 50 is 65.
+
+That's correct.
+
+The tax is thirty three dollars and ninety cents.
+
+That's correct.
+
+The total estimate is correct.
+
+Looks good right.
+
+Except for one little thing this estimate is valid for 32 and a half days.
+
+You can see that the 30 was replaced with 32 and a half.
+
+I didn't want to do that.
+
+So I need to go back to my code and it's changed that to 30 and now we're OK.
+
+This is easy to fix in this example because it's really small but if you've got thousands of lines of
+
+code and you're doing search and replaces like this it's real possible that that 30 is going to be in
+
+different places and it doesn't represent price per room it represents something else and you just really
+
+messed up your program.
+
+You made a lot of changes you did intend to change.
+
+So hopefully you'll see what I mean.
+
+I'm going to undo this 30 and I hope I'm back to where I was.
+
+Yep I'm back to where I was with 30.
+
+What I want to do here is I want to use declared constants rather than these literal constants.
+
+So let's do that first let's just create the variable name will make it a constant so we need something
+
+for the price per room.
+
+So let's create that let's say int price per room and we condition initialize it to 30.
+
+And the idea being instead of using 30 here we'll use that name price per room.
+
+OK.
+
+That's OK.
+
+But why an integer that's really doesn't make too much sense.
+
+It makes sense with 30.
+
+But if I change the price per room 30 to 50 or some real number like that a floating point number.
+
+This worked very well.
+
+So this really should be a double and I'm going to change that right there.
+
+That gives us a floating point number and the last thing I want to do is I want to make it Konst.
+
+I don't want that to change in my program.
+
+Always want it to be 30.
+
+While this program is running OK now if I try to change that right here I'll just show you a quick price
+
+per room.
+
+Let's say I want to change that to 100 and I'll just compile over here I'll get a compiler error that
+
+says error assignment of read only variable price per room.
+
+You just told the compiler that price per room is constant.
+
+And here you tried to change the computer saying no way.
+
+You just told me that this should not be allowed.
+
+So that's one of the benefits of constants as I mentioned in the lecture.
+
+So let me get rid of that.
+
+And so that's one of the constants we need.
+
+We also need another constant up at a 30 point zero in here to be more accurate because it is a real
+
+number.
+
+I need another one for the sales tax so I could say Konst again double and I could say sales tax or
+
+sales rate or whatever you want to call it.
+
+In this case is 0.06.
+
+And then finally let's create another one for the estimate expiry which is the 30 days conc this case
+
+could be an integer and we'll just say estimate expertly and we'll initialize that to 30.
+
+And this will be a good place for comment days.
+
+Okay so now we've got those three conc.
+
+So what we can do now is let's go through our code and will replace that 30 for example with price per
+
+room that 0 0 6 with sales tax and so forth.
+
+This is called refactoring your code refactoring means changing your code to make it better without
+
+changing behavior.
+
+That's real important.
+
+Refractories does not change the behavior of the code it just makes your code better more modifiable
+
+easier to read and so forth.
+
+So let's do that.
+
+I'm going to use price per room here.
+
+Just going to copy and paste it in here pasted in here.
+
+I'll paste it in here and here in here and not in here because that's my expertise.
+
+I'll take sales tax copy that and I'll paste it here as well as over here.
+
+And then finally we'll do the estimate expiry right here.
+
+Alright so now let's run this again.
+
+And the behavior should not change.
+
+I want two rooms and two rooms at $30 is $60 360 sales tax sixty 360's total estimate and it's valid
+
+for 30 days.
+
+Perfect as you can see this code is much more readable now you can actually see what's going on and
+
+more importantly if I want to change the price per room to 30 to 50 I only have to do it in one place
+
+right up here.
+
+Second make this 32 50.
+
+Save it build and run again.
+
+Two rooms 30 to 50 which is $65 as the cost 390 tax 68 90 and it's still valid for 30 days.
+
+So could see the benefits of using declared constants.
+
+You could just make changes in one place you're guaranteed that they're not going to change even if
+
+you made a mistake and it was an accident and it makes your code so much more readable and modifiable.
+
+Now although this code is much better now after refactoring it still has a few problems and those problems
+
+are going to address as the course progresses.
+
+You hopefully have seen that right about here we're doing a calculation and then right here we're doing
+
+the same calculation again and here we're doing the same calculation again.
+
+And here we're doing it again.
+
+OK so that's four places that were doing the same calculation.
+
+That's four places we could mess up.
+
+We really don't want to do that we want to do that calculation exactly in one place and what we'll do
+
+is when we learn about assignment statements a little bit more about mathematical expressions will do
+
+that there and then a little bit later in the course will use functions to do that in exactly one place.
+
+So if you notice that this isn't quite right you see a lot of duplications of code.
+
+You're absolutely right and we're going to handle that as we go.

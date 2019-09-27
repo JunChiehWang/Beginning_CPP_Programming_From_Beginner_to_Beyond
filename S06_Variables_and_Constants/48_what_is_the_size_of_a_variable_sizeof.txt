@@ -1,0 +1,182 @@
+This video will learn about C++ as size of operator and about the sea limits and see float include files.
+
+C++ has an operator called size of that returns the number of bytes used to represent any type size
+
+of can also be used to determine the size of compound types like arrays structures and objects.
+
+Learn about compound types in a future section in order to determine the size of a specific type.
+
+We provide the name of the type inside the parentheses for example size of it size of double.
+
+This will tell us the size of that type in bytes on the specific machine and compiler that you're running
+
+the program on.
+
+You can also determine the size of variables using their names.
+
+In this case you can use the same syntax or you can omit the parentheses since they're optional for
+
+variables the size of operator gets its information from two C++ include files C limits and C float
+
+see limits provides information about interval types and see float about floating point types.
+
+These include files also provide a bunch of handy defined constants that we can use to determine the
+
+precision of our primitive types for example.
+
+And Max tells us the maximum value we can store in an int on this specific machine.
+
+There are many others and you can see some in the examples in this slide.
+
+Let's head over to the code ID and we'll see what some of these values are in my machine.
+
+I'm into code like ID and I've written some code that uses the size of operator.
+
+Let me walk you through it.
+
+First thing I see is that we're including IO stream and we're also including C limits.
+
+Everything I'm using here will use C limits.
+
+You can get the same information in C float.
+
+I'll leave that as an exercise for you if you like.
+
+First thing we'll do is output size of information for types.
+
+So in this case I would output char followed by size of char in bytes.
+
+Size of int size of unsigned int short long and long long.
+
+Now when I run this I get information about how big or how much storage is necessary to represent a
+
+character an integer and so forth on my specific machine using this specific compiler.
+
+OK now the rest of the code is commented out and again.
+
+Uncomment that as we go through.
+
+So what I'll do is and I've created a project here called size of operator project and you can run this
+
+code on your machine and see what your values look like.
+
+So I build and run and you could see the size of information that's come up.
+
+A character is one byte in integers 4 bytes an unsigned integers also 4 bytes.
+
+That makes sense because the only difference between an int and an unsigned int is that signed bit and
+
+how much precision you can store in a short integer is two bytes along integers 4 bytes long long integers
+
+8 bytes and there you go.
+
+Now I'm running a 32 bit compiler on a 64 bit operating system.
+
+If you're running a 64 bit compiler these numbers will likely be different.
+
+All right so that takes care of the basic size of for the integral types.
+
+Let's look at some of the floating point types.
+
+So in this case you can see that I want the size of the float size of a double and the size of the long
+
+double.
+
+OK so what we can do is we can build and run and you could see now that a float on this particular machine
+
+again is 4 bytes.
+
+A double is 8 bytes and a long double is 12 bytes.
+
+That's the amount of storage that it takes to represent these specific types on this machine.
+
+Ok so now the C limits file contains some pretty nice defined constants and let's use some of them can
+
+see what it's like.
+
+In this case I want minimum values so I want to know what's the minimum value that I can store in a
+
+character.
+
+What's the minimum value that I can store to an integer in a short integer in a long integer and in
+
+a long long integer and you could see that defines are right here and those will default to some integer.
+
+So let's let's run this now.
+
+Again I'll build and run and you can see that the minimum value I can store in a character's negative
+
+1:28 that makes sense because a character is one byte be it an integer you can see the number there
+
+in a short negative 3 to seven six eight long and the long long.
+
+Your numbers may look different on your machine depending on a lot of factors.
+
+All right.
+
+Now we can do the maximum of values and it's exactly the same except we're doing char Max Max instead
+
+of char Minutemen.
+
+I'll run this again in a press control at 5 to run an hour maximum values are for characters 127 for
+
+short three to seven six seven and for long long so you can see that's a pretty big number.
+
+All right so that's the use of see limits and size of with types.
+
+We can also use size of with variable names and I'll show you an example here where what we have here
+
+is here we've got an integer called H.
+
+And we're suddenly 21 to it.
+
+We're not going to use the 21 at all.
+
+All we're interested in is the size of that variable.
+
+So rather than size of int here we're saying size of age.
+
+This is one syntactic variant.
+
+We can also just say size of age without the parentheses.
+
+So I'm doing that for an integer called age.
+
+I'm doing the same for a double called wage.
+
+So obviously we would expect the double to be much bigger.
+
+But again what I'm doing in here is I'm using the variable name instead of type here as well.
+
+All right so let's run this one more time.
+
+And what we've got now at the bottom here is that the size of using variable names.
+
+So age is four bytes and if you recall here we know that age is an integer right.
+
+And integer up top is four bytes.
+
+If you recall that statement at the top.
+
+So age is 4 bytes.
+
+The other syntax variant gives exactly the same result and wages a double which is 8 bytes and you can
+
+see our doubles.
+
+Here is 8 bytes.
+
+You may be wondering why in the world would I ever use this stuff.
+
+Well it's important to understand what the size and precision of your types are on your system.
+
+Later on when we deal with arrays and other data structures sometimes it's nice to be able to understand
+
+how big something is how big each section of it is.
+
+This is one of the big differences between C++ and other languages like Java and Python with those languages.
+
+You're really far removed from the machine so you're programming at a much higher level C++ we're at
+
+a lower level so we've got to deal with this kind of thing.
+

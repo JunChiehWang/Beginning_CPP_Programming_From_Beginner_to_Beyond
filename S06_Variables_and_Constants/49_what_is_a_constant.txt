@@ -1,0 +1,147 @@
+This video we'll learn what constants are in C++.
+
+Constants are very much like C++ variables.
+
+They have names.
+
+The rules for naming is the same.
+
+They occupy storage and they're usually typed.
+
+This means that when you declare a constant you usually declare their type just like you do with a variable.
+
+There is one type of constant that is not typed and I'll talk about that at the end of the video.
+
+The big difference between variables and constants is that unlike variables the value of C++ constants
+
+cannot change once they're declared.
+
+For example if I declare age to be a constant integer and assign 21 to it then the value of age will
+
+always remain 21 and I won't be able to change it if I try to change it.
+
+I'll get a compiler error.
+
+Why would you need constants in a program.
+
+Let's consider a simple application that uses the number of months in a year throughout the code.
+
+We could certainly use the number 12 everywhere we need it.
+
+However 12 could be a lot of things.
+
+And if the program is of significant size it might not be clear to other programmers that 12 means the
+
+number of months in a year.
+
+So we could create a variable and call it months in the year and assign 12 to it and now use that name
+
+in our code whenever we need to use 12 in that context.
+
+That's a much better solution than hard coding 12.
+
+But that's a variable.
+
+Which means it can be changed even accidentally.
+
+A better solution is to declare months in a year to be a constant integer and to assign 12 to it.
+
+Now we can use a meaningful name in our code.
+
+That means 12 and we can't change it either by accident.
+
+C++ gives us several ways to create constants.
+
+We can use literals declared constants constants expressions enumerated constants and finally we can
+
+use define constants.
+
+We'll learn about constant expressions and enumerated constants later in this course.
+
+Let's see what literal constants are first.
+
+Literals are the most obvious kind of constants.
+
+We can use little ones to run our code and we often do.
+
+They're used to express specific values.
+
+We've already seen examples of literals in this slide.
+
+You can see that 12 one point five six Frank and the character J are examples of literal constants.
+
+For example the floating point literal constant one point five six always expresses the value 1.5 six
+
+literal constants also have types based on a naming convention.
+
+You can be explicit with the types of little Hans for example for integer literal constants you can
+
+add certain suffixes to the integer literal to specify a different type.
+
+For example the letters you and L specify unsigned and long respectively.
+
+This can be either lowercase or uppercase.
+
+This slide shows just a few of the combinations for floating point numbers.
+
+You can use the L and F suffixes as shown in this slide.
+
+We can also have character literal constants in C++.
+
+We haven't used these yet but they're commonly used within string literals.
+
+They consist of the backslash character followed by another character and they're called Escape codes.
+
+You can see some examples in this slide the see out statement will display hello.
+
+Then tab over and display there then it will go to the beginning of the next line and display my friend
+
+and that it will go to the beginning of the next line again.
+
+It's very common to see Escape codes embedded in string literals in output statements.
+
+By far the most common way of declaring constants in C++ is to use declared constants using the Consta
+
+keyword.
+
+The syntax is exactly like that of a variable declaration with the Konski word at the beginning.
+
+You must initialize the declared constant or the compiler will give you an uninitialized Konst error
+
+message.
+
+What happens if you try to change the value of a constant.
+
+You guessed it you can't.
+
+The compiler will give you an error letting you know that the concept is read only and you can't change
+
+the last way of declaring constants and C++ by using the preprocessor directive poun define.
+
+Let's take a look at that defined constants were very commonly use an older C and C++ code.
+
+These constants are defined using the power defined preprocessor directive.
+
+I'm showing you define constants because you may run into them since there is so much C++ legacy code
+
+out there.
+
+Here you're telling the preprocessor that wherever it sees the word pie replace it with three point
+
+1 4 1 5 9 to 6.
+
+Think of this as a blind Find Replace as you might do in a word processor.
+
+The preprocessor will gladly substitute one for the other since the preprocessor doesn't know C++ it
+
+can't type check.
+
+And this could lead to difficult to find errors.
+
+So please don't use defined constants in modern C++ code in the next video.
+
+We'll head over to the code ID and see how we can declare and use constants in C++.
+
+First will write a program using literal constants then will refactor the code to use declared constants.
+
+

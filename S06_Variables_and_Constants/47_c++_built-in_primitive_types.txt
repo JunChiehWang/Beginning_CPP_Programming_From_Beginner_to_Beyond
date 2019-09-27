@@ -1,0 +1,473 @@
+In this video we're learn about some of the commonly used C++ primitive data types.
+
+These types are also sometimes called fundamental data types because they're implemented directly by
+
+the C++ language.
+
+The types we'll discuss in this video are the character types the integer types which include both signed
+
+and unsigned integers.
+
+The floating point types and the Boolean type.
+
+It's important to keep in mind that unlike many other programming languages the size and precision of
+
+C++ is primitive data types are largely dependent on the platform that you're working on and the compiler
+
+you're using.
+
+This means that as a C++ programmer you need to be aware of your specific machine and understand how
+
+much storage is allocated for these types to effectively use them.
+
+The C++ include file C limits contains information about the size and precision of the data types for
+
+your specific compiler
+
+as you know computer store information using a binary representation which consists of zeros and ones.
+
+And these fundamental type sizes are expressed in bits.
+
+The more bits allocated to type the more unique values that can be represented.
+
+Also the more bits the more storage that's necessary to represent that type in memory.
+
+In this table you can see how many values can be represented in a given number of bits.
+
+The formula used to calculate these values is to raise to the number of bits power so we can store 256
+
+distinct values in 8 bits sixty five thousand five hundred thirty six distinct values and 16 bits over
+
+four billion distinct values and 32 bits and over 18 billion billion distinct values in 32 bits.
+
+Now let's take a look at the specific primitive types one at a time.
+
+The C++ character data type is used to represent characters such as the letter A x and so forth.
+
+The character data type is often implemented as 8 bits which means it can represent a maximum of 256
+
+characters.
+
+This is plenty to represent the alphabets from many spoken languages.
+
+However some spoken languages have thousands of characters and in many cases multiple symbols are combined
+
+to form single characters in order to support these languages.
+
+C++ supports a wider character type that can be as large as necessary to represent these characters.
+
+Unicode is a common standard used to represent multiple character sets for any language.
+
+When we work with characters in this course we use the char data type since it easily supports the Latin
+
+character set.
+
+C++ also supports the integer data types.
+
+Integers are used to represent whole numbers both signed and unsigned integers are supported.
+
+There are many variants of the integer data type.
+
+Let's take a look at some of them the following tables show the C++ integer data types for both signed
+
+and unsigned integers.
+
+In addition to those shown in the table it's possible to store both sides and unsigned integers into
+
+character data type.
+
+Notice that some of the keywords in this table are bold and others are italicized.
+
+Also typical sizes are included in the table.
+
+For example if you want to declare a signed integer you don't need to use the signed keyword so it's
+
+by default.
+
+Integers are signed.
+
+Similarly if you want an integer type that stores very large numbers you can simply declare the type
+
+as long long and you'll get a signed long long integer if you want unsigned integers that is integers
+
+that are zero or positive values only.
+
+Then you're required to use the unsigned keyword.
+
+I know this may seem a little confusing with all the optional keywords but it's not so bad if you just
+
+think that by default all integers are signed.
+
+I know what you're thinking.
+
+Which ones these do I use in my application.
+
+And the answer is It depends.
+
+If you want an integer variable of stores ages then you could use an unsigned int or even an int if
+
+you want an integer to represent the number of kilometers between the planets that you probably want
+
+to use an unsigned long long for most applications using it is perfectly acceptable.
+
+But you do need to keep in mind the limitations especially when you perform math on variables and store
+
+results in other variables.
+
+Since the results may not fit into the variable you're saving too.
+
+This could cause an overflow.
+
+Well look at a specific example of an overflow in life code.
+
+At the end of this video C++ also supports floating point types.
+
+These are used to represent non integer numbers such as real numbers numbers like 1.2 0.5 and pi.
+
+It's important to understand that computers have finite storage and many real numbers have an infinite
+
+number of digits after the decimal point.
+
+Pi is a perfect example of this.
+
+In these cases computers store an approximation of the real number.
+
+There's no way the computer can store numbers such as pi precisely floating point numbers are represented
+
+internally by the computer as signed numbers with a mantissa and an exponent.
+
+You may remember your scientific notation from school one point two three four times.
+
+Tend to the seventh power.
+
+That's the way they're stored internally.
+
+This isn't something you need to worry about since it's handled automatically internally but it's important
+
+to know that these are approximations.
+
+There are three types of floating point numbers float double and long double.
+
+Each has varying precision in size depending on the compiler.
+
+Note that long double can store very very small and very very large floating point numbers.
+
+The last primitive we'll learn about is the Boolean type.
+
+The boolean data type is used to represent true and false values in C plus plus 0 is false and any non-zero
+
+value is true.
+
+C++ also includes the true and false keywords that are often used with a boolean type.
+
+As you can imagine boolean types are used whenever you need to know if something changes state.
+
+For example game over key pressed is invincible.
+
+These are all good examples of using the boolean data type since values can be either true or false.
+
+Great.
+
+Now let's head over to code live and see some of these primitive types in action.
+
+So now I am into code like ID and I've created a project called primitive types.
+
+That's in the section 6 workspace in this C++ file.
+
+I'm going to go over some examples of using the primitive types will start with carriages would do integers
+
+of floating point numbers and then at the end will do booleans and also show you an example of an overflow
+
+so you could see the typical behavior you get with this.
+
+I've written the code ahead of time and I've commented out a lot of it and what I'll do is uncomment
+
+and run pieces of it at a time so you can see it build.
+
+So the first thing we want to do is take a look at this first example here.
+
+This is a good example of using the character data type.
+
+My middle initial is J.
+
+So the variable name is called middle initial and it's character data type so it can hold a single character.
+
+The way that C++ represent single characters is with single quotes around the J.
+
+Do not put double quotes there that would make it a string and you'll get an error.
+
+So what I'm doing here is I'm simply initializing the middle initial variable to J and then displaying
+
+it right here in the output statement.
+
+So I'll build and run and I'm just going to click here remember so it doesn't ask me my choice of the
+
+time and I just want to build it execute you could see here it says my middle initial is J.
+
+Exactly what I expect.
+
+OK so now let me uncomment the integer types here the way that you can comment that uncomment lines
+
+very easily.
+
+Just select the lines you're interested in and just press control forward slash or command swards slash
+
+on a Mac and that will toggle between comment and noncom it.
+
+OK.
+
+So in this case I've created a variable called the exam score and initializing it to 55.
+
+Now exam score is an unsigned short.
+
+And remember we have to say unsigned if we want our variables to be unsigned but I don't have to say
+
+it I can simply say short.
+
+So this is the same as saying unsigned short exam score some initialising that to 55.
+
+And again I'll build and run and you could see my middle initial still J.
+
+And my exam score was 55 OK.
+
+In this case we've got another number.
+
+Uncomment that out the number of countries represented in my meeting we're 65 and I'm initialising it.
+
+This is a simple integer by default.
+
+It's going to be signed.
+
+And here it's going to say there were sixty five countries represented in my meeting.
+
+So let me run that again I'm pressing control 5 on windows just to use the shortcut and you can see
+
+here there were sixty five countries represented in my meeting.
+
+Now in this case we've got a much larger number than the uncomment these two lines out.
+
+So now I've got people in Florida that's my variable name.
+
+This is the state I live in.
+
+And there are 20 million 610000 people living in Florida.
+
+The last I just checked on Google.
+
+So I'm defining this as a long.
+
+I'm hoping that that fits in in the long.
+
+It's a pretty big number.
+
+I'm pretty sure it does.
+
+Let's try that.
+
+So our press controls five again run it and you can see there are about 20 million 610000 people in
+
+Florida.
+
+Now in this case how about number of people on earth our income at those two lines and you could see
+
+my variable name is people on earth and there are about seven billion six hundred million people on
+
+earth.
+
+Now something that's interesting is as these numbers get bigger and bigger and bigger they're hard to
+
+read.
+
+It's really easy to forget zeros and so forth.
+
+So the C plus plus 14 standard allows you to use as little tick marks right there you can put them anywhere
+
+you want.
+
+It really doesn't care just to make it easier for you to read it strips them out.
+
+It just creates the number.
+
+If this doesn't compile on your end most likely you're not using the C++ 14 compiler using the C++ 11
+
+compiler.
+
+You could set it to C plus plus 14 or you could just get rid of these little tick marks to make it compile.
+
+So when I run this you'll see something interesting happen.
+
+I'm pressing control F5 again.
+
+Notice I'm getting an error the error says error narrowing conversion.
+
+It's trying to fit that number into a long and it doesn't fit.
+
+This is one of the benefits that I mentioned about using the list initialization right here with the
+
+curly braces.
+
+Notice what happens if I did that actually you know what.
+
+Let me just run this first as a long long which is really what I want because otherwise it's not going
+
+to fit.
+
+So I've got my long long and I'm going to build and run this.
+
+And you can see there are about seven point you can see the numbers correct.
+
+But if I did a regular initialization like a C-style initialization with an equal sign here or an assignment
+
+statement something like that.
+
+And we'll go back to long because we know it's not going to fit long and our build and run again look
+
+what prints out there are about negative 9 8 9 9 9 people on earth.
+
+That's an example of an overflow.
+
+But you also notice that we didn't get an error.
+
+That's one of the benefits of using this initialization.
+
+If I use lists in initialization it will catch those problems for me at compile time which is really
+
+really nice.
+
+So again I'll compile here.
+
+Control at 5.
+
+Boom there's the error.
+
+I know I've got a problem.
+
+I can fix it so I'll make this a long long.
+
+OK.
+
+So hopefully that makes sense.
+
+Always use that list initialization syntax it's so much better.
+
+In this case I want the distance to Alpha Centauri.
+
+That's pretty far.
+
+This is I believe in kilometers and kilometers is that's what my output statement says uncomment these
+
+two lines.
+
+And let's run this.
+
+And you can see that the distance to Alpha Centauri is and that's my number that's correct.
+
+OK so that's a good example of it overflow sure.
+
+Another example of an overflow at the end of this source code that may not be as obvious as this.
+
+OK so here's a couple of examples using floating point types.
+
+Remember these are real numbers these are numbers with decimal points.
+
+So in this case my car payment is 400 one dollars and 23 cents.
+
+I can uncomment this out obviously if I try to store for a one point two three into an integer I've
+
+got a problem because the integer would only hold the whole number.
+
+So the point to three would get truncated off it I could have a problem.
+
+So in this case let's run this.
+
+And now you can see that my car payment here is 401 23 OK if I want to store a larger number I could
+
+use a double.
+
+In this case I'm just storing PI and I'm hard coding pi to be three point 1 4 1 5 9 it could be obviously
+
+much much longer.
+
+And in this case it's a double and you can see that there is Pi three point 1 4 1 5 9.
+
+I can also store very large and very small numbers using long doubles.
+
+So in this case I'm storing 2.7 times tend to the 120 with power.
+
+That's a very large number.
+
+Number to store that into this large amount variable and then I'm going to display it.
+
+So that's built and run and you can see 2.7 times tend to the 120 with power is a very big number.
+
+You can see it's actually storing that correctly.
+
+The last one we'll look at is the bully and type the Boolean type is a true false value.
+
+So in this case comment that you see I've got a variable called Game Over.
+
+You is the correct underscore style here.
+
+I've got a variable called Game Over.
+
+And in this case you could see that I've been working on a project that's using camel case muscle memory
+
+kicks in.
+
+So in this case I've got a variable called Game Over and I'm initializing it to faults and then I'm
+
+saying the value of game over is.
+
+And you might expect that this would print up faults here but it doesn't print up vaults.
+
+What it does is it prints out 0 because as far as C++ is concerned 0 is.
+
+If it was true it would print out a 1.
+
+Now here's an example of an overflow that's not so obvious and a comment that out here I have a variable
+
+called value 1 and I've got another variable called value 2.
+
+They're both short integers and I'm assigning 30000 to this one and 0 0 0 to this one.
+
+Those numbers will fit in those variables.
+
+But then I'm going to create another variable called sum.
+
+And I've got a value 1 times value 2.
+
+Now I know that this the product of those I guess I should of called it product would be called product
+
+just to be a little bit more correct here.
+
+Here we go.
+
+So I know that the product of those two numbers does not fit in a short.
+
+So let's compile this
+
+and you could see that the sum of 30000 and 1000 is some negative number.
+
+Obviously that's an overflow error.
+
+Be very careful with these things.
+
+Make sure that sure those two pieces each will individually fit in the shorts but the products certainly
+
+can't.
+
+But notice the compiler is helping me get a compiler warning.
+
+You've got potentially a narrowing conversion here.
+
+So don't ignore those warnings as the computers do a pretty good job about predicting problems that
+
+can happen.
+
+OK so that concludes this video.
+
+You can see some simple examples of creating variables initialising variables using some of the C++
+
+primitive types.
+
+
