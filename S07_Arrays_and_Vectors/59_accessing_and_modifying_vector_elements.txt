@@ -1,0 +1,509 @@
+It this video will look at the syntax for accessing individual vector elements.
+
+The first way to access vector elements is to use the array syntax we've already learned using the subscript
+
+operator.
+
+That's the square brackets we use the name of the vector followed by the square brackets with the index
+
+of the vector element we want inside the square brackets.
+
+For example test scores one refers to the element at index 1 in the test scores vector in the code example
+
+at the bottom you can see that the syntax is exactly as it was for a race.
+
+Remember that vector subscripting or indexing is the same as in arrays.
+
+It starts at zero.
+
+So the first element of an array is at index 0.
+
+It's important to understand when we use the subscript operator with a vector.
+
+No bounds checking will be done.
+
+You have to do it yourself as with a race.
+
+Let's look at another way of accessing vector elements.
+
+We can also access vector elements.
+
+You see the AT method.
+
+This is the vector syntax since when we create a vector we're really creating an object in object oriented
+
+jargon.
+
+Then we can ask objects to perform operations.
+
+These operations are called methods.
+
+The syntax is simple the object name.
+
+In this case the name of the vector followed by a dot called the dot operator followed by the name of
+
+the operation we want performed.
+
+This is the method name.
+
+Don't worry about the jargon for now it will come before you know it and will cover it in depth.
+
+When we talk about object oriented programming the C++ vector has a method or operation called at a
+
+T.
+
+So you can ask the vector to give you an element at a specific position which you provide inside the
+
+parentheses.
+
+This is actually much more intuitive since the name at provides context.
+
+So in the example we've declared and initialized the vector named test scores to the 5 integers one
+
+hundred ninety five ninety nine.
+
+87 and 88 if we want to access a specific element we use the method and provide the element index.
+
+You can see that the syntax is very easy to read and understand.
+
+Test scores at 0 will refer to the first element in the vector that element at position 0.
+
+We can also use the same syntax when we want to modify vector elements in this example.
+
+We're reading 5 integers from the console and storing these elements into the test scores vector.
+
+The last statement is an assignment statement as we saw with a raise.
+
+We're storing 90 into the first element of the test scores vector.
+
+You're probably thinking OK that's pretty easy.
+
+Vector's is just as easy to use as arrays but why do they change in size dynamically.
+
+The vector has a method called pushback that adds a new element to the end of the vector.
+
+Remember all vector elements must be of the same type.
+
+So the element you add must be of the same type as all the other vector elements.
+
+In this example we've created a vector called test scores that contains three integers one hundred ninety
+
+five and ninety nine.
+
+If this were an array and we wanted to add another test score we'd be stuck since arrays are fixed in
+
+size.
+
+However with vectors we can use the pushback method and provide the integer you want to add within the
+
+parentheses.
+
+You can see that I'm asking the test scores vector to push back 80 and then 90.
+
+This will add 80 and then 90 to the end of the vector.
+
+Now the vector will contain five elements one hundred ninety five ninety nine 80 and 90.
+
+How does this work.
+
+You don't have to worry about it.
+
+That's the beauty of vectors and of the other classes in the standard template library.
+
+The vector will take care of allocating or deallocating space adding new values to that space and so
+
+forth.
+
+You can concentrate on solving your problem.
+
+Ok but what happens if you're using ADD or some other vector method and you go out of bounds.
+
+Let's see if you go out of bounds and you're using a method that does bounds checking.
+
+C++ will throw an exception.
+
+That's the jargon used to say that an exceptional condition has been encountered and the program can't
+
+continue an error message is displayed and the program will terminate.
+
+This is a good thing.
+
+Now you have an error message that tells you what the problem was and you could fix it.
+
+The error message in this case is pretty long but it's telling you exactly what happened.
+
+The error message may look different depending on the compiler you have but the information provided
+
+will be the same.
+
+In this case I bolted the important parts of the error message.
+
+You can see out-of range vector range check and the number is 5 and 2.
+
+When you look back at your code you'll see that vector has two elements and you wanted element at index
+
+5.
+
+You want your program to terminate or crash during testing so you can fix errors but you don't want
+
+it to crash in production.
+
+This is where you can do exception handling.
+
+This involves catching these exceptions as the program runs and dealing with them so that the program
+
+doesn't crash.
+
+Exception handling is a more advanced topic but I want to cover the basics.
+
+So there'll be a set of at the end of the course just an exception handling.
+
+I hope you can see how much better vectors are than arrays and why you should use vectors in modern
+
+C++.
+
+Now let's head over to code like and use what we learned and write some code with vectors so now I'm
+
+in code right.
+
+And let's do some examples with vectors.
+
+I'm in the seventh section workspace under the vector's project and here's my main file.
+
+Notice that I'm including the vector include file.
+
+You must do this in order to use vectors also.
+
+Vectors belong to the standard namespace.
+
+So either you use the namespace standard or you will have to do as t d scope resolution operator.
+
+Everywhere you use vectors.
+
+Let's talk about a couple of different ways to create vectors in this first example here.
+
+I can create a vector called vowels.
+
+And it's a vector of characters and that's the syntax.
+
+We put the type inside the angle brackets.
+
+So in this case I've got vowels is a vector of characters and this is an empty vector.
+
+OK it's of size zero there's nothing in there right now.
+
+The only way to add things to it is to do something like push back which would do that a bit.
+
+The second example creates a vector called foules again.
+
+In this case it's five characters long.
+
+And each one is initialized to 0.
+
+This third example here which is the one I'm going to use in this example.
+
+I'm using an initializer list here so I'm initializing the vector vowels which is again is a vector
+
+of characters to the characters a.
+
+Oh you which are my vowels again remember that the character literals have single quotes around them
+
+not double quotes.
+
+So at this point I can simply output vowels Sub-Zero a Volvo for which I expect to predict a and you
+
+respectively notice that even though I'm using a vector I'm using the array syntax so it's very very
+
+familiar.
+
+Also remember that using the subscript notation does not do bounds checking.
+
+OK so let me run this.
+
+So this is my sample run.
+
+There's my lower case.
+
+My lower case you just expect.
+
+All right so now let's take a look at another declaration of vector.
+
+In this first example here I'm creating a vector called test scores which is a vector of integers and
+
+I'm creating a vector of 3 integers.
+
+In this case all of them will be initialized to zero in the second example.
+
+I'm creating the test scores vector again.
+
+Obviously I have to comment them out.
+
+You can't use the same name twice.
+
+That's why I'm doing this.
+
+It's a vector of integers three of them.
+
+Each one is initialized to 100.
+
+And so those are two variants for constructing these vector objects.
+
+That one I'm going to use is this one right here where I'm saying.
+
+Test scores again is a vector of integers and I'm initializing them to 100.
+
+98 in 89.
+
+So in this case I'm going to get exactly three elements in my vector my vector will be of size 3.
+
+OK so let's comment this out here.
+
+And in this case I expect it to display 198 and 89.
+
+Again here I'm using the array syntax.
+
+So let me run this.
+
+And there you go one hundred ninety eight eighty nine using array syntax.
+
+Now we can also use vector syntax so let me and comment this in here you can see I'm saying test scores
+
+dot at zero.
+
+Test scores at one test scores at two.
+
+So in this case I'm using the at method to give me the value at that specific index.
+
+Same idea except that this is a method and this will be bounced checked which is very important to understand.
+
+Also after I print out those three numbers I'm saying there are so many scores in the vector.
+
+OK so what does that mean.
+
+Well notice the size method here.
+
+This is a method in the vector class.
+
+So I can have my vector name and I can say something like that size.
+
+It's that simple.
+
+And this will return however many items are in the vector right now.
+
+Right now I have three of them.
+
+So I expect this to say there are three scores in the vector.
+
+Remember the vector can grow and shrink dynamically.
+
+So it's important to be able to ask it hey how big are you.
+
+That's what the size method does.
+
+So I'll run this one more time and you can see here my test scores using array syntax 198 89.
+
+Now my test scores using the vector syntax 198 89.
+
+We expect that because the vector hasn't changed.
+
+But here it says there are three scores in the vector.
+
+So here we're asking the vector hey how big are you.
+
+What's your size.
+
+And it's returning a 3.
+
+In this example here.
+
+But we're going to do is we're going to actually put some information into the vector.
+
+We're going to use the vector syntax to this point forward.
+
+So here I'm saying two or three test scores and then I'm grabbing three integers from the console and
+
+I'm putting the first one at zero.
+
+The second one at one and the third one too.
+
+So I'm changing those vector elements.
+
+And then I just want to display them out again.
+
+So I come at this.
+
+OK so let's do that build and run again.
+
+Right now we've got 198 and 89 in there.
+
+So let's just say I want 10 20 and 30 and I want to display them out.
+
+There you go.
+
+Updated test scores is 10 20 and 30.
+
+So you can see that we've actually changed the contents of those vector elements.
+
+Now let's talk a little bit about the dynamic nature of vectors.
+
+This is the part this really really cool.
+
+I'm going to uncomment this spit out here
+
+and notice the code here it says enter a test score to add to the vector remember the vector at this
+
+point has three elements in it.
+
+I need to read this into some variable.
+
+So I've created a simple variable right here called skorts you add.
+
+It's just an integer.
+
+This is not a vector.
+
+This is not an array.
+
+This is just a plain old integer variable initializing it to zero that's the best practice.
+
+And I'm reading an integer from the keyboard from the user and putting it into score to add then what
+
+I'm going to do is I'm going to tell the test scores vector to push that integer at the back of the
+
+vector.
+
+So what's going to add it to the vector if the vector needs to increase in size.
+
+It will.
+
+That's nothing we have to do handles that automatically that I'm going to say enter one more test score.
+
+So I've read another test score from the console and I'll push that score on.
+
+So at this point when we display we should have five integers.
+
+Now in the vector I'm going to display them all at 0 1 2 3 and 4 and then I'm going to say hey test
+
+scores what's your size and I expect the five here.
+
+OK so let's try that so when I try my test scores again I'll say 10 20 and 30.
+
+Now remember our vector contains three integers right now 10 20 and 30.
+
+So let's enter a test score to add let's add a 100.
+
+Now I would say Give me one more.
+
+Let's put in five.
+
+Maybe I got some extra credit.
+
+Now when I press center I should expect to see five integers displayed as well as the size of the vector
+
+not being 5.
+
+So I'm going to press center and that's exactly what I see.
+
+The test scores are 10 20 30 100 105.
+
+Then it says there are enough five scores in the vector.
+
+That's pretty cool.
+
+Let me show you an example of an exception right here I'm saying this should cause an exception because
+
+I'm trying to access test scores at 10 if I tried to do something like this and just used a race syntax
+
+like that.
+
+No bounds checking will happen.
+
+I might just get a crash with no error message or anything.
+
+Instead I'm actually saying at 10 and we could try to put a new line it's not going to matter much because
+
+it's not going to do that because there is no tempo element.
+
+Let me run this again and I'll go into those numbers again.
+
+OK so a gamble set 10 20 30 that's pushing 100 and 105.
+
+Now we should get an exception and there's the exception.
+
+You can see the program still stopping.
+
+But there's my exception terminate called after throwing an instance of out of range.
+
+There's a range checking problem which is it 10 in disguise five big.
+
+So that gives you a really really good clue as to what's going on.
+
+Right.
+
+I'm going to comment that out so it won't affect us again.
+
+And then the last thing we'll do is I'll show you an example of using a two dimensional vector uncomment.
+
+All of this.
+
+All right.
+
+So here how do we declare a two dimensional vector Well a two dimensional vector is a vector of vectors.
+
+So it's a vector of vectors and this is how we declare a vector vectors.
+
+I want to declare a vector that contains within it not it's not floats not doubles but a vector.
+
+In this case a vector of integers and that's my movie ratings.
+
+I can initialise them right here.
+
+So going horizontally that would be the first reviewer The second reviewer The third reviewer and going
+
+vertically this would be the first movie the second movie the third movie in the fourth movie.
+
+Now just like I showed you in the slides with the Rays I can use array syntax so I could say here the
+
+movie ratings for review are number one using a syntax and I would expect this to print out 1 2 3 4.
+
+That's the first reviewer right up here.
+
+And in order to use vector syntax we just use add but we use it twice.
+
+Give me the rating at zero.
+
+That gives me this guy.
+
+And then once I have that guy I can take at zero for him or at one and the next line and so forth.
+
+So if I run this I would expect to see one two three four both times so let's run it and we'll get by
+
+this part one more time.
+
+And there you go.
+
+Here the movie Ready's reviewed over one array syntax.
+
+One two three four.
+
+Here the movie ratings prove you were number two.
+
+Number one again.
+
+That's right.
+
+Using vector syntax.
+
+One two three four.
+
+OK so that basically covers the fundamentals of vectors.
+
+How to use them there's so much more effect and we'll talk about all of that when we talk about the
+
+standard template library.
+
+But congratulations you've just now created objects used to object methods and we're on the way to object
+
+oriented programming.
+
+
