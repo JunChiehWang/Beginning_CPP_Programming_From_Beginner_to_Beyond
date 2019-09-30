@@ -1,0 +1,51 @@
+C++ has a rich set of operators they can be used to build up expressions.
+
+Most of the C++ operators are binary operators which means they operate on two operands.
+
+For example the multiplication operator.
+
+However some are you know three operators which means they operate on only one operand.
+
+An example of this is the unitary minus operator which simply negates its operand.
+
+There's even a turn every operator that operates on three operands.
+
+This is the conditional operator the C plus plus common operators can be grouped into several categories.
+
+Assignment operators are used to modify the value of some object by assigning a new value to it.
+
+Arithmetic operators are used to perform mathematical operations on operands the increment and decrement
+
+operators are interesting because part of them worked like an assignment and part of them worked like
+
+arithmetic.
+
+They're super useful and very commonly used relational operators or comparison operators allow you to
+
+compare the values of two objects.
+
+These are very useful and include equal to not equal to less than greater than and so forth the logical
+
+operators are used to test for logical or boolean conditions.
+
+For example if you want to execute a specific statement only when the temperature is less than freezing
+
+and it isn't snowing.
+
+These include the logical not and and or operators.
+
+There are also several member access operators.
+
+We've already seen one of them.
+
+Remember the array subscript OPERATOR It allows access to a specific member.
+
+There are others that work with objects and pointers which we'll cover later in this course.
+
+Finally there's the other category.
+
+This includes those operators that really don't fit very well into the previous categories.
+
+And the next several videos we'll head over to code like and see some examples of these operators in
+
+live code.

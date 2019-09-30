@@ -1,0 +1,397 @@
+In this video we'll go over C++ is increment and decrement operators.
+
+I'm in the Section 8 workspace in the increment decrement operators project.
+
+This is a pretty simple looking operator but there's a lot to it and it can be extremely confusing if
+
+you ever use it.
+
+Let's talk about it.
+
+Basically it's the plus plus minus minus operator.
+
+You've got two plus side by side or two minuses side by side.
+
+All that means is increment something by one or decrement something by one.
+
+In this example I'm only going to be using the increment operator but everything will apply to the detriment.
+
+Operator OK so all it does is increment or decrement its operand by 1.
+
+So if you use it with an integer it increases the integer by want or decreases the integer by 1 depending
+
+on which one you're using.
+
+If you're using it with the floating point numbers same thing it will increase it by one or decrease
+
+it by one and we can also use it with pointers to move pointers along we haven't talked about pointers
+
+yet but we'll use this operator when we talk about pointers in a future section.
+
+There are two variants to this operator.
+
+There's a prefix notation and a postfix notation.
+
+All that means is that the operator is either before its operand or after its operand.
+
+You can see here on line number nine that the operand is numb and the operator is to the left of it.
+
+So that's prefix notation to postfix notation is when it appears to the right of the operand.
+
+OK I'll say this a few times don't over use this operator and never use it twice for the same variable
+
+in the same statement because the behavior is undefined You really don't know what you're going to get
+
+good.
+
+So now let's talk about the operator.
+
+Let me scroll down just a little bit and I've got some examples here and I'll walk through these examples
+
+really really carefully and slowly so you can understand what's going on.
+
+For all of the examples I'll be using these two variables right here.
+
+I'll be using a variable called counter in a variable called result.
+
+They're both integers.
+
+Counter will be initialized to 10 and result to zero.
+
+OK so real straightforward counter will be 10 result will be zero Moken to manipulate those variables
+
+and we'll see how this operator really works.
+
+So let's start right here.
+
+Uncomment example one I walk through this really slowly you can see what's happening I'm outputting
+
+counter.
+
+OK will counter is 10.
+
+So this you expect it to display A10 And that's exactly what happens in this case I'm saying Kountry
+
+equals counter plus 1 right.
+
+So what's counter 10.
+
+I'm adding 1 to it and then I'm putting it right back into counter some changing this 2011 and this
+
+output statement would display an 11.
+
+In this case I'm using counter plus plus that's the increment operator that's going to increment the
+
+variable counter by one.
+
+When you use it all alone like that if you've got an operand followed by a plus plus or a plus plus
+
+before the operand it means exactly the same thing.
+
+All it means is increment the operand by one.
+
+OK.
+
+It'll get a little more confusing in the next few examples but let's just get this one under our belt
+
+so we can understand what's going on.
+
+So what's happening here is we're incrementing that l value counter by 1.
+
+So we're going to counter incrementing it by 1.
+
+Now it's 12.
+
+And we're going to display counter here which is 12 the pre-increment works exactly the same as the
+
+post-increment.
+
+When that thing is all alone on the line just like I said over here.
+
+So in this case exactly the same thing will happen when you take the 12 and add 1 to it make it a 13
+
+counter and I'll be 13 and output 13.
+
+All right.
+
+So in this context where do you want to increment something you could say counter equals counter plus
+
+one or you could just say counter plus plus or you could say plus plus counter.
+
+All three of them mean the same thing.
+
+Later on we'll talk about a different operator.
+
+The plus equals operator that does does the same thing as well.
+
+So there's a bunch of different ways that you can achieve the same result.
+
+I'm going to clear this.
+
+And remember we've got 10 11 12 and 13 as the output.
+
+So I'll clean or clear this and let's run this example and you can see that counter is 10 11 12 and
+
+13 just like what we expected.
+
+All right so now let's look at a little bit more complicated example and I'm going to comment this out
+
+and I'll pass a comment.
+
+It's not the lead.
+
+And I will uncomment out example to
+
+OK.
+
+So let's go through this one again really carefully what we've got here is again I've reset counter
+
+to 10 end result to zero.
+
+All of these examples are going to start in the same place counter will be 10 result will be zero.
+
+So here I mean to say I want to output counter will counter is 10 right.
+
+So we expect this to display a 10.
+
+Now we're doing a pre-increment of counter and we're storing the result into that variable called result.
+
+So what's happening here is there's really a few things going on here.
+
+If you just see that plus plus and just taken out for a second and the result is something like this
+
+result equals counter.
+
+That's the real assignment statement that's going on here.
+
+The plus plus in front of countermands it's prefix notation which means that counter will be incremented
+
+before it's used.
+
+So in this case before happens here its use is right here but before it's used We're going to say counter
+
+equals.
+
+I'll just say counter plus one just to be really explicit.
+
+So this statement right here that's the effect of that statement.
+
+I want to increment counter before I use it.
+
+And then I want to use it by assigning it to result.
+
+All right so let's do those two steps and see what happens.
+
+Counter equals counterplot one we just made Kountry 11 and then we're going to assign counter to results
+
+we'll count these 11.
+
+So result when I'll be 11 now I want to display counter counts will be 11 and result will be 11.
+
+So this is what I expect is the output 10 11 and 11.
+
+Remember this is the use and this is the effect of that pre-increment.
+
+All right so let me clear this and run it again.
+
+We're expecting 10:11 in 11
+
+build and run and there it is 10 11 and 11 exactly what we expected.
+
+All right I'll comment out that piece and we'll do another example this time with a post-increment.
+
+And remember I'm using the increment but the decrement works exactly the same way.
+
+It just decreases the value by 1.
+
+All right.
+
+Uncomment this example and let's walk through this one again one more time I'm initialising count or
+
+I'm assigning tend to counter and 0 2 result.
+
+And I'm saying.
+
+Print out the counter while it's 10 we expect the 10 here.
+
+That's an easy one.
+
+But now we're doing a post-increment.
+
+Notice it's on the right side or it's following counter its operand.
+
+So this becomes result equals counter
+
+and the post-increment simply means that we're going to increment counter after we use it.
+
+Well we're using it here.
+
+So let's increment it.
+
+After this time.
+
+So again I'll be really explicit here and I'll say counter equals counter plus one.
+
+So that's the effect of that statement.
+
+So let's execute this statement result is counter.
+
+Counters 10.
+
+So let's put ten in here.
+
+Now we increment countered by 1.
+
+So that becomes 11 and now we display counter which is 11 and result which is 10.
+
+So in this case this is the output we expect 10 11 and then 10.
+
+All right let's give that a shot.
+
+And there we go 10 11 and 10 let's do a few more examples so I want to be sure that you really understand
+
+this.
+
+That's uncomment example for here.
+
+An example for just uses the expression that's a little bit more complicated not much but a little bit
+
+so you can see how this works.
+
+In this case one more time I've set those to 10 and 0 and I'm displaying counter counters 10.
+
+Again really easy.
+
+Now we've got this statement going on right here.
+
+Result equals plus plus counterplot 10.
+
+The best way to really look at these things is just get rid of that guy right now.
+
+So just say result equals counter plus 10.
+
+That's the statement.
+
+And now since the plus plus is a pre-increment it's on the left side of counter that means that we increment
+
+counter before we use it.
+
+We're using it here.
+
+So that means that we use we do this before we execute that statement.
+
+So again counter equals counter plus 1.
+
+All right.
+
+So let's do this.
+
+Counter's counterplot one this becomes 11 then we say result is counter plus 10 will counter is 11.
+
+So 11 plus 10 is going to give us a 21 which we're going to store in result.
+
+So result here we'll get a 21 got it perfect now we're displaying counter.
+
+It's 11 result is 21.
+
+That's what we expect to display 10 11 and 21.
+
+This may seem a little contrived and puzzle like and it may be but this kind of code is seen out there
+
+you really need to understand the effect of the pre-increment in the post-increment with these operators.
+
+So 10 11 and 21 is what we expect.
+
+Let's run this
+
+and 10 11 and 21 is what we get.
+
+OK.
+
+So let's come at this one out and you'll notice what this one the next one exemple five is exactly like
+
+example for except we've got a post-increment right here right there you can see it's the same idea
+
+except it's the plus plus is after the operand.
+
+OK.
+
+So again 10.0 we're starting out we're saying just play the counter what the counter is 10.
+
+That's pretty easy.
+
+Here's the statement let's just rewrite it without the increment.
+
+So we're going to say result equals again.
+
+Counter plus 10.
+
+I'm trying to write nice and big so hopefully everybody can see this OK.
+
+And we're doing the increment of counter after we use it.
+
+That means after we use it we're using it here.
+
+So this becomes counter is counter plus one.
+
+All right so let's execute these two statements we'll put some semi-colons there just to be complete.
+
+So result is counter plus 10 will what's counter-counter is 10.
+
+So that becomes a 20 and we're storing 20 and 2 result and then we're incrementing counter by 1.
+
+So counter becomes 11 OK the output says what's counter 11 words result 20.
+
+So in this case 10 11 and 20 is what we expect 10 11 and 20.
+
+Let's run this
+
+and 10 11 and 20 is exactly what we get
+
+OK.
+
+So hopefully that clears it up.
+
+And one of the examples if you know if you remember up at the top I mentioned just scroll up a little
+
+bit it says here.
+
+Never use it twice for the same variable in the same statement.
+
+That could be something like.
+
+Suppose you do see out and you've got something like I don't know let's just say we have an integer.
+
+I will say I plus plus and then go do something like plus plus I and you have something like that you
+
+really have no clue what's going to happen because you're incrementing two times in the same statement
+
+and that's not a good idea.
+
+Sometimes you'll see people do silly things like plus plus plus plus plus or something like that just
+
+because you can see puzzles.
+
+But that's that's a bad thing to do because you're you're using it twice on the same variable in the
+
+same statement.
+
+And that's that behavior is totally undefined so your guess is as good as mine as to what the result
+
+is going to be.
+
+OK so hopefully this gives you a little bit of a little bit of insight into this.
+
+Operator It's a simple operator when you just say I plus Pusser count plus plus or plus plus count.
+
+Really really simple.
+
+But when you start combining it with other operands and other expressions and operators it can get pretty
+
+complicated and that's why I say don't overuse this operator.
+
+It's really a great operator to use when we'd loop and we'll do that later on when we used pointers.
+
+But keep your eye on don't over use it.
+
+

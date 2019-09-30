@@ -1,0 +1,453 @@
+In this video we'll go over C++ is arithmetic operators.
+
+These are exactly the ones you expect the plus symbol means addition the minus symbol means subtraction.
+
+The asterisk is multiplication.
+
+The forward slashes division and the percent symbol is the modulo operator or the remainder of division.
+
+You may not be familiar with this operator but that's ok we'll cover toward the end of the video.
+
+The plus minus multiplication and division operators are overloaded.
+
+What that means is they'll work with different types.
+
+So we can add two integers we can add two floats we can add two doubles by simply using the plus symbol.
+
+The same is true for subtraction multiplication division.
+
+The modular operator only works with integers.
+
+And again I'll show you an example of that a little bit.
+
+So let's try a few examples here and the code down here you can see that I've declared two integers.
+
+Number one and number two and I've assigned 200 and 100 to them respectively.
+
+Again these are integers you could do this with doubles or floats or anything you'd like but I'm just
+
+going to use integers here.
+
+You can see that this first line is first output statement right here.
+
+Let's walk through that really quickly so we're clear as to what's going on here.
+
+Remember we've got expressions here.
+
+So number one is an expression.
+
+Number two is an expression and that addition expression is evaluated to the sum of number one and number
+
+two.
+
+So in this case number one is two hundred So this will be replaced with 200.
+
+No.
+
+2 is 100.
+
+And this will be replaced with 100 and then number one post them 2 will be added together.
+
+That's why the plus is there and this will give us 300 OK.
+
+Now these guys are inside quotes so their string literals and all will be printed out as is.
+
+So what we expect here is 200 plus 100 equals 300.
+
+And of course we've got the new line or the line at the end.
+
+All right.
+
+So let's run this and see if we get what we expect.
+
+And exactly that's what happens.
+
+200 plus 100 equals 300.
+
+OK so let me comment that line out and what we could do is rather than do that calculation right in
+
+line right here we could simply do the calculation and assign it to a variable.
+
+In this case let's create a variable called result and will initialize it to zero and all we're saying
+
+is add no one and number two that will give us 300 and assign that result to the result variable.
+
+OK so we're going to add 200 plus 100.
+
+That gives us 300 and we're storing 300 into result and then rather than do the calculation here as
+
+we did we're just going to print that result.
+
+It's as easy as that.
+
+So when I run this now I should have the same exact output 200 plus 100 equals 300.
+
+So now let me comment out some of these and we'll walk through these real quick and I'll do it right
+
+up to their.
+
+So this next one here on line 29.
+
+I'm simply subtracting number one minus number two.
+
+Storing the difference in result and then I'm outputting result.
+
+So here we would expect 200 minus 100 we'd expect 100 on 9:32 that were multiplying the two.
+
+This is different from algebra.
+
+Did you have to have that multiplication symbol that asterisk you can't just say someone to or something
+
+like that you would do in algebra you just put the two things together you can't use a dot like you
+
+could in algebra as well it's got to be the multiplication operator which is the asterisk.
+
+So we're going to multiply number one and number two that it is 20000 which we store in result and we're
+
+displaying that.
+
+And then the third one would be.
+
+Result is number 1 divided by number two that's on my 35.
+
+And we're going to store that quotient in two result.
+
+There we would expect 200 divided by 100 gives us two.
+
+OK so let's run.
+
+We've got right here and see what our results are.
+
+So we've got 200 plus 100 like we did before 300 200 minus 100 is 100 200 times 100 is 20000 and 200
+
+divided by a hundred is two.
+
+OK.
+
+So this is exactly like you would expect is really really simple math works just like you expect it
+
+to.
+
+Now something you may not expect is this result right here on thirty.
+
+I'm going to uncomment this.
+
+And in this case what I'm doing is I'm dividing number two by Number one day remember.
+
+Number two is 100.
+
+And number one is 200.
+
+So what's happening here is I'm dividing 100 divided by 200.
+
+You would expect 0.5.
+
+That's not what you get.
+
+We're doing integer division.
+
+OK.
+
+So there are no digits after the decimal point we're working with whole numbers only.
+
+So in this case what happens is 100 gets divided by 200.
+
+And the result if this if these were doubles would be 0.5.
+
+But we're working with integers so this piece is just chopped right off.
+
+So we end up with a 0.
+
+OK.
+
+So let's run this
+
+and you can see here 100 divided by 200 is 0.
+
+You've got to be really careful when you're doing division with whole numbers or integers because this
+
+is the behavior if you need to 0.5.
+
+You want to be really really precise then you need to use doubles not integers.
+
+And I'll show you an example using doubles in the second.
+
+Now let's look at the modulo operator or the remainder of operator in this case right here.
+
+I'm saying number one mod number two again what's number one.
+
+It's 200.
+
+What's up to 100.
+
+So 200 divided by.
+
+Let me write that out real clear.
+
+So it's not confusing at all.
+
+So we're going to say 200
+
+divided by 100.
+
+The result of this is to wear the remainder of 0.
+
+That's the modulo operator.
+
+It's only interested in the remainder so in this case it'll print out a zero.
+
+The next line I'll uncomment that out in a second.
+
+With the next slide we're going to say right here number one.
+
+We clear that draw that line a little nicer than here we're saying number one mod number two.
+
+So we're saying 10 maade 3.
+
+Remember this only works with integers.
+
+So the result here of the division will be three with a remainder of 1.
+
+Number three times three is nine and you get the 1 remainder.
+
+That's the result of the modulo operator.
+
+It's a pretty handy operator.
+
+So let me clear this and I'll uncomment these few lines of code right here.
+
+And we'll run this
+
+and let's take a look at the result.
+
+So here we go 200 maade 100 is zero right.
+
+That's the remainder because we get to with the remainder of zero.
+
+And in this case 10 MMOG 3 is one because we get to three with the remainder of 1 when we divide by
+
+3.
+
+This can be a really really handy operator to use.
+
+And in the challenge exercise you're going to have to use a tool to solve the problem.
+
+Couple more things just like you can with up with any programming language and doing any kind of math
+
+we can add and divide and subtract and we can do everything in line.
+
+It's important to understand that the precedence or the order in which this stuff happens is the same
+
+precedence you probably learned in grade school here in the U.S. we learned Pember the US that was the
+
+acronym we use which meant parentheses first then exponents then multiplication and division and then
+
+addition and subtraction.
+
+You may have learned something else if you're from a different country but that's what we learned here.
+
+So what this means is that multiplication and division happened before dition and subtraction right.
+
+So in this case what's going to happen is no one is going to be multiplied by 10 and then we're going
+
+to add them to that result.
+
+Right.
+
+If you want something else if you want to add the 10 and the number two first then you need to use parentheses
+
+around there like that.
+
+It's as simple as that.
+
+And it's again it's something that we're all used to by now.
+
+Let me clear this and then I'll do this last example with the division comment.
+
+These two lines out.
+
+So in this case I'm outputting 5 divided by 10.
+
+Remember this is using integer division so 5 divided by 10 is zero not 0.5.
+
+In this case five point zero divided by ten point zero is zero point five because we're using doubles
+
+here in a couple of videos from now we're going to do a video where we're mixing types will be multiplying
+
+and dividing integers and doubles all together on the same expression.
+
+In that case we can use cast's to tell the compiler hey you know what I really want this to be a double
+
+instead of an integer even though it looks like an integer there.
+
+So we'll get to that in a minute and let me run this thing one more time and you could see the last
+
+two results right down here.
+
+Five divided by 10 is zero and five point zero divided by ten point zero is 0.5.
+
+OK so now let's solve a real problem.
+
+Let's convert euros to us dollars.
+
+And I've created a project in the section 8 workspace called euros.
+
+This project that I worked on right here is called arithmetic operators so you can refer to that if
+
+you like but I've created a project called euros and that's when we'll get to next.
+
+OK so I've opened up the main C-p file in the Euros project.
+
+Right now there's really not much in here I'm just printing a newline at the end to separate that little
+
+time message that is displayed at the end.
+
+And there's no real code here.
+
+We're going to write the code from scratch.
+
+So we want to do is we want to convert euros to us dollar so obviously we need some sort of conversion
+
+factor.
+
+I just went on Google now and I saw that you have 1.1 nine dollars per euro.
+
+OK so one euro is 1.1 nine dollars so we need to use that value somewhere.
+
+Now that's going to be a constant So let's define that is a constant we can do it right here.
+
+We could say Konst we want it to be a double right because it's not an inchers 1.1 9 and we'll give
+
+it a name we'll call it US dollars per euro currency you are able will initialize that to 1.1 9.
+
+And don't forget the semi-colon.
+
+So now we've declared that constant US dollars per euro to be 1.1 9.
+
+It's not going to change even accidentally.
+
+Now what do we need to do.
+
+What we need to output a message to the user will say seek out will say welcome to the EU are two USD
+
+converter or something like that and we'll put it in line at the end.
+
+We need to ask the user to enter the value in euros right.
+
+And that's the whole idea.
+
+So seek out will say enter the value
+
+in euros and we'll do something like that.
+
+We won't put a new line there because we want to use or to type something and right next to it.
+
+What do we do next.
+
+Well we need to do a few things we need remember most of these programs are input processing and then
+
+output we need input we need to read in from in the number of euros that they want to convert.
+
+Right.
+
+So we need to have something like in into euros.
+
+So we need to define that variable right here.
+
+Right.
+
+So let's do that right in here.
+
+We'll say double we'll call it euros that's a good name and we'll initialize it to zero point zero.
+
+That way we know we've got to zero value in there.
+
+We know we're going to convert this to dollars right.
+
+So we may as well create our dollars variable as well.
+
+So we can say double and we can call it dollars.
+
+And again zero point zero.
+
+Perfect Now we're red in the Euros.
+
+We need to convert the Euros to dollars.
+
+How do we do that.
+
+We just use a real simple multiplication.
+
+We can say that the number of dollars is equal to again the number of euros times the constant we have
+
+dollars per euro and now all we need is that final output statement let me scroll up just a little bit
+
+and we'll say something like see out and we'll say the Euros whatever whatever they entered
+
+is equivalent to we'll actually say euros that will be nice.
+
+They can read it better.
+
+Is that enough to put another insertion operator here.
+
+Type in dollars whatever they whatever the conversion was and then we'll just type the string.
+
+So nice and readable that will put a new line at the end within line.
+
+And that should be it.
+
+Let's run this as if we have any errors.
+
+We'll test it to make sure we don't have any errors and we'll debug it if we do have any errors.
+
+All right.
+
+So I'm going to save in a minute press and trial at five to run.
+
+There is no compiler error so that's great.
+
+So enter the value in euros.
+
+Well let's type in one euro right.
+
+If we type in one euro we expect back 1.1 nine dollars that would be a real simple and good test case.
+
+One we get one euro is equivalent to 1.1 nine dollars.
+
+Good.
+
+Let's try another one.
+
+It's run.
+
+How about 120 three point five euros.
+
+We get back one forty six point nine six five dollars.
+
+Don't worry about the precision and the dollars and cents will we'll learn how to format output a little
+
+bit later.
+
+That's it.
+
+That's the program really really simple.
+
+You can see what we're doing here is where you were using the things that we've learned right.
+
+We're using RCN we're using our sea out we've got a constant defined right here.
+
+We've got some variables that we need here and we're initializing them to zero and we're doing our calculation
+
+here using one of the earth Medich operators the multiplication symbol.
+
+I encourage you to write one of these programs on your own right.
+
+I don't know a something to something converter Fahrenheit to Celsius kilometers to Miles yards two
+
+inches meters to centimeters.
+
+Right.
+
+One of these programs just like that that will give you a good practice.
+
+

@@ -1,0 +1,397 @@
+In this video we'll learn about mixed type expressions.
+
+This is when you have an expression where the operands are of different types.
+
+For example a plus b where as an integer and B is a double C++ is very consistent with its application
+
+of an operator to operands the operands must be of the same type as we'll see in the next few slides.
+
+It's very important to understand the rules that C++ uses to ensure that the types are the same since
+
+the results of the calculation could be different depending on which operand type is changed.
+
+C++ will try to convert one of the operands so it matches the other.
+
+In many cases this happens automatically and we'll talk about how that works in the next slide if an
+
+automatic conversion or coersion is not possible then a compiler error will occur.
+
+We saw an example of this in the assignment operator video when we tried to assign a string to an integer
+
+in order to understand how these conversions happen.
+
+We need to understand higher versus lower types.
+
+The idea is simple the lower types are those types that can hold smaller values and the higher types
+
+can hold large values.
+
+So a long double is a higher type than a long and a Long is of higher type than an int.
+
+The idea is that we can typically convert from a lower type to a larger type automatically since the
+
+lower types value will fit into the higher types value.
+
+But the opposite may not be true.
+
+Short and character types are always converted to integers.
+
+So let's look at the terminology a type conversion is also called a coersion.
+
+Since we're chorusing one type to another.
+
+Sometimes this happens automatically and sometimes we do it ourselves in code.
+
+Promotion is when we convert a lower type to a higher type.
+
+An example would be when we add an integer and a double.
+
+In this case we promote the integer to a double and then do the calculation.
+
+Demotion is when we convert a higher type to a lower type.
+
+Suppose we want to store twelve point five into an integer variable.
+
+It won't fit.
+
+So a demotion happens and the decimal part of twelve point five is truncated and we're left just with
+
+the integer 12.
+
+Let's see a few examples in the first example.
+
+We have two different types and an operator you can think of the operator is the multiplication operator
+
+but it applies to any operator in order to perform the multiplication.
+
+The compiler will convert the lower type to the higher type and then perform the multiplication.
+
+You can see in the example where we multiply the integer 2 and the double 5.2.
+
+In this case we can promote the lower type which is the integer 2 to the double two point zero and then
+
+perform the multiplication in the second example.
+
+We're assigning a value from a higher type to a lower type.
+
+In this case the compiler demotes the higher type to the lower type potentially losing information.
+
+Many compilers will warn you about the possible loss of precision but not all do.
+
+In this example we have Gnome as an integer and we assign a double one hundred point to one hundred
+
+point two will be demoted to the integer 100 and 100 will be assigned to them.
+
+As mentioned previously the C++ compiler will try to do automatic coersion when it can.
+
+However as programmers we can explicitly tell the compiler to cast to a specific type if we wish.
+
+Let's see how.
+
+So let's talk about how we can tell the compiler to coerce or cast one type to another.
+
+Let's walk through this example.
+
+You can see we have two integer variables.
+
+Think of total amount as a running sum of several numbers and we want to know the average of those numbers.
+
+So we need to know how many numbers there are in this case.
+
+This is represented by the integer total number which is a the average in this case would be total amount
+
+divided by total number which is twelve point five.
+
+But since both of these variables are integers the compiler will do integer division and the result
+
+will be 12.
+
+That's not what we want we could change the type of total amount to double.
+
+But we're modeling a running total of integers so an integer type is more appropriate.
+
+The solution is for us to tell the compiler to cast or perform a coersion of total amount from integer
+
+to double.
+
+The syntax is to use static underscore cast followed by the type we want to convert to in angle brackets
+
+and then the variable name in parentheses.
+
+Now one of the operands is a double so the compiler will automatically convert the total number to a
+
+double and do double division which is exactly what we want.
+
+Now we get twelve point five which is the result we wanted.
+
+Let's head over to code line and write a program that asks the user for three integers and computes
+
+their average.
+
+OK so now I'm in the cold light idea I mean the Section 8 workspace in the mixed expressions project.
+
+So let's write a program here that asks the user to enter three integers.
+
+We calculate the sum of those integers and then we calculate the average of the integers.
+
+All right.
+
+Then it then will just display the three integers that were entered.
+
+The sum of the integers and the average that we calculate it.
+
+All right so let's get started.
+
+We have an empty Main here and I'll scroll this up so we have a little bit more room to work.
+
+And we know we need a total wreck.
+
+We need to sum up those three numbers.
+
+But we also need to store those three numbers.
+
+So let's create those variables first.
+
+We'll create a total variable.
+
+And again the names you use can be anything you like and will zero that out and we'll create three variables
+
+for the numbers that we're going to enter.
+
+We'll call them number 1 and I could do this and do each one on each line but what I'm going to do is
+
+I'm going to do them all in one line.
+
+Some to say number one.
+
+And I'm going to say number two.
+
+And finally I'll say them three this initialises all three of them to zero.
+
+If you don't do it this way or rather if you do it this way and you don't put those initializers there
+
+then some three will be zero and no one in them two will be undefined.
+
+So if you do it this way be certain that each one of them gets its own initialiser.
+
+So that's it.
+
+We've got our three numbers we've got our total.
+
+And we also need a count right.
+
+We're going to have three numbers.
+
+We may as well define that integer as a contest and we'll call it count.
+
+And again we'll initialize that three.
+
+That way we know we're not going to make any silly mistakes.
+
+Great.
+
+So let's prompt the user will say see out and I'll just say Enter three integers separated by spaces.
+
+That way they could just type them in on one line.
+
+Would have to do three prompts
+
+and we'll just leave it at that.
+
+Don't forget the semi-colon at the end.
+
+We don't need an end line here.
+
+Now we're going to read all three integers so what do you see in.
+
+We'll use the extraction operator.
+
+No one would just chain them together.
+
+Two and them three.
+
+All right so now we've got all three of our integers.
+
+We need to total them up.
+
+Now we need to some of them all up so we've got our total variable.
+
+So we'll just say total is number one plus two plus number three.
+
+All right so now we've got that now obviously we could have total be a double but it really makes sense
+
+for it to be integers because we're adding up integers so the total should be in the.
+
+So now let's calculate the average We need a variable to hold that.
+
+So that will be a double and we'll just call it average and it's initialized to zero point zero.
+
+That way we know we've got a known value in there.
+
+Great.
+
+So let's do the calculation now average.
+
+And I'm just using some blank lines here just to separate them.
+
+Normally you wouldn't write all these blank lines but I just want to write them so you can really see
+
+what's going on.
+
+So I'll say average is the total divided by count.
+
+That's it.
+
+And now we've got our output statements will say that just say something like the three numbers were
+
+and will display all three numbers will say no one will put a comma here forcing them to put another
+
+comma.
+
+And finally number three followed by the line next day we'll say the same
+
+the sum of the numbers is.
+
+And obviously that is our total variable.
+
+So we'll split total here and again we'll follow it by and then line and then finally average is my
+
+last output statement and I would just say the average
+
+of the numbers is and again average.
+
+OK so so far so good in line.
+
+That's it.
+
+Let's compile this and see if we've got any compiler errors that we have to fix.
+
+OK.
+
+No compiler errors it runs.
+
+So let's run this into three integers separated by spaces.
+
+How about 10 30 and 20 right.
+
+That's 40 50 60 60 divided by three is going to give me 20.
+
+So I expect that to be the average Precentor the output says the three numbers were 10 30 20 That's
+
+correct.
+
+The sum of the numbers is 60.
+
+That's correct.
+
+The average of the numbers is 20.
+
+That's also correct.
+
+OK.
+
+One more test case we'll say 10 20 15.
+
+In this case we've got 45.
+
+The average is 15.
+
+Good.
+
+We're done.
+
+No we're not.
+
+Program has a pretty big problem in it.
+
+And we saw that in the slides.
+
+Suppose that I run it again with a different test case something like 10 20 20.
+
+In this case it's 50 divided by three which is sixteen point six six seven.
+
+Instead I'm getting 16 because I'm doing integer division.
+
+This is why testing your program is so important.
+
+We're talking about testing as we go through the course but testing your program is important in testing
+
+involves knowing what the result is before you run your program.
+
+Right.
+
+So in this case have some test cases ready maybe 000 something that is divisible evenly by three.
+
+Another test case it isn't divisible by three and so forth.
+
+OK.
+
+So how do we fix this.
+
+Well what we can do is we can cast that guy or this guy either one to a double and we'll use a static
+
+cast.
+
+So we'll say static underscore cast then in the angle brackets we put in the type that we want to cast
+
+to in this case I want to cast it to a double or convert it to a double and then we put total inside
+
+parentheses.
+
+That's it.
+
+Now what's going to happen is the compiler will convert totals would double the compiler will say oh
+
+I want to do have got to double in an integer here so I'll convert the integer which would double as
+
+well and do double division which is what we want.
+
+So let's run this again and let's use that same test case 10 20 20.
+
+And now we've got the correct average here.
+
+OK.
+
+Now before I finish this video off in older C-code instead of seeing this cast the static cast here
+
+you might have seen something that looked like this
+
+something like that.
+
+Then total
+
+divided by count or something like that.
+
+OK.
+
+This is the old C-style cast.
+
+The static cast is what we want to be using in modern C++.
+
+It's a little bit more restrictive than this kind of cast this kind of cast just assumes that whatever
+
+totallers is going to be converted to a double The static cast double checks to make sure that it can
+
+be converted to a double.
+
+So you don't want to do this I'll just write.
+
+Here is the comment old style just so if you've seen it you'll know it's all about.
+
+OK so that's it.
+
+That's the example.
+
+Pretty straightforward way to finding some variables.
+
+We're getting some input.
+
+We're doing some calculations and then we're checking that calculation to be sure it's correct.
+
+In this case I've got integer integer division.
+
+I've got to make one of those double Otherwise I'm not going to get the right result.
+
+OK.
+
+That's it for this video.

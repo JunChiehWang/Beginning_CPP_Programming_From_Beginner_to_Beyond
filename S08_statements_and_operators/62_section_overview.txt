@@ -1,0 +1,55 @@
+In this section we'll learn about expression's statements and operators in C++.
+
+Expressions are the building blocks of statements and statements are the building blocks of programming
+
+and C plus.
+
+You've already seen variable declaration statements and IO statements.
+
+Simple assignments statements and even the return statement.
+
+First we'll talk about expressions and statements in general and their role in programming.
+
+Learn about block statements or compound statements.
+
+This allows us to group multiple statements that belong together into a single unit.
+
+The last part of this section is all about the main C++ operators in the context of statements and expressions.
+
+We'll first discuss the assignment operator which is the key element of an assignment statement bin
+
+will look at C++ as arithmetic operators.
+
+These operators allow us to perform math very easily based on the math rules that we learned in school
+
+as kids will then look at the increment and decrement operators.
+
+These operators are often used in C++ and can be confusing.
+
+I'll walk you through how to use them so it's clear the common use case in programming is comparing
+
+two objects.
+
+We often need to know if one object is less than greater than or equal to another object.
+
+And based on that result we decide what our next action will be.
+
+These are the relational operators after the relational operators will look at the logical operators
+
+the logical operators and I was to embed complex logic into our program so we can solve difficult problems.
+
+If we put together expressions containing relational and logical operators we can solve extremely complex
+
+problems.
+
+Then we'll learn about C++ as compound assignment statements.
+
+They allow us to perform an operation and assign the result of that operation using a simple syntax.
+
+Finally we'll talk about operator precedence.
+
+Precedence determines in what order operators are executed.
+
+We've got a lot to cover in this section so let's get started.
+
+

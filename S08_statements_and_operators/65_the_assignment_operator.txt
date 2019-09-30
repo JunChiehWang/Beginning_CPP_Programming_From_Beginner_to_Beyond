@@ -1,0 +1,397 @@
+Nearly all programming languages have the ability to change the value of a variable in C++.
+
+We can change the value stored in a variable using the assignment operator the assignment operator is
+
+a single equal sign.
+
+It's important to understand that this does not represent equality in the code sample on this page.
+
+We are not asserting that the left hand side is equal to the right hand side.
+
+Nor are we comparing the left hand side and the right hand side.
+
+In this case we're evaluating the value of the expression on the right hand side and storing that value
+
+into the variable represented by the left hand side.
+
+C++ is statically typed.
+
+That means that the compiler will be checking to see if it makes sense to store the value from the right
+
+hand side to the left hand side.
+
+If it does it make sense you'll get a compiler error saying exactly that in order to store value into
+
+the left hand side the left hand side must be assignable.
+
+It can't be literal.
+
+It can't be a constant if it is the compiler will produce an error message.
+
+We can assign multiple variables all at once in a single assignment statement.
+
+This is possible because the assignment expression evaluates to what was just assigned.
+
+So it's easy to chain assignment statements together.
+
+Let's head over to the ID and will work with the assignment operator in live code.
+
+Ok so now I'm in the code like ID.
+
+I'm in the Section 8 workspace and the project is called assignment operator.
+
+We'll go through some examples of how to use the assignment operator and the effects of the assignment
+
+operator in this video.
+
+So what I've done here is I've created two variables number one and number two I'm declaring them and
+
+initializing them to 10 and 20 respectively.
+
+And then I've just got a simple output statement that prints out number one and number two.
+
+Right now this is not assignment right.
+
+What you see appear right now and let me just mark that up what you see here is not assignment.
+
+It's initialization.
+
+It's important to understand the difference.
+
+Initialization happens when the variable is declared and it gets that value for the very first time
+
+assignment is when you change a value that already exists in the variable.
+
+Ok so let's try to change one of those values.
+
+I'm going to type in here just something really simple like no one equals 100.
+
+You notice I just said number one equals 100.
+
+This is one of the ways that programmers read this.
+
+Number one equals 100.
+
+Assign 100 to number 1.
+
+Move 100 to one.
+
+You'll hear this sort of jargon but often you'll hear no one equals 100.
+
+And what we mean there is it's an assignment statement we're not saying that someone is actually equivalent
+
+to 100.
+
+This is an assignment statement.
+
+No one in this case has 10 remember.
+
+So what we're doing is we're moving a hundred into that value.
+
+OK so let's break this down and go through this one step at a time so you really see what's going on
+
+here what we're doing is.
+
+Again we have a left hand side of an assignment operator and the right hand side right.
+
+That's an assignment expression.
+
+We put a semi-colon in the end now it's an assignment statement.
+
+In this case we're evaluating the right hand side expression.
+
+In this case it's 100.
+
+It's a literal.
+
+It's going to evaluate to 100.
+
+Now here is my variable number one Currently it has a 10 in there.
+
+You can see that right there I initialized it to 10.
+
+When we say something like no one equals 100.
+
+Or again assign 100 to 1.
+
+We're evaluating that right hand side in this case as I said it's 100 and we're storing that hundred
+
+into number one.
+
+But no one is 10.
+
+Yes but when you use Number one this variable number one on the left hand side we're using it's location
+
+not its value in C++ there's the concept of l value and R value and it gets pretty complicated when
+
+we're talking about more advanced features in C++ but at this level it's really pretty simple.
+
+The R-value is the contents of a variable bullet say.
+
+In this case the contents of number 1 is 10 so the R-value of Number One will be 10.
+
+The value is the location of that variable.
+
+So again what this means is move 100 or store 100 into the location of number one.
+
+So what's going to happen is that we just change the 10 to 100 k again.
+
+Conceptually it's a pretty straightforward thing.
+
+So let me clear this will run it and what we expect now is we expect no one to be 100.
+
+And number two to still be 20 because we haven't messed with it at all.
+
+Let me compile and run and you can see no one is 100.
+
+Because we change an assignment statement and number two is 20.
+
+OK.
+
+It's pretty simple.
+
+We don't have to use literals here we can use anything we like in this case I could say no to.
+
+OK.
+
+So remember because this variable number two is on the right hand side of that assignment statement
+
+we're using it's our value or its value or its contents we're using the 20 basically.
+
+So we're taking the 20 and we're assigning it to the location where number one is that box where someone
+
+lives.
+
+So it's going to change that got to 20 ok.
+
+Or we'll put a 20 in number one however you want to look at it all means the same thing.
+
+So now when we print these two values we should get 20 and 20.
+
+So let's give it a run.
+
+So I'm building and running and now we've got 20 and 20 Remember we've got a left hand side.
+
+The assignment operator and the right hand side followed by a semicolon.
+
+This right hand side could be really really complex.
+
+I mean it could be some really you know it could be some really complex mathematical expression that
+
+just goes on and on and on and on.
+
+Does it really matter what the compiler is going to do it's going to evaluate this expression to some
+
+value.
+
+And then it's going to assign that value it was just calculated into that variable.
+
+The compiler does type checking for us remember C++ is statically typed which means that a lot of errors
+
+are caught by the compiler.
+
+This is very different from other languages like Python and Ruby and so forth where they do all this
+
+type checking at runtime.
+
+C++ does it at compile time.
+
+So when the program is running you're guaranteed that this is going to be correct because it's already
+
+done a lot of this checking for you.
+
+So what the compiler does now is it's going to check to see does it make sense for me to assign whatever
+
+value is in here to here.
+
+How does it know it's looking at the types it's saying.
+
+Number two is an integer number one is an integer.
+
+OK if I did something like number one equals 200 it's going to say OK that's an integer does it make
+
+sense to assign an integer integer to an integer.
+
+Sure it does.
+
+It's got its rules internally and we'll talk about mixed mode assignment in mixed mode math in a couple
+
+of videos from now.
+
+That's where we're adding and multiplying integers and real numbers and assigning potentially a real
+
+number to an integer.
+
+It's not just it's within it's right we've got different types going working together and that all works
+
+really well too.
+
+But we'll talk about that in a couple of videos so that takes care of this.
+
+Hopefully you can see that conceptually it's really really straightforward.
+
+Let's say that we wanted to change these together.
+
+OK so what we can do here is we can change those.
+
+Those assignment operators together and again let's break this down so you can see what's happening.
+
+We're going to say it no one to and some value could be a big old mathematical expression.
+
+But in this case I'm just going to use a thousand to make things easier.
+
+OK so we've got two assignment operators here.
+
+What's important to understand with assignment operators and excessive expressions is that they return
+
+a value themselves.
+
+They returned what was just assigned.
+
+And they associate right to left which makes sense right.
+
+In other words this will be the last thing done.
+
+So the first thing the compiler does is it sees this expression right here and it says OK I want to
+
+assign a thousand to number two.
+
+OK let's do that.
+
+So numb to right here is going to get a thousand.
+
+Now the value of that discretion evaluates to is a thousand because that's the number that was just
+
+assigned.
+
+So now you've got number one equals a thousand.
+
+So what we do is we assign a thousand to number one
+
+OK.
+
+And now we're done.
+
+So you could see that you can chain these things together and they go right to left.
+
+It's a handy way to initialize a bunch of variables to the same value.
+
+Again we can have all sorts of expressions in here and so forth if we want.
+
+That's really not considered good practice.
+
+The only time that you really should even consider changing these assignment operators is when you're
+
+assigning the same thing to everything.
+
+Like number one number two and three and four equals 10 or zero or something like that.
+
+That makes sense but if you've got really complicated expressions in this and these pieces here that's
+
+probably not a good idea to do.
+
+OK so let's take a look at that and let's run this.
+
+And you can see now that when they print out you get a thousand and the thousand just like you would
+
+expect.
+
+No one is a thousand to two a thousand.
+
+OK let's do an error here.
+
+Let's say we wanted to do something like that.
+
+Now the C++ compiler is pretty smart.
+
+And when we talk about classes and objects we'll talk about how we can make the assignment operator
+
+our own so it works with our own classes as the senator said C++ is pretty smart.
+
+It's going to try to see if it's possible to convert whatever's on the right hand side to the left hand
+
+side.
+
+In this case you're telling the compiler store a string Frank.
+
+Write a sequence of characters into an integer that makes no sense.
+
+The compiler is going to try to see if it can convert that string to an integer somehow and if it's
+
+got some sort of code that maybe you've written it will execute that code and convert it.
+
+In this case there is no such code.
+
+So if I build and run this I'm going to get an air and the air is going to say Invalid conversion from
+
+a character pointer.
+
+We'll talk about what that is and a few videos to an integer.
+
+So again it's a conversion issue it's saying I don't know this is these are apples and oranges as far
+
+as the compiler is concerned.
+
+So let me clear this and let's do one more let's say I want to assign 100 to number one.
+
+We've seen that works fine.
+
+But what if no one is a constant.
+
+So let's say we made no one to contest this shouldn't be allowed right because you've just said I've
+
+got a constant integer here number one and I initialized it to 10.
+
+And now you want to change it to 100.
+
+Obviously the compiler is going to say well wait a minute you just told me that was a constant I can't
+
+do that for you.
+
+So let's try that.
+
+We'll run it and you should see an error.
+
+Something about read only.
+
+There you go.
+
+Error assignment of read only variables not allowed.
+
+So you can't do that.
+
+And similarly I can't do something like this.
+
+One hundred say equals 1 right.
+
+What are you trying to do here.
+
+Your compiler is probably thinking what in the world do they want to do.
+
+It's OK we know what no one is right.
+
+It's value it's 10 because it's on the right hand side.
+
+But now you want to assign it to 100 to 100 is a literal 100 doesn't have an l value it doesn't have
+
+a location in memory.
+
+So when you run this you'll see something like Error l value required as the left operand of an assignment.
+
+I need to store this somewhere and either location and 100 is a literal.
+
+Does it have a location.
+
+OK so that's it.
+
+Assignment at this level is pretty simple.
+
+We're going to use it at this level for a bit.
+
+Once we get to our own classes and objects we can make assignment work for us in a really really powerful
+
+way and we'll talk about that when we get there in the next video what we'll do is we'll talk about
+
+the mathematical operators or the arithmetic operators plus the minus the multiply the divide and the
+
+remainder.

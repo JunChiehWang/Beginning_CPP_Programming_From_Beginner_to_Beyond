@@ -1,0 +1,103 @@
+In this video we'll learn about C++ expressions and statements.
+
+Let's start with expressions expressions of the most basic building blocks in programming expressions
+
+are defined as follows in the C++ standard a sequence of operators and operands that specifies a computation.
+
+We'll see some examples shortly but for now you can think of an expression as a sequence of operands
+
+and operators that compute a value.
+
+That's a pretty simplistic view but it will serve us well until we learn more advanced C++ features.
+
+Let's see some examples C++ expressions.
+
+Let's start with the literal 34.
+
+That's an expression whose value is simply 3:34 variables such as favorite number in this example are
+
+also expressions since their value is the value of the variable.
+
+We can also have mathematical expressions such as 1.5 plus 2.8 which will add those two numbers and
+
+2 times 5 which will multiply 2 and 5.
+
+There are many many more examples of expressions since there are many operators in C++ and we can combine
+
+them to make any expression we wish.
+
+If we wanted to test to see if a was greater than B where A and B are variables we can use the greater
+
+than sign between the and the B.
+
+This evaluates to a boolean a true false value.
+
+Notice the last example.
+
+This is an assignment expression.
+
+We are assigning be to a.
+
+This is also an expression because the value of this expression is what we just assign.
+
+We'll talk more about this in a few videos when we talk about assignment statements in detail.
+
+Now let's see what makes a statement different from an expression.
+
+A statement is a complete line of code that performs some action.
+
+Statements are usually terminated with a semi-colon.
+
+When you first learn C++ it's a very common error to forget to terminate statements with semi-colons
+
+statements usually contain expressions as you would expect.
+
+C++ has many types of statements.
+
+It has expressions statements the null statement compound statements and more will discuss specific
+
+types of statements in the next several sections of the course.
+
+Let's see some examples see possible statements.
+
+The first statement is a declaration statement which we've already seen in this course when we declared
+
+variables.
+
+In this example we declare x to be of type integer.
+
+The second is a simple assignment statement where we assign the literal expression 12 to favorite number.
+
+The third example is an expression statement.
+
+Note that it's simply an expression with a semi-colon at the end.
+
+It's a pretty useless statement though since we got two numbers but don't do anything with the sum.
+
+The fourth example is.
+
+X equals 2 times 5 is an assignment statement.
+
+First we multiply 2 and 5 and store the product in X..
+
+Notice how expressions are used to make up the statement.
+
+The next example is an if statement if statements give you lots of power to control the flow of your
+
+program.
+
+We'll discuss if statements in detail but you can see that we're comparing a and b and if a is greater
+
+than B then we execute the statement that displays to the console.
+
+So here you can see an example of a statement that contains an other statement within it and is also
+
+made up of expressions.
+
+The final statement is simply a semi-colon.
+
+This is the null statement and performs no actions.
+
+You don't often use the null statement but it can come in handy sometimes.
+
+
