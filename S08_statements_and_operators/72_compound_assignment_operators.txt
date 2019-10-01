@@ -1,0 +1,59 @@
+In this video we'll learn about C++ his compound assignment operators.
+
+These operators are very easy to use and commonly used in C++ code.
+
+The syntax for the operators is pretty simple.
+
+It's the operator you wish to use immediately followed by an equal sign.
+
+There are quite a few of these operators but we'll focus on the mathematical operators.
+
+The bottom half of this table includes the operators that are used to manipulate bits.
+
+They're called bitwise operators and I'll cover them later in this course.
+
+So let's look at the first one in the table the plus equal operator.
+
+We apply the operator as in the example column for example left hand side plus equals right hand side.
+
+The meaning of this would be to increment the left hand side by the right hand side and then store the
+
+resulting value in the left hand side.
+
+We'll see a few real code examples in the next slide.
+
+All of these operators work the same way.
+
+For example the multiplication equal operator multiplies the left hand side by the right hand side and
+
+stores the product back in the left hand side.
+
+Let's see some examples.
+
+Here we see some examples of using several of the compound assignment operators.
+
+Let's look at the first example.
+
+A plus equals one.
+
+This means increment the left hand side by the right hand side and store the result back into the left
+
+hand side.
+
+So this is the same as a equals a plus one and it's another way of incrementing a variable by 1.
+
+The second example works exactly the same way a set that will be dividing the A by five then storing
+
+the result back into a.
+
+The third example shows how the entire right hand side is evaluated before the operators is applied.
+
+In this case we have a multiplication equal BE PUSSY.
+
+This means multiply a by the sum of B pussy then store the product back in a in the last example were
+
+incrementing cost by the product of item and tax the best tip I can give you when you write these operators
+
+has to think of the right hand side as being inside parentheses and will always have it right.
+
+

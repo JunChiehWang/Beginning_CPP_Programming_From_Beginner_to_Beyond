@@ -1,0 +1,103 @@
+In this video we'll learn about operator precedence and associativity and C++ C++ has well-defined operator
+
+precedence and associativity rules.
+
+Here's a table showing the precedence and associativity of some of C++ his operators.
+
+Note that this table is not complete.
+
+It only shows a subset of C++ operators.
+
+You can find complete operator precedence tables online and in most C++ books.
+
+Note that there's two columns.
+
+The first column shows the operator the operators and higher rows have higher precedence than operators
+
+on lower rows.
+
+So as you can see the assignment operators are down at the bottom as you would expect.
+
+And the parenthesis operator is at the top operators on the same row have the same precedence.
+
+So for example you can see that addition and subtraction have the same precedence.
+
+I think precedence is pretty easy to understand.
+
+We learned operator precedence when we learn math in grammar school.
+
+It's the same idea here except we have more operators to consider the second column is the associativity
+
+column.
+
+This is the part that many times confuses students and even C++ programmers.
+
+Notice that associativity is left to right or right to left.
+
+Let's see what it means.
+
+So what's associativity all about.
+
+Suppose you have an expression with two adjacent operators and these operators are different.
+
+Like we see in the first example we can look for operators in the precedence chart and if one of the
+
+operators has higher precedence than the other then that's the operator that supplied first.
+
+This is exactly what we've been doing with our math that we've learned.
+
+But suppose the two operators are the same or they're different but they have the same level of precedence
+
+now precedence doesn't really help us in this case.
+
+We determine how the operators are applied by using their associativity in the second example.
+
+We have the same operator up one use the JSA only if OP one associates left to right.
+
+Then we apply the operator to expression one and expression to first first if OP 1 associates right
+
+to left then we apply the operator to expression to an expression 3 first.
+
+Of course you can always use parentheses to remove any doubt and be sure that your result is what you
+
+expect.
+
+Using parentheses is good practice with complex expressions.
+
+Let's see a couple of simple examples.
+
+In the first example we have three operators.
+
+The assignment operator the addition operator and the multiplication operator depressin its chart tells
+
+us that the multiplication operator has the highest precedence followed by addition followed by assignment.
+
+So I've rewritten the same statement on line 2 showing the order of evaluation by including parentheses.
+
+Note that the evaluation takes place in order of multiplication addition and finally assignment in the
+
+second example.
+
+We again have three operators.
+
+The assignment operator the addition operator and the subtraction operator.
+
+In this case addition and subtraction are of higher precedence than assignment but they both have the
+
+same precedence.
+
+So in this case we need to use their associativity to determine the order of evaluation.
+
+We see that plus and minus associate left to right.
+
+I've rewritten this example using parenthesis to show the order of evaluation many beginning C++ programmers
+
+keep an operator precedence chart handy when they first start out with C++.
+
+After not too long you get to know the operators and this becomes second nature just like using math
+
+precedence did.
+
+The more we used it in school.
+
+

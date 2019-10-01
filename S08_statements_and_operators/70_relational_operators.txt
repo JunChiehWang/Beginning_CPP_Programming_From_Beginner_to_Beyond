@@ -1,0 +1,123 @@
+In this video we'll look at C++ is relational operators in addition to the quality operators.
+
+C++ also has several other relational comparison operators.
+
+These are greater than greater than or equal to less than and less than or equal to and in C plus plus
+
+20 they'll be a really neat three way comparison operator this operator compares to expressions and
+
+evaluates to zero if they're equal less than zero if the left hand side is greater than the right hand
+
+side and greater than zero.
+
+If the right hand side is greater than the left hand side like the equality operators these operators
+
+are very intuitive easy to use and understand.
+
+Let's see a few examples in code like.
+
+I mean code like.
+
+I'm in the Section 8 workspace and this is the relational operators project in this project.
+
+I'm just using some really simple examples to test some of these relational operators.
+
+As you can see I've got two numbers declared number one and number two.
+
+This is where I'm going to read some miniatures into and I'm asking the user to enter into your separated
+
+by space and I'm reading those two integers from the user.
+
+Then what I'm doing in this output statement right here is supposed a user entered 10 and 20 here I'm
+
+just saying 10 greater than I'm just explicitly printing out that greater than sine 20 and that I'm
+
+evaluating whether one is greater than two and that's going to say true or false.
+
+So it's going to do that for all four operators greater than greater than or equal to less than less
+
+than or equal to.
+
+And then we could try out a couple of examples with this with this program so let's let's run it.
+
+And the center two integers.
+
+OK so let's enter 10 and 20.
+
+So you could see here 10 greater than 20 is faults 10 greater than or equal to 20 as faults 10 less
+
+than 20 is true and 10 less than or equal to 20 is also true.
+
+OK so now let's let's try some other ones.
+
+Couple of other test cases here let's try 20 and 20.
+
+In this case you can see that 20 is graded 20 is not greater than 20 20 is is greater than or equal
+
+to 20 20 is not less than 20 and 20 is less equal to 20.
+
+Just again just what I would expect.
+
+So real simple example.
+
+What I do now is I'll comment out those output statements that we just did here and I'll declare a couple
+
+of constants here and I'll uncomment this piece of code and I'll walk you through it.
+
+So in this case I'm declaring two constants lower and upper to be 10 and 20 and I'm asking the user
+
+to enter an integer that's greater than lower.
+
+So in this case I'm asking them to enter an integer that's greater than 10 and those is constant so
+
+you can modify them here and and play around with this program yourself.
+
+So in this case enter an integer that's greater than 10.
+
+I'm reading that integer into the one that I'm comparing to see if that number is greater than the lower
+
+limit which is 10 in this case that I'm doing the same thing.
+
+I'm saying enter an integer That's less than or equal to the upper limit.
+
+So let's run this.
+
+And first thing you'll see is says and I mean get rid of that.
+
+Let me read a statement at the beginning here and if we try that again here we go.
+
+So an inch or two that's greater than 10.
+
+So let's pick 12 and it says 12.
+
+Greater than 10 is true.
+
+That's what we expect.
+
+Now it says entrant integer That's less than or equal to 20.
+
+That's put in 12.
+
+And it says 12.
+
+Less than or equal to 20 is true.
+
+OK so let's run this one more time with the different test case.
+
+So enter an integer that's greater than 10 that's put in 8 this time.
+
+And it says a greater than 10 is false.
+
+Obviously I didn't do what I was told to do.
+
+And here and here an integer That's less than or equal to 20 that's put in 25 and we can say 25 is less
+
+than or equal to 20 is also false OK.
+
+You can see where we're going with these operators once we get to control flow statements you'll have
+
+all this knowledge under your belt and you'll really be able to read some really powerful programs that
+
+solve problems.
+
+

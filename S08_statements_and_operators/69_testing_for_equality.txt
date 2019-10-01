@@ -1,0 +1,267 @@
+In this video we'll go over the C++ equality operators these operators compare the values of two expressions
+
+and evaluate to a boolean.
+
+That's a true false value.
+
+The operators are the equals which is represented by two equal signs and the not equal operator which
+
+is represented by the exclamation point or Bang's symbol followed immediately by an equal symbol be
+
+extra careful when you're starting.
+
+It's super common for beginning C++ programmers to use a single equal sign.
+
+That's assignment not comparison these simple operators along with the operators would learn about in
+
+the next several videos give us so much power in programming we use these operators all the time and
+
+control flow statements that we'll learn shortly.
+
+So suppose we want to do something when x is equal to 100.
+
+We can do that.
+
+We can also test for two expressions not being equal.
+
+So if my password doesn't match the password on file then you want to do something specific the following
+
+code snippets only show the equality expressions they're always used within statements.
+
+The first example evaluate to TRUE if the value of expression 1 is equal to the value of expression
+
+to these two expressions could be very complex or very simple.
+
+The second example will evaluate to TRUE if the value of expression 1 is not equal to the value expression
+
+to the 30 sample will always evaluate to false since 100 will never equal 200.
+
+We don't usually write expressions like these but it serves to illustrate how this operator works.
+
+The final example evaluates to true if number one is not equal to number two.
+
+Let's go over a few more examples that you statements.
+
+First we're declaring a variable named result that's of type Boolean and we're initializing it to False.
+
+Then we compare one hundred and fifty plus 50 for equality.
+
+This will result in a boolean that's a true false value which we assign to result in the next example
+
+we compare number 1 and number two.
+
+And if they're not equal we store true end result.
+
+Otherwise false.
+
+Notice how we can use boolean expressions in output statements in the first output statement we're comparing
+
+number one and number two and we're displaying one if they're equal or 0 if they're not equal.
+
+Sometimes it's handy to display the words true and false rather than 1 and 0 in the output statements.
+
+We can do that using the bool Alpha stream manipulator Alpha and noble Alpha are located in the standard
+
+named space.
+
+Once you use them all boolean output to the stream will result in the words true and false being displayed.
+
+That can be pretty handy if you want to go back to the default of 0 and 1 just use noble Alpha.
+
+Let's head over to code light and see some examples.
+
+So I mean code like I am in the section 8 workspace the equality operators project let's run over a
+
+few examples of using these equality operators.
+
+These are going to be really really straightforward examples I don't think you'll have any issues understanding
+
+this but you may see a couple of surprises so stay tuned for that.
+
+So here we go we've got and we've got a boolean called equal result which I'm initialising to faults
+
+and another building called not equal result which I'm also initialising to faults and I've got two
+
+integers here.
+
+Number one and number two.
+
+And we'll just play around with this a little bit.
+
+I've got my C out bu alpha here commented out uncomment that out in a moment moments you can see the
+
+difference between the behavior.
+
+When you do that.
+
+So here I'm prompting the user to enter two integers separated by space.
+
+I'm reading in those two integers on line 15 I'm comparing those two integers for equality right here
+
+on line 16.
+
+So I'm saying is no one equal to number two that result is going to be stored in equal results so it's
+
+either going to be true if they're equal or not true if they're not equal then I'm going to compare
+
+the same two numbers using the not equal operator.
+
+So is number one not equal to number two in this case if they are not equal then I'm going to store
+
+true into the not equal result otherwise false.
+
+OK.
+
+And then I'm just going to print out those two results so let's run this piece of the code right now
+
+and you'll see what happens.
+
+Let's enter two integers in this case let's enter two integers that are equal to one another.
+
+So I'll type in 10 and 10 and Precentor and you can see here the comparison result for equals is 1 which
+
+is true.
+
+And for not equals zero because they are obviously are equal.
+
+OK.
+
+Now notice I have a one in a 0 being I put it here when I uncomment down the alpha stream manipulator
+
+and recompile and run.
+
+Now I can say that say 20 20 and instead of 0 1 we see true fault so that's pretty handy.
+
+So in this case they are True's to the equals will be true and the articles will be false.
+
+Let's use an example whether they are not equal.
+
+And let's say we're trying to do 10 and 20 this time.
+
+So.
+
+Equals is false and not equals is true.
+
+Just like what we would expect.
+
+OK.
+
+So I said that's pretty straightforward.
+
+I'm going to comment out this piece of code right here and now we'll do the same thing except we'll
+
+do it with characters remember we can do this with any type of pair any type.
+
+So in this case I've declared two characters char one and Tartu and initialize them both to empty to
+
+zero.
+
+And I'm asking the user to enter two characters separated by space.
+
+I'm reading and the characters then doing exactly the same thing I'm comparing them for equality and
+
+I'm comparing them to see if they're not equal.
+
+So let's run this.
+
+And the first test will do is say lower case and upper case A.
+
+There are different characters or Precentor or they equals.
+
+No that's false.
+
+Are they not equal.
+
+True that's true.
+
+That's exactly what we expect.
+
+And let's test it one more time with let's say a capital Z and another capital Z in this case they are
+
+equal.
+
+So that's true and they're not equals is false.
+
+Ok so you can understand the logic that's going on here.
+
+Comment that out and I will uncomment the next section which is dealing with doubles.
+
+So again exactly the same thing except I'm using doubles.
+
+I run this and will type in say two doubles that are the same twelve point one and twelve point one.
+
+The comparison result is they are equal.
+
+Exactly what would expect again.
+
+And let's do an example where they are not equal So let's say twelve point five and thirteen point two
+
+the equals is false because they're not equals and they're not equals is true because they are not equals.
+
+OK.
+
+Now this is the example that I want to run to show you something that may not be real obvious.
+
+Let's say we want to enter two doubles separated by a space and then type in twelve point zero and eleven
+
+point a lot of nines.
+
+Now to us those are not the same number but remember the way the computer stores floating point numbers
+
+it stores approximations.
+
+So that might be surprising as far as the computer is concerned.
+
+Those numbers are equal because the representation that it's using to store them behind the scenes is
+
+equal.
+
+OK so it's important to understand that if you're dealing with applications that need this kind of precision
+
+you know scientific application medical applications many many safety critical type applications you
+
+would not use these built in doubles we would use specific specialized libraries that really help us
+
+deal with this so that 12.0 is not equal to eleven point nine nine nine.
+
+OK.
+
+So it's important to understand that but the way that it stores it is an approximation.
+
+So as far as the computer is concerned these are the same.
+
+So let's do one more and I'll leave that double declaration there and I'll uncomment this last piece
+
+of code here and here I'm just grabbing an integer and a double.
+
+So we're doing some mixed mode comparison here.
+
+Run it and it says give me an integer and a double separated by a space.
+
+In this case I could say 10 and ten point zero.
+
+You remember what happens it's using an operator to compare two different types.
+
+It doesn't want to do that.
+
+This types have to be the same.
+
+So the 10 will be promoted to a ten point zero.
+
+And then the comparison happens.
+
+That's the mixed mode expressions.
+
+So what we're doing here is we're eventually comparing 10.0 and 10.0.
+
+So we expect this to be true and it is right there and you get the same sort of issue here if I say
+
+10 and nine point ninety nine a whole bunch of nines.
+
+What's going to happen again is the 10 will be promoted to ten point zero ten point zero nine point
+
+a bunch of nines as far as the internal representation is concerned are equal.
+
+So there's your True.
+
+OK so that it finishes off this video and that's it I'll see in the next video.

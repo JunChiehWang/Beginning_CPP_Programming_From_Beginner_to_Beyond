@@ -1,0 +1,465 @@
+In this video we'll learn about C++ is logical operators these operators allow us to build complex conditions
+
+in our programs.
+
+C++ has three logical operators.
+
+These are not and and or these operators work on Boolean expressions and evaluate to a boolean value
+
+themselves.
+
+There are several ways to write these operators.
+
+You can use the keyword like syntax using the words NOT AND and OR.
+
+OR you can use the operator symbol syntax using the Bang's sign the double ampersand and the double
+
+pipe symbol or the double vertical bar.
+
+Personally I've never seen any C++ code that uses a keyword like syntax so I'll use the operator symbol
+
+syntax in this course.
+
+Let's quickly review Boolean algebra by using a truth table.
+
+The logical NOT operator simply negates the result of the expression it's applied to.
+
+Note that this is a unique operator since it only works with one operand.
+
+So if the expression A is true then not A is false and if the expression A is false then not A is true.
+
+Let's look at the logical and the logical and is a binary operator and it's only true when both its
+
+operands are true.
+
+So you can see in the table when expression A is true and expression B is true then A and B is true
+
+A and B is false for all other combinations.
+
+Finally let's look at the logical or the logical OR operator is also a binary operator.
+
+The value of the logical or is true when either expression is true.
+
+So the only time it's false is in both expressions are false using just these three logical operators.
+
+We can write some pretty complex logic and if we combine the logical operators with the relational operators
+
+we're in great shape to begin to solve many many problems.
+
+Let's see what happens when we combine these operators together in an expression just like we had to
+
+understand precedence with the mathematical operators.
+
+We need to understand precedence for the logical operators logical not has the highest precedence followed
+
+by logical and followed by logical or of course as with mathematical expressions you can use parentheses
+
+to achieve exactly the behavior you're looking for.
+
+Let's wrap up logical operators by looking at a few example expressions and then talking about something
+
+called short circuit evaluation.
+
+Here are a few examples of logical expressions in the first expression we're determining if number one
+
+is greater than or equal to 10 and less than 20.
+
+Notice that we use number one in both expressions.
+
+We can't just write No one greater than equal to 10 and less than 20.
+
+We have to write in someone greater than or equal to 10.
+
+And number one less than 20 since we have an end.
+
+Both expressions must be true for the entire expression to be true in the next logical expression.
+
+We're using a logical or in this case either expression or both can be true for the entire expression
+
+to be true.
+
+So if number one is less than or equal to 10 then the entire expression will be true.
+
+Also if number one is greater than or equal to 20 then the entire expression will be true.
+
+Notice how both expressions cannot be true since no one cannot be less than 10 and it can't be greater
+
+than or equal to 20 at the same time.
+
+The next logical expression is checking if it's not raining and the temperature is greater than 32 degrees
+
+Fahrenheit.
+
+The following expression uses a logical OR.
+
+And it will be true if it's raining or if it's snowing.
+
+Finally the last logical expression is checking to see if temperature is greater than 100 and it is
+
+humid or it's raining.
+
+Remember here that the and has precedence over the or.
+
+I think you can see how powerful or logical expressions can be by simply combining these primitive operators.
+
+Also notice how important are variable names become as well.
+
+Let's finish up by discussing short circuit evaluation.
+
+C++ will stop evaluating a logical expression as soon as it knows the result.
+
+For example suppose we have an expression like the first one expression one and expression to and expression
+
+3 if expression 1 is false then there is no way that the entire expression can be true since all the
+
+expressions must be true.
+
+So why bother evaluating expression to an expression 3 when the compiler already knows that the result
+
+will be false.
+
+This is called short circuit evaluation and is commonly used in many programming languages.
+
+Programmers take advantage of this behavior to optimize their code in the second example.
+
+If any of the expressions is true then the entire logical expression is true.
+
+So if expression 1 is true then the compiler already knows that the entire expression is true and it
+
+won't evaluate expression to or expression.
+
+However if expression 1 is false then the compiler continues evaluating expression to.
+
+Since it doesn't know the result yet.
+
+Will use logical operators in depth when we learn about control structures.
+
+But for now let's head over to code right and see a few simple examples in life code.
+
+I'm in code light in Section 8 workspace and I in the logical operators project in this project will
+
+go over some few a few examples of using logical operators.
+
+Let's start with a really simple one here.
+
+What I've got is I'm going to use this variable numb to read numbers into just simple integers when
+
+you establish a range where the lower end is 10 and the upper end is 20.
+
+So that will be like a number line where this will be 10 here and this will be 20 over here now I'm
+
+going to ask the user to enter an integer and tell them what the bounds are 10 and 20 in this case and
+
+then I want to be sure that that number they entered is within the bounds and I just want to display
+
+true or false if it's within the bounds.
+
+And what we're doing here is we're going to say not inclusive of 10 and not inclusive of 20.
+
+OK so it's going to be between it's going to be 11 219 inclusive.
+
+All right so that's what we're going to do.
+
+Now we're going to store that true false value in this variable right here called within bounds.
+
+And here's our formula Here's our expression right here.
+
+Basically we're going to check to make sure that none is greater than lower.
+
+So numb is going to be greater then lowers.
+
+So is that user typed in 15.
+
+We want to make sure that it's graded and lower and we want to make sure that it's less than upper.
+
+So we want to be sure that it's in here somewhere.
+
+Right.
+
+So that's where we've got that logical and condition.
+
+So we'll do that and then we'll simply print out the number is between lower and upper and then true
+
+or false.
+
+And we can just display within bounds here.
+
+So let's run this with a couple of test cases.
+
+And here we go.
+
+Enter an integer the bounds are 10 and 20.
+
+Let's enter an integer that is within those bounds 15 is run in the middle and a Precentor and the result
+
+is 15 is between 10 and 20.
+
+True.
+
+OK.
+
+So let's run another test case let's go off the right side to 22.
+
+Now we would expect the false 22 is between 10 and 20 faults.
+
+Let's do a test case on the left side.
+
+We'll go five.
+
+We also expect the false and that's what we've got.
+
+And then don't forget to test those edge cases the 10 and the 20.
+
+So let's try 10.
+
+We expect fault's right because being N10 is not being between 10 and 20.
+
+In this case.
+
+So I get back a false and the last test case we could run is 20.
+
+And we also expect a fault and that's what we're getting.
+
+It's very common to have these errors where instead of checking it greater then here you're doing greater
+
+than or equal to when you should be doing greater than and so forth.
+
+So you've got to be sure to test your code.
+
+OK so that's a simple example of testing to see if a number is between two numbers.
+
+Now let me at that out and we'll do another example here.
+
+And of course we're assuming that lower is less than upper and all of these examples.
+
+Now we want to do on this one as we want to test to see if the number is outside the bounds.
+
+So I want to be.
+
+I want to be true if the number is outside the bounds so we'll do the same idea here.
+
+We've got we've got the line and here's the 10 and here's the 20.
+
+And if the numbers over here somewhere we want to True enough the numbers over here somewhere we want
+
+a true.
+
+Now we could just simply negate the previous result.
+
+Right.
+
+So if the number is in here if the number is not in here that is obviously either here or here.
+
+But what we'll do is we'll do it explicitly.
+
+We've got a variable called outside the bounds and we're going to check to be sure that number is less
+
+than lower.
+
+So that's taking care of this bit right here.
+
+Or number is greater than upper.
+
+There's no way we can use that and here that would be a mistake right because the number will never
+
+be less than 10 and greater than 20 this that won't happen it's impossible.
+
+So that would be a mistake and that's a pretty common mistake.
+
+But you'll find that when you test and there's your or.
+
+So let's run this example.
+
+And in this case the bounds are 10 and 20.
+
+So let's say we want to go 25.
+
+Now if we expect true now and that's we're getting because 25 is outside of 10 and 20.
+
+Let's try the lower and this try five.
+
+That's also true and that's true.
+
+One of the number in between 15 here we expect that to be false is because 15 is not outside the range.
+
+And then we could test what 10 and 20 and I'll leave that up to you guys.
+
+OK.
+
+So let me come at that out.
+
+And the third example is actually checking to see whether the numbers are right on the bounds whether
+
+they're 10 or 20.
+
+So what we're doing here again is we've got to line our number line and we've got 10 over here and 20
+
+over here.
+
+We want to be sure if we want it we want to return true if it's 10 or if it's 20.
+
+Right on the bound.
+
+So we've got another variable here called on bounds I'm setting it faults and the condition is really
+
+simple if the number is equal to the lower.
+
+So if the numbers 10 or the number is equal to the upper and so if we've got a 10 or 20 in this case
+
+because that's what lower and upper are.
+
+This will return TRUE remember it can't be 10 and 20.
+
+So we need the or here and in with the or if either piece is true the entire thing is true.
+
+So let me clear this and we'll run this example.
+
+So we should get that true for 10 and 20.
+
+So here's 10.
+
+There we go we've got a troop We'll run it again with 20.
+
+That also gives us true and everything else should give us a false right no matter what we put it in
+
+this book 15.
+
+We can put a fault and you could use in test cases outside 20 and less than 10 to check it out as well.
+
+So hopefully you're with me here.
+
+That's pretty straightforward stuff.
+
+Pretty powerful stuff.
+
+This is how you do input validation.
+
+You're asking the user to enter a number between something and something or no and turn the the amount
+
+of your check.
+
+Obviously they're not going to enter negative numbers and there may be a limit as to the upper end so
+
+you can validate your data because if you have bad data you're going to get better results.
+
+Now in this case here I'll comment.
+
+All of this out and we'll go through and explain it to you.
+
+OK.
+
+So what we've got here is we've got and and become it that bit out as well.
+
+All right so here's where we're at Here's the idea.
+
+We want to determine if you need to wear a coat.
+
+And that determination is based on the temperature and the wind speed.
+
+So I've got a boolean value and that boolean value right here is going to be where code that will be
+
+true or false whether you need to wear a coat or not.
+
+And I'm going to read two variables in from the user I'm going to read the temperature in Fahrenheit
+
+and the winds the wind speed in miles per hour.
+
+And here are my limits.
+
+So wind over this value requires a coat.
+
+So if the wind is over 25 miles an hour I need a cup and the temperature below this value requires a
+
+coat.
+
+So if the temperatures below 45 degrees Fahrenheit you need to.
+
+OK.
+
+But we're going to test these two different ways we're first going to use an OR condition and then we're
+
+going to use the and condition.
+
+So for the OR condition what we're saying is that if the wind speed is greater than 25 or the temperature
+
+is less than 45 you need a coat for the and condition we're going to say that the temperature has to
+
+be less than 45.
+
+And the wind speed has to be greater than 25.
+
+OK.
+
+And the conditions are pretty much I hope what you would expect at this point.
+
+You can see what we're doing here.
+
+We're setting for the OR condition we're setting right here we're checking obviously we're reading the
+
+temperature and the wind speed from the user.
+
+And then we've got temperature less than the temperature for the coat.
+
+That's one of the expressions.
+
+And then we've got the or wind speed is greater than the wind speed for a cut.
+
+So it fits in or that means that if this is true the whole thing is true.
+
+And if this is true the whole thing is true.
+
+So either piece is true down here we're using it.
+
+And so for this wear coat to become true both these pieces must be true.
+
+So the temperature must be colder than the temperature coat and the wind speed must be greater than
+
+the wind speed for.
+
+OK so let's run this.
+
+It will get to output statements
+
+OK so let's see that say that the temperature is 30 degrees Fahrenheit.
+
+That's pretty cold and the windspeed is 60 miles per hour.
+
+It's almost a hurricane.
+
+Both cases say you need to wear a coat.
+
+So in this case the OR case is true.
+
+Obviously both those pieces are true and the and case would obviously say true as well.
+
+OK let's run another example here.
+
+Let's say that in this case the temperature is pretty cold but the wind speed is not so bad.
+
+So in this case according to the first rule which is the rule I need a coat because it's cold.
+
+The second rule says I don't need a coat because the wind speed in this case is too low.
+
+OK.
+
+So hopefully that makes sense.
+
+You can see how powerful this can be just a really simple switch of a condition can totally change the
+
+logic really depending on what we want.
+
+Remember check those edge cases those are the ones where people tend to make mistakes on greater than
+
+or equal to sometimes you don't mean equal to you just mean greater than or the other way around.
+
+So testing is so so important.
+
+
+Video course
+Teach the world online
+Create an online video course, reach students across the globe, and earn money
+ Udemy
+Copyright © 2019 Udemy, Inc.
+Terms  Privacy Policy and Cookie Policy  Support
+
+
