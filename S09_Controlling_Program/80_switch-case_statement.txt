@@ -1,0 +1,541 @@
+In this video we'll learn about C++ is switch statement as you've already seen.
+
+It's very common to have to execute specific sections of code depending on the value of a constant for
+
+this particular use case the switch statement comes in very useful.
+
+Well learn the switch case break and default keywords the syntax for the switch date is a little more
+
+involved than the if statement but it's not too bad once you understand what it's doing.
+
+First we have the switch keyword which is followed by the control expression inside parentheses.
+
+This control expression must evaluate to an integral type or an enumeration type.
+
+Then you have a series of case statements enclosed in curly braces.
+
+The value of the control expression will be compared to the values following the case keywords.
+
+These case statements must also evaluate to an integral or enumeration type and must be known at compile
+
+time.
+
+That means there must be constants or literals when the value of the control expression matches the
+
+case expression.
+
+Then the code after the colon is executed until you hit a break statement.
+
+The break statements are optional.
+
+But best practice is to include break statements for every case statement.
+
+Unless you've got a really good reason not to.
+
+In the next several slides will go through the behavior of a switch statement with and without break
+
+statements.
+
+Finally a switch statement can have a default case at dnd that will execute when none of the cases is
+
+true.
+
+This is similar to that catch all else at the bottom of an IF statement.
+
+The break statement is not needed in the default case.
+
+Let's see some examples of the various forms of the switch statement.
+
+In this example selection is a character type.
+
+Which of course is also an integral type.
+
+We assumed that the user has entered a character at the keyboard and it's been assigned to selection.
+
+We can write IF ELSE IF statements to execute code depending on the character entered.
+
+But in this case we can use a switch statement since the control expression is an integral type and
+
+the case statement contains character literals to match.
+
+So suppose the user enters the character to the switch will start at the first case statement and compare
+
+the two to the literal expression.
+
+Following the case keyword.
+
+So the two will first be compared to the one.
+
+Since this is not true we proceed and check the next case statement.
+
+In this case we have a match so all the code following the colon will be executed.
+
+Notice that we can have multiple statements here without the need for a block.
+
+However if you need to declare variables in this section then you need to put the curly braces in for
+
+a block so we displayed two selected.
+
+Then we execute the break statement which completes the switch statement.
+
+No further cases will be checked when we continue with the rest of the program.
+
+Notice that in the case of 3 and 4 we display 3 or 4 has been selected and then we're done with this
+
+switch.
+
+This is handy since we can write logic that's equivalent to an OR statement as we see in this case.
+
+Finally the switch has a default case.
+
+If none of the previous case statements match then we execute the default.
+
+Which in this case displays 1 2 3 4 not selected.
+
+No break is needed in the default statement.
+
+Also the default statement is optional but it's best practice to include one.
+
+Let's look at an example where we don't have some break statements.
+
+This is an example of the fall through behavior of the switch statement.
+
+Notice that there are no break statement in cases 1 2 and 3.
+
+Case 4 is the only case that has a break statement.
+
+Suppose a user enters the character one and it was assigned to selection.
+
+We checked the first case statement and it matches.
+
+So we execute the code following the colon.
+
+In this case we display one selected.
+
+Now we continue executing code going straight down the switch statement until we hit a break statement.
+
+So in this case we also display two selected and three selected and four selected.
+
+Finally we hit a break statement in case 4 and we're done with the switch.
+
+Remember once a match is made all the code in the switch cases including And following that match will
+
+be executed until we hit a break statement.
+
+No other conditions will be checked.
+
+This sort of logic can be handy in some cases when you want to execute a subset of statements depending
+
+on various conditions.
+
+However this should not be the way you normally code a switch statement.
+
+Best practice is to include a break statement in every case statement.
+
+If you need logic that falls through.
+
+Please document the code and be very clear in the documentation that the follow through behavior is
+
+what you intended.
+
+If another programmer sees the code and needs to modify it they'll understand this and be very careful
+
+when adding or removing new conditions or statements.
+
+Let's see an example of using a switch statement with an enumeration.
+
+In this example we see an example of using a switch statement with an enumeration type.
+
+We have an enumeration type called color with three enumeration constants red green and blue.
+
+We also have a variable name screen color which we initialize to green but it can hold any of the three
+
+enumeration constants using this enumeration variable in the switch statement is a very common use case
+
+and a great way to execute code depending on its value.
+
+In this case we switch off the screen color which can only be red green or blue and we execute the appropriate
+
+code when we match the specific value.
+
+Also notice that in this case we're supplying a default case but this should never execute unless we
+
+add another enumeration constant to our enumeration and forget to include a case for it.
+
+So let's review what we learned about the switch statement.
+
+The control expression must evaluate to an integral type.
+
+The switch statement is commonly used with enumeration types.
+
+The case expressions must be known at compile time so only constants are literals can be used.
+
+No variables once a match occurs.
+
+All code in the following case statements is executed until a break statement is reached.
+
+Finally best practice is to always include break statements for each case and also provide a default
+
+case.
+
+Let's head over to the ID and see some switch statements in action.
+
+I'm in the ID in the section 9 workspace in the switch project and what we're going to do we're going
+
+to do a little program here that uses a switch statement.
+
+We're going to ask the user what grade they expect on an exam that will be a character a b c d f and
+
+we'll tell them what they need to score to get it.
+
+OK so I made a start here where we have a letter grade a character and that's what the user is going
+
+to enter.
+
+We prompt the user to enter the letter grade they expect on the exam and we read that into letter grade.
+
+OK so now what we want to do is we want to switch off of letter grade.
+
+It's a character so that's definitely an integral type.
+
+So we'll say switch
+
+and we want to switch off letter grade.
+
+Well put in the syntax I need which is the open and Curley's for my switch statement.
+
+Now what we have in here is we need to provide the cases now in this case we can provide upper and lower
+
+case for each character so we could say case lowercase a and case upper case a.
+
+I want the same behavior because the user could certainly type of a lower case.
+
+So if they type a lowercase or an upper case they almost say is C out.
+
+Let's say you need a 90 or above and we'll tell them to study hard.
+
+OK.
+
+So that will be the statement for that specific case.
+
+We need a break.
+
+Otherwise word will fall through I don't want to fall through in this example and let's do the be case
+
+again lower case and upper case.
+
+And also remember them using single quote marks here because these are characters.
+
+So in the case of a B.
+
+That's what they want most.
+
+Say something like you need 80 to 89 for a b and we'll say Go study
+
+and I'll use that line here.
+
+And again I want to break
+
+that to our c case.
+
+So there are a couple left.
+
+So there's my lowercase c is my uppercase C and in this case I'll just say up put a.
+
+Something like you need 70 to 79
+
+for an average grade that say
+
+and roll and line.
+
+Here again a break will do the DKs
+
+and here will say something like I don't know Hmm
+
+actually you should strive for a better grade.
+
+I was just saying all you need is 60 to 69 or something like that
+
+and will put an end line here as well.
+
+Of course the break is required here because I don't want to fall through.
+
+And then in the case of F again lowercase f or uppercase f
+
+hear what just you see out is just put a little placeholder here to test ourselves because we want to
+
+add a little bit of code here once we finished this example OK and we'll break out of here.
+
+Our default he's going to say something like Sorry that's not a valid grade.
+
+And I think we're pretty much done here.
+
+OK and we clean that up just a little bit.
+
+So let's look through this right before we run it.
+
+We're grabbing the letter from the letter grade from the user was switching off of it.
+
+We're checking for lower case upper case a we've got a message to be the c to d the f.
+
+And sorry not a valid grade and we'll get back to the effort a little bit we'll write some code in there.
+
+So let's execute this
+
+actually the letter grade you expect.
+
+I want to say you need 90 or above.
+
+Study hard.
+
+OK let's do the beat.
+
+I'll do a lower case b this time.
+
+You did 80 89 for a Bigos study and let's do the F
+
+and then there's my axis.
+
+OK.
+
+So what we want to do now is in this case right here in the F case let's ask them Are you sure you really
+
+want an F.
+
+Neither did you type this incorrectly.
+
+So what we want to do is we want to read a little if else if statement here and I'm going to declare
+
+a variable in here so I want to be sure that I'm using a block and I want to use the block right in
+
+here like this OK.
+
+So I want to get rid of this guy.
+
+You know I want to put the break inside this block.
+
+Sometimes the ideas don't put those Curley's in the right places and think it's ok now.
+
+OK so this is the logic I want here.
+
+So I want to have another character and I want to actually confirm because I want to confirm that they
+
+really want an F and will initialize it to going to zero.
+
+And then we'll say see out.
+
+Are you sure.
+
+Or something like that.
+
+Say yes.
+
+No
+
+OK so they'll they'll enter a yes or no and I'll read in to confirm again so they're going to type in
+
+a character either yes or no hopefully.
+
+So what do we do.
+
+Well let's say if they type in a yes uppercase or lowercase we'll give them a message.
+
+If they type in a no we'll give them another message and we've got to make sure that they types a yes
+
+or no if they're typed anything else we'll give them a little message that says I have no idea what
+
+you're saying.
+
+OK.
+
+So let's do that.
+
+They say if the on the Confirm character is equal to a lowercase y for the confirmed character is equal
+
+to an upper case why Remember don't forget to do the double equal signs here because we're comparing.
+
+So if that's the case and I'm not going to use any in the block statements here I don't need to just
+
+say out OK.
+
+I guess you didn't study
+
+because you don't want to study right.
+
+You know you've been in line here Els let's check to see if they actually type.
+
+No it could be anything else now right.
+
+All we know is that it's not a yes.
+
+So in this case we'll say else if confirm is a little lower case and or again confirm is an upper case
+
+and
+
+then we'll just simply say something like see out good go study.
+
+So now here we need that catch all else right at this point.
+
+They typed something in.
+
+Other than a yes or no.
+
+So what do we do.
+
+Here we tell them boy you really do want that airfreight we'll just say out illegal choice or something
+
+or something more clever if you like.
+
+Ok that should do it now.
+
+Because I'm creating and declaring that character right here.
+
+I need those Curley's inside the block.
+
+Otherwise if I was not declaring a variable here I don't need to put the Curley's but once I have to
+
+declare a variable I need those Curley's.
+
+So let's execute this and see what's going on.
+
+OK so what's the letter grade the only one I really changed was the F so let's type the F and now it
+
+says are you sure I'll say yes OK I guess you didn't study exactly what we expect.
+
+Let me read it again with the f..
+
+Are you sure.
+
+No good.
+
+Go study.
+
+And then we'll just give it another character and we'll go F and let's say are you sure Q illegal choice.
+
+There you go.
+
+So here you can see some logic using the switch statement with a character which is an interval type.
+
+A bunch of literals here with the lowercase A's and so forth.
+
+And in the case f we've got some if else if logic going on as well.
+
+So you could see that the logic for this is pretty straightforward.
+
+The case switch statement makes it nice to do it's kind of long.
+
+The code is pretty wordy but it's very very easy to see very easy to understand.
+
+And when you read this I mean it can't get much clearer than that right you switching off a letter grade
+
+if it's an error and a or a B or A B.
+
+Really really clear indentation again and style really really important if everything here was at the
+
+same level all the way on the left hand side.
+
+It would be really really hard to read and figure out what goes where.
+
+OK so that takes care of the switch statement in this context.
+
+Next we'll do the switch statement using an enumeration and we'll do that one really quickly.
+
+OK so I've switched to the switch in room project and I've started it already so let's go over it here
+
+what I've done here as I've created an enumeration type called direction.
+
+And you could see it right here between lines 10 and 12 and the numeration constants are left right
+
+up and down.
+
+So it's pretty straightforward.
+
+Remember when you declare an enumeration you're creating a new type.
+
+So we can create variables of that type so heading is of type direction just like we could have said
+
+I's in int and we're initializing it to left which is one of those enumeration constants.
+
+OK so now what we want to do is we want to switch off of that heading heading.
+
+Is an enumeration.
+
+So basically it's an integral type.
+
+Enumerations are.
+
+So here I'm going to type and switch and I want to switch off heading in this case.
+
+Our cases are left right up and down right.
+
+They have to be they can't be anything else.
+
+I mean get rid of that extra curly here so we can say case
+
+case left and then at this point we could just say something like C out say going left just something
+
+really simple so that we know we hit the right case and we'll put an end line here.
+
+And of course I want to break
+
+OK.
+
+Most say case right and we'll do the same thing.
+
+I just copy and paste these two lines to save a little time.
+
+And now I'm going to compile this and you'll see the issue that we see right away.
+
+And let me just clean this up just a little bit.
+
+OK.
+
+So let's compile this.
+
+I get us and I get to run this is going left just like I expect.
+
+Right.
+
+But look I'm here and you've got some warnings.
+
+The warnings are saying warning enumeration value up not handled right.
+
+Warning enumeration value down not handle these.
+
+This is telling you that the compiler understands that there are four enumeration constants here.
+
+You're using an enumeration variable in your switch but you're only handling two of those cases.
+
+Well C++ gives you the warning a lot of other programming languages now won't compile this.
+
+This will be an error.
+
+They force you to handle all the types.
+
+So you could create two more types for up and down.
+
+Or you can use a default that's going to catch everything else.
+
+And I would just say OK here
+
+and now no warnings.
+
+All good.
+
+And we're going left.
+
+OK.
+
+So that's really what I wanted to show you with the enumeration types when you use them with switch
+
+statements.
+
+I mean there's a reason you create an enumeration type right you've got these enumeration constant so
+
+that variable Hedding could be any one of those four.
+
+So you really should be handling all four cases in your switch or using a default to handle the fall
+
+through in case one of them doesn't match.
+
+OK so that finishes up this video with the switch statement.

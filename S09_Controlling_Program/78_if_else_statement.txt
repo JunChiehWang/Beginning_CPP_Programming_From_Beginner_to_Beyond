@@ -1,0 +1,177 @@
+In this video we'll learn about the if else statement adding an ELSE section to an if statement is the
+
+obvious next step to improving control flow in a program.
+
+Many times we want to perform different actions depending on whether the condition is true or false.
+
+Again the syntax for the if statement is very simple.
+
+We had the same syntax test for the IF section as in a simple IF statement but we add the else key word
+
+and the statement we want to execute when the condition is false.
+
+So in this case if the control expression is true we execute statement 1.
+
+And if it's false we execute statement to notice the indentation.
+
+I can't stress enough how important good indentation style is by simply looking at the construct we
+
+can easily see both sections because it's indented properly.
+
+In this slide you can see example code in the flowchart that visually shows the flow of control the
+
+condition numb greater than 10 is evaluated.
+
+If that's true we increment numb.
+
+If it's false we assign 10 to numb.
+
+In both cases we then continue execution to the next statement.
+
+Let's see a few more examples.
+
+In the first statement we check if numb is greater than 10.
+
+If this is true we display numbers greater than 10.
+
+If it's false we display number is not greater than 10.
+
+And the second example we check if health is less than 100.
+
+And real player is true if both these conditions evaluate to true.
+
+Then we assign 100 to the player health.
+
+Otherwise we simply increment the player health here we could see sample code along with a flowchart
+
+that visually shows the flow of control.
+
+Notice that in this example we're using to block statements in the if statement so if numbers greater
+
+than 10 is true we execute both statements in the block we increment.
+
+And we display increment if number is not greater than 10.
+
+Then we assign 10 to numb and display reset regardless of which block statement executes we continue
+
+processing.
+
+Finally let's see another example where we group if else if statements.
+
+In many cases we can group if else statements together.
+
+Here's a common example.
+
+Suppose I wanted to split a student's letter grade given their score on an exam.
+
+In this case we can check if their score is greater than 90.
+
+If it is we display an A and we're done.
+
+No other conditions will be checked so we continue to the last output statement and display done.
+
+Suppose the student scored a 75.
+
+First we checked to see if a Scores greater than 90.
+
+It isn't.
+
+So we go to the next.
+
+Else if.
+
+Score greater than 80.
+
+Again it's not true.
+
+Then we check score greater than 70.
+
+Now it's true so we display's see C and we're done.
+
+No other conditions will be checked so we continue to the last output statement and display done.
+
+Notice that the last else in the construct doesn't have an if associated with it.
+
+This is the catch all else statement.
+
+If none of the previous If statements is true then this L statement will execute.
+
+An F is displayed.
+
+This is a very very common pattern that's often seen in programming.
+
+It's efficient since no extra checks will be performed.
+
+Once we know which condition is true we could obviously change the logic and start with score less than
+
+60 and work our way up to an A.
+
+Let's head over to the ID and see some examples in live code.
+
+I mean the code like ID.
+
+I'm in the section 9 workspace in the if statement project.
+
+This one is really really simple.
+
+The user is going to enter a number and we're going to store it numb and we're going to compare the
+
+number to a target.
+
+In this case I just assign 10 to the target.
+
+So we're asked to enter a number and compare it to 10 in this case.
+
+Ok we get the number from the user and then we've got a real simple if statement.
+
+If the number is greater than or equal to the target we're just going to display this line and then
+
+we're going to display the number they entered is greater than or equal to the target.
+
+That's it.
+
+We're also going to calculate the difference between the number and the target and display the difference.
+
+In this case in this piece right here this is the if statement right there.
+
+That's the section that's the true section.
+
+We're going to say Yeah the number you entered is greater than or equal to the target.
+
+It's so far away from the it's so much greater than the target.
+
+That's it.
+
+Now if the number they enter is not greater than or equal to the target then the else part fires in
+
+which case we're still going to print the line and then we're just going to say the number you entered
+
+is less than the target.
+
+What's the difference between target a number and we're going to display that difference as well.
+
+OK so really really straightforward program.
+
+Let's compile and run this.
+
+So in this case that's entrail number of compared to 10.
+
+Let's say I enter 10.
+
+It says 10 is greater than or equal to 10 which it is and 10 is zero greater than 10.
+
+Because it is 10 perfect so let's run this couple more times.
+
+Let's put in 100 and we get 100 is greater than or equal to 10.
+
+100 is 90 greater than 10 right.
+
+And that's put in print in negative 10.
+
+In this case negative 10 is less than 10 and negative 10 is 20 less than 10 which is again correct.
+
+So you can see real simple program adding an L S. to the if statement is really really simple and actually
+
+it's super powerful because it gives you the ability to have a binary decision and execute code on both
+
+sides of that decision.

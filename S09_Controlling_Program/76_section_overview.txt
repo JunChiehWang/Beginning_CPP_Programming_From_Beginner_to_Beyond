@@ -1,0 +1,93 @@
+In this section of the Course will go over the control structures that allow you to control the flow
+
+of execution in your program.
+
+So far you've learned how to write programs that run sequentially.
+
+That is one statement followed by another and so forth.
+
+You can solve many problems using sequence but now is when we really take advantage of the power of
+
+programming.
+
+In this section we'll go over the selection and iteration control structures in C++ selection control
+
+structures allow you to make decisions and execute parts of your program only when certain conditions
+
+are true or false.
+
+This is so powerful and opens up a world of programming power.
+
+After we learn about the selection constructs we'll learn about the iteration control structures.
+
+These are the constructs that let us loop and repeat parts of our program.
+
+So we have these three basic programming building blocks sequence selection and iteration with sequence
+
+selection and iteration.
+
+We can implement any algorithm.
+
+Let me repeat that with sequence selection and iteration.
+
+We can implement any algorithm that's amazing.
+
+Let's see some of the C++ selection statements.
+
+The main selection powerhouse in most programming languages is the if statement if a condition is true
+
+then you do something.
+
+We can also add the failing condition to an if statement and get the if else statement.
+
+In this case if a condition is true you do something and if the condition is false you do something
+
+else.
+
+So you're basically making a simple binary decision.
+
+We can also nest if statements 1 inside the other.
+
+For example if my favorite football team is playing today then if the game is on now then record it.
+
+Sometimes if statements get pretty long and complex so C++ has a switch statement that has some benefits
+
+when we're comparing integer based discrete elements.
+
+Finally C++ has a really neat operator called the conditional operator.
+
+That's basically an if statement wrapped up in an operator will go over all of the selection control
+
+flow constructs in detail.
+
+Then we'll look at the iteration or looping constructs.
+
+C++ has three basic looping constructs.
+
+The for loop.
+
+The while loop and the do while loop.
+
+There is also a range based for loop.
+
+That's great to use with ranges of items and collections of items like arrays and vectors.
+
+We can control how many times we loop in many ways to continue and break statements allow us to read
+
+loop and break out of loops whenever we want.
+
+Finally we'll talk about the infinite loop.
+
+That's a loop that loops forever.
+
+Well at least until we break out of it and nested loops these are loops within loops that are great
+
+for working with multi dimensional structures like two dimensional arrays or vectors.
+
+Everything you've learned up to this point will now be used with these control structures.
+
+Variable declarations assignment.
+
+Testing for equality relational and logical operators and more.
+
+Let's get started and learn these powerful constructs.

@@ -1,0 +1,513 @@
+In this video we'll learn about the C plus plus if statement the statement is the most basic of the
+
+C plus plus selection statements and his syntax couldn't be any simpler.
+
+We start with the keyword and this is followed with the control expression in parentheses the control
+
+expression must evaluate to a boolean true false value.
+
+If the value of the expression is true then the statement is executed.
+
+Otherwise the statement is skipped.
+
+Note that the statement is indented.
+
+Indented our code in the main function but the station is a very important element of style that we
+
+need to start getting used to right away by indenting the statement it makes it easier for someone reading
+
+the code to see that the statement is part of the if statement.
+
+Remember indentation style is just for us human programmers to help us see the structure of the code.
+
+The compiler doesn't care where you place the statement so you can see how simple the statement is.
+
+But see conceptually what's going on in the if statement.
+
+Suppose we have this code.
+
+If Nahm is greater than 10 incremented by one the expression numb greater than 10 will be evaluated
+
+to True or false if it's true then none will be incremented.
+
+If it's false no increment will take place.
+
+The flowchart on the right shows visually what the flow of control looks like.
+
+Let's see some simple examples of if statements
+
+in the first statement were checking if selection is equal to the character A.
+
+If it is then we execute the output statement.
+
+If it is false we skip the output statement in the second example we're checking if number is greater
+
+than 10 if it is we execute the PUT statement in the last example.
+
+We're using the and logical operator in the control expression.
+
+In this case we check to see if health is less than 100 and player healed is true.
+
+If both these expressions are true then the entire control expression is true.
+
+And we set the player's health to 100.
+
+Otherwise we skip the statement.
+
+But if you want to execute more than one statement if the condition is true well that's were block statements
+
+come in a block statement is a sequence of statements inside a block which is made up of opening and
+
+closing curly brackets.
+
+Notice the code on the left.
+
+The two statements in the body of the if statement are inside curly braces.
+
+If numb is greater than 10 then the block statement is executed which means that the increment and the
+
+output statements are both executed.
+
+The diagram on the right shows a visual representation of the control flow let's talk a little more
+
+about blocks.
+
+We've actually already seen a block statement.
+
+Remember the main function we've been using in all our programs so far it has an open curly at the beginning
+
+and a close curly at the end.
+
+This is a block statement and we had sequences of statements in the block statement block statements
+
+introduce a new level of scope.
+
+We'll talk about scope as we go through examples in this course.
+
+But just like we declared variables in the main block we can declare variables in any block even in
+
+a block that's inside an if statement variables that we declare in a block are only visible to statements
+
+that are also in the same block.
+
+This lets us modularize our code so we have better control of who sees what which makes writing and
+
+debugging our code easier.
+
+Let's head over to the idea and we'll see some if statements in action.
+
+OK so I mean the code like Id I'm in the section 9 workspace in the if statement project.
+
+And what I want to do here is I want to create a simple program that will create four different if statements.
+
+Let me show you what we'll do.
+
+Let's say we've got a number line here and there's a minimum of 10 and the max is 100.
+
+Let's say here what I want to do is I want to ask to use an integer and I want to be able to check that
+
+the integer is greater than or equal to 10.
+
+So that will be one of the statements I want to make sure that the integer The entered is less than
+
+or equal to 100.
+
+That would be the second one.
+
+The third if statement I want to write is I want to be sure that that integer they enter is within that
+
+bounds.
+
+So between 10 and 100 including 10 and 100 that will be the third one.
+
+And then the fourth statement will right as well.
+
+Check that boundary condition.
+
+So we want to know whether it's actually equal to 10 or equal to 100.
+
+So those are the four statements we're right and we'll we'll talk a little bit about if statements as
+
+we go.
+
+So first thing I want to do is I want to create some variables I need an integer I'll just call it numb
+
+and all initialize it to zero.
+
+This is where I'm going to read the integer from the user into then I need to model those boundaries
+
+so I'll use constants for that.
+
+I'll just say min and max will set me into 10 and we'll set max to 100.
+
+OK so that represents those boundaries.
+
+So the first thing I'll do is I'll ask the user to enter a number between minimax
+
+OK.
+
+Simple as that.
+
+And let me put a little Pullan here so they can see what they're doing and then what we're do is we'll
+
+read that into.
+
+No that's the only input we're going to be able to get in this program just a simple integer we'll get
+
+it from the user and try a number between min and max.
+
+Let's test that make sure we didn't make any mistakes.
+
+Enter number between 10 and 100.
+
+Exactly.
+
+And I'm entering 10 I'm doing nothing right now with it and I need to get rid of that little extra space
+
+that I had there.
+
+OK so now let's write our first if statement will be number one here.
+
+So I'm simply going to say if the number that the user entered is greater than or equal to 10 which
+
+in this case is min then all I really want to say is as my output statement I'm going to say nothing
+
+else is greater than men.
+
+That's it.
+
+All right.
+
+So let's test that out.
+
+So when I am going to type something greater than 10 now I want to type in 20 that if statement should
+
+fire and I get 20 is greater than 10.
+
+Perfect.
+
+Now if I type something in that is not greater than 10 let's say five I should see no output which is
+
+exactly what happens because that statement will be skipped.
+
+Now suppose that I want to display something else I want to execute more than just that one statement.
+
+This is where you need a block.
+
+So I'll create a Cur-Lee here and I'll put a Cur-Lee down here below the if that establishes a block.
+
+Notice that I'm indenting I'm not writing on my code or flush on the left.
+
+If you indent it's much easier to see the structure of the code.
+
+And as you in debt further and further and you mess things one within the other the structure of the
+
+code really jumps out at you and it's very easy to follow.
+
+So in this case I want to do a statement right up here since we're going to write four if statements
+
+I'm going to say this to a slash and to give me a new line at the beginning and I'm just going to put
+
+some dashes and then must say if statement 1 Put some more dashes here and you'll see why I'm doing
+
+that in a little bit.
+
+OK.
+
+So if we run that now we should see both of those lines display.
+
+So I'll enter something greater than 10.
+
+I put in there 30 and those are both my lines my if statement one line as well as the 30 is greater
+
+than 10.
+
+So again really simple anytime you want to execute more than one line of code or more than one statement
+
+you need to wrap them up in a block.
+
+Now suppose that I also want to display how far away that is from men.
+
+And what's the difference between the number that I entered and men.
+
+Well I could just subtract right.
+
+It's pretty simple.
+
+So we could create an integer here and I'll just call it.
+
+Mean create a little space here.
+
+OK I'll call I have an integer and I just call it for the difference and I'll initialize that to the
+
+number the user typed in minus the mean right because I know it's greater than men so that's going to
+
+be positive.
+
+And then I'll just say see out the number you entered is and use diff here the difference amount and
+
+I know it's greater and greater than men.
+
+That's it.
+
+Now it's really important to understand a couple of things here.
+
+One is this variable.
+
+I'm declaring that variable diff inside the block.
+
+You can see the block right here.
+
+There's one Cur-Lee there's the other curly.
+
+So what that means is that that variable div is only available to the statements after I've declared
+
+it inside the block basically So it's only this block that's it.
+
+Nothing else can see that variable.
+
+This is a good thing if that gets a really scary value in there and it's really out of whack.
+
+Well then the only place it could have changed that is this block so I know exactly where to look.
+
+OK.
+
+So let me clear a little bit of that and what I'll do now is let's run this and see if this is correct.
+
+So I'm going to enter a number between 10 and 20 and 100 and say I want to enter 50.
+
+I know that that is greater than 10 and I know that it's 40 away from 10.
+
+So that's what I'm expecting.
+
+And there's my IF statement 150 is greater than 10 and 50 is 40 greater than 10.
+
+Perfect.
+
+If I again type something and like five I'll get no output which is perfect.
+
+That's exactly where I want to be.
+
+So that takes care of that first statement.
+
+Now that's right.
+
+The second IF statement this one we're going to check to see if the number is less than or equal to
+
+Max.
+
+Right so it's the same idea I'm just going to say if the number is less than or equal to the max That's
+
+the upper bound.
+
+Then I want to display this out statement me just copy and paste that
+
+and I'll just change this to a so my IF statement 2.
+
+And over here I want to say that my name is less than in this case.
+
+I should be less than or equal to that I should fix that appear because I know that it's greater than
+
+or equal to.
+
+Since that's what I'm doing in my condition
+
+fix that quick trigger that should do it.
+
+In this case it's less than or equal to max
+
+OK and that's the difference here as well.
+
+Now here if I say if I just do something like diff
+
+is equal to max minus numb which is the calculation I want to do.
+
+But when I compiled this you're going to get an error is going to say diff was not declared in this
+
+scope because this is gone now if was declared in this block that block is finished.
+
+The diff isn't even visible anymore.
+
+So I need to create another if diff So if I just say and if and I'll just initialize it to max minus.
+
+Similar to what I did above.
+
+This creates a new copy of that integer div that's only visible to this block here.
+
+Now sure I could have just created that diff way appear like I did with and it would be visible to everybody
+
+but it's wanted to show you how the scope rules work.
+
+OK so there's my def number to say see out the number you entered is gif amount.
+
+In this case less than
+
+max
+
+and I'll finish that off.
+
+OK.
+
+So let's run this testis out.
+
+All right.
+
+So let's type a number like 80.
+
+We we expect both those if statements to fire right because 80 is greater than 10 and it's also less
+
+than 100 less than or equal to 100.
+
+So there we go both if statements fire 80 is greater than or equal to 10.
+
+80 is 70 greater than 10 that are here we're saying 80 is less than or equal to 100 and it's 20 less
+
+than 100.
+
+So both those if statements fire.
+
+But let's test this with other numbers here.
+
+So let's say I type in 150.
+
+In this case only if statement 1 fires because 150 is greater than or equal to 10.
+
+But it's not less than or equal to 100.
+
+OK.
+
+Same thing if I type in let's say five on the if statement two fires now.
+
+OK so hopefully that makes sense.
+
+So now the third statement we want to write is the one that's right here it's going to check to make
+
+sure that is within the bounds.
+
+OK.
+
+So in this case what we'll say is we'll say if the number the user entered is greater than or equal
+
+to the men and the number the user entered is less than or equal to the max.
+
+Remember you've got to do this here with numb you've got to write that word and you can't just say less
+
+and we go to Max you've got to say numb Let's go to Max again I'll have my block statement here.
+
+Notice that when I type that beginning curly coat light finishes it off with the curly and let's copy
+
+this guy right here and we'll say that this is if statement 3.
+
+And in this case would just say something Vecsey out number
+
+is in range let's say.
+
+OK so we know that it's within that range.
+
+There's no difference here to take care of we could draw differences.
+
+But let's just do that.
+
+What's interesting here is that statement 3 will only execute when statements want to execute right
+
+because we're in range we're greater than 10 in less than 100.
+
+So let's write that down as well.
+
+We'll say see
+
+this means statements 1 and 2 must also be true or must also display in this case that just say display
+
+hopefully that makes sense because you can see what's going on here.
+
+If I entered a number that's in range somewhere in here then obviously this is going to be true and
+
+this is going to be true.
+
+So we'll have all three of those statements displaying a case that will run this and test it one number
+
+in the middle and put in 50 notice all three if statements fire.
+
+Which is exactly what we'd expect if we type in a number that's greater than 100 on the if statement
+
+one fires.
+
+And if we enter a number that's less than 10 only if statement 2 fires.
+
+OK so now the last one we'll do is watch a check to see if it's right on those boundary conditions.
+
+So we'll say if the number the user entered is equal to the men or the number the user entered is equal
+
+to the max.
+
+Notice how you have to have that or in there.
+
+And would not work because it's never going to be equal to both.
+
+So in this case we just care if it's equal to one or the other in which case we'll output statement
+
+for
+
+change at to for real quick and I'll leave this code available for you guys to play with afterward and
+
+mess around with all you like.
+
+And then what will say is see out Gnome is right on the boundary.
+
+And what's need about this one is that if this one fires in all four statements supposed to be fiery.
+
+So again I'll say
+
+that all for display.
+
+It will give this a quick test.
+
+OK so let's do one of the boundary conditions 10.
+
+There you go.
+
+All four if statements fire because 10 obviously were in the range were on the boundary were greater
+
+than one side and were less than the other so we're good here.
+
+And again if I just type a five on the second IF statement fires so you can see some of the logic.
+
+Now what's important to understand here let me just clear the screen real quick.
+
+What's important to understand here is a couple of things.
+
+One is these are independent if statements.
+
+There are no elses in here.
+
+We'll talk about Elsa's in the next video.
+
+So this statement will execute so that condition is checked if this condition is true.
+
+We execute this code.
+
+Then we come here and we check this condition.
+
+So we're basically checking the condition for all four of those if statements.
+
+OK.
+
+So hopefully that gives you some insight into if statements.
+
+They're pretty straightforward.
+
+Remember this condition we have in here could be anything we could use relational operators like we're
+
+doing here.
+
+We can use equality operators like we're doing down here.
+
+We're comparing nomine men.
+
+We could use logical operators like we doing right here and we can use all kinds of combinations of
+
+these things as well.
+
+OK.
+
+So that finishes up off this video in the next video what we'll do is we'll talk about the if else statement.

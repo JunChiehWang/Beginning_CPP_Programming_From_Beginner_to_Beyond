@@ -1,0 +1,601 @@
+In this video we'll see how we can nest if statements within other statements.
+
+Many times the logic we need to use in order to solve problems is more complex than just an if else
+
+decision.
+
+Many times we need several layers of logic since and if or if else statement is a statement then we
+
+can use it in C++ anywhere a statement is legal.
+
+So in this case we can replace the statement part of the if statement with an entire IF statement if
+
+we want.
+
+That's exactly what this example shows.
+
+Notice the indentation.
+
+It becomes even more important now.
+
+In this case we can test multiple complex conditions easily.
+
+So we evaluate expression one.
+
+And if it's false we skip everything.
+
+But if it's true then we test expression too.
+
+And if it's true we execute statement 1.
+
+If it's false we execute statement to we can continue by including if or if else statement says we need.
+
+Notice that we have two ifs and only ONE ELSE.
+
+In computer science this is called the dangling else problem.
+
+And every programming language has to decide how to handle it.
+
+The problem is which if does that else belong to him in C++ and else belongs to the closest.
+
+If of course we can use block statements to achieve any logic we want.
+
+Let's see another example.
+
+In this example we check if score is greater than 90 if it is not.
+
+Then we skip down to the bottom up statement and we display Sorry no way.
+
+If the score is greater than 90 then we check the nested IF statement condition and check if scores
+
+greater than 95.
+
+If it is then we display an A plus.
+
+If it's not we display an AA in this slide we can see a flow chart that visually shows the flow of control
+
+for the logic in this example.
+
+Notice the first condition is checked.
+
+Score greater than 90.
+
+That's the expression in the first diamond on the left.
+
+If true then we test the condition in the nested IF statement which is on the true branch.
+
+Of course we can also use block statements as required to execute multiple statements.
+
+In this example we're checking of Frank scores not equal to Bill's score.
+
+If this fails that means that the scores are equal.
+
+So we go to the else statement and display looks like a tie.
+
+If their scores are not equal then we checked the condition the nested IF statement.
+
+And if Frank scores greater than Bill score we display Frank wins.
+
+Otherwise we display bill wins.
+
+And these examples the nested IF has been in the true section of the if else statement we can have negative
+
+statements in the L section as well.
+
+Let's go to the idea and see some examples of nested if statements OK what I want to do next is I want
+
+to open up the grades project within the section 9 workspace again.
+
+In this case the main is empty.
+
+And I'm just going to get rid of this piece right here just to print out a new line at the end.
+
+OK so what we're going to do here is this program is going to ask the user for the score on an exam
+
+between 0 and 100.
+
+And we're going to tell them the letter grade similar to what we did in the slides but we want to validate
+
+to make sure that what they entered is actually between 0 and 100.
+
+And if it isn't we're going to tell them Sorry you need to know the number you entered is out of range.
+
+Also once we determine the users.
+
+Once we determine the student's grade we'll tell them your grade is your letter grade A B C D F and
+
+if they get an F we'll tell them sorry you have to repeat the class OK.
+
+So let's start here.
+
+First off we need a couple of variables let's just use one called score.
+
+That's what we're going to ask the user for and we'll say see our let's do the input output part really
+
+quickly I would just say enter your score on the exam.
+
+And I suppose you were at a 100 here so they know what the range is
+
+and we'll grab the and put in to score.
+
+OK so now we've got what we want.
+
+We also would like to have a variable called letter grade and what we're going to do is we're going
+
+to assign a b c d or f into that variable.
+
+We can simply use a character variable that will be fine.
+
+I was going to say char letter grade and we'll just initialize it to zero.
+
+OK so now first thing we need to do is we need to validate that score.
+
+We need to make sure that the score is between 0 and 100.
+
+So we'll use a simple IF statement here.
+
+So we'll see if the score is greater than or equal to zero and the score is less than or equal to 100.
+
+I'll use a block here.
+
+We need to do the true part right.
+
+This is where we need to calculate their grade.
+
+But if it's not then right here we want to say else and I'll do another block statement.
+
+And in this case what we want to say is sorry
+
+we'll say sorry and we'll tell them that the number they entered
+
+is not in range.
+
+Something Real Simple when we learn about looping in a couple of videos from now we'll be able to ask
+
+them to enter it again.
+
+But in this case this will be fine.
+
+And let's test this.
+
+A lot of times when we test our code you see there's nothing in here right now.
+
+So we just do something like this and we expect to see that output in the positive case right in the
+
+true case.
+
+We're going to write code and actually calculate the grade but it's good to test as you go.
+
+Don't write all your code all at once and then try to test it all at the end just test as you go and
+
+you'll be much better off.
+
+So let's try this let's run this get an error here.
+
+Sorry no it's not no score.
+
+There we go.
+
+So there we go.
+
+Enter your score on the exam.
+
+Let's enter something valid like 70.
+
+We should get the x's displayed.
+
+There they are.
+
+So we're good here.
+
+And let's run it one more time and type in 120.
+
+Sorry 120 is not in range.
+
+And let's try something like negative 1 Sorry negative 1 is not in range cool.
+
+So our logic seems to be right now what we need to do is write the logic in this piece right here that's
+
+actually calculating there.
+
+Great.
+
+All right.
+
+So what we can do here is we can write the if else if else if type code.
+
+When I learned this stuff a long time ago that was called an if else ladder.
+
+I haven't heard that term in a long time but it makes kind of sense because it does look like a ladder.
+
+So what we'll do here is we'll say we'll use that same grading scale 98 76 he will say if the score
+
+is greater than 90 and I'm not going to use blocks here just to save some some space on the screen we'll
+
+save the letter grade and we'll assign an A to it and I notice that's a character.
+
+So so those are single quotes not double quotes.
+
+So we've got that and will say else if score is greater than 80 we'll say that her grade is a B again
+
+single quotes don't forget the semi-colon.
+
+Else if you get the idea we're just walking right down that ladder.
+
+If it's greater than 70 then the letter grade in this case is a C
+
+couple more else if the score is greater than 60
+
+then the letter grade is a D.
+
+And finally there's our catch all else in which case there are letter grade is an F.
+
+OK let's try that out run this and we'll test it with a few numbers.
+
+And I said greater than 90 I probably should have said greater than or equal to 90.
+
+But it's all good.
+
+So we'll say 91.
+
+That's definitely anay.
+
+We never printed out.
+
+So that's two that this is why we test track C out.
+
+Your grade is and we'll just display letter grade here.
+
+Put it in line at the end.
+
+OK now remember when I put this here fix that reader will see this it will execute no matter what.
+
+So this if statement will execute one of those letters will be signed and then be displayed here.
+
+Try that again.
+
+So in this case we've got a 91.
+
+That should be anay.
+
+Your grade is an A.
+
+The 81 should be a B.
+
+It is still about a 50 which is definitely an F..
+
+And here we go OK.
+
+Obviously you would test this a little better.
+
+But for the sake of time I'm not going to do that.
+
+The last thing we want to do is right here we want to tell them.
+
+Did they pass or did they fail.
+
+Well the only way you can fail in this example is if your better grade is an F and so there's no sense
+
+in checking the score again.
+
+We've already got the letter grade.
+
+So I'm simply going to say if the letter grade is equal to an F doubled member double equal sign on
+
+a single equal sign.
+
+If that's the case C out
+
+sorry you must repeat this class
+
+ok.
+
+Otherwise you passed
+
+Gretz that's a passing grade or whatever you want to enter in here.
+
+All right so that should do it.
+
+Let's go through this real quick one more time.
+
+We've got their score here.
+
+We're prompting for the score and we're reading it in.
+
+If the score is within range we do the calculation.
+
+If it's not within range we're down here and we're out right away sorry the score is out of range.
+
+We clean that up a little bit.
+
+If the score is within range then we're going to use this if else latter.
+
+And if it's greater than 90 it's an a greater than 80 to be we're going to walk all the way down.
+
+You know what let me put equal signs here because it's it's bugging me
+
+that it matches the slides that I gave you.
+
+OK.
+
+So that's a little better.
+
+So now if it's greater than 90 you get the day and all the way through the AM who we're here.
+
+Your grade is your letter grade.
+
+And then we check to see if an F is just an F you must repeat the class.
+
+OK let's run this now with a couple of test cases.
+
+Suppose you got you are 90 now and should be DNA because we had the greater than or equal to your grade
+
+as in a kind of Gratz.
+
+If your grade is fifty nine your grade is an F..
+
+Sorry you must repeat this class OK.
+
+So there you go.
+
+That's a simple example of using the if else if and the if else statements together on the next example
+
+we're going to open up the shipping project in the section 9 workspace.
+
+So we're in the shipping project of the section 9 workspace and I've gone ahead and started this little
+
+example just so we save a little time.
+
+And what we're doing here is we're doing we're using a shipping cost calculator.
+
+We're going to ask the user for the package dimension in inches and the package is dimensions would
+
+be length width and height and they all integers.
+
+The dimension must be 10 inches or less for each dimension.
+
+Otherwise we can't ship it.
+
+The base costs for shipping is two dollars and fifty cents.
+
+And if the package volume is greater than 100 cubic inches there's a 10 percent surcharge if the package
+
+volume is greater than 500 cubic inches there's a 25 percent surcharge.
+
+Okay.
+
+So I started this already and I've got some variable set up and let me talk about them really quickly
+
+we've got obviously we need the length the width and height that's what the user is going to enter.
+
+And we've got the base costs which is a double $2 and 50 Cent so I've initialized that then we've got
+
+a couple of other constants here.
+
+One the Tier 1 threshold that's the volume.
+
+So again if you exceed 100 cubic inches that kicks in and we've got to Tier 2 threshold to be 500 cubic
+
+inches so I've defined those as constants the maximum dimension for any length is 10 inches.
+
+And I've got the Tier 1 surcharge at 10 percent and the Tier 2 surcharge at 25 percent.
+
+So that's pretty much it.
+
+I've got all these constants and variables declared so that I can use them.
+
+All right.
+
+I also have another integer here called the package volume which obviously we need to calculate.
+
+So this is where we're at.
+
+Hello.
+
+Welcome to the package cost calculator.
+
+Enter the length width and height of the package separated by spaces.
+
+And we've just read the length the width and the height into these variables.
+
+Now we need to do our logic for the calculation of the package.
+
+First thing we should do is let's make sure that the package is valid right.
+
+Otherwise there's nothing to do.
+
+So what we can do here is we can say if the length of the package is greater than the maximum dimensions
+
+write the max dimension length which is 10 for everything or the width is greater than the max dimension
+
+or the height is greater than max dimension.
+
+Right if any one of those is greater than the maximum allowed dimension for any one side we really have
+
+nothing to do.
+
+Done.
+
+So in this case what we want to do here is we want to say see out sorry package rejected or something
+
+like that.
+
+Dimensions exceeded
+
+okay or some some message that tells them what's going on.
+
+OK.
+
+So that takes care of that.
+
+Now here's the else part.
+
+Right.
+
+And we may as well put this in a block because we never know when you're going to add code to this or
+
+put a Curlee here and a Cur-Lee here.
+
+Now I can add code in there easily.
+
+So that's my my if part this is when the package has been rejected the else part is now where we're
+
+going to do all our calculations.
+
+So again I'm going to do see out and do a quick test to make sure that we're compiling and everything
+
+looks good.
+
+So we want to run this and I'm running the old project that double click on shipping and it's Try that
+
+and to the length width OK.
+
+So let's say I'm exceeding right so much say 12 8 and 12 5 and 3 so the 12 should be over.
+
+Sorry package rejected dimension exceeded.
+
+That's good.
+
+We could do test cases for all three of them right.
+
+I'm not going to just to save a little time and in this case six seven and eight that's valid.
+
+And we print out the three x's and we're ready to do our calculation.
+
+OK.
+
+So I mean get rid of that statement that I just did and that hello world on here at the bottom.
+
+Right so now in here what we need to do is our calculations.
+
+So we need to know what the package cost is right so we need to have a double in here we can do that
+
+right inside the block because the only time we're going to use it is if we're going to do some calculation.
+
+So in this case I could just say package cost and I can just initialize that to zero.
+
+And how about the package volume again I could have defined that in here as well but it's already defined
+
+outside the package volume is the length time the width times tonight.
+
+OK so now we've got our package volume here is being calculated as the product of those three dimensions.
+
+And we may as well say that the package cost is the base cost right right now we could start with that.
+
+It's always going to be $2 or 50 cents plus perhaps some surcharge.
+
+Okay so that's where we're at.
+
+So far so good.
+
+Now we need to do these checks for the package volume exceeding those thresholds.
+
+What we want to do for us is we want to check the the Tier 2 threshold because it's the highest.
+
+So what we want to do here is we want to see if the package volume is greater than the Tier 2 threshold.
+
+If that's the case then the package cost
+
+plus equals we're incrementing by the package cost times the Tier 2 surcharge.
+
+Remember we're incrementing the left hand side by the right hand side and we could put a debug statement
+
+in here.
+
+Again it's very common to do that just saying adding Tier 2 surcharge you get rid of these when we ship
+
+the code but it's nice to have them in here soon I'll teach you how to use a debugger which makes this
+
+even easier.
+
+OK so if this is not the case then we can say else if the package volume exceeds the Tier 1 threshold
+
+and if that's the case we can basically just copy this and paste it in here.
+
+In this case the package cost is the plus equals package cost times the Tier 1 surcharge and we can
+
+just change that statement right here to do that.
+
+OK.
+
+So we're really done what we need to do now is say seek out the volume we'll give the user some information.
+
+The volume of your package
+
+is and will display the volume package volume.
+
+We have an end line here and then we'll just tell them how much it's going to cost and that's really
+
+what they want.
+
+Your package will cost you put a dollar sign here.
+
+And I believe it was package cost.
+
+There it is
+
+to ship
+
+and that should do it.
+
+Clean up some of this white space and we'll run this and then we'll do one more little thing before
+
+we go and see Tier 1 surcharge.
+
+I spelled it wrong.
+
+She need an underscore right there.
+
+And that that way you can see some of these errors.
+
+Perfect.
+
+So let's say five five and five I'm adding a tier 1 surcharge because the volume is greater than 100
+
+You can see are 125.
+
+So the package will cost 275 to ship.
+
+Let's make it a little bit bigger the package that say it's 8 by 8 by 8.
+
+In this case I'm adding a tier 2 surcharge.
+
+The vault the package volume was 512 and it's going to cost three dollars and twelve cents to ship.
+
+Okay.
+
+Now you know this is 3.1 to 5 displays.
+
+I'll show you how to set that up a little bit later in the course.
+
+But for now just for how to do it really quickly.
+
+If you come up to the includes And you include I O my net that's the input output manipulators.
+
+And then right before you start printing the dollar amounts we're actually anywhere you can put this
+
+anywhere you could just say see out fixed followed by set precision to 2 decimals after the Packers
+
+this is
+
+that just prints dollars nicely.
+
+So if we run this again let's try that again.
+
+We'll do 8 7 and 9.
+
+You could see it printed up nicely three dollars and twelve cents.
+
+And again I'll talk about those manipulators a little bit later on it just helps us look at our code
+
+a little nicer.
+
+All right.
+
+So there you go.
+
+There's some magic for shipping this package we've got an if statement.
+
+We've got an else out if else if statement and hopefully this logic makes sense again.
+
+Build these programs one step at a time testing as you go.
