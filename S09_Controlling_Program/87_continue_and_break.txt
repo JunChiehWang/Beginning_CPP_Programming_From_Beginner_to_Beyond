@@ -1,0 +1,71 @@
+In this video you'll like it to continue and break statements in C++ that continue and break statements
+
+can be used within all of C++ loop constructs to provide more explicit control over the looping behavior.
+
+Their behavior is really easy to understand when a continued statement is executed in the loop.
+
+No further statements in the body of the loop are executed and control immediately goes directly to
+
+the beginning of the loop for the next iteration.
+
+So you can think of this as Skip processing and the rest of this iteration and go to the beginning of
+
+the loop.
+
+In the case of the while loop and the for loop the condition will immediately be tested again.
+
+When the break statement is executed in the loop no further statements in the body are executed in the
+
+loop is terminated.
+
+So control is transfer to the statement immediately following the loop.
+
+Let's see an example that uses both the continue and break statements.
+
+In this example we have a vector of integers.
+
+Let's assume that this data comes from some sort of device and occasionally we get noise in the data.
+
+The noise is represented by the minus one.
+
+We really don't want to process the noise we want to ignore it.
+
+We also need to stop processing when we get to stop signal which is represented by minus 99.
+
+In this case we can use the range based for loops.
+
+Iterate over all the vector elements at each iteration we can check if the value is minus 99 in which
+
+case we are done.
+
+We could set a flag to done and handle that done boolean in the loop condition as we've done before.
+
+Or we can simply break out of the loop.
+
+In this case we're using the break statement to break out of the loop completely in the else statement.
+
+We know we haven't seen a negative ninety nine so we can check from minus 1 that represents noise if
+
+we see it we can continue.
+
+This stops the iteration and control goes back to the beginning of the loop and a new iteration begins.
+
+Finally if we hit the L statement we know we don't have a minus 99 and we know we don't have a minus
+
+one.
+
+So we process that data.
+
+In this case we just display it in this example we display 1 to 3 continue and break statements are
+
+very very easy to use.
+
+However don't overuse them.
+
+I'm obviously exaggerating here but if you have a loop that has 10 breaks and 12 continues in its body
+
+that's a very complex piece of code to try to understand the less ways that you can come into a loop
+
+and out of the loop the better we can understand and debug it we'll see the breaks didn't.
+
+But again when we talk about infinite loops in the next video.

@@ -1,0 +1,449 @@
+    In this video we'll learn about a really great feature that was added in C++ 11 the range based for
+
+loop this loop really makes C++ feel like modern programming language.
+
+The idea with the range based for loop is to loop through a collection of elements and be able to easily
+
+access each element without having to worry about the length of the collection or incrementing or decrement
+
+looping variables or subscripting indexes.
+
+The syntax is very simple and elegant.
+
+We have the keyword four followed by open and closed parentheses as usual inside the parentheses we
+
+provide the type and name for the variable we want to use in the loop body.
+
+This variable will be bound to each element of the collection so it should be of the same type as the
+
+collection elements.
+
+Then we provide a colon and the collection or collection name.
+
+That's it.
+
+Now when we access the variable name in the body of the loop it will have a specific element in the
+
+collection.
+
+Pretty cool.
+
+Let's see an example in this example our collection is an array of integers named scores that we've
+
+initialized to 100 90 and 97.
+
+And here's the code that iterates over that collection using the range based forelimb noticed that in
+
+the parentheses we provide the type of each array element.
+
+In this case it's an integer and we provide the variable name that we can use in the body of the loop.
+
+In this case score finally we provide a colon and the name of the collection which is scores.
+
+That's it.
+
+Now we can you score in the body of the loop the loop displays one hundred ninety and ninety seven which
+
+are the elements in the array.
+
+See how much cleaner less error prone this is.
+
+It was a great addition to C++ we actually don't have to explicitly provide the type of the variable.
+
+Instead we can use the auto keyword.
+
+This tells the C++ compiler to deduce the type itself.
+
+In other words you're asking the C++ compiler to figure out the type based on the declarations.
+
+So in this case the compiler sees that you are using a collection scores in the loop.
+
+So it looks it scores and it sees that it's an array of integers so it uses an integer for the score
+
+variable.
+
+Pretty easy actually in this case using auto versus It doesn't really bias much but C++ can have very
+
+complex collections and sometimes defining the type of a collection variable can be quite long and tricky
+
+auto makes it dead simple.
+
+And this example we want to calculate the average temperature from a vector that contains doubles that
+
+represent temperatures the vector in this case is called temp's and it contains four doubles in order
+
+to calculate the average temperature in this vector.
+
+We need to iterate over the vector axis each temperature.
+
+Add them all up and divide by 4.
+
+That's it.
+
+Notice the for loop and how simple it is.
+
+It's saying loop through the temp's collection and each time through a sign of temperature from the
+
+vector to the loop variable temp which the compiler deduced is to be a double.
+
+We add this to a running sum.
+
+Then when the loop is done we perform a simple division to get the average.
+
+Notice that I'm using the vector's size method which returns the number of elements in the vector.
+
+In this case it would turn for the range based for loop can also use an initializer list as a collection.
+
+Let's see that one this example also calculates the average for temperatures.
+
+Notice how we can explicitly provide the collection right in the for loop.
+
+This is sometimes handy when you know the elements of your collection ahead of time and they won't change.
+
+The only downside is that you have to calculate the sizes you go in this last example.
+
+We can use the range based for loop to iterate over a string which is a collection of characters.
+
+In this case the string is a literal Frank but it could be a variable.
+
+We're going to discuss strings in the next section of the course.
+
+Well that pretty much covers the basics of the range based for loop.
+
+Let's head over to the ID and see some examples.
+
+I'm in the code like ID in the section 9 workspace in the range based for loop project what I'd like
+
+to do in this example is go over a couple of examples of using the range based for loop with an array
+
+with a vector and with a string.
+
+So the first thing we'll do is just use a simple array and they'll notice that I've already included
+
+vector right appear.
+
+Since I'm going to use vector in a minute.
+
+So let's create an array of integers and we'll call it scores and we'll initialize it just say 10 20
+
+and 30.
+
+OK.
+
+So what we want to do now is we want to iterate through that collection.
+
+It's an array in this case using the range based for loop.
+
+It's as simple as can be we can say for it because we know we've got integers here.
+
+And what do we want to call each and we'll call it score his that's what it is a single score that we
+
+have the colon and then we provide the name of the collection in this case scores.
+
+So that's the loop header and then all we really need to do here is just say see out and display the
+
+score.
+
+That's it.
+
+Let's run this and that's exactly what we get 10 20 and 30.
+
+Now as I mentioned in the in the slides we don't have to provide that in there we can simply use the
+
+auto keyword.
+
+And what's going to happen here.
+
+I mean it's pretty straightforward but it's important that you understand what's going on.
+
+You're telling the compiler to figure out the type.
+
+So the compiler is going to come in here and say OK what's going on.
+
+The collection is scores.
+
+OK scores is an array of integers so this must be an it.
+
+So he's going to deduce that type right here to beat it.
+
+Same as we did before.
+
+As I mentioned this is not a big deal it's easy to type and it's easy to type auto but collections in
+
+C++ especially generic collections and templates get really crazy syntax and sometimes it's very difficult
+
+to to write exactly the type that you want.
+
+And this just makes it so easy you just type auto and the compiler will figure it out which is great.
+
+That's what we're doing here we just printed out the score is really really easy let me run this using
+
+the auto key word now you can see the behavior is exactly the same.
+
+All right.
+
+Perfect.
+
+Let me comment that out and let's do another example.
+
+In this case we'll create a vector.
+
+So let's create a vector of doubles and we'll just call it temperatures and we'll initialize these to
+
+let's say eighty seven point nine seventy seven point nine.
+
+Could be really any numbers you like 80 eighty zero.
+
+And how about seventy two point five.
+
+So those are the four temperatures that I'm interested in.
+
+Maybe their temperature is per week per year for a month.
+
+It doesn't really matter.
+
+It all depends on what you try to do.
+
+Now what we want to do is we want to calculate the average of the mean of those temperatures.
+
+All right.
+
+So we're going to need that the average itself so we'll just call it average temp and it's a double
+
+initialized to zero.
+
+And we also need a double that's going to be the running total because we need to sum them all up and
+
+then divide them by whatever size that vector is.
+
+In this case it happens to be four but it could be any size we want.
+
+So there's my double I'd call it total initialized to zero.
+
+All right so now let's loop through that vector.
+
+So we'll say for auto That's create the variable temp.
+
+Be one of those temperatures one at each iteration.
+
+And the name of the collection is temperatures where we do we say total plus equals temp.
+
+And I'll scroll up just a little bit myself a little bit of room.
+
+That's it.
+
+Now we divide by the size of that temperatures vector.
+
+But before we do that always make sure that that size is not equal to zero because we don't want to
+
+divide by zero error.
+
+So we'll just say something like If temperatures drop size that's the method for the vector if that's
+
+equal to zero then we don't want to do the division right.
+
+So what do we want to do we want to make sure it's not what is zero.
+
+If it's not equal to zero it's safe to divide.
+
+And what I'll say is as simple as average temp is equal to the total divided by the temperatures that
+
+size again.
+
+Number of elements in that vector.
+
+That's it.
+
+Notice we don't have to do any casting here because total This is an unsigned integer right here it's
+
+going to return the size which is an unsigned integer.
+
+But total we defined as a double so it's going to do double division.
+
+All right.
+
+So that's it will output.
+
+Now you say something like average temperature is
+
+average temp.
+
+Put an end line at the end and let's run this.
+
+There's the average temperature seventy nine point five seven five.
+
+Now let me show you one of the IO manipulators that you can use.
+
+And as I said I'll cover these later on in the in the course.
+
+There's a whole bunch of them and they're not all that important but they're all they're important to
+
+to help us format our output what we can do is we can say first thing we need to do is we each go up
+
+top here and include I O manip that's the IO manipulation operators.
+
+And what we do here is right before we output we can say see out fixed and then set precision to let's
+
+say 1.
+
+That's one number after the decimal point and it will round.
+
+So in this case let's run that and now you'll see this formatted as seventy nine point six I think before
+
+it was seventy nine point five seven five or something like that I don't recall.
+
+But it's going to rounded up to 70 9.6.
+
+It's always going to have one digit to the right of the decimal point.
+
+If this is what you need this is an easy way to do it otherwise.
+
+Seventy nine point five seven five works for me.
+
+All right so that'll take care of this example.
+
+Let me show you a couple more examples and again I'll comment these out so they don't keep executing.
+
+Let's put in an initializer list right into the loop.
+
+This is not something you see very often but I wanted to show you in case you do see it you know what's
+
+going on.
+
+This case will say for again auto and the value will be Val.
+
+And right in here we can put the initialiser list.
+
+We can say 1 2 3 4 5.
+
+Sometimes you see this when you know that these numbers are ahead of time.
+
+And in this case we could just say see out Vau and we can do in mind here.
+
+So what's going to happen is it's going to iterate through that collection remember this is a collection
+
+and it's going to display one two three four and five and it's run that real quick.
+
+And there you can see the one two three four and five.
+
+Now the last example I want to show you is with a string.
+
+Now there's two kinds of strings and C++.
+
+There is a C style string and there's a C plus plus string.
+
+I'm going to cover these in the next section.
+
+What we're going to use here is just a C-style string.
+
+That's what we've been using all along.
+
+That's a bunch of characters inside double quotes.
+
+So what I want to do is I'm just going to say for again audio in this case is going to be a character
+
+type I'll call it C and my collection is basically a bunch of characters write a sequence of characters
+
+so this is a test.
+
+That's it.
+
+What can I do in here.
+
+Well I can output the character and I'm not going to put a new line because I don't want a newline at
+
+the end of every character that I print them up and down.
+
+In this case it should just print that string right back out at me.
+
+And there you see right up here.
+
+This is a test.
+
+So it's putting it out directly out at me.
+
+Suppose I wanted to skip the spaces.
+
+How would I do that.
+
+Well we just filter the spaces that I would say if the character I'm looking at c in this case right
+
+is not equal to a space.
+
+Then print the character.
+
+So what's going to happen here again at each iteration I'm looking at that character.
+
+If it's not a space I print it if it is a space I'm not doing anything.
+
+So I'm basically just getting rid of all of the spaces inside that string.
+
+So when I display that you should see you see that right there.
+
+This is a test.
+
+All bunched up together.
+
+OK.
+
+Now suppose I wanted to replace the.
+
+And again we're not changing the string here we're just pointing out the string one character at a time.
+
+Suppose what I wanted to do was every time there's a space I want to replace it with a tab character.
+
+I want to display the tab.
+
+I want to spread these characters out a little bit.
+
+Well we can change the logic here a little bit and again let me comment this.
+
+So it's available for you to play with.
+
+And
+
+do something like that just so I can just modify a little bit of code and get this to run right.
+
+OK.
+
+So we're here in the same position I'm going to comment this out and so I'm reading the string again
+
+I've got each character in C and I'm going to say if C is the space then I don't want to print out the
+
+space what I want to do is I want to print out a tab and if I remember the tab is a slash T.
+
+Otherwise I'll just want to protect the character right.
+
+Anything except the space.
+
+Something like that.
+
+So let's try that out.
+
+And there you go it says this then you see a tab is them a tab A and a tab and test and so forth.
+
+We could play all kinds of games you can replace one character with another.
+
+You can create your own little cipher if you want that.
+
+You can send across to a friend and they can decipher it on the other side.
+
+Anyway that's pretty much the range based for loop.
+
+There's a couple of examples I've shown you here that hopefully make it really really easy I mean this
+
+is so much simple.
+
+Notice again there is no and there's no plus plus I were not counting we're simply looping through a
+
+collection and we don't even have to worry about the type with the auto.
+
+So it makes it really easy to think at a very high level to solve your problems without getting bogged
+
+down with all the little details.
+
+OK.
+
+So that's the end of this video.
+
+

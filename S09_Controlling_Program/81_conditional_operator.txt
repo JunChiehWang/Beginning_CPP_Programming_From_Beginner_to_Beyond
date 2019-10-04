@@ -1,0 +1,307 @@
+In this video will learn about C++ as conditional operator.
+
+This is a really neat and very useful operator.
+
+The operator is represented by the question mark and the colon symbols.
+
+But they aren't used next to one another.
+
+The conditional operator is a ternary operator which means that it operates on three operands.
+
+The first operand is the conditional expression which is usually in parentheses.
+
+The conditional expression is evaluated first and it must evaluate to a boolean or true false value.
+
+Then we follow the conditional expression with the question mark.
+
+Part of the conditional operator followed by expression 1 then the colon part followed by expression
+
+2.
+
+This may sound complicated but it's really super simple.
+
+The conditional expression is evaluated if it's true then the expression returns the value of expression
+
+1.
+
+If it's false then the expression returns the value of expression 2.
+
+You can see it's like an if else construct in a single expression.
+
+While this operator is very handy It's also easy to abuse.
+
+Best practice is to never nested conditional operator expression within another one.
+
+This leads to if else if logic that quickly becomes unreadable and difficult to manage.
+
+Let's see some examples of the conditional operator in this example.
+
+We have variables A and B initialized to 10 and 20 respectively.
+
+We also have score initialized to 92 and result initialized to zero.
+
+The first assignment statement uses the conditional operator on the right hand side.
+
+First we evaluate a greater than B if A is greater than B then the value of A is assigned to the result.
+
+If it is not greater than B then we assigned the value of beach a result.
+
+That set you see is very straightforward.
+
+You can see this works exactly like an if statement but it's more concise.
+
+The second example evaluates if a is less than B.
+
+If this is true then the value of B minus a is assigned to result.
+
+Otherwise the value of a minus B is assigned to result in 13.
+
+But we're using the conditional operator to avoid a divide by zero error.
+
+First we check if B is not equal to zero.
+
+If this is true then we divide a by B and assign the result back to result.
+
+Otherwise we simply assign zero to the result.
+
+Notice how we're avoiding a divide by zero error by making sure that B is not equal to zero before we
+
+divide.
+
+Finally we often see the conditional operator used in output statements.
+
+In this case we check if score is greater than 90 and if it is we display excellent.
+
+Otherwise we display good.
+
+You can see the conditional operator can be very handy and easy to read and understand when it's used
+
+this way.
+
+Let's head over to the ID and see it in live code.
+
+Ok so no I'm in code like.
+
+I'm in the section 9 workspace in the conditional operator project and what I'd like to do is just go
+
+over a couple of real simple examples of using the conditional operator.
+
+First of all write it using regular if else statement then move right.
+
+Using the conditional operator OK so let's get started.
+
+Let's create a variable here call it number and this is what the user is going to turn into.
+
+Into.
+
+We're going to save it in to here will prompt the user to enter an integer
+
+and will read that integer into Gnome.
+
+OK simple as that.
+
+Now what we want to know is we want to know whether the integer they typed in is even or odd.
+
+So let's use a simple if else statement will say if the number they entered mod 2 is equal to zero.
+
+OK in this case we're dividing by two and we're looking at the remainder so obviously if it's an even
+
+number the remainder will be 0.
+
+That's what we're testing.
+
+So in this case we'll just see C out.
+
+Let's say numb
+
+is even
+
+in the else case.
+
+Obviously it has to be odd.
+
+OK so that's real simple logic here.
+
+Let's test this out.
+
+For d l and the end line.
+
+OK so an even integer let's say we want to type in 6 6 is even.
+
+That's correct.
+
+More one more time with seven.
+
+Seven is odd.
+
+Simple as that.
+
+Now let's rewrite this if else statement.
+
+Just using a simple conditional operator that's inside the output statement.
+
+So will say C out and will say something dumb.
+
+Now here's we'll put the conditional operator numb is and right here is where I will put the conditional
+
+operator OK.
+
+So in this case we need to wrap this up and put the conditional operator right in here so we're going
+
+to test to see if numb mod 2 is equal to zero.
+
+If that is the case then I've got my question marks which gives me the true side and I'll just say even.
+
+And the colon.
+
+Odd.
+
+That's it.
+
+And we'll end this with a new line as well.
+
+Let's run this to see what it looks like.
+
+So put into it we can see both of those statements fire.
+
+Because we've got the regular if statement going.
+
+And let's try to run it again with three.
+
+There we go.
+
+Now let's see what's really going on here.
+
+In this case again we are testing to see if the number is even if this is true then this piece is the
+
+one that's going to be able to get an output operator here and one insertion operator.
+
+So this is going to be replace this whole thing right here will be replaced with even the string even
+
+if it's false.
+
+It will be replaced with odd.
+
+So we've got the same thing going on here right now is even numbers odd except that it's all in one
+
+statement like that.
+
+Dismay.
+
+You may be wondering why in the world would you do this.
+
+Well a lot of times it's really handy to not have this sort of logic here but rather put something right
+
+in a print statement.
+
+So suppose we've got some sort about put statement and we've got a looping thing going on and every
+
+tenth time I need to do something I need to print something different.
+
+It's real handy to use this operator in that context because it makes your code a lot cleaner and if
+
+you use it properly like this it's really easy to understand.
+
+OK let's do another example and I'll comment this out here.
+
+And let's just do a real simple example is going to compare two integers.
+
+And so we need those two integers here.
+
+MCCOLLUM number one and them to
+
+and look tell the user to enter two integers separated by a space
+
+OK.
+
+And we'll read into those two integers.
+
+Number one and number two.
+
+All right.
+
+So in this case I want to display the largest in the smallest of those two integers.
+
+But I want to do it using the conditional operator.
+
+So the first thing we need to do is we need to see if the integers are the same right.
+
+If they are the same then we'll just say they're the same.
+
+There is no largest or smallest.
+
+So let's do that logic first.
+
+So we say if someone is not equal to number two in this case we want to say OK one is bigger than the
+
+other which is biggest which is smallest right.
+
+The Else case means that they're the same.
+
+So let's handle that case first.
+
+So I'll just say see out and we'll just say something like the numbers are the same.
+
+And I put a new line at the end.
+
+OK.
+
+Now this is the logic we need to figure out now we need to figure out what's the largest And what's
+
+the smallest I could write an IF fell statement in here a couple of times right.
+
+But in this case I'm just going to do it right in line with an output statement.
+
+So let's do the first one we'll say see out and what I want to do here as I just said the largest because
+
+that's what we get to look for first.
+
+And now we'll use the conditional operator.
+
+So again I put the Prendes in there and put in and mine at the end might as well do it now.
+
+Now the logic in here says OK let's test to see if someone is greater than number two.
+
+Right.
+
+If it is used the conditional operator and display number 1 if it's not I display number two.
+
+That's it.
+
+Simple as that.
+
+It Over here will say seek out
+
+smallest
+
+and the same sort of logic that come right into the Perrin's right in here.
+
+And what we'll do is we'll test in this case number one less than two.
+
+And if it is one otherwise I'm to OK that's it let's run this
+
+he says that should have been number one
+
+and tried to introduce separated by space do the equal case first.
+
+The numbers are the same.
+
+That's good.
+
+Let's do a five in the 10 largest is 10 smallest is five.
+
+And let's do a 10 or five
+
+largest ten smallest is still 5 so we're good.
+
+So here's a real simple example of using the conditional operator will use the conditional operator
+
+in a couple places as the course progresses.
+
+And typically it's going to be inside a loop as we're looping and we want to do something every fifth
+
+time tenth time.
+
+You know that say every fifth time you want to print a new line or something like that.
+
+Then this makes a lot of sense to do it inside right inside an output statement like this.

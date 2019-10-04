@@ -1,0 +1,637 @@
+In this video we'll learn about the C++ for loop and a few of its variations.
+
+The for loop consists of the four key word followed by three expressions in parentheses.
+
+Each of these expressions is separated by semi-colon the semi-colons are required but the expressions
+
+are all optional.
+
+We'll see more about this later.
+
+In its simplest form the for loop has initialization expression followed by a conditional expression
+
+that evaluates to a boolean and then an increment expression.
+
+First the initialization expression is executed exactly once before any iteration occurs.
+
+Then the condition is checked if it's true.
+
+The body of the loop is executed then the iteration expression is executed and we check the condition
+
+again and repeat.
+
+When the condition evaluates to false the loop is terminated and we continue processing the statements
+
+and follow the loop.
+
+As you can see in this examples the for loop can execute one statement or many statements by using a
+
+block statement.
+
+Let's see a simple for loop that counts from 1 to 5.
+
+Let's walk through this for live one step at a time.
+
+Notice that in order to count we need some sort of variable.
+
+It's common to use the variable named I as the loop variable that's incremented or decremented in a
+
+loop.
+
+In this case we declare it to be an integer and initialize it to zero.
+
+Now we enter the loop.
+
+The first thing that happens is the initialization.
+
+In this case we assign one to I.
+
+Now we check the condition.
+
+Since one is less than or equal to 5.
+
+We execute the body of the loop which is the output statement and we display 1.
+
+Then we execute the increment expression which increments by one note.
+
+That plus plus and plus plus mean the same thing here.
+
+Since the increment happens on it's own and it's not in another expression.
+
+So now as to we check the condition again and it evaluates to true.
+
+So we execute the body of the loop again and display 2.
+
+Then we increment it again and keep iterating after we display 5 items.
+
+I will be 5 and then we incremented to 6.
+
+At this point the condition fails and the loop terminates C++ for loops are very efficient and in their
+
+basic form.
+
+Very easy to read or modify.
+
+Let's see another way to declare the Luby variable.
+
+We can declare and initialized the looping variable.
+
+I in this case write in the initialization statement.
+
+This is very commonly done and has some advantages.
+
+Here you can see we're doing it using two styles.
+
+The first uses initialization style and the second uses assignment style.
+
+I will be using initialization style in this course.
+
+The looping variable eyes only visible inside the for loop.
+
+Once the loop has finished I'm no longer visible and you'll get a compiler error if you try to use it.
+
+This is a great feature since you know that I'm totally under your control within the loop and won't
+
+have any strange values coming into the loop or exiting the loop.
+
+Let's see another exam in this example.
+
+We're looping from 1 to 10.
+
+The body of the loop test to see if the remainder of II is 0.
+
+So it's testing to see if I's an even number.
+
+If it is that display XY.
+
+So this loop displays all the even numbers between 1 and 10 inclusive.
+
+Let's see how we can use a for loop with an array.
+
+In this example we're using a for loop to display the elements of an array.
+
+Here we've declared scores as an array of integers and we've initialized it to one hundred ninety and
+
+eighty seven.
+
+Since array indexes begin at 0 and go to size minus one we must be sure to stay within those bounds
+
+or our program could likely crash.
+
+So we declare an initialized to zero and our loop condition is less than 3 and we increment by 1 at
+
+each iteration.
+
+So we loop for equal to zero 1 and 2.
+
+Which is exactly what we want.
+
+The body of the loop simply displays the array element at index.
+
+This will display one hundred ninety and eighty seven as we wanted.
+
+Be very careful when you work with loops in arrays.
+
+The condition should either be less than the size of the array or less than or equal to the size minus
+
+one hot tip.
+
+Always use one or the other and stick to it.
+
+Don't start flipping between them because eventually you're going to make a mistake.
+
+I always use less than the size of the array and I've been doing it that way my entire career.
+
+This helps prevent what are called off by one errors which basically mean that we went overbalancing
+
+your program could crash or corrupt data C++ has an operator called the comma operator that isn't used
+
+very often in C++ but sometimes you see it used in loops to initialize loop variables.
+
+The comma operator allows you to separate expressions with the comma in both expressions will execute.
+
+Note that the associativity is right to left and the result of the comma operator is the leftmost expression.
+
+In this case we're just using it to initialize two variables and then to increment those two variables.
+
+In this example we want to start at 1 and j to start at 5 and we want to loop while it is less than
+
+or equal to 5.
+
+The output statement in the body of the loop displays I times J the product.
+
+Then the increment also uses a comma operator to increment both i and j.
+
+So in this case I goes from 1 to 5 and J from 5 to 9 and at every iteration we display the product of
+
+i and j walk through this example slowly yourself and you'll see that it's pretty straightforward.
+
+The syntax looks a bit odd though since there's so much going on the basic for loop with all three expressions
+
+is concise.
+
+Easy to read or modify in the examples I showed we used integers.
+
+But you can use doubles with four loops as well.
+
+Also I counted up in these examples.
+
+You of course can count down but since the expressions are all optional it's possible to have all sorts
+
+of variations.
+
+You could even have a for loop with just a semi-colons in the parentheses.
+
+This is by definition an endless loop.
+
+Best practice in Protip.
+
+Don't write for loops with missing expressions and complicated expressions with comma operators.
+
+The example I showed is simple and understandable but if you find that you're omitting expressions then
+
+consider using one of C plus plus other loops.
+
+Great.
+
+Let's head over to the idea we'll see some examples of the for loop in life code.
+
+I mean the code like ID and I'm in the section 9 workspace in the for loop project.
+
+What I want to do here is I want to write a few different for loops to write a bunch of them that behave
+
+differently some will count up some will cut down to get a feel for how these four loops work and I'll
+
+write them and I'll comment them out along the way.
+
+That way they'll be in the source file so you can play with them later.
+
+So let's do a simple one first.
+
+Let's just say something like.
+
+For it I will start at 1.
+
+That's the initialization expression right there and then we want to loop while I say is less than or
+
+equal to 10 and at each iteration what we want to do is increment by one.
+
+Now in this case I can say plus plus I or I plus plus it means exactly the same thing as case and simply
+
+output.
+
+I
+
+will Kate.
+
+Simple as that.
+
+Let's run this you can see we're going from 1 to 10.
+
+Obviously when I hit 11 this condition right here fails and I stop the loop and then I just hit this
+
+and line over here right before the return.
+
+OK.
+
+So real simple example and I'll just copy and paste this so that you can see a variant of it and I'll
+
+comment that out here.
+
+Now suppose I want to go from I to 10 by two.
+
+I don't have to increment by one.
+
+I can imprint by whatever I want so I can hear in the increments expression I could just say I plus
+
+equals two equals I posters were going to do the same exact thing except when we increment we're going
+
+to increment by two.
+
+So let's run this one.
+
+And there you go.
+
+1 3 5 7 9 exactly what I expect because I'm starting at 1 and then eventually it's going to hit 11 and
+
+it'll fail.
+
+OK.
+
+So hopefully that makes sense.
+
+Let's count down on the next one.
+
+Let me comment that out and let's do this now let's say for ant.
+
+And again I is a real common variable name to use with looping i j k you'll see those all over the place
+
+and C plus plus could.
+
+So let's say I want to initialize to 10 in this case and I want to loop while I is greater than or equal
+
+to zero let's just say greater than zero.
+
+And in this case I want to decrement every time.
+
+So again I'm starting with eyes 10.
+
+And as long as I is greater than zero or I'm positive I want to execute the statement which I'm going
+
+to write right now and again I'm just going to output I.
+
+And then I want to decorate it.
+
+So this should count down now.
+
+So let's try that out.
+
+And they go 10 9 8 7 6 all the way down to 1.
+
+If I write in something like this and say blastoff then we expect that to execute after the loop is
+
+done see that.
+
+So that works out perfectly.
+
+There's a blast off.
+
+And one quick thing.
+
+Some compilers not all compilers but some compilers will give you a warning when you indent wrong.
+
+OK so in this case if I indented C out this blastoff statement over here that's not correct.
+
+Right because I don't have Curley's.
+
+So this for loop really only executes that one statement.
+
+But when I see this code visually My eyes are telling me that those two statements are in the for loop
+
+but they're not.
+
+If I try to compile this notice it works but I get a warning.
+
+The warning says Warning this for Clause does not guard.
+
+That's not real helpful I know but notice the morning message is misleading indentation.
+
+That's a great warning a lot of compilers don't do that.
+
+So what it's telling you is that something's not right with the indentation.
+
+You may think it's doing one thing but it really isn't.
+
+So once you unindexed that indent it properly now you'll have a clean compile with no errors and no
+
+warnings.
+
+That's a really nice feature of the GCC compilers.
+
+OK so let me come get that piece out again and let's write another version of a for loop.
+
+In this case why don't we count from 10 to 100 by 10.
+
+So again for the initialization statement.
+
+I will initialize it to 10 members that only happens exactly one time right before the loop begins.
+
+And I want to loop while I's less than or equal to 100.
+
+And in each iteration I want to say I plus equals 10.
+
+So when increment by 10 each time and I'm going to put in a block statement here just because I'm going
+
+to use a few of their statements a bit.
+
+But right now let's just print.
+
+OK so again we're going from 10 to 100 inclusive by 10 so we expect this to print out 10 20 30 40 all
+
+the way to 100.
+
+Let's try that out.
+
+And that's the result from 10 to 100 by 10 exactly what we expect.
+
+Now suppose I only wanted to print out those numbers that are between 10 and 100 by 10 and also divisible
+
+by 15 without a remainder.
+
+OK.
+
+So what we can do here is we can put an if statement here we can say if that specific I am looking at
+
+mod 15 is equal to zero.
+
+Right so if that is divisible by 15 then I want to display it.
+
+So at this point.
+
+Out of those 10 20 30 40 50 and so forth we really only expect 30 60 and 90 to match this criteria.
+
+Those are the only ones that are divisible by zero.
+
+By 15 I'm sorry.
+
+So let's run this.
+
+And there they are 30 60 90 you are the only ones in that set that are divisible by 15.
+
+Now let's take a look at that comma operator I talked about the syntax for this is again that's not
+
+bad it just gets kind of long and convoluted.
+
+So let's try that out.
+
+Let's say for now in this case in the initialization statement I want to initialize more than one variable
+
+so I can put them all in here separated by commas not semi-colons commas.
+
+So I say it.
+
+And I want to initialize I to 1.
+
+Now I put a comma in there and j to 5.
+
+That's my initialization I'm setting I to 1 and j to 5.
+
+Now comes my loop condition.
+
+I want to loop while I is less centered 5 and now is the increment expression.
+
+So where I say what I want to do it each iteration where I want to increment I.
+
+And I want to increment J so I can put the comma operator there.
+
+Any comment J.
+
+So you could see the purpose of this operator within this for loop is just to make everything concise
+
+because it makes sense here right.
+
+I mean I want to initialize I and J before I loop and I want to increment them both at each iteration.
+
+So rather than spread this logic all over the body of this loop you can just put it right in the head
+
+or like that and it really conveys exactly what you want at this point.
+
+I can just have a simple output statement that say we want to add I and J to generations are meant to
+
+display.
+
+I want to display that plus symbol.
+
+I want to display J.
+
+I want to display the equal sign.
+
+That's a literal.
+
+And this is display I Plus J will end up with a new line.
+
+So let's run that and you see we have one plus five is six now.
+
+It's I encourage you to walk through this example.
+
+Mean grab your pen kind of like I'm doing right now and say OK this is I this is J.
+
+Right now I've initialized them right.
+
+One in five now I start the loop is I less than or equal to 5.
+
+Well I's one so sure it's less was five I execute the body of the loop which says display I.
+
+OK.
+
+One then the plus then the J and the equal sign and then there's some then we do the increment which
+
+means now eyes to JS 6 and just walk through the loop this way this way you really get an understanding
+
+of what's going on.
+
+Remember what happens we do the initialization one time then we check the condition that we execute
+
+the body.
+
+If it's true and then we do the increment.
+
+So that's the order that this is all happening in.
+
+OK.
+
+So let me close this up and let's say that we wanted to use that use that conditional operator inside
+
+the loop.
+
+Just like I showed you in the conditional operator video there's a handy way to do it here.
+
+So suppose I want to print out the numbers 1 to 100 in a little bit of a table format so they look nice
+
+there's 10 across so 10 rows of 10 columns each.
+
+How could I do that.
+
+Well I could use something like for this or I mean that for an eye.
+
+We can start at 1 and we want to loop while I
+
+can try that again let's loop starting at it.
+
+I said to one and I want to loop while I is the center equal to 100.
+
+And in each iteration I want to increment I.
+
+OK.
+
+So that's what I want to do.
+
+I'm going to put a block statement here so I can read a little bit more code.
+
+Now I want to output I know I don't want to put an end line here I just want to output the itself in
+
+what I want to do is every tenth I want to output a newline.
+
+Otherwise I just want to output a space to move them across the row.
+
+So let's do that with the modulus operator and say if I mod 10 so if it's the 10 item equals zero would
+
+you want to do here.
+
+Well in this case I just simply want to say seek out give me a line
+
+and if it is not the tenth item I simply want to output a single space.
+
+OK that's it.
+
+So let's run this and see what we get.
+
+You could see we're going 9:59 11 to 20 21 through 30 and again walk through this and you'll see exactly
+
+what's going on.
+
+It should be pretty clear here.
+
+I'm printing out the I and I'm checking for every 10th item and I get every 10th I want to print a new
+
+line.
+
+Otherwise I just put a space if I wanted to print this as five across.
+
+I can just change that guy right there from a 10 to a 5 and now I've got 20 rows of five.
+
+OK.
+
+So that takes care of that one.
+
+Now suppose I wanted to write this same logic using the conditional operator Well let's see let's get
+
+rid of this stuff here and what we can say right now here with the conditional operator is we could
+
+say that's output that.
+
+And then that's output.
+
+Let's check the condition right.
+
+Same condition we had before.
+
+I mod 10 equals zero.
+
+And if that is true we just display in the line we'll use the escape character.
+
+Otherwise just a space.
+
+And if we run this we should get exactly the same behavior we had before which we do.
+
+Now remember since we're outputting we can chain output we can actually just get rid of all of this
+
+stuff and just make it on one line we can do that.
+
+We can up with the followed by either a space or a new line.
+
+So this can be just written as a single line and we get the same behavior as before okay.
+
+The last example I want to go over is using a vector and then we come at that out in the slides should
+
+you how to do it with an array how to loop through an array and I'll show you how to use a vector.
+
+And then the next video will use the range based for loop which makes using vectors really really simple.
+
+But in this case let's create a vector.
+
+You know I just get myself a little room here and I'll just call the vector Nom's and it's going to
+
+be a vector of integers.
+
+Let's just call it Nom's and let's initialize it to I don't know let's say 10 20 30 40 and 50.
+
+So we've initialized it to those five numbers.
+
+Now remember we're using a vector.
+
+So we have to include vector.
+
+So I'm going to come back up to the top and pounde include vector Otherwise we'll get a compiler.
+
+So I'll come back down.
+
+So there's my vector and let's say I want to loop through that vector and just display each item in
+
+the vector.
+
+Pretty easy I could say for it I want to initialize to zero member vectors started at zero.
+
+Just like arrays now I can say while I is less than Nom's dot size will use the size method that is
+
+in the vector class and that tells me how many items are in the vector and I want to increment by one
+
+each time.
+
+And I just simply want to say see out Nom's.
+
+So I when I run this I expect to get 10 through 50.
+
+We're going to get a warning and I'll show you how to fix that warning in a second.
+
+And it's actually a good morning.
+
+There you go tend to 50 is the output.
+
+That's what you expected.
+
+We're printing out all of those elements.
+
+The warning says Warning comparison between signed an unsigned integer expressions.
+
+OK.
+
+What's going on here is that this numskulls size expression read here is returning an unsigned integer.
+
+That makes sense right because you can't have vectors that are negatively sized.
+
+So that's returning an unsigned integer and your return.
+
+You're comparing it to a signed integer.
+
+So you can just simply type unsigned here instead of signed and it actually makes more sense.
+
+I've been using signed integers all along but a lot of times when you're looping especially when you're
+
+looping through all the positive numbers it makes sense to use unsigned integers here so I'll save that
+
+will compile and run.
+
+And now we've got down here as you can see no errors no warnings and only compile.
+
+So that pretty much covers the basics of for loops.
+
+I will leave all these examples in the source code so you can play with them and change them around
+
+as you like so you can learn from them.
+
+The best way to really learn this is just to make up little examples and print out every fifth element
+
+and see if they're divisible by 7 or something like that and just really get a feel for the way that
+
+loops and walk through these examples one step at a time that really really is helpful.

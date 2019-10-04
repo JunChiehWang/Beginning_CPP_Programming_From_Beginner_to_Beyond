@@ -1,0 +1,403 @@
+This video we'll look at the last looping construct in C++.
+
+It's called the do while loop the do while loop begins with the do keyword followed by block statement
+
+then the while keyword followed by the loop control expression in parentheses.
+
+Notice that you need a semi-colon at the end of the do while statement in a do while loop you execute
+
+the body of a loop while the conditional expression is true.
+
+Pretty straightforward.
+
+Note that the condition is checked at the end of each iteration that makes the do while loop.
+
+A post test loop.
+
+It also means that you're guaranteed that the loop body will execute at least once.
+
+This comes in very handy in many cases.
+
+You don't have to force our way into the loop like we had to do with the While loop.
+
+Let's see an example of using the do while loop for input validation.
+
+In this example we execute the body of a loop.
+
+Then test the condition.
+
+So we asked the user for a number between 1 and 5 and assign it to the variable number.
+
+Then we test to see if number is out of range.
+
+If it is then we loop again.
+
+If it is in range then the loop terminates.
+
+You can see how much cleaner the logic is in this case.
+
+Also let me talk for a minute about the variable number.
+
+Notice how we declared it outside the loop body.
+
+Since number is used in the while loops condition expression at the bottom A cannot be declared within
+
+the body of the loop.
+
+If you do so you'll get a compiler error.
+
+In this example we're declaring selection as a character type.
+
+It's outside the loop because we're using it in the loop condition at the bottom.
+
+So let's look at the loop.
+
+I always start reading loops at their conditional expression.
+
+In this case we know we're looping while the selection is a lowercase or in our case Y.
+
+If the selection is any other character the loop terminates.
+
+Now let's see what's going on in the loop body.
+
+We see we have two doubles width and height declared and initialized to zero and we asked the user for
+
+these values and read them in from the keyboard.
+
+Then we're calculating the product of the within the height and initializing another double named area.
+
+With that result we display the area to the user and then we ask if they want to calculate another.
+
+Note that we have executed that first iteration of the loop unconditionally.
+
+That means we always execute this loop at least once.
+
+This makes sense in this case since I want to be able to calculate the area.
+
+Now we ask the user if they want to calculate another and we read their response into the selection
+
+variable.
+
+Then we test this variable in the loop condition.
+
+If they entered a lowercase or an upper case why we perform another iteration of the loop and calculate
+
+another area.
+
+If they enter anything else the loop terminates and we display thinks the choice between a while loop
+
+and a do while loop isn't always crystal clear.
+
+However if you know that you must perform at least one iteration of the loop then you should consider
+
+the do while loop as your first alternative.
+
+Let's head over to the IDM We'll see how we can use a do loop to do a real simple menu system.
+
+OK so I mean the ID and let me share an example of the application we're going to build.
+
+Run it now and you could see it's a simple menu driven application there's the menu press 1 2 3 or Q.
+
+If you press 1 you do this if you press to do that.
+
+If you press 3 you do something else.
+
+Obviously the selections could do any kind of behavior depending on your application.
+
+So in this case I enter a selection.
+
+I press number one and it says you chose 1 doing this.
+
+If I press 2 it says you chose to doing that.
+
+Press 3 you chose 3 doing something else.
+
+Obviously if I press a lower case Q or an upper case Q to quit anything else should give me an illegal
+
+entry.
+
+So let's say I pressed 4.
+
+It says here unknown option try again.
+
+Say I pressed P again.
+
+Unknown option.
+
+Try again.
+
+The only valid choices will be 1 2 3 and lowercase are uppercase Q.
+
+So now if I type q the program terminates and says good bye.
+
+OK so that's what we're going to build.
+
+And in the section challenge at the end of the segment you're going to be using this kind of logic to
+
+build a more complex application.
+
+All right so let's start where do we start.
+
+Well we know we need to display a menu at least one time right.
+
+Because the user has to select Q or X or whatever we choose is the exit criteria.
+
+So that's a good choice for a do while loop.
+
+So basically what we're doing the do part which is display the menu while they haven't quit makes sense
+
+so that's what we're going to build.
+
+Now obviously we need a character variable and I'll just call it selection and whatever the user types
+
+in will be stored into that Kerak variable.
+
+Now let's do the do logic here.
+
+We've got a do loop and we want to do the body of the loop.
+
+While a condition is true now what is that condition.
+
+Well we want a loop as long as they haven't typed a lower or an upper case Q So we can see something
+
+like.
+
+While selection is not equal to a lower case Q and selection is not equal to an upper case Q.
+
+OK if you were thinking or here that would not be right and you would test your coding you'll see that
+
+it doesn't work right.
+
+So let's just write a real simple test here before you bother with anything else.
+
+Let's just say in selection no menu no prompting No we're just going to grab a bunch of characters here
+
+and see what happens.
+
+So let's run that OK let's type in a loop.
+
+Q We stop.
+
+Cool that's what we want.
+
+Ms try that again.
+
+A one way loop to loop a three loop for we loop again.
+
+The only time we should stop is when we get an old case or an uppercase Q we stop.
+
+So our logic is correct here.
+
+Right now what we can do is we can actually prompt the user and with the menu we can say see out and
+
+let's just use a newline at the beginning so it gives us a new line every time we do a dash of characters
+
+here and we'll do that and then we'll give them the menu options so you can press one.
+
+And if you press one of Will do this.
+
+Obviously this would be you know at a record or delete a record or do something in a real application
+
+so that would be that.
+
+And I'm just going to copy this and paste it to save a little time here.
+
+So number one.
+
+Number two would be do that number three.
+
+Or option they would be do something else.
+
+And then finally and we can say q or X or whatever letter you like.
+
+To quit
+
+perfect and we'll give them one more little prompt here that says it will put a new line in Frejus to
+
+separate will say enter your selection
+
+Colan no end line here so that looks nicer for them and then we put the selection right into selection
+
+right.
+
+So let's run this and we should see a menu show up and there you go.
+
+Do this do that do something else or quit.
+
+So if we press one we stay in the loop and we display the menu again.
+
+Same thing with two.
+
+Same thing with three four gives us the same issue because we haven't checked for anything that's illegal
+
+right.
+
+5 P whatever.
+
+Now whenever I type Q I stop.
+
+So what I need to do now is decide what the user has typed in and what to do.
+
+OK how do I do that.
+
+Well it's a lot of choices here.
+
+We've got liberals here we got one the two the three these are character riddles so we could certainly
+
+use a switch statement really really easily.
+
+What I'm going to do is I'm going to use an if else if later here.
+
+Again I encourage you to do this with an if.
+
+With a switch statement with all kinds of logic that we can play around with it.
+
+So let's do this.
+
+I say if the selection that the user entered is the character want to remember this is a character so
+
+we need the single quotes.
+
+So if the user entered the one we simply want to say something like see out let's see you chose one
+
+which was do this or let's just say doing this can put an end line at the end else and we don't need
+
+block statements here we could certainly use them and makes it easier to modify our code.
+
+But I wanted to try to keep as much on the screen as I can so else if the selection is a two then what
+
+we want to do here and again I'll just copy and paste this to save a little bit of typing time.
+
+Then you spell that correctly.
+
+That's better you chose to which was doing that
+
+else.
+
+I remember your indentation make it make sure the indentation is correct because it adds to the readability
+
+big time.
+
+So if the selection is equal to three then in this case copying that again
+
+you chose three which was doing something else and then so now what where are we at.
+
+Well let's worry about the unknown option as the bottom else of this condition.
+
+So if nothing else matches then we're going to say oh sorry try again.
+
+But in this case if you really think about this one two three and Q are all valid.
+
+Right.
+
+So let's deal with Q Ossett else if selection is equal to AQ or not is that here we need more whereas
+
+in the wild we need a demand or selection is equal to or lower case.
+
+Q Then in this case really all we want to say is goodbye because Luke's going to fail we're going to
+
+be out of here in a minute.
+
+OK.
+
+So that takes care of that case.
+
+So what's left this else to here.
+
+So what happened.
+
+Well it's not a one.
+
+It's not a 2 it's not a 3 it's not a Q It's got to be something that I don't know and I really don't
+
+care it's something that's illegal.
+
+So in this case we're just say out let's say something like a known option.
+
+You spell that right and maybe try again.
+
+We could do something like that.
+
+Let me clear the space up and let's walk through this and make sure we're not missing anything.
+
+We've got our selection variable declared that's important.
+
+We're in the do.
+
+We're going to execute this code immediately right.
+
+This is unconditional the first time in we're in.
+
+So we're displaying the menu and we're reading the selection of the user if the user selects one we
+
+print we output you chose one doing this and that's it we're out of this if else if latter we test down
+
+here and we loop while the selection is not lowercase or uppercase Q We come back up.
+
+We display the menu again if they typed three.
+
+We execute this code right here and we keep looping.
+
+If they type.
+
+Q What do we do we simply say goodbye.
+
+And then this condition fires at the end it will fail and we're out of the loop.
+
+If none of these are true we just say unknown option.
+
+I don't know.
+
+You've entered.
+
+OK so let's try this and again I'm in the section 9 workspace and the do wild project.
+
+So let's build and run
+
+and we've got a clean compile and a run.
+
+So let's try this.
+
+Press 1 do this.
+
+You chose one doing this exactly what we want to.
+
+You chose two doing that three you chose three doing something else.
+
+Let's say we press for unknown option try again.
+
+But notice how we don't get out of the loop.
+
+We don't want to get out of the loop right.
+
+We want to ask them to do to enter Q If they want to get out.
+
+So at this point we can press an uppercase Q And there it is goodbye and the program is finished ok
+
+really really common use case is this idea of menu driven programs you want to display that menu the
+
+first time ask the user for this election and basically use an if else if latter here or switch statement
+
+would work here.
+
+Try rewriting this program using a switch statement you'll see it's pretty easy to do as well.
+
+Same same logic really.
+
+OK.
+
+So that's pretty much it in the challenge exercise at the end of the section we're actually going to
+
+do stuff when the user presses one we're going to use a vector and you would be adding things to the
+
+vector and displaying the vector elements and so forth depending on what they choose.
+
+OK so that's the end of this video.
+
+I encourage you like I said to walk through this and tweak it and change it and change his tune or and
+
+see why it doesn't work.
+
+Understand that that's really really important that's a very common mistake.
+
+All right I'll see you in the next video.

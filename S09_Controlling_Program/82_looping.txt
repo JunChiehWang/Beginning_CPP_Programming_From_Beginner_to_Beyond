@@ -1,0 +1,99 @@
+In this video we'll do a quick overview of looping in general and specifically in C++.
+
+Looping is also called iteration or repetition.
+
+It's the third basic building block of programming.
+
+After this section of the course you have all you need to begin to solve very complex problems using
+
+sequence selection and iteration in this course we're covering C++.
+
+However all programming languages must support sequence selection and iteration.
+
+Once you understand these concepts completely then it's just a matter of picking up the syntax of another
+
+programming language and you'll be able to implement solutions to problems in those languages as well.
+
+Loops allow the execution of a statement or block of statements repeatedly and they're made up of two
+
+sections.
+
+First the loop condition which determines when we iterate.
+
+And when we don't.
+
+Second is the loop body.
+
+That's the statement or block of statements that will be repeated.
+
+That's it.
+
+Conceptually it's very simple.
+
+Let's look at a few use cases for looping.
+
+Here's some typical use cases for looping.
+
+We want to execute a loop or repeat statements a specific number of times.
+
+For example we want to do something 10 times where we ask the user how many times they wish to do something.
+
+Another use case is iterating one time for each element in a collection.
+
+So suppose we have items in an array or vector and we want to process each of those items.
+
+Other times we want to loop until a specific condition becomes true.
+
+So we loop until we see a specific value.
+
+Then we stop of course we can also loop forever.
+
+This isn't as common as the other use cases but operating systems are an example of programs that loop
+
+forever executing system processes.
+
+There are many other use cases and variations of these existing use cases.
+
+Let's look at the C++ looping constructs.
+
+Now C++ has three main looping structures.
+
+The for loop.
+
+The while loop and the do while loop.
+
+The for loop has arranged base variant which is really great.
+
+First let's talk about the for loop.
+
+The for loop is typically used when you want to iterate a specific number of times.
+
+For example you want to loop 10 times or end times where end is determined by the program.
+
+The range based for loop makes it really easy to iterate through a range of items or through the elements
+
+of a collection with arrays vectors and other collections.
+
+This is a great loop to use the while loop iterates while a specific condition remains true when the
+
+condition becomes false.
+
+We terminate the loop in the case of the While loop.
+
+The condition is checked at the beginning of every iteration.
+
+The do while loop is similar to the While loop.
+
+Except that the condition is checked after each iteration with only these basic loops we can implement
+
+any iteration pattern we want.
+
+All programming languages have loop constructs.
+
+The C++ loops are clear and concise.
+
+Let's go through the C++ loops one at a time.
+
+Let's start with the for loop and the next video.
+
+

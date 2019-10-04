@@ -1,0 +1,507 @@
+In this video we'll learn about the C++ while loop the while loop as an example of a pretest loop because
+
+the test is done at the beginning of the loop.
+
+So it's possible that if the test fails immediately then the loop body will never execute the syntax
+
+for the while loop is the key word while followed by an expression in parentheses.
+
+This expression has to evaluate to a boolean value.
+
+This is followed by the statement or statement block to execute if the expression evaluates to true.
+
+In this slide we can see a simple while loop that simply counting.
+
+We have a looping variable named I and we initialize it to 1.
+
+The loop condition is I less than or equal to 5.
+
+So as long as I is less Center equal to 5 we continue executing the loop body in the body of the loop.
+
+We display the variable by and then increment it by one.
+
+Eventually I become six and the loop condition fails and the loop terminates.
+
+It's important that we increment it in the body of the loop.
+
+If we don't then the loop will never terminate.
+
+Since I will always be one which is less than or equal to 5 This is called an infinite loop and it's
+
+not usually what we want.
+
+I'll talk about an infinite loops in a later video in this section because sometimes they can be useful.
+
+Let's see another example let's write a while loop that displays the even numbers between 1 and 10 just
+
+as we did with the for loop.
+
+In this case we declare and initialize it to 1.
+
+Since this is where we want to start looping then in the loop condition we'll check to see if it is
+
+less than or equal to 10.
+
+So in other words we will loop while I as less Center equal to 10.
+
+And then at each iteration we execute the body of the loop.
+
+In this case we have an if statement that uses the module operator to see if it's an even number if
+
+it is then we display it.
+
+Then we increment it.
+
+Note that we increment i regardless of whether it's even or not.
+
+Eventually becomes 11 and the loop terminates.
+
+Let's see another example of using a while loop with an array.
+
+In this example we're using a while loop to iterate over an array.
+
+The array is named scores and it's an array of three integers.
+
+We set the integer to zero since array indexes begin at zero and we loop while I's less than three as
+
+we've done an other array code in the loop body we display scores.
+
+So by then increment i when i becomes 3 the condition fails and the loop terminates.
+
+Loops are commonly used in programming to provide input validation.
+
+In this example we want to use her to enter an integer less than 100.
+
+If they don't.
+
+We want to ask them again and again and again until they enter a valid integer.
+
+So we declare a variable named number and initialize it to 0.
+
+Notice now how we prompt the user for the integer and read it from the console before the loop begins.
+
+Now we have the value they entered in number.
+
+The loop condition is now evaluated.
+
+And if the user's number is not greater than or equal to 100 then we have a valid number and we never
+
+go into the loop.
+
+We simply print the thanks message at the end.
+
+However if the user enters an integer that is greater than or equal to 100 we go into the loop and ask
+
+for another integer.
+
+Read it in and then we test again.
+
+This will continue until the user enters a number less than 100.
+
+Notice that we have some duplicated code here.
+
+We have the same output and input statements outside the loop and inside the loop.
+
+This is usually a clue that the code could be better.
+
+We'll make this code better in the next video when we discuss the do while loop.
+
+But this kind of code is commonly seen.
+
+Let's see another example in this example we asked the user to enter a number between 1 and 5.
+
+Notice the code is very similar to our previous example with the exception of the condition in the loop.
+
+In this case we're testing both ends.
+
+So if the number is less than or equal to one it's not valid.
+
+We also test number greater than equal to 5 which is also invalid.
+
+If either of these conditions is true then the number is invalid.
+
+So that's why we use the logical or here in this example we use a boolean flag to control our while
+
+loop.
+
+First we declare a boolean variable named done and we set it initially to false.
+
+The idea is that when this variable becomes true then the user entered a valid number.
+
+So the loop test while not done not done will be true since we set it to false so we enter the loop
+
+in the body of the loop.
+
+We prompt the user for a number and read it.
+
+If the number is not valid we display an error message and loop again since done is still false.
+
+If the number is valid we display thanks and said the done flag to true.
+
+Now the loop condition will fail and we exit the loop.
+
+There are many ways to write logic and to achieve the same outcome.
+
+Always remind yourself of the KISS principle.
+
+Keep it simple stupid or keep it short and simple or keep it simple and straightforward.
+
+However you want to think of it.
+
+Basically don't be too clever.
+
+Keep your code as simple as possible.
+
+Let's head over to the ID see some other examples of the wild.
+
+I'm in the section 9 workspace in the wild loop project.
+
+What I want to do is write a couple of wild loops some day count down when that counts up in a couple
+
+of more and more complicated ones.
+
+In this case I've already written one that counts down.
+
+So the idea is we ask the user to enter positive integer to start the count down and then we start the
+
+countdown and we blast off when we get to 1.
+
+So if they type in 5 we'll say five four three two one blastoff.
+
+OK so let's walk through this code so you can understand it.
+
+First thing we're doing is we're defining that name right up here that's where the use is going to enter
+
+the number into and let's say they entered a three.
+
+So they're going to enter the three and we're going to store it in.
+
+So I've gotten over here and it's value is three right now.
+
+Now we checked this condition is three greater than zero.
+
+Well that's true.
+
+So we execute the output statement which says just displayed Nahm and I'll do that over here on the
+
+display of three.
+
+And then I decremented Um remember when it's all alone on a line like this the predicament in a post
+
+that means exactly the same thing.
+
+So I just changed from a three to a two.
+
+I go back up and test the condition again is to greater than zero.
+
+It is I output the number which is 2 and then I decremented to 1.
+
+I'll check the condition again is one greater than zero it is so display the one then I decrement this
+
+to a zero and I check the condition one final time in this case zero greater than zero is not true.
+
+So I stop and I end up executing that line right after the loop blastoff.
+
+So what we end up with is three two one blastoff.
+
+OK.
+
+So that's a good way to walk through it.
+
+And what we'll do is we'll run this and let's do it with a 10.
+
+And then you can see the code going ten nine eight seven six five four three two one blastoff.
+
+OK so now let's write a while loop that counts up soil comment this coda right here and I'll paste some
+
+code that I've already written to save a little time.
+
+And let's walk through this code.
+
+In this case notice that I'm defining again declaring and defining this same variable name to be an
+
+integer.
+
+I asked the user to enter a positive integer to count up to.
+
+So in this case I want to count from 1 to whatever they typed in.
+
+And I'm reading that.
+
+So again suppose they typed in a three.
+
+So now I've gotten some and it's value here is three.
+
+I can't do what I did up here with just a single variable because I don't want to change numb.
+
+Numb is my target as to where I'm going to stop.
+
+So I need another counting variable or looping variable in this case.
+
+I want to use I.
+
+So I've got I over here and I'm initialising I one because that's where I want to start counting at.
+
+So I becomes one.
+
+All right.
+
+Now we do the loop we test the condition is none greater than the equal to I.
+
+So is three greater than or equal to 1 in this case.
+
+This is true.
+
+So what we do is we display I and I'll do the display over here will display I which is 1 and then we
+
+increment I.
+
+So now it is 2.
+
+We do the loop condition again is numb which is three greater than or equal to two.
+
+It is we execute the body of the loop so we print out which is now 2 k.
+
+Hope you guys are with me.
+
+I increment I I now becomes three.
+
+Then I go back up and I test the loop again.
+
+Is numb which is always going to be three is number greater than or equal to three.
+
+It is right.
+
+Three is equal to three.
+
+I want to output I again I use three and then I increment I now becomes four will test one more time
+
+is for greater than
+
+or sorry is three greater than or equal to
+
+it is not.
+
+So it fails at this point.
+
+Now we come down here and whatever statement would be here we would execute.
+
+OK.
+
+So you can see that walking through these examples is pretty easy to do it's kind of time consuming
+
+but once you get used to the logic you can pretty much do a lot of it in your head.
+
+OK so let's do another one now and clear this up and I'll comment this all out again.
+
+So in this case what we want to do is we want to do some input validation.
+
+And I've written the code again let me paste it in and let me indent all this.
+
+I don't know why it puts all flush left.
+
+There we go.
+
+OK so we've got an integer here called number that we've declared and we've initialized it to zero and
+
+we're asking the user to enter an integer less than 100.
+
+And we're reading that into that variable number.
+
+Right now we want to loop.
+
+Remember we want an integer less than 100.
+
+So we want to loop while that number they entered is not less than 100 so we could say not less than
+
+100 or greater than or equal to 100.
+
+Either case will work here.
+
+So in other words if the number they entered is greater than or equal to 100 it's not valid.
+
+So in that case we'll just ask them to enter an integer less than 100 again or prompting them to enter
+
+it and we're reading it and then we're just checking that while statement over and over and over.
+
+When this condition fails that's when we have a valid number.
+
+OK.
+
+So let's run this and we'll print out.
+
+Thanks when we have a valid number at the end.
+
+So let's run this and see what it looks like.
+
+Let's see I want to injure less than 100 let's let's do it correctly.
+
+We'll type in 50 and we get a thanks but if we run it and type in a number that's not less than 100
+
+or so we typed in 120.
+
+It prompts me again I'm in the loop now so say 100 15 thousand.
+
+It'll just keep going forever until I type in a valid number.
+
+And basically this is the basics of input validation.
+
+So ninety nine that's valid.
+
+Thanks.
+
+OK.
+
+So there you go you can walk through this the same way that I walk through the other one.
+
+Notice that you can write this condition in here.
+
+A lot of different ways because greater than or equal to 100 or not less than 100.
+
+So there's different ways that you can write that condition and you'll see it all kinds of ways out
+
+there.
+
+All right.
+
+So the last example I want to do is one using a flag a boolean flag to do input validation.
+
+So let me come at this out and copy that code in real quick.
+
+OK so there's the code and I will walk through this real slow and in detail so you can see what's going
+
+on.
+
+This is a common use case and this is a kind of code you see out there a lot.
+
+So in this case we've got a flag called done and we're initializing it to faults.
+
+Faults means that we're not done right.
+
+We still need to get more input from the user for whatever reason either we haven't started yet or they've
+
+entered something illegal or out of range.
+
+And I've got this variable right here that I've declared here called number that's the integer.
+
+That's what we're going to read into.
+
+Now it's important that we set that flag to false to begin because that's how we're getting into this
+
+loop.
+
+The first time.
+
+So don't just leave that to true or just don't leave it at nothing and take a chance that it is false.
+
+Explicitly said it's a false because that's going to get us in that loop the first time.
+
+So the first time we're going to say while not done well it isn't done right it's false.
+
+So we're in here and we ask to use to enter an integer between 1 and 5 and they type the number right
+
+there.
+
+We're going to store it in the variable number.
+
+Now we do a check if the number is less than or equal to one.
+
+Remember we want numbers.
+
+There's the one Here's the five.
+
+So we want numbers between there.
+
+Right.
+
+So we want 2 3 or 4 1 and 5 are not valid in this case.
+
+So if the number is less than or equal to 1 in other words the number is over here somewhere.
+
+Or the number is greater than or equal to 5.
+
+So the numbers over here somewhere then it's out of range.
+
+So we simply display out of range.
+
+Try again.
+
+Notice how we didn't change the Dunn flag.
+
+Dunn is still fault's right.
+
+So at this point we just executed that statement.
+
+We don't do the else part and we loop right back up to here.
+
+Right.
+
+Dunn is still false so we're going to go right back into the loop and output again and try an integer
+
+between 1 and 5.
+
+Grab the integer and so forth.
+
+Now when you do type an integer that's in range.
+
+Suppose we typed in a three then this if statement fails here and we go to the else and all we're doing
+
+here is saying thanks and then we set that flag to true.
+
+This is like super super important here don't forget to do that.
+
+That means we are done.
+
+So when we loop back up again here that condition fails and we're out of the loop.
+
+OK.
+
+So hopefully you can walk through this and just take it a step at a time and really understand it.
+
+The challenge exercise at the end of this section is pretty tricky and hard challenge but it uses this
+
+kind of logic to ensure that you know you've got input validation and you're going to prompt the user
+
+every time that they are not in range.
+
+Right so let me clear this and let's run this example.
+
+So we're going to enter an integer between 1 and 5.
+
+Let's say we type 1 1 is not valid.
+
+We want it to be between 1 and 5 again to 3 or 4.
+
+So that's no good.
+
+Five is no good.
+
+70 is no good.
+
+Right.
+
+Negative 12 is no good.
+
+So let's give it something good just give it a three something that's right in the middle.
+
+Thanks.
+
+So you can see that and using this kind of logic is better than using this sort of logic where you've
+
+got a statement repeated here and then the same statement over here and you've got duplicated code.
+
+We don't have that here.
+
+And the reason we don't have that here is because we're using that flag to really decide whether we're
+
+in the loop or not.
+
+Now in the next video we'll talk about a do while loop where we're doing the condition at the end and
+
+that makes this kind of code even nicer.
+
+OK so that's the end of this video.
+
+Please try these examples yourself come up with your own versions of them and walk through them so that
+
+you really understand the logic and what's going on.
