@@ -1,0 +1,55 @@
+In this video we'll talk about the functions that we can use with characters the CC type library includes
+
+very simple and very useful functions that allow the Tessy of characters for various properties as well
+
+as the conversion of characters from upper to lower or lower to upper case in order to use these functions
+
+you must include CC type the functions all expect a single character in the case of the testing functions
+
+that evaluate to true or false.
+
+And the conversion functions return the converted character.
+
+Let's see some of these functions
+
+this table contains some of the functions and CC type that allow for testing of characters.
+
+You call the function and pass in the character you wish to test in the parentheses.
+
+The function then evaluates to true or false depending on whether the character has the property you're
+
+testing or not.
+
+Is alpha test to see if the character has a letter either uppercase or lowercase and evaluates to true
+
+if it is or false otherwise is Al numb.
+
+Test to see if the character is a letter or a digit is digit test to see if the character is a digit
+
+is lower test to see if the character is a lowercase letter is print test to see if the character is
+
+a printable character.
+
+Is Punkt test to see if the characters are a punctuation character is up or test to see if the characters
+
+an upper case letter and is space test to see if the character is a whitespace character.
+
+There are a few other functions in CC type that I haven't listed in a table.
+
+You can refer to the C plus docs for those.
+
+Now let's see the conversion functions
+
+the two character conversion functions are two lower and two upper two lower evaluates the lower case
+
+equivalent of the character passed in and two upper The upper case equivalent.
+
+If these functions can't perform the conversion then the function simply valuate to the character that
+
+was passed in as you can see these functions are very handy.
+
+They're also extremely efficient will use these functions in the next few videos.
+
+When we talk more about strings in the next video we'll learn about C-style strings.
+
+I'll see you there.

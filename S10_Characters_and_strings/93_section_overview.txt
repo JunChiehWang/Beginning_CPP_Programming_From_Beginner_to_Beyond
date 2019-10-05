@@ -1,0 +1,49 @@
+In this section we'll talk about characters and strings.
+
+As we've already seen the character type can hold values that represent characters.
+
+These values are basically integers that map to a character set like the ASCII character set.
+
+And we've also seen that strings or sequences of characters C++ supports two types of strings C-style
+
+strings and C++ strings.
+
+So will first look at the CC type library.
+
+This is a library of very simple but very useful functions that work with characters.
+
+For example we can test characters to see if they're uppercase or lowercase numeric alphanumeric punctuation
+
+and more.
+
+We can also convert characters between lower and upper case after we learn about the CC type functions.
+
+We'll talk about strings.
+
+As I said earlier you can think of strings as a sequence of characters.
+
+So far we've only use string literals which were represented as a sequence of characters inside double
+
+quotes.
+
+I'll discuss both C-style strings and C++ strings in this section and give you the basics of using each.
+
+However you should be using C++ strings in modern C plus plus I think you'll understand why at the end
+
+of this section first we'll see what C-style strings are and how they are represented in memory.
+
+Then we'll see how to work with C-style strings using some of the string functions available in the
+
+C string and C standard lib libraries.
+
+Then we'll learn about C++ strings C++ strings or objects just like our vectors were and their use using
+
+an object oriented style of programming.
+
+In this section we learn how to declare initialize assign compare and use some of the other C++ string
+
+methods methods or functions that work with objects.
+
+So let's look at C-style strings first in the next video.
+
+

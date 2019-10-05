@@ -1,0 +1,223 @@
+In this video we'll learn about C-style strings C-style strings are about as simple as it gets.
+
+There are a sequence of characters stored contiguously in memory.
+
+They're implemented as an array of characters.
+
+So you can access individual characters using the array subscript syntax that we've already learned.
+
+How do you know where the sequence of characters ends.
+
+C-style strings use a sentinel value that marks the end of the string the null character is use which
+
+is equivalent to the images 0.
+
+So C-style strings are often referred to as zero or null terminated strings.
+
+We've been using C-style strings all along in this course.
+
+We've used them mainly in our output statements as string literals.
+
+Recall that string literals are sequences of characters enclosed in double quotes these string literals
+
+are constants so we can't change them just like we can't change integer literals even though we don't
+
+explicitly provide a known character at the end of the string literal C++ inserts one for us.
+
+That's the way the end of string is handled.
+
+Let's see an example of a string literal and how it started in memory.
+
+Here's a real simple example that shows how C-style strings are stored in memory.
+
+In this case we have a C-style string literal containing the sequence of characters.
+
+C++ is fun.
+
+These characters are stored in a contiguous block of memory that can be accessed as an array.
+
+Notice that C++ is fun has exactly 10 characters but the compiler allocated 11 characters for the array
+
+because it needed space for the null character at the end liberals are great and very useful.
+
+But more often than not need to create string variables.
+
+Let's see how we can create C-style string variables in this example.
+
+We're declaring an array and initializing it to Frank using initializer list syntax as we've been doing
+
+with integers and other types.
+
+Notice that the C++ compiler will allocate 6 characters for this array since it needs to terminate the
+
+string with the null character.
+
+Also notice that the size of the array is fixed.
+
+So if I wanted to add a y to Frank and create Franki I couldn't without having some potential problems
+
+since the new string would not be null terminated.
+
+You won't get a compiler error or even a warning.
+
+In fact in this case my name sub 5 is still within the array bounds.
+
+Let's see another example.
+
+In this example we are explicitly asking the compiler to allocate 8 characters for the character array
+
+and we're initializing it to Frank.
+
+In this case it will initialize the array with F R A and K and the rest of the space will be zeroed
+
+out with no characters.
+
+In this case if I wanted to change the character Id index 5 which is that first no character to a lowercase
+
+why it would be just fine since the string now contains Franki and is still null terminated.
+
+Let's see another example.
+
+In this example we ask the compiler to allocate an array of 8 characters and we don't initialize them.
+
+This could be very problematic because if you use this arrays a string all C-style string functions
+
+expect to find a null character.
+
+And here there may or may not be one.
+
+We really don't know what the data in the array is.
+
+Suppose we want it to display the string.
+
+Now how do you think this would happen.
+
+How do you think C-style strings are displayed.
+
+Well in this case we started the first element of the array and we iterate through the array and every
+
+character we see if it's the null character.
+
+If it is we stop since we reached the end of the string.
+
+If it's not we print the character and then we move to the next character.
+
+In this case we don't know what's going to happen.
+
+We might see and know right away or we might not see a null for a very long time.
+
+In the meantime I'm printing stuff to the screen.
+
+Some of the stuff may not even be displayable since some characters that control characters you might
+
+think we can initialize C-style strings using the assignment operator just like we have with other types.
+
+But this won't work if we try to assign the C-style literal Frank to my name.
+
+We get a compiler error because that's not the way C-style strings work array names and literals evaluate
+
+to their location in memory so we're effectively assigning one location to another which is illegal.
+
+Think of this as saying assign 10 to 12.
+
+It doesn't make sense and the compiler won't allow it.
+
+In order to assign one string to another we need to use a function called string copy that copies the
+
+C-style literal.
+
+F R A N K to the my name array.
+
+There are lots of C-style functions that C++ brings in from the C programming language.
+
+Let's see a few of them.
+
+The C string library contains many functions that work with C-style strings.
+
+These functions are used to copy concatenate.
+
+Compare search get the length of a string and many more.
+
+They all rely on one common factor that the sequence of characters they're working on is terminated
+
+with a null character.
+
+If you use the C-style strings you must be very aware of this.
+
+For example suppose you have a C-style straight into one to determine its length.
+
+Well let's say we have Frank.
+
+Since no length information is stored with the string only the characters in the array.
+
+The only way to determine the length is to start counting at the first array element and then increment
+
+the longest until you see the no character.
+
+So in the case of Frank we would look at the F increment one.
+
+Look at the R to the a 3 d n for the K 5 then we see a null character and we stop.
+
+Now we know that the length is 5.
+
+But if that null character is not there we keep going.
+
+We keep counting.
+
+So the result will very likely be incorrect.
+
+Even worse if you're copying one string into another and the string you're copying isn't null terminated.
+
+You'll very likely exceed the bounds of the target string and very likely cause a program crash.
+
+This all sounds pretty ominous but in fact we've been programming in C and C++ using C-style strings
+
+for a very long time and we've gotten pretty good at understanding these issues.
+
+But wouldn't it be great if we didn't have to worry about these issues at all.
+
+That's where C++ strings come in.
+
+We'll talk about them later in this section.
+
+Here are a few examples that use the C-style string functions.
+
+You typically have a function and you pass into the function.
+
+The name of the string or the string literal or both.
+
+We'll talk about functions in detail shortly but conceptually they're really easy to understand.
+
+For example if I'm a function then my job is to return the color of a crayon passed to me then all I
+
+need from you is the crayon.
+
+So you call me and send me the crayon.
+
+I'll return red green blue and so forth.
+
+That's the idea.
+
+And here it's the same if you want to know the length of the string pass in the string to the As to
+
+your lend function and it returns the strings length.
+
+Here are just a few examples that copy concatenate and compare strings C++ also has an other library
+
+called C standard lib that contains functions that convert strings to other types.
+
+For example if I have a string with the digits 1 in 2 I can convert that to the integer 12.
+
+Sometimes these are really useful functions.
+
+However all of these functions rely on the same thing.
+
+They're all working with null terminated strings.
+
+If you're using C-style strange you have to be very aware of that.
+
+Well that completes this video in the next video.
+
+Head over to the idea we'll read some examples using C-style strings.
+
+

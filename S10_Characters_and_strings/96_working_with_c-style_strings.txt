@@ -1,0 +1,483 @@
+In this video we'll go over some examples of using C-style strings.
+
+First thing you'll notice is I'm including C string.
+
+I need to include that header file for the C-style string functions.
+
+And I'm also including CC type.
+
+That's because I'm going to use some of the character based functions in this example.
+
+Ok so I'm using namespace standard and I have declared for C-style string variables which are really
+
+just arrays of characters on lines 9 through 12.
+
+First name last name full name and temp and I've made them to be pretty big 20 20 50 and 50 that should
+
+allow us to put stuff in there without exceeding the bounds.
+
+OK so the first thing we'll do is notice here.
+
+First name is uninitialized.
+
+There are actually all uninitialized.
+
+Let's display first name.
+
+This is a real problem because we've never initialized that array.
+
+So it's very likely we're going to get garbage.
+
+So let's run this.
+
+And by the way I'm in the section 10 workspace in the C style strings project.
+
+So let me run this and there you can see the garbage right up here and see it right in there.
+
+What display's is.
+
+Who knows right.
+
+Whatever characters happen to be in those locations you might get lucky and the null character might
+
+be in the first location and which has nothing will print but more often than not you'll get garbage
+
+like this.
+
+And this is a real common sense.
+
+And whether you displaying to the console or inside a window in Microsoft Windows or X window and you
+
+see something that displays look down on a button or appear on a titlebar is something that's a classic
+
+symptom of uninitialized string.
+
+Let me comment that out.
+
+And we don't want uninitialized streams.
+
+Now obviously we'd want to initialize these guys just like that or to a string if we want.
+
+So let me just go ahead and initialize all of them which is really the best practice
+
+camps and other all initialize.
+
+So the first thing we'll do is uncomment these lines here.
+
+And this is nothing we haven't seen before.
+
+Pretty straightforward.
+
+Enter your first name and we're using the extraction operator to get our first name into that variable
+
+first name which is the array.
+
+So whatever I type in I'm going to use my name in these examples Frank will be stored into first name
+
+and will be f r a and k and then the character will automatically be put in there for us.
+
+Same thing with last name.
+
+OK so again nothing we haven't seen before.
+
+Now here let's talk about these two lines.
+
+In this case that we grab my marker real quick in this case we're saying hello first name.
+
+Now this will be replaced with a value of first name what's the value of first name.
+
+At this point I have Frank in there and remember this is 20 big here.
+
+But in this case as you say I've got them all character.
+
+So how do we determine the value of first name.
+
+Well we start here do we see a no no.
+
+We move over to we see a no no.
+
+And we keep going until we see that no at that point that's what's returned.
+
+So this will display Frank.
+
+That's really what's going on when we're displaying these C-style variables.
+
+So I was going to say Hello Frank.
+
+Your first name has and then we see this function right here.
+
+As to our land or the string length function a function is nothing more than a request for somebody
+
+else to do something for you.
+
+All right.
+
+Functions really soon I think in the next section.
+
+So in this case I'm calling the Charland function I'm passing in that array of characters Frank.
+
+So what's it going to do.
+
+It's going to do the same thing.
+
+We just did here.
+
+Right.
+
+Let me clean this up a little bit and we'll walk through this again.
+
+So in this case how does the string length determine the length of that name.
+
+Well you start here.
+
+Is that a no no.
+
+That's one.
+
+Is that a no.
+
+No that's two.
+
+How about this guy.
+
+No that's 3 the n.
+
+No.
+
+OK.
+
+That's five.
+
+Now we see the No.
+
+The length is five.
+
+That's what's being returned here.
+
+Now as Harlin doesn't return an integer it doesn't really return an unsigned integer.
+
+It returns a type called size t and i haven't talked about that yet but I'm going to now size he really
+
+is an unsigned integer it could be an unsigned long.
+
+You really don't know what it is based on your system.
+
+That's the whole point.
+
+We really should be using size t because regardless of what system you're on this will work.
+
+You can be sure it will be unsigned.
+
+Right because it doesn't make sense to have negative sizes for strings or negative sizes from the for
+
+loop variables and things like that typically.
+
+So from this point forward I'm going to start using size t where appropriate rather than an unsigned
+
+it's the more correct way of doing it.
+
+OK.
+
+So that will return 5 so this will display.
+
+Hello Frank.
+
+Your first name is has five characters and your last name.
+
+Same idea.
+
+It'll print out my last name here and my last name has 11 characters.
+
+So it should display 11 characters.
+
+OK so let's run this example.
+
+My first name is Frank and also put in my last name Metropolis and it says Hello Frank.
+
+Your first name has five characters and your last name Mitropoulos has 11 characters exactly what we
+
+expect.
+
+Now everything I'm talking about in this video is totally dependent on that guy right there.
+
+If for whatever reason those null characters are that no character is not there you can imagine how
+
+we're going to keep counting until we hit one which weight may be you know a thousand characters down
+
+the line in memory.
+
+Typically you don't have to worry about it when you use these functions as Arlen's seen as to your cap.
+
+Mike we'll see it here.
+
+They handle that for you.
+
+But if you're working with strings on your own and you're processing characters and movie characters
+
+around you've got to be aware that you need to null terminate your strings otherwise you're going to
+
+run into problems.
+
+All right.
+
+Let me clear this up real quick and let's do another example down here.
+
+Uncomment this piece of code and we'll talk about that real quick.
+
+So what do we have now.
+
+Well we have Frank the first name right.
+
+So first name is Frank.
+
+I just typed it in and I'll type it in again in the next example.
+
+What we're doing here is we're copying using the string copy function.
+
+We're copying first name to full name.
+
+This is the way it works it's going from this right argument to the left and not the other way around.
+
+This is confusing sometimes for students.
+
+So I'm copying first name into full name.
+
+So again here was first name and it had Frank in it and over here is full name again this is first name
+
+and this is form an how does it copy Well one character Time is going to copy the f the r the A D and
+
+the K and it's going to keep copying until it hits that no character at that point it copies them all
+
+character and it stops.
+
+So at this point fullname will have Frank followed by the null character the TR cat function is the
+
+concatenate function.
+
+In this case what I'm doing is I'm adding space.
+
+You can see the space right there and double quotes.
+
+I'm adding the space to full name.
+
+So now it's putting a space here right in there and then it's putting the null character.
+
+So at this point that's going to be Frank followed by a space.
+
+I'll just use that underscore to denote the space that I'm doing another string cat.
+
+And what I'm doing now is I'm concatenating again this goes this way I'm concatenating the last name
+
+to a full name.
+
+So I'm putting in my last name here and it will also put in the null character DN and then I'm just
+
+displaying.
+
+So notice what we're doing here what we're doing is we're basically building up full name from first
+
+name and last name using as TR cat or string cat Let's run this and what I'll do here is I'll say again
+
+my first name is Frank and my last name is Metropolis.
+
+Hello Frank.
+
+Oh that's the same in that it says here your full name is Frank metropolis.
+
+Notice how it is concatenated the frank the space in the metropolis to one.
+
+So full name now contains that string.
+
+Ok so let's do another example I'm going to comment all of this out so we're fresh every time.
+
+And in this example here this is an example that shows you one of the behaviors of the sea in extraction
+
+operator here.
+
+What I'm doing here is I'm prompting the user me this case for my full name and I'm going to enter the
+
+full name.
+
+I'm going to display the full name.
+
+OK.
+
+So let me run that and I'm just going to say my full name is Frank Mitropoulos But now when I try to
+
+display my full name notice I only get Frank.
+
+That's the normal behavior for that extraction operator.
+
+It's read again.
+
+F R A N K space.
+
+That's a white space so it stops.
+
+That's it.
+
+Sometimes you want to be able to read the entire name right.
+
+The whole line.
+
+So this is what we're doing these next few lines here.
+
+In this case again I'm prompting and to your full name but now I'm using Sian's getline function.
+
+This is.
+
+This works again with C-style strings.
+
+So in this case I'm providing the name of that C-style string of that array name here is full name and
+
+a limit.
+
+This is how many characters maximum you're going to read some saying cnt getline.
+
+So this will stop either at 50 you've reached the max or when the user presses enter.
+
+So in this case it's going to read the whole name right.
+
+So let me run that again and I'll say Frank Metropolis again and press enter you can see the full name.
+
+Now is the first name and the last name.
+
+So it's reading the entire line.
+
+Now let me do a couple of more examples as to a comparison example here.
+
+In this case remember fullname will have my full name in it.
+
+Frank Metropolis and what I'm doing that I'm copying that to temp temp if you recall or scroll up real
+
+quick.
+
+Temp is another array of characters.
+
+Pretty big nice 50 size so my name will definitely fit in there.
+
+And when I say big size my name will fit in there.
+
+That's one of the things you always have to worry about when you're working with C-style Strange's you've
+
+always got to be sure that you've got enough storage if you don't have enough storage going to have
+
+a problem because you're going to run over the balance and probably clobber some other memory location
+
+with something.
+
+OK so again let's assume that I've typed in my name and now I'm going to copy my name to temp that I
+
+want to compare those two.
+
+They should be the same.
+
+Right because I just copied it to another variable name where we can use the string compare function.
+
+We pass in the two strings that we want to compare and this case temp and full name.
+
+And if we get back to zero that means that they're the same if we don't get back to zero.
+
+That means they're not the same.
+
+So in this example I expect to get back to zero.
+
+So let me run this real quick and I'll type in my full name.
+
+They are the same Frank Mitropoulos and Frank Mitropoulos are the same because it's the same string.
+
+So I did get back to zero.
+
+OK so now let's modify that string and then we'll compare it again.
+
+So we'll do this tumbles we'll use a for loop and uncomment this code out real quick.
+
+And you notice what we're doing we're going from equals zero.
+
+And notice I'm using size t here instead of into or unsigned This is the better way to do it the more
+
+correct way to do it.
+
+So I'm going from I zero.
+
+While I is less than the string length of the full name against string length is going to return however
+
+many characters are in there.
+
+I want to be sure I'm going less than that because remember we're going from zero to the size minus
+
+1 and I'm incrementing by 1 each time.
+
+Then I'm using one of the character functions I'm saying full names some I.
+
+That's the specific character right.
+
+So it's going to be F R A and K and so forth that's an alpha character a letter.
+
+Then I'm going to convert that letter to uppercase and put it right back where it was.
+
+So now my name will be all capitalized.
+
+OK.
+
+So let's run that and I'll type in my name with mixed upper or lower case you can see here that it compared
+
+them and they're the same.
+
+And now my name is all uppercase because I use the two upper function.
+
+So now let's compare those two.
+
+Now obviously they're not the same right because I just made one a little bit different.
+
+So let's do this let's comment.
+
+All of this out and walk through it.
+
+And so what's going on here I'm comparing temp and full name.
+
+They're not the same anymore.
+
+Right.
+
+Full name is now all uppercase and temp is not someone to compare them and it's going to say are they
+
+the same or are they different now.
+
+I expect this to be different because this will not be equal to zero.
+
+So what how does this work with the zero.
+
+Well if the two strings are the same and that's character by character lexically the string compare
+
+function will return to zero.
+
+Otherwise it will return a negative number or a positive number depending on which to which of the strings
+
+is larger.
+
+Right.
+
+So in this case I'm comparing them temp and fullname and then fullname attempt so you could see the
+
+result.
+
+So let's run this.
+
+So again I'll use my name and press enter.
+
+So as you can see the two strings are now different.
+
+And destry compare function will return zero if the two strings are the same.
+
+You can see here that we're comparing two different strings that returns less than zero if the first
+
+string lexically comes before the second string or return greater than zero.
+
+If the first string lexically comes after the second string.
+
+Ok so that completes this video.
+
+This gives you a little bit of insight as to how to use C-style strings and their functions.
+
+What we'll do next is we'll talk about C++ strings.
