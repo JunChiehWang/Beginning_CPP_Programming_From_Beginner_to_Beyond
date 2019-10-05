@@ -1,0 +1,645 @@
+In this video we'll go over using nested loops just like we nested if statements one inside the other.
+
+The same technique can be used to nested loops we can nest loops as many levels deep as we need.
+
+I'll be using just two levels and the examples I'll show you.
+
+That is one loop inside another nested loops have many uses but they're especially useful for multi
+
+dimensional structures like 2D 3D arrays in 2D and 3D vectors.
+
+When we talk about nested loops it's common to refer to the loops as the outer loop and the inner loop.
+
+Let's see some examples.
+
+Here's a pretty generic example of a nested loop.
+
+In this case we have a for loop with another for loop within it.
+
+The outer loop is incrementing outer value from 1 to 2 by 1 the inner loop is incrementing interval
+
+from 1 to 3 by 1 noticed the output the integer to the left of the comma is the outer vowel and the
+
+integer to the right of the comma is the interval.
+
+Notice how interval increments from 1 to 3 while outer vowel remains at one then outer Valot increments
+
+to two.
+
+And we do it all over again.
+
+You can think of this as the outer loop iterating two times and each time the inner loop iterates three
+
+times.
+
+That's why we say that the inner loop loops faster than the outer loop.
+
+But see another example in this example we can take advantage of a nested loop to display the multiplication
+
+table from 1 to 10.
+
+A nested loop is perfect since we want 1 times 1 1 times 2 1 times 3.
+
+All the way to 1 times 10.
+
+Then we want to do two times 1 2 times 2 and so forth.
+
+So we want an outer loop iterating from 1 to 10 and an inner loop also iterating from 1 to 10 and the
+
+body of the inner loop simply multiplies the outer loops variables times the inner loops variable.
+
+Notice the output statement after the inner loop that displays a line of dashes.
+
+This executes each time the inner loop completes will execute this loop in the idea in a minute so you
+
+can see it work.
+
+Let's see an example of a nested loop using a to array.
+
+In this example we have a two dimensional array of integers named grid grid has five rows and three
+
+columns.
+
+Suppose we want to assign 1000 to each element in the grid.
+
+We can do this easily with nested for loops.
+
+The outer loop iterates four rows 0 to 4 inclusive and the inner loop iterates the columns for each
+
+from 1 to 2 inclusive.
+
+Then in the body of the loop we simply assign 1000 to grids Sobero same column.
+
+Notice I'm using block statements for the body of these loops.
+
+I didn't have to here but it's good practice to do so since it makes adding code later much easier.
+
+Now that we've initialized the grid values to a thousand we can use a similar nested loops to display
+
+the values in this example we're assuming the grid has been initialized as in the previous slide at
+
+each iteration of the inner loop.
+
+We display the element at grid Cerebro sum column followed by space.
+
+So we're displaying these elements across the screen.
+
+When we complete the inner loop we print a new line and then execute the outer loop again.
+
+You can see the pattern is the same as with initialization.
+
+This is a very common pattern for working with multi dimensional structures.
+
+Let's see how we can use nested loops with vectors in this final example.
+
+We declare a vector of vector of integer.
+
+So we have a vector whose elements are vectors of integers.
+
+Very similar to a 2D array of integers with the advantage of vectors with a vector of vectors we can
+
+allow each vector within the vector to D to be of different size.
+
+In this case we have three vectors of vectors and each of those vectors is a vector of integers.
+
+I know it sounds complicated but if you look at the example it should be pretty clear.
+
+The first vector has three integers 1 2 3.
+
+The second vector has 4 integers 10 20 30 40.
+
+The third vector has 5 integers 100 200 300 400 and 500.
+
+If we wanted to display the contents of vector to d we could do it easily with nested range based for
+
+loops and if we use the auto keyword to allow the compiler to deduce the type of each loop element it
+
+makes it dead simple.
+
+Notice the outer loop in this case the compiler deduces VEC to be a vector of integers and in the inner
+
+loop it reduces vow to be an integer in the body of the inner loop.
+
+We simply display the value followed by space as we did in the previous example would display a new
+
+line after we're done displaying the inner vector values.
+
+You can see how little code and how simple the code is.
+
+You can see the output from this loop at the right on the screen.
+
+In these examples I've used for loops within four loops but you can use any combination of loops within
+
+any other loop to achieve your desired behavior.
+
+Let's head over to code light and see some of these examples live.
+
+OK so I mean the code like ID.
+
+I mean these still in the section 9 workspace and I mean the multiplication table project.
+
+This is the piece of code that executes and displays a multiplication table for up to 10 by 10.
+
+So let's go over this really carefully.
+
+This is a classic example of a nested loop.
+
+Notice we've got the two four loops one within the other and the outer loop is looping on the number
+
+one variable.
+
+The inner loop is looping on the two variable.
+
+So we're going to start the outer loop and we're going to assign right here we're going to number 1
+
+to 1 and then we check.
+
+Is no one less than or equal to 10.
+
+It is.
+
+So we go into the body of the loop while the body of this loop is another loop.
+
+And in this case we're initialising number two to one right here.
+
+And we check his number two less than or equal to 10.
+
+It is.
+
+So we execute the body of the inner loop which is this output statement right here.
+
+So what we do here is we display number one which is one we display the asterisk string right there.
+
+We displayed them too which is one we display that equal sign right here.
+
+And then we multiply number one number two.
+
+That gives us 1 and we display the value.
+
+That's it.
+
+We display a new line and we loop again.
+
+So we come back up to the loop we do the increment.
+
+So now number two is to we check is number two.
+
+Less than or equal to 10.
+
+It is execute the body of the loop again this time through we've gotten some one is still one right
+
+here.
+
+Number two is now to and we display yapper and so forth so we're going to do this until we get to 1
+
+times 10 equals 10.
+
+And someone will still be one.
+
+At this point number two is 10.
+
+Now we're going to incrementing up to 11.
+
+We come over here and we check is number two.
+
+Less than or equal to 10.
+
+It's not so we fail.
+
+Now we terminate the inner loop.
+
+We execute this statement right here.
+
+What's going to display a bunch of dashed lines here and then we remember we're still inside the outer
+
+loops we have to go back out to the outer loop.
+
+And do the increment.
+
+So now number one becomes to is to Enrico to attend Yes we go back into the inner loop again.
+
+So think of this says Here's your outer loop and it's looping.
+
+And each time it loops you're going to do the inner loop 10 times that you're going to go back out outer
+
+loop.
+
+You're going to do the inner loop again 10 times.
+
+OK.
+
+My art is not pretty but hopefully it and you'll understand what I'm talking about.
+
+All right so that's what's really going on here.
+
+Let me clear this and run it so you can see this in action.
+
+So there's the output.
+
+Let me scroll up so you could see here 1 times 1 is 1 1 times 2 is two and so forth.
+
+Notice in this case I mean move this just over here so you can see the variables over here.
+
+This left one is number one and then you can see that number two is looping faster.
+
+That's why we say the inner loop loops faster than the hour loop.
+
+We go through all 10 of them then we display the dashed line then we go back out to the outer loop.
+
+Now number one is two and then three and then all the way to the bottom where we ended up with the tens
+
+and we end up with 10 times 10.
+
+At this point the outer loop fails and we're done.
+
+OK.
+
+So hopefully that makes sense and what we'll do next is we'll do an example.
+
+That's a little bit more complicated we'll actually grab some user input.
+
+We'll grab some numbers put them in a vector and display a histogram based on those numbers.
+
+OK so I'll close this and I will open up the histogram project a double click on that to make it the
+
+active project.
+
+Right now there's not much in here it's just a really really simple basic main that does nothing just
+
+prints a new line.
+
+So what do we want to do here.
+
+We want to ask the user how many data items they have that say they type 6.
+
+Then we ask them for each one of those data items which is just an integer.
+
+And then when we're finished with that we'll output all that information using a histogram.
+
+So that's pretty straightforward.
+
+We need to ask the user how many items they've got so let's create an integer variable are called number
+
+items and we'll just initialize that to 0 and then we'll ask them how many items you have listed data
+
+items
+
+OK and will read that integer into items.
+
+So now we know how many data items they have.
+
+What we want to do next is loop that many times if I've got five data items.
+
+Well I want you to ask me five times to enter those data.
+
+So it really makes sense to use a for loop here because we know exactly how many times we want to iterate.
+
+We also need to store this information somewhere right so all that information they type in We'd like
+
+to store it somewhere since we really don't know what number they're going to type in an array would
+
+not be a good idea here because you don't know how big to make it.
+
+You'd have to make it really big just to be sure that everything will fit.
+
+So we use a vector.
+
+First thing we'll do is we'll include vector here.
+
+So we're going to go there and let's declare the vector right now we'll call it vector of integers in
+
+this case.
+
+And this is called a data because that's what it is and initialized the vector it's empty.
+
+All right member of vectors that dynamic data structures so we'll be able to read data from the user
+
+and put it into that vector using its push back method.
+
+So let's loop How many times are we going to loop.
+
+We're going to loop from 1 to that number they entered.
+
+Right so if they enter 10 we're going to go from 1 to 10 and we're going to grab 10 data items.
+
+So let's do that right now for it.
+
+Pi will use I will initialize I to 1 because we want to start here at 1 and I want to loop while I.
+
+Is less than or equal to the number of items that they want to enter into the vector will increment
+
+by 1 each time.
+
+I'm going to use a block statement here.
+
+Now what do you think is going on in here.
+
+Well I need to ask them for the data right.
+
+I would have to say I typed in 10 items.
+
+This is going to look 10 times.
+
+So we need somewhere to read the data into.
+
+That sounds like an integer means also a data item will initialize that to zero and then we'll just
+
+say seek out no enter data item and we may as well tell them which one it is because we know it right.
+
+I would do something like that would put a colon so it looks nice for them.
+
+So this will say enter data item 1 and 2 Date.
+
+Item 2 all the way up to whatever they decided they wanted.
+
+What we do now is we read that integer that they type in into that data item variable we just created.
+
+So we've got the data.
+
+What do we know.
+
+We need to put it into that vector.
+
+Now remember how to do that.
+
+The vectors name is data.
+
+So we say data push back and we put that data item in there.
+
+So it's going to put the data item in the back of the vector.
+
+That's it.
+
+That's pretty straightforward.
+
+So at this point now what we've got is a vector that contains whatever data they typed hence of the
+
+typed in five integers that vector has five images in there.
+
+So what we want to do now.
+
+Well we want to display the histogram But before we do that let's just display the data make sure we
+
+have it right.
+
+Always good to test as you go.
+
+So let's do that.
+
+We'll say for we'll use a range based for loop here.
+
+Otto Vau that's the value and the collection is data
+
+OK.
+
+So for each element in that data collection let's just put it.
+
+Now just to test
+
+OK.
+
+That's it.
+
+Let's run this.
+
+How many data items do you have.
+
+Well I have five data items enter data item 1 10 to 20.
+
+Let's just put them in tens that way we know what we're getting.
+
+30 40 should ask me one more time.
+
+Fifty.
+
+Now it should be done and I'm displaying the data items.
+
+So everything's looking good.
+
+Let's run it again with three data items.
+
+Let's put a thousand in here let's put a 10 in there and let's put a hundred in here 1010 twelve hundred
+
+perfect.
+
+So that's exactly what's going on right now.
+
+We want to be how many items do you have and entry data for each one of those values.
+
+So it's always a good idea to test as you go because it just makes life much much easier to test as
+
+you go rather than try to test this big monolithic thing at the end.
+
+All right so let me just do a quick statement here and I'll put a line in the end just to give a little
+
+space.
+
+I'm just going to say displaying histogram
+
+Now what we need to do is pretty much what we did here right except we don't want to display the value.
+
+We want to display a dash for each one of those values so for example if the values 10 we want to display
+
+10 dashes if the values 100 will display 100 dashes.
+
+That's what Mr. Graham looks like.
+
+So how do I do that.
+
+Well I need to have another loop in here and I'm just going to get rid of that right now.
+
+So we still have this loop right here just looping through the collection.
+
+So what do I do here.
+
+Well I know how many times I need to loop round be to loop Vau time so a for loop is good.
+
+We can use any loop we want really but let's use a for loop because it's really simple.
+
+So we're going to save for it and let's use I again.
+
+And we're going to start at one and we're going to loop while I is less Center equal to that.
+
+That's the number we just read
+
+OK.
+
+Now what.
+
+Well the increment is by 1.
+
+We need to increment by 1.
+
+So that's my inner loop.
+
+What do I want to do in here.
+
+I want to do just type hyper dash and will use dashes for a reason you could use an asterisk but I want
+
+to use an asterisk in a second.
+
+That's it.
+
+So if the me fix that typo if the user typed in five integers in the first one is 6 then Vau is going
+
+to be 6.
+
+And we're going to loop six times displaying six dashes.
+
+The next one is 12 are going to display 12 dashes after you were done displaying those dashes we need
+
+to display a new line.
+
+Otherwise everything's just going to go right across the screen.
+
+So I'm just going to say and line right here.
+
+And we need to close off this.
+
+Let's do that for loop right here in a block as well.
+
+Since we're probably going to add a little bit more code.
+
+OK so that's where we're at now.
+
+Actually pretty straightforward.
+
+Let's run this and I forgot a semi-colon right there.
+
+I put that in there
+
+OK.
+
+How many items do you have.
+
+This is start simple three items.
+
+What's the first data item.
+
+Five 10 15.
+
+What I expect now is three rows one with five dashes one with 10 dashes and one with 15 dashes.
+
+Awesome that's what we've got.
+
+Displaying histogram.
+
+One two three four five dashes 10 dashes 15 dashes.
+
+You see that it was pretty simple and it's pretty powerful because we've got dynamic data structure
+
+that's growing as we need it.
+
+Let's run this one more time with a little bit more data.
+
+You say I have 10 data items and I've got a 10 34 and I'm just going to put some really any numbers
+
+in here 7.
+
+I don't want to do a 90.
+
+Let's do a 30 let's do 50 and let's do a 1 and a to have at the bottom.
+
+So there we go.
+
+There's my histogram.
+
+You can see the last two should be one in two and they are right here one and two and you could count
+
+them if you like but I think they're correct.
+
+Obviously you would want to count them if you were going to test them to be sure that everything is
+
+correct.
+
+So there is my histogram.
+
+Pretty straightforward.
+
+This is kind of hard to see though.
+
+I mean how many dashes are here.
+
+I can't really tell.
+
+So why don't we say that every fifth dash let's display an asterisk instead.
+
+That will make it easier to see.
+
+OK.
+
+So how do we do that.
+
+We're right in here.
+
+So we could do is we can modify this code slightly we could say if that specific county variable mod
+
+5 is equal to zero.
+
+So that means I'm on the fifth number right.
+
+In this case I want to display an asterisk
+
+otherwise so anyone else here.
+
+I just want to display the dash and I'm in debt Dennis correctly.
+
+There we go.
+
+So notice the indentation here.
+
+It's really important.
+
+If you look at that piece of code right there you can see that I have a for loop and I've got another
+
+four nested within it.
+
+And that for loop has an if else statements every time that loop executes I'm executing that if statement.
+
+OK.
+
+So you can see the structure of the code by just looking at the code.
+
+You don't have to try to figure it out if everything here was indented to the left.
+
+Flush here.
+
+Be really hard to see the structure.
+
+So let's run this and see.
+
+OK let's say I've got 10 data items and I've got 34 32 24 5 10.
+
+And just some other numbers that I can put in.
+
+And let's do two and one to get it in.
+
+There we go.
+
+So now you can see that every fifth number is being displayed with an asterisk.
+
+In this case it's really easy until that's 10.
+
+I can tell that's 19.
+
+I think tell that's five 10 15 20 25 34 and so forth.
+
+So it makes it much easier to interpret the data.
+
+Here's a really easy simple example of using a nested loop.
+
+In this case the 4:4 makes sense because we know how far we're going but we could easily rewrite this
+
+with Wiles or do wells or anything we like.
+
+Remember at the end of the day a loop is a loop is a loop right.
+
+So they all do the same thing they all iterate.
+
+It's just a matter of trying to choose the right one for the application.
+
+So hope that helps these kinds of examples is going to be really useful in the challenge exercise which
+
+is next.
+
+

@@ -1,0 +1,105 @@
+In this video we'll learn about infinite loops an infinite loop is often called an endless loop an infinite
+
+loop is a loop whose control expression always evaluates to true.
+
+So it iterates over and over usually infinite loops or mistakes by the programmer.
+
+If you have an infinite loop it's pretty easy to know since the program does something or does nothing.
+
+Over and over again.
+
+So we find and fix the problem.
+
+However sometimes infinite loops are written as infinite loops on purpose and programmers use break
+
+statements and strategic places to eventually break out of the loop.
+
+There are cases where this makes sense and could be justified.
+
+However writing an infinite loop and using break statements to terminate the loop is usually bad practice
+
+and should be rewritten so the loop condition expression is descriptive of what the loop is doing.
+
+Here are a couple of examples of infinite loops that are appropriate and in fact necessary Infinity
+
+event loops are commonly used and event driven programs such as those you find on mobile devices and
+
+embedded systems in these programs the program loops forever listening for mouse clicks mouse movements
+
+touches and so forth and reacting to them.
+
+This continues as long as the program is running.
+
+Another example of an endless loop is an operating system an operating system is constantly looping
+
+handling input output handling resources and so forth.
+
+It only shuts down when you shut down your computer.
+
+Let's see a few examples of infinite loops in C++.
+
+First let's look at an infinite for loop.
+
+Remember that all three expressions in the for loop are optional.
+
+So if you omit all three you get just two semi-colons.
+
+By definition in C++ that's an infinite loop.
+
+The output statement will be displayed as long as the program is running.
+
+Let's look at a while loop.
+
+Here's an example of an infinite while loop.
+
+It's probably exactly what you were thinking of.
+
+While true will always be true and the output statement will execute over and over again.
+
+Of course we don't have to use the true keyword.
+
+We can use an expression that's always true.
+
+So if we say while 10 is less than 12 since 10 is always less than 12 it a loop forever.
+
+You get the idea.
+
+Finally let's look at an infinite do while loop again.
+
+The loop condition will always be true.
+
+So the output statement repeats forever.
+
+OK so what.
+
+Why would I ever do this.
+
+Well you might write an event loop like this but more often you see code that looks more like the following.
+
+Note that in this example we have an infinite loop since while true will always be true.
+
+However we have a strategically placed break statement that terminates the loop.
+
+Let's walk through the example inside the loop.
+
+We declare a character variable named again.
+
+We asked the user if they want to loop again and read their response as a character into the variable
+
+again.
+
+If again is uppercase and or lowercase and then we break and terminate the loop if they enter anything
+
+else we loop again.
+
+This is an example of an endless loop that might be ok.
+
+However best practice suggests that the loop condition be more informative of when the loop iterates.
+
+If I was doing the code review of this code I would refactor it to do just that.
+
+However you do see code like this out there and now you know how it works.
+
+That completes this video in the next video.
+
+We'll see how we can nest loops one within the other.
