@@ -1,0 +1,611 @@
+In this video we'll learn about what functions are in C++.
+
+When we develop C++ programs we typically use the predefined functions in classes in the C plus plus
+
+standard libraries.
+
+These are functions and classes that have already been written for us and tested and they're available
+
+for us to use.
+
+We've already seen how useful the standard vector and standard string classes can be.
+
+C++ has many other libraries that we can use in the same way depending on our application.
+
+We may also use third party functions in libraries.
+
+These may be open source commercial or other types of libraries that have been developed by other programmers
+
+and are available to use in our applications.
+
+So if we want to develop games in C++ we'd very likely use third party libraries or frameworks such
+
+as Cocoa's to DX unreal springe cry engine or others.
+
+What would we use third party libraries.
+
+Well that's pretty easy because these libraries take a tremendous amount of effort to develop.
+
+And chances are high that the functionality you need has already been implemented and tested and ready
+
+to use.
+
+So why reinvent the wheel.
+
+Reusing existing functions in classes from existing libraries is great but even then you still need
+
+to write your own C++ functions in classes that are specific to the problem you're trying to solve.
+
+What talk about classes and object oriented programming soon.
+
+In this section we'll focus on functions functions allow us to modularize our program.
+
+This is a big deal since we can divide our program into logical self-contained units of code that we
+
+can reuse whenever we need to.
+
+Let's see a simple example.
+
+On the left hand side of the screen you can see a program written in the way we've been writing them
+
+up to this point.
+
+Lots of statements one after the other.
+
+Some of these statements might be if statement so might be looping statements but you can see that this
+
+program has three logical sections one for input one for processing and one for output.
+
+But everything in the main function.
+
+This is OK for relatively small programs like the ones we've written but his programs get larger more
+
+complex.
+
+This breaks down quickly and the code becomes difficult to manage.
+
+Also we tend to copy and paste code a lot since we may need the same functionality in different places
+
+in the program.
+
+There's a field in computer science called Software Engineering suffer engineering is all about designing
+
+your solutions and writing your code in a way that can be easily understood debugged and extended.
+
+One of the fundamental principles in software engineering is abstraction.
+
+Abstraction is exactly what functions help us achieve.
+
+Let's look at the example on the right side of the screen.
+
+In this case we've replaced 10 statements with three.
+
+These three statements are function calls.
+
+Now when we look at our main function we see less detail more abstraction.
+
+We can now see read input process input and provide output.
+
+So we've modularized our program.
+
+We know that we still have to execute all the code we had before but we've removed it from Maine and
+
+replaced it with a call to functions in each case.
+
+Let's see what these functions look like.
+
+On the left side of the screen we see the same main function with the three function calls and on the
+
+right side of the screen we see the implemented functions read input process input and provide output.
+
+Notice that each of these functions executes the same statements that we were executing previously in
+
+the main function.
+
+This makes our code more modular more readable more maintainable easily dwell and easier to reuse.
+
+Let's see how this can help us develop programs.
+
+A common analogy that's used when learning about functions is the boss worker analogy.
+
+Let's assume you're the boss and you need to get a task done.
+
+This task involves several subtasks and your job is not to perform the individual subtasks but to coordinate
+
+the execution of those subtasks and report the synthesized results back to your own boss.
+
+So you've hired three workers that have expertise in each of those subtasks.
+
+So you assign a subtasks each worker and provide each of them whatever information they need to perform
+
+it.
+
+Since each of the workers knows exactly what to do when they complete their subtask they report their
+
+results back to you.
+
+This may simply be a comment that says I'm done or could be a complex report that they created and provide
+
+to you.
+
+Now that all said tests are complete and you look at the individual results synthesize a report and
+
+get to your boss.
+
+Sounds like an easy job being a boss right.
+
+Actually no the boss needs to know what worker to assign the specific subtask to the order to do them
+
+in the information to provide to each of them so they can do their job and the boss needs to know what
+
+he or she is getting back in order to synthesize it and report back.
+
+This is a great analogy to using functions if you need to call functions you write your code to the
+
+function specification.
+
+You need to understand what the function does.
+
+You need to understand what information the function needs.
+
+You need to understand what the function returns to you.
+
+You need to understand any errors that the function may produce and why you need to understand the performance
+
+constraints and so on what you don't need to worry about is how the function works internally.
+
+Unless of course you the programmer coding the function.
+
+This is super important to understand when we use string vectors math functions complex image processing
+
+libraries collision detection and games.
+
+We don't need to know how those algorithms work.
+
+This concept is called information hiding and we revisit this again when we talk about object oriented
+
+classes.
+
+Let's see an example of this.
+
+C++ has many libraries one library is a mathematics library in order to use this library we must include
+
+sci math the math library has many mathematical functions including trig exponential logarithmic power
+
+rounding and many more kinds of functions.
+
+These functions are global functions which means they are available to the entire program.
+
+We call these functions by using their name followed by a series of arguments in the output statement
+
+on this slide we're calling square root and we're passing in four hundred point zero to it.
+
+The square root function will calculate the square root of 400 and we turn the result which is printin
+
+in the last example we're calling the power power function which expects two arguments in this case
+
+we're calculating 2.0 raised to the 3.0 power.
+
+Notice that to use these functions we need to know is what they do their name what they expect from
+
+us and what they return to us how the square root or the power is being calculated.
+
+Isn't something I need to know to use them.
+
+That's classic abstraction.
+
+There are many built in functions and classes and C++.
+
+However we need to learn to design and write our own.
+
+In this section we'll learn to write our own functions.
+
+Here's a preview of a very simple function so you can see where we're going.
+
+Don't worry about the syntax.
+
+I'll cover all that later.
+
+In this case I have a function called add numbers and it expects to integers named A and B.
+
+The body of the function simply returns a plus b.
+
+So we take the sum of a post B and return the result to the caller.
+
+Notice the event to the left of the function name that tells you what the function returns.
+
+In this case an integer.
+
+Pretty easy right now every time we need to add to integers we can call add numbers and supply the two
+
+arguments that the function expects.
+
+Then I can do whatever I want with the result I get back.
+
+In this case I'm displaying it.
+
+I know what you're probably thinking why in the world would I write a function that adds two numbers
+
+when I can just use the plus operator.
+
+Well normally you wouldn't.
+
+But suppose we had a requirement that if any of those numbers is negative then we must return 0.
+
+Let's see how we can modify this function so this is what the function might look like if we had to
+
+return 0 if either A or B is negative.
+
+It would probably be a good idea to give this function a better name but hopefully this preview example
+
+gives you a good high level view of a simple user defined function.
+
+Let's head over to the ID and use some of the functions in the C plus plus standard library before we
+
+learned to write and define our own functions.
+
+It's important to understand to use functions that are already defined for us.
+
+I've opened up a browser and I've gone to see Peepy reference dot com.
+
+I'm going to show you three pages within this Web site and I'll provide you are Elle's and the resources
+
+for the course here I'm going to the C++ standard library header files here all the standard header
+
+files in C++ and you can see there's a whole bunch of them.
+
+This would become your next learning experience in C++.
+
+Once you understand the basics of the programming language once you understand object orientation within
+
+C++ then it's a matter of learning what's out there and available to you.
+
+There's a lot of stuff out there and there's a lot to learn.
+
+But don't worry you won't learn it all at once you'll learn it little by little as you use C++.
+
+What I want to do here is I want to talk about a couple of libraries and we'll run a couple of example
+
+programs using those libraries will use some of the functions in those libraries.
+
+The first library will use the math library and I've got a pane open right here to the C math standard
+
+library Hetter.
+
+Now we're going to use some of the functions in here.
+
+You can see that there's they're all defined and if you need information about any of them you can just
+
+click on here and you can learn about them.
+
+We're going to use the square root the cube root the power function there just like what you would think
+
+right use pass in a number you get the square root.
+
+You pass it a number you get the cube root.
+
+And in this case I pass in two numbers to the power function and it will raise the base to some exponent.
+
+And here's a whole bunch of information about those functions.
+
+OK.
+
+We're also going to do sign and cosign and a couple of other interesting and very useful functions.
+
+The ceiling the floor and round the ceiling of a floating point number is the next integer.
+
+So if my number is twelve point four the ceiling would be 13.
+
+The floor is the other way around.
+
+So if I have twelve point four then the four would be 12.
+
+And rounding works just like you would expect twelve point five rounds up to 13 twelve point four rounds
+
+down to 12.
+
+So that's what we'll do.
+
+And then in the next little program All right we'll come to the C standard library and I'll open up
+
+that web site for you as well.
+
+This is C standard lib.
+
+That's the name of the library Hetter that's what you need to include.
+
+And here's a couple of functions in here that we'll use and I'll scroll down just a little bit there
+
+right here.
+
+It's Rand and Rand Rand generates a random number a pseudo random number and I'll explain what that
+
+means in a little bit.
+
+And as Rand sees in the random number generator what we'll do is we'll use this function rand to generate
+
+the number.
+
+Let's say we're rolling a six sided die and we can get something between 1 and 6.
+
+We could really make that between anything and anything and I'll show you how to do that and then we'll
+
+see that random number generators so that the patterns of numbers we get will differ every time.
+
+So I'm going to head over to the I-T now and we'll start with the math functions.
+
+Ok so I'm back in the idea and I'm in the section 11 workspace in the math project and here we're just
+
+doing some real simple math examples to show you how to use these functions.
+
+First of all we're including C math that's required otherwise you're going to get a lot of compiler
+
+errors because the compiler won't know about square root of one about sign or anything else in this
+
+little example.
+
+I'm declaring a double called name and I'm asking the user to enter that number.
+
+Once the user enters the number I'm simply calling the square root function that will return the square
+
+root of the number and will display it right in line.
+
+The cube root the sign to cosign the ceiling the floor and we'll round that number.
+
+Then after that I'll ask the user for another number which I've defined called power.
+
+In this case we'll raise that number that they typed into this power so if they typed in 2.5 we'll raise
+
+it to whatever power they want to take.
+
+And again here what we're doing is we're calling the power function right here and we're passing in
+
+the number and the power to raise it to.
+
+Pretty simple.
+
+You can see from this code I don't know how square root works or cube root works or sign or cosign or
+
+power.
+
+I don't know how this stuff is implemented.
+
+Behind the scenes that's the whole point.
+
+I don't care I don't need to know.
+
+And this is where abstraction really shines because we're just trying to solve a problem and I know
+
+I need to raise something with power.
+
+I know I need a sign or cosign.
+
+I can simply look up the library understand how that function is being called understand what that function
+
+returns.
+
+And then just use it and use the result.
+
+So let's run this program and let's say the number we enter is one twenty five point six and I center.
+
+So the square root of twenty five point six is eleven point twenty seventy one.
+
+The cube root we expect to be right around five is five times five is twenty five times five is 125.
+
+So that gives us it's not a formal test case but it's a pretty informal test case that makes us feel
+
+good that our code is working.
+
+Here's the sign of the number the cosigned of the number now the ceiling of one twenty five point six
+
+is the next integer up which is 126.
+
+The floor would be the integer down which is 125.
+
+And in this case we round one twenty five point six.
+
+Up to 126.
+
+So let's enter a power let's raise this to the 4.2 power you go that's a pretty big number.
+
+So one twenty five point six raise to the four point two power is six point five four to six nine times
+
+ten to the eighth.
+
+There you go.
+
+We've used the math functions without knowing anything about how they're implemented.
+
+That's a real real powerful place to be.
+
+Let me go back to the idea now and we'll create some random numbers.
+
+OK so I'm back in the ID and I'm still in the section 11 workspace.
+
+This time I'm in the random project.
+
+Now in order to use random numbers I'm using the rand function or the rand function has been used a
+
+long time and c plus plus and in C as well.
+
+But there's a better way to create random numbers if you're really doing statistical processing and
+
+that's the random header file.
+
+I'm not going to cover that.
+
+I'm just going to use rand since that's what we're learning about.
+
+Calling functions but if you really need very precise distributions consider using the random header
+
+file.
+
+Ok so in this case we're including the C standard library that gives us the rand function and we're
+
+also including the C time library.
+
+I'll talk about that in a minute.
+
+In order to use random numbers we really need to seed a random number generator.
+
+Now what's a random number generator a random number generator is just a generator that creates random
+
+numbers.
+
+Computers are real bad with random numbers.
+
+We have what are called pseudo random numbers.
+
+What that means is that the numbers themselves are random but the sequence that they're generated in
+
+is not.
+
+So in order to create more real random numbers we want to see that random number generator with a different
+
+value each time that we create different sequences of values.
+
+So we'll do that in a second.
+
+I'll do it without seeding and with seeding so you can see the difference.
+
+But let's talk about what's going on here.
+
+I need a random number generated right.
+
+So I'm going to create a variable called random number and I'm initializing it to zero.
+
+And then what I want to do is just one of the loop and create 10 random numbers and that's what my count
+
+variable is.
+
+I can make that as whatever I like.
+
+But in this case it's a 10.
+
+And then in this case assuming we're rolling a die.
+
+So I want to return a random number between 1 and 6 inclusive.
+
+So one two three four or five or six.
+
+This can be one to 10.
+
+This could be one in one or two if you're flipping a coin.
+
+This could be anything you like whatever range you like.
+
+This is how you would create that range and I'm just going to create min and max to be one in six you
+
+can modify those to whatever you like to create whatever range you need.
+
+Now the rand if you look at the RAND function and the documentation that says that it returns a random
+
+number between zero and random Max I have no idea what Rand Max is on my system it will probably differ
+
+on your system but it's guaranteed to be at least 3 to 7 6 7.
+
+So I'll run it here and we'll see what we get.
+
+Now this function right here is the one that seeding the random number generator.
+
+Remember we want to see this random number generator with a different number every time that we run
+
+this program.
+
+So what better way to see them with the system time.
+
+And that's what's going on right here.
+
+I'm seeing the random number generator too.
+
+I'm calling the time function and passing in a null pointer which is zero.
+
+This line of code right here you can see an example of that in the docs that I showed you earlier it
+
+shows you exactly how to seed the random number generator.
+
+So now we've seeded the random number generator.
+
+And what we want to do is we want to generate 10 random numbers.
+
+So I'm going to start from I was 1 while I less Center equal to count so I'm going from 1 to 10 by 1
+
+here's my increment.
+
+And then each iteration of the loop I'm going to call Rand.
+
+Rand returns the number between 0 and 3 2 7 6 7 or higher in this case.
+
+I have no idea what Rand Max is on my system.
+
+We'll see in a minute.
+
+I need to really scale that number down because I only want numbers between 1 and 6.
+
+So if I take Rand and I take the modulus of it based on max right.
+
+So take Rand.
+
+Divide it by 6 and whatever the remainder is I've scaled that number down now.
+
+So in this case if I divide that number by 6 the remainders are they're going to be 0 1 2 3 4 or 5 right.
+
+Those are the only options I have.
+
+But since I want to go 1 to 6 I just add into it and it's as simple as that.
+
+So that's going to give me a number 1 through 6 inclusive and I'm going to output it.
+
+So let's run this program and see how it runs here build and run and ran max on my system is 3 2 7 6
+
+7.
+
+So now we know what it is.
+
+And here you can see that I'm generating 10 random numbers 1 through 6 I'm getting 2 2 5 3 1 or 2 and
+
+so forth.
+
+If I run this remember that the first sequence there is two to five.
+
+So let's run this again.
+
+And now I've got four six three is the first three numbers and I'll run this again.
+
+And now I've got two to one and so forth.
+
+If we did not see that random number generator let me comment that line out right here.
+
+I don't see that and run it again.
+
+You can see 6 6 5 5 6.
+
+OK.
+
+We run it again 6 6 5 5 6 so we see the numbers are random but the sequence that we're getting is not
+
+we're always going to get the same sequence of numbers.
+
+Now that could be useful sometimes if you're trying to repeat experiments and so forth but usually you
+
+don't want that.
+
+And that's why we see the random number generator here.
+
+So there you go you see a couple of examples of using some built in functions we use the math library
+
+and we're using the random number generation library and we're using the C standard library to generate
+
+random numbers.
+
+None of us do we really care about how the random number generator works on us.
+
+That's what really interests you and you can dig into the libraries and see exactly what algorithms
+
+they use.
+
+But if I need to create random numbers this is how I do it.
+
+Really easy.
+
+

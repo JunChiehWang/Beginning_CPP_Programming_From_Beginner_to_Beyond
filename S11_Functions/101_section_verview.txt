@@ -1,0 +1,71 @@
+In this section of the Course will learn about C++ functions functions allow us to divide our programs
+
+into modular units of executive code and call and reuse these units as we wish.
+
+Functions are very powerful abstraction mechanism.
+
+You've already seen functions defined the main function that we've been using in every program and you've
+
+also used some functions such as getline and the C-style string function string copy string length and
+
+others in this section will understand what functions are and why they're so useful.
+
+Then we'll look at functions in detail.
+
+First we'll see how to define functions and create function prototypes that make our functions useful
+
+anywhere in our code.
+
+As we've already seen when we call a function we usually send information to the function.
+
+This information is sent in the form of function parameters.
+
+We'll see how to define these parameters and exactly how they work functions.
+
+Also usually return some kind of information to us when they're done processing.
+
+For example if we have a function that calculates the square root of a number well that function expects
+
+the number and it will return to us the square root of the number which we can use however we wish.
+
+Functions can also take many parameters and in some cases we want to default the value of some of those
+
+parameters so we don't have to provide them every time we learn how to set these default values per
+
+parameters to make our code easier to write them we'll learn how to pass arrays to functions and how
+
+to work with them inside the function.
+
+I'll discuss references in the next section but we'll look at how we can pass information to a function
+
+efficiently by avoiding copying.
+
+We'll also see how we can change past information as well as protect it from change.
+
+Then we'll discuss inline functions inline functions are functions that the compiler optimizes to avoid
+
+the overhead involved when we call functions.
+
+Remember when we use the auto keyword to allow the compiler to deduce the type of a variable.
+
+Well we can also use the auto keyword to allow the compiler to deduce the type of the function return
+
+value.
+
+This is pretty cool and it can save us from writing a lot of unnecessarily complex code.
+
+Finally we'll learn about recursive functions.
+
+These are functions that call themselves.
+
+You might be wondering why would a function call itself.
+
+You'll see it's pretty cool and it can help solve a class of problems that would be more complex to
+
+solve without recursion.
+
+At the end of this section we'll do a challenge project and we'll be well on our way to starting to
+
+learn object oriented programming.
+
+Let's get started.
