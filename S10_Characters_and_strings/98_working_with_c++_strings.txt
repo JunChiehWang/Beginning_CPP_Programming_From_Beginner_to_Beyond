@@ -1,0 +1,503 @@
+In this video I'd like to go over using the C++ string class and some examples there.
+
+So I'm in the section 10 workspace in the strings project.
+
+Now remember the String class is a class when we create strings in this case.
+
+Here you see him creating eight strings from zero to 7 on lines nine to 16.
+
+These are objects.
+
+We'll talk about exactly what objects are in the world of object oriented programming in a future video.
+
+But we are using object oriented programming here to work with the C++ String objects.
+
+OK.
+
+It's important that you include the string library.
+
+Otherwise you'll get a lot of compiler errors and I'm using the standard namespace.
+
+First thing is let's declare and initialize some of these string objects.
+
+Here I'm declaring as 0 through 7 you can see as 0.
+
+I'm just saying string a 0.
+
+It's important to understand that with classes and objects in this case 0 is an object.
+
+I am getting an initialized object is not going to be any garbage in there and will display that in
+
+a second.
+
+Just so you can see what that looks like then I'm declaring other string objects here so as one is being
+
+initialized to Apple as to the banana as three to Kiwi As for the apple and so forth.
+
+S-5 is being initialized to us one well as one is Apple.
+
+So a copy of that string is going to be put into S-5 so S-5 is going to be its own version of Apple.
+
+So if I change this one it's not going to affect us five.
+
+There's also a couple of other initializers there's a bunch of initializers and constructor style initializers
+
+a whole bunch of examples that you can use.
+
+But I'm just sticking to the commonly used ones in modern C++.
+
+In this case Essex is as one of initializing it from s one which is Apple but I'm only using a part
+
+of it.
+
+I'm starting at index 0 and I want three characters.
+
+So it's only going to be initialized to the string a P-P and then in this case as 7 I'm initializing
+
+that string to 10 x characters.
+
+Notice the Xs in single quotes here.
+
+So that's a character.
+
+And also notice that I'm using parentheses here and not Curley's.
+
+This is a constructor style initialization and that's the one that works with this example.
+
+Before we look at the initialization of values let's look at this right here.
+
+Notice that I declared that string object is zero.
+
+If this had been what we the example that we saw using C-style strings and we never initialized it.
+
+You remember we saw that garbage.
+
+You're not going to get that here.
+
+So if I display zero you won't see anything because it's empty.
+
+And if I ask as 0 What's your length.
+
+This is a method.
+
+This is an object and this is what Object-Oriented Programming is all about.
+
+I'm asking the as zero object.
+
+In other words this string right here.
+
+Hey what's your length.
+
+And it's going to return to its length.
+
+In this case I expect back to zero because it's an empty string.
+
+So let me run this and you can see that nothing printed out because the string is empty and I get back
+
+as 0 which says that the string has no length that's empty.
+
+So you can see that it is being initialized.
+
+That's really important to other objects.
+
+OK I'm going to comment that out and then let's look at some of these initialization examples.
+
+I've just initialized those objects right up here where I declared them.
+
+Now I'm just going to display them and you can see that we're getting exactly what we expected.
+
+Here we scroll up just a little bit.
+
+So as one is as to his banana then I've got Kiwi apple with a lowercase a apple.
+
+An app that's that three the initialiser where we only wanted the first three characters and then I've
+
+got 10 x's because you can see really powerful really easy way to initialize these string objects.
+
+So now it's come at this out again and work with some of the operators and methods of the string class.
+
+In this case I'm comparing If you recall using C-style strings we had to use the RCMP or the string
+
+compare function pass into strings and get back either zero or a positive value or negative value and
+
+then we'd have to check things like that.
+
+Well here we can just use the operators that we're used to.
+
+And I'm using the bool Alpha IO manipulator just so it displays the words true and false.
+
+And you can see I've got a whole bunch of examples that it's actually easier to run it than to read
+
+on that code.
+
+But you can see here that I'm comparing apple with Apple and I get that true.
+
+I'm comparing apple with banana.
+
+I get back false then I'm asking.
+
+Is Apple not equal to banana.
+
+That's true because they're not equal.
+
+Is Apple less than banana.
+
+True because the capital A comes before the capital B in the ASCII table.
+
+What about banana greater than Apple.
+
+Yes.
+
+Again I just flip the sign and flip the strings.
+
+What about Apple with a lowercase.
+
+Is that less than Apple with an upper case.
+
+A It is not because the uppercase characters come before the lowercase characters in the ASCII table.
+
+And then the last one I'm using is right here where I'm actually comparing an object as one with a C-style
+
+string literal Apple.
+
+And that works perfectly fine because what happens is this string literal right here gets converted
+
+to an object and then we're doing Object object comparison.
+
+So that's true.
+
+Remember it's doing character by character comparison.
+
+OK so real familiar real intuitive very easy to use.
+
+Let me come at that out and let's do assignment if again if you recall with the seesaw strings we had
+
+to do as TR RCP Y or string copy using C++ String objects we just use the assignment operator just like
+
+we're used to.
+
+So they feel like they're really part of the language just like you would with integers and doubles
+
+and characters and so forth.
+
+So in this case I'm assigning watermelon to S1 whatever was in S1 before is now gone.
+
+I've overwritten it with watermelon and then I'm out putting as one is now and then obviously I expect
+
+back watermelon when I say a sign as one as one is watermelon to two as two.
+
+I'm going to get a copy of that watermelon object right.
+
+So I'm not going to that they're not pointing to the same watermelon.
+
+I'm going to get two copies that are individual so if I change this one it won't affect us too and vice
+
+versa.
+
+And if I displace two I also expect watermelon here.
+
+Here I'm saying as three is Frank some assigning the string Frank to us three and that should also display
+
+Frank.
+
+Now once I've assigned these strings I can manipulate them.
+
+So in this case I can say change to zero with character in as three while that's the F in frank right
+
+here.
+
+Change that to a capital C and notice single quotes because I'm changing character.
+
+So I'm saying assign the capital C to the first element of that string right to one at the zero index.
+
+So this would change it to a crank which will print out C R and K.
+
+I can also use the at method.
+
+Again this is the whole idea of Object-Oriented Programming him saying hey S-3 change the character
+
+at position 0 to a capital P.
+
+So when I display that it should display prank.
+
+Let's run that and double check.
+
+So you can see here that one is watermelon as two as watermelon as three is Frank.
+
+And then I'm changing the first letter of Frank to crank to see Saryan displaying crank and then I'm
+
+changing it to a P and displaying prank.
+
+All right I'll comment this out and let's look at concatenation.
+
+Again I'll compare this to the C-style string where we had to use the string cat function as TR C.A.T.
+
+to concatenate two strings.
+
+Here we could just simply use the plus operator and in this case I'm saying assign watermelon to us
+
+3.
+
+OK that's easy.
+
+But now I'm saying s three equals as 5.
+
+Well as 5 is Apple and as too is banana and juice some concatenating these one two three four strings
+
+together by simply using the plus operator the plus operator is it's considered overloaded that means
+
+it works with integers it works with doubles.
+
+And in this case it works with string objects.
+
+So what we're going to do here is we're going to say apple and banana juice and assign that to S3.
+
+So in this case watermelon is gone.
+
+We're overwriting that.
+
+And then when we display history it should say apple and banana juice.
+
+Right so let me run that quickly and there you go.
+
+Three is now apple and banana juice just like we expect.
+
+If you try something like this you're going to get a compiler error.
+
+The problem here is that we've got a C style string literal and another C-style string literal and the
+
+plus operator C-style strings don't work with the plus operator if you wanted to do something like this
+
+you would have to use your cat and concatenate them together.
+
+In this case you're going to get a compiler error saying something about I don't know what to do with
+
+these two character arrays in this binary operator so keep that in mind if you're trying to use the
+
+plus operator you've got to use it on at least one of the objects.
+
+Notice over here we're using an object and a string literal.
+
+That's OK because it'll convert but when you've got to C-style string literals like this it doesn't
+
+know what to do.
+
+Let's move on and talk about looping.
+
+In this case we're going to use a for loop to loop through a string and remember a string is simply
+
+a collection right a bunch of characters.
+
+So we can easily loop through them and we'll loop through them two different ways.
+
+First we'll use a regular for loop and then we'll use the range based loop.
+
+In this case I'm assigning Apple to S1 just so we have something to start with right here and I'm initializing
+
+to zero.
+
+Notice that the type of II is size t.
+
+This is really the proper way to do this.
+
+It's always going to be a non-negative number right because we're looping through a string.
+
+Now if you've got looping variables that need to go negative you don't want to use size t you just want
+
+to use irregular integers or something that's signed.
+
+But in these kinds of examples size is the proper type to use.
+
+So I'm initializing to zero and I'm going to loop while I is less than the strings the length.
+
+Remember we're going from zero to the length minus 1.
+
+So in this case I'm asking the S1 object What's your length and it's returning 5 because it's Apple.
+
+So I'm going to loop 0 1 2 3 4 and then I'm going to stop.
+
+And as you see I'm incrementing one each time.
+
+So every time through the loop all I'm doing is just simply outputting that character at the IFE location.
+
+So see out as one dot at.
+
+I could use array subscript syntax.
+
+They both work.
+
+The method does bounds checking the subscript method does not.
+
+So when I run this I should see Apple print out across the screen.
+
+And there it is just displaying one letter at a time.
+
+I can also do this using the range based for loop in which case I'm just saying for every character
+
+c in S one put it right so it's going to go a p p l E-stop.
+
+So in this case I showed up a Schappell twice.
+
+Now it was for the for loop and once for the range based loop you can see some of these are very very
+
+intuitive and easy to use.
+
+There's a couple left.
+
+Let's talk about substring here.
+
+This one again is very intuitive.
+
+Suppose S One is this is a test I've just assigned that string to S1 and I want the substring that starts
+
+at 0 and it's four long so it's going to go t h i s right the t the capital T is index 0.
+
+So that's going to return the word this string.
+
+This in the second substring example I'm starting at index 5 which is 0 1 2 3 4 5 so it's starting at
+
+the high end is.
+
+And I want two characters.
+
+So it's grabbing.
+
+This is right there and that's what it's returning.
+
+And then the last one I'm starting it.
+
+Index 10 which is lowercase T and test and I just want four back and it's giving me test.
+
+So you can see it's very very easy.
+
+And of course all these you can see here it's explained this is a test.
+
+All of these are hard coded but you can certainly use very variables for these integers and loop through
+
+and loops and grab pieces of substrings and you can do a lot of really cool stuff.
+
+We can erase characters in this example I'm saying as one again I'm assigning this is a test to it.
+
+And I'm erasing from S1 again.
+
+Notice the Object-Oriented style.
+
+Think of this almost as you're asking the one object right.
+
+Because notice it's as one dot.
+
+So you're saying the erase method is going to execute on that object as one because we could have asked
+
+to doddy race as a study race anything to race right.
+
+But in this case it's happening on esp one which is this is a test right here.
+
+So what I'm saying here is the race starting at zero.
+
+Any race of characters.
+
+So it's going to be a race the capital T H the I s and the space when I display that this one is now
+
+just the is a test part.
+
+I got rid of this and the space from the beginning.
+
+All right.
+
+Let's do a couple of more.
+
+The getline is a little bit different from the get line that we saw with C strings if you remember we
+
+see strings we said C in getline and we had a length.
+
+Well we're not worried about a length here because the C plus plus string class handles likes for us.
+
+So it looks a little different but it's the same basic effect.
+
+Here I've got a new string that I'm declaring called full name and initializing it to empty.
+
+I'm asking the user to enter their full name and then I'm using the getline function here and I'm passing
+
+in where I want to get the input from in this case the keyboard or C in and where I want to store the
+
+result fullname.
+
+This will get an entire line up until I press enter.
+
+So and then I just display the name.
+
+So in this case if I run this and type my name
+
+notice full name is Frank Metropolis my entire name it doesn't stop at the space the same way that the
+
+extraction operator does.
+
+The last thing we'll do is look at the find method which is a real handy method.
+
+So in this case here's the secret word the secret word is boo.
+
+That's the string and I've got a word variable here which is a string object.
+
+I'm asking the user to enter the war to find the idea is they're going to type one of these words in
+
+here right.
+
+And I'm going to tell them where that word is in the string what position it begins at.
+
+So if I typed in the I'm saying hey s want again the as one object find that word within you.
+
+So it's going to find the word though within it and it's going to return 0 because it starts at the
+
+zero index right there.
+
+That's the t again.
+
+I'm using a size t for the type because it's always going to be right zero or greater or an error.
+
+And we'll talk about the error in a second.
+
+So at this point I'm looking for that word in the string and position holds its position whether it
+
+was found or not.
+
+How do I know whether it was found or not.
+
+I need to see if the position returned was that value right string and position no position.
+
+So in this case if the position I got back is not equal to that then I found it.
+
+So I'm simply going to dispel any found word at position whatever.
+
+Otherwise it wasn't found.
+
+So let's run this.
+
+And remember the string is the secret word is blue.
+
+So I'm going to run this and search for Boo.
+
+And it says I found it a position 19.
+
+Read it again and we used the word secret.
+
+This time it founded it.
+
+Position 4.
+
+And you could see there it is right there position 4.
+
+And we could try to find something that's not there like hello.
+
+And it says hello.
+
+Now found.
+
+OK so the wrap up this video now you have all the elements you need for the challenge.
+
+It's coming up next.
+
+You could certainly try the challenge using C-style strings and then C++ strings.
+
+But I'm just going to do it using C++ strings because we really should be using C++ strings going forward.
+
+All right so head off to the challenge.

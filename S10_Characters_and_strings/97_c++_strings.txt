@@ -1,0 +1,419 @@
+In this video we'll learn about C++ strings standard string as a class in the C plus plus standard template
+
+library or as T.L. we could do an entire course on GCSE and that course would be very long and complex.
+
+So in this video only talk about the major elements of the C plus plus string class in order to use
+
+C++ strings you must include the string header file.
+
+Strings are in the standard namespace.
+
+So in order to use them without using namespace standard you must prefix them with standard and the
+
+scope resolution operator.
+
+This is also true for the standard string methods that work with C++ strings like C-style strings C++
+
+strings are stored continuously in memory.
+
+However unlike C-style strings which are fixed in size C++ strings are dynamic and can grow and shrink
+
+as needed at runtime C++ strings work with the stream insertion and extraction operators just like most
+
+other types and C++ the C++ string class provides a rich set of methods or functions that allow us to
+
+manipulate strings easily.
+
+Chances are that if you need to do something with a string that functionality is already there for you
+
+without having to rewrite it from scratch C++ traits also work with most of the operators that were
+
+used to for assigning comparing and so forth.
+
+This is a huge advantage over C-style strings since C-style strings don't work well with those operators
+
+even though C++ strings are preferred in most cases.
+
+Sometimes you need to use C-style strings.
+
+Maybe you're interfacing with a library that's been optimized for C-style strings.
+
+Well in this use case you can still use C++ strings and take advantage of them and when you need to
+
+you can easily convert the C++ string into a C-style string and back again like vectors C++ strings
+
+are safer since they provide methods that can bounds check and allow you to find errors in your code
+
+so you can fix them before your program goes into production.
+
+Let's see how we can declare an initialized C++ strings in all the examples in this video.
+
+I'm assuming that the string header file has been included and that we're using the standard namespace.
+
+Here you can see six examples of declaration and initialization of C++ strings.
+
+There are other ways as well using constructor and assignment syntax but I'm mainly using the initializer
+
+syntax in this video in the first example we declare s one is a string.
+
+Notice that the string type is lowercase unlike C-style strings C++ strings are always initialized.
+
+In this case s one is initialized to an empty string.
+
+No garbage in memory to have to worry about in the second example.
+
+I'm declaring an initialising as to the string Frank noticed that Frank is a C-style literal.
+
+That's ok it will be converted to a C++ string in the third example S-3 is initialized from as to.
+
+So a copy of s to is created as two and three will both be frank but different francs in different areas
+
+of memory in the fourth example.
+
+I'm declaring an initializing S-4 from Frank but I'm only using the first three characters of the string
+
+Frank.
+
+So as for will be initialized to the string.
+
+F R A in the fifth example I'm initializing S-5 from S-3 which is Frank.
+
+But notice the two integers that follow the three in the initializer.
+
+The first integer is the starting index and the second is the length.
+
+So in this case we initialize S-5 with the two characters at index 0 and 1 from S 3.
+
+So S-5 will be initialized to f r.
+
+Finally we can initialize a string to a specific number of a specific character.
+
+In this case three x's.
+
+Note that this uses constructor syntax with the parentheses instead of the Curley's.
+
+Now that we've declared some strange That's how we can assign the values to them with C++ strings.
+
+You can use the assignment operator.
+
+This feels much more natural than having to use the string copy function like we would have to in C-style
+
+strings.
+
+In this example I've declared as one and it's empty.
+
+Then I can assign the C-style literal C++ rocks to s one.
+
+Pretty cool and pretty easy as one will grow dynamically as needed in the second example of declared
+
+as to an initialized the two hello.
+
+Then I assign s one to as to.
+
+In this case as to will no longer contain hello It will contain a copy of S1 C++ rocks.
+
+Let's see how we can concatenate strings together concatenation of strings just means building up a
+
+string from two other strings.
+
+We can use the plus operator to concatenate C++ strings.
+
+In this example I created two strings part 1 which is C++ and part 2 which is powerful.
+
+Then I have an empty string sentence.
+
+Notice that I'm assigning two sentences the concatenated result of part 1 plus a space plus part 2 plus
+
+a space plus language.
+
+If I displayed sentence now it would display C++ is a powerful language.
+
+Notice that the last example in the slide will not compile.
+
+This is because we have two C-style literals and you can't concatenate C-style literals.
+
+It only works with C++ strings.
+
+A combination of C++ strings and C-style strings is ok though as we saw in the previous assignments
+
+just like we did with vectors we can use the same operators to access string elements.
+
+In this case the elements of a string are characters so we can use the subscript operator as well as
+
+the method.
+
+Remember the method performs bounds checking.
+
+So if you go over bounds you'll get an exception which you can fix.
+
+Let's see how we can display screen characters one at a time in this example we have a string as one
+
+initialized to Frank we can use the range based for loop to display the string characters.
+
+In this case f r a and k and the null character will be displayed pretty much what you expected right.
+
+Notice that the type of the loop variable is char in this case.
+
+What do you think will happen if we change that to integer.
+
+In this case I've changed it to integer.
+
+Is this what you expected.
+
+We told the compiler to use an integer and that's exactly what it's doing.
+
+So instead of displaying the character value of each element in the string it's displaying the integer
+
+value that represents those characters.
+
+So in this case 70 114 97 110 1 0 7 and 0 which represent f r a and k.
+
+And of course the null character.
+
+These are the ASCII codes for those characters.
+
+Comparing C++ strings couldn't be any easier or more intuitive.
+
+We use the same equality and relational operators that we've been using all along.
+
+We're comparing two string objects so they'll be compared.
+
+Character by character and their character values will be compared lexically.
+
+So a capital A is less than a capital Z and a capital A is less than a lower case a.
+
+That's because the capital letters come before the lower case letters in the ASCII table.
+
+We can't use these operators on two C-style literals but we can use them in the following cases.
+
+If we have to see postponed strings if we have one C++ string and a C-style literal or if we have one
+
+C++ string and one C-style string.
+
+Let's see some examples.
+
+Here we're defining five C++ string variables as one through as five and then we perform some comparison
+
+operations and see the results.
+
+Of course you would normally use these boolean expressions in an IF statement or looping conditional
+
+expressions in the first example.
+
+We check to see if s one is equal to as 5.
+
+This is true since they both contain the string.
+
+Apple s s to is false since as one is Apple and as to his banana.
+
+How about s one not equal to as two.
+
+This is true since apples are not equal to banana in the case of s one less than as two.
+
+This is also true since Apple comes before banana lexically in the ASCII table as to greater than s
+
+one is also true since banana comes before Apple lexically.
+
+Notice that banana has an upper case B whereas Apple has a lowercase.
+
+As for less than S-5 asphalt since Apple with a lower case does not come before Apple with an upper
+
+case.
+
+And then finally a one equal Apple is true because they're the same.
+
+Notice in this case Apple is a C-style string literal the C++ string class has a rich set of very useful
+
+methods.
+
+Many methods to cover in detail in this video.
+
+I encourage you to study the C++ string class since it's going to be a class that you'll use often and
+
+it's important to know what it provides so you don't reinvent the wheel when you need to solve a problem.
+
+The substring method extracts a substring from a C++ string.
+
+It doesn't change the strain.
+
+It simply returns the substring.
+
+And you can do whatever you want with it.
+
+In this case I'm simply displaying it.
+
+But you could easily assign it to a string variable.
+
+Here I've initialized as one too.
+
+This is a string.
+
+The first example takes a substring of the string starting at index 0 and including exactly four characters.
+
+If there are less than four characters left in the original string then all the remaining characters
+
+are included in this case the substring is the first word in the string.
+
+This in the second example we returned the substring starting at index 5 and include two characters.
+
+That's the substring is yes.
+
+Finally the last example starts in index 10 and includes four characters.
+
+This will return the substring test.
+
+Let's see how we can search a string for another.
+
+The C++ string class has a very handy method named find find works with characters and strings.
+
+It expects a string or character and returns the index or position of the beginning of that string or
+
+character in the original string.
+
+So if you have a string as one that's initialized to.
+
+This is a test.
+
+And we want to find the string this we'd get back in zero since this starts and index 0 in the second
+
+example we're looking for the string is in this case it would return to since the first is starts at
+
+index 2 into 30 sample we're finding this string test and we get back a 10 in the fourth example we're
+
+searching for a single character the lowercase E which is found at index 11 in the example we use a
+
+variant of the method that also allows the index where you want to start to search from.
+
+In this case I want to find the is substring again but I want to start an index for.
+
+So this time it finds the is that's located at index 5.
+
+Finally what happens if the string or character we want to find just isn't there.
+
+Well in this case the method returns the end position which means no position information available.
+
+You can check for this value in an if statement and if true.
+
+You know what you were searching for wasn't there.
+
+Very easy very powerful.
+
+There's also an R find method that starts searching from the end of the stream to the beginning of the
+
+string.
+
+We can also remove characters from a C++ string using the erase and clear methods.
+
+For the erase method you provide the starting index and how many characters to delete the clear method
+
+deletes all the characters in the strings of the string becomes the empty string.
+
+We've seen a lot of string methods and you can see how powerful this class is let's look at one more
+
+useful method and one more useful OPERATOR They're commonly used.
+
+The method is the length method.
+
+It returns the number of characters currently in the string object.
+
+In this example as one is Frank.
+
+So it's one dot length will return to five.
+
+This is so easy and something that's impossible to do is see substrings.
+
+Since they don't contain size information the operator I want to cover is the compound concatenation
+
+assignment operator.
+
+In this case s one is Frank and I can say s one plus equals James.
+
+And James will be concatenated to Frank and the entire result string will be assigned back to s one.
+
+This is really handy and works very much the same way that the compound assignment operators worked
+
+with integers and doubles and so forth.
+
+There are also many more methods in the C++ string class for you to discover as you study C++.
+
+OK there's one more thing I'd like to talk about before we end this video input with C++ strings.
+
+C++ strings worked great with input and output streams.
+
+As you've seen inserting C++ variables to an output stream like C out is pretty easy and works just
+
+like we've been doing all along.
+
+Extracting a C++ tree from an input stream like C in also works the same way we expect.
+
+However there's one issue that's also true for C-style strings.
+
+Suppose we've defined as one as a C++ string and we extract a stream from C in as usual.
+
+Now suppose I type in Hello space there.
+
+When I display S1 I will only see Hello.
+
+There was not extracted.
+
+This is because the extraction operator stops when it sees whitespace.
+
+In many cases we want to read an entire line of text up to when the user presses enter.
+
+For example I want the stream to be hello there.
+
+Suppose I asked you to enter your full name.
+
+I want to be able to read William Smith not just William in this case we can use the getline function
+
+to getline function has a couple of variants.
+
+The first variant expects two elements inside the parentheses.
+
+The first element is the input stream.
+
+In this case we're using C in which defaults to the keyboard.
+
+The second element is the name of the C++ string where you want the text that the user enters.
+
+Stuart gets it very easy.
+
+In the example I'm saying get line c in S one.
+
+Now everything the user types is stored into s one.
+
+Getline stops reading when it sees the new line and doesn't include the newline in the string it just
+
+discards it the other variant of getline has another element in the parentheses.
+
+The first two are the same as before the input stream and the C++ string variable name.
+
+The third is called the delimiter.
+
+This is the character that you want getline to stop reading input at.
+
+So as long as the user doesn't enter this character everything will be stored in the string variable.
+
+Once the delimiter is seen it's not included in the stream variable and it's discarded in the last example.
+
+I'm using a lowercase X as the delimiter.
+
+So if I type this is X then the strings stored in s one will be this is and the X is discarded.
+
+Well we've covered a lot of material in this video and there is much more in the String class to learn
+
+but this gives you a good starting point so you can use the C++ string class effectively.
+
+Also you've now been introduced to object oriented programming with both vectors and strings.
+
+Pretty soon we'll be developing our own classes which is pretty cool.
+
+That completes this video.
+
+Please play with the string class create examples assigned to lead display and try out some of the methods
+
+in this video.
+
+It won't take long before you're really comfortable working with C++ strings.
+
+
