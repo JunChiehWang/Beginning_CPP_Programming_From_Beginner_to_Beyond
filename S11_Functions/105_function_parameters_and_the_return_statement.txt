@@ -1,0 +1,441 @@
+This video we'll learn more about function parameters and we'll also talk about the return statement
+
+when we call a function and pass data into that function this data.
+
+Are the parameters to that function in the function call.
+
+These data are called arguments in the function definition.
+
+They're called parameters.
+
+What defined the vocabulary more precisely in the next slide.
+
+As we've already seen when we call a function the arguments we use to call the function and the parameters
+
+that the function expects must match in number order and type.
+
+Let's see an example in this example we have a function prototype that tells the compiler that we'll
+
+define a function named add numbers that expects to integers and returns an integer.
+
+Then in the main I declare an integer variable named result and we initialize it to zero.
+
+Then we call the add numbers function and pass in the integer literals 100 and 200.
+
+The compiler will type check this function call to be sure it's valid.
+
+Since I'm passing into integers and the function prototype says exactly that then the compiler will
+
+not produce an error.
+
+You can see at the bottom of the slide that I've defined the add numbers function.
+
+It has two integer parameters A and B.
+
+In the case of the function calling main A will be 100 and B will be 200 100 plus 200 is computed and
+
+300 is returned to 300 is then assigned to the variable result in the main function.
+
+Let's take a look at another example.
+
+In this example I didn't provide a function prototype to save space but you should know at this point
+
+that it would be void.
+
+Say hello Sander's strain.
+
+Notice that the function say hello expects one parameter and it's a C++ string object and it displays
+
+hello followed by whatever string is in the name object.
+
+The next three statements would normally be in Maine or in another function.
+
+These are the function calls.
+
+The first is say Hello Frank.
+
+Notice that Frank is a C-style string literal but the function expects a C++ string object.
+
+Aren't these types different.
+
+Why doesn't the compiler produce an error here.
+
+Yes the types are different but the compiler will try to convert one type to another if it knows how
+
+to make the function call work.
+
+In this case the C-style string literal Frank is converted to a C++ string object.
+
+The same would happen if a function expected a double and it passed an int into it.
+
+The it would be promoted to the double as we've already seen.
+
+Notice the last function call.
+
+In this case I'm calling the function Say hello with a single string object parameter.
+
+My dog which is a variable name for a string object with the string buster in it.
+
+Let's talk a bit about how parameters are passed into functions.
+
+In C++ when you pass data into a function that data is passed by value what this means is that the value
+
+of the data is passed in by copy.
+
+So the compiler makes a copy of the data.
+
+That means that the code in the function does not change the argument that was passed in when we finished
+
+the function of the original data that was in the function call will be unchanged.
+
+This is good and not so good.
+
+It's good because since we're making a copy we can't change the original argument by mistake or intentionally.
+
+It's not good because sometimes making a copy of data can be expensive both in storage needed and the
+
+time needed to actually copy that data.
+
+Also sometimes we really do want to change the actual data being passed in fear.
+
+C++ has solutions for all these use cases and we'll learn about them soon.
+
+Let's define some vocabulary used in programming languages that is formal versus actual parameters formal
+
+parameters or the parameters defined in the function's definition in the function header.
+
+Actual parameters of the parameters that are used when the function is called that is in the function
+
+call statement.
+
+Many programmers in languages call actual parameters the arguments to a function in C++ the actual parameters
+
+are passed by value or copied to the formal parameters.
+
+That might show you an example that will make this clear in this light I have a function definition
+
+for a function called Parama test and this function expects one parameter called form.
+
+This is an example of a formal parameter.
+
+If this function expected more than one Pramer they would all be considered formal parameters in the
+
+main function.
+
+I'm declaring an integer named actual and initializing to 50.
+
+Displaying actual which will display 50.
+
+Then I'm calling the program test function with the actual parameter.
+
+This is the function call.
+
+Any parameters passed to functions here are considered actual parameters.
+
+In this case the value of the actual parameter is copied to the formal parameter.
+
+So formal in the pram test function will have the value 50 but it's at a different location in memory
+
+than the actual Since the copy was made.
+
+I then display formal and Purab tests so fifty's displayed then I assign 100 to formal and display it
+
+again.
+
+So you see 100 is displayed.
+
+Now the function is done and we return back to Main and we print actual actual will still be 50 it was
+
+never changed because Purab test was working with a copy all along.
+
+It's very important to understand the concept of pass by value since it's critical to understanding
+
+functions.
+
+Let's talk about the function returns statement.
+
+Next as we've already seen if a function is defined as returning a value of a specific type then the
+
+function must return a value of that type using a return statement.
+
+We've already seen a few examples of this and we've been doing in the main function all along.
+
+If the function return type is void then the return statement is optional.
+
+A return statement can occur anywhere in the function body but you usually see it as the last statement
+
+in the function body.
+
+The return statement immediately terminates the function.
+
+It's possible to have multiple return statements in a function depending on the logic in your code.
+
+However this is not a best practice.
+
+You typically want a single return statement.
+
+Remember having multiple break statements in a loop and the potential problems you could have with readability.
+
+While the same is true with multiple return statements and functions.
+
+Finally if the function returns a value then this value becomes the result of the code that's called
+
+the function.
+
+Let's head over to the idea.
+
+See some examples of parameter passing and pass by value.
+
+OK I mean the ID and I mean the section 11 workspace in the function parameters.
+
+Project in this example what I'd like to do is go over some simple function calls that passing parameters
+
+by value.
+
+And I want to make the point and hopefully you'll understand that those by value parameters do not change.
+
+That's really important to understand.
+
+So I've got four function prototypes here.
+
+The first one is called passed by value 1.
+
+The second is called passed by value 2 and the first one expects an integer.
+
+The second one expects a C++ string object.
+
+The pass by value three function expects a vector of string objects and the last one print vector just
+
+prints out a vector so if you send it a vector of strings it displays all the strings in the vector.
+
+OK so let's look at it.
+
+The first one passed by value 1.
+
+It expects a number and a parameter name for that number is Nahm.
+
+That's the formal parameter and all I'm doing is changing them to 1000.
+
+Really really simple.
+
+So let's look at my main in my main.
+
+I've got numb which is 10 and I'm simply saying numb before calling bout pass by value 1 is.
+
+Hopefully that a print out of 10 right.
+
+That's what we expect then I'm going to call pass by value and I'm going to pass into it.
+
+Numb which is 10 Remember pass by value 1 changes that value to 1000 and then come back and I print
+
+out that number again.
+
+Now you may think that we're going to get a thousand here but we're not.
+
+It's passed by value so we actually passed in a copy to that function.
+
+So the function was changing the copy not the actual.
+
+Which is this numb here.
+
+So let me run this and then I'll walk you through exactly what's going on.
+
+You could see here before calling ten numb after calling still 10.
+
+OK so let's let's talk about that.
+
+Remember numb is equal to 10 and it's in my main.
+
+So in this case here's my main function and it's got a local variable in there called name and we initialized
+
+it to 10.
+
+Then we call this function right here.
+
+So this will be passed by value 1 and I'll just call it one.
+
+OK just to save some some writing time.
+
+So that's passed by a by value one and it expects an integer number.
+
+So it's got its own copy of none.
+
+That's the formal parameter and at this point the 10 gets copied over to numb.
+
+OK now I'm going to set Nahm 2000.
+
+Remember this number right here refers to that guy.
+
+Not this one.
+
+So I'm changing the local number the formal parameter to 1000.
+
+I'm just changing this one two thousand.
+
+I never touched this one.
+
+Now this function is finished so this function is now finished.
+
+This is gone and I'll talk about what gone means.
+
+In a couple of it is when I talk about activation records in the stack.
+
+That's it.
+
+Now we return and in the main we display no one never changed.
+
+Remember this was an absolute copy of it and so hopefully that makes sense would pass by value.
+
+Let me show you another example.
+
+Here we've got another num which is 20.
+
+So don't get confused with the names I could use any name I want in that formal parameter I just chose
+
+numb to make a point.
+
+In this case it's another name.
+
+So when we pass when we print here we're going to print to 20 then we're going to call pass by value
+
+1 again and pass in that name so the 20 gets copied to the formal parameter.
+
+We change it to 1000.
+
+Again we change that local copy and when we come back we still have a 20 right we never touched the
+
+actual.
+
+So let me run this.
+
+And now we're going to see 10 10 and 20 20 just what we expect.
+
+It's no different when you use objects.
+
+In this case all uncomment that code in this case you can see that I've got a string of C++ string object
+
+called name and I've initialized it to Frank and then before I call pass by value to I'm going to display
+
+it that's going to display Frank.
+
+Then I'm going to pass that string object into pass by value too which is another function and that
+
+function is right here.
+
+It's going to change its parameter to changed whatever was there before is now changed.
+
+And then when I come back I'm printing out name again name has not changed because that changed here
+
+changed a copy.
+
+OK so let's walk through this one again.
+
+So what do we have.
+
+We have main We've got the main function and it's got a variable called name and it's Frank
+
+OK.
+
+Then we called pass by value 2.
+
+So this would be passed by value to and it has a parameter write a formal parameter which is a variable.
+
+It's called S and we copied Frank in there so right now this becomes Frank now we say s is changed.
+
+So we get rid of Frank and we replaced it with changed.
+
+And again these are all strings string objects.
+
+Now we return back to Maine.
+
+This function is now done.
+
+I never changed the name because I never even knew about it.
+
+I was working with a local copy all along.
+
+OK so same thing with integers as with objects.
+
+So in this case if I run this program you can see the name before calling pass by value to as frank
+
+and that name.
+
+After calling pass by value to his frank again it hasn't changed.
+
+Let's do one more just to drive this point home.
+
+This is really important that you understand what's going on here in this example.
+
+I'm using a vector of string objects.
+
+I don't think we've used a vector of string objects.
+
+We basically use I think vectors of integers and doubles.
+
+We can have a vector of anything.
+
+So here we're saying that Stooges is a vector of strings and the strings in that vector are Larry Moe
+
+and Curly.
+
+So I'm printing out Stooges before calling pass by value 3 and I'm calling this method this function
+
+called Prit vector that just prints out those strings in that fact or whatever they happen to be that
+
+I'm calling pass by value 3 and I'm passing and stooges and then I'm just printing it out again.
+
+OK so let me run this first and then we'll walk through it so you can see that before calling the function.
+
+Larry Moe and Curly after calling that should say after right there after calling the function Larry
+
+Moe and Curly.
+
+Yes let me change that.
+
+Make that correct.
+
+That way when you guys see it in the resources you know what I'm talking about.
+
+So let me run that again.
+
+OK so before calling Larry Moe Curly after calling Larry Moe Curly.
+
+So let's walk through this example.
+
+Here is the function pass by value 3.
+
+So in this case what have I got.
+
+Well I've got my main and my main has the Stooges variable which is a vector of strings.
+
+In this case it's Larry Moe and Curly.
+
+And these are all string objects.
+
+Right now I call this function right here and I pass in stooges to it.
+
+So this is passed by value 3 and it has that form a prouder V that could be any name we want.
+
+Right now Larry Moe and Curly get copied into V so this will be Larry Moe and Curly.
+
+Now I execute this line right here VIDOT clear that deletes these guys so now V is empty.
+
+And that's it.
+
+Then I returned back to main.
+
+What happens this function is now gone.
+
+And when I come back to Main it still has that Stooges vector Larry Moe and Curly.
+
+I never touched it because again I was working with a copy in the next few videos were learned how to
+
+send information in so that I can modify the actual parameters.
+
+But it's important to understand that by default this is the behavior passed by value.
+
+Make a copy.
+
+OK so hopefully that that makes sense and if there are any questions please post them on the course
+
+forums.

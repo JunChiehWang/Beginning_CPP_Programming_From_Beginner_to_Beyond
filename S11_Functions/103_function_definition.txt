@@ -1,0 +1,561 @@
+In this video we're learning how to define our own functions function definitions have four main parts.
+
+We'll look at the syntax of functions and the next slide.
+
+But for now let's look at what these parts are.
+
+The function has to have a name the name of the function follows the same rules we use for naming variables
+
+function names should be meaningful and provide the reader the intent of the function.
+
+For example a function called func one and another function called func to maybe OK when teaching functions
+
+in my slides.
+
+But what if I read some production code with function names like that I'd have no idea what these functions
+
+are doing based on those names functions perform operations.
+
+So usually you see function names as verb or verb phrases.
+
+This is it always the case but it's a good habit to get into the second part of a function is the parameter
+
+list.
+
+This is the list of variables that the function expects from you when you call it.
+
+For example if you're calling a function that adds to integers then the two integers are in the parameter
+
+list.
+
+Sometimes functions don't need any parameters at all.
+
+Suppose I have a function that simply displays hello or a function that returns a system time.
+
+To me these functions can be called with an empty parameter list of functions have the ability to return
+
+information to the caller of the function in order to return information we must specify the type of
+
+information.
+
+So I might return a boolean or an integer or a double or a string.
+
+Also it's possible that a function returns nothing.
+
+For example if I need a function to just display Hello I really don't expect anything back from that
+
+function.
+
+In this case we say that the return type is the keyword void.
+
+Finally functions have bodies.
+
+These are statements to be executed and they're enclosed in curly braces.
+
+You've already seen an example of this in the main function.
+
+So as you can see a function definition is pretty logical.
+
+The name of the function where it expects what it returns and what it does.
+
+Let's see how this looks in C++ syntax.
+
+Here we have a simple function definition.
+
+Notice the name of the function is function underscore name and after the function name we have open
+
+and closed parentheses.
+
+In this case this function expects no parameters.
+
+So there's nothing inside the parentheses.
+
+This function returns an integer.
+
+We specify that by providing the type of the return value before the function name.
+
+Finally we have the body of the function which consists of statements inside curly braces.
+
+You can see that this is the same syntax as we've used in our main function.
+
+Of course we can have functions that return nothing.
+
+Expect many parameters and so forth.
+
+The syntax for all of them is very regular and exactly what you would expect.
+
+Let's see another one.
+
+In this case we have the same function named function name.
+
+But this time it expects exactly one parameter.
+
+That parameter is an integer type and it's available for us to use in the body of the function.
+
+In this example we have a function that returns nothing when called.
+
+In this case we provide the key word void before the function name.
+
+This tells the compiler that there is no return type with void functions we can still have simple return
+
+statements in the body of the function but they're totally optional and not often written.
+
+If there is no return statement it's understood that the function returns after the last statement is
+
+executed.
+
+Pretty simple syntax.
+
+Let's look at one more in this example we see a function definition for function name that expects multiple
+
+parameters.
+
+In this case the function expects two parameters an integer and a standard string when the function
+
+is called.
+
+These two parameters must be provided as arguments in the same order as specified in the parameter list.
+
+Suppose we're going to write a function that displays hello followed by an end line.
+
+Every time it's call we could easily define that function as follows the function name is say hello.
+
+It expects no parameters and returns nothing in the body of the function.
+
+We have an output statement that just displays Hello.
+
+Notice that in this case there is no return statement required since the function doesn't return anything.
+
+Once the say hello function is defined we can call it from Main or from any other function.
+
+In this example you see the function say hello defined above and you also see that it's being called
+
+by the main function below.
+
+This program will display Hello.
+
+In this example we're calling to say hello function ten times inside a for loop and the main function
+
+will display Hello 10 times once per line.
+
+Of course we can define as many functions as we need in our applications to help modularize our program.
+
+In this case I'm defining three functions say world.
+
+Say hello and Main.
+
+Execution always begins with the main function.
+
+So in this case main calls say hello.
+
+So we execute say hello and we display hello to the console but then say hello calls say world and we
+
+display world.
+
+So this program displays Hello World to the console.
+
+Here's the same example with some other output statement sprinkled in.
+
+Again execution always begins with the main function.
+
+So in this case main calls say hello.
+
+So we execute say hello.
+
+Remember that when say hello is finished we need to complete the code in main So we display hello to
+
+the console then say hello calls.
+
+Say world.
+
+And when say world is done we complete the code and say hello.
+
+So we execute SeaWorld and it displays word to the console followed by by from say world.
+
+Then we go back to where we left off and say hello and execute by from say hello.
+
+Then we go back to where we left off and main and execute by remain in our program terminates.
+
+You can walk through this code you'll see exactly what's happening there is one caveat about function
+
+definitions.
+
+The compiler must know the function details that is the function name the parameters and so forth before
+
+the function is called.
+
+So look at the simple example.
+
+I'm calling say hello in main but the compiler hasn't seen the definition of say hello yet.
+
+In this case you'll get a compiler error telling you that say hello has not been declared in this scope.
+
+We'll talk about how to solve this issue with function prototypes in the next video.
+
+But before we do that let's head over to the idea and write a few functions.
+
+Ok so I mean the ID.
+
+I mean the section 11 workspace in the function definitions project.
+
+What I want to do here is I want to write a program that calculates the area of a circle and the volume
+
+of a cylinder.
+
+Pretty easy calculations.
+
+But I want to break everything up into functions that we define.
+
+We create our own user defined functions.
+
+And this is what I want my main to look like to simple function calls area of the circle volume of the
+
+cylinder.
+
+That's it.
+
+Now within those functions we can prompt the user Trenche of the radius the height whatever else we
+
+need.
+
+OK.
+
+So let's get started let's write that area circle function first.
+
+Now in this case I don't want to pass anything into the function or return anything from the function.
+
+This function is simply going to ask the user to cut it to enter the radius of the circle.
+
+It's going to call another function that will actually calculate the area and it will print the result.
+
+OK so let's write that function.
+
+We'll start with voyde since it returns nothing and the name of the function is area of the circle.
+
+That's it.
+
+Simple as that.
+
+Nothing in the parameter list right now because we're not passing anything in as you can see here in
+
+the call.
+
+OK so what do we need.
+
+What we need to ask the user for the radius of the circle right.
+
+So we need a variable here and we'll just call it radius and double is perfect we'll initialize it to
+
+zero.
+
+And most say it will prompt the user will put a new line at the beginning.
+
+Well just say enter the radius of the circle
+
+that's it and we'll read the input into the variable we just created.
+
+You can see this pattern happening over and over again.
+
+It's pretty standard.
+
+OK.
+
+Now what do I want to do.
+
+Well now I want to call another function that actually calculates the area that function again you remember
+
+the area for a circle is pi squared.
+
+That function needs to know the radius in order to calculate the area.
+
+Let's write the function call first.
+
+We'll say something like C out and we'll do something like.
+
+Again the area of a circle with radius whatever they typed in which was radius in this case and then
+
+we'll say is now what do we do.
+
+Now we need to call a function that actually calculates that area gives me back the double that I can
+
+display here.
+
+So let's call that function Kelk area circle and that function expects the radius.
+
+Right.
+
+And it will produce a new line at the end.
+
+And really that's it for this function.
+
+We clean that space up right here.
+
+Right.
+
+So now we need to write the other function this function right here.
+
+Area of the circle.
+
+Obviously we need to return something from that function right.
+
+The function is calculating the area so it needs to return something to me so that I can display it
+
+here.
+
+So in this case I want to return a double let's call it Calgarian circle.
+
+And what does it expect it expects the radius which is a double
+
+What does it do now it just returns pi are squared right.
+
+Simple as that.
+
+But we haven't defined PI let's define it up here we'll say Konst double PI and we'll set it to three
+
+point 1 4 1 5 9.
+
+That's close enough for this example.
+
+So there's my pieds constant which is what we want we don't want to be changing pi.
+
+And in the function body here all we need to do really is to say return pi times the radius squared.
+
+We could use the power function or we could just say radius times radius which is what I'll do right
+
+here.
+
+That's it.
+
+That should do it.
+
+Let's walk through this.
+
+We call area the circle transfers control over to this function.
+
+We have a radius variable right here we're asking the user to enter the radius of the circle.
+
+We're reading it and then we're passing that value into this function.
+
+Calculate the area of the circle and it's going to calculate the area of the circle and return that
+
+value back to me which I'm going to print right in here.
+
+Now I could store that into a variable or do anything I want with it.
+
+Right.
+
+So let's run this and test it out.
+
+Whoops I mean come at top volume of the cylinder because we haven't written that one yet.
+
+That's the next one.
+
+Right.
+
+So the radius of the circle 2.5.
+
+It says here the area of a circle with radius twelve point five is for ninety point seventy three.
+
+OK.
+
+Obviously we'd want to test that to be sure that that's correct.
+
+And that's pretty much it.
+
+Right.
+
+Pretty straightforward.
+
+Now let's write this one right here the volume of a cylinder.
+
+Well how do you calculate the volume of a cylinder.
+
+Well the volume of a cylinder is pi r squared times the height of the cylinder right.
+
+And I'm not using any units he can think of this as inches or centimeters or meters wherever you like.
+
+It doesn't really matter too much.
+
+So we need to write this volume cylinder function.
+
+This is going to be very similar to the area circle function right.
+
+Is this going to prompt the user for some information and this case is going to prompt the user for
+
+the radius of the cylinder and the height of the cylinder.
+
+So let's write it will say void volume of a cylinder.
+
+And the reason that that's popping up in the completion is because they had that in there before and
+
+I guess it remembered which is kind of handy.
+
+All right.
+
+So we need the radius of the cylinder.
+
+It will initialize that to zero.
+
+And we also need the height of the cylinder wall initialized to zero as well.
+
+So let's ask the user to just cut and copy and paste this to save a little typing time.
+
+So what is the radius of the cylinder in this case.
+
+And we'll read that into radius
+
+perfect.
+
+And then what would you hear is we'll copy these guys as well.
+
+And we'll ask them for the height of the cylinder
+
+into the height of the cylinder will read that into the height variable.
+
+So now we've got everything we need.
+
+So what do we do now.
+
+Well let's do the put statement right.
+
+We'll say see out and we'll say the volume of a cylinder with radius
+
+and will provide the radius value here and then will say something like.
+
+And height and will put the height here.
+
+And finally we'll just say just like before is now we need to call a function which you haven't written
+
+yet.
+
+Right.
+
+So let's call it calque volume of the cylinder will write that function in a minute.
+
+Now what do we pass into it when we need to pass in the radius and the height doesn't matter what order
+
+you put it in.
+
+But that's the way you have to provide the variables.
+
+I could have set height radius and just sent in the correct ones.
+
+So in this case I'm going to write that's what expects a radius first and then the height and then we'll
+
+print a new line at the end and that'll be it.
+
+OK.
+
+So that's where we're at with this function.
+
+It's finished now so we've cleaned up some of the space right here.
+
+Now what we need to do is write that function cap volume cylinder.
+
+So let's do that and we'll do it right here.
+
+We'll say I sure will do it a couple of minds up right under the other calculation right here.
+
+So we'll say double because it returns a double calc volume of the cylinder.
+
+It expects the radius which is a double and it expects the height which is also a double.
+
+Right.
+
+So in this case what do we do we return.
+
+PI radius squared
+
+times the height and that gives the volume of the cylinder.
+
+That should do it.
+
+Calling volume Szilard announcer would do it two times.
+
+Now we get the area of the circle What's that say.
+
+Again this is say 10 and that's correct.
+
+That's what we expect right pi times 100.
+
+So what's the radius of the cylinder this time want to say it's twelve point one.
+
+And what's the height.
+
+Say it's a really tall cylinder twenty five point two.
+
+So the volume of the cylinder with radius twelve point one in height twenty five point two is eleven
+
+91.
+
+We just need to put a little space after it is there.
+
+Cannot is one thing that we could do to make this a little better.
+
+You'll notice that this calculation right here Pyaar squared.
+
+We're doing it again right here.
+
+So what we could do is we could refactor this code just sort a little better and we could say return
+
+and we can do we can calculate the area of the circle and pass in the radius to it and then multiply
+
+that by the height that we were reducing that function.
+
+So hopefully you can see what's going on here cap the volume of a cylinder is the areas the area of
+
+the circle times its height.
+
+So we may as well just call that function to do it for us.
+
+You can see the repeated code.
+
+OK.
+
+So there you go that's it we've created.
+
+And let me run that again just to be sure that we're working correctly.
+
+See twelve point one.
+
+So what's the radius of the cylinder ten point two.
+
+And let's say it's thirty point one.
+
+And there we go.
+
+OK so that's it.
+
+You can see how really straightforward it is.
+
+And the nice thing about this is when you read your code you can see your main.
+
+It's really easy to follow right before in our main We had all of this stuff in there.
+
+Now we're just seeing area of the circle.
+
+OK.
+
+And remember that Macaulay's as many times as I want in this case it's going to ask me two times that
+
+I could put them in loops I can do anything I want.
+
+So what's the radius of a circle ten point one.
+
+OK.
+
+It's asking me again as I called it again.
+
+Ten point two this time that it goes to the radius of the cylinder.
+
+OK so let's finish this off this video.
+
+You can see how easy it is to create these user defined functions.
+
+And this is really what you want.
+
+You want your program to be modularized and have these small well-defined units that do what you'd want
+
+it to do and just do one thing really really well.
+
+

@@ -1,0 +1,371 @@
+In this video we'll learn how we can call C++ functions using default argument values.
+
+As we've seen when we call a function we must provide all the arguments that that function requires
+
+and the must be in the right order and of the right type.
+
+But sometimes when we call functions some of the argument values that we pass in tend to be the same
+
+values most of the time.
+
+For example if we have a function that calculates the cost of an item we can provide the function with
+
+the base cost of the item and the sales tax rate.
+
+Suppose that 98 percent of our customers live in a region where the tax rate is 6 percent that means
+
+that we have to provide the tax rate and every function call even though it will almost always be 6
+
+percent.
+
+C++ allows us to provide default values for arguments.
+
+So in the case of the sales tax if we omit the argument from the function call then the C++ compiler
+
+will automatically replace it with the default value of 6 percent.
+
+However if we have a customer whose sales tax rate is 8 percent then we can provide it explicitly and
+
+override the default value as we'll see in the next few slides.
+
+We cannot default arguments to the function prototype or the function definition but not both.
+
+But best practice is to do it in the function prototype default arguments must appear at the tail end
+
+of the parameter list.
+
+We can also have multiple default arguments.
+
+Let's see an example that demonstrates the false arguments
+
+in this example.
+
+We have a function with no default arguments.
+
+And the next slide will modify.
+
+So it does have a default argument.
+
+The function is called calculate cost and it expects the base cost of an item and the tax rate the function
+
+calculates the tax amount and adds that to the base costs and returns that value to the caller in the
+
+main function we're calling the function with one hundred point zero as the base cost and 0.06 or 6
+
+percent as the tax rate in this case one hundred six point zero was returned from the function and assigned
+
+to cost.
+
+That's pretty easy.
+
+But if 98 percent of our customers will have a 6 percent tax rate I'm forced to supply this.
+
+Every time I call the function.
+
+Why not let the compiler default the tax rate to 6 percent unless I tell it otherwise.
+
+Let's do that in the next slide.
+
+Here we have the same function except that the function prototype has been modified to provide a default
+
+value for the tax rate.
+
+Notice that the parameter tax rate in the function prototype now has a default initialization to 0.06
+
+added to it.
+
+This effectively tells the compiler that if this argument is not provided by the function call then
+
+use the value 0.06 for tax rate.
+
+Simple as that.
+
+Now notice the two calls in the main function.
+
+The first call simply calls Kelt cost with two hundred point zero which is the base cost.
+
+Since the argument for tax rate is not provided the compiler will use 6 percent for the tax rate in
+
+the second call we are providing the tax rate in this case the compiler we use that and ignore the default
+
+value.
+
+This can be pretty handy.
+
+Suppose we have a function that prints documents and we have to supply the document name the printer
+
+to print to the paper size the resolution and so forth.
+
+Again most of the time we print to the default printer with default settings but sometimes we need higher
+
+resolution or a different printer.
+
+You get the idea.
+
+In this case we can provide multiple default parameters for everything except the document name which
+
+is always required.
+
+This makes writing the code much simpler.
+
+Let's add another default parameter to the cut costs function.
+
+In this example we'll calculate the cost of an item based on the base cost of the item the sales tax
+
+and the shipping charge as before most of the times the sales tax will be 6 percent.
+
+And in this example the standard typical shipping charge is three dollars and fifty cents.
+
+So most customers will have a 6 percent tax rate and $3 and 50 Cent shipping charge.
+
+We can easily add a second default argument to this function.
+
+Notice that in the function prototype we add on another parameter named shipping and we default this
+
+value through three dollars and fifty cents the function body now calculates the tax for the item and
+
+the shipping charge adds this to the original cost of the item and returns the result to the caller
+
+in the main function.
+
+We're calling it cost in three different ways in the first call we're providing all three arguments
+
+to the function.
+
+In this case no default values will be used and the tax rate will be 8 percent and shipping will be
+
+$4 and 25 cents in the second call we're providing the cost of the item and the tax rate of 8 percent.
+
+In this case the default value for shipping will be used but the tax rate will use the 8 percent we
+
+provided in the final example.
+
+We're only providing the cost of the item.
+
+So in this case both default values are used the tax rate will default to 6 percent and the shipping
+
+charge to three dollars and fifty cents.
+
+As you can see default argument values give us the ability to make our code less verbose and potentially
+
+prevent errors by using default values rather than having to supply all of the arguments to the function
+
+all the time in the next video.
+
+We'll learn about function overloading before we talk about function overloading in the next video.
+
+Let me go over default arguments.
+
+I mean the sectional eBid workspace and the default arguments project and this is the same example you
+
+saw in the slides.
+
+Here I've got a function called calculate cost that expects three doubles the base cost a tax rate which
+
+is a default argument at 0.06 or 6 percent and a default shipping which is three dollars and fifty cents.
+
+Now if those arguments are not supplied then the defaults kick in.
+
+It's really pretty simple.
+
+And here's the calculation notice I don't have to include the function default arguments here in the
+
+function definition only in the function prototype and that's usually where you see them.
+
+So the code here says base cost plus equals base cost times the tax rate so I'm figuring out what's
+
+my tax and I'm adding the shipping to that.
+
+And then I'm adding the whole thing to base cost so I'm not taxing the shipping.
+
+And then we've got some sample calls and this first example I'm calling calculate costs with all three
+
+arguments.
+
+So in this case none of the defaults will be used.
+
+I'll use a 100 for the base cost I'll use 8 percent for the tax rate and I'll use $4 and 25 cents for
+
+the shipping charge.
+
+I expect to get back 112 and 25 for this example here I'm providing the first two arguments and I'm
+
+not providing the shipping.
+
+So in this case it's going to use 100 as the base cost 8 percent for the tax rate and it will default
+
+to 350 here for the shipping.
+
+And the last example I'm supplying the base costs only.
+
+So in this case 6 percent and $3 and 50 cents or we're going to be asked.
+
+So if I run this program you'll see that our results are exactly as we expected.
+
+1:12 25:1 11 15 to 15 50.
+
+So you can see default arguments are pretty easy to use.
+
+I could also default the base costs if I wanted to I could say that the base cost is 100 maybe that's
+
+the typical item that most people order.
+
+So in this case I could just simply just say cost is a cost right.
+
+With nothing in the parentheses.
+
+So I'm not supplying any arguments here.
+
+That's it.
+
+So what's going to happen here it's it's going to use all three default arguments so let me put that
+
+out real quick.
+
+So in this case we expect the same result as well if we would have done one hundred six so we'd have
+
+100 is the base cost it's being used by default.
+
+We're using a 6 percent tax rate so that's another six dollars and our shipping would be 350.
+
+So in this case we expect to 100 950.
+
+So let's give that a shot.
+
+And that's what we're getting here 100 950.
+
+This is pretty straightforward.
+
+The only rule with the default arguments is that once you create a parameter that has a default value
+
+then you've got it default the rest of them.
+
+So in other words I can't say that base cost is 100.
+
+And then not have one here because that's going to give me an error.
+
+Right.
+
+Once you start they all have to be on the tail end.
+
+So in this case I could just say 0.06.
+
+So that's really the only rule there and I'll run that again just to make sure I've got no errors.
+
+And there you go.
+
+So let's add another default type Funk's to this application.
+
+How about a greeting function.
+
+So let's do something like this it's create a function prototype here for for a function called greeting
+
+that expects a string which has someone's name.
+
+Now let me include strange because I need the library.
+
+So that's a string name perfect that be frank Metropolis Joe Miller whatever you want then I've got
+
+another string which is the prefix that we want in front of their name.
+
+MR.
+
+Dr MSS whatever you like and I'm going to prefix it to Mr..
+
+Let's say that most of my customers are male and I also want a suffix.
+
+In this case the suffix I'm going to default at just the empty string.
+
+OK.
+
+So that's my function prototype.
+
+Let's implement this function now.
+
+Well implement it right down here.
+
+And at this point we don't need those default arguments we just get rid of them from here.
+
+And it cleans up the code a little bit.
+
+All right.
+
+So what do we want to do here.
+
+We just really want to display some stuff right.
+
+So let's just say I want an output statement and I'm going to say hello followed by a space followed
+
+by the prefix.
+
+And what we could do here is we could append a space that we can use concatenation here and the name
+
+and another space and the suffix.
+
+So we're just using concatenation here just like we've learned in string class
+
+and then we'll use the end line to finish it off.
+
+OK so let's run that to give it a few example it runs here so let's say how about let's do a really
+
+simple one How about greeting.
+
+And I'm going to split all of these arguments are going to say Glynne-Jones is the name the prefix will
+
+be doctor and the suffix will be empty.
+
+OK.
+
+So if we run that we expect this to display.
+
+Dr. Glenn Jones M.D. And so let's give it a shot.
+
+And forgot the semi-colon off except for a quick and there you go.
+
+Hello Dr. Glenn Jones M.D..
+
+Perfect.
+
+Now let's run some of the other examples.
+
+So how about we do something like greeting James Rogers.
+
+How about Professor and Ph.D. for the suffix
+
+OK and we'll run that and I will say Hello Professor James Rogers Ph.D. pretty easy.
+
+Now let's use some defaults in this case we'll say greeting let's say Frank Miller
+
+and Dr. no suffix in this case sort of default to the blank or the empty space or in this case it'll
+
+just say Dr Frank Miller which is what I want and then let's do one more and we'll just say greeting
+
+let's say William Smith.
+
+So in this case it's going to use all the default values.
+
+So it's going to use Mr. William Smith followed by the empty string right there for the suffix.
+
+So in this case we're just going to see Mr. William Smith.
+
+There you go.
+
+If we have
+
+Mary Howard and she would be Mrs.
+
+and give her a title as well whatever we like
+
+to go.
+
+So now we've got Mrs. Mary Howard Ph.D. instead of Doctor we could have a doctor here as well you can
+
+see all the different combinations this can come in pretty handy.
+
+I used to work with someone who used to say that if something is always required then it should never
+
+be required which makes a lot of sense and I think that's part of the idea behind using default arguments
+
+and using overloading which we'll talk about next.
+
+

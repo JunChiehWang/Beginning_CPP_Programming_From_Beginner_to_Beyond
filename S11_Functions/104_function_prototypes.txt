@@ -1,0 +1,363 @@
+In the previous video I mentioned that the C++ compiler must know all about a function before it allows
+
+that function to be called.
+
+I didn't say why though.
+
+The reason for this is that the compiler can't check to see if the number of parameters passed in and
+
+their types are correct when the function is called unless it knows about the function being called
+
+before it's called.
+
+There are two ways we can make this happen.
+
+The first way is to make sure we define all functions before they're used.
+
+This is OK for many small programs but it quickly becomes very difficult to do.
+
+And in the case of two functions that call one another it's impossible.
+
+So rather than have to worry about the order in which we define functions C++ allows us to create function
+
+prototypes function prototypes tell the compiler All it needs to know about a function so they can be
+
+sure that the function is being called correctly function prototypes are also called forward declarations.
+
+Since you're basically telling the compiler Hey compiler This is what this function is going to look
+
+like.
+
+Make sure I use it that way.
+
+In smaller programs all the function prototypes are generally placed near the top of a program usually
+
+after the pound includes as programs get larger.
+
+We split our programs up into multiple files so we include H or header files and we include function
+
+prototypes in these files.
+
+We'll see that a little bit later in the course.
+
+Let's see what these function prototypes look like.
+
+Here I've defined a function called function name at the bottom of the slide the function prototype
+
+for this function is the first line of code you see.
+
+Notice it looks very much like the function header.
+
+That's the part of the function definition.
+
+Right before the body of the function with a function prototype the compiler doesn't need to know what
+
+the implementation of the function is only its header information.
+
+So in this case it knows that you later define a function named function name that expects no parameters
+
+and returns an integer.
+
+If you use a function named function name it will enforce those conditions.
+
+If you try to use it in any other way say by calling it with an integer in the parameter list then you
+
+get a compiler error.
+
+Pretty easy right.
+
+You can have as many prototypes as you need one per function and it doesn't matter what order you declare
+
+them in.
+
+Let's take a look at another one.
+
+In this case we have the same function named function name.
+
+But this time it expects exactly one parameter.
+
+So we provide a function prototype to the compiler that has an INT in the parameter list.
+
+Note that we can supply the name of the parameter if we wish but it is used by the compiler.
+
+The compiler doesn't care about the name only the type.
+
+So either of these function prototypes can be used.
+
+Best practice is to provide the parameter names for documentation purposes.
+
+Let's see another example in this example we have a function that returns nothing when call.
+
+So the function prototype must include the void keyword prior to the function name.
+
+Just like the function definition does.
+
+In this case the function expects two parameters an integer and a standard string.
+
+So either one of these function prototypes in the slide is valid in one case we provide the parameter
+
+types and names and the other only the parameter types.
+
+The function prototype for the say hello function we saw in the previous video would look like this.
+
+Void say hello and then the empty parameter list.
+
+Notice the semi-colon at the end.
+
+It's very important.
+
+We're not specifying a body only the prototype.
+
+If we try to call this function in any other manner we'll get a compiler error.
+
+So let's see how the compiler uses this information and the function prototype to help us write code.
+
+The function prototype here says that I'll define a function named say hello that expects no parameters
+
+and returns nothing.
+
+Then I use or call the function in main.
+
+The first function call is fine since it matches the prototype.
+
+The second function call will cause a compiler error.
+
+We told the compiler that the function expects no parameters but we're passing in an integer to the
+
+function call.
+
+The compiler won't allow this.
+
+The third function call is within an output statement.
+
+Think about this one for a second.
+
+You're telling the compiler to display the value that say hello evaluates to but the function prototype
+
+says that the function say hello doesn't return anything.
+
+So the compiler gives you an error since something's not right.
+
+In this slide I'm providing the same code that you saw in the previous video.
+
+However in this example I'm providing function prototypes for the say hello say world's functions at
+
+the top of the file.
+
+Now the computer knows about these functions and I can call them in any order I wish in my program and
+
+the compiler will make sure that they're called as intended.
+
+Let's head over to the ID and prototype some functions OK I'm in the code like ID and I'm the section
+
+11 workspace in the function prototypes project what I'm going to do here is I'm going to take the sample
+
+that we did in the previous video where we calculate the area of a circle and the volume of a cylinder
+
+and so forth.
+
+And I'm going to rearrange these functions to actually break the program.
+
+Now this worked out because I was very careful about how I define these functions and where I defined
+
+these functions.
+
+So again the compiler is going straight down and reading the source file so it sees calque area defined
+
+here Kuchh area of a circle then it sees it used since it's already seen it defined it's happy about
+
+it.
+
+In this case it's the same thing it sees calque volume of a cylinder.
+
+I use it down here.
+
+It's happy about that.
+
+So everything it's seen before it's being used.
+
+But if I take some of this code let's say that I take all of this code actually right before my main
+
+and I just cut it.
+
+And I want to pace head after the main case and we've got some issues because the compiler is now seeing
+
+only clean up this white space a little bit.
+
+The compiler is now seeing area circle function being called but it hasn't seen the definition yet because
+
+it comes later that's going to cause an issue.
+
+Same thing with volume of a cylinder.
+
+So you're going to get issues here.
+
+So let me run this or compile it actually won't run.
+
+And there you go area the circle was not declared in the scope.
+
+So it has no idea what that functions all about because it hasn't seen it yet.
+
+OK.
+
+You're going to get two errors here.
+
+If we change the order and put this guy down here we're going to get even more errors because now we're
+
+using something before it's being seen.
+
+So now we're going to get probably three errors.
+
+Right.
+
+So that's a problem.
+
+How do we fix this problem well that's where function prototypes come in.
+
+So let's use function prototypes are really really easy to use.
+
+What I want to do is where every function that I'm defining I want to prototype it before I've defined
+
+it.
+
+So obviously at the beginning of the file it will do it right after the namespace statement.
+
+So let's look at this first one here.
+
+I'm just going to copy it and paste it because it basically that's what I want someone to put up right
+
+here and I'll just put a little comment here.
+
+You know what's going on
+
+here my function prototypes.
+
+Remember the function prototype is only the name of the function.
+
+And what it expects and what it returns with a semi-colon at the end right here no function body.
+
+So now the compiler sees that you've prototyped calc volume cylinder to expects to doubles and return
+
+doubles so we can type check that.
+
+OK.
+
+Let's deal with all of these.
+
+So let's do the next one which is my calculate area of the circle.
+
+Copy that up here and paste it.
+
+Put a semi-colon on the end.
+
+Now remember we don't need to have these variable names here and these parameter names.
+
+The compiler could care less.
+
+I'm going to get rid of this one just so you can see the compiler doesn't care all the compiler needs
+
+to know is what is the type of that parameter.
+
+So in this case double is fine.
+
+As I mentioned earlier best practice is to put the names in there for documentation purposes.
+
+But I'll leave it out here just so you can see that it actually does work just fine.
+
+So now we've got those too.
+
+Let's deal with area of the circle and then we'll deal with volume of the cylinder.
+
+So we'll put the circle right here.
+
+The order in which you put the prototypes in doesn't matter because the is going to see them all.
+
+So there's the area of the circle.
+
+Notice this returns nothing and expects nothing.
+
+OK and then we'll do the last one which is the volume of the cylinder so I come back up and I'll put
+
+that last prototype right in here.
+
+That's it.
+
+Now if I compile and run I'll get a clean run.
+
+So we'll put 12 and type in whatever numbers you like.
+
+So that's pretty cool.
+
+Makes it really easy to not have to worry about order.
+
+Oh my goodness you know what did I call this did I define this first.
+
+This was a problem in early languages.
+
+I remember using Pascal and there was just no way to get around this.
+
+Eventually they added something like forward declarations which really makes things handy.
+
+So this is just standard practice that C and C++ programmers use to create those function prototypes.
+
+Now what really is nice about this suppose it I mess up my function prototype and I tell the compiler
+
+that that area circle function that I'm going to define later this is the way you should check to make
+
+sure I use it correctly.
+
+Well I'm not using it correctly right there because I'm not passing an integer into it.
+
+So this won't compile.
+
+This will give me an error right here as is too few arguments to this function right here.
+
+So you've told it again remember it hasn't seen this one down here yet.
+
+Right.
+
+You've told it that that function will be used as in the prototype.
+
+And here you're not using it as in the prototype.
+
+And so I mean get rid of that.
+
+Also if I send in let's say 5 into here before I write again this is not going to match you've just
+
+told it that this function here expects nothing.
+
+But now you passed in an int..
+
+So again it's not going to like that it's going to say too many arguments.
+
+Now to the function call so let's clean that up.
+
+And that's really all there is to prototypes.
+
+Now normally as you programs get larger these prototypes will end up going in a different file in a
+
+h file and we'll get to dot h files or header files our own header files.
+
+When we talk about classes because that's very common to create two pieces of the program.
+
+One is the header information and one is the actual implementation.
+
+Very similar to what's going on here with IO stream.
+
+Those are really considered header files.
+
+So you're going to grab a lot of information from there and that's usually where we put our function
+
+prototypes.
+
+But there you go.
+
+Let me run this again and make sure it's clean got a clean run here so I'll leave this code out there
+
+for you to play with as well get used to these function prototypes.
+
+We do them all the time and it will really make your code better.
+
+Let the compiler help you every chance he gets.
+
+
