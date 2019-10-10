@@ -1,0 +1,325 @@
+In this video we'll learn about function overloading in C++.
+
+We can have functions with different parameter lists that have the same name.
+
+For example I may have many ways to display information to the screen depending on what I want to display.
+
+So rather than having many functions with different names such as display char display and display double
+
+and so forth we can have a single name display and then implement a version of the function for each
+
+type of parameter.
+
+Then we just let the compiler figure out which function to use based on the function call arguments
+
+and the defined function parameters.
+
+It sounds more complicated than it is and we'll see an example in the next slide that I'll show you
+
+just how simple it is.
+
+This is a great use of abstraction since as a developer.
+
+All I need to think is display and pass in whatever information I need.
+
+I don't have to keep track of dozens of different function names in software engineering.
+
+We have a principle called polymorphism which means many forms for the same concept.
+
+This is an example of polymorphism.
+
+Let's see what overloaded functions look like.
+
+In this example we have two functions that are both called add numbers.
+
+The first function expects to integers and the second function expects to doubles.
+
+I'm only showing the function prototypes in this slide but we actually have to implement both functions.
+
+I'll do that in the next line.
+
+Notice that in main.
+
+I'm calling both functions but I don't have to think about different names.
+
+I just want to add two numbers.
+
+If I call add numbers with two integers then the int into version of the function is called If I call
+
+add numbers with two doubles then the double double version of the function is called In this light
+
+I'm providing the function definitions for the add numbers functions that we prototyped in the previous
+
+slide.
+
+It's important to understand that we must implement all of the overloaded versions.
+
+Notice that the code for these two functions is nearly identical except for the types.
+
+C++ has a feature called function templates that allow us to just write one generic version of the add
+
+numbers function and it will take care of providing the correct version when called function templates
+
+are a little bit more advanced topic and we'll discuss it when we talk about the standard template library.
+
+Let's take a look at another example.
+
+In this example only show the function prototypes but remember that you'd have to implement all of these.
+
+I have five functions named display.
+
+The parameter lists for these functions must be different so the compiler can tell them apart.
+
+Once these functions are implemented I can call display and pass in my data.
+
+The compiler will check the type of the argument in the function and match it to one of the available
+
+overloaded display functions.
+
+If it can't match it or if it can't convert the argument to one that matches then we get a compiler
+
+error.
+
+There is one restriction to function overloading the return type is not considered when the compiler
+
+is trying to determine which function to call.
+
+So here we have two overloaded functions both called Get value and both expect no parameters.
+
+The only difference is that one returns an integer and the other a double.
+
+This will produce a compiler error since the only difference is the return type.
+
+Consider the output statement at the bottom of the slide.
+
+Which function would the compiler call it could call either and that's the problem.
+
+It won't guess so to produce a compiler error overloading functions is used extensively in Object-Oriented
+
+Design and we'll see it again when we design our own C++ Object-Oriented classes.
+
+I mean the code like ID in the section 11 workspace and M&A function overloading project here it just
+
+want to go through some examples of overloading of function.
+
+Remember overloading a function simply means using the same name for various forms of that same function.
+
+In this case it's print and what I want to do is don't want to overload print to work with different
+
+types so you can see some of the function prototypes here.
+
+In this case I've got an inch version of print so if I pass in an integer to print it will use this
+
+version of the function one that expects a double one that expects a C++ string object one that expects
+
+to see plus String objects and the last one expects a vector of string objects.
+
+OK remember we have to implement each one of these and that's what I'm doing here.
+
+I'm just saying printing and printing double so that we know which one is being called.
+
+So in the case of print it is simply says printing integer and it displays the number for double it's
+
+doing the same thing string and so forth.
+
+OK and then for the vector version it's just iterating through the vector and pretty up all the strings
+
+in the vector.
+
+So let's see how this works.
+
+In this first case I'm simply calling print in a passing in 100 not 100 as an integer.
+
+So I expect that this integer version of print is the one that's going to be called and it'll say printing
+
+it.
+
+OK so let's give that a try.
+
+Printing it 100 exactly what we expected.
+
+In this version I'm passing in a character now.
+
+Characters are always promoted to integers.
+
+So in this case it's going to call the same function that expects an integer but it's not going to print
+
+out the character.
+
+It's going to print out 65 which is the ASCII code for a member it's using integers here.
+
+So let's run that.
+
+And there you see it says printing integer and it's Partita 65.
+
+In this case I'll come in both of these out in this case we're going to use the doubled version which
+
+is this version right up here print expecting a double and is just going to say printing double and
+
+display the number that was passed in.
+
+So in the first example I'm passing in 120 3.5.
+
+No problem.
+
+One twenty three point five is a double so they should match perfectly.
+
+However in the second example that f right there makes this a fluke not a double.
+
+So in this case I'm passing a float to the function but there is no overloaded function that expects
+
+a float.
+
+So what the compiler does is it will promote the float to a double it'll match that function and call
+
+it.
+
+So both these statements will use that same function.
+
+Let's run that.
+
+And you can see here one twenty three point five.
+
+And in this case one twenty three point three.
+
+OK so what about C-style strings.
+
+Let me uncomment that out.
+
+Remember we've got a version of print right here that expects a string object and it simply prints out
+
+that string object.
+
+However I'm not passing in a string object here and passing in a C-style string an array of characters
+
+that does not match that function prototype.
+
+But the C++ compiler knows how to convert a C-style string write an array of characters to a C++ string
+
+object.
+
+So we'll use that conversion and it'll pass in the literal.
+
+Make it an object and then we're going to display the object.
+
+So if we run it you'll see you'll see a printing string C style string.
+
+Ok exactly what we expect.
+
+Once you understand how the conversions work it all makes a lot of sense in this next example.
+
+I'm declaring right here s to be a string object.
+
+This is not a C A C style string.
+
+This is a C++ style string object and I'm passing it into print that's going to match exactly and print
+
+out C++ string.
+
+All right in misprints statement here we're passing in a C-style string and a string object both.
+
+Now we've got a version of a print function that expects to string objects.
+
+Well no problem right.
+
+We'll convert the first argument to a string object and then pass the second one as well.
+
+So in this case when I run it you'll see that that same printing to strings method is called with a
+
+C-style string and a C++ string.
+
+Ok pretty cool.
+
+And then the last one is this vector here I'm creating a vector called Three Stooges which is a vector
+
+of string objects and we've got Larry Moe and Curly in there and I'm calling the print function in passing
+
+and three stooges.
+
+So it's going to match this one right here that expects a vector of strings.
+
+And I'm just going to iterate through there and print out the three stooges names of the three strings
+
+in that particular vector.
+
+OK so I'll run it and there you go.
+
+Pretty vector of strings there.
+
+Moe and Curly.
+
+So you could see how nice it is to be able to overload functions the nice part about it isn't so much
+
+all the code that I've written that's that's not that great.
+
+The nice part about it is once the code is written I can just think print.
+
+So if I'm solving an application I'm printing Print Print Print and printing everywhere I'm not doing.
+
+You know I don't have to do print int and print string and so forth I'm just thinking in print which
+
+is what abstraction is all about.
+
+Now there's some couple of things you need to worry about when you're overloading functions.
+
+Be careful when you overload functions and you use default arguments.
+
+Ok I'll show you why.
+
+Here's an example of the print with the integer version.
+
+I could certainly default this to 100 let's say.
+
+So if I don't supply the argument to the print function it's going to default to 100.
+
+And let's test that out we'll do it right up here.
+
+OK so at this point now we should get 100 here and then 100 on the next line as well right.
+
+So let's run that and you can see there's the hundred.
+
+That's the default argument right there that makes sense.
+
+But what about if we didn't do that and we did it down here in the print double.
+
+Let's say that we wanted default.
+
+This went to 125 point five.
+
+Now when I call print here it will default to one twenty five point five because it's up here right
+
+there that's when it's going to match rank.
+
+So there's the 125 point five in the double version it's called again.
+
+Makes sense where you run into trouble is when you do both see you do something like that.
+
+Now you really are in trouble because the compiler can't figure out which one to use.
+
+Again look at the print call right here.
+
+It says print but it doesn't supply any type information.
+
+So now the compiler can choose either one because they both match and it's not going to choose either
+
+and he may give you a compiler error.
+
+And when I write it say something about an ambiguous call right here error or call of overloaded print
+
+is ambiguous.
+
+So whenever you use overloaded functions with default arguments you've got to be a little careful.
+
+So get rid of that and I'll set those back up to the way they were.
+
+OK so that covers overloaded functions we're going to see overloaded functions a lot when we talk about
+
+object orientation and when we create our own classes we want to have different ways to initialize our
+
+classes.
+
+You saw that with the Vector class in the String class all the different ways that we can create those
+
+objects.
+
+Well that's all based on overloading functions.

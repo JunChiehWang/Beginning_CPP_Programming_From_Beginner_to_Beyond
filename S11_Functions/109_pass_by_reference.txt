@@ -1,0 +1,411 @@
+So far we've seen that when we pass a parameter to a function the default is passed by value.
+
+That means a copy of the actual parameter is made.
+
+We also saw that when we pass an array into a function we don't make a copy.
+
+Instead we use the location of the array which means we can change it from within the function.
+
+Well sometimes we want to be able to change an actual parameter from within a function as we saw with
+
+the race.
+
+This is achieved by passing in the location of the actual parameter.
+
+We can do this in C++ for any variable type.
+
+Not just arrays by using reference parameters reference parameters create an alias.
+
+So now the formal parameter in the function is an alias to the actual parameter.
+
+No copy is made when you change the form a parameter you're changing the actual parameter.
+
+This is called pass by reference and it's really easy to achieve in C++ by using the ampersand symbol
+
+in the parameter list.
+
+Let's see an example in this example we have a function named scale number.
+
+Notice that the parameter list to the function is not an int named num it's a reference to an int named
+
+name.
+
+That's what the ampersand does.
+
+So now when we use nummy in the function body we're referencing the actual parameter.
+
+Let's walk through this.
+
+In main we declare an integer number and initialize it to 1000.
+
+Then we call the scale number function and pass in the actual parameter number.
+
+We now transfer control to the scale number function.
+
+Since the formal parameter and the scale number function is a reference parameter.
+
+This means that number is an alias for number.
+
+If we change num we're changing number.
+
+Behind the scenes the location of number is being passed into the function.
+
+So the code and scale number checks to see if the number is greater than 100.
+
+In this case it is it's 1 0 0 0 0 0.
+
+So we set number to 100 and the function completes.
+
+When we returned to Main and display number it will display 100 passed by reference can be super useful
+
+for several reasons.
+
+First it allows us to change an actual parameter if we need to.
+
+Second we don't make a copy of the parameter which could be large and take time but we have to be aware
+
+of potentially unwanted changes.
+
+Let's see how we could swap two numbers using pass by reference in this example we're reading a function
+
+that swaps the values of the two integers passed into it.
+
+Take a look at main x is 10 and Y is 20 x and y are first displayed.
+
+And we get 10 20 just as we expect then we call swap in passing x y then we display X and Y again another
+
+20 and 10 we swap them.
+
+Look at the function definition and notice that both A and B are reference parameters.
+
+So when I call this function with x and y a and b become alias's to X and Y respectively in the body
+
+of the function I set temp to A then A to B and then B to temp and we've swapped the two values that
+
+were passed into us.
+
+What do you think would happen if we didn't use pass by reference and we use pass by value.
+
+Well the actuals would be comping.
+
+So we would swap the copies in the function and then return when we get back to main the actuals haven't
+
+changed since we were working with copies.
+
+Let's talk a bit about how parameters are passed into functions.
+
+Let's see what happens when we pass in a vector object to a function.
+
+In this case I have a function called print and it expects a vector of integers.
+
+Notice that in this case we're using pass by value inside the print function.
+
+I simply use a range base for loop and display the vector elements pretty easy but there's one issue
+
+with this code that is we're using pass by value.
+
+So we're making a complete copy of the vector object in the function.
+
+So the formal parameter V will be a copy of the actual parameter data.
+
+In this case in order to make a copy we need to allocate storage and copy values over if the vector
+
+is very large.
+
+We could run it to performance and storage issues.
+
+So why don't we use pass by reference instead.
+
+So we can avoid the copy.
+
+Let's do it.
+
+Notice that now I'm using pass by reference.
+
+Since I've declared the formal parameter V as a reference parameter using the ampersand the output of
+
+this program is exactly the same as before.
+
+But we avoid the storage and copy overhead of pass by value but there is one issue since I'm using pass
+
+by reference the print function could change the value of the vector.
+
+It could even erase the entire vector.
+
+This is probably not a good idea.
+
+So let's tell the compiler that this is a constant reference.
+
+So I've added the Konst keyword to the parameter.
+
+Now I've told the compiler to use pass by constant reference.
+
+So if I try to make any changes to the formal parameter V in the function I will get a compiler error.
+
+This is really the best of both worlds since we're more efficiently passing information to the function.
+
+But we're still ensuring that the function can't change the data by mistake.
+
+Let's head over to the ID and see this in action.
+
+OK said I'm in the idea and I'm in the section Levan workspace and the pass by reference project.
+
+This is the same project that we use when we did pass by value.
+
+The only thing I've changed is I've made the parameters reference parameters now.
+
+So you can see the way I did that was just by including that ampersand.
+
+Now these are the same function prototypes have just named the functions passed by ref 1 rather than
+
+passed by value as we had before.
+
+OK so I've got three passed by reference functions and just a simple print vector function that displays
+
+a vector element by element passed by reference one expects a reference to an integer pass by reference
+
+to a reference to a string passed by reference 3 a reference to a vector and then the print vector function
+
+expects a reference to a constant vector because I don't want to be able to change the vector from the
+
+print function.
+
+Now I've implemented all of these functions and basically the code hasn't changed from before I set
+
+number 2 0 0 0 0 0 0 and I set the string to changed and I clear all the elements out of there.
+
+Now I remember before we printed a value we called the function we came back and the old value was still
+
+there.
+
+Well now it's totally different because we're passing an alias to the value.
+
+OK so let's go through these examples here and then I've got initialized to 10.
+
+And another initialised to 20.
+
+So now what I'm doing is I'm calling pass by ref 1 and I'm passing them into it.
+
+So before I call it I expect this to display a 10 but then after I call it I don't expect the 10 anymore
+
+because I passed a reference.
+
+Instead if you look at pass by ref one number is a thousand.
+
+So I expect number to change.
+
+All right so let me run this and then we'll walk through exactly what's going on.
+
+There you go before calling pass by ref 1 we have a 10 after calling pass by ref 1 we have 1000 if you
+
+remember the way it was with call by value we had 10 and 10.
+
+So let's see what's really going on here.
+
+Scroll up just a little bit.
+
+Erica OK.
+
+So I'm in Maine and I've got is 10
+
+and I'm just playing it right here right.
+
+So that's going to display a 10 in that out put statement right here.
+
+But then I'm calling pass by ref.
+
+So I want to call passed by ref 1 over here and it has a variable and if you remember what that variable
+
+was scroll up it's right here is also called numb.
+
+Maybe this could be any other name.
+
+They just happened to be the same name in this case.
+
+So that's kind of variable and they're called numb and right here.
+
+What's happening is when I pass this name into it then this number now becomes an alias to that name.
+
+OK and again don't worry about the names.
+
+I'm going to use a different name next time.
+
+But it's common to many times use the same names.
+
+Don't let that confuse you.
+
+And then in here I'm saying number equals I believe it is a thousand.
+
+So what's happening is this is an alias to this number.
+
+So this guy's going to change to a thousand.
+
+Real real different to call by value.
+
+OK.
+
+So in this case we are really passing in the location of the number behind the scenes and what we don't
+
+have to worry about it because syntactically it's the same as call by value.
+
+Let's take a look at another example here.
+
+Scroll down just a little bit.
+
+And here we've got the same call to pass by ref 1 except we're passing in another number right in this
+
+case and the name is 20.
+
+So this will display a 20.
+
+And when I get back it will have changed also also there it is 10 one thousand.
+
+Now we've got another name was 20 and now it's a thousand.
+
+So you can see that we're passing that by reference and the alias is actually referring to the actual
+
+parameter.
+
+That's the important part to really understand here.
+
+In this example let's take a look at that.
+
+If you recall this one scroll up just a little bit.
+
+You can see it right here past my ref to expects a reference to a string and it just assigns changed
+
+to that string.
+
+OK.
+
+So let's walk through this one to see what we can expect in this case.
+
+I've got this variable right here name which is frank and it's in main
+
+and it's a string object right then I call pass by ref too.
+
+So here's pass by ref to and it has a variable over there called s.
+
+That's the formal parameter.
+
+And what we're doing here is we're passing by reference.
+
+So we're passing name over here and this s will now be an alias to name.
+
+So it's really referring to the actual parameter.
+
+Remember this right here is the actual parameter.
+
+So now when I change this to change nothing happens over here it's actually happening over here.
+
+So this has gone.
+
+It's now changed.
+
+So when this function is done my actual parameter has changed in this case to changed.
+
+OK so let's run this example and we'll be able to see that that string really does change.
+
+You see that right there name before calling pass by ref to is Frank named after calling pass by ref
+
+to has changed pretty easy.
+
+It's really up to you.
+
+And when you're designing do you need the actual changed or not.
+
+If you do need a change do you pass it by reference if you don't need to change.
+
+You do pass by value sometimes passed by value is very expensive as I mentioned before you want to pass
+
+by reference and then qualified to be constant.
+
+And that's what we'll do in the print function a little bit.
+
+But let's take a look at this one here.
+
+OK.
+
+So this is the last example we'll look at right here.
+
+Remember we're calling pass by ref 3 and pass by ref 3.
+
+All it does is clears out that vector.
+
+So it's going to remove all the vector elements to make the vector empty.
+
+OK so let's do that.
+
+All right.
+
+So we're here.
+
+This is Stooges and again Stooges is declared in main.
+
+So Stooges is basically three strings Larry Moe and Curly.
+
+And they're in a vector.
+
+OK so now I'm going to print the vector and I'm going to pass Stooges into print vector.
+
+Now the vector is also expecting a reference.
+
+In this case a constant reference so I can't change anything.
+
+So what happens is when I call print
+
+so when I call print vector there is a variable over there called V and since I'm doing pass by reference
+
+this refers to this.
+
+So whenever I deal with I do any operation on V it's affecting the Stooges vector.
+
+Right.
+
+That would be the case but since this is Konst This is read only.
+
+There's no changes allowed.
+
+But do I avoid the whole copy issue which is important.
+
+All right so that takes care of print.
+
+Now when I call pass by reference 3 I do exactly the same thing right.
+
+So I call passed by by reference 3.
+
+I've got my vector and it's also pointing to Stooges.
+
+Now when I say V-Rod clear I'm clearing this out now.
+
+Right so Stooges is empty now when this function is done it's gone.
+
+And my vector is empty so when I print it out again right here you'll see nothing print.
+
+If you recall in the past by value a printed out Larry Moe and Curly again right here nothing.
+
+So let's run this
+
+and you could see right here Stooges before calling pass by ref 3 Larry Moe Curly after calling it empty.
+
+Why is it empty.
+
+Because pass by ref 3 cleared out that vector and deleted all the elements.
+
+And because I'm passing by reference it's really affecting the actual object.
+
+If I didn't want this to happen I would make this contest in which case this won't compile anymore because
+
+you're not allowing me to change the vector which is what this is doing.
+
+You'll get a lot of chances to play with this in the challenge at the end of the section but that's
+
+passed by reference.
+
+We can use it with simple primitive types so we can use it with object types.
+
+It basically works the same way.
+
+Just think of it as an alias to the actual parameter.
+
+

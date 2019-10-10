@@ -1,0 +1,429 @@
+This video will learn about passing arrays to C++ functions.
+
+We can pass arrays into functions by providing the square brackets in the parameter information.
+
+So in this case we can have a function named print array that expects an array of integers and returns
+
+nothing.
+
+The idea is that this function iterates through the array and displays the array values.
+
+Pretty handy function right.
+
+But arrays are different in C++.
+
+Remember that an array name evaluates to the address or location in memory of the first element of the
+
+array.
+
+In other words the beginning of the array.
+
+So it's being passed into the function is not a copy of the entire array but only the address of the
+
+first element of the array.
+
+That means that the function has no idea how many elements are in the array.
+
+So the programmer doesn't know how many times to iterate.
+
+So when we pass arrays to functions we also need to pass in the size of the array so that we now know
+
+how many times to iterate Let me show you an example
+
+in this example you can see that both the function prototype and the function definition have square
+
+brackets after the formal parameter name.
+
+This tells the compiler that the function expects an array of integers in this case so far so good.
+
+Then in Main I have an array of five integers called my numbers and it's been initialized to the integers
+
+1 through 5.
+
+So I call the print array function and pass in the array.
+
+My numbers are all good so far.
+
+Now I execute the print array function but I have no idea how many times I need to iterate.
+
+Since the array name has no size information I'm stuck.
+
+If the array has a sentinel value like a C-style string then I can iterate until I see that sensible
+
+value.
+
+But in this case the my numbers array has no such Central Valley.
+
+There's no way I can write this function body in a way that it will work with any array of integers.
+
+So the solution is to pass in the size of the array to the function as well.
+
+Let's do that next.
+
+Now we've added a size parameter to both the function prototype and the function definition in the main.
+
+When I call the function I pass in my numbers and the size of the array which is 5.
+
+In this case.
+
+Now when I execute the body of the printer a function I know the location of the array which is the
+
+array name.
+
+And I know how many elements are in the array.
+
+I can easily write a for loop now that iterates through the array and displays every integer.
+
+This looks great but there is one potential gotcha that you need to be aware of.
+
+Since we're passing into the function the location of the actual array that was declared in main that
+
+means that we can modify that actual array from within the function.
+
+This could be useful in the case of a function like zero array that we can call whenever we want to
+
+zero all the elements in an array.
+
+However in the printer a function we don't want to modify the array.
+
+If we do it's probably an unintentional error.
+
+We'll see how to protect ourselves from this kind of error in the next line.
+
+But first let's see how we could write a useful function like zero array.
+
+In this case the zero array function receives the location of the array and the size of the array.
+
+We could simply iterate through the array and set each array element to zero.
+
+Notice that when we print the array in Main after we call 0 array all the array elements are now 0.
+
+So let's get back to see what we can do to have the compiler help us so we don't change an array we
+
+don't want to we can define function parameters as Konst parameters.
+
+This tells the compiler that these parameters are read only within the function body.
+
+Any attempt to modify them will result in the compiler.
+
+So in this case notice that we included the Konst keyword ret before the array parameter declaration.
+
+That's it.
+
+Now if I try to modify any array element as I do in the assignment statement a compiler error will occur
+
+depending on your compiler the error message will say something like error trying to assign to a read
+
+only value.
+
+The idea of passing the location of a variable to a function instead of the value of a variable is fundamental
+
+in understanding the next topic will talk about.
+
+It's called pass by reference before we talk about pass by reference I want to be sure that you really
+
+understand the whole idea of passing arrays to functions.
+
+So I mean the ID and I mean the section 11 workspace the arrays and functions project.
+
+And let me show you what I've got here.
+
+Let's start at the main.
+
+I've got a real simple array here array of integers called my scores and I've initialized it to 198
+
+1986 and 84 five integers.
+
+Now what I want to do is I want to call a function called Print array and I want to pass into that function
+
+the array and the size of the array as we saw before.
+
+Perfect.
+
+That should print out 198 1986 and 84.
+
+Now I've got a function called Set array.
+
+And what this function will do is it'll set every value of that array to 100.
+
+So when I come back it'll print out one hundred five times so that will actually modify the array.
+
+So let's see what these functions look like they're pretty straightforward.
+
+Are the function prototypes.
+
+That's the function prototype for print to expect an array of integers and the size of the array the
+
+cellaret function expects an array of integers the size of the array and the value that we want to set
+
+each one of those elements too.
+
+All right.
+
+So let's look at the print array and I put Konst here because it's it's something that we need to think
+
+about whenever we write functions that work with the race.
+
+So let's look at this.
+
+What are we doing here.
+
+Well we iterate we iterate for equal to zero.
+
+While it is less than size that's the idiom that we do all the time when we're working with arrays and
+
+we're incrementing by one and then all I'm doing is I'm outputting a race of I.
+
+So I'm going to go from a race of zero race of one race of two all the way to a race.
+
+For in this case and I'm going to print out each one of those integers then I'm just going to print
+
+a new line at the n that will print out 198 1986 and 84 perfect.
+
+So that's that line right here.
+
+Then I'm going to call cellaret and when you pass in again the array the 5 which is the size and 100.
+
+In this case rather than doing any outputting what I want to do is I want to loop through that array
+
+again so the same loop from equal zero.
+
+I less than size by 1.
+
+What I want to do it each iteration of the loop is I want to set a r r so I write the element of that
+
+array to the value that was passed in.
+
+So in this case I'm modifying all five of the array integers to 100.
+
+Then I'm printing it again.
+
+So what I expect from this program is the first print array statement is going to print 198 1986 and
+
+84 then the last print array statement here is going to print 5 100s.
+
+OK.
+
+So let's run this and then we'll walk through this in detail so you can see exactly what's going on.
+
+There you go 198.
+
+1986 84 and then 500 is exactly what we expected.
+
+So let's walk through this.
+
+Let's start with the printer array function first.
+
+And my main has that array right here called my scores and I'm going to draw this visually so he can
+
+see exactly what's going on.
+
+There's my scores.
+
+It's an array of five integers.
+
+Can I put them in here one hundred ninety eight.
+
+Ninety.
+
+86 in 84 the value of the name of an array is the location of that first element in the array.
+
+So let's say that that integer 100 here is that location 2000.
+
+And I'm just making that up.
+
+It could be any location that's 2000.
+
+So whenever the C++ compiler sees an array name.
+
+This is what it's going at.
+
+In this case my scores will evaluate to two thousand.
+
+Okay perfect.
+
+So now I'm going to call printf array right here.
+
+This is what's going on.
+
+So now I'm in my printer array function and print array has several local variables.
+
+It's got array.
+
+It's got size and it's got this I right there.
+
+Let's just worry about the array and the size variables right now.
+
+So there's my A R R I'll just call it array.
+
+And here's my size.
+
+When the function is called the values are copied.
+
+So my scores is two thousand.
+
+It's not the entire array.
+
+It's 2000 so 2000 gets copied over here.
+
+Size is the 5.
+
+So size it's the 5.
+
+Right now I start looping and the first thing I do is it says basically 0.
+
+Right.
+
+So what I'm going to do is I'm going to see out a r r Sub-Zero.
+
+Well what does that mean.
+
+That means the first integer in the array.
+
+Where where is the array right here.
+
+That's that guy right there.
+
+So you can see that this print array function is referring to the actual array in Main because the array
+
+was never copied.
+
+Instead the address of the array was passed in it's going to go through each one of these through the
+
+loop.
+
+It's going to print A-R some one which is that guy right there 98.
+
+So it's going to display them all OK that makes sense.
+
+I hope so so.
+
+So again this will print out right here it will display one hundred ninety eight just like we saw 90
+
+86 and 84.
+
+Now let's look at this function call right here.
+
+I still have my my scores array and it's still the same I haven't changed it.
+
+And when we put those numbers back in here.
+
+Put a 100 in here.
+
+98 90 86 in 84 right now I call cellaret.
+
+Well said array is over here.
+
+And it's got same idea right.
+
+It's got the A-R variable the size and the value.
+
+So it's got a r r It's got size and it's got value.
+
+Let's again assume that this is addressed 2000 right here.
+
+That's that name.
+
+So in this case I'm passing in the 2000 I'm passing and five for size and I'm passing the 100 for the
+
+value and then I'm looping and notice that loop every time in the loop this is what I'm doing right
+
+here.
+
+So the first time through I'm saying are Sub-Zero is value which is 100 is always going to be 100.
+
+Well where is your Sub-Zero.
+
+It's at 2000.
+
+So what I just did was I just came in here and put a 100 in here then I'm going to increment I and it
+
+becomes a r so one equals 100.
+
+So this guys over here.
+
+I just got rid of that one.
+
+And what I'm doing is I'm initializing the entire array to whatever value was passed in which is 100
+
+in this case.
+
+Right.
+
+When this function is finished it's gone.
+
+And what I'm left with is the updated array.
+
+So this will print out five 100s as you saw OK.
+
+So hopefully that makes sense it's really different from pass by volume.
+
+But when you think about it it is still doing pass by value because it's copying the value of 2000.
+
+Right.
+
+It's not copying the entire array but it's copying 2000 which is what my scores defaults to that's its
+
+value.
+
+All right.
+
+So one last thing.
+
+We really don't want to be able to change that array in the print array.
+
+Let's say that we did something like this.
+
+Something really silly we could say are our Sub-Zero is 10000 or you know what I see.
+
+Fifty thousand just so that we could really see the difference.
+
+This is probably a bug.
+
+A print functions don't tend to change anything they just display information.
+
+But let's just say that we've got some bug in our code now right here.
+
+I'll call it print or array again you know I'll call it exactly the same with my scores and five.
+
+So look what happened here.
+
+I called print to read here it printed out the five hundreds but then it changed.
+
+One of them the first one to 50000.
+
+And then I'm calling it again.
+
+So I'm expecting to see that first.
+
+There it is you see that first array element right there just get changed to 50000.
+
+How do I prevent that.
+
+Real easy way to prevent that is to come up to your printer re math function right here and say that
+
+this is a constant array and I can do the same thing in the definition.
+
+Now if you try to compile this.
+
+There's your assignment of read only location A-R.
+
+So in other words this function now print array cannot change array.
+
+That's really what we want.
+
+So we can comment that out and now overrun it just fine.
+
+You can't notice that's exactly what we want.
+
+So when you're writing functions and they're passing around objects especially arrays and vectors and
+
+things like that especially when we talk about pass by reference in the next section you've got to be
+
+really aware of what can change what and if you do have access to the actual.
+
+And you don't want to change it.
+
+Konst is the way to go.
+
+OK we'll talk more about that when we talk about pass by reference.
