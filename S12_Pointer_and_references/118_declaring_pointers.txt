@@ -1,0 +1,87 @@
+In this video we'll look at the syntax for declaring pointer variables.
+
+You should not feel very comfortable declaring variables we've been doing it throughout the course.
+
+Well we declare pointer variables in exactly the same way except that we add the asterisk prior to the
+
+variable name.
+
+In this context the Astros does not function as a mathematical operator.
+
+It serves to declare the pointer the way you read these declarations is right to left.
+
+So the first example int pointer is a pointer to an integer double pointer is a pointer to a double.
+
+Notice in this declaration I place the asterisk next to the type.
+
+Both styles are equivalent.
+
+And the compiler doesn't care.
+
+But there has been a longstanding argument among C++ programmers about which is better.
+
+I always declare my pointers with the asterisk next to the name and that's how I do it in this course.
+
+But I wanted to make you aware of the equivalence styles.
+
+Char pointer is a pointer to a character and string pointer is a pointer to a C++ string object just
+
+like all variables.
+
+If we don't initialize our variables they will contain garbage data.
+
+In this case all the pointer variables declared contain garbage data.
+
+So let's see how we can initialize pointer variables.
+
+In C++ it's very important that you always initialize all pointer variables before you use them.
+
+If you don't initialize a pointer variable it will have garbage data.
+
+In this case that garbage data represents an address since that's what a pointer contains.
+
+So you can think of an uninitialized pointer as pointing anywhere.
+
+So if we use it we could be accessing memory that we have no business messing around with.
+
+We don't even know what that memory is.
+
+Initializing pointer variables is just like initializing Nonpoint to variables.
+
+We can use an initializer list syntax and these examples were initializing the pointer variables to
+
+zero.
+
+That's what NULL pointer represents.
+
+This means that we're initializing the pointers to point nowhere.
+
+That's very different from pointing anywhere.
+
+We can also initialize pointers to actually point to a variable and we'll do that in the next video.
+
+Let's review what we just talked about since it's very very important to understand.
+
+Always initialize all pointer variables uninitialized pointers contain garbage data and point anywhere
+
+no pointer was introduced in C plus plus 11 and it represents address zero.
+
+Which means that the pointer is pointing nowhere.
+
+Use NULL pointer to initialize your pointers unless you initialize them to a variable to a function.
+
+This nulls out the pointer.
+
+I know I've repeated myself several times in this short video.
+
+I'm doing that for a reason.
+
+After a long career programming with many languages that have pointer variables I can tell you that
+
+one of the most common pointer related errors that I've seen in code reviews is uninitialized pointers.
+
+Most of the time this didn't cause a problem but the potential for trouble is there.
+
+So always initialize your pointers in the next video.
+
+We'll see how we can access the address of the pointer and store addresses in pointer variables.

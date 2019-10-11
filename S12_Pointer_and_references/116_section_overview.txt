@@ -1,0 +1,95 @@
+Welcome to pointers and references in this section of the Course you'll learn how to use one of the
+
+most powerful elements in the C++ programming language the pointer pointers give the programmer the
+
+power to work directly with the computer's memory and that includes allocating and deallocating memory
+
+dynamically at runtime as it's required by the program.
+
+You might have heard horror stories from other programmers about pointers and how difficult they can
+
+be to use and the damage they can cause when used improperly.
+
+You may have also heard that Java and Python and other programming languages don't have pointers because
+
+they can cause so many issues C++ pointers give you more power over your machine than you could ever
+
+achieve with languages like Java and Python.
+
+Now that's not have not come Java or Python.
+
+It all comes down to why the languages were created and what domains are typically used in C++ programs
+
+are used extensively to develop operating systems systems software device drivers embedded systems and
+
+so forth with these systems.
+
+We want to be in complete control over the hardware.
+
+We don't want a virtual machine handling memory or checking for everything that could go wrong.
+
+We just simply can't afford that extra overhead at runtime where this power comes responsibility responsibility
+
+to understand how to use and release memory efficiently and correctly.
+
+And this is one of the main use cases for pointers in this section will learn about what a pointer is.
+
+Guess what.
+
+It's a variable that was easier.
+
+My point is that pointers are not this mysterious concept that's virtually impossible to understand.
+
+Pointers are easy to understand and use.
+
+We just need to learn to use them correctly.
+
+The syntax around using pointers is the part that can be a little intimidating at first but as usual
+
+I use my handy drawing pad and walk you through it all in detail.
+
+Well learn how to declare pointers store addresses and pointers and dereference pointers.
+
+That means getting what they're pointing to.
+
+Then we'll learn how to allocate memory dynamically from the heap or the Freestore.
+
+This opens up a new world of problem solving.
+
+Then we'll talk about pointer arithmetic and see how similar pointers and arrays are.
+
+We'll also learn to do pass by reference with pointers this time and will also learn how the Konst qualifier
+
+applies to pointers.
+
+Finally we're talking about some of the pointer potential pitfalls what can go wrong and what kinds
+
+of things can happen when you use pointers incorrectly.
+
+Then I will switch over and talk about references.
+
+We've already seen references when we talked about functions in the last section.
+
+Remember how references are aliases in this section will quickly reveal what we learned about references
+
+in the last section of the course and will see a few more ways that we can use references.
+
+Finally everything we learn in this section regarding pointers is using C++ as raw pointers.
+
+There is a ton of code out there that uses raw pointers and it's important to understand them completely
+
+but C++ also has smart pointers.
+
+These are pointers that eliminate many of the safety problems with raw pointers but it's still very
+
+efficient to use while smart pointers are used more often with object orientation and are considered
+
+a more advanced C++ topic.
+
+I'll provide an overview in this section so that's it a lot to cover in this section but it's all very
+
+focused and shouldn't take too long at all before you completely understand pointers and references.
+
+First let's see exactly what a pointer is in the next video.
+
+

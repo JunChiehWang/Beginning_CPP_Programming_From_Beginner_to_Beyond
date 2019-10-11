@@ -1,0 +1,73 @@
+Before we get to 20 C plus plus code that uses pointers lets see what a pointer is a pointer is a variable.
+
+OK we know all about variables.
+
+Variables have an address in memory where they're bound to.
+
+They also have a type such as int double string vector and so forth and they have a value which they
+
+store.
+
+A pointer is a variable and it stores the address of another variable or function.
+
+So if I initialize an integer variable named X to 10 then X is of type integer and it's bound to some
+
+memory location and it contains the value 10.
+
+That means that I can declare a pointer variable that stores the address of x.
+
+So a pointer is a variable that means that the pointer has a memory location where it's bound to.
+
+It has a type.
+
+It has a value and the value is an address.
+
+We'll see how to declare a pointer in C++ in the next video.
+
+Remember that a pointer points to a variable or to a function to use the pointer you must know the type
+
+of what it points to before we learn about how to use pointers.
+
+Let's see why we use pointers in the first place.
+
+If a pointer points to a variable or a function.
+
+Can't I just use the variable or the function directly.
+
+Sure.
+
+And if you can you should.
+
+There is no sense in creating a pointer to something that you can use directly but you can't always
+
+do that.
+
+For example if you have some complex data that's defined outside a function and you want to access that
+
+data from within the function you can't because the variable name is out of scope.
+
+So you can pass the data to the function by value and make a copy of it or you can use a reference or
+
+a pointer parameter to access that data from within the function.
+
+Also pointers are often used to operate on arrays very efficiently.
+
+In fact we'll see in this section just how interrelated pointers and arrays are.
+
+We can use pointers to allocate memory from the heap or the Freestore dynamically at runtime.
+
+That memory doesn't have a variable name associated with it.
+
+So the only way to use it is through a pointer.
+
+Finally if you're working with embedded systems device drivers or other types of systems software sometimes
+
+you need to gain access to a specific memory address or a range of memory addresses pointers is the
+
+best way to do that.
+
+OK now that we know a little bit more about what a pointer is and why we would use one.
+
+Let's see how we can declare a pointer variable in the next video.
+
+

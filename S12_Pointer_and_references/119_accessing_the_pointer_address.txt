@@ -1,0 +1,519 @@
+In this video we'll learn how to access the address or location in memory of any variable.
+
+We'll also learn how to initialize a pointer variable to point to another variable in C++.
+
+We can use the address operator which is the ampersand symbol to the left side of an operand the address
+
+operator is an operator and when used in an expression it evaluates to the address of its operand.
+
+Of course the operand must have an l value so it can't be a constant or an expression that evaluates
+
+to a temporary values in the example code.
+
+We have a variable name which is a simple integer variable that's been initialized to 10.
+
+If we display them we're displaying the contents of none which is 10.
+
+If we display the size of num then we're displaying how much storage is allocated by them.
+
+In other words how much storage do we need on my machine to store an integer.
+
+In this case it's 4 bytes.
+
+Finally if we display the address of Naam using the address operator we get a hexadecimal number that
+
+represents the location in memory of the variable name a hexadecimal number is just a base 16 number.
+
+So far so good.
+
+You can see that the address operator evaluates to exactly what we expect the address of the variable
+
+name.
+
+Now let's see these same statements with pointer variables in the first line we declare P to be a pointer
+
+to an integer variable.
+
+So that means that P can hold values that are addresses of integers.
+
+Also notice that we didn't initialize the pointer p in the first output statement we're displaying the
+
+value of p the value of p is the value that stored in P.
+
+Since we didn't initialize P We have garbage data in P and you can see that address displayed in the
+
+second output statement we're displaying the address of the variable P.
+
+Since we're using the address operator and in the third statement we display the size of P using the
+
+size of operator on my machine.
+
+This displays a 4.
+
+Which means that P is 4 bytes of storage since P holds addresses.
+
+This also means that addresses on my machine can be stored in four bytes on the next line.
+
+We assign no pointer to P.
+
+This sets PITA's zero which means it's pointing nowhere.
+
+Since p is a variable we can change its value.
+
+This seems obvious but it's important since when we talk about references in a bit you'll see that you
+
+can't change a reference once it's initialized.
+
+Finally in the last update statement we display the value of p again and this time we get 0 because
+
+we zeroed it out.
+
+I know these examples seem pretty simple but please try them out on your machine and be sure you understand
+
+these fundamental concepts.
+
+Since everything else builds on them here you can see that I'm defining 5 pointer variables p 1 through
+
+p. 5 and initialize them all to NULL pointer each pointer variable points to a different type.
+
+So each can hold addresses of variables of the type they point to.
+
+If we display the size of each of these pointer variables What do you think will display with the size
+
+of P1 be less than the size of P4 because P1 points to an int and P for to vector objects.
+
+If you set four for each pointer you'd be right.
+
+Based on the previous example all pointers in my program will hold values that can be represented in
+
+4 bytes an address of an integer and an address of a vector and the address of a string all have size
+
+of four on my machine.
+
+There is a big difference between the size of the pointer variable itself and the size of what it points
+
+to.
+
+Again take your time and make sure you understand the difference between a pointer and what it points
+
+to.
+
+It's very common to think of a pointer as what it points to and that's a mistake.
+
+A pointer is just a simple variable.
+
+What it points to could be simple or a very complex structure.
+
+When we declare pointers as we've done so far there are typed pointers.
+
+This means that we explicitly declare the pointer variable to point to a variable of a specific type.
+
+In this example we're declaring an integer score and initializing it to 10 in a double high temp and
+
+initializing it to 100 point seven then we declare score pointer as a pointer to an integer so far so
+
+good.
+
+Now we assign the address of score to score pointer.
+
+The compiler is fine with that since score pointer holds addresses of integers and scores an integer.
+
+But look at the last assignment statement.
+
+In this case we're assigning the address of high temp to score pointer.
+
+The compiler won't let you do this.
+
+You'll get a compiler error.
+
+You told the compiler that score pointer holds addresses of integers but you're asking it to store the
+
+address of a double both addresses are 4 bytes long so the issue isn't that size won't fit.
+
+The issue is that there's a type conflict in C++.
+
+We can also have untyped void pointers.
+
+I'm not going to talk about those but they aren't used that much in C plus plus they're more used in
+
+C great so let's review a very simple concept but a very important concept.
+
+Pointers are variables so they can change.
+
+Pointers can be know and pointers can be uninitialized.
+
+That's not usually a good idea but it can happen.
+
+The example code shows all these options.
+
+First we declared two double variables high and low temp and we initialize them.
+
+Then we declared temp pointer as a pointer to a double and we don't initialize it so it's pointing anywhere
+
+then we assign the address of high temp to 10 pointer and then we change 10 pointer to point somewhere
+
+else by assigning the address of low temp.
+
+Finally we no out 10 pointer by assigning null pointer We'll come back to these pointer properties later
+
+when we compare pointers and references and we'll go over some guidelines as when to use pointers versus
+
+reference.
+
+Let's head over to the idea now and go over these examples in life code and then in the next video we'll
+
+learn how to follow appointer and get to the data that it's pointing to.
+
+OK so I mean the code like idea and I in the section 12 workspace in these simple pointers project in
+
+this project we're just going to go over some real simple examples of declaring pointers looking at
+
+the size of pointers looking at addresses just so you get a really good feel of what's going on here.
+
+First thing you'll notice here is that we are declaring numb to be an integer and we're initialized
+
+to 10.
+
+That's just a plain old integer variable there's no pointer involved here at all.
+
+So in this case I've got a variable.
+
+It's called numb and it exists somewhere in memory.
+
+Let's say it's somewhere in memory here.
+
+Obviously that memory has to have a location.
+
+Right we need an address.
+
+So let's just say that the address is a thousand pages a thousand and these examples obviously it won't
+
+be a thousand when we display it but it's easier to understand this way.
+
+So right now it's got a 10 in it because we've initialized it so that's the value of arm is 10.
+
+So in this case here I print out the value of numb is numb which will display a 10.
+
+Then I'll ask what's the size of number.
+
+What is the size of an integer.
+
+On my machine this may be different on your machine but on my machine an integer is 4 bytes and that
+
+at the end here will say what is the address of GNOME and this is where the address operator comes in
+
+that ampersand right before the variable name.
+
+This evaluates to the location in memory or the address of that variable.
+
+In this case it will be thousands who would print the thousand but obviously it won't print something
+
+different.
+
+When I actually run the program.
+
+So let's take a look at the output from here.
+
+OK so here's the output I'll just put this side by side so we can read it.
+
+The value of number is 10.
+
+That's exactly what we expected.
+
+And I knew that the size of an integer on my machine is four years it might be eight.
+
+It might be four.
+
+And then the address of Nahm is a hexadecimal number.
+
+So this is the way that addresses are represented in C++ a hex number is just a number to base 16.
+
+So that's the address of that integer variable.
+
+Ok so hopefully this makes sense.
+
+This is the real foundation to understanding pointers and understanding locations or addresses of variables
+
+so hopefully this makes sense.
+
+So let me clear this out and then let's do this next example here.
+
+Here's where we're actually declaring a pointer and we're doing that right here on line 17.
+
+We're declaring P to be a pointer to an integer remember.
+
+You read these from right to left so p is a pointer to an integer.
+
+What is P.
+
+It's a variable.
+
+So here's p.
+
+It's got storage associated with it and it's got a location associated with it.
+
+Let's say that the address of P is 2000 this time what's in P right now.
+
+I never initialized it so there's garbage in here.
+
+There's a random bit pattern here.
+
+And as far as C++ is concerned that random bit pattern is an address right because pointers hold addresses
+
+so this guy right now is pointing somewhere who knows where but it's definitely pointing somewhere.
+
+So what's the value of p whatever that that pattern is.
+
+We're going to get garbage right here.
+
+And you can see that the trouble or the danger of following that pointer and putting something in this
+
+address here that could be something pretty important on your machine and you just wiped it out.
+
+Hopefully you'll get a crash and you can fix it.
+
+OK.
+
+So what's the address.
+
+Well the address happy is the location where this pointer is stored in this case 2000.
+
+And then what's the size of P.
+
+How big or how much storage do I need to represent a point on my machine while on my machine it happens
+
+to be 4 bytes.
+
+Again yours it could be different.
+
+So this will print out some garbage memory address then it'll print out the address where this variable
+
+is stored and then it should print out of 4.
+
+So let's give it a shot.
+
+And here you go.
+
+Move it up here as well.
+
+The value of p is there is the hex address.
+
+That's the garbage address and the address AP is at this location right here.
+
+And again 18 and the size of P is for now unblind 22.
+
+I no doubt the pointer I said P equals null pointer null pointer is basically address's 0 surges that
+
+you're throwing out the pointer.
+
+So if I print out now the value of p I should get back to 0 and I do what we're doing here is we're
+
+making this point to point nowhere which is real real important.
+
+OK so let's do a few more examples.
+
+In this case I'm declaring five pointers 1 through P5.
+
+Just like I did in the slides and all of these pointers are pointing to different types.
+
+OK so.
+
+And they're all no doubt right now.
+
+So in the case of P1 P1 has stored in memory obviously right we need to allocate storage for that variable.
+
+Right now it's not.
+
+So it's basically pointing nowhere P2 is also a pointer and reallocating space for it.
+
+It's pointing nowhere.
+
+Eventually one will point to an integer P2 a point to a double P3 will point to unsigned long long and
+
+the form a vector and P 5 to a string.
+
+So what they're pointing to is very different from what they are.
+
+They're just pointer variables real primitive types.
+
+In this case what does the size of P1.
+
+How much storage do I need to represent the address of an integer.
+
+It turns out it's 4 bytes.
+
+What's the size of P2.
+
+How much storage do I need to represent the address of a double.
+
+Again it's four bytes on my machine four bytes and I can represent any address of any variable.
+
+So what you expect here is to print for all the way down.
+
+Now this is important it is really important to understand the difference between the POINAR and what
+
+is pointing to.
+
+Let's say we've got P What eventually p 1 is going to point to an integer right.
+
+That's the whole idea.
+
+And P2 will point to a double.
+
+So we'll have much more storage here.
+
+And let's say for is over here P4 will eventually point to a vector or string object so it could be
+
+pointing to a vector of string objects where this could be Larry Moe and Curly.
+
+Where these guys are all string objects so you can see the pointer itself is simple.
+
+The pointer itself is simple the pointer itself is simple they're all really simple.
+
+What they point to could be very simple or could be pretty complex as you see right here.
+
+So make sure you understand the difference between the pointer and what it points to.
+
+It's really critical.
+
+So in this example if I run it I expect to get four straight down line and there you go size of the
+
+one is for all the way down the line because all I need is for bytes to represent any address on my
+
+machine.
+
+Again this is very machine specific.
+
+You might have eight on your machine.
+
+Ok so now let's go through one more little example here.
+
+All right so let's walk through this before we even run it.
+
+In this case what have I got I've got to score as an integer and I'm initializing it to 10.
+
+OK let's do that over here.
+
+Here score.
+
+It's an integer.
+
+And I put a 10 in there.
+
+Let's assume that that address is 1000.
+
+That's where score lives.
+
+Again it will be different on your machine for sure.
+
+I'm just making that up.
+
+Then I've got a double called high temperature.
+
+Obviously I need more storage for doubles right.
+
+And this is called high temp and right now I have a hundred point seven in there and let's say that
+
+this is and address 2000.
+
+And so those are the addresses for those variables.
+
+Now here's my pointer.
+
+It's called Score pointer.
+
+It's got storage associated with it right now.
+
+I've nailed it out.
+
+So it's pointing nowhere so far so good.
+
+Now this is what I'm doing here I'm saying score pointer is equal to the address of score I'm initializing
+
+that pointer to a point somewhere.
+
+Now what's the address of score.
+
+It's right here.
+
+Thousand.
+
+So I'm going to put a thousand in here.
+
+I'm not putting the 10 in here and putting the thousand in here.
+
+That's my pointer.
+
+So now score pointer is pointing to an integer because it holds the address of an integer.
+
+So score pointer is pointing to score.
+
+That's what we're doing right here.
+
+So now let's display what's the value of score well the value score is 10.
+
+Right right here.
+
+So they should display a 10.
+
+What's the address of score in this example it's a thousand.
+
+And what's the value of the score pointer a thousand.
+
+And so when we run this now we're definitely going to get a 10 here and we're going to get obviously
+
+not a thousand here.
+
+But what's important is that those two numbers will be the same.
+
+They have to be the same because score pointers pointing to score and score has an address which is
+
+the one that's in score pointer.
+
+OK.
+
+So when we run this we're expecting as I said a 10 and then two memory addresses that are the same.
+
+So let's give that a try.
+
+And this is where the value of score is 10 and then the address of score is you see here and the NF
+
+0 values score pointer 0.
+
+So these are the exact same address which is exactly what we expected.
+
+And then this last little of compiler error here let me show you that so that you can see the compiler
+
+and what it looks like in case you run into it.
+
+This is a pretty common mistake.
+
+Actually what happens here is we're saying score pointer right here and points to an integer right and
+
+holds addresses of integers.
+
+But we're trying to put in here the address of high temp high temp is a double the compiler's going
+
+to say sorry I don't know what you're talking about.
+
+You're telling me that score pointer holds addresses of integers but now you're trying to put the address
+
+of a double in there.
+
+I can't do that.
+
+And let's compile this.
+
+You can see what the air looks like and it makes it make sense right.
+
+It says I cannot converted a pointer to a double to a pointer to an integer.
+
+OK so that gives you some insight.
+
+Play around with these examples create some of your own.
+
+Walk through them draw like I did.
+
+So you really understand these connections between the pointer variable and what it points to.
+
+
