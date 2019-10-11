@@ -1,0 +1,365 @@
+So how do you function calls work functions using area in memory called the function call stack or program
+
+stack.
+
+A stack is analogous to a stack of books or a stack of dishes.
+
+If you place a book on top of the stack then you must remove that book before removing any others.
+
+This is referred to as last in first out or Life'll stacks also use the terms push when you put an item
+
+on top of the stack and pop.
+
+When you remove an item from the top of the stack in the case of a C++ program these items are called
+
+stack frames or activation records.
+
+All it is is a collection of information that represents an active function.
+
+So this is where parameters are stored local variables the return address and more each time a function
+
+is called an activation record is created and it's pushed onto the call stack when the function terminates.
+
+We poppets activation record off the call stack and now the top of the stack is the function that is
+
+called The one we just popped off the call stack works in a very orderly manner.
+
+You can't jump into or out of the middle of the stack.
+
+You must follow the Life'll rules.
+
+Also remember that the call stack is finite in size.
+
+If you activate too many functions on the call stack then it's possible to run out of stack space.
+
+This results in a stack overflow error which is usually an unrecoverable error.
+
+Your program will terminate.
+
+The best way to understand how function calls work is to show you visually.
+
+Let's do that now in order to understand how function calls work.
+
+We really need to understand how memory is laid out here.
+
+Let's say that this is the memory for our program.
+
+It's divided into segments So here we've got the code area.
+
+This is where the code resides.
+
+Then we've got an area for static variables or for global variables.
+
+That's where they're stored right here.
+
+And here is the area for the stack.
+
+This is the function call stack and this is what we're really concerned about in this video.
+
+So this is the area I'm going to concentrate on in this video.
+
+Then we've got another area in memory here called the heap or the Freestore.
+
+We'll talk a lot about this area when we talk about pointers and dynamic memory allocation.
+
+So in this video keep in mind that what I'm talking about is this area right here that's the function
+
+call stack.
+
+So when we call functions and they finish and they pop off the stack.
+
+This is what we're talking about this area in memory right here.
+
+OK so I mean the idea and I'm in the section 11 workspace in the how function calls work project and
+
+I've got a real simple example here that I'm going to walk through in detail in a second but before
+
+I do that let's concentrate and look and what typically happens when one function calls another.
+
+So I've written it out here and this is not the only way to achieve this.
+
+There's a lot of different ways to get to the same end.
+
+But this is what typically happens so I suppose I have a main and that main calls a function called
+
+func one.
+
+That's what's happening here I've got Main and it's calling phunk one.
+
+And what happens well.
+
+Main it pushes space on the stack.
+
+Remember everything is based on the stack for the return value that function func one is going to return
+
+something to main main is the one that needs to get that result.
+
+Once that function is done I need to push space for the parameters that are being passed in if any in
+
+this case we've got to right here X and Y and we need to push the return address.
+
+That's important because function one needs to know where to come back to.
+
+Then we transfer control over to function one which is basically an assembly language instruction called
+
+Jump.
+
+You just jump over there and you're off and running.
+
+So control is transferred.
+
+Now one function and one side it pushes the address of the previous activation record.
+
+That's basically moving a stack pointer.
+
+That way you know where the top of the stack is.
+
+You push any register values that need to be restored.
+
+Then you perform the code in function one when the code is finished you restore the register values
+
+that way Main is where it was before you restore the previous activation record right.
+
+You basically pop all this stuff off the stack.
+
+You store any function result where main wants it.
+
+You can see main gave you the address and you transfer control back to main.
+
+So you jump back to that return address that main pushed on main side.
+
+Now remember function 1 is now done so main knows where the parameters are.
+
+It knows where the return values are.
+
+So it needs to pop that information off the stack to clear up the stack and also grab those values if
+
+it can.
+
+OK so this is the general flow.
+
+We're not going to cover all the details here.
+
+I'm more interested in the parameter side of it.
+
+So what I'm going to do is I'm going to walk through this example and I'll draw a function call stack
+
+over here and we'll go through it in detail so you can see exactly what's going on from the parameter
+
+perspective.
+
+I'm not going to worry about stack pointers and static links and dynamic links and all the stuff that's
+
+on an activation record but more generally Let's worry about the parameter passing so you can really
+
+understand what's going on because it's important to understand this especially when we learned about
+
+recursion later on.
+
+OK so let's walk through this example.
+
+Program execution starts at two main.
+
+So main is going to be activated it's got a function activation record because it is a function.
+
+So let's assume here Main is on the stack already and Main has an X.
+
+It's got a Y and it's got a Z.
+
+So we need space for those local variables.
+
+You can see X is initialized to 10 y is initialized to 20 and Z is 0 in this case OK.
+
+So now Maine is right here and we're executing this piece of code z equals function one with x y.
+
+So we're calling function 1.
+
+So what happens is main stops what it's doing it allocates space for X Y and I'm just going to do this
+
+conceptually so we don't waste a lot of time know diddling with the stack and pointers and things.
+
+But let's suppose that at this point we get we're going to push an activation record on here for function
+
+one.
+
+And if this is a little different from the example I showed you that I just walk through but it's a
+
+little easier to draw.
+
+So this is where we're at.
+
+So now we're at function one function one is now on the stack and we need space for a b and result.
+
+OK.
+
+So let's say we've got a we've got B and we've got result.
+
+We're doing pass by value here.
+
+So what's going to happen is the X hooks up with DA and the y hooks up with the BE RIGHT.
+
+There's your actual formal correspondence here.
+
+So X is 10 and that goes copied into the A.
+
+Why is 20 in this case so we're going to copy that to the B.
+
+OK.
+
+So this is where we're at right now.
+
+Now let me clear up a little bit of this up.
+
+All right so that's where we're at now.
+
+Now we start executing this function function 1.
+
+So it's going to add a and b.
+
+Ok so that would be 20 plus 10.
+
+So this gives me a 30 and it's going to store that value into result right here.
+
+So now result gets a 30 originally result was 0 right because I zeroed it out here I did write it on
+
+here but you get the idea here.
+
+Now we're going to call function 2 and we're going to pass in result a and b.
+
+So again let's stop what we're doing here we need to come back and finish this code.
+
+So we're here and now we're activating function to and all along those stack pointers and moving along
+
+here.
+
+This is the part that I'm not going to worry about drawing here.
+
+So now we're in function too.
+
+We need space for X Y and Z.
+
+But notice X is a reference parameter.
+
+OK so we'll have to deal with that.
+
+So we've got X Y and Z.
+
+All right.
+
+So let's do X Y and Z.
+
+All right let's do Y and Z first.
+
+We're going to pass those by value what is y and z.
+
+Well we've got three here we've got result which is the corresponding to X a corresponds to Y and B
+
+corresponds to Z.
+
+Right.
+
+So y gets the value of a the value that was 10.
+
+So why is going to get 10 and Z gets the value of B.
+
+B was 20 Z's going to be 20.
+
+K now let's talk about that reference parameter.
+
+Remember what we talked about reference primers we said that there were aliases right.
+
+So in this case x is an alias for result right here.
+
+So X is an alias for result.
+
+So any changes I make to X result will be updated.
+
+Right.
+
+Because that's the whole idea.
+
+That's the whole point of pass by reference.
+
+Now we started executing this code.
+
+The code says X equals x.
+
+Plus y plus Z.
+
+That's what that means right there.
+
+OK so we've got Y and Z here which are 10 and 20 this becomes 10 plus 20.
+
+And then what's X where X is a reference to.
+
+Result.
+
+Result is 30 so we're going to grab the 30 and add those two together that gives us 60.
+
+So now we're going to say X equals 60.
+
+Well again x is an alias for result.
+
+So what we're doing is we're updating that guy to 60 right here OK.
+
+Now function 2 is done.
+
+So what happens.
+
+It gets popped off the stack.
+
+So let's do that.
+
+So function 2 is now gone from here.
+
+All that's gone.
+
+I'm back in function one well-worded function one leave off that left off right here.
+
+We're back from the function call now.
+
+So it needs to return result which results 60 was it a return result to right here.
+
+Remember result right there is the result of that function call.
+
+So what I'm going to do here is I'm basically in the say z equals 60.
+
+So that's what's happening here.
+
+I'm popping off the stack now.
+
+So function one is done all this is gone.
+
+I'm back to Main and all main has to do is that one out put statement right here which displays z and
+
+z is now 60.
+
+And the program's done.
+
+So this gives you an idea of conceptually what's going on with function calling.
+
+Now I skipped a lot of these steps here on purpose because there's a lot to draw on it gets really really
+
+cluttered.
+
+But think about all this as function call overhead you really don't have to worry about pushing registers
+
+and you know transferring control and all that's done for you by the compiler.
+
+But there is a certain amount of function call overhead here.
+
+So let's run this program and see that we indeed get to 60 and there it is there's a result.
+
+There are 60.
+
+OK so hopefully this works we'll do this again when we talk about recursion and that's when a function
+
+calls a function calls a function calls itself.
+
+So it's really important to understand what's going on with the stack call frame so we really know what's
+
+what's being passed and what's being returned.
+
+And you can see here that if we don't have a way to unwind to get back to where we were we could just
+
+really just you know run out of memory and get a stack overflow where.

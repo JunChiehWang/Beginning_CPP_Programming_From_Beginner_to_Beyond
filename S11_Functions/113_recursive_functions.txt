@@ -1,0 +1,453 @@
+In this video we're learn about recursive functions and how to implement them in C++ a recursive function
+
+is a function that calls itself the function can call itself directly or indirectly through another
+
+function.
+
+If we end up with two or more activation records on the stack for the same function then we have recursion
+
+recursion is great for certain classes of problems.
+
+Recursive problem solving is something that most programmers have a little trouble doing when they first
+
+learn that's normal.
+
+Eventually you'll understand that recursive solutions make sense in certain cases.
+
+There are many types of recursive problems that lend themselves well to a recursive solution.
+
+In mathematics we have factorial Fibonacci numbers fractals and many more is searching and sorting we
+
+have binary searches search trees depth first search graphs and also many more.
+
+There are also classic problems like the Towers of Hanoi that can really be hard to solve with a non-recursive
+
+solution.
+
+Let's see how we can calculate the factorial of a number using recursion.
+
+Here we see the definition for factorial as you would find in a math book.
+
+Factorial is defined in terms of itself.
+
+That's what recursion is all about.
+
+We have a base case.
+
+So in this case factorial of 0 is one by definition and we have the recursive case factorial event or
+
+factorial is equal to end times and minus one factorial.
+
+See the recursion there.
+
+Let's see how we can implement this in C++.
+
+So let's look at the code starting at Main.
+
+We call factorial and Pessin an 8 to the factorial function.
+
+When the factorial function returns the value returned will be output to the console.
+
+In this case we expect 40000 320.
+
+OK so now let's look at the factorial function itself.
+
+First we need to decide what types will accept and return the factorial function can generate massively
+
+huge numbers.
+
+So in this case I'm using unsigned long long as the return type and the parameter type.
+
+This can hold very very large positive integers but we can still get an overflow even with such a big
+
+number.
+
+If you look at the code for the factorial function it looks exactly like the mathematical definition
+
+of factorial.
+
+We check a base case.
+
+In this case if any is equal to zero we return 1.
+
+Remember the return knocks you out of the function immediately.
+
+Otherwise we return the result of calling the factorial function again with and minus one.
+
+So in this case it would be return N times call factorial with n minus 1.
+
+There is the recursion the base case is super important since it's what stops the recursion.
+
+Otherwise we will recurse indefinitely and eventually we'd run out of stack space and get a stack overflow
+
+error in a bit we'll head over to the ID and I'll walk you step by step in detail through an example
+
+call to factorial so you can see exactly what's happening on the stack.
+
+Let's look at calculating a Fibonacci number.
+
+Now here's the definition for Fibonacci number.
+
+There are two base cases Fibonacci of 0 0 and Fibonacci of 1 is 1 and the recursive case is Fibonacci
+
+of N is equal to Fibonacci of and minus one plus the Fibonacci of and minus 2.
+
+Again notice the recursive definition Fibonacci is defined in terms of itself.
+
+I think you can see how to implement this in C++.
+
+Again I've decided to use unsigned long long since Fibonacci can also produce huge numbers.
+
+Notice in the main I call Fibonacci.
+
+And the result I expect back is 830 2040.
+
+Now let's look at the Fibonacci function.
+
+Notice the handling of the base cases.
+
+If any is less than or equal to 1 then we simply return.
+
+And so when end is zero we return 0 and when end is 1 we return one that handles both base cases in
+
+one step.
+
+We could easily rewrite this condition to explicitly check and equals zero and equals 1.
+
+But this achieves the same result.
+
+This base case is what stops the recursion if and is not 0 or 1.
+
+Then we call Fibonacci again with both pieces of the problem definition.
+
+Eventually the recursion will stop and the result will be returned to main.
+
+Notice how much the code looks like the mathematical definition of Fibonacci.
+
+This is by design.
+
+Let me give you a few thoughts on recursion.
+
+Remember recursion is a form of iteration.
+
+So anything that can be done recursively can also be done with iteration and vice versa.
+
+Use recursion only when it makes sense.
+
+The problem must lend itself to a recursive solution.
+
+Don't use recursion to count from 1 to 10.
+
+Remember the base cases.
+
+They are what stops the recursion and are super important because of the call stack recursion can be
+
+quite resource intensive.
+
+Especially if you have very deep recursion.
+
+It's not uncommon when you're first learning recursion to recurse indefinitely and run out of stack
+
+space resulting in a stack overflow where that's perfectly fine.
+
+This is how you learn.
+
+I can't tell you how many times in my career I've seen recursive functions rewritten to iterative solutions
+
+because of resource issues.
+
+Generally an iterative solution to a recursively defined problem is less elegant and more difficult
+
+to understand in code but sometimes we have to meet nonfunctional requirements and that's what it takes.
+
+Let's head over to the idea and walk through a factorial example in detail.
+
+So I'm in the idealy I'm in the sectional Levan workspace and there are two projects that are interesting
+
+here that both use recursive functions.
+
+One is the Fibonacci project to this effect.
+
+Tauriel project went through a detailed example of how factorial works recursively in a minute.
+
+But here's Fibonacci and it's just like I wrote in the slides.
+
+So here in the main I'm calculating the Fibonacci number for 530 and 40.
+
+You can see the forties pretty large if you try to do like a Fibonacci of 50 or something like that.
+
+It's going to take a while because there's a lot of recursion going on.
+
+It all depends on how fast your machine is even here when I do a Fibonacci of 40 I'll run this and you'll
+
+see a little bit of a delay.
+
+You see that it took just over a second delay there to actually calculate that Fibonacci number and
+
+it's a pretty large number.
+
+But once you start getting to really large numbers here for example 45 50 then the recursion is just
+
+tremendous and it takes a lot to solve those problems.
+
+OK so let me go back to factorial.
+
+And when I really want to go over here.
+
+So here's the factorial just like we wrote it.
+
+The factorial of some number.
+
+And there's four examples here you can see factorial three is six factorial betas 43 20 and so forth.
+
+You could see the factorial of 20 is a really big number.
+
+And as this number grows here that number really grows big time.
+
+So let me run this and you can see it's really fast here but once you start really increasing that number
+
+there it's going to slow down big time.
+
+Now what I want to do is I want to I'm going to come at this out just for a minute because I'm only
+
+interested in factorial of three.
+
+I want to walk through a stack example of exactly what's going on when we call factorial with a 3.
+
+We could do a four or five or six if we did that we'd be here all day drawing stuff on the stack because
+
+of the recursion threes an easy number.
+
+It will be pretty easy to do in a stack and it will take so long that you'll understand exactly what's
+
+happening and whether he's three or four or five we'll understand.
+
+OK.
+
+So let's do that now.
+
+OK.
+
+So here's my stack and my main is on the stack and all man is doing is it's outputting the result of
+
+factorial with the three.
+
+So I'm just going to use fact rather than write out the entire word factorial so Maine is calling factorial
+
+with a three.
+
+And the result he gets back it's going to output right.
+
+OK so that's simple enough.
+
+So what happens.
+
+Well Maine calls that function factorial.
+
+Right.
+
+So we're going to activate that function and we'll put it on the stack so main is going to call factorial
+
+with the three.
+
+So here's the activation record for factorial from this call right here from Maine.
+
+Notice the factorial function right here has one local variable.
+
+And so we need to allocate storage for it and let's say that that's And right here.
+
+And what's the value for.
+
+Well in this case it's three right and passing three into this function.
+
+So end is going to get a 3 and I'm going to write the code right here in the stack.
+
+The code doesn't exist on the stack.
+
+It exists somewhere else.
+
+But here you'll be able to follow it easier I think.
+
+So what do we do we start executing the code is equal to zero.
+
+No and is equal to three.
+
+So what do I do.
+
+I return I'm going to shoot right in which is three times factorial of and minus one well three minus
+
+one is two.
+
+So we need to call that function.
+
+So what do we do again.
+
+We transfer control to the other function.
+
+What other function is it.
+
+It's the same one we're just calling it recursively.
+
+So in this case what am I doing I'm calling factorial with two factorial has an N.
+
+So we need to allocate storage for an end it's just another activation record.
+
+In this case it is to let's start executing is equal to zero.
+
+No.
+
+So I want to return N which is two times factorial of and minus one will to minus 1 is 1.
+
+So I'm going to do that.
+
+Now notice what just happened.
+
+I've got two activation records on the stack for the same function.
+
+That's the definition of recursion.
+
+All right so now what are we going to.
+
+We're going to call factorial with a 1
+
+and you can see the stack just growing right.
+
+Well factorials the same function it's got an n.
+
+In this case I'm calling it the one I'm passing the end by value so there's the one.
+
+And what does it do is any call to zero.
+
+No.
+
+So it's going to return N which is 1 times factorial of and minus 1 which in this case is zero.
+
+So what do I do.
+
+Again I stop and I call factorial again.
+
+In this case with zero.
+
+So let's do that.
+
+Here we're going to call factorial with zero
+
+and gets zero.
+
+Now we're here.
+
+This is the base case.
+
+Finally we're going to start unwinding is equal to zero.
+
+Yes.
+
+So what do I do.
+
+I return 1 return 1 to who.
+
+To whoever called me.
+
+Well here's the call right here.
+
+So the value of that call will be 1.
+
+OK.
+
+And now what we do is we start unwinding.
+
+So this gets popped off the stack
+
+it now we're here.
+
+Well this guy can now return as well right.
+
+So it's going to return what it's going to return.
+
+One times one one time one to two this guy right here.
+
+So one times one is one and we're going to pop off the stack.
+
+So this function now is gone.
+
+That activation record gets cleaned up.
+
+And we're here right.
+
+So hopefully everybody's with me.
+
+It's pretty straightforward.
+
+It's just a matter of keeping all your ducks in a row.
+
+So here we're going to return to times one which is to who to this function call that's devaluate that
+
+function call.
+
+That's the two.
+
+And again we're going to clean up the stack it gets popped off an activation record always.
+
+All those areas in the stack that we allocated are gone.
+
+So now we're here finally we can calculate this result which is three times two which is six.
+
+So we're going to return six to who this guy is the one that called me.
+
+That's a six right there right.
+
+The value of that function call is a six.
+
+What are we going to do now.
+
+Pop off the stack.
+
+We're cleaning up.
+
+Finally you see that's that's called unwinding from a recursive call.
+
+So we're here now we've got six.
+
+And what do we do with the six.
+
+We put it and that's the final result of the call to factorial with a three as you can see it's pretty
+
+straightforward.
+
+It's a matter of your recursive calls get pushed on the stack and then you start unwinding the unwinding
+
+is starting right there.
+
+That's the critical piece that base case.
+
+If you forget that base case or get it wrong then this would just keep going and going and eventually
+
+you're going to run out of stack space and get a stack overflow error.
+
+OK.
+
+So there you go.
+
+Obviously if you remember the Fibonacci function it's more complicated than this.
+
+Right because I mean when we go back to us you can see the Fibonacci function which was right here has
+
+two pieces of recursion right.
+
+So we're going to have to call recursive functions calling itself obviously but it's calling it twice
+
+per call.
+
+So the amount of stack space that's used is larger.
+
+That's why Fibonacci takes longer than factorial to execute especially with very large numbers.
+
+OK.
+
+So hopefully this diagram helps recursion makes a lot of sense once you understand what's really going
+
+on on the stack.
+
+I think it totally makes sense.
+
+

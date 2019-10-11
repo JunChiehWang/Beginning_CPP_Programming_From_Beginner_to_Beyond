@@ -1,0 +1,43 @@
+As we saw in the previous video function calls have a certain amount of overhead.
+
+We need to create an activation record.
+
+Push it on the stack.
+
+Deal with parameters pop off the activation record when the function terminates and deal with the return
+
+addresses and return values.
+
+Although all of this can happen very quickly and efficiently.
+
+It still happens sometimes we have a very simple function and the function call overhead might be greater
+
+than the time spent executing the function.
+
+In cases such as these we can suggest to the compiler that it generate inline code inline code is basically
+
+inline assembly code that avoids the function call overhead inline code is generally faster.
+
+But if you inline a function many times then you're duplicating a function code in many places and it
+
+could lead to larger binaries.
+
+That said compilers are so sophisticated now that they'll likely inline code even without your suggestion.
+
+Let's see what an inline function looks like.
+
+Here you can see the syntax for an inline function.
+
+We simply precede the function return type with the keyword inline inline functions are usually declared
+
+in header or dot h files.
+
+Since the definition must be available to every source file that uses it.
+
+As mentioned earlier compilers are so good now that most will make short functions like this inline
+
+anyway even if you don't provide the inline keyword.
+
+Don't worry too much about asking the compiler to inline your functions but now you know what inline
+
+functions are in case you see them and C++ code out there.

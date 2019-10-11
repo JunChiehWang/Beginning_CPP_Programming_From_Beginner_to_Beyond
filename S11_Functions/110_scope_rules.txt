@@ -1,0 +1,403 @@
+This video we'll learn a little bit more about C++ as scope rules C++ uses scope rules to determine
+
+when and where an identifier can be used.
+
+It uses static or lexical scope in which means that the scope is determined the same way you read a
+
+program.
+
+C++ has two main scopes local scope and global scope
+
+local or block scope refers to the visibility of an identifier that's been declared in a block.
+
+That is a set of open or closed curly braces function parameters also have block scope.
+
+These identifiers are visible within the block in which they are declared.
+
+I talked about this earlier in the course but it's important to understand it in the context of functions
+
+when a function is called.
+
+You can think of the function as being activated and the function parameters are bound to storage.
+
+They become alive and their lifetime is while the function is executing.
+
+Once the function completes the function is deactivated and these variables and parameters are no longer
+
+alive.
+
+That doesn't mean that they're somehow marked as unavailable.
+
+It simply means that the compiler doesn't recognize them any longer and the storage they were bound
+
+to will likely be reused.
+
+That means that the values of local variables are not preserved between function calls.
+
+If we have nested blocks then statements in the inner blocks can see identifiers declared and the outer
+
+blocks but outer blocks cannot see variables defined in the inner blocks.
+
+However there is one type of variable whose value is preserved between function calls.
+
+This is a static local variable.
+
+It's a variable whose lifetime is the lifetime of the program.
+
+But it's only visible to the statements in the function body.
+
+These variables can come in very handy when you need to know a previous value in a function without
+
+having to pass it in all the time.
+
+Static local variables are only initialized once if no initializer is provided they're set to zero identifiers
+
+with global scope or identifiers that are declared outside of any function or class.
+
+These identifiers are visible to all parts of the program following their declaration.
+
+Best practice with identifiers with global scope is that it's OK to use global constants but global
+
+variables should be avoided.
+
+Let's see scope rules in action in the ID.
+
+OK so now I'm in the code like IEEE and I'm in the section 11 workspace in the scope example project.
+
+Here I've got an example program that just exercises a few of the scope rules and I'll walk through
+
+them.
+
+They're very straightforward.
+
+The nice thing about languages like C++ and other languages that use static scoping is that the scoping
+
+is lexical So it's as you read the code it's not something that's happening at runtime on the call stack
+
+languages that use dynamic scoping rules are a little harder to follow in this sense.
+
+So let's take a look at this example here.
+
+I've got my main and I've got two local variables defined in Maine.
+
+They're local to Maine because they're defined inside those brackets.
+
+OK that's really important.
+
+So what's the scoping deal all about.
+
+Well when I use a variable name for example I'm using Gnome here which no way am I talking about.
+
+That's what scope is all about.
+
+And the rule is really very simple.
+
+First you look inside your own scope inside your local scope.
+
+So here is not why I'm using it.
+
+Which one is it.
+
+Well look in the inside your scope here and you'll see it's this one right here right.
+
+That's the closest one within the scope that you're in.
+
+So this is going to print 100 now block statements just like we had here.
+
+BLOCK statements create a new level of scope and we're going to see this again when we use classes.
+
+So every time that you create a block you've got a new level of scope.
+
+So notice here I'm declaring Gnome again.
+
+This is a different numnah I'm using the same name on purpose.
+
+So now when I use it here in the output statement which number am I talking about.
+
+Am I talking about this one here on 9:36 from my talking about the one on line 42.
+
+Well you look in your closest scope first right.
+
+You look for a local variable.
+
+So this here refers to this number right here.
+
+That's the variable.
+
+So this is going to display 200.
+
+What about this one here.
+
+Number one the rule again that you follow.
+
+Look inside here first.
+
+Do you see a number one declared in here.
+
+No you don't.
+
+Then you look out to your outer scope.
+
+There it is right here.
+
+So that's the one I'm using and that will display 500
+
+OK.
+
+Hopefully that makes sense.
+
+Now here we go.
+
+We're using Gnome again.
+
+But now we've got two Nom's we've got them here on 9:36 and we've got the name here on 9:42.
+
+Which one do we use.
+
+Well you look in your level of scope.
+
+Your local variable.
+
+You can't look into another block.
+
+You notice how this block here could see out.
+
+So we could see someone that's perfectly normal.
+
+First you look in your local scope then you look outwards.
+
+You don't look inwards.
+
+OK so this numb refers to this guy right here on 9:36 So this is going to display 100 as well.
+
+We'll go through a few more examples down here.
+
+But let's run this one for us we're expecting 100 200 500 and 100.
+
+So let me run this example and here we go 100 200 500 and 100.
+
+Just what we expected when you read about scoping books on Web sites and tutorials.
+
+It's really complicated when you first learn about your local non-local global and other stuff but conceptually
+
+it's pretty straightforward.
+
+First you look local then you look out out out out as far as you need to go until you find it.
+
+If you don't find it you have a compiler error for sure.
+
+All right.
+
+So let's look at this one here.
+
+I'm calling a function called local example and I'm passing in a 10 and let me show you what that function
+
+looks like.
+
+It's right here.
+
+We expand a little.
+
+So I'm calling this with a 10 so I'm passing in a 10 by value so this X right here will be a 10 right.
+
+I'm going to copy the 10 I've got a numb variable right here and I'm initializing it's 1000.
+
+So my output statement is using numb which number my using.
+
+Well I've got two choices right.
+
+I can use this one on line 20 or I can use this one on line 11.
+
+I always use the local variable in this case.
+
+I'm going to use this one on line 20 so this is going to display a thousand.
+
+Then I'm setting numb equal to x.
+
+Ok x is 10.
+
+Which number am I talking about.
+
+I'm talking about this number again.
+
+So when I set this to 10 and I'm going to display Nahm which is again the 10.
+
+So this will display a thousand and ten.
+
+Notice that I can't use number one here because it's not within the scope that was defined inside main.
+
+OK so if I run this I expect a thousand N10 and let's try that out.
+
+And you go local numbers a thousand and then local number is 10.
+
+Suppose I call this again but I pass him 20 into it.
+
+And what do you think is going to happen.
+
+Well let's go back here again.
+
+In this case I'm passing you know 20.
+
+So X is going to get to 20 I'm initialized to a thousand.
+
+Every time I call this function that number will be initialized 2000.
+
+So in this case there's no way I'm using this one right here again.
+
+So this will display a thousand.
+
+Now I'm setting that same variable to 20 and then I'm displaying it right here.
+
+This is going to display 1020.
+
+OK.
+
+So it's the same idea and it's pretty straightforward.
+
+Let me run this.
+
+So we thought we saw 2010 we're going to see a thousand and 20.
+
+OK so now let's look at example of global variable.
+
+You'll notice that way up here the top of the program I want to scroll all the way up and we close that
+
+function and expand this one.
+
+This is what we've got right here we've got a global variable called numb right here on line 11 and
+
+I'm initializing that global variable of 300.
+
+How do I know it's a global variable.
+
+It's not declared inside any function is not declared inside any class.
+
+It's just sitting there all on its own right.
+
+This is global to the entire program.
+
+So in this case I'm calling global example and which number do I use.
+
+What's the first thing you do you look in here.
+
+Is there a variable called knowm defined in here.
+
+No there isn't.
+
+Then you look outward and there it is.
+
+So this displays 300 then I take no minimal to apply to.
+
+OK which Nahm.
+
+Same one.
+
+So this will now become 600 and I'm going to display 600.
+
+Now what if I call this function again and I'll call it twice in the main.
+
+What if I call it again.
+
+Well the next time I call it this variable still has 600 in it it's a global variable.
+
+So the next time I call it we look at Nahm numbers 600 which display I multiply it by 2.
+
+OK so that's twelve hundred now.
+
+And then I display it again.
+
+So it's twelve hundred this time.
+
+Notice the global variable does not get re-initialize every time it only gets initialized that one time
+
+when you actually before main is even called that's initialized.
+
+So here we're going to end up with 300 600 and then six hundred and twelve hundred.
+
+So let's me and comment that one line out so we can call this twice right here.
+
+And let's run that.
+
+And you could see here we've got three hundred six hundred and six hundred twelve hundred.
+
+Just what we would expect.
+
+All right so let's look at one more example.
+
+Here is the static local example and I scroll up close that down.
+
+Now we mentioned what a static variable was a static variable is a variable that is defined locally.
+
+In this case this is a static local variable so numb is visible in here.
+
+But because we're using the static qualifier what that means is that this number variable will be initialized
+
+to 5 0 0 0 0 in the first time this function is called.
+
+After that it retains its previous value.
+
+Real different from the example we see on local value which had got re-initialize every time.
+
+So let's say I call static local example the first time we're initializing numb to 5000 that only happens
+
+once.
+
+Then I'm using it.
+
+Which one.
+
+Again I'm looking inside local scope first.
+
+So that's going to display 5000 here then I'm incrementing number 0 0 0 0 0.
+
+OK.
+
+Now it's six 6000 and then I'm displaying it again.
+
+Well now it's six thousand.
+
+Now suppose I call static local again.
+
+Since this has already been initialized it won't be initialized again and it's going to retain its previous
+
+value.
+
+So it's six thousand right now.
+
+Here it is.
+
+So if I display it I'm going to get a 6000 thousand and then I'm going to incremented again by a thousand
+
+and display it again.
+
+So I'm going to get 7000 and when I run this a third time I'll end up with the 7000 I started with.
+
+And the eight thousand that I end up with.
+
+So as you can see it's pretty straightforward.
+
+This is a real useful concept the concept of static local variables because you've got to of a number
+
+or a variable in this case that behaves like a global variable right because it's retaining its value
+
+but its scope is local.
+
+So you don't have the same problems that you have with global variables which means that they're visible
+
+throughout the program in any piece of code could change it.
+
+In this case if this number variable right here gets a really strange value.
+
+The only place they could have gotten it from was inside this function and you know exactly where to
+
+look.
+
+So that wraps up scope.
+
+It's a pretty simple concept.
+
+And it's again think look local first then look out then look out and look out until you hit global
+
+scope.
+
+If you don't find that variable there then you've got a compiler error.
