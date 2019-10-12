@@ -1,0 +1,403 @@
+In this video we'll learn how to access the data that a pointer is pointing to in order to access the
+
+data that a pointer is pointing to.
+
+We need to follow the pointer to where it's pointing.
+
+This is called dereferencing the pointer.
+
+Let's say that score pointer is a pointer to an integer and it has a valid address.
+
+Then in order to access the integer that's where pointer is pointing to.
+
+We use that dereferencing or indirection operator which is the asterisk.
+
+I know what you're thinking.
+
+The asterisk Didn't we just use the asterisk to declare the pointer.
+
+Yes and lots of people over the years have been critical of C plus plus his choice to use the asterisk
+
+to both declare and dereference a pointer.
+
+But it is what it is.
+
+And once we understand how all this works it isn't confusing at all.
+
+Let's take a look at the example.
+
+First we declare score to be an integer and initialize it to 100.
+
+Then we declare score pointer to be a pointer to an integer and initialize it to the address of score.
+
+Now score pointer points to score.
+
+If we want to get to score via the pointer then we must dereference the pointer.
+
+Notice that in the first output statement we're using the dereference operator on score pointer.
+
+This follows the pointer and gives us what it points to.
+
+In this case we display 100 since Gore pointer points to score when we dereference a pointer on the
+
+left hand side of an assignment statement.
+
+This results in an l value or the address of what score pointer is pointing to which in this case is
+
+score.
+
+So we store 200 in that address which is the address of score.
+
+So now we just change the value of score indirectly via a pointer.
+
+Notice the syntax makes sense.
+
+We use the asterisk to declare the pointer and then once the pointer is declared the asterisk is used
+
+to dereference it.
+
+Let's see another example.
+
+In this example we declared two doubles high temp and low temp and we initialized them to 100 points
+
+seven and thirty seven point four.
+
+We also declared temp pointer as a pointer to a double and initialize it to point to high temp.
+
+So if we have a pointer and we want what it points to we dereference the pointer.
+
+That's exactly what we're doing.
+
+The first output statement we're following or dereferencing temp pointer which gives us what it points
+
+to and in this case we display a hundred point seven.
+
+Now in the assignment statement we're storing the address of low temp to 10 pointer.
+
+So now 10 pointers pointing to low temp.
+
+And again if we want the low temp with dereference temp pointer and that gets us to where it's pointing.
+
+So far I've used instant doubles but the data had can be anything.
+
+In this case name is a C++ string object with the value Frank and string pointer is a pointer to a string
+
+and we initialize it to point to name if we dereference string pointer as in the first output statement
+
+we display Frank if name then changes to James and we execute the same output statement then we display
+
+James.
+
+Let's head over to the ID and we'll see some more examples of dereferencing pointers in live code.
+
+Ok so I'm in the ID and I'm in the section 12 workspace in the dereference project.
+
+I'd like to go over some examples of dereferencing pointers so that you really clear as to what's going
+
+on here.
+
+Let's start with a very simple example here.
+
+And again we'll draw it out we'll work through it before we run it.
+
+In this case I've got an integer called score and I'm initializing it to 1000.
+
+So let's say that score is over here it has storage.
+
+Obviously we have 100 in and let's say that it's that location a thousand.
+
+Again so that's my score variable.
+
+Now I've got another variable right here score pointer is a pointer to an integer.
+
+So here score pointer
+
+and it's a pointer to a nature that means it can hold addresses of integers and I'm initializing it
+
+to the address of score the address of scores a thousand.
+
+So we're putting a thousand in this variable which means that that's my pointer.
+
+So if you want to follow the pointer get to what it's pointing to you need to dereference the pointer.
+
+That's exactly what I'm doing right here I'm dereferencing score pointer.
+
+So it's got to follow the pointer to where it's pointing.
+
+And in this case it's pointing to that memory address right here which has 100.
+
+That's what the splice in this case I'm dereferencing the pointer again.
+
+But it's on the left hand side of an assignment statement.
+
+Remember the left hand side of an assignment statement is an address or a location.
+
+That's where we want to store things right.
+
+After all when we are assigning something we're storing that value somewhere.
+
+In this case I'm dereferencing score pointer.
+
+So if I dereference score pointer I follow the pointer to this address right here.
+
+Right so I'm putting 200 in here now.
+
+So now when I come back and display the dereference score points are going to go back over here.
+
+But this time it's going to see a 200.
+
+And if I just display score all on its own since score is that variable right.
+
+It's going to print 200 as well.
+
+OK.
+
+So again play with these and you can follow these pointers around and see what's happening.
+
+So let's run this and we're expecting 100 200 and 200.
+
+So let's give this a run.
+
+And there you go 100 200 and 200 exactly what we expected.
+
+All right let's do a few more of these.
+
+I'm going to come at this code and then we'll walk through it together and I'll do some diagrams as
+
+well.
+
+OK so in this case what do we have.
+
+We have two doubles.
+
+We have a double called high temp and I'll drive over here.
+
+So this double is called high temp and it's value is one hundred point seven.
+
+And let's again say that this is at location a thousand in memory.
+
+Then I've got another double right here called low temp and let's say that its location is 2000 and
+
+memory and its value right now is initialized to thirty seven point four OK.
+
+Pretty's.
+
+Now here we've got a pointer called temperature pointer.
+
+So there's my temperature pointer.
+
+It's got storage associated with it and we're initializing it to the address of high temperature with
+
+the address of high temperature is a thousand.
+
+And there's my pointer.
+
+And when we're doing this we always have to be sure that we got it we have our types correct temp pointer
+
+can point to a double high temp is a double.
+
+So all looks good here.
+
+Now if we dereference the pointer right here we're going to follow that temperature pointer to where
+
+it's pointing.
+
+It happened C-p pointing here to high temp and we display a 100 point so now what we're doing here is
+
+we're changing where the pointer is pointing to.
+
+So we're saying 10 pointer now holds the address of low temp.
+
+So what we're doing is we're changing that value right here.
+
+We're breaking this link right here and we're now putting a 2000 here which is the value of low temp.
+
+So this now points to low temp.
+
+And when we dereference the pointer now we follow the pointer to where it's pointing.
+
+It's not pointing here.
+
+So in this case it will produce thirty seven point four.
+
+OK so let's give that a run.
+
+And we've got the 100 point seven in the thirty seven point four.
+
+Just like we expected.
+
+All right.
+
+Now let's do a couple of more complicated examples.
+
+This example isn't more complicated but it's a little bit different.
+
+In this case we've got a string object right here.
+
+Called name and a string object is an object so I've got my object here and it's got a frank string
+
+in it.
+
+So that's kind of what name looks like.
+
+Let's again say that it's a digest of thousands that way it's easy to follow.
+
+Here I've got a string pointer.
+
+So here's my string pointer again.
+
+It's a variable that points to a string object.
+
+So in this case my string pointer holds the address of name which is a thousand.
+
+And there's my pointer all set up.
+
+Now if I want to follow the string pointer to where it's pointing to ID reference it right there.
+
+So in this case I'm following the pointer towards pointing to and I'm printing out what's there.
+
+In this case Frank right here.
+
+But what if we changed name not through the pointer but just name itself.
+
+We can certainly do that right.
+
+In this case we're changing name to James.
+
+So we're changing this right here.
+
+To James
+
+and now we're coming back here and dereferencing the pointer again we never change the pointer.
+
+The pointer still pointing to the same name right.
+
+The same memory address at 0 0 0 0.
+
+But this time we're going to see James there so it's going to print James instead of Frank.
+
+And this really shows you the difference between the pointer and what it's pointing to.
+
+In this case we never modify that pointer but the area we were pointing to was modified.
+
+So let's give this a run and we expect Frank and James to display and there they are frank and James.
+
+OK.
+
+So let's do one last example and this one will really show you the difference between a pointer and
+
+what it's pointing to.
+
+And let's work through this one.
+
+What we've got here is we've got and this is where it starts right here a line 41.
+
+We've got a vector of string objects called Stooges and it's initialized to Larry Moe and Curly.
+
+All right so what does that look like.
+
+Well let's put it over here let's say it's called Stooges.
+
+It's at a location 0 0 0 0 again and Stooges is a vector.
+
+So it's a vector of three items in this case and each one of those items is a string.
+
+So here's Larry here's Moe and here's curly
+
+and these are strings I won't put the quotes around them just to save a little writing time here.
+
+So that's my Stooges vector.
+
+Now I've got a vector pointer.
+
+All right so it's right here it's called vector pointer.
+
+It's a variable and I'm initializing that to no pointer right now it's pointing nowhere.
+
+And that's perfectly fine because pointers are variables.
+
+Here is where I'm initializing my vector pointer to point somewhere.
+
+So at this point I'm saying vector pointer is the address of stooges.
+
+Well the address of stooges is a thousands.
+
+I'm putting a thousand in here now so it's no longer a null pointer and I'm pointing there.
+
+So now how do I work with that vector through the vector pointer.
+
+It's really straightforward as long as you get your syntax correct.
+
+And the way it works is is very very logical.
+
+So suppose I want to print out Larry just Larry and I want to go through this point.
+
+I don't just want to say Stooges.
+
+Obviously I could say something like Stooges dot at zero right.
+
+That'll definitely protect Larry and set it up put statement.
+
+That's basically what I want to do but I want to do it through the vector pointer.
+
+So what do I do.
+
+Here's the syntax right here and I go really carefully here.
+
+So I take my vector pointer and I dereference it.
+
+That gives me the vector that I'm pointing to.
+
+I put some parens around it because that's I want the priority to be high here.
+
+That gives me the vector so on how to do now is say dot at zero.
+
+Remember if I follow my vector pointer What do I get.
+
+I get stooges.
+
+So that's effectively the same as doing that.
+
+So when I execute that code right there it will print out Larry and hopefully that makes sense it may
+
+take a little bit to understand that these parents are critical right here because we want to dereference
+
+that pointer before we use a dot because the DOT has higher precedence than the dereference operator.
+
+So it's important that you put those parens around there.
+
+So I want to print out all of the Stooges through the vector pointer same idea.
+
+What we can do is we can use a arr. base for loop and what's the collection where the collection is
+
+not vector pointer it's what vector pointer is pointing to.
+
+So if I dereference vector pointer then really what I'm getting in here Stooges right.
+
+That's what I'm pointing to.
+
+And now you can see the syntax is really straightforward.
+
+For every stooge in stooges print it out.
+
+So it's going to print out.
+
+Larry Moe and Curly.
+
+Again we're following that vector pointer.
+
+We're get the vector and then once we're at the vector we can do whatever we want.
+
+So here's an example again of really really distinguishing between the pointer and what it points to
+
+remember pointers are simple.
+
+It's just a simple variable that holds addresses what it points to can be super complicated.
+
+Maybe we can have vectors of vectors of vectors and we could certainly get to them through the pointer
+
+by dereferencing the pointer.
+
+Once we have them we can do whatever we want with them.
+
+OK so that finishes up this video.

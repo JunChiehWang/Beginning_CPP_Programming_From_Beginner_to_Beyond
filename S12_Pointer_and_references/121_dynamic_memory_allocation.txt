@@ -1,0 +1,441 @@
+OK so now that we understand the basics of C++ pointers Let's talk about what are the main use cases
+
+for pointers that is dynamic memory allocation.
+
+When we're developing software we often have no idea how much storage we're going to need to model our
+
+data.
+
+For example if I'm modeling the students in my class how many students do I allocate storage for if
+
+I'm using an array to model the students then I need to know exactly how many students I have since
+
+when to allocate an array it's fixed in size.
+
+I know what you're thinking hey didn't you tell us earlier that we should be using vectors instead of
+
+arrays.
+
+Yes I did.
+
+And that's still true.
+
+However it's important to understand how to allocate memory dynamically not just for a race but for
+
+other data including objects.
+
+Also how do you think vectors work behind the scenes.
+
+They use techniques to allocate and deallocate memory from the heap.
+
+So we really need to understand how that works in this video.
+
+Go for the basics of allocating memory dynamically from the heap all memory that's allocated dynamically
+
+via a pointer comes from the heap or the Freestore.
+
+As I said we'll use dynamic memory allocation again later in this course in the context of object oriented
+
+objects.
+
+So how do you allocate storage at runtime.
+
+Let's see we use the new keyword to allocate storage at runtime.
+
+In this example we declare int pointer as a pointer to an integer rather than assigning the address
+
+of some integer variable as we've done previously why don't we create an integer at runtime that's on
+
+the heap and store that variables addressed in pointer.
+
+That's pretty cool.
+
+You can see how easy it is in pointer equals new int.
+
+That's it that's all it takes.
+
+This allocates storage for an integer on the heap and stores its address into pointer.
+
+Now we can use the pointer to access the integer the first output statement displays the value of int
+
+pointer.
+
+This is the address of the newly created integer.
+
+If we want to get to that integer we need to dereference the pointer.
+
+But notice what gets displayed.
+
+A really large integer value.
+
+That's because the integer that was allocated hasn't been initialized yet and it contains garbage data.
+
+So in order to assign a value to that integer on the heap we dereference the pointer to get to the integer
+
+and then store 100 in and in this case.
+
+Now when we display the value of the integer we get back 100.
+
+That's pretty cool.
+
+A couple of things to understand.
+
+When you allocate storage in this manner the storage is on the heap the allocated storage contains garbage
+
+data until you initialize it the allocated storage does not have a name.
+
+The only way to get to that storage is via the pointer.
+
+If you lose the pointer because it goes out of scope or you reassign it then you lost your only way
+
+to get to that storage and you have a memory leak.
+
+I'll talk more about that later.
+
+Finally when you're done using the storage then you must deallocate the storage so that it's again available
+
+to the rest of the program.
+
+Let's see how Here you see that we again have declared it pointer is a pointer to an int.
+
+Then we assign new int to it pointer.
+
+This statement allocates storage for an integer on the heap and stores the address of that image or
+
+in int pointer just like before we can use the pointer as we wish.
+
+And then when we're done we need to release or deallocate the storage that we allocated for that integer.
+
+We can do that easily using the delete key word followed by the name of the pointer.
+
+Make sure that the address in the pointer is an address of stories that was allocated using new we just
+
+saw an example of allocating a single integer dynamically.
+
+You can do the same with double strings vectors and so forth.
+
+But in this I will do something a little more useful than allocating a single integer.
+
+How about we allocate an entire array of integers on the heap at runtime in the sample code.
+
+We declare a pointer to an integer called array pointer and an integer named size.
+
+We asked the user how big they want the array to be.
+
+This could be the number of scores on an exam or the number of temperatures to read and so forth.
+
+Then we use the new operator with square brackets this time and the number of elements to allocate inside
+
+the brackets.
+
+This will attempt to allocate that many integers on the heap contiguously in memory.
+
+If the storage is successfully created then the address of the first integer is stored in array pointer.
+
+That's pretty easy.
+
+Of course when we're done with the memory we need to release Sidor deallocate it.
+
+Let's see the syntax for that.
+
+Here's the same code example but the last statement deletes the entire array that we allocated dynamically.
+
+Notice the square brackets between the lead and the name of the pointer.
+
+These brackets must be empty do not include anything inside the brackets.
+
+OK let's go to the idea and create some storage dynamically OK so I mean the ID I'm in the section 12
+
+workspace in the dynamic memory project.
+
+What I want to do in this little example is allocate a single element on the heap.
+
+In this case will do an integer and point to it from a pointer.
+
+OK.
+
+We're going to use the new keyword to do that.
+
+And then after that we'll allocate storage for an array like we did with the slides.
+
+All right so let's do this first.
+
+We need a pointer to a pointer to an integer and you know what before we do that.
+
+Let's talk about exactly what's going on here.
+
+If you remember when we talked about our memory model earlier we've got our memory model here where
+
+we've got our code is down here that we had our global variables and then we had our stack right here
+
+in our stack is where the function calls happened and this is push pops we're pushing and popping activation
+
+records on here just like before.
+
+Well we also have a part of memory called the heap.
+
+It's also called the Freestore all dynamic allocation happens here.
+
+We can't really do dynamic allocation on the stack.
+
+It's already doing dynamic allocation.
+
+When we push and pop activation records but we can't really decide at runtime how big those things are
+
+going to be.
+
+We can't to a point but not really the heap is a free for all.
+
+We've got a whole bunch of memory out there and we can request that we you know we get a thousand integers
+
+2000 integers you know 15 objects as much as we want but we need to take care of that heap and we need
+
+to release the storage when we're done.
+
+So that's the kind of thing we'll do here.
+
+Now what I want to do is I want to create an integer pointer that's going to be in main.
+
+So it's going to be on the stack and I want to allocate an integer on the heap so I want to allocate
+
+an integer dynamically on the heap and I want to point to it from that point to OK that's what I want
+
+to do first then what I want to do is I want to allocate an array of doubles let's say in this case
+
+on the heap again.
+
+And how big is it going to be.
+
+I don't know I'm going to ask the user how many doubles they need and then what we'll have is we'll
+
+have a pointer to doubles in this case.
+
+That's going to point to their OK.
+
+So that's what we're going to do.
+
+Let's start here.
+
+Let's do the integer First we need a pointer to it.
+
+So we're going to have an integer and we'll initialize it to load pointer.
+
+That's our best practice.
+
+So what we've done is we've got a variable member it's a variable called pointer that points to an integer
+
+so it's going to hold addresses of integers.
+
+Right now it's pointing nowhere.
+
+If we want to allocate this dynamically at run time from the heap we just say it.
+
+Pointer equals new.
+
+And then followed by the type that I want to allocate in this case ant.
+
+Now what's going to happen is that storage for an integer is going to be allocated on the heap and its
+
+address will be stored in the pointer.
+
+So we can just use something like display in pointer and that will display the memory location where
+
+that integer is on the heap.
+
+Remember that's the address that stored in pointer.
+
+So let's run that.
+
+And you can see that Hex address right there that's where that integer lives on the heap and our pointer
+
+is not pointing to it.
+
+It's important to understand that that integer that we just created on the heap has no name.
+
+There is no way to get to it except through this point.
+
+So if I lose the pointer I've got something called a memory leak which I'll talk a little bit about
+
+later.
+
+So at this point we can use this integer however we like and when we're done we need to delete it.
+
+So the syntax for that is simply the keyword delete followed by the name of the pointer which in this
+
+case is into pointer.
+
+That frees up the storage OK.
+
+So pretty easy.
+
+Now what we'll do is clean up a little bit this white space here.
+
+Now what we'll do is we'll create a whole contiguous block of memory on the heap can and will do doubles
+
+this time.
+
+So there's two things here we don't know the size so we have to ask the user how many doubles do you
+
+need.
+
+And we also need a pointer to that area.
+
+So we declare both of those right now.
+
+The size will declare it as a size type and we'll just call it size will initialize it to 0 and the
+
+pointer will be a pointer to doubles and the name of the pointer.
+
+Let's just say 10 pointer.
+
+So it'll be temperatures and again will initialize it to No.
+
+So we're good to go here.
+
+So let's ask the user.
+
+So will I see user will see how many taps and how many temperatures do they need.
+
+And we'll read that into size.
+
+So now we know how many temperatures to allocate.
+
+So if they typed in 50 100 200 10000 whatever they typed in that's how much storage we're going to allocate.
+
+So what do we do.
+
+We use the pointer we're going to say 10 pointer equals new.
+
+What am I allocating.
+
+Well Medicaid doubles in this case.
+
+And how many size.
+
+This is where you put the size in the square brackets.
+
+That's going to allocate that chunk of memory happens to be an array in this case because it's contiguous
+
+doubles in memory and store the address of the first one into 10 pointer so at this point we can say
+
+seek out.
+
+Let's just say 10 pointer see what's in there.
+
+Obviously it's an address of that first double right.
+
+And let's run that real quick.
+
+See what we get.
+
+So how many attempts will say 100 temperatures and you can see right there that's the area in the heap
+
+that contains the address of the first of those 100 doubles.
+
+Pretty easy know when we're done what do we do we always need to free up the space that we've allocated
+
+so we can say delete in this case we allocated an array right there.
+
+You've got the square brackets in the new call so here you get put the square brackets in the delete
+
+nothing inside the square brackets.
+
+And then the name of the pointer which was temperature pointer that's it.
+
+That's the entire program.
+
+And you could see what's happening at this point right.
+
+What we did was we had an I'm not going to draw the whole stack again but we had that 10 pointer right
+
+here that was on the stack.
+
+We allocated 100 doubles on the heat 10 pointers pointing to the first one OK.
+
+That's really what's happening.
+
+This is on the heap and in this case 10 pointer was on the stack because it's local to main right here
+
+notice what happens if we lose this point or I mean if we do something really silly like I don't know
+
+10 pointer
+
+because no pointer right and we do that before we did this which just happened where we just no doubt
+
+this pointer.
+
+So this is gone.
+
+We just lost our only way to get to that storage.
+
+And that's called the memory leak.
+
+What did the delete call does is it frees up this storage again your pointer is still pointing to it
+
+and that's important because if you try to use that pointer again after you've deleted the storage you
+
+could have really really unpredictable results.
+
+But in this case you don't want to lose your pointer to the dynamically allocated memory because then
+
+it's basically orphaned out there and that's the memory leak.
+
+OK now let's see what happens if our call fails our call to allocate the size here.
+
+Now I'll do something that you should never do when I'm going to create an endless loop here.
+
+I'm just going to say while true allocate that so this is going to not.
+
+How many temperatures you want to allocate.
+
+I want to type something by 10000.
+
+And then what I'll do is I'll just keep looping allocating and creating memory leaks all over the place.
+
+Eventually we're going to run out of memory in the heap.
+
+So eventually this will fail and I should get an exception.
+
+So let's see what that looks like.
+
+How many times let's say a lot.
+
+I remember it's going to be in an infinite loop doing this over and over and over.
+
+And there you go.
+
+That was pretty fast.
+
+You can see terminate called after throwing an instance of standard bad Alik.
+
+So basically what happened was the call to new fail.
+
+There was no more memory available.
+
+And this is the exception that's thrown well talk about exception handling a little bit later in the
+
+class.
+
+But what you want to do is you want to catch that exception you don't want your program to just stop
+
+like that when it catch the exception.
+
+And if you can deal with it somehow maybe you've got you know memory and caches and temporary stuff
+
+that you can free up to free up some memory and then you can allocate this memory again trying to con
+
+you again.
+
+So this is again I'm going to delete that.
+
+That's not a good idea.
+
+But that's basically it in the next video we'll talk about the relationship between arrays which is
+
+really what's going on here and a pointer and you can see that really almost the same thing here in
+
+this case and how we can actually use that array.
+
+That's on the heap from our code.
+
+So I'll be right back.
