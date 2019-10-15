@@ -1,0 +1,71 @@
+In this short video we'll see how the concert qualifier affects pointers.
+
+We've already seen that the use of concert with function reference parameters essentially makes them
+
+read only in C++ we can qualify a pointer in several ways.
+
+First we don't have to use Konst at all.
+
+In this case we have a pointer just as we've been using up to this point.
+
+We can change the data the pointers pointed to and we can change the pointer itself and make it point
+
+somewhere else.
+
+The Konst qualifier gives us more fine grained control of what we allow to be changed.
+
+We can have pointers to constants constant pointers and constant pointers to constants.
+
+These will be very useful when we pass pointers to functions in the next video.
+
+Let's take a look at each one of the in the case of pointers to constants the data pointed to by the
+
+pointer is constant and can't be changed.
+
+However the pointer itself can change and point elsewhere.
+
+Let's take a look at this example.
+
+We have two integers declared in initialize.
+
+These are high score and low score.
+
+But this time when we declare the pointer we use the Konst qualifier before the type that we point to.
+
+So score pointer is a pointer to an integer constant and we initialize it to point to a high score.
+
+If we attempt to change the value of the pointed to data in this case high score will get a compiler
+
+error.
+
+However we're free to assign another address to the pointer and have it points somewhere else as we
+
+do in the last assignment statement in the case of constant pointers.
+
+It's the pointer itself that's constant.
+
+So the data pointed to by the pointer can be changed via the pointer.
+
+However the pointer itself cannot be changed and can't point to anything else.
+
+Notice that we still use the Konst qualifier.
+
+However we use it before the asterisk in the pointer declaration.
+
+So we're declaring score pointer as a Konst pointer to integer.
+
+All right let's look at the last case.
+
+In this case it's a constant pointer to constants.
+
+We need to use the cons qualifier twice in the pointer declaration so the data pointed to by the pointer
+
+is constant and can't change and the pointer itself is also constant and can't change.
+
+Notice the syntax score pointer is a constant pointer to an integer constant.
+
+In this case if we try to modify either the data or the pointer we get compiler errors.
+
+The cons qualifier is very useful and it's often used when passing pointers to functions.
+
+We'll see that in the next video.

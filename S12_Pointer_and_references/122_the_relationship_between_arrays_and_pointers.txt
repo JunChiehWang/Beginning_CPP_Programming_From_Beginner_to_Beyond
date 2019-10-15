@@ -1,0 +1,341 @@
+So at this point you may be wondering how we can allocate an entire array of integers and store address
+
+into a pointer to an image.
+
+That's a good question and it's critical that you understand the relationship between arrays and pointers
+
+and C++.
+
+Remember that the value of an array name is the location or the address of the first element of the
+
+array and the value of a pointer is an address.
+
+So if a pointer points to the same type of data as the array elements then the pointer in the array
+
+name are the same as far as C++ is concerned.
+
+The only difference is that the array name is not a variable so you can't change it.
+
+But otherwise all the calculations done to access array elements can be done with the array name or
+
+the pointer name.
+
+In this example we have scores as an array of three integers.
+
+If you display scores then the value of the array name is the address of the first element of the array.
+
+What if I dereference scores.
+
+Wait a minute score's is an array.
+
+How can I dereference that sure score's is the address of the first array element.
+
+So if I go to that address which is what dereferencing is I get the integer.
+
+So the output statement for dereferencing score's displays 100 the first array element.
+
+Now if I declare a score pointer is a pointer to an integer and I initialize it discourse.
+
+Notice that the value of score pointer is the same as scores.
+
+So when I dereference score pointer we get the same results.
+
+The value of the element at that location which is 100 in this case I know this can be a bit confusing.
+
+And when we head over to the idea I'll try it out visually so you can see exactly what's happening.
+
+So if we can pretty much use an array name and appointer name interchangeably that means we should be
+
+able to use arrays subscripting on a pointer right.
+
+And that's absolutely correct if score pointer points to the first element of the score's array as it
+
+does in this example.
+
+Then when we display score pointer Sub-Zero we get 100 score points or so of one is ninety five score
+
+points or Step two is 89.
+
+That's weird right.
+
+Well not really if you understand the C++ doesn't really have two arrays and that arrays are just the
+
+address of the first element in a chunk of memory.
+
+Then this makes sense.
+
+So does that mean that we can add the offset to the pointer variable then we can make a point to any
+
+array element.
+
+And again yes it does.
+
+Let me show you how we're using the same example here.
+
+Notice that we display score pointer.
+
+We get back in address if we add one to score pointer then you can see that the value of score pointer
+
+has increased by four not by 1.
+
+Why.
+
+Because we're not adding one to the pointer value we're adding the size of one integer to the pointer
+
+value the pointer doesn't hold integers and holds addresses of integers.
+
+So when we add one we're adding the address of the next integer which is 4 bytes away.
+
+If we add two we increment score pointer by 8 which is two integers away.
+
+This is the basis of pointer arithmetic which we'll talk about in the next video.
+
+Once we have scored pointer pointed to the image that we want we can simply dereference the pointer
+
+to get to the integer.
+
+Let me show you how that works.
+
+Here's the same example except that I'm dereferencing the expression.
+
+Notice that how we follow the pointer and display the integer that we point to in this case we're moving
+
+along the array using the pointer.
+
+That's pretty cool.
+
+Let's see this altogether so it makes more sense.
+
+This table shows the equivalence between arrays and pointers.
+
+Notice that we can access array elements using array subscript or pointers subscript notation using
+
+either the name of the array or the name of the pointer.
+
+You can also see we can use array offset or pointer offset notation.
+
+Also using the array name where the pointer name.
+
+Take your time with this and that can be confusing but when it clicks you'll be able to easily understand
+
+more advanced memory allocation principles.
+
+Let's head over to the idea.
+
+What over some of the examples in his video.
+
+OK so I'm in the IDM in the section 12 workspace in the arrays and pointers project.
+
+I've gone ahead and written some code that uses array subscript notation pointers subscript notation
+
+pointer offset notation and array offset notation just so that we can walk through this he can really
+
+understand the equivalence of pointers and arrays and C++.
+
+So let's get started here.
+
+First of all I've created a score scores array of integers right here and I initialize it to 195 in
+
+89 and that's it over here in this little box over here so this is 100.
+
+This is 95 and this is 89 and it scores.
+
+And let's assume that this is at location 1000.
+
+So what that means is that this integer 100 is at location 1000.
+
+This integer 95 is that location 1004 assuming that we've got 4 byte integers which I do on my machine
+
+and this 89 is at location 1 0 0 0 0 8 in memory.
+
+OK we know they contiguous because it's an array perfect so when we display scores here the name of
+
+an array is the address of the first element in the array.
+
+So in this case it's a thousand.
+
+So we expect this to print a thousand Obviously when I run this on my machine I'm going to get a different
+
+value but that's OK.
+
+Now I've created another variable right here called Score pointer.
+
+So don't put this guy I'm going to put him right here score pointer and score pointer we're assigning
+
+to score points or scores scores is the array name which is the address of the first element in the
+
+array.
+
+So score pointer was have 1000 in it right now.
+
+And there's my pointer.
+
+There's no need to put the ampersand here and percent score since the score the name of the array already
+
+is an address.
+
+So now we print out the value of score points while it's a thousand.
+
+So these two values will print the same because they are the same the name of the array and we just
+
+store the name of the array which is the address in two score points.
+
+So now let's do array subscript notation.
+
+This is what we've been doing all along scores is an array so scores Sub-Zero.
+
+Now look look at what the compiler is doing here.
+
+The computer saying scores Sub-Zero is really 1000 right.
+
+That's what scores is plus 1 0 integers away.
+
+So that's going to be a thousand.
+
+So it's going to grab whatever is that location of 0 0 0 0 0 and display it which is in this case 100
+
+What about score someone.
+
+So in the case of score someone it's going to have scores again which is a thousand and it's going to
+
+go one away from that and it's not going to be a thousand One it's going to be one integer away from
+
+it because it knows it's horse is an array of integers.
+
+So in this case it's going to be a thousand four so it's going to go to 1000 for it sees the 95 and
+
+displays that then the same thing with score Sabtu would display the 89 K that's using a raise subscript
+
+notation.
+
+Now take a look at pointer's subscript notation is exactly the same.
+
+The only difference is that I replaced scores with score pointer right.
+
+Therefore we've got pointer and subscript.
+
+So again score pointer Sub-Zero what is score pointer a thousand.
+
+In this case right it's right here plus 0 away.
+
+So it's going to go to location 1000 and grab what's there which is going to be 100 the one we use subscript
+
+notation we're basically grabbing what's at that address.
+
+Same thing with score points.
+
+So one it's going to go to 1000 plus one integer away which is a thousand four.
+
+And there's the 95.
+
+And here's the 89 OK.
+
+So hopefully that makes sense.
+
+Now here we've got pointer offset notation.
+
+We don't have any square brackets so we're using the offset.
+
+Now let's start right here.
+
+What happens if I dereference score pointer follow the pointer to where it's pointing score points is
+
+a thousand I'm going to dereference it which means I'm going to go to that location here.
+
+And what do I do.
+
+I display 100.
+
+Now what about this line right here let's go with that one carefully.
+
+When it's say score pointer plus 1.
+
+Now notice the parentheses and then dereference.
+
+So what happens first.
+
+What's in the parentheses.
+
+What's score pointer 1 0 0 0 0.
+
+And it hasn't changed.
+
+Plus 1 What.
+
+Plus one whatever score pointer is pointing to integer in this case.
+
+So 1004 I'm dereferencing 1004 which means I'm going to 1004 for getting what's there.
+
+That's the 95.
+
+Same thing here I'm going to 1000 eight and getting what's there which is the 89 so there's pointer
+
+offset.
+
+And then the last one is a re offset.
+
+Notice here I'm using scores.
+
+Well what does an array name.
+
+Well an array name is the address of the first element in the array.
+
+Right.
+
+So the reference scores is the same as saying scores of 0 here.
+
+So in this case score's is a thousand Sigma to 1000 and grab what's there.
+
+Display 100.
+
+Here we've got scores plus one dereferenced right what scores the name of the array is the value of
+
+the address of that first element right there a thousand plus for right them dereferencing that again.
+
+You can see it's exactly like what we did with pointer offset.
+
+So we've got 95 and 89.
+
+So the output from this program is going to be exactly the same array subscript pointer subscript pointer
+
+offset an array offset their equivalent as far as C++ is concerned.
+
+Now why is this important.
+
+This is important too because when we allocate arrays dynamically on the heap we can we have to be able
+
+to walk them right use them display them change them do whatever we like with them.
+
+Well we have a pointer to them and that's what we got back when we used that storage that pointer to
+
+that array.
+
+It's going to be a pointer so we could use pointer subscript notation if we want.
+
+We could use pointer offset notation if we want.
+
+Right.
+
+Either one we can use and we'll be able to get to that array and the array elements really really easily.
+
+All right so let me run this and we'll be sure that we get the correct values and you can see here this
+
+is the important piece the value of scores is that Hex address right there and the value of score pointer
+
+is the same hex address.
+
+Makes sense right because we assign scores to score appointer and scores is the address of that first
+
+element in that array 100.
+
+Then we go through array subscript notation we print out one hundred ninety five eighty nine you can
+
+see pointer subscript pointer offset an array offset it's all exactly the same thing.
+
+Take your time understand this walk through it.
+
+Play around with it you know change a few things if you like.
+
+It's really important once you understand the equivalence of arrays and pointers in C++ it really opens
+
+up the world of power.

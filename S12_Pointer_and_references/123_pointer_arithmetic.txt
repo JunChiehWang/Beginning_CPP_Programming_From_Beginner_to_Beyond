@@ -1,0 +1,441 @@
+In this video we'll learn about pointer arithmetic and C++ and C++ pointers can be used in assignment
+
+expressions arithmetic expressions and comparison expressions.
+
+C++ allows a subset of the arithmetic operators to work with pointer variables pointer arithmetic operators
+
+only makes sense when you use them with raw arrays but they're a very powerful way to manipulate them.
+
+Let's start by looking at the increment and decrement operators in the context of pointers.
+
+The increment operator increments the address stored in a pointer variable so that it points to the
+
+next element in contiguous memory.
+
+So if integer pointer is currently pointing tragics 1000 then integer pointer plus plus will increment
+
+by the size of whatever it's pointing to.
+
+In this case an integer.
+
+It's for my machine.
+
+So now we will point to one for in the case of a double.
+
+It would be larger if a pointer is pointing to the address of a very large data type.
+
+Then the increment operator would increment it by whatever the size of that large data type is the decrement
+
+operator works exactly the same way except that it decrements the value stored in the pointer variable.
+
+We can also use the addition and subtraction operators with pointers the addition operator determines
+
+the operand on the right hand side of the expression and multiplies that number by the size of the element.
+
+And that's what's being added to the pointer.
+
+So adding 2 to an integer pointer increments the pointer by two times the size of an integer obviously
+
+pointer arithmetic is machine specific since the size of C++ types vary from machine to machine.
+
+The subtraction operator works in the same way except that we're decrementing the pointer's value.
+
+What do you think is the result of subtracting one pointer from another while if both pointers point
+
+to the same data type then the result will be the number of elements between the two pointers.
+
+If the pointers point to different data types then you'll get a compiler.
+
+Finally let's see how we can compare pointers.
+
+We can compare pointers with the equality operators if we want to compare two pointers.
+
+We can simply compare them using the equal or not equal operators.
+
+But be aware that this will compare the values of the pointer variables.
+
+So if the pointer is pointing to the same address then they're considered equal otherwise they're considered
+
+not equal.
+
+The data that they're pointing to is not considered when checking for equality.
+
+The sample code shows an example of comparing pointers.
+
+In this example P1 and P2 point two different addresses and P1 and three point to the same address.
+
+So you can see that if we compare P1 and P2 we get back false.
+
+And if we compare P1 and P3 we get back true all three pointers point to strings with de-value Frank
+
+but that's not considered when you want to compare pointers.
+
+So how do you compare what the pointers are pointing to.
+
+Simple.
+
+Just follow the pointers dereference them and then check what they're pointing to a shining example
+
+next.
+
+Here we have the same example except that we're dereferencing the pointer before we're comparing them.
+
+So in this case P1 and P2 point two different strings but those strings both happen to be frank.
+
+So this will display true P 1 in P3 point to the same string which is Frank.
+
+So this will also display true.
+
+So that's an intro to pointer arithmetic.
+
+Let's head over to the ID and I'll show you some more examples.
+
+Ok so I mean the idea and I'm the section 12 workspace in the pointer arithmetic project.
+
+So let's go over a couple of examples of pointer arithmetic.
+
+You can see here that I've got a score's array which is an array of integers and I've initialized to
+
+195 89 68 and negative when I'm using the negative one is a cental because what I want to do is as I
+
+want to loop through this array and when I see negative 1 I want to stop.
+
+OK.
+
+So I also have and this is called scores cinéma.
+
+This array here then I've got my score pointer and I'm initialising to score.
+
+So right now it's pointing right here.
+
+Let's say that this is address a thousand of those four thousand eight we'll use decimal here and 12
+
+and 2016 assuming four byte integers here.
+
+Okay perfect.
+
+So now let's loop through this array using the pointer.
+
+OK so what I'm doing here is I'm dereferencing score pointers so follow the pointer to where it's pointing.
+
+And then I'm checking the value at that location to be negative 1.
+
+So I want to loop while it's not equal to negative 1 so I want to loop through this here once I see
+
+negative 1.
+
+I want to stop.
+
+OK.
+
+So that's what's going to happen here.
+
+So score pointer right now is pointing to memory location 1000.
+
+I'm going to dereference that.
+
+I've got my hundred.
+
+It's definitely not equal to minus 1.
+
+So what am I going to display.
+
+I'm not displaying score points because that would display a thousand.
+
+I'm dereference the score pointer and that's despite the hundred.
+
+Now we get into the pointer arithmetic.
+
+What we're saying is score pointer plus plus In other words increment the score pointer.
+
+Well what do we increment by we're correcting it by whatever it's pointing to when this case by 4 because
+
+I've got four byte integers so this will no longer point here.
+
+It'll now point here we go back up to the loop we checked to see if we're pointing to minus 1 we're
+
+not.
+
+And we display our dereferenced pointer which is now 95 again we point to the next one.
+
+Now we're points 1000 eight.
+
+It's not minus 1 so I'm going to display that 89.
+
+I'm going to increment my pointer again.
+
+Now I'm pointing to address a thousand twelve which is again not a minus one.
+
+I'm going to display the 68 and I'm going to increment my pointer for the last time right here.
+
+I check to see that my pointer is not pointing to minus 1 Well it is in this case my dereferenced pointer.
+
+So I stop.
+
+So this is the way you can loop through an array using a pointer and a sentinel value in this case.
+
+This is called a sentinel value and this is commonly used as a terminator basically.
+
+So you keep looping until you hit a Terminator.
+
+OK so let me clear this and let's run this.
+
+And we should see the array elements display and there are one hundred ninety five eighty 89 and 68
+
+there is are four elements.
+
+We don't display minus one because that is our sentinel.
+
+OK so that's a simple example of pointer arithmetic.
+
+Now let me show you another way to do this.
+
+It's commonly seen.
+
+OK.
+
+So it's everything is exactly the same except that you'll notice right here in the previous example
+
+we had two lines of code one dereference the pointer right here and then the other one increment to
+
+the pointer to point to the next integer in the array.
+
+Here we're doing it all in one.
+
+So we've got this piece of code right here.
+
+So we're saying dereferenced score pointer and increment so there's a lot going on here and it's important
+
+to understand what's going on.
+
+First of all we have two operators.
+
+So the first thing we do is we look in the precedence chart to see which one has precedence.
+
+Well they both have the same precedence.
+
+So in this case what we do is we look at the associativity the associativity is right to left.
+
+So what that means is that I'm incrementing a score pointer.
+
+So I'm incrementing the pointer I'm not incrementing the what is pointing to if I had something like
+
+this
+
+that's real different now right because what I'm doing here is I'm dereferencing the pointer so I'm
+
+getting the image or it's pointing to and then I'm incrementing that integer but that's not what we're
+
+doing here.
+
+In this case what we're doing is we're dereferencing the pointer and we're incrementing the pointer
+
+after we use it.
+
+While the use is right here the use is basically dereference the pointer and then increment the pointer.
+
+So that's exactly what we're doing here right.
+
+We're doing dereference a pointer and then increment the pointer.
+
+But this you see a lot in C++ code you dereference and an increment or decrement if you want to go the
+
+other way.
+
+If we run this example and we clear this real quick if we run this example you'll see that we get exactly
+
+the same output.
+
+One hundred ninety five eighty nine 68 exactly the same thing.
+
+OK I just wanted to show you that style because you tend to see this sort of style a lot out there.
+
+OK so now let's do another example.
+
+We scroll up just a little bit and let's see how we can compare pointers in this example.
+
+So let's read about here and get a comment this code out.
+
+Or I should say uncomment this code.
+
+And let's go through this.
+
+So here I've got three string objects as one as two as three.
+
+So they're here as one as two and there's three as one points to a string Frank as to also a different
+
+string Frank is the same frank but in a different memory location and as is James.
+
+Now each one of these each one of these objects has a memory location associated with it right.
+
+So let's say that this one is at a thousand.
+
+This one is at 2000 and this one is at 3000 that way it's really easy to keep him straight.
+
+Perfect.
+
+Now here we go now we've got P1 is a pointer to a string so he can hold the addresses of strings that
+
+those guys right here addresses of strings so we can assign any of them.
+
+So let's do that.
+
+So what is as one as one is the string object right here so we can assign the address of S1 to pee 1.
+
+So P1 now has a thousand in it and there's my pointer.
+
+P2 is the address of string to which is 2000 and there's my pointer to that one.
+
+And now p 3 we're assigning the address of S1 again.
+
+So there's the 1000 and P one P3 goes around this way we do it that way it's pointing there.
+
+So now I'm using the blue as a modifier So we just print true and false solist do some comparisons here.
+
+Does P1 equal P2 Well P1 is a thousand P2 is 2000.
+
+So no they both points just strings who are frank but we're not considering what what they're pointing
+
+to.
+
+We're only considering the value of P1 and the value of P2 which are definitely different.
+
+So we get back false.
+
+How about this p one in P 3 will p what is a thousand and P three is a thousand.
+
+So that's definitely true.
+
+So I notice that were checking the pointer's value not what it's pointing to.
+
+Now if we want to look to see if we're pointing to the same string then what we do is we dereference
+
+the pointers here.
+
+So you can see here this will output P1 right follow P1 so dereference P1 if you reference the one I
+
+get Frank.
+
+So this will say Frank compared to dereferenced P2 follow P2.
+
+I get Frank again Frank is Frank that's true because now we're comparing the strings not the pointers.
+
+Now over here we've got p p 3 p 133 both point to the same memory address so obviously what they're
+
+pointing to is the same.
+
+And in this case Frank is Frank also.
+
+But now let's say we change P3 and we change the pointer and P3 2.2 3 the address of this guy right
+
+here 3000.
+
+So this is now 3000 were pointing here no longer pointing here.
+
+Now what we're doing is we're comparing where dereferencing p 1 which points to Frank and we're de-brief
+
+dereferencing p 3 which points to James.
+
+So now what we're doing is we're complete We're comparing the string Franken to St. James which we get
+
+back a false OK.
+
+I know it's a lot of pointers to follow but it's pretty pretty clear once you really take your time
+
+and walk through it.
+
+So let's clear this and give this one a run.
+
+And like I said you can play with this code.
+
+She can see what's happening here.
+
+Right this address and this address are not true.
+
+Not the same.
+
+So obviously those pointers are not the same in this case.
+
+It is the same address.
+
+So we have a true and then we're comparing Frank and Frank which is true Frank and Frank which is true
+
+and Frank and James which is false in the bottom three examples here we're actually comparing the strings
+
+not the pointers.
+
+OK.
+
+So let's do one more with subtraction.
+
+You can see what that looks like and I'll uncomment all this out and we'll walk through this example.
+
+This is a real simple example here.
+
+In this case what have I got I've got name which is an array of characters right.
+
+So I've got F R A N K and no character because this is a C-style string.
+
+So I've got character pointer one.
+
+So I've got character pointer one.
+
+It's a pointer to a character so I can point to any one of these guys here and I'm initialising that
+
+to no pointer and then I've got character pointer to both no doubt.
+
+OK so now what do I do I'm saying character pointer one is pointing to the address of named Sub-Zero
+
+what's name Sub-Zero that f right there the address that I could have just said name it means exactly
+
+the same thing.
+
+But I wanted to do it a different way.
+
+Could see.
+
+So character pointer one is pointing here and character point or two is pointing to member 0 1 2 3 4
+
+5.
+
+In this case.
+
+Right.
+
+So it's pointing to the address of names of three which is the n right now assuming the characters are
+
+one byte.
+
+This would be a thousand.
+
+This one would be at a Thousand One thousand two in 2003.
+
+Right.
+
+So this would be a thousand three.
+
+And this would be 1000.
+
+So when I subtract those two pointers like I'm doing right here it's subtracting thousand three from
+
+a thousand.
+
+And that's what I'm getting back.
+
+There's three characters between those two pointers and that's all the point to subtraction means right.
+
+So let's give this a run.
+
+And the last example here says in the string Frank and is three characters away from F and that's exactly
+
+what we expected.
+
+OK so this gives you a little bit of a intro to pointer arithmetic you can see it's pretty straightforward.
+
+Never think of adding one or adding to already three.
+
+I always think about adding one of the type that I'm pointing to.
+
+It could be 4 bytes 8 bytes 100 bytes depending on what I'm pointing to.
+
+
