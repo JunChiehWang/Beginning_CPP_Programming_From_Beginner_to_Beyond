@@ -1,0 +1,595 @@
+In this video we'll see how we can do pass by reference using pointer parameters in C++.
+
+We can use pointers then the dereference operator to achieve pass by reference.
+
+In this case the function parameter is a pointer.
+
+And the actual parameter can be a pointer variable or the address of a variable.
+
+Let's see what this looks like syntactically
+
+here we're declaring a function prototype and then defining the function.
+
+The function is called Double data and it expects a pointer to an integer as a parameter.
+
+Notice it doesn't return anything.
+
+Instead it will double the contents of the data the pointer points to.
+
+So in the body of the function we simply dereference the pointer and multiply the value it points to
+
+by two and assign it right back.
+
+I've written this using a compound assignment statement but I've also written out the long form of the
+
+assignment statement just in case the compound assignment is confusing.
+
+I also chose to multiply by two on purpose.
+
+Since this uses the asterisk as the multiplication operator keep them straight.
+
+Don't let the syntax confuse you.
+
+In one case the asterisk is multiplication and in the other it's indirection or dereference operator
+
+OK.
+
+So how do you call this function.
+
+Let's see that in the next slide we know that since the function parameter is a pointer to an integer
+
+that means it expects the address of an integer.
+
+Well in this case I have an integer named value and it's initialized to 10.
+
+I can call double data with the address of that integer using the ampersand which is the address of
+
+operator.
+
+When I return from the function I now display value which has doubled to 20.
+
+Let's head over to the IEEE and see this and other examples of pass by reference with pointers.
+
+Ok so many ideas you can see that I mean the section 12 workspace in the passing pointers one project
+
+will go over a couple of different projects that do pass by reference using pointers a little bit differently
+
+from one another.
+
+You can see exactly what's happening and I'll walk you through these in detail.
+
+You can see here that we've got the same function that we wrote in the slides right here.
+
+Double data.
+
+It expects a pointer to an integer and all it does is it doubles whatever it's pointing to.
+
+So whatever integer is pointing there was just doubling it.
+
+And here's my main which we're going to run when a run maned couple of different ways.
+
+First this part right here and then the second part right here.
+
+This you will see is use the address of a value and this is using natural pointers to different ways
+
+to pass really the same information in.
+
+OK so let's start running this.
+
+We've got our main and it's activated on the stack right here.
+
+You'll notice Maine has two local variables.
+
+It's got an integer value and it's got an integer pointer so the value is on the stack.
+
+And right now it's initialized to 10 and we also have an 8 pointer which is a pointer to an integer
+
+and right now it's not.
+
+I'll just leave it blank.
+
+Let's say that value is an address 1000 and in pointers that address 2000 just to keep things straight.
+
+OK so that's where we're at.
+
+Now we're here at line 16 output value.
+
+But what's value.
+
+Well we just go to the variable and grab its contents right.
+
+So we're going to display a 10 here just like we have before.
+
+Now we call the function double data and we pass in the address of value.
+
+OK so main stops what it's doing and we transfer control over to this function up here.
+
+So we're going to call double data and we're going to pass in the address of value you can see right
+
+here what's the address of value.
+
+It's a thousand.
+
+So we're going to pass in a thousand to this function.
+
+That thousand will get copied into pointers so that function right here has a local variable called
+
+pointer and you could see that I got right there.
+
+Notice it's the same name as this variable.
+
+That's ok we can use the same name for different variables.
+
+These are two different variables and two different scopes.
+
+OK so we're passing in a thousand to it.
+
+So that's what we're doing.
+
+There's our pointer so now that the pointer is pointing to this value read here at address a thousand.
+
+So what do we do now what we're going to double that value basically.
+
+So let me write this out longhand here.
+
+So Will dereference pointer on the left hand side equals.
+
+Again dereference pointer times too and that's what this compound assignment is doing.
+
+Notice that that Astras right there is multiplication.
+
+These asterisks here that's the dereference operator.
+
+Keep them straight it doesn't matter that dragsters look at the context and it should be pretty clear.
+
+All right so let's execute this dereference int pointer followed the point towards pointing right here.
+
+Got a 10 multiply that by 2 gives me the 20 and we're assigning 20 into wherever and pointer is pointing
+
+in pointer is pointing to a thousand.
+
+So we just change that 10 to 20.
+
+At this point that function is done.
+
+So we're going to clean up the stack.
+
+This activation gets popped off the stack so this is all gone now.
+
+There you go.
+
+Now we're back to Main and we are put to value.
+
+The value is now 20 and we're done with that function call.
+
+OK so now let's keep going.
+
+We're here now.
+
+We're going to output a bunch of lines and then we're setting it pointer to the address of value.
+
+Well it was no before remember we nailed it out right here.
+
+So at this point it now is the address of value what's the address of value it's a thousand.
+
+So it's a thousand.
+
+There's my pointer I'm pointing to value.
+
+So what do I do now.
+
+I called Double data again so it's called Double data.
+
+And what are we passing into it this time.
+
+Point well what's the value of it pointer 1000.
+
+So we're calling this with a thousand which is the address of some integer.
+
+So we activate that on that activation record and it's got that same local variable right and pointer
+
+that's this guy right up here and recopying a thousand in there as the pointer same as we had before.
+
+So what do we do now we execute this code.
+
+It now changes is 20 to 40 OK.
+
+When the function is done we clean up our stack.
+
+We pop that activation record off the stack.
+
+So this pointer is gone.
+
+And then we come right back to Main and we say I put the value of the values now 40.
+
+OK so there you go.
+
+This is how pass by reference with pointers works is really pretty straightforward.
+
+Let's execute this code now and you'll see the result is.
+
+Now slide this over just a little bit you can see value here was 10.
+
+Then we doubled it to 20 then we called it again and doubled it again to 40 or perfect.
+
+So let's take a look at another example now.
+
+OK so here's another example.
+
+I'm in the same workspace section 12.
+
+Now I'm in the passing pointers to project and what I've done here is I've written a swap function that
+
+basically swaps two variables to weightage variables in this case and here's my main that exercises
+
+at.
+
+So let's let's try this out.
+
+Here's my main as usual.
+
+Here's the stack.
+
+Main has two local variables.
+
+It's got X and it's got y x is initialized to 100 and Y is initialized to 200.
+
+Let's assume that these are at addresses 1000 and 2000.
+
+So we've got some nice easy numbers to work with.
+
+OK.
+
+So right here we're up putting what's x.
+
+We're putting a new line in front of x but that's OK what's x.
+
+Well X is 100.
+
+So we're going to display 100 here and now we're going to say well what's why we're going to output
+
+the value of Y which is 200.
+
+Pretty easy.
+
+Now main stops what it's doing.
+
+And we transfer control over to swap.
+
+So we're going to call swap
+
+and you notice swamp has three local variables it's got an A it's got a B and it's got a temp.
+
+So we need to allocate storage for all of those on the activation record on the on the stack.
+
+Right.
+
+So we've got a we've got B and we've got temp.
+
+In this case a are both pointers to integers and templates just a regular integer.
+
+So we're going to call swap with the address of X and the address of y the address of x is a thousand
+
+and the address of y is 2000.
+
+So that's what the call looks like.
+
+Now this X right here gets mapped to that parameter.
+
+So that's what we're doing.
+
+We're copying that value too.
+
+So it's not going to be what X is right here.
+
+Right.
+
+I am going to get a thousand and B will get 2000.
+
+So here are your pointers.
+
+B is pointing right here and a is pointing right there.
+
+Yes and let's start executing this code temp.
+
+We're assigning what points to to temp but what is a point till we know points to an integer right.
+
+Because this is an integer pointer.
+
+So we're going to take the integer that points to let's follow a.
+
+It points to 100 and we're storing it in temp temp was an integer not a pointer.
+
+OK so that's done.
+
+Now we're going to execute the second one which says take what B is pointing to.
+
+Or let's follow B beast pointing to 200 hundred and put it into where AA was pointing.
+
+OK it was pointing here.
+
+So we're going up to 200 here.
+
+So that's done and then we'll take the temp which was 100 right here and we're going to put it into
+
+a where B was pointing.
+
+So B was pointing to here.
+
+Sort of put the 100 here.
+
+Notice those two integers got swamped now.
+
+So at this point the function is done.
+
+What do we do.
+
+We clean up the stack.
+
+We pop off that activation record.
+
+All this is now gone and we just clean these up as well.
+
+And that's where we're at right now.
+
+So we're back in May now what's X we protect the value of x is 200 and we display the value of y right
+
+here which is 100.
+
+Notice that we actually swap those variables.
+
+So that's really what's going on with pass by reference with pointers in this example.
+
+It's pretty straightforward if you remember we did this with references.
+
+References is probably what you'd want to do here but I'll talk about using references versus pointers
+
+on the very last video in the section that gives you some insight as to what to use when.
+
+But there you go this is how you do it with pointers.
+
+Let's look at another example now.
+
+OK so I've switched over to the passing pointers three project in the section 12 workspace.
+
+In this case we're going to pass a pointer to a vector rather than using integers as we've done in the
+
+past.
+
+And this couple of examples in this main and I'll leave the second example here that's commented out
+
+for after I showed you this one.
+
+So this is what I've got.
+
+I've got a real simple function here called display and it expects a pointer to a vector of strings
+
+so expects the address of some vector that hold strings.
+
+We can all it's doing is just looping through the vector and printing out all the strings in it.
+
+I'm not going to draw the stack out now.
+
+I think this is going to be pretty easy to follow and I'd have gone over all those examples.
+
+So in this case I've got a vector of string objects.
+
+It's called Stooges.
+
+And here's the three stooges Larry Moe and Curly.
+
+So what have I got.
+
+I've basically got a vector object and it's got three strings.
+
+Larry Moe and Curly.
+
+It's called Stooges.
+
+And it exists at location a thousand on the stack there in the main Mayne's activation record.
+
+Then I'm just calling stooges here I'm calling display and I'm passing in the address of stooges.
+
+Perfect.
+
+So now once I'm here in this display function that you see here on 7 once I'm here all I want to do
+
+is display all those strings that are in the vector.
+
+So I'm going to use a range base for loop that just iterates through the vector imprints of the strings.
+
+Well I have a pointer Here's my VI right and V has a thousand in it.
+
+So this is v right here it's pointing not the vector again but just a simple pointer.
+
+So in order to get to what the pointer is pointing to dereference the pointer.
+
+That's what I need to do.
+
+So if I dereferences v I've got this Stooges vector right here right.
+
+And that's what's going on right there.
+
+So for Auto which is a string right.
+
+So for every string in the collection while the collection is not v these the pointer to the collection.
+
+So if I dereference V I get to collection and this executes just like you would expect OK.
+
+Now let me clear this out and I'll run it real quick so that we can test this.
+
+And there you see Larry Moe and Curly being displayed by this function right here.
+
+Now in this case we really don't want this display function to modify stuff right.
+
+I mean it's only displaying vector elements.
+
+We don't want to modifying anything so we could get this to modify something.
+
+That's not what we want to do but we certainly could do remember that we could do the at method of the
+
+vector class where we could simply do star v.
+
+Right dereferenced this pointer.
+
+That gives to the vector then I could say dot at zero equals funny.
+
+And what that will do is it'll change the first vector element Larry.
+
+Too funny.
+
+Notice the syntax the syntax may be a little strange but think about this this is very logical right.
+
+If I dereference the pointer I get the vector and then once I have the vector I can do at that size
+
+whatever else I need on it.
+
+So this sets that to funny.
+
+I could also come over here and do something like vi which is the pointer right is no pointer.
+
+So now I'm not pointing anywhere.
+
+So if I do both of these you can see that this will compile just fine and run.
+
+Now if I move this to the top right there.
+
+Now I'm actually going to change that vector element so when I run it you'll see funny now instead of
+
+Larry you see that right there.
+
+So this is not something you want to happen.
+
+Right.
+
+So display function is should be messing around with the vector that you're pointing to.
+
+So in this case we could use the conc qualifier here.
+
+Right.
+
+That will prevent this from happening right there so if I do this now I'll get a compiler error right
+
+there you can see the red arrows saying hey you're telling me that that vext that vector I'm pointing
+
+to is constant you can't mess with it.
+
+You just tried to mess with it so that it won't be allowed.
+
+And if I put a concert here then this line 13 won't be allowed.
+
+I'll try to compile that.
+
+And there's the error because now you're telling me that the pointer is constant.
+
+You just tried to change it here.
+
+OK so again that's not what you want to do here.
+
+All right so now it's a lot safer.
+
+This function we can't change the vector and we can't change the pointer either.
+
+So let's look at one last quick example and I'll clear this out.
+
+And what we've got now is let me close this up.
+
+We've got another function called display because we're using the function overloading here remember
+
+we can use the same name for for two different functions.
+
+And I mean come at this piece out you know uncomment this piece right here.
+
+OK.
+
+So in this case I have an array of scores right which is an array of integers and I've set them all
+
+to these scores and I've got a negative one at the end.
+
+In this case the negative one is a sentinel.
+
+This is where I want to stop processing.
+
+So what I'm doing in this display function here is I'm passing in the address of that first integer
+
+and the Sentinel.
+
+We don't want to stop and you can see what this is doing.
+
+Saying While what I'm pointing to right there is not equal to the Sentinel which in this case is minus
+
+1 then process what I'm doing right.
+
+So I'm going to basically dereference that array display 100 and then increment the read the pointer
+
+to the next element.
+
+So think about what's going on here.
+
+Here's the array.
+
+And let's just put a few numbers in here.
+
+One hundred 98 97 79 85 and minus one I might have missed one but that's OK.
+
+So at this point that's my scores.
+
+This is scores.
+
+This is the same address 1000.
+
+Perfect.
+
+So I'm passing in scores.
+
+So now my array variable in the function points right there and my centinel is minus 1.
+
+All right so am I pointing to negative 1.
+
+No I'm not I'm pointing to a hundred.
+
+All right.
+
+Print out 100 and increment the pointer.
+
+Who were the pointer pointing to.
+
+Well now the point is going to point here not here.
+
+So now we're going to loop again a printout of 98 and we're going to keep doing that until we hit minus
+
+1.
+
+So this is going to print 98 97 79 85 and then it's going to stop.
+
+In this case we could pass in constant for the array right.
+
+We're pointing to these numbers.
+
+We don't want to change it but we are actually updating the pointer here.
+
+So we can't have a constant pointer right.
+
+We can have constant a pointer concept integers but not a constant pointers because we're actually changing
+
+the pointer.
+
+This is something in this example here that you can't do with references.
+
+You've really got to use pointers to do this kind of stuff.
+
+OK.
+
+So that wraps up this video.
+
+And there you see a couple of different examples of pass by value with pointers.
+
+At this point you might be thinking do I use pointers do I use references.
+
+How do I do this.
+
+Stay tuned.
+
+And the last video on this section I'll tell you exactly when you should use pointers and when you should
+
+use references.

@@ -1,0 +1,381 @@
+This video we'll learn how to return a pointer from a function in C++ that functions can return pointers
+
+which is a super powerful feature in order to do this we need to provide the type of the pointer in
+
+the function definition and in the function prototype.
+
+All this means is that the function will return an address of whatever type we specified in the function
+
+declaration.
+
+Let's see an example in this function where returning a pointer to an integer.
+
+In this case it will be the value of the parameter that points to the largest integer.
+
+It's OK to return a pointer to data that's being passed into a function.
+
+Since we know that data exists.
+
+So in this case we compare the two integers that the two pointers are pointing to and return the pointer
+
+that points to the largest integer.
+
+Notice that we're not comparing the pointers themselves.
+
+We're comparing what they're pointing to by dereferencing them.
+
+Pretty straightforward.
+
+But how do you call this function.
+
+I'll show you in the next slide.
+
+Here we have a simple main that calls the largest function that we just wrote.
+
+I have two integers A and B B is the largest with 200 I call largest.
+
+In passing the addresses of A and B.
+
+This is correct since it expects pointers to integers.
+
+The function returns a pointer which I assign to a variable named barges pointer which is declared as
+
+a pointer to an integer.
+
+So now that variable largest pointer points to either A or B depending on which one was largest in this
+
+case it's B.
+
+So we dereference a pointer and it displays 200.
+
+Let's see an example where we allocate memory dynamically inside a function and return the address of
+
+that memory.
+
+Returning dynamically allocated memory from a function is a very common use case for returning a pointer
+
+from a function.
+
+In this example we created a function called create array and it expects an unsigned integer that contains
+
+the size of the array to create in a default parameter called init value.
+
+And that's the value we can to initialize all the array elements to the function returns a pointer to
+
+an integer.
+
+Now this represents the address of that first integer that we dynamically created.
+
+You can see the code is pretty standard after we create the storage.
+
+We use a for loop and initialize all the array elements to add value.
+
+Notice that I'm using pointer offset notation within the loop but I could have used pointers subscript
+
+notation.
+
+Finally we return new storage which is the address of that first integer in the newly created array.
+
+So how do we use this function.
+
+I'll show you in the next slide.
+
+In the sample code we call create array and we pass in 120.
+
+That means I want 100 integers allocated dynamically on the heap and I want to initialize all of them
+
+to 20.
+
+So this function allocates the space dynamically on the heap for those hundred integers.
+
+Initialize them all to 20 and returns the address of that first integer which I assign to my array.
+
+Now I can use my array.
+
+However I like.
+
+But remember since the storage is on the heap you need to release it so you have to remember to use
+
+delete with the square brackets on that pointer variable.
+
+Now let's see what NOT to do when returning pointers from a function.
+
+Here I have two functions.
+
+The first function is called Don't do this.
+
+Now the second function is called.
+
+Or this.
+
+They both return pointers to integers.
+
+The first function returns the address of size.
+
+This is a real problem.
+
+Size is a local variable to the function.
+
+This will compile just fine since the address of size is the address of an integer and that's what the
+
+function returns.
+
+But what's the problem.
+
+Well you can see it's a huge problem we're returning the address of a local variable in the function.
+
+The variables on the stack and the function just terminated so this variable is now past its lifetime.
+
+The next time the function is called or any function is called the stack area will be reused in the
+
+pointer when I'll be pointing into that new functions activation record.
+
+If you overwrite the data it's pointing to you could trash the stack pointer static links all kinds
+
+of important information on the activation record.
+
+Hopefully the program crashes or you get a really strange error that you can fix.
+
+But if the program changes data that isn't currently being used then the program may appear to work
+
+correctly for a while.
+
+These types of errors or bugs are very difficult to find.
+
+The second function has the same problem except that it's assigned a pointer to size variable and returns
+
+it in both cases the address that's being returned is a stack variable or a function local variable.
+
+Very bad idea OK that completes this video.
+
+You'll get a chance to work with functions that return pointers to dynamically allocated storage in
+
+the challenge exercise at the end of the section.
+
+But first let's head over to the ID and we'll go over some of these functions in live code.
+
+Ok so I mean the idea and the section 12 workspace in the returned pointer project and I'd like to walk
+
+through this example when we created that create a re function that dynamically allocates some storage
+
+on the heap.
+
+So let's walk through this example right here we're in Maine.
+
+Notice that Maine is activated when the program begins and we've got three local variables in Maine.
+
+We've got Mirei which currently is just no doubt we have size which contains garbage right now when
+
+we have a value which is zeroed out at the moment.
+
+OK.
+
+So what do we do.
+
+We ask the user how many integers would you like to allocate and we read that into size.
+
+Let's say that they want to allocate 10 integers.
+
+So we'll put a 10 in here and then what value would you like to initialize to.
+
+How about we initialize them all to number two.
+
+So now we've got those variables and what we do now is we we call create array and we pass in the size
+
+and the initial value.
+
+So we're here now.
+
+Here's the function create array noticed create array has one to three local variables right.
+
+It's got size and let me call create array here some calling create array with the size which is 10
+
+and the initial value is which is 2.
+
+If I didn't supply an initial value would you 0 there's the default initializer here.
+
+But in this case size is 10 initial value.
+
+And notice again I'm using the same variable names.
+
+I'm doing that on purpose don't let that confuse you too.
+
+And then we've got new storage right here.
+
+Which is a pointer to an integer.
+
+That's where we're going to allocate the memory from when we call you right here on the next line.
+
+And right now that's No.
+
+OK so now new storage equals new size.
+
+How many integers do I want to allocate dynamically however many integers were passed in in this case
+
+10 so 10 integers will be allocated dynamically on the heap not on the stack.
+
+This is to stack the heap is a different part of memory.
+
+It's way up here let's say and we're going to allocate 10 integers 0 through 9 on the heap.
+
+Let's say that this is addressed 5000.
+
+That's the address of that very first integer right here.
+
+What's being returned and assigned to storage is that first integers address or putting a 5000 in here.
+
+There's our pointer.
+
+Now this is really important.
+
+We've got a pointer on this stack that's pointing just George on the heap.
+
+This is exactly what we want.
+
+We've got to be careful not to lose that pointer if we lose that pointer we've got a memory leak.
+
+OK.
+
+Great.
+
+So now we have that memory allocated and we want to initialize it remember right now that all that is
+
+garbage data right in here.
+
+So what do we do.
+
+We just use a simple for loop we're going from zero less than size by 1 and we're initializing every
+
+element in this array to whatever was being passed in an initial value right here in this case we passed
+
+in A2.
+
+So we're going to store to everywhere and here I'm using pointer offset notation.
+
+I could have just said new storage sub I and used pointer array notation or a pointer subscript notation.
+
+Either one is fine.
+
+So in this case we're putting a two in all of these guys.
+
+All 10 of them will have twos in them and now this is the piece that's really important we return you
+
+storage.
+
+But what's new storage.
+
+It's 5000.
+
+We returned that value 5 0 0 0 0 0.
+
+And notice in Maine we're assigning it to Mirei.
+
+So we're putting 5000 in here.
+
+So now this pointer is pointing to the same place.
+
+That's really important because this function is almost done.
+
+So when this function gets popped off the stack we're going to lose this pointer right here and we don't
+
+want to lose that pointer.
+
+So that's why we assign it to my race and we've got a copy of that pointer that we can use.
+
+OK good.
+
+So at this point the function is now done we start cleaning it up.
+
+So all this is gone now.
+
+Right.
+
+So this pointer here is now gone.
+
+We lose all this and we're back to Maine now I notice Maine has that pointer.
+
+We didn't lose our memory out on that.
+
+That's really important to understand.
+
+OK so now let's display the data.
+
+So I'm calling this function right now.
+
+Display
+
+and I'm passing in.
+
+In this case my array my rate is 5000.
+
+That's the value of that pointer and the size which was 10.
+
+So display now gets activated on the stack and it's got one right here.
+
+Variable one local variable another local variable and it's got another variable right here.
+
+I am not going to worry about you know all about I it's just a looping variable.
+
+So it's going to have this variable array and it's going to have a size.
+
+So 5000 gets copied to array 10 gets copied to size.
+
+Notice that this is not pointing to that same place but it's constant.
+
+We've got a constant pointer and we're pointing to a constant array so we can't mess with that array
+
+either by accident or intentionally.
+
+And all we're doing is we're just looping through there and displaying out every element in the array.
+
+Notice decision in this case I'm using pointer subscript notation here ret whereas over here I use pointer
+
+offset notation.
+
+Same exact thing.
+
+So this function now goes through their displays all those twos 10 of them.
+
+When we're done same as before we basically start unwinding.
+
+So this is done after we do all the displaying or gone here.
+
+This is gone and we're back to Maine.
+
+Now I've got this storage allocated on the heap.
+
+I'm done with it.
+
+I need to release it or free it up.
+
+And that's what's happening right here at 9:34 delete square brackets.
+
+And the name of the pointer you've got to make sure that the value of that pointer is something that
+
+was needed because you can't point to like a stack reference and then delete that.
+
+So in this case this will now be freed up and that memory will be ready to be used again.
+
+So let's clear this up and give it a run.
+
+So we'll build and run here.
+
+So let's say we want to allocate 10 integers and we want to set all of them to 5.
+
+That you see we're displaying all 10 integers each one is set to five pretty easy.
+
+Let's run this again.
+
+And suppose we want to allocate 1000 integers this time and when one set each one of them to I don't
+
+know 88 we run it there we get a thousand integers all set to 98.
+
+What's important to understand here is that it's all on the heap which is pretty cool.
+
+OK.
+
+So that finishes off this video.
+
+I hope this makes a lot of sense if you have any questions please let me know.
+
+
