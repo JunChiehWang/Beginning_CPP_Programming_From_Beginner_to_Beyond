@@ -1,0 +1,131 @@
+Pointers are very powerful constructs in programming languages.
+
+However there are some potential pitfalls that you should be aware of when using pointers in this video
+
+will go over some of those pitfalls.
+
+These include using uninitialized pointer as dangling or stray pointers not checking if new allocated
+
+memory and leaking memory First let's look at uninitialized pointers.
+
+We've seen these already but let's talk about them one more time.
+
+Uninitialized pointers contain garbage which means they could point anywhere.
+
+If we try to access or modify the data they're pointing to we could run into some major problems.
+
+The pointer might be pointing to a very important area in memory and we could wipe it out.
+
+Modern operating systems today are pretty good at protecting critical areas of system memory.
+
+But you could still trash an area important to your program that could cause your program to crash.
+
+Worst case scenario is that the program continues to work as expected for a long time since the memory
+
+access isn't used.
+
+Then an update to your program later on changes everything and all of a sudden the program is crashing.
+
+You think it's because of the new change but it's actually a bug that's been in the code for a long
+
+time.
+
+In the old days of computing it wasn't uncommon to corrupt data on storage devices by using uninitialized
+
+pointers.
+
+Another potential problem with pointers is the dangling pointer.
+
+Some cuts sometimes called Wilder stray pointers.
+
+These are pointers that are pointing to memory that's no longer valid.
+
+If you try to use these pointers to access that data you don't know what the results will be.
+
+The main reasons for dangling pointers or returning addresses of function local variables on the stack
+
+that are no longer valid since the function is terminated.
+
+Another common scenario is that you allocate storage dynamically and assign it to a pointer variable.
+
+Then you assign another pointer variable to point to that same storage.
+
+Now you have two pointers pointing to the same area on the heap.
+
+That's OK and we do it all the time.
+
+The problem comes in when one of the pointers releases the memory but the other pointer is still referencing
+
+to it and you use it again.
+
+Unpredictable results can happen.
+
+Best case is your program crashes during development and you fix these errors the next pointer pitfall
+
+is not checking to see if you failed.
+
+If new fails to allocate storage an exception is thrown and your program terminates.
+
+We can use exception handling to get more fine grained control over these exceptional situations.
+
+If you try to dereference a pointer which is pointing to no your program would crash.
+
+This is good in testing but not good in production.
+
+The last pointer pitfall will discuss is the memory leak.
+
+This is probably right up there with the uninitialized pointer is the most common type of pointer related
+
+error.
+
+Memory leaks are easy to understand when you allocate storage dynamically on the heap.
+
+This storage has no name.
+
+It's simply an area of memory that's returned to you and you store the value in the pointer.
+
+The only way to get to this memory is through the pointer.
+
+But what if you lose the pointer.
+
+Say you allocated the memory in a function and the pointer was declared in the function and the function
+
+terminates.
+
+Now you just lost your pointer.
+
+There's no way you can reference that allocated memory on the heap.
+
+This memory is still considered in use by C++.
+
+So this is called in memory leak.
+
+If you leak enough memory you could run out of storage on the heap for future allocations.
+
+Memory leaks used to be much more problematic when memory was limited but there's still an error and
+
+a sign of bad code.
+
+As you can see the potential problems are well-understood and as you become more experienced with pointers
+
+you become very aware of them and you don't make these mistakes.
+
+Now that I've mentioned the pitfalls with using Rossie post plus pointers C++ has smart pointers now
+
+that take care of many of these problems and are still very efficient.
+
+There are more advanced topic and it's something that you should learn as you become more proficient
+
+with C++ or revisit smart pointers in the context of object oriented programming in the next section.
+
+Well that wraps up C plus plus pointers.
+
+I hope I did a good job explaining them since they can be very intimidating.
+
+Please let me know if you have any questions.
+
+Practice with pointers write simple programs.
+
+Print out the values of the pointers so that you can understand how to work with them and with memory.
+
+OK now let's move on to references.

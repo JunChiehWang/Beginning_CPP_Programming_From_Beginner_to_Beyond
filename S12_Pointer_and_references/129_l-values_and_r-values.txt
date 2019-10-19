@@ -1,0 +1,109 @@
+Now that we know about references and how to use them let's look at L values and our values L values
+
+and our values are something you don't worry about too much when you're first learning C++ but as you
+
+learn more advanced features of the language they become very important.
+
+It's important that the fundamentals make sense now so that when we move on to topics like C++ elevons
+
+R-value references and move semantics there'll be much clearer.
+
+So in this video we do a basic introduction to L values our values and l value references.
+
+So let's start with an l value an l value is an object that occupies a location in memory and is addressable.
+
+So in these examples X and name are L values.
+
+They have names and they are addressable.
+
+We know that there are addressable since we can use them on the left hand side of an assignment statement.
+
+So what's not a null value in these examples 100 is not an l value because it's not addressable.
+
+It's a literal.
+
+In fact the compiler generates a compiler error for the one hundred equals x statement saying that 100
+
+is not an assignable value.
+
+Similarly in the assignment statement 1000 plus 20 equals x 1000 plus 20 produces a temporary variable
+
+with the value 1020 but that variable is not addressable so we can't use it as an l value in the last
+
+assignment statement.
+
+Frank equals name.
+
+Moe Frank is not an l value since it's not addressable.
+
+So these examples are of non L values.
+
+They're in fact called our values.
+
+Let's talk a bit about our values.
+
+We can define our values by exclusion.
+
+So anything that's not an l value is in our value.
+
+Usually our values are on the right hand side of an assignment expression.
+
+Our values can also be temporary values that the C++ compiler creates.
+
+We saw some examples of our values in the previous slide and see a few more here in the first statement.
+
+One hundred is an R-value in the second statement X plus 200 will produce a temporary variable and that
+
+variable is an r value since it's not addressable the string literal Frank is also an r value.
+
+And Max 20:30 is an r value because it returns a result that's a temporary and not addressable.
+
+Our values can be assigned to L values explicitly.
+
+So L values can appear both on the left and right sides of an assignment statement.
+
+In this example we see the first assignment statement is using the R-value 100 on the right hand side
+
+of the assignment statement.
+
+And this will be assigned to the l value Y in the second example the temporary R value with the sum
+
+X plus Y will be assigned to the l value x.
+
+Now let's look at references from the perspective of L values and our values.
+
+The references we've used so far have all been l value references.
+
+That means that we're referring to L values in the first reference declaration we're declaring ref 1
+
+as a reference to x.
+
+Notice that X is an l value.
+
+This makes sense since we are an alias for X and we can use ref 1 to the left hand side of an assignment
+
+statement since it refers to an l value.
+
+But what happens when we declare ref to is a reference to 100.
+
+Well 100 is an r value.
+
+So this isn't allowed and the compiler will generate an error.
+
+The same applies when we pass parameters by reference to functions.
+
+In this case we define a function square that expects an integer by reference.
+
+We have an integer initialized to 10 and then we call square and pass in.
+
+This is fine because N is a reference to an l value and knowm is an l value.
+
+However if we pass in the literal five to the function we get a compiler error because 5 is not an l
+
+value it's an r value and we must reference L values.
+
+Don't worry if this is a bit confusing now as we learn more about C++ semantics it will make more sense
+
+but it's important going forward.
+
+When we talk about move semantics.

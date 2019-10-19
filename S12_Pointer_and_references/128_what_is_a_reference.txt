@@ -1,0 +1,287 @@
+In this video we'll learn more about references.
+
+We've already seen how useful references can be when used as function parameters.
+
+We learned about them in the function section of the course although a reference may sound similar to
+
+a point.
+
+They're actually very different.
+
+A reference is an alias for a variable.
+
+So whenever you use the reference you're actually using the variable it refers to.
+
+References must always be initialized to a variable when you declare them and that can never be null.
+
+Once you initialize a reference you can't change.
+
+So that's an alias for a different variable.
+
+As mentioned earlier references are great to use as function parameters.
+
+When you first start out in C++ you might find it useful to think of a reference as a constant pointer
+
+that's automatically dereferenced when you use it.
+
+We've already seen using references as function parameters.
+
+So let's see some other uses
+
+references are often used in range based for loops to access collection elements inside each iteration.
+
+Here's an example of arr. base for loop that does not use references.
+
+In this case we have a vector of C++ string object's name Stooges and it's initialized to Larry Moe
+
+and Curly.
+
+Then we use a range based for loop to iterate through the vector at each iteration we assign funny to
+
+each vector element.
+
+Then we have another range base for loop that displays the contents of the Stooges vector.
+
+Notice the output.
+
+Nothing changed.
+
+We didn't change the vector at all even though we assigned funny to each element in the loop.
+
+So what's going on.
+
+The problem is that the variable name in the first loop is a copy for each of the vector elements as
+
+we loop through them.
+
+So we're setting the copy to funny but we're never changing the actual elements in the vector.
+
+Now let's see how we can use references to actually change the vector elements.
+
+Here we have the same example except that the two are variable in the first loop is now a reference.
+
+In this case a reference to each of the C++ string object's now is is an alias for those objects.
+
+And when we assign funny to us here we're actually changing the vector elements.
+
+You can see now that when we display the vector the elements in the vector have all indeed changed to
+
+funny.
+
+Notice what happens if we add the Konst qualifier to the loop variable in the first loop.
+
+Now we're preventing any change to the data in the vector because the compiler marks it as read only.
+
+So this code now gives us a compiler error.
+
+This is not what we want since we really do want to modify the vector elements but you can see that
+
+the compiler is doing exactly what you're asking it to do.
+
+It makes sense for us to use the cost qualifier in the second loop the loop that actually displays the
+
+vector elements.
+
+Also by using a reference we're not incurring the costs of copying each vector element in each loop
+
+iteration.
+
+So in this case it makes sense to use the cons qualifier for the reference as TR in the loop when we're
+
+displaying the vector elements.
+
+So any attempt to change them would probably be a mistake.
+
+So we can have the compiler help us out by making the reference Konst now any attempt to change the
+
+vector element results in a compiler error.
+
+Unless you have a specific reason to copy elements in range base for loops you should use reference
+
+variables to make your code more efficient.
+
+And if you are going to modify the collection elements make the reference Konst rather than go over
+
+everything we already covered regarding using references as function parameters.
+
+Please refer to the section 11 videos and examples where I go over the use of reference parameters in
+
+functions in detail we'll head over to the ID now and see some of these examples in life code.
+
+Ok so I'm in the IDM in the section 12 workspace and the references project and this is about as simple
+
+and examples I can come up with for references.
+
+So here I've got an integer called numb and I'm initializing it to 100.
+
+And I've got a reference called ref that I'm initializing it to numb.
+
+So ref is an alias too.
+
+So if I display numb I'm going to get 100.
+
+If I display ref I'm going to get 100 there aliases were in this case the reference is an alias to the
+
+name.
+
+OK.
+
+So notice no dereferencing no nothing just use it straight as is.
+
+And it's automatically going to be dereference behind the scenes.
+
+It's basically a pointer.
+
+That's how it's implemented.
+
+Behind the scenes but all that's been abstracted away for you.
+
+So in this case here I'm changing numb to 200 so I'm going straight to the variable and changing it
+
+to 200.
+
+So when I display name I'm going to get two hundred and one to splay the reference is an alias to the
+
+number again I'm going to get 200 here.
+
+I'm changing but I'm changing it through the reference.
+
+So I'm setting it to 300 again.
+
+There alias's So that's what you get.
+
+Hopefully that's pretty easy to understand I think.
+
+Now let's do another example.
+
+That's based on the example that I did on the slides.
+
+But before we do that let's run this.
+
+So I build and run and you can see 100 100 200 200 300 300 just what we expected.
+
+OK so now let's do an example of using reference parameters inside range based for loops just like we
+
+did in the slides.
+
+So let me clear that and I'll scroll up just a little bit and uncomment out this code right here.
+
+And this is the code that worked on the vector of strings.
+
+So here's where we're at.
+
+We've got a vector of string objects right here on line 29 called Stooges and we're initializing it
+
+to Larry Moe and Curly.
+
+Then I've got a based for loop.
+
+Now I remember the auto lets the compiler figure out what the type of s t r is.
+
+In this case the collection of stooges and it's a vector of strings so as TR will be a string at each
+
+generation and then what we're doing is we're saying it's funny.
+
+So the idea is that or the what the programmer intended to do was to change.
+
+Larry Moe and Curly too funny funny funny.
+
+OK.
+
+But it doesn't work.
+
+The reason it doesn't work is because as TR is a copy.
+
+So each time in we're making a copy of lairy a copy of Moe and a copy of Kerley so sure we're changing
+
+the copy to funny but we're not changing any of these actuals to funny.
+
+So what we can do is and if you notice we have a simple loop here that just displays them and when we
+
+run this in a second you'll see that this will display Larry Moe and Curly.
+
+OK so no changes at all just like we saw in the slides.
+
+In this next example what we're doing is we're using a reference here you can see the ampersand.
+
+So each iteration of the loop as TR will be a reference to the actual.
+
+So now that as TR is going to be an alias for each one of these guys at each iteration of the loop.
+
+So when we say ESR's funny now we're really replacing Larry Moe and Curly with funny funny funny.
+
+So we come over here and display.
+
+We're going to see funny funny funny.
+
+OK.
+
+So we'll run that in a second but the other thing we wanted to say was in this example here I'm displaying
+
+those three string objects that are in the vector.
+
+But in this case are making copies of them.
+
+There's no danger in changing them right because I've got a copy of them so if I do change them like
+
+I did here I'm changing the copy but I'm making copies.
+
+So that's pretty inefficient in this case.
+
+String objects are pretty efficient but it could be some user defined type where making a copy of it
+
+could be pretty expensive.
+
+You know you're allocating space and you're making a copy let's say a couple hundred thousand bytes
+
+or something.
+
+So it could be very very expensive operation.
+
+In this case we want to pass that in by reference like we're doing here and but the danger with that
+
+is that now we can change the elements right which we don't want.
+
+So that's why we use the cost.
+
+So this gives us the protection of making those elements Read-Only.
+
+But it also allows them not to be copied.
+
+In this case we're just going to create aliases to them so very efficient and pretty safe because we
+
+can't change them.
+
+OK so hopefully that makes sense.
+
+Let me run this real quick.
+
+And you could see the first time through and I've moved this slightly over here we've got there are
+
+Larry Moe and Curly.
+
+So we didn't change a thing we expected.
+
+Funny funny funny.
+
+We got Larry Moe and Curly.
+
+Now we're using a reference.
+
+We do indeed change the actual So now we see funny funny funny.
+
+OK so give it a try.
+
+Play around with these.
+
+Try to create a reference to a pointer and see if you can figure out how that works.
+
+All right.
+
+So that's pretty much it for references remember I covered how to use reference parameters and how to
+
+pass references to functions in Section 11.
+
+There's a whole section there on using reference parameters and when you use constant so forth.
+
+So I'll see you in the next video.
