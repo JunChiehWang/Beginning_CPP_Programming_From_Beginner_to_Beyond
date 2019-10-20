@@ -1,0 +1,91 @@
+OK so now that we know about pointers and references let's talk about when we want to use pointers versus
+
+reference as function parameters.
+
+First let's look at pass by value.
+
+Remember that pass by value is what C++ does by default.
+
+So you want to use pass by value parameters when the function does not modify the actual parameter and
+
+the parameters are small and efficient to copy.
+
+This is true of the primitive types like integers doubles characters booleans and others.
+
+Note that the collection types like strings and vectors and others have a certain amount of overhead
+
+involved when they're copied.
+
+So you want to think twice before you pass those by value.
+
+In the case of pass by reference with a regular pointer.
+
+In this case we do want to modify the actual parameter from within the function and the parameter is
+
+expensive to copy and then the last criteria is that it's OK for the pointer to contain a null value.
+
+This is important because a lot of data structures rely on pointers becoming null at the end of lists
+
+or Dand of trees.
+
+So in those cases you really want to pass pointers and not references because references can't be null.
+
+Let's take a look at pass by reference using a pointer to contest.
+
+In this case this is suitable when the function does not modify the actual parameter but the actual
+
+parameter is expensive to copy.
+
+Also remember that pointers can contain null values and this is very useful in data structures.
+
+In this case the pointer is allowed to contain a null value in the case of pass by reference using a
+
+constant pointer to contest.
+
+In this case it's very useful when the function does not modify the actual parameter and the parameter
+
+is expensive to copy.
+
+It's OK to have a null pointer and also the function never modifies the pointer itself.
+
+So this is a good example of where you would pass something in and you're guaranteed that the pointer
+
+is not moving and the data it's pointing to is not going to change.
+
+OK so now let's look at references in the case of pass by reference using a regular reference parameter.
+
+This is used when the function does modify the actual parameter and the parameter is expensive to copy.
+
+Of course you can never have no values in the reference.
+
+So if you're working with data structures that rely on null values you really should be using pointers
+
+and not references and in the case of pass by reference using a constant reference this is useful when
+
+the function doesn't modify the actual parameter but the parameter is expensive to copy.
+
+And again you can't have nold references so if you need no values to go with the pointers.
+
+OK there you go.
+
+Those are a few guidelines.
+
+These are just guidelines that can be used to make your program better and easier to modify and debug.
+
+That's the end of this section.
+
+This section can be difficult for many beginning programmers but it's important that you go through
+
+the example slowly and then make up your own examples.
+
+Pointers and references are two concepts that make C++ very different from other languages like Java
+
+Python Ruby javascript and so many more.
+
+Remember at the beginning I talked about C++ programmers being in control of memory and hardware.
+
+You know how it works and have the foundation to move to o programming and C++.
+
+That's coming up in the next section.
+
+But first have a go at the section challenge which will give you a little bit more practice with pointers.

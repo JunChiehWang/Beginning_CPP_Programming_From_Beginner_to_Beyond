@@ -1,0 +1,125 @@
+Welcome to the section challenge.
+
+This has been a long section and it has a lot to learn.
+
+Pointers can be tricky and intimidating but here's a real nice challenge that will help you understand
+
+pointers and dynamic memory allocation.
+
+So I've given you a bit of a star and I've written part of the main for you and you just have to write
+
+two functions.
+
+You have to write a print function that should be pretty easy and then you have to write and apply all
+
+function that I'll talk about in a second and we'll walk right through this real quick.
+
+OK.
+
+So let's go back up to the top of the challenge here.
+
+And what I'd like you to do is write those two functions.
+
+But the first one let's talk about the first one rattus C++ function and apply all how this function
+
+expects to arrays of integers and their sizes and it dynamically allocates a new array of integers whose
+
+size is the size of 1 times the size of the other.
+
+And when you want to do is you want to loop through the second array and multiply each element across
+
+each element of the other array.
+
+Sounds complicated.
+
+It's not.
+
+Let me walk you through exactly what I'm talking about.
+
+So here's the function.
+
+So it expects to arrays array one and array two and it expects the sizes for this to erase.
+
+You can see right here re 1 2 5 and 3.
+
+So let's say that this is array 1 it's 1 2 3 4 and 5.
+
+This is array 1 and then we've got array to which contains 10 20 and 30 K so we're passing these two
+
+pointers basically read array names into that function and we're passing along five which is how many
+
+elements are in disarray and 3 which is how many elements of this right now that function is going to
+
+dynamically allocate an array that's 15 big five times three and those numbers could varied.
+
+So in this case what we want to do is we want to take each element in array 2 and multiply it across
+
+all the elements of array 1 so 10 times one is ten ten times two is 20.
+
+Ten times three is 30.
+
+We've got the 40 and we have a 50 OK.
+
+Then what we want to do is we want to go through here and now go to the next array element in array
+
+2.
+
+So that's 20 to 20 times one is 20 20 times to 40 20 times three is 60 20 times for is 80.
+
+And finally 20 times five is 100 OK.
+
+Then the last thing is go through that last number so now we're at the 30 and we're in about 30 times
+
+one which is 30 you get it you get the idea 60 90 120 150.
+
+So this here is the newly created array that you're going to create dynamically on the heap.
+
+We want to return the address of this array which is the address of this guy right here from the function.
+
+That function returns the address which we store right here in that pointer variable results then we
+
+pass results to the print function with a 15.
+
+And this is what we get from this example let me clear the screen real quick.
+
+So here's a one I call the print function.
+
+I pass array one into it and it's going to display that then I'll put a right to and then I call the
+
+print function.
+
+I pass an array to the three.
+
+I get that I call this function it dynamically creates that array does the multiplication it stores
+
+all the values into that not the dynamically allocated array and it returns the address of that array
+
+and we store the end results then we pass results and 15.
+
+And that's what we get.
+
+OK so what you need to do again one more time you need to write the Apply all function in the print
+
+function.
+
+Now the Apply all function expects array 1 and its size array 2 and its size.
+
+You could decide what the types are going to be.
+
+The print function expects an array and a size.
+
+Now obviously this guy who returns a pointer to an integer doesn't return anything.
+
+So that's roughly your out your function prototypes you have to decide what these types here are going
+
+to be.
+
+OK that's it.
+
+Test your code and have fun.
+
+If you need to use the debugger go for it.
+
+Meet me on the other side of the challenge and I'll show you my solution.
+
+

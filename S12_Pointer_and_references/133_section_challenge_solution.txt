@@ -1,0 +1,297 @@
+Welcome to the section 12 challenge solution I'm in the section 12 workspace and the challenge solution
+
+project.
+
+And before I forget we're going to write those two functions but right here on line 1 0 8.
+
+Don't forget to free up the storage.
+
+OK I was going to get into the functions and I knew it was probably going to forget to mention this
+
+but remember that function that we're going to write this function apply all allocate storage from the
+
+heap when we're finished with it we need to release it.
+
+So we want to say delete square brackets results.
+
+All right.
+
+Perfect.
+
+Now let's go right those functions.
+
+First thing we'll do is we'll write the print function the print function is really easy to understand
+
+and here it is right here.
+
+OK.
+
+So what does print expect and here you can see a call to print.
+
+Let me scroll up just a little bit.
+
+You can see it right there.
+
+Here you can see it called to print right here on line 97.
+
+You can see what's happening I'm calling print and I'm passing in an array right which is the address
+
+of an integer in this case and that just happens to be the first integer in this array right here.
+
+And then passing in array one size which is a constant defined to 5.
+
+Now this function expects a constant pointer pointing to a constant so I can't change the pointer and
+
+I can't change what it's pointing to in this case.
+
+So any mistakes I make in here I want caught because I have no plans of changing anything here I'm not
+
+modifying the pointer or what it points to and I'm passing in the size.
+
+So what am I doing here.
+
+Just simply displaying that square bracket and then I'm just using a real simple for loop.
+
+There is my that's my loop very well I'm starting at 0 and I'm going again less than size.
+
+Size in this case is five.
+
+So I'm going 0 1 2 3 4 and I stop and that's exactly how that array is indexed at each iteration.
+
+I'm just displaying A-R are Sabai now right here.
+
+I'm using pointer subscript notation.
+
+I could very easily have used pointer offset notation right which becomes a r r Plus II and dereference
+
+that guy exactly the same.
+
+They both mean exactly the same.
+
+So in either one you could use.
+
+OK so at this point I'm looping through there when I hit five I stop and I've displayed all those values
+
+here.
+
+So this will display one two three four five and a square bracket and then a new line at the end and
+
+that will be the output you see from here.
+
+OK so hopefully you've got this function.
+
+It's a pretty simple function to write.
+
+Most likely if you had any issues with this it was probably right in here maybe you did and I'd less
+
+than or equal to size when you had an off by one error and maybe you printed some garbage.
+
+That's a very common error.
+
+If you use the debugger that probably helped you out.
+
+So let me clear that.
+
+Now let's go in right.
+
+The main function here the Apply all function.
+
+Now in this case this is how I've defined this function we know it.
+
+It returns a pointer to an integer right cause it needs to return the address of that newly allocated
+
+space on the heap.
+
+It expects array 1 which is a pointer to an integer and the size of that array and array 2 which is
+
+a pointer to the other array and the size of that array.
+
+So that's what we're passing into this function.
+
+I've declared everything is conc all these pointers that way.
+
+I'm not messing with pointers and I'm not messing with what they're pointing to.
+
+I've got no business changing those two arrays that are coming in I'm just building a third array which
+
+I'm returning.
+
+So here is the third array.
+
+It's called new array.
+
+Right now it's just a null pointer and it's a pointer to an integer an address of that first integer
+
+in that new array that I want to create.
+
+And this is me creating it right here.
+
+New Int.
+
+And this is going to be 15 in this example because I'm passing in a 5 and a 3 right here some allocating
+
+15 integers.
+
+On the heap right now that's been allocated that all contains garbage right now and they're indexed
+
+from 0 to 14.
+
+OK.
+
+Now I want to loop through those arrays that were passed into me so that I can start doing some of these
+
+calculations.
+
+So let's do that right now.
+
+First of all I've got this variable called position and position starts at 0 and it's going to go from
+
+0 to 14.
+
+That's what I'm going to use to index into my new array here.
+
+But I've got those other two arrays.
+
+I've got A-R are 1 which was 1 2 3 4 and 5.
+
+In this example and I've got a R2 which was 10 20 and 30.
+
+So this is where we're at.
+
+And obviously we have the sizes that were passed and the five or the three as well.
+
+So what do I want to do.
+
+Well I want to loop through this array as the outer loop because I want this to loop slow.
+
+This is the one on one of the fast because I want to stay at 10 and then go 1 2 3 4 5.
+
+They don't want to go to the 20 and go 1 2 3 4 5 and so forth right.
+
+So my looping variable is going to go from zero to size to which is 0 1 and 2.
+
+Because that size 2 is 3.
+
+And I want to increment by one and then I've got an inner loop.
+
+So I've got a nested loop here where my looping variable is J and it's going to go less than size 1.
+
+So we're dealing with five here and I'm incrementing that by one or two each time.
+
+So look what's happening in the body of the inner loop.
+
+I'm setting the value and again I'm using right here I'm using pointer subscript notation.
+
+I'm setting the value at new array position right position right now.
+
+Is zero.
+
+We set it right up here some setting the value at that new array position to be a r r subject.
+
+Right at the beginning this will be zero times or so.
+
+So I which is also 0.
+
+So that's these two guys right 10 and 1.
+
+So in the SO when we first go through here the second a r r 2 is the one that's looping slower.
+
+Right.
+
+So this guy's going to go one two three four five and this guy's going to go 10 10 10 10 10.
+
+He's not changing.
+
+Right.
+
+So what we're doing is we're multiplying 10 or 10 times one and putting it here.
+
+Right then we're incrementing positions and our position is one and then we're multiplying ten times
+
+two.
+
+We are 20 and we're going all the way down to 50 and along the way we're incrementing that position
+
+variable.
+
+This is the position variable right here.
+
+Now we're done with the inner loop.
+
+So we go back out to the outer loop and now instead of a 10 here we're going to grab the 20 right.
+
+So this guy now refers to 20.
+
+So we're going to do the same thing we're going to go one two three four five and then 20 20 20 20 and
+
+20 and we're multiplying all of these storing the product right in here so we're going to get 20 40
+
+60 80 100 and along the way.
+
+Five six seven eight and nine were incrementing that position variable k then obviously on the last
+
+iteration of the loop we're dealing with 1 2 3 4 and 5 and we're multiplying all of these guys by 30
+
+right here.
+
+So what we're doing here and it and of course this position is being bumped up each time.
+
+So that's what's pointing into the new array.
+
+Right.
+
+So now here we've got what three.
+
+So we got 30 60 90 120 and I ran out of space but there's a 150 there dn at that point that array now
+
+has been allocated on the heap and all those values have been stored into the array.
+
+I clear this now and then all I'm doing here is returning to Array.
+
+So it's returning the address of that first element in the array OK.
+
+Now I'm back here now in my main and I just returned that address right here.
+
+So this point to results is pointing to that array that I just erase that big array of 15 integers from
+
+0 to 14 on the heap.
+
+It's got no name and the only way I get to it is through this results POINAR OK.
+
+Simple as that then I'm using a constant expression here to do to basically calculate this constant
+
+result size which in this case is going to be 15.
+
+And I'm just passing results in 15 to the print function and it's going to print all those values that
+
+we calculate.
+
+So let's give this guy a run
+
+and there's the run you could see array one is 1 2 3 4 5 array 2 is 10 20 30 and then the resulting
+
+array is 15 elements big and it's a function of applying that multiplication of one array to another
+
+array and putting the product in the third array.
+
+OK.
+
+Simple as that.
+
+The debugger might have helped you if you used it if not it's just really a matter of the only tricky
+
+part here is this piece of code right here the nested loop.
+
+And this is just one way to do this you could have done this a lot of other different ways but this
+
+is a really simple way to do it because you keep that position you just keep bumping it up and it's
+
+going to go from zero to 14 and it's as simple as that.
+
+All right so I hope you guys were able to solve the challenge if you did it a different way and you
+
+think it's more efficient or pretty clever.
+
+Let us all know that the simpler.
+
+
