@@ -1,0 +1,95 @@
+In this video we'll learn a little bit more about classes and objects you can think of classes as blueprints
+
+from which objects are created classes or user defined types.
+
+And one of the goals in Object-Oriented Programming is to make the user defined types feel like they're
+
+part of the programming language.
+
+So when we create our classes we want to be able to use them just like we use integers doubles and so
+
+forth.
+
+Easy and simple classes have attributes which are data and they also have functions which are called
+
+methods as mentioned in the previous videos.
+
+Classes can hide data and methods that are only used internally by the class.
+
+This is done using the private and public access modifiers.
+
+The goal of the class is to provide a well-defined public interface that the user of the class can easily
+
+use to solve the problem.
+
+Here's an example.
+
+Classes account employee image standard vector and standard string.
+
+These are all classes that modeled real world entities.
+
+Vector unstring are part of the C++ standard library account employee and image might be classes that
+
+we would create in our applications.
+
+Ok so now that we know what a class is what's an object.
+
+Well objects are created from classes and represent a specific instance of the class they're created
+
+from.
+
+So if I have an account class I can create a Franke's account object.
+
+That's a specific instance of an account that models Franke's account information.
+
+We can have as many objects as we need if we're remodeling a real banking application.
+
+We could have hundreds of thousands of account objects each representing an individual instance of an
+
+account each object has its own identity and each can use the methods defined in the class.
+
+Let's see an example we know that ints and doubles are primitive types in C++.
+
+They're not classes but this anality will help make a point in the first two lines we define two integers
+
+high score and low score.
+
+What does that tell us.
+
+Well it tells us what the valid values are for those variables.
+
+And it also tells us the operations we can perform on the variables for example addition subtraction
+
+multiplication and so forth.
+
+Again integers are not classes but just for a moment.
+
+Think of it as the class and low score and high scores.
+
+Objects created from the in-class notice that low score and high score are instances of integer.
+
+They each have a value and they each have an identity.
+
+Now look at the next two lines.
+
+Let's assume that we've already written the account class and it's a true C++ class.
+
+Notice the syntax and how similar it is to the syntax for the integers above.
+
+Account is a user defined type.
+
+So Frank account and Jim account are instances of the Account class.
+
+They are objects.
+
+Each of these objects has an identity and values associated with them.
+
+Just like high and low score did this should look familiar since we've already been using objects all
+
+along the last two lines create a score's object that's an instance of a vector of integers and a name
+
+object that's an instance of string.
+
+Ok so now that we know a little bit more about classes and objects let's see how we can declare a class
+
+in C++ in the next video.

@@ -1,0 +1,81 @@
+In this section will get a first look at object oriented or o programming.
+
+We've already done a bit of a slow programming when we use the standard string and vector classes but
+
+now we'll learn much more about our programming and especially how to create our own classes and objects.
+
+Before learning about C++ is object oriented features we learn what our programming is and why it's
+
+so popular and useful.
+
+We'll learn exactly what classes in objects are and how they work in the world of o.o.
+
+We'll see how to declare some simple classes and create objects from those classes.
+
+Well then see how we can use the dot operator and the pointer operators so that we can get to the parts
+
+of an object that we want to access.
+
+Two of the main strengths of object orientation are encapsulation and information hiding.
+
+We'll define these concepts in this section and see how C++ is public and private access modifiers allow
+
+us to prevent access to parts of our code while still allowing access to the interface that will be
+
+used by other programmers.
+
+Then we'll turn our attention to the many ways that we can construct or initialize or objects.
+
+This is all done with constructors.
+
+These are methods that we write that give us control over exactly how our objects are created.
+
+There are lots of variations of constructors and we'll look at the most common and understand their
+
+primary purpose.
+
+We'll learn about initialiser list default overloaded copy and move constructors and we'll see when
+
+and how to implement them.
+
+Sometimes when we work with pointers inside classes we have to be aware of whether the pointer or what
+
+the pointer is pointing to is being copied.
+
+This concept is called shallow versus deep copying by default.
+
+C++ provides shallow copying but sometimes we need to do more than that and we'll learn how and why.
+
+We'll also discuss destructors.
+
+Sometimes when an object is destroyed there can be things that we have to do to tidy up after them.
+
+This might include closing files freeing allocated memory writing log messages to files and so forth
+
+C++ provides destructors that are called automatically when objects are going to be destroyed.
+
+Then we'll learn about the this pointer which many times confuses beginning C++ programmers.
+
+But don't worry it's pretty simple once explained sometimes when we write programs we want certain attributes
+
+to belong to the entire class and not to the objects themselves.
+
+That's exactly what the static class members allow you to do.
+
+Finally will wrap up this section by understanding the difference between structures and classes and
+
+see how C++ classes can grant friendship privileges to other parts of the program so they can access
+
+private information in an easy but controlled manner.
+
+Once you complete this section you'll have the basic fundamentals necessary to model your programs using
+
+real world objects.
+
+This will not only help you think more abstractly it will also make your code more robust easier to
+
+debug and easier for others to modify.
+
+This sounds like a lot to learn but will take it in small steps and build up our classes as we go.
+
+Let's get started with old programming and C++.

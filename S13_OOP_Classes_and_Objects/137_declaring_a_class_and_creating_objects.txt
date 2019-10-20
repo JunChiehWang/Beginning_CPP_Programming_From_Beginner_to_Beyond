@@ -1,0 +1,593 @@
+In this video we'll learn the basic syntax for declaring a class in C++.
+
+The syntax is very simple.
+
+First we use the reserve key word class followed by the name of the class we're declaring.
+
+Notice that it's best practice to capitalize class names for our user defined classes.
+
+Then we have a block which are open and closed curly braces and the class declaration is terminated
+
+with a semi-colon in body of the class declaration.
+
+We can supply the declarations that define the structure and behavior of our class.
+
+Let's see an example here where declaring a class named player as we might have in a game application.
+
+Notice the class keyword followed by the name of the class.
+
+In this case player dead in the body of the class we can define the classes attributes or instance variables
+
+and methods.
+
+In this case the class has a string named name and two integers representing the players health and
+
+Expwy.
+
+Since C++ supports encapsulation that means we can also provide methods or functions in the class body
+
+that are specific to the player class.
+
+In this case we have two methods talk which expects a standard string and is dead which returns a boolean
+
+number.
+
+We've created the class.
+
+We can create objects that are instances of that class.
+
+So in this example in creating Franken hero which our player objects.
+
+Notice the syntax.
+
+It should feel familiar since it's the same way we create primitive types.
+
+We can also create pointers to objects in the last example.
+
+I'm declaring enemy as a pointer to a player object and I'm creating that object dynamically on the
+
+heap using you when I'm finished using any object it storage has to be freed up using delete.
+
+Here's another example where we declare an account class.
+
+Notice that accounts have a name which is a standard string and a balance which is a double.
+
+And in this example we have a withdraw method that expects the amount to withdraw and returns a boolean
+
+indicating success.
+
+We also have a deposit method that expects the amount to deposit and also returns a boolean indicating
+
+success.
+
+We'll talk more about how we define class methods in a few videos.
+
+But notice how they're basically function prototypes in these examples.
+
+Now that we've declared the account class we can create objects of that type.
+
+So Frank's account in Jim's account or objects or instances of the Account class in the last declaration
+
+Mary's account is a pointer to an account object that again has been allocated dynamically on the heap
+
+and then freed up when we're done with it.
+
+Once we have objects we can use them like any other variable in C++ for example we can create an array
+
+of account objects and initialize the array to Frank's account and Jim's account.
+
+We can create a standard vector of account objects and initialize it to Frank's account and then push
+
+back Jim's account.
+
+You can see how easy and how readable our code looks.
+
+We're using our own user defined types and we're using them intuitively like we've used other C++ types.
+
+In the next video we'll see the syntax for accessing the attributes and methods and objects.
+
+But first let's head over to the IEEE and create these classes.
+
+Ok so I mean the idea I mean the section 13 workspace the declared class and objects project.
+
+This is just an empty little project right now with an empty Main.
+
+I've included IO stream string and vector and I'm using namespace standard.
+
+Remember you really don't want to use namespace standard all the time you really want to be explicit
+
+and type out you know Studd scope resolution operator and whatever you need.
+
+So I'm going to do it because it'll save me a lot of typing time otherwise these videos could be of
+
+pretty long with me making typos.
+
+So what do I want to do here.
+
+Let's create the player class the account class and we'll create some objects.
+
+The first question is Where do we create the player class let's do the player class first.
+
+I could do it right inside main.
+
+I could say.
+
+Class player and define that class right in here.
+
+That's really not what I want to do because if I do that then I'm defining that class inside the scope
+
+of Main which means that only main will have access to access to that class and that's not really what
+
+I want I want to create my player class so that the entire application has access to it.
+
+So I'm going to do it right up here and then later on in this section we'll learn how to do it an even
+
+better way we'll use separate files to do it.
+
+But for now let's learned about classes and objects.
+
+So what I want to do is I want to say class player.
+
+Remember that class name should be in uppercase and you need a semi-colon right here at the end of the
+
+class declaration.
+
+So what do we put inside this class declaration what we saw in the slides.
+
+You can put attributes in here.
+
+That's typically data and we can put methods in here which are operations or functions.
+
+That's when the cancellation is all about putting all these things together.
+
+Now what do you do.
+
+What do you put in here.
+
+Well it depends depends on what a player is in the context of your application.
+
+You could have all kinds of stuff in here or could have a minimal amount of stuff in here.
+
+That's the whole point.
+
+You really don't want to model a player that could be used in any application in the world.
+
+You just want to model a player that's going to be used in your application that you can extend easily.
+
+OK.
+
+So don't try to model that the best player object to class you could ever have just solve your problem.
+
+So in this case let's assume that a player has a or a name which is a string and the player has an integer
+
+which is their health and say something like between 0 and 100 0 health you're dead and XP which is
+
+experience.
+
+And that could be three up to whatever.
+
+It doesn't really matter.
+
+It's all based on our application.
+
+So now what we're seeing here is that the class player is going to be a blueprint to create player objects
+
+from an every player object is going to have a string that represents surname name two integers one
+
+representing the health one representing their XP.
+
+Now what methods can we have.
+
+We can have a ton of methods let's just create two of them really simply say you understand how this
+
+works what you do here is you basically do everything we learned when we talked about functions.
+
+So I want to have a method called Talk and it expects a string.
+
+So whatever string you pass into the player the player will talk it right back out and let's say we
+
+want to have is dead.
+
+This is a method that returns to a fault based on whether the player is dead and the player might be
+
+dead if their health is zero or whatever other criteria we have for that.
+
+Again notice that with these look like are basically function prototypes at this point we could implement
+
+them right here and we will in a couple of more videos.
+
+But for analysis think these are the attributes these are the methods.
+
+OK.
+
+Also there's the concept of public and private but we have access to we'll get to all that really really
+
+soon.
+
+But that's it.
+
+That's a minimal player class.
+
+Given this I can create player objects.
+
+Now let's create 2 player objects right here in main.
+
+I'll say player Frank and player hero.
+
+That's it.
+
+When these two ends execute will the system will create two player objects one is called Frank.
+
+One is called Hero.
+
+Each one of them has a name.
+
+Health and XP.
+
+Each one of them can call these methods and talk and ask if it's dead or not.
+
+OK.
+
+So hopefully that makes sense.
+
+Let's run this right now.
+
+We're going to run this in the debugger so you can see them what I'm going to do is I'm going to.
+
+For someone to save this then I'm going to click right here in the gutter and you get that little stop
+
+sign for the debugger and then when I'm going to do is just get a debugger start the bugger or you just
+
+press F5.
+
+And I've got my debugger set up so that my local variables over here and he watches and I want to look
+
+for here.
+
+And then the call stack is here the call stack is real simple we're just in Maine right now.
+
+You can see I've got my two local variables.
+
+You can see them displayed right up here.
+
+I've got Frank and I've got a hero right now.
+
+They don't really exist because I haven't created them yet yet but they're in the local variables paying
+
+here.
+
+So what I want to do is let's create Frank in here just hit the next arrow down here.
+
+And Frank is now active and then hero is now active.
+
+And if you expand these guys a little bit you can see something of what's going on here.
+
+You can see Frank has a name right of course.
+
+Here it is.
+
+It's one of the attributes Frank has health and Frank has XP.
+
+Notice it's garbage data right.
+
+The only reason that the string is not garbage is because our C++ string class are standard string class
+
+has a default initialiser which initializes it to empty which is pretty cool.
+
+But the rest of the stuff is junk just garbage data the same thing with health and the same thing with
+
+XP.
+
+This is the same sort of behavior we saw when we created regular variables.
+
+OK.
+
+So we'll talk about initializing these objects in a couple of videos where we use constructors to do
+
+it.
+
+And that makes things much much easier.
+
+Ok so I'm going to stop this debugger and we can also create objects on the heap just like we could
+
+regular primitive types.
+
+So in this case I'm going to say player
+
+enemy is a pointer to a player member you read this from right to left.
+
+And you know what.
+
+Let's set it to null pointer of the this two steps just so you can see this happening in the debugger.
+
+Then I'm going to say enemy equals new player.
+
+That's going to create the enemy on the heap that enemy object which is a player.
+
+And then I'm just going to say delete and when I'm done.
+
+OK so let me move that right to about there and let's run this again in the debugger here you can see
+
+that right now there's garbage data in the value for enemy right.
+
+So it exists.
+
+It's a pointer it's got a value and it's junk right now.
+
+So when I execute the statement I just nailed it out and you can see it's zero.
+
+That's the safe way to do things.
+
+Now I want to create this new player object on the heap.
+
+So right now when I execute that statement you expect that address to change right.
+
+Because obviously I'm creating this on the heap and I'm storing the address of that object in enemy
+
+which is a pointer.
+
+So that's step through it.
+
+Here we go.
+
+At this point that enemy object is created it's on the heap.
+
+It's a player.
+
+Right.
+
+That's its type.
+
+And if I expand as you can see that the game is empty but Helfand XP contain garbage just what we would
+
+expect.
+
+And then when we're done with it we can delete it.
+
+OK.
+
+Really really straightforward.
+
+Let me add a few lines of code right in here and we'll get rid of that breakpoint will move it in a
+
+second.
+
+Once we have these objects we can treat them like any variables just like we've worked with integers
+
+and doubles and everything else.
+
+So in this case.
+
+So I want to create an array right here called players
+
+and it's a an array.
+
+And I want to set it to Frank and here Mike just like we've done with integers.
+
+It's the same idea.
+
+So let's read this together here says players is an array of player objects.
+
+Well I've got two of them right here so I can initialize that array to Frank and hero.
+
+I'm going to save this.
+
+And let's put a breakpoint right there so we can look at it and we'll run
+
+OK so you can see players right here and I'm going to step through it.
+
+Up players been initialized here to those two objects.
+
+The first object and the second object the first object is Frank.
+
+The second object is zero.
+
+And you can tell we don't have any strings for names now but you can tell from the garbage values that
+
+they really are indeed those objects.
+
+So it's really as simple as that.
+
+This is very powerful stuff because we can create our own user defined types which is what player is
+
+and then use it just like we can use any other variable.
+
+OK.
+
+So last thing is let's try to create rather than an array here let's do a vector.
+
+So let's create a vector a vector of what what we've done vectors of teenagers the vectors of strings
+
+go one on a vector of player.
+
+OK and we'll just call it player back.
+
+So again what is this.
+
+This is a collection of player objects.
+
+OK so let's initialize this to Frank.
+
+That's a player object.
+
+And then what we could do is we can ask the player Veck to push back and push back as a method in the
+
+Vector class and we can push back here.
+
+Right so let's execute both these lines and I'll get to put a put a breakpoint right there and we'll
+
+go back to the debugger and run this.
+
+So right now we have player Veck somewhat step into it here so that I can create that vector.
+
+OK the vectors now created it's called Player Veck It's right here.
+
+If I expand it you can see that right now there's one item in there and that one item is Frank if you
+
+look at Frank appear you could see it's garbage data right here.
+
+Well it's going to be the same garbage data right here because we just copied that object OK.
+
+Now when I execute the next line which I'm going to just by clicking next here that should add hero
+
+to that vector.
+
+So let's do that.
+
+And now you can see you notice here that it didn't really show up here.
+
+This player VUK which you can do when that happens is you need to refresh right here.
+
+So when I refresh the right now that says there's only one item in there we know there are two.
+
+So if you refresh and then expand player VEC There you go and you see both items.
+
+In this case that's Frank.
+
+And in this case that's hero OK.
+
+So all this works exactly like it did with integers and doubles and so forth.
+
+All right so let's create an account class.
+
+Now real quick we'll do it right below the player class will create a class account and will create
+
+the body and we'll put a semi-colon on the end.
+
+Don't forget that semi-colon if you forget that semi-colon you're going to get compiler errors and they're
+
+going to be strange compiler error because the compiler is going to be lost trying to figure out where
+
+you are.
+
+OK so here we can have attributes
+
+and what we'll say here is again we've got a string name the name of an account and we've got a double
+
+which is called balance.
+
+Then here we can have methods again as many methods as we want.
+
+Now you'll notice it over here.
+
+I just prototype those two methods I just declared.
+
+Am I never defined them.
+
+So how in the world did this work well this work.
+
+Because I never called them if I had called those methods I'd have a linker error because the linkers
+
+going to say I don't know where those things are you told me there were there but I don't know where
+
+they are.
+
+OK will implement all this stuff in the next few videos.
+
+So let's create a couple of methods bhool deposit and double and bhool withdraw double.
+
+Those are my two method declarations.
+
+I want to deposit some amount in I want to return TRUE FALSE whether it was successful or not.
+
+And with that withdraw some amount.
+
+Again it's a double.
+
+And I want to return true or false depending on whether it was successful.
+
+And once that I I've that once I've got that class declared I can now create a count object so I could
+
+save Frank the count
+
+I could say Jim account and so forth can now put up a break right here.
+
+And let's check that out in the debugger.
+
+You could see right here is Frank account.
+
+So I'm going to go next and next.
+
+Again that's created those two objects.
+
+So here Frank account has a name.
+
+It's empty and it's got a garbage number for balance and the same thing for Jim's account.
+
+It's got a name and it's got a balance.
+
+OK.
+
+Now something that's useful in C++ 11 and going forward is that you can actually initialize these guys
+
+right here.
+
+So let's just say that I wanted to initialize that to Frank to account accounts sorry.
+
+And I wanted to initialize balance to zero.
+
+I can do that and I can also do this up here.
+
+So let's say I wanted to initialize this to the player.
+
+When you think about this it's really odd that they're letting you do this at all because we're an issue
+
+we're creating these initialization of variables here.
+
+But we don't even have objects yet.
+
+Right I mean this is just a class declaration we have we don't have any objects but they can come in
+
+handy and I'll show you how to initialize these things using constructors and initializer lists and
+
+a little while.
+
+But let's say that XP is three and the health is 100
+
+Kate.
+
+So let let's run this again this time and I'll stop the debugger and started again.
+
+Forgot my semi-colon.
+
+I probably forgot some down here as well.
+
+So let's let's run them.
+
+OK so now you can see me scroll up a little bit and read here on 9:33.
+
+So I'm going to go next next.
+
+I've just created those two accounts and again I'm going to go next next and I just created those two
+
+players Frank and hero.
+
+But now when I look at Frank you can see Frank's name as player it's health is 100 it's XP is three.
+
+So basically any object is going to get these values right here.
+
+And as I said we'll learn other ways to initialize.
+
+But this is pretty nice right now because we can actually see them in the debugger and you can see this
+
+working OK.
+
+And the same thing with the count frank account here says account with a balance of zero 0 and Jim's
+
+account is account with a balance of zero as well.
+
+OK.
+
+All right.
+
+Perfect.
+
+Now in the next video what we'll learn to do is learn how to actually access those class attributes
+
+in class methods using an object.
+
+OK.
+
+So I see in a little bit.
+
+
