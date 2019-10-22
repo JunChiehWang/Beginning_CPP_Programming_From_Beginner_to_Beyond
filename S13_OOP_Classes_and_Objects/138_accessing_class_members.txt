@@ -1,0 +1,525 @@
+In this video we'll learn how we can access class attributes and methods.
+
+Of course we want to create objects from our classes but we also want to be able to use and modify the
+
+objects attributes and call methods for specific objects.
+
+There are two ways to access class members.
+
+We can use the dot operator and we can use the member of pointer operator or the arrow operator.
+
+Remember that some class members may not be accessible since we can hide them we'll see that in the
+
+next video.
+
+We've already seen how we can use the dot operator when we worked with standard vector and string.
+
+If we have an object then we can use the dot operator followed by the class member that we want to reference.
+
+It's as easy as that.
+
+For example if I have an account object named Frank sickout then I can access the balance attribute
+
+with frank account balance and I can deposit a thousand dollars into frank account by writing frank
+
+account dot deposit 1000 in this case we're accessing the deposit method.
+
+Notice that the object is to the left of the dot operator.
+
+So that method will be called on that specific object.
+
+In this case the frank account object
+
+if we have a pointer to an object then we need to dereference the pointer first in order to get to the
+
+object.
+
+And then we can apply the dot operator.
+
+There's two ways we can do that.
+
+Remember in these examples frank account is not an account object.
+
+It is a pointer to an account object which has been dynamically allocated on the heap.
+
+The first way to do this is to explicitly dereference the pointer and then use the dot operator in order
+
+to access the objects class members.
+
+We have to dereference the pointer using the asterisk and then use the dot operator to get the class
+
+member we want but notice that we have to use parentheses here since the dot operator has higher precedence
+
+than the pointer dereference operator and we want to be sure that we dereference first.
+
+While this syntax is explicit it can be a little tedious to read and write.
+
+So C++ provides an alternate operator called the member of pointer operator which is often referred
+
+to as the arrow operator.
+
+It's a dash followed by a greater than sign which looks like an arrow pointing to the right this operator
+
+has the same effect as the first example above it will dereference the pointer and then apply the dot
+
+operator as you can see this operator is very intuitive to read and use and it's used very often.
+
+That's all there is to accessing class members.
+
+Let's head over to the ID and we'll access some class members for the player and account classes.
+
+Ok so I mean the ID and I mean the section 13 workspace The accessing class members project.
+
+What we've got here is we've got the same player class and Account class that we created in the last
+
+video with its attributes and methods just like we did before and what we'd like to do now is access
+
+some of these attributes and methods from within our main.
+
+And we want to access them for specific objects.
+
+Obviously now there's a couple of things we're going to do and we'll discuss them in detail in a few
+
+videos from now but by default all of this information in the class is private and we don't have access
+
+to it.
+
+So let's make it all public.
+
+For this video and in the next video we'll talk about public and private.
+
+So this is what I'm going to do here is say public Colin for the account class and public Colwin for
+
+the player class that says that everything after that access modifier is public which means we've got
+
+access to it.
+
+No worries at all.
+
+OK.
+
+And as I said we'll talk about public and private in the next video.
+
+So what do I do.
+
+Well let's create some objects.
+
+Let's create a player object and let's call it Frank.
+
+And now what I want to do is I want to set Frank's name health and XP.
+
+Those are the attributes for the player class.
+
+Well how do I get to them.
+
+This is where we use the dot operator.
+
+Frank is an object so we can say Frank datt name and we could just set it to Frank or anything else
+
+we'd like we could say Frank-Dodd health is 100 let's say.
+
+And finally we could say Franke's XP is that say 12.
+
+OK so it's really as simple as that.
+
+That sets those attributes the values for those attributes.
+
+Now obviously if I wanted to print out those attributes I would just do a seek out Frank-Dodd health
+
+and that's it and I'm going to get whatever was stored in there as a value.
+
+So let's take a look at this in the debugger and see what it looks like so I'm going to put a breakpoint
+
+right here on 9:33 and let's run this in the debugger so we can see what's going on.
+
+First of all you can see over here that Frank is a player object that's its type.
+
+And if I expand this you can see it's all garbage right now right.
+
+So this is all garbage and let me hit next and I just did.
+
+Let me refresh just one more time you'll see that the string is now empty for the name.
+
+Now what I'm doing here is I'm saying Set the name attribute for the frank object to the string Frank.
+
+OK.
+
+And then I'm setting the health attribute for the frank object and the XP attribute for the frank object
+
+to 112.
+
+So I'll hit next a couple of times one to three times I'll execute those three lines of code and what
+
+I'll do here is our refresh the screen so that we can see that now we've got Frank is the name the health
+
+is 100 the XP is 12.
+
+Exactly what we expected.
+
+OK.
+
+So that's a really easy way to do this.
+
+Now remember this is all based on the fact that this is public.
+
+If this was private you'd get a compiler error and I'll discuss that in detail in the next video.
+
+Same idea holds for accounts but how about these methods here.
+
+I haven't implemented those methods.
+
+So if I try to say something like Frank don't talk and I pass in a strength to say hi hi there or something
+
+like that this will compile just fine but it won't link because I haven't implemented this method.
+
+How do we implement this method.
+
+There's a whole bunch of different ways to do it.
+
+Let's do it the simple way.
+
+And again I'm going to do a whole video on methods and how to implement them.
+
+But for now just to get this to work let's put in a method block here and just like we've always done
+
+I'm going to say seek out what's my name.
+
+Well my name is name someone the same name.
+
+I'm going to put another insertion operator and I'll say says followed by the text to say which is we
+
+pass into me followed by an end line.
+
+That's it.
+
+Now I've implemented that method.
+
+So now when this code executes right here Frank talk.
+
+Hi there.
+
+It should say Frank says Hi there.
+
+OK so let me stop this and let's run this again.
+
+And again we'll run this in the debugger.
+
+And since we have some output what I'm going to do is put that output window right over here so we can
+
+actually see what's going on in our output window.
+
+OK so let's do this again.
+
+I'm going to select next on line 34 now line 35 line 36.
+
+Now I'm going to execute 9:36.
+
+And at this point my frank object has a named Frank health 100.
+
+XP is 12.
+
+Now what's going to happen is we're going to call the talk method for the frank object and control will
+
+be transferred right over here to this method we just wrote we're passing in this string Hi there.
+
+And it should say Frank says Hi there.
+
+And it should display it right out here.
+
+So let's take a look.
+
+That's exactly what happens.
+
+Frank says Hi there.
+
+OK.
+
+So what's neat about this is that since I'm calling the talk method for the frank object these attributes
+
+are available to that method.
+
+And so I don't have to pass in the name of Frank because I've already got it I could just simply say
+
+name as far as this name is concerned remember we talked about scope a while back.
+
+Well we look for the definition of this variable inside the class first.
+
+It's not there then we go global but we're going to look for it here.
+
+There it is.
+
+That's someone we're going to use OK.
+
+So there you go.
+
+That's a real simple example of calling some member method really really easy.
+
+Now how about if we had a pointer Let's try that.
+
+So let me stop this and we'll do the same kind of code will write it with a pointer and I'll leave this
+
+window a little bit smaller so we could see.
+
+So let's say we have a player and it's a pointer this time called enemy which is a pointer to a player.
+
+And I'll just instantiate it right here.
+
+So I say it's a new player.
+
+OK so in order to get to that player object I need to dereference the pointer right remember enemy is
+
+not a player object enemy is a pointer to a player object.
+
+So in this case there's two ways to do it.
+
+We can dereference enemy.
+
+Ok so I just did was I dereference the pointer so now I've got the object and I can say enemy dot name
+
+is and then the simple as that I could say enemy dot health is 100.
+
+And I could do the same thing for XP.
+
+But rather than use this syntax we're explicitly dereferencing the pointer and then doing the dot operator.
+
+Let's use the arrow operator here.
+
+So what we can say is enemy followed by the arrow operator and then we can say x p is that say 15.
+
+Right now how do you call a method here.
+
+Same way we could say enemy arrow.
+
+So what I want to do is I want to dereference that point or I use the dot then I'm going to call talk
+
+and say I will destroy you.
+
+OK so let's try this.
+
+Now let's walk through this one more time.
+
+So we'll debug this
+
+move this over here real quick.
+
+And let's step through the program.
+
+Right now we're on 9:33 that's where we've got the breakpoint.
+
+So we're creating the Frank object we're setting the name to franked the health 100 and the XP to 12
+
+and then we're going to call the talk method on the Frank object which should display.
+
+Frank says Hi there and that's exactly what happens over here in the output.
+
+Now we're going to create this enemy which is a pointer to a player.
+
+Now it's important that you see that you can see the type here what the debugger is really helping you
+
+out here.
+
+You can see Frank is a player enemy is a pointer to a player.
+
+You could see that the debugger is really helping you out there with the type.
+
+So at this point right now that enemy is garbage right we've got garbage data in the pointer.
+
+As soon as I execute 939 now it will be pointing to a real player object.
+
+So I'm going to sit next.
+
+Now we've got enemy pointing to a player object.
+
+And if I come over here you can see the name is junk.
+
+The health is junk and the Czar the name is empty.
+
+The health is junk and the XP is junk.
+
+OK.
+
+So what do I do here.
+
+I want to dereference enemy and then get the names I want to follow the pointer and get the them.
+
+OK.
+
+We can also use this area right here with the watches so I can add a watch and you can put whatever
+
+expression you want.
+
+So I just want to see this expression right here.
+
+Dereference enemy.
+
+That's the object.
+
+So when I add that you can see I'm seeing the same thing that I'm seeing here.
+
+Now for some reason this you need to refresh this you don't.
+
+So it's kind of nice to have these here.
+
+So let's walk through this dereference enemy that means go to the object that I'm pointing to and set
+
+the name to enemy.
+
+OK so let's execute that line of code.
+
+Notice how enemy shows up here doesn't show up here unless I refresh.
+
+But now it does.
+
+They don't want to set the health to 100.
+
+So I'll do that next.
+
+Now the health is 100 XP is 15 but now we're using the arrow operators so but it's all the same XP is
+
+15.
+
+And now I want to call the talk method for the enemy object but I want to do it through the pointer.
+
+And when I run this it should say enemy says I will destroy you.
+
+So let's try that out.
+
+And that's exactly what it says.
+
+And he says I will destroy OK OK so that gives you an idea of how some of this works.
+
+What we'll do next is let's update this a little bit.
+
+We'll do that quickly because this video is getting a little long now and what we'll do is we'll do
+
+the account.
+
+OK.
+
+Same idea except here I'm going to say something like what do I want to do when the user passes in a
+
+number to deposit.
+
+Well what I want to do is just say something like balance plus equals right.
+
+Just something really really simple I don't increment the balance by whatever they passed into me.
+
+And for for withdraw I just want to say balance minus equals be a help.
+
+And while I'm at it I want to also say seek out something like in deposit just so I know that I'm in
+
+there.
+
+So we could see this being called would do that and we'll do the same thing for withdrawal.
+
+And again just so we can see these things are being called now we're defining these methods right in
+
+here right inside the class.
+
+As I said there's other ways to do this and I'll show you what those are in a couple of videos.
+
+But let me just change this so we can understand how to access this.
+
+That's it.
+
+So now let's create right up here.
+
+Let's create an account.
+
+So we'll say account and we'll just say Frank account.
+
+Right.
+
+That creates an account object.
+
+Now I can set the name and the balance of that account.
+
+These are public attributes right now.
+
+So I could say Frank account and I'll just say equals Frank's account.
+
+That could be any C++ string.
+
+And then I'm going to set the balance I'm going to say Frank's account balance and say that there is
+
+$5000 in there.
+
+OK that's it.
+
+Now let's say I want to deposit a thousand dollars into that account I could say again you need the
+
+object that you're working on has to be to the left of the dot operator.
+
+So it's going to be frank account deposit.
+
+And I'm going to deposit a thousand
+
+OK and then we'll save Frank's account withdraw and let's see if we want to withdraw 500
+
+and that's it.
+
+And I'm forgetting semi-colons because I've been working with a programming language all day that doesn't
+
+need them.
+
+So I'll put them in there hope Fed and forget any other ones.
+
+OK so that's it.
+
+Let's put a break point here and just try running through this so again we'll get to the debugger.
+
+And Frank's account equals of course Frank accounts name I need to set that specific attribute
+
+and frank account withdraw five hundred
+
+have an extra portion right there.
+
+OK let's try that now OK.
+
+Perfect.
+
+Let's put the output window over here on the side and let's walk through this.
+
+I'm at 9:33 right now I'm creating frank account so I'm doing that right now.
+
+Now I'm setting Frank accounts name into Frank's account.
+
+We'll do that.
+
+And the balance to 5000.
+
+So let's take a look at Frank's account right here will refresh there's Frank's account and the balance
+
+is 5000.
+
+Now when I call the deposit method it's going to call this method right here for that Frank account
+
+object and increment the balance by a thousand.
+
+OK so let's do that.
+
+And should we should also get an output statement print out over here.
+
+There you go in deposit.
+
+Refresh frank account again notice I've got 6000 in here now.
+
+When I called the withdraw method this should go down to fifty five hundred and it should say in withdraw.
+
+So let's do that one more time and we'll refresh one more time.
+
+There's 1500 exactly what we expected and the withdrawal kicked in OK.
+
+Same idea here with the pointer that we did with the player object.
+
+I won't do that because the video is getting a little bit longer but I'll let you guys try that out.
+
+You can create Mary's account which is a pointer to an account and then you can access the attributes
+
+using this syntax or the error.
+
+OPERATOR OK.
+
+So if you have any questions please drop by the forum and let us know.
+
+
