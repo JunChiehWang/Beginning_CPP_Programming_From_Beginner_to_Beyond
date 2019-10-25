@@ -1,0 +1,623 @@
+In this video we'll learn about how to implement member methods in our C++ classes.
+
+You'll be glad to hear that class methods are implemented in a manner very similar to the way we implemented
+
+functions.
+
+But I'd say that are generally less complex.
+
+This is because member methods have access to the classes member attributes.
+
+So we don't have to pass so many arguments around C++ gives you many options regarding where to write
+
+code for member methods.
+
+You can define the member methods right inside the class declaration.
+
+If you do this then the methods become implicitly in line.
+
+While this is OK for small and relatively simple methods we tend to implement larger more complex methods
+
+outside of the class declaration in order to do so.
+
+We need to tell the compiler that we're implementing a method that belongs to a specific class so we
+
+use the class name followed by the scope resolution operator and then the method name.
+
+This unambiguously tells the compiler that you are implementing a method for a specific class in C++.
+
+It's also very common to separate classes specification from its implementation.
+
+This makes the class much easier to manage.
+
+We usually create a header or include file that has a dot H or dot HP extension for the class specification
+
+and then a separate data file for the class implementation.
+
+First let's look at implementing methods inside the class declaration.
+
+In this example we're declaring an account class.
+
+Notice that the account class has a private double named balance and two public methods.
+
+Set balance and get balance set balance sets the balance to the value passed in by the user and get
+
+balance returns a copy of the account balance.
+
+These public methods are necessary to access the balances the balance is private.
+
+Notice the syntax is exactly as it was for defining regular C++ functions.
+
+Also notice that the public methods have direct access to the private ballots because they're members
+
+of the same class.
+
+Now let's see how we would implement these methods outside the class declaration.
+
+In this example we're defining the set balance and get balance methods outside the class declaration
+
+inside the class declaration we simply provide the method prototype or declaration.
+
+This tells the compiler the name of the methods the parameters they expect them with return type.
+
+The compiler can then type check the method implementation when it sees them.
+
+In order for the compiler to know that these methods belong to the account class we have to prefix the
+
+method names with a count followed by the scope resolution operator.
+
+Then we implement the method as we normally would.
+
+In this case the compiler knows that the two method implementations are for the method declarations
+
+in the account class we provided as our programs get larger we really want a separate class specification
+
+and class implementation of two different files.
+
+Let's see the sample of how we can do that.
+
+In this example we create a file named account.
+
+H.
+
+This is an include or header file that will pass and include in our data files whenever we need to use
+
+the account class.
+
+Notice that in this file we provide the specification for the account class before we can use or poun
+
+include this account that H header file.
+
+We need to take care of a potential problem.
+
+If this file is included by more than one C.P. file then the compiler will see the declaration for the
+
+account class more than once and give us an error about duplicate declarations in order to solve this.
+
+We can use what's called an include guard that ensures that the compiler will process this file only
+
+once.
+
+No matter how many times it's included an include guard.
+
+It's just a series of preprocessor directives that guarantees the file will only be included Once the
+
+way it works is we wrap up our entire class declaration in this include guard.
+
+The first line is pounde.
+
+If not defined underscore account underscore h underscore it all in uppercase.
+
+This checks to see if the preprocessor has a symbol named underscore account underscore H.
+
+Underscore this symbol name can be anything you want.
+
+But best practice is to use some sort of combination of the file name in uppercase with preceding and
+
+ending underscores.
+
+Any name is fine as long as it's unique in the program.
+
+If the preprocessor has that name defined then it skips the entire file and goes to the pound END-IF
+
+at the end.
+
+In other words it doesn't process the file since it's already seen it because the symbol has been defined.
+
+If the symbol has not been defined then the symbol is set and the file is processed as usual.
+
+As you can see it's pretty simple but not very elegant compared to more modern programming languages.
+
+So now this is what the account that h file typically contains.
+
+You can see the include guard wrapping the class declaration.
+
+Now we can provide the implementation for the account class in a separate file named account that C-p
+
+many compilers also support the pound pragma once compiled a directive.
+
+The effect of this directive is the same as the include guard.
+
+While many compilers support this directive some don't.
+
+So check your compiler documentation to be sure.
+
+Now we can provide the implementation for the account class in a separate file named account that C
+
+P P.
+
+Let's take a look at that.
+
+This is the source code for the account that file.
+
+Notice that we include a count H and it's in double quotes.
+
+Up to this point our includes have used angle brackets with no extensions.
+
+There is an important difference between the two forms of include include with angle brackets as in
+
+include IO stream is used to include system header files and the compiler knows where these are located.
+
+Includes with double quotes.
+
+Tell the compiler to include header files that are local to this project.
+
+The compiler also knows where those are.
+
+Notice that this file implements the two methods declared in the account that age header file.
+
+Now our current class is complete.
+
+The specification is an account that H and the implementation is an account that CGP how do we use an
+
+account in our main file though.
+
+Let's see in the next slide.
+
+Here's our main data file.
+
+Notice how we include IO stream as well as account dot H.
+
+It's important to always include that h files never include data files.
+
+Then we just write our main as we normally would when the program is compiled both the main dot TPP
+
+and the account that CBP files are compiled and then link to produce the executive.
+
+Let's see how all this works in the ID OK.
+
+So I mean the ID and I in the section 13 workspace in the implementing methods 1 project.
+
+What I'm going to do here is I'm going to implement these methods in this account class and will implement
+
+some of them inside the class declaration and some of them outside the class declaration.
+
+This will create another project implement implementing methods to where will separate the specification
+
+from the implementation and will create the account that h file and the account that C.P. file.
+
+OK so let's start here.
+
+What we're doing here is we have our class account right here and we've got two private attributes.
+
+Name and balance of them we've got the methods and the methods are really what we're interested in here.
+
+Now in this case I've got six methods all public.
+
+We've got a set balance and a get balance and you can see that these methods have been implemented line
+
+right inside the class declaration.
+
+This is easy to do.
+
+And this is OK to do when you've got methods like these that are really really straightforward methods.
+
+They're done they're implemented and we're all set.
+
+Now we can also implement methods outside the class declaration.
+
+Notice these last four methods I've got set name get name deposit and withdraw.
+
+And what you see right here are basically the function prototypes are the method prototypes.
+
+They're not defined here.
+
+These are only declarations.
+
+What we want to do is we want to find them outside the class.
+
+And you'll notice the class begins here on line 8 and it ends right here on line 26.
+
+So what we want to do is define them outside the class and let me show you how to do that it's really
+
+straightforward.
+
+What we've got here is.
+
+So let me show you how easy it is.
+
+Here are the methods that have been implemented outside the class.
+
+We're starting on line 28 right here.
+
+The method is set name which is this method right there it's called Set name.
+
+Now it's not just good enough to say void set name that would just that would just define any method
+
+we want to define the set name for the account class.
+
+So we need to prefix the name of the method set name with the name of the class followed by the scope
+
+resolution operator.
+
+Now when the compiler sees this it knows.
+
+OK you're defining the set name method that you declared in the account class.
+
+So it's in a come up here and will be able to type check.
+
+All of these things together and make sure that just no mistakes.
+
+OK so you can see what's going on here in this example it's really straightforward.
+
+String is being passed in and the name is said to whatever string was passed in which is an remember
+
+name is one of the attributes of the class.
+
+It was private and that's OK.
+
+This is a member method so it has access to private information.
+
+Get name simply returns a copy of that string.
+
+OK.
+
+And in this case we've got our deposit and withdraw.
+
+So you're going to pass in an amount to deposit.
+
+This method would somehow verify that that amount is indeed there so that you can deposit it and all
+
+it does is it increments balance by whatever the amount is and it returns true.
+
+Obviously would return false if it didn't verify.
+
+And then the last method that will implement is this account withdrawal method.
+
+Again it's the same idea we prefix the name of the method with the name of the class because it's a
+
+class method.
+
+And here's the amount.
+
+And what do we do here.
+
+Well we look at the balance and we subtract the amount from it.
+
+If that's greater than or equal to zero then there is sufficient funds would just decrement the balance
+
+by the amount and we'll return true.
+
+OK.
+
+Simple as that.
+
+If the funds aren't there then we'll just return false.
+
+So let's see how we can use this in the main and it's really really straight about some breakpoints
+
+in here that will follow in the second.
+
+So what I'm doing here is I'm creating an account called frank account and I'm setting the name to Frank's
+
+account and I can't say Frank account dot name because that's private.
+
+So I've got to go through this public method called Set name.
+
+I'm doing the same thing for balance.
+
+Frank account set balance to a thousand.
+
+I can't say Frank account balance equals a thousand because balance is private.
+
+OK.
+
+So at this point I've got an account.
+
+It's got Frank's account as the name 0 0 0.
+
+That is the balance.
+
+And then I want to deposit $200 into that account.
+
+I'm going to call Frank account deposit 200.
+
+If that returns true then the deposit was OK and I'm going to just display that.
+
+If that returns false then the deposit was not allowed for whatever reason.
+
+Now when it cost them withdraw methods here I'm going to call the withdraw method on the frank account
+
+with five hundred.
+
+Someone to check I should have a thousand in there right.
+
+Actually I should have twelve hundred in there.
+
+I just put $200 in there.
+
+So as of.
+
+I'll check to see if.
+
+Twelve hundred minus 500 is greater than zero which it is.
+
+And the withdraw should be ok I should have seven hundred dollars left after that.
+
+Then I try to do another withdraw with 1300 and that should fail.
+
+OK so let's let's run this through the debugger here.
+
+Right now I'm at lined fifty three and I'm going to set a watch to Frank account.
+
+That way I can see that as it changes really easily and that's already set here.
+
+So what I'm going to do is I'm going to hit next.
+
+And remember I'm right here on line 53 So at this point I've just created the frank account object.
+
+Now I want to set that name.
+
+Notice that the name is empty right now and the balance is garbage.
+
+I want to set the name to Frank's account.
+
+So when I select next you could see that that's changed right here to Frank account.
+
+And I want to set the balance to a thousand.
+
+So we should see that change here as well.
+
+Again remember these two attributes are private.
+
+That's why we're going through those public methods to change them.
+
+Now what we're going to do is we're going to deposit $200 into that account.
+
+So let's step through here and what we're going to do now is we're going to go we're going to jump to
+
+this method right here.
+
+I've got a breakpoint in there that's where I'm at right now assuming there was some business logic
+
+here that would verify that that deposit amount was there going to increase the balance by 200 so I
+
+should have 1200 here when I finish and return true.
+
+And I'm back now you can see I've got 1200 here and I'm going to return true and it should display deposit.
+
+OK over here and exactly what happens.
+
+Now we're going to withdraw 500.
+
+I've got 1200 so that should work.
+
+So let's try that and you can see I'm right in here now.
+
+I've jumped to this function this method right here.
+
+So balance is twelve hundred minus 500 is greater than or equal to zero so we should be good in that
+
+case.
+
+I'm going to decrement the balance by the amount and I want to return true and I'm right back here now
+
+on line 63.
+
+Notice I've got seven hundred left in the account and it should display withdrawal OK.
+
+The last example here is I'm going to withdraw 5300.
+
+I don't have 1300.
+
+So it should fail someone to go back up here.
+
+Balance amount is greater than or equal to zero.
+
+It's not so it's going to go straight to fault's which is going to return.
+
+And then when I come back to my main I'm right here on line 70 and it should display not sufficient
+
+funds and that's exactly what it does.
+
+OK.
+
+So there you go.
+
+This is a real simple example of implementing these class methods both inside the class declaration
+
+and outside the class declaration.
+
+OK what I'm going to do next is we'll create a new project called implementing methods too and what
+
+we'll do is we create the account that age an account that CBP and then will have a main C.P. that runs
+
+the whole thing.
+
+So I set that up and be right back.
+
+OK so I'm back.
+
+I'm still in the section 13 workspace but I've just created a new project called implementing methods
+
+too and all it has in it is a main CGP file that you're looking at right here.
+
+But we're going to do here is we're going to create our countdown h file our current data file and then
+
+we'll use this main file as a driver so that we can create some objects and so forth.
+
+OK so what do we do.
+
+Well we need to create an account class every ID has its way of creating a new class code like is no
+
+different if you select the source directory and right click you'll have an option for new class will
+
+select that and then you get this pop up dialog and it's going to ask you what's the class name.
+
+Well the class name is a count.
+
+Again with a capital A.
+
+Don't worry about name space and then the block card is what you saw with the include guard that I talked
+
+about this is that pound define.
+
+So I'm just going to say underscore account underscore 8 underscore you can really do anything you like.
+
+You can even leave that blank and it's going to use its own way of doing it.
+
+OK.
+
+So that's it.
+
+There's some more advanced options here which should all be off at this point.
+
+And you can choose to create a dot HTP file instead of a dot h file.
+
+I'm not going to.
+
+And you can also choose to use the pragma once command.
+
+Again I'm not going to I'm just going to use the block art you select.
+
+OK.
+
+And what happens here on the left hand side you'll see that we've got two files that were created.
+
+We've got the countdown h file and the account that C-p file that's exactly what we want.
+
+Now we're going to start with the count h file.
+
+Notice the wrapper and I'm going to get rid of what it generated for me and what I'm going to do is
+
+I'm going to copy and paste the account that we were working on and I'm just going to copy and paste
+
+the declaration of the account so that we do that right now and paste it right in here.
+
+It should be pretty familiar.
+
+There's the class account.
+
+Those are the two private attributes that see what we've got here.
+
+Now we've got to do a couple of things we were using a string here.
+
+So we want to do is here we want to pounded clewed string so that our account header file is complete
+
+and we really don't want to use a name in here so I'm just going to prefix this with standard and see
+
+C got a string here as well.
+
+And I believe I've got one here as well and I think that'll do it.
+
+So that's my count.
+
+H file.
+
+You can see it exactly as we had before.
+
+There's my account declaration and it's wrapped up in that guard.
+
+OK.
+
+Now let's go to the account see.
+
+Now you'll notice that it's generated the include for me and also it's generated these two functions
+
+these two member functions.
+
+We're going to get rid of those.
+
+This is a constructor and destructor will talk about those in a couple of videos.
+
+But for now I just want to get rid of them and what I want to do is I want to copy and paste those four
+
+methods that we wrote remember the ones we wrote outside the class.
+
+So I'm going to copy them right in here like that.
+
+There's my account there's my and again I'm going to prefix this with standard wherever we're using
+
+strings.
+
+And I think that was the right.
+
+Here's the other one.
+
+That's it.
+
+Now what we'll do is we'll go to the main and what we're going to do here is we're going to include
+
+a count that H because we're going to need it in our main.
+
+And if you remember the code for the main again I'll copy and paste it because it's really straightforward.
+
+That was the code for the main where we created the frank account we set the name for the account and
+
+so forth.
+
+Now what we're going to do is I want to save this and we'll compile the whole thing would just basically
+
+do build and run control 5.
+
+What's going to happen is the data files were both compiled and everything will be linked into an acceptable.
+
+Now we may run into some errors here and we'll fix those as we go.
+
+So mean take control of 5 no errors.
+
+Everything worked great.
+
+You can see I run the file and I get deposit OK withdrawal OK not sufficient funds exactly like we had
+
+before we could run this through the debugger if we like but it's really as simple as that throughout
+
+the course.
+
+This is the way we're going to start writing code now we're going to have the specification here and
+
+the implementation in the dot C-p file and you can see again to this one more time.
+
+You can see the accounts page the header or the include file that is our declaration for the account
+
+class.
+
+We have to wrap that up so that the compiler only sees it once we're including string here because we've
+
+got our string class that we're using right there and we really don't want to use name spaces inside
+
+these header files because everything that includes them is going to get that all that namespace stuff
+
+which is really not necessary.
+
+So what we've got there is that we've got our private stuff we've got our public stuff we've defined
+
+these two methods right inside the class declaration.
+
+And then these other methods we've defined outside the class declaration in accounts.
+
+Now in order for the compiler to understand what you're talking about here you have to include account
+
+data age.
+
+Once you include account that age the compiler now knows what this is.
+
+OK once that's done you go to your main and you can see the main is now pretty self-contained or just
+
+including account dot H.
+
+It's really really simple to do.
+
+The idea is just you're going to have a lot of header files and a lot of C.P files in your application
+
+and everything gets compiled and linked to a single executable.

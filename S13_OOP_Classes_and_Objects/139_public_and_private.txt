@@ -1,0 +1,229 @@
+In this video we'll learn about using access modifiers to determine what will be hidden in the class
+
+and what parts of the program have access to this information.
+
+C++ has three basic class member access modifiers.
+
+These are public private and protected class members that are public or accessible everywhere private
+
+class members are only accessible by other members of the same class or by friends of the class.
+
+We'll talk about friends later in this section.
+
+Finally protected members are used with inheritance which we'll talk about later in the course.
+
+Using the class member access modifiers is super simple in the body of the class you specify the access
+
+modifier followed by a colon then everything you declare from that point forward will have that access
+
+modifier applied to it.
+
+In this example we're using the public access modifier and anything we declare.
+
+After this will be public until we see a different access modifier.
+
+In this example we're using the private modifier by default.
+
+Everything in a class will be private if no access modifier specified protected works exactly the same
+
+way as private.
+
+For now you can think of protected in private as being pretty much the same.
+
+The different comes in when we use inheritance.
+
+Of course we commonly use public private and protected all at the same time to tell the compiler what
+
+class members should not be available outside the class and what class members should be part of the
+
+public interface of the class.
+
+This is how C++ implements information hiding.
+
+In this example the player's name health and XP are all private.
+
+This means that they're only accessible from the other members of this class.
+
+And from friends of the class that talk and is dead methods are publicly accessible.
+
+So what happens if we try to access a private class member.
+
+Simple you get a compiler error.
+
+Here's some examples.
+
+First we create a player object named Frank.
+
+If we try to access the player object's name instance variable then we get a compiler error because
+
+name is private and it's not accessible from outside the class.
+
+The same is true for health.
+
+Why would we want to make some class members private and others public.
+
+The idea is that you want to control access to certain data and methods by making them private.
+
+For example you want to prevent users from directly setting Franke's health to a thousand as in this
+
+example.
+
+Maybe the maximum health for the player is 100.
+
+In order to control this you would create a public method in the class that sets this health property
+
+and in the code for that method it makes sure to max out the Health at 100.
+
+Since that method is a class member it would have access to the private health property in the second
+
+example we create a pointer named enemy to a player object.
+
+If we try to directly access the XP property we get a compiler because it's private.
+
+However we can call the talk method with no error since it's public.
+
+Let's see another example in this example we have an account class and the name of the account and the
+
+balance of the account are private.
+
+These properties cannot be accessed directly from outside the class.
+
+We also provide public withdraw and deposit methods that can be called from outside the class.
+
+Since these methods are member methods they have access to the balance and can update its value based
+
+on whatever business logic we have for the class.
+
+Here are a few examples that use the account object frank account is an account object.
+
+If we try to access the object's Balance property directly will get a compiler error because balance
+
+is private.
+
+However we can use the deposit method and provide the amount to deposit it since deposit is public.
+
+The idea is that the deposit method would somehow verify that the $10 million and I want a deposit are
+
+indeed available before incrementing balance.
+
+If I try to directly access the name of the account I also get a compiler error for the same reason
+
+the account name is private the same behavior applies whether we access an object using the dot operator
+
+or via a pointer using the operator in the case of Mary's account trying to access the balance or name
+
+directly results in a compiler error.
+
+But using the deposit method is fine since it's public.
+
+You can see how powerful this is.
+
+For example if we have an object whose balance is 20 million dollars and we know that that must have
+
+been an error then the only place where that error could have happened in this example is in the deposit
+
+method.
+
+There's no way that any other part of the program could have changed that value since the value is private.
+
+This makes testing and debugging code much much easier.
+
+Ok so I'm in the IDM in the section 13 workspace in the access modifiers project and in this project
+
+we've got our player class that we've been using.
+
+And you'll notice some in a couple of changes to it.
+
+I made the attributes all private.
+
+So the name the health and the expwy are all private.
+
+And I made the two methods talked in is dead.
+
+Public.
+
+OK.
+
+So I want to show you the compiler errors you get when you try to access those private data members.
+
+So in this case I want to create a player object a frank and if I try to set Frank's name so I could
+
+say Frank name equals anything.
+
+In this case I'll just say Frank.
+
+And we'll try to compile a build and run with control of five.
+
+You see the error I'm getting.
+
+And you can see it here in the box as well as his players name as private within this context.
+
+Same thing we're seeing here.
+
+So you're trying to access a private attribute which is name from outside of the class.
+
+This is exactly the same area you'll get if you try to use health or XP and it's not just a matter of
+
+trying to set that variable it's trying to use that variable as well.
+
+So if I tried to do something like seek out Frank health you know do it in line here and we'll compile
+
+this as well.
+
+We'll see.
+
+I get two errors now.
+
+Same idea.
+
+I don't have access to health.
+
+It's not just a matter of not allowing you to set it.
+
+It's not allowing you to access it.
+
+OK.
+
+Now these I'm going to comment those two out for a moment and let's initialize the name here just to
+
+play or just so we have something to see when we call the talk method.
+
+OK so now what I can do is I can say Frank got talk and I can pass in the string Hello there.
+
+Now if I try to build and run I says player says hello there.
+
+OK.
+
+So we know it works in this case because we're accessing a public accessible method right here talk.
+
+Same thing with his dad we can't call his dad because we haven't implemented it yet but we did implement
+
+talk right here.
+
+OK.
+
+So that's really all there is to it.
+
+If you get these errors that are saying you don't have access to something that's exactly why now why
+
+do we do this.
+
+It's really good programming practice to hide certain parts of your classes declarations.
+
+The idea is you want to control that variable via some sort of public method.
+
+So they've got to go through the public method and then the public method makes sure that the health
+
+is within some reasonable range.
+
+And as I mentioned in the slides if we're doing this and we put some value of health that's 20000 or
+
+something like that that's really really out of whack.
+
+If health is public then anything could have changed that property.
+
+But if health is private then I know that the changes that were wrong happened somewhere in here right
+
+somewhere in the public interface.
+
+My methods made that mistake and I can find and fix that error much much easier.
