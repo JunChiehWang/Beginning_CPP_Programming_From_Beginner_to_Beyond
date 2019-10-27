@@ -1,0 +1,173 @@
+In this video we'll learn about constructor initialization lists which are very useful for efficiently
+initializing our objects data members.
+So far we've written our code so that we initialize our data member values in the constructor body by
+assigning values to them.
+While this works it technically isn't initialization because by the time the constructor body is executed
+these member attributes have already been created.
+So we're really just assigning values to already created attributes.
+I'll show you exactly what's happening when we head over to the ID and just a bit.
+What we really want to do is have the member data values initialized to our values before the constructor
+body executes.
+This is much more efficient since it's true initialization C++ allows us to do this using constructor
+initialization lists which is basically just the list of initializers immediately following the constructor
+parameter list.
+It sounds complicated but it's not.
+Let me show you.
+Here we have this same player class that we've been using in previous examples.
+It has three overloaded constructors and if you recall from the previous videos we implemented them
+using assignment statements in the constructor body.
+You can see in the top section of this slide how we previously implemented the no args constructor in
+the body of the constructor we use 3 assignment statements to set the attributes to the values we want.
+While this works it can be inefficient in many cases for example.
+By the time that we get to the statement.
+Name equals none the name string object has already been constructed and initialized to an empty string.
+So we're really just assigning a new string to it.
+In this case to an existing object that's very different from initialization.
+What we really want is to initialize the data members to our data values as they're created.
+That's what constructor initialization lists allow us to do.
+The bottom section of the slide shows how we could implement the same constructor in a more efficient
+way.
+Notice that immediately after the parameter list we provide a colon followed by a list of initializers.
+In this case we're telling the C++ compiler to initialize name to none.
+Health and Expwy to zero.
+This happens before the body of the constructor is ever executed.
+One thing to keep in mind the order in which the members are initialized is not necessarily the order
+we provide in the initialization list.
+The data members will be initialized in the order that they were declared in the class declaration.
+So let's implement the rest of the constructors using initialization lists here we're implementing the
+single string constructor.
+Notice the previous way on the top section of the slide and the better way using an initialization list
+below.
+In this case we provide name value to initialize name and still use 0 for health and 0 for XP you kapala.
+Yes how the three args constructor will look.
+Here's the three args constructor at the bottom using the initializer list.
+We're providing name Val helpful and XP out to the initializers and the complete refactoring looks something
+like this.
+Notice how in the constructor there's no code in the constructor body.
+We can still write any code we want in the constructor body.
+But now we can be sure that our data members have been initialized to our own values before any code
+in the constructor body is executed.
+Let's head over to the idea and we'll step through a few examples so you can see how much more efficient.
+Constructor initialization this can be.
+OK so I mean the ID and I'm in the section 13 workspace in the constructor initialization this project
+and I've just got a simple main here that has our player class as I've discussed previously with three
+overloaded constructors and no args a single string.
+And the one that supplies the string and the two integers.
+OK.
+And I've implemented the constructors the way we've done previously using these assignment statements
+inside the body of the constructor.
+I've got some breakpoints in here that we'll walk through so that we can see exactly what's going on.
+And then I'm creating three objects and creating empty using no arguments I'm creating.
+Frank which is a point there are player objects frank with the single string and then the villain is
+going to use this constructor here with the three arguments.
+OK.
+So let's work through this and we'll be real careful to look at that name attribute because that's really
+the important one because it's an object.
+So let's walk through this and right now we are on 9:41 right about here.
+And I'm going to step through this and that we'll call the no args constructor that's this one right
+up here on 9:21.
+Since we're providing no information for initialization so I'm going to step through it and you can
+see now the arrow here that little green arrows on line 22 that's where I'm at now we can't really see
+if empty here because empty is out of scope we're now within the scope of this constructor right here.
+And I'll talk about a variable called this a little bit later in the course.
+Probably a few videos from now.
+This represents the current object.
+OK so if I expand this you can see that this is this current object that I'm building right here.
+And you'll notice something interesting you'll notice that name is set to the empty string.
+What does that tell you what that tells you that that was already initialized.
+In other words that string object name its constructor was already called with no information and we
+initialized it to an empty string.
+So this line right here that says name equals none.
+That's really not initializing anything.
+All it's doing is assigning none to an already created object name right here.
+That's really not what we'd like.
+We'd like to initialize that object name immediately without having to initialize and then assigned
+to it.
+OK that can be very inefficient.
+In the case of a very complex class you might have to create some sort of default constructor for it
+and it's setting a lot of fields and maybe allocating things and then you're just going to deallocate
+all that stuff and assigned to it again.
+It really doesn't make sense if things become very inefficient.
+So you can see in this case a walk keep walking through this and now we're going to set name to non-health
+to zero you could see them right here on line 24 and Expedia 0 and I come back down to Main at this
+point my player objects all refresh over here my empty player object is set to None 0 0.
+Just like we expected.
+But now let's create the Frank object.
+So what do we do.
+We're going to call the constructor that expects a single string which is this one right here on 9:27
+and I'm going to go to that.
+Now here on the unblind 28 again notice this represents the object that I'm creating right now and an
+empty string again so I just created another object in this case.
+I'll step through it really quickly.
+And now I'm back here to play a villain which is going to call this constructor right here.
+The three ARBs constructor and I'll do that.
+And again here's this another object that was created.
+So we just created three string objects and then get rid of basically the string the empty string they
+pointed to and replaced it with Frank a villain and none so really really an inefficient thing to do.
+And what I'll do is ouch.
+I'll make one little change that hopefully will really help you understand this right now we're just
+using that empty string.
+But suppose that I initialize this here to some string that's really obvious like a bunch of XS.
+OK.
+And let's let's run this again or walk through it one more time and hopefully this time it'll really
+be obvious what's going on.
+OK so again I'm here on line 41 and I'm creating an empty player object so it's going to call the no
+args constructor.
+This one here.
+So when I step through it you can see I'm now in line 22.
+But if you look at the object take a look at name right there.
+See all the X's.
+So that tells you that some constructor for that string class is already executed and initialized that
+string object.
+Again that's not what we want to do.
+OK so hopefully this of this is really clear as to what's going on what we want to do is we want to
+use the initializer lists for the constructors and it's really simple to do what you do is immediately
+after the parameter list right there you just put a colon and you can follow it by the initializer list
+just like we did in the slides.
+OK.
+So in this case I'll do it on the next line.
+So it's a little clearer there.
+What we can do is we can tell it which attributes do we want to initialize.
+In this case it's like name and we provide the initialiser which is the initializations value I should
+say which is none.
+Health
+to zero.
+All of these would be comma separated and Expwy also to zero.
+That's it.
+And then we don't need the body of the constructor anymore because we've already done the initialization.
+We can certainly write any code we need here but we're sure that we're in the body of the constructor.
+Those three attributes have now been initialized initialized correctly not initialized and then assigned
+to but initialized.
+OK so that takes care of that one.
+We can also do the same for these here and I'll just do them really quickly.
+And let me just copy this bit here.
+And what we do here is we'll set name in this case we have the value to set it to.
+It's going to be named Val and both still keep health and XP at zero and we'll get rid of the constructor
+body will get rid of some of those breakpoints as well and clean up the code and you can see when you
+do it this way you end up with empty bodies for the constructors and that's OK.
+Obviously we want to put something else in there once our variables are created.
+And this last one again I'll copy this one just to save a little time here.
+We'll get rid of that and
+then Dent that in there is my initialiser name Val in this case I've got health Val
+and I've got X P-BO
+and that's pretty much it.
+I'll get rid of this.
+And there you go.
+That's the final refactoring.
+You can see now we're using the initializer lists to initialize our objects which is exactly what we
+want to do.
+We get rid of the extra colon right there and that should do it.
+Other thing is I put the order in here his name health and DXP that order doesn't really matter it's
+going to be initialized in this order.
+Name health Expwy whatever or you declare these guys and right here in your class that's the order that
+the initialization will take place.
+It just happens to be the same order that I've written here and that's pretty much a best practice is
+to keep the order the same but don't rely on order here the order is going to be the order that you
+declare these things in.
+OK so there you go that's initialization list.
+Now you do you will notice a few things.
+We're going to talk about delegating constructors soon so we can get rid of some of this extra code
+because if you think about this this is really the same as this.
+It's the same as that and it's the same as that.
+So we'll have a little bit even more efficient way of doing this.
+  

@@ -1,0 +1,71 @@
+We've already seen overloaded constructor's in the ID but let's see a few more examples.
+
+Classes can have as many constructors as necessary.
+
+The only restriction is that they must each have a unique signature.
+
+The compiler has to be able to determine which to call based on the initialization information provided
+
+when creating the objects.
+
+If there's any ambiguity in the compiler won't guess it will generate a compiler error.
+
+Remember once you declare any constructor then the compiler generated default constructor will no longer
+
+be provided.
+
+Here's the player class again and we've decided that we need three constructors.
+
+The first is in no args constructor.
+
+The second only expects a single string object and the third expects a string and two integers.
+
+Obviously the signatures for these constructors are different so the compiler can tell them apart.
+
+We could have more constructors depending on our class design.
+
+Now let's implement these constructors in the first example.
+
+We're implementing the no args constructor to initialize the object to name none.
+
+Health 0 and XP 0 the values we initialized to are totally dependent on what we want are objects in
+
+the game to look like when no initialization information is provided.
+
+It's important that we initialize or objects to some state that we know we don't want garbage data in
+
+any of the attributes after they're created in the second constructor.
+
+We only have the name parameter provided so we set the name attribute to name Val and then the health
+
+and Expwy to zero.
+
+If we don't initialize health and Expwy will contain garbage and that leaves the object in an unknown
+
+state.
+
+Finally the third constructor is given initialization values for all three attributes.
+
+So we initialize name to name Val health to health Vau and XP to XP Val.
+
+Now we have three ways to create player objects.
+
+In this case the empty object will be initialized by the no args constructor and it will contain none
+
+zero and zero hero and villain will be initialized with the constructor that expects a single string
+
+object and there will be initialized to hero 0 0 and villaine 0 0 0 respectively.
+
+The Frank object will be initialized by the three args constructor and it will contain Frank 104 and
+
+finally the enemy object will be created dynamically on the heap and initialized by the three args constructor
+
+to enemy 1 0 0 0 0 0 and 0.
+
+As you can see overloading constructors is a super powerful way to provide many useful initialization
+
+options for your classes.
+
+Also Best practice is to initialize all class attributes so that create an object do not contain any
+
+garbage data.
