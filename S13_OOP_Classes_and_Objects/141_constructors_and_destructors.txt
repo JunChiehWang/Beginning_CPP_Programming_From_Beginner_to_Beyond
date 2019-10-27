@@ -1,0 +1,315 @@
+In this video we'll learn about constructors and destructors constructors are special member methods
+
+that are invoked during object creation.
+
+They're commonly used for initialization constructors are easy to recognize since they have the same
+
+name as the class.
+
+Constructors do not specify a return type and like other methods they can be overloaded.
+
+Let's see how we can declare constructors for the player class in the slide we have the player class
+
+that we've defined previously but we want to concentrate specifically on a constructors.
+
+In this example we have three overloaded constructors in the public section of the class declaration.
+
+Notice that the constructors have the same name as the class and they don't specify a return type.
+
+The first constructor is in no args constructor and expects no arguments.
+
+The second constructor expects a single standard string object as an argument and the third constructor
+
+expects three arguments.
+
+A standard string and two integers that represent health and Expwy overloading constructors is very
+
+common in C plus plus classes.
+
+It really gives you a lot of flexibility when initializing objects.
+
+Now let's see some constructors for the account class.
+
+In this slide we can see the declaration for the account class.
+
+Notice that we have 4 overloaded constructors in the public section of the class.
+
+The first constructor is the no args constructor.
+
+The second constructor expects two arguments a string representing the account name and a double representing
+
+the account balance.
+
+The third constructor Expo's just distrain and the last constructor just to double will get into much
+
+more detail about constructors in the next several videos.
+
+But let's see what a destructor is.
+
+Destructors are also special member methods that have the same name as the class.
+
+However destructors have a Tildy preceding their name destructors are invoked automatically by C++ when
+
+an object is destroyed and its a great place to release memory closed files and free up any other resources.
+
+It makes no sense to allow overloaded destructors since the destructor is called automatically by C++.
+
+If there were multiple destructors and C++ would have to determine which one to call.
+
+So that's not an option.
+
+So you can only specify one destructor per class and that destructor has no return type and no parameters.
+
+Let's see how a destructor would be declared for the player class.
+
+Here is the declaration for the player class as we've seen before.
+
+Notice that the last declaration is the declaration for the class destructor.
+
+It has the same name as the class and it's preceded by a Tildy.
+
+It has no return type and no parameters.
+
+This destructor will be called automatically when a local object goes out of scope.
+
+Or when we delete a pointer to an object as you would expect the destructor for the account class is
+
+declared exactly the same way except that the name is a count.
+
+So how and when are constructors and destructors called.
+
+Here's a very simple example in the code block we're creating for player objects.
+
+The first player object is called Slayer.
+
+Since no initialization information is provided the no args constructor is called the second player
+
+object is called Frank.
+
+And we're providing a string and two integers during initialization.
+
+This means that the constructor that expects a string into integers will be called the third and fourth
+
+objects will be initialized using the overloaded constructor that expects a single string object.
+
+Note that all of these objects are local objects and they'll be created on the stack.
+
+We can use them as we would any object.
+
+But then when the block ends these objects go out of scope and their destructors will be called automatically.
+
+So in this case all four destructors will be called and whatever code we provide in the destructors
+
+will be executed before the objects are destroyed.
+
+In the case of enemy we have a pointer to a player object and we use the constructor that expects a
+
+string and two integers to initialize it.
+
+We'll use it then when we're done we delete it.
+
+This will cause the enemy object's destructor.
+
+If you provide no constructors and no destructor C++ will automatically provide a default constructor
+
+and a default destructor that are empty.
+
+Ok so I'm backing the idea.
+
+I'm in the section 13 workspace in the constructors and destructors project what I've done here is I've
+
+taken the player class and I've written some constructors for it just like we did in the slides except
+
+I have implemented them and they really don't do any initialization.
+
+Learn how to do that properly in the next few videos.
+
+They simply do an output statement that say which constructor is being called.
+
+So let me show you what I've got going on here.
+
+We've got the player class just like we had before and we've got these private attributes here.
+
+Name health and XP again just like we had before.
+
+I've created a method right here called Set name that simply sets the name of the player to whatever
+
+is being passed in here named Val.
+
+The reason we're doing that is so that we can see which objects are being destroyed by name.
+
+It would be really easy to follow.
+
+Then we've got our three overloaded constructors here you can see that they've got the same name as
+
+the class that's their constructors.
+
+They're overloaded so we've got three of them with three different signatures.
+
+This first one will be called when there is no information provided for initialization and all it's
+
+going to do is just say no args constructor call.
+
+That's it.
+
+It's not going to do any initialization or anything.
+
+As I said we'll learn how to do that in the next few videos.
+
+This constructor expects a single string and it will just say string our constructor called.
+
+And then the last constructor expects a string to health and an XP and it will simply display three
+
+args constructor called ok.
+
+Then when the object is destroyed this destructor down here gets called.
+
+Notice it's the same name as the class with that Tildy right in front.
+
+That's very important.
+
+No return type and nothing in here.
+
+And that's simply going to say destructor called for name.
+
+So to say destructor called for hero for Frank for Slayer.
+
+Whatever the name of the object is that what we can see the order in which this stuff is happening.
+
+OK so that's it pretty straightforward and what I want to do now is I've got my main and I've got some
+
+breakpoints in here.
+
+I've established these blocks now.
+
+The idea behind these little blocks here is normally you wouldn't write code like this but it's important
+
+because this Slayer object right here is within the scope of this block so when it goes out of scope
+
+the destructor will be called automatically some forcing that issue here so that you can see how this
+
+works.
+
+So what I'm doing is that I'm doing the Slayer.
+
+I'm creating some other players and let's just debug this one walk through it so you can see exactly
+
+what's happening.
+
+So I'll start the debugger.
+
+And I'll put the output window over here in the right so that we can see our output OK.
+
+Perfect.
+
+So now we're on line 37 that's where we're starting and what we're doing is we're creating Slayer Slayer
+
+is a player object.
+
+It's local to this Bloch's going to be created on the stack.
+
+So I'm going to select next notice that I'm creating it with no information.
+
+So what's going to happen here is that no args constructor will be called.
+
+And that's what we expect to display up here.
+
+So let me scroll up a little bit here and let's do that let's go next.
+
+You can see the no args constructor just got called.
+
+That object has not been created.
+
+I want to set the name for that object to Slayer saw execute that line now that object goes out of scope
+
+we're done with this block.
+
+So the object needs to be destroyed since it's no longer needed the way that happens is that destructor
+
+will be called right before the object is destroyed.
+
+So I expect this destructor right here to be called and say destructor called for Slayer.
+
+So let's see that exactly what happened destructor call for Slayer.
+
+Now we've got another block here.
+
+And what we're doing here is we're creating three player objects Frank hero and villain.
+
+In the case of Frank it's no args constructor.
+
+Right I'm not providing any information in the place of hero it's a single string and in the case of
+
+villains I've got the string and the two integers.
+
+So I expect this to say that the no args constructor has been called then the single string constructor
+
+has been called and then the 3R constructor has been called.
+
+Ok but what's interesting about this is not so much that that's pretty intuitive.
+
+It's the way that the destructors are called.
+
+So let's walk through this little block here.
+
+So the first thing we expect is Frank to be created with no args and there it is no args constructor.
+
+I'm going to set the name to Frank here it will be called with a single string constructor.
+
+So you can see that that correct constructors being called here I've set the name to here and now villaine
+
+with the three args constructor.
+
+Now once I execute the set name method sets the name for a villain.
+
+We're out of the block right so these objects are not out of scope they need to be destroyed.
+
+What's interesting is Notice the order that we created them and we created them as Frank hero and the
+
+villain.
+
+And you'll see the order of destruction is the reverse order.
+
+So let's walk through this.
+
+We just called the destructor for a villain.
+
+Now we're going to call the destructor for hero.
+
+And finally for Frank so you could see that when objects go out of scope the destructors are called
+
+in the order in reverse order which they were created.
+
+Finally down here we've got some pointers to player objects in this case.
+
+Enemy is a new player.
+
+Again I'm providing no initialization here.
+
+So it's going to call the no args constructor so let's do that real quick.
+
+No args constructor call just like we expect.
+
+I'm going to set that name to enemy.
+
+Now here I've got a level boss object which is really I've got a level boss pointer rather to an object
+
+and I'm creating it using the three arg constructor right here the string and the two integers.
+
+So that's the constructor that I expect to be called.
+
+And that's exactly what happened is three args constructor called.
+
+I'm going to set that name to level boss.
+
+Now I want to delete those objects that were created dynamically on the heap.
+
+In this case I can explicitly delete them and the destructors will be called.
+
+So in this case we expect the enemy destructor to be called and then the level boss destructor would
+
+be called to that's it.
+
+In the next video what we'll do is we'll learn about default constructors and we'll learn how to really
+
+initialize things correctly and efficiently.
