@@ -8,6 +8,10 @@ http://cpp.sh/
 https://www.onlinegdb.com/
 https://aws.amazon.com/cloud9/
 
+* Compiler Explorer — an online tool for viewing compiler output
+(ref: https://itnext.io/the-case-for-c-4122a5b47130)
+https://godbolt.org/
+
 * undefined reference to '...'
 it means linker error, cannot find the file, wrong path, ....
 
