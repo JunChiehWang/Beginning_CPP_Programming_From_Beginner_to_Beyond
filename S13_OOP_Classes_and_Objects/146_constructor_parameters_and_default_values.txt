@@ -1,0 +1,124 @@
+When we learned about C++ functions we learned that we can supply default values as parameters to functions.
+The same applies to class methods in class constructors.
+In many cases we can reduce the number of overloaded constructors by providing default constructor parameters.
+The same rules that we learned when working with default function parameters apply to constructors.
+Let's continue working with our player class.
+We can actually just have one constructor that does everything that we did with the three constructors
+previously.
+You can't always have default parameters in class design but many times you can.
+Here's an example where it makes perfect sense.
+Notice that the player class now has only a single constructor and that constructor has three arguments.
+The name health and Expwy of the player.
+But in this example we're providing default parameter values for all the parameters for the player's
+name.
+The default is the string none and for health in XP the defaults are zero.
+These default parameters are declared in the constructor declaration in the class is shown.
+Now when we implement the constructor we can implement it exactly as we implemented the three argument
+constructor in the previous videos.
+Here you can see the implementation for the single constructor.
+Notice that you don't supply the default parameters.
+Here we can simply use initializer lists to initialize the class attributes and the compiler will take
+care of providing the default values as needed.
+This is very handy and results in less code to write which means less code to test which means less
+code that could have errors.
+Since this single constructor is doing the job of several constructors we have to be careful not to
+declare ambiguous constructors.
+For example what would happen if we implemented a no args constructor.
+In addition to the one we see on this slide Well we get a compiler error because the compiler wouldn't
+know which one to call.
+In this example we're creating empty Frank and villaine objects as we did before.
+But take a look at Hero.
+We didn't have to args constructor in the previous version of the player class but we do in this version.
+That's pretty cool.
+Now let's modify our existing player class and the ID so you can see how this works.
+Hi.
+So I mean the ID and I mean the section 13 workspace in the default constructor parameters project.
+And what we've got is the player class as we defined it in the last few videos where we've got our three
+constructors and here we're using delegating constructors and down here where using an initializer constructor
+initializer list right here on 9:32 what I want to do is I want to get rid of it.
+I want to simplify this.
+I want to get rid of some of these overloaded constructors and use default parameters instead as we
+did with the slides.
+So what I want to do is just get rid of all these constructors right here I just want to end up with
+one single constructor and there it is player with three arguments and one I'd like to do is supply
+some default parameter values for these.
+Now you can't always do this when you're doing class design but sometimes you can and when you can you
+should because it really simplifies your code.
+So in this case I'm going to default the name of the player to none.
+I'm going to default the health value to zero and I'm going to default the x p value to zero.
+OK so that's what we've got now.
+There is my three default parameters.
+Now these two constructors go away so I'm just going to get rid of them right here and this constructor
+was his which is are three are a constructor that matches the signature for this one.
+We really don't have to do anything to it.
+These default parameters will automatically be supplied by the compiler when we need them.
+OK so now what we've got is same code we had before.
+Now put a break point.
+Here is the only constructor being called so we'll definitely see it being called and I'm going to create
+an empty object here.
+Again it's a player object and I'm not supplying any initialization information here.
+So what's going to happen is all three of those default parameters will be substituted and I'll end
+up with an object none zero zero which is exactly what I want.
+In the case of Frank I'll end up with Frank 00 because the none will be overridden by the frank.
+In the last one all three of my initialiser will still be supplied so it will be villaine 155.
+Now there's another one that we've got here as well which is this one let's just say player hero.
+And suppose I want to say this is hero and it's 100 for the health.
+Now in this case that hero object will have the name Hero 100 for health since the XP wasn't supplied
+the XP will get the value of 0.
+Now this is a constructor we didn't have before we didn't have a two args constructor.
+OK so let's run this and we'll walk through it.
+And I'll put the screen over here the output is going to be real simple We'll just get this three args
+constructor message being displayed all the time is the only constructor we have.
+OK so let's start here.
+Here's my player.
+Empty right.
+This is a no args constructor the set to be called.
+Well we don't have no args constructor but we've got this constructor that expects three arguments and
+we're telling the compiler to default those three if it has to in this case it has to.
+So what it's going to do is it's going to provide none 0 0 and call this guy right here.
+OK.
+So let's step through this and we'll see.
+We're in the constructor Now you can see that that constructor did indeed get called one line 20 right
+now.
+And we're going to initialize it when a display 3R is constructor over here.
+And then we're back to Main at this point.
+Empty should have none 0 0 which is exactly what we've got now in the case of the player.
+Frank I expected to have frank 00.
+So let's walk through that.
+There I am at line 20 again.
+I'll step through it a couple more times.
+Now we'll see three args constructor again being displayed.
+I'm back in my main and if I look at Frank here we see Frank 00 which is again what we expected.
+Now the hero objects we expect to have here a 100 and 0.
+So let's walk through that.
+We're in that construct to right now we're in the initialization list and we'll print out the three
+args constructor message one more time we're done initialising that object now.
+So if we look at Hero we should see hero 100 0 which is again exactly what I expected.
+Now in the last case I'm providing all three of the initializers.
+So what we expect is villaine 155 right.
+None of the default parameters here will be used.
+So let's try that out.
+We'll walk through it and we're back in Maine now and if we look at villaine we'll have villaine 155
+just what we want.
+OK.
+So that gives you an idea of how we can use default constructor parameters which is really really handy.
+It'll definitely simplify your code.
+As I said before you can always use sometimes it really doesn't make sense to provide default parameter
+values you really want you know the user to explicitly provide all of them but sometimes you can and
+when you can they come real handy.
+Now just before we wrap up this video let's see what happens if we supply a constructor and C++ has
+an issue with ambiguity.
+So in this case remember we've got we're handling all of these types of initialization here.
+Right.
+Zero argument one argument two arguments and three arguments all with a single constructor.
+So what happens if I decide to do something like.
+Player no args constructor and I implement that.
+Well hopefully you'll see the problem when the compiler sees the code on 9:28 it doesn't know what to
+do.
+A could call this default constructor or it could call this overloaded constructor with the thread default
+parameters.
+It's not going to guess it's just going to give you a compiler error.
+So let me debug this or build it and run it and you'll see the error.
+You can see any case you get it you'll know what it's talking about.
+It says right here error call of overloaded player is ambiguous which is exactly correct.
+    

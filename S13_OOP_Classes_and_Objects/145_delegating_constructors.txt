@@ -1,0 +1,127 @@
+As you start overloading constructors you often notice that the code used to initialize objects in these
+constructors is very similar.
+Many times only the initialization values of the data members is what changes.
+One common source of program errors is duplicated code.
+So we want to minimize the amount of duplicated code in our programs.
+C++ allows us to use delegating constructors.
+The idea is that we can call another constructor of the same class in the initialization list of constructor.
+The syntax is really simple.
+After the parameter list we read a colon and then we follow it with the call to the constructor we wish
+to call.
+Let's see an example with the player class.
+Here's the declaration of the player class as we've used previously.
+We've got the three overloaded constructors.
+And here's the code for the overloaded constructors using initialization lists.
+Notice how similar the initialization lists are in this example the only differences are the values
+used for initialization rather than write these initializer lists over and over in our code.
+We can simply delegate initialization to another constructor.
+Let me show you how in this example the first constructor is the three argument constructor and we use
+a constructor initialization list as we did previously.
+But when we defined the no args constructor instead of writing another very similar initialization list
+we simply called the three args constructor with the initialization data we need we call the constructor
+by providing the constructor name which has the same name as the class followed by the arguments to
+the constructor.
+In this case the no args constructor is the delegating constructor since it delegates object initialization
+to another constructor.
+In the last example we do the same thing but we delegate to the 3R constructor and provide name 0 0
+0 0 and 0 as arguments.
+It's important to note that this only works in the initialization list.
+You can't call the other constructors from the body in the delegating constructors.
+Also you can't delegate to another constructor and provide initialization values to class members.
+Let's update the player class in the ID to support delegating constructors.
+Now OK so we're back in the ID and I'm in section 13 workspace in the delegating constructors project.
+So what we've got here is the player class again and we've got our same three overloaded constructors
+and what we've got down here from 9:21 all the way down the line 32 are are implemented constructors
+usually using constructor initialization lists as you can see a lot of this is very duplicated.
+So what we're going to do is we're going to refactor this so that instead of using constructor initialization
+list we're going to use delegating constructors.
+Now what we want to do is we want to delegate everything in this example to this three args constructor.
+So what can we do.
+Well what we can do is we can replace that initializer list with a delegation.
+So we simply say player and we'll say none and zero zero.
+OK.
+So I need to lead the rest of this.
+And that's basically it.
+So what's going to happen here is then replace that parentheses with a Kerley.
+So it's going to happen here is we're going to call the constructor from this constructor.
+That's the whole idea with delegating constructors this no args constructor is the delegating constructor
+now.
+So what are going to do is we're going to call the player constructor that has those three arguments
+which is this guy right here the one with the initialization list.
+So this guy's really going to do all the work for all of these constructors.
+We're simply just going to delegate to work to it.
+We'll do the same thing here.
+Well call player and we'll play that said named Val and zero zero again and I'll delete the rest of
+this and I think I put a print to see again.
+So I'll replace that with a curly here and there we go.
+So in this case we're calling the same idea we're calling this three arg constructor from here.
+Now let's put some output statements in here just to see exactly how this works in the training that
+takes place.
+So where I'm going to do in the body of this constructor here I'm simply going to say C out and I'm
+going to say no args constructor that's this.
+And we'll have an end line.
+And then what I'm going to do is I'm just going to copy and paste that one line of code into each one
+of these constructor bodies here.
+And in this case this is the one constructor that just expects the one string and this guy here expects
+all three.
+So I just read through Yarg And that's one arg.
+OK.
+So that's it.
+Now we've got our constructors implemented we're using delegation here in this context and we'll just
+run our made now and the idea here is the same.
+We're going to create the same objects as we did before we've got to an empty which is a player object
+and that's going to use the no artist's constructor because I'm not supplying any information.
+So it's going to come up here and then rather than initialize it here we're just simply going to delegate
+the construction of this object to the constructor that expects three args.
+This guy.
+OK.
+So that's what we're going to do and what we'll do is we'll put brakes on all of these constructors
+so we can see when they're being called.
+And we'll also put a break right there and let's step through this.
+And let's see we've got an error I'm missing a terminating character.
+Ok I probably have that on set now.
+Let's try that again.
+OK so I may put the output window over here so we can see it.
+And we'll walk through this and remember when we're in the constructor's we're going to use the this
+keyword which is really a pointer to the object that I'm creating.
+And like I said I'll talk about that a little bit later in the course.
+So we're right here.
+9:38 we want to create that empty object right here.
+So it's going to call this no args constructor so let's step through it.
+You can see I'm right here now.
+Now what we expect is we don't expect this one line of code to execute in the body.
+What we expect is to be thrown down here right because that's what I'm doing.
+I'm delegating.
+So there we go.
+Now we're at line 32 this initialiser list is going to execute and initialize my object that's done.
+If I look at this you'll be able to see none 0 0 which is exactly what I expected.
+Now I execute the body of this constructor.
+So this is going to say three args constructor and a spell constructor but that's ok I'll fix it when
+I save the files.
+So three args constructor just executed.
+Now I'm not done.
+I need to come back to the constructor that called it and then execute this this body right here.
+No args constructor so let's do that.
+See we're back now to line 23 and we execute that one line so you can see here that the no args constructor
+call the three args constructor which is exactly what we expected.
+OK so now let's use this one right here when creating the Frank object.
+I'm calling that one constructor this one right here that expects a string.
+So let's step through it.
+There I am a bit initialiser.
+I'm delegating to the same one here the player constructor that has the three arguments it's initialized.
+Now I'm going to print out three args constructor again.
+Now when I come back here I still need to execute the body of this constructor which I do here.
+So in this case the top case the no args constructor called the three args constructor in this case
+right now the one our constructor called the three Rs constructor.
+OK now we'll basically do this last one right here the villain.
+And for this when we're just doing this guy directly we're just running this constructor right here.
+It's going to initialises three values and simply print out three args constructor and there's the output
+and we're done.
+OK.
+So that's an example of delegating constructors it's pretty straightforward.
+Many times you'll have an example this really really simple like this and this example will simplify
+even further in the next video where we'll use default parameters but you can always find a way to use
+these delegating constructors and they're very very handy ideas.
+The nice thing about this is whatever my initialiser is here and I've got to run some code remember
+that if this guy delegates to this guy both those bodies are going to be executed.
+  
