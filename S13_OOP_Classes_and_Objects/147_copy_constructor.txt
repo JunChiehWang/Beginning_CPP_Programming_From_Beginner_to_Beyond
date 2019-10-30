@@ -1,0 +1,261 @@
+In this video we'll learn about the C++ copy constructor when objects are copied.
+C++ must be able to create a new object from an existing object in order to do this.
+It uses something called a copy constructor.
+There are several use cases where a copy constructor is used.
+For example if we pass an object by value to a function or method as a parameter then we need to make
+a copy of that object.
+The same is true when we return an object by value from a function or method and the last common use
+case is when you want to construct a new object based on an existing object of the same class.
+C++ must provide a way to accomplish this copying.
+So C++ uses a copy constructor.
+We can provide our own copy constructor and we can define exactly the semantics we need for object copying.
+But if we don't provide a copy constructor the C++ compiler will provide a compiler generated one.
+Let's look at some of the use cases in more detail so you can see exactly where an object copy is required.
+The first use case is when we pass an object to a function or method by value.
+Remember the default mode of passing data in C++ is by value which means a copy is made.
+So in this example we have here which is a player object and then we have a display player function
+that expects a player object by value.
+So when we call this function and pass in Hero the function parameter p will be created and it will
+be created as a copy of hero using the copy constructor.
+Notice that P is local to the display player function.
+So when P goes out of scope the destructor will be called as well.
+In this use case we have an enemy object which is a player.
+We also have a function create super enemy that creates and returns a player object.
+Notice that the player object an enemy is created in the function and then return from this function.
+Since we're returning an enemy by value a copy of the an enemy object is made by the copy constructor.
+The last use case will look at is we want to explicitly create a new object from an existing object.
+In this example we have a hero object and we want to create another object called another hero based
+on hero.
+In this case a copy is made using the copy constructor.
+So now you can see where copy constructors are used.
+Now let's see what they do.
+If you don't provide a copy constructor C++ will generate a default copy constructor that will do member
+wise copy.
+That means that it will go through the class attributes and copy them from the source object to the
+target object for attributes that are objects then their copy constructor will be called.
+In many cases this is perfectly fine and the default copy constructor is all you need.
+But if you're using raw pointers that only the pointer will be copied not the data that it's pointing
+to.
+This is referred to as a shallow copy rather than a deep copy.
+I'll defer shallow versus deep copying until the next video Well we'll look at a specific example.
+So best practice with copy constructors are always provided a user defined copy constructor.
+If you use using raw pointers always implement the copy constructor or the Konst reference parameter.
+Use the standard template library classes as membra attributes.
+They already provide copy constructors or you can avoid using raw pointers as data members if possible
+or use smart pointers.
+So what does the method signature look like for a copy constructor.
+The syntax might look strange at first but it's pretty straightforward.
+First it's a constructor so it has the same name as the class and in the parameter list we have a single
+object passed in of the same type.
+We pass that object in as a reference and a constant y by reference and constant first.
+If we pass it by value then we have to make a copy of it.
+That's the whole point of the copy constructor.
+We would defeat the purpose and end up with never ending recursive calls and as a constant because the
+semantics of copying means that we're copying the source we're not modifying it.
+So the Konst prevents any modification to the source object.
+The last two statements are the prototypes for the player and the Count copy constructors.
+Note that are exactly the same except for the names of the classes.
+So how do we actually implement the copy constructor in the next video.
+We'll look at the case where we have raw pointers as data members and we'll do a deep copy.
+And this video will just concentrate on shallow copies.
+In the body of the copy constructor we do whatever we need to initialize a new object.
+Remember we have access to source so we can reference any attributes we want from source but rather
+than write assignment statements in the constructor body we can use a constructor initialization list
+as we've done before.
+Here is the implemented player class copy constructor.
+Notice that we're initializing the newly created object attributes in the initializer list based on
+the source object's attributes.
+Pretty simple and intuitive of course any code we write in the constructor body will be executed immediately
+after the new object is initialized.
+And here you can see the copy constructor for the account class.
+Again we're initializing the newly created object based on the existing source account object.
+Now let's head over to the idea we'll write a copy constructor for the player class and step through
+the code so you can see exactly what it's called.
+Ok so I mean the idea now and I'm in the section 13 workspace in the copy constructor project.
+And what we've got here is that player class that we've been using all along.
+I just made a couple of little changes to it.
+I created three getters here and we're going to use those getters in a display function which will write
+in a little bit and then just return the name to health and DXP.
+We've got our single three our constructor here with default parameters as we've done before and it's
+implemented right down here using our initializer.
+OK so that's all we've got we've created four objects down here.
+Now the first thing we want to do is.
+That's right.
+The prototype for the copy constructor
+and it looks like the name of the class which is player in this case.
+And a single object in the parameter list and it's a constant player by reference.
+And we could just leave that or we can put source in here.
+Doesn't really matter.
+So that's it.
+That's all we need to say.
+Obviously we need to implement that we'll do it in a minute and the other thing I want to do here is
+I want to write a destructor and basically I just want to know when this thing is going to be destroyed
+because it's going to be very important so that we understand the lifecycle of these objects so again
+how do we write a destructor if we put a Tildy in front of the destructor name which is the name of
+the class.
+No parameters and in this case I'm just simply saying I want to output that the destructor is being
+called for.
+It would just put a colon here and would do that for that name.
+That what we know which object is actually being destroyed.
+OK that's it.
+So now we've got our destructor.
+So what we need to do now is implement that copy constructor and I'm going to do it right down here
+right after our constructor.
+So what do we do.
+Well we start off by writing.
+Player.
+Scope resolution operator.
+Player again.
+And we're going to implement the same prototype basically right.
+So it's Konst player by reference source.
+And now what we can do is we can create the initializer list if we like it.
+How are we going to initialize this.
+Well I want to initialize the name attribute to what.
+To this object's name attribute.
+In which case it would be source
+daat name.
+I want to initialize the health attribute to source non-health number I'm making a copy so I'm copying
+these values over and the XP to source dot XP.
+That's it.
+Now we implement an empty body for that copy constructor and what we'll do is in the body will write
+an output statement will say see out and we'll write something like copy constructor and we'll do something
+like made that C we made a copy of what we made a copy of.
+Source name
+will put an end line there.
+OK so that's it.
+That just tells us that it'll will tell us what we've made a copy of that will come in handy when we're
+stepping through this and we can understand what's going on.
+OK so now we've got our copy constructor set up.
+Now let's get this create a function that expects a player by value and we know that that's one of the
+use cases where the copy constructor is called So let's do that.
+Let's write just a regular function and we'll call it display player
+and it will expect a player object or call it P.
+And remember it's expecting it by value here.
+That's the default way of passing parameters around.
+So this implies a copy in in here all we're gonna do and I'll just copy the code that I've got over
+here and so I don't have to type it all in.
+And what we'll do here is just create those three out put statements that displays P-doc get name P-doc
+get help.
+So which just going to display those values for P.
+Ok now I'm going to put some breakpoints all over here so we can see what's being called.
+We won't do it in the destructor.
+We'll see that being called it'll just print out destructor called.
+And what we've got now is we've got an empty object Frank hero and villain which are all objects and
+these are just regular constructor calls happening here.
+So what we'll do down here is actually we'll do it right here.
+What we'll do now is we'll say something like display player leave an extra line here will say display
+player and we'll pass it in empty empty is an object.
+So what's going to happen is a copy of that object will be made.
+OK so what I'm going to do is again put a break a breakpoint right there and let's debug this and we'll
+step through it.
+And I'll move the output window just over there.
+OK so let's step through this and you can see that right now we're online 26 and that's because that's
+empty player object is being created here.
+And we should see that print out that constructor right there.
+So we've just three args constructor for none.
+Remember that's the default none zero zero.
+And we'll step through again and now we're just about to call this display player function here.
+We'll look at empty which is the object we just created and it contains none for name zero and for health
+and zero for XP.
+OK so we're just about to call this function right here.
+Now before we pass any information in we have to make a copy of it right because we're doing pass by
+value or pass by copy.
+So I've got empty which you can see right here.
+I need to make a copy of empty and that's what is going to be.
+Now P is local to this function.
+So again it's a copy of empty and it's on the stack right.
+So let's step through them what we should see is we should see the copy constructor being called because
+a copy needs to be made right now.
+So let's step through.
+And there you go you can see we're right on line 31 and we're in the copy constructor what are we doing
+now.
+We're making a copy of empty and that copy is going to be called Pete.
+So let's step through again.
+We just did the initialization and now it's going to say copy constructor made copy of none.
+That's exactly what we did.
+We made a copy of that object whose name is none.
+OK now I'll step through one more time.
+Now that P has been created you can see right here it's a local variable to this function and it's none
+0 0.
+It's a copy of empty.
+There are two different objects but they have the same values right now.
+OK let's walk through this.
+We just displayed the name the health and the expe.
+Now what should happen is P is going out of scope right now right.
+We're going to leave this function.
+So that stack frame needs to be cleaned up.
+So the destructor for p should be called the destructor for the copy not the destructor for empty but
+the destructor for that P copy.
+So let's do that.
+And there you go you can see the destructor has been called and now we're back in Main on line 46 and
+from this point on we're just constructing objects as usual.
+OK.
+So hopefully that's clear you can see it's these little nuances in that using the debugger to step through
+things really really makes things very nice to follow.
+So let's do another example here.
+I'm going to stop the debugger here and what I'll do is we'll create that empty when you know what let's
+create a different Let's create a different empty.
+In this case let's just create something called x x x x with one hundred and fifty.
+That way we know what those values are.
+And what I want to do here is I want to get rid of that break point right here.
+I want to create another player object.
+OK.
+And I'm going to call it my new object
+and I'm going to create a copy of that empty object.
+So again let's see what's going on here.
+I've got empty is a player object and I'm setting the name to a bunch of X's to health 200 DXP to 50
+then I'm creating another object is called My new object and I'm creating it from empty.
+So I want a copy of empty this will call the copy constructor.
+That's the whole idea making a copy.
+OK so let me put a breakpoint there and it's run this debugger through again.
+OK so now we're here constructing that empty object right over here.
+So let's walk through that until we get to that other break point on line 44 and that's where we're
+at now.
+So at this point empty has been created.
+If I look at empty up here you can see I've got a bunch of X's 150.
+So now I'm right here on line 44.
+This is a constructor right.
+I'm constructing or initialiser instantiating the jargons all the same a my new object which is a player
+in this case from this object that I've already created.
+That's where the copy comes in.
+So when I step through this I expect the copy constructor to be called again.
+So let's do that.
+And there we are we're right in the copy constructor in the initialiser and I'm going to walk through
+that.
+It says right here I made a copy of that original x x x x x object.
+I'll step through again.
+And now we're right back to where we started before.
+OK.
+So hopefully that gives you some insight into these copy constructors and how they work they really
+make a lot of sense.
+The syntax is a little wonky sometimes but it's pretty straightforward.
+Now one thing that I should mention is right here.
+We're using the initializer list to initialize that new object.
+We could change this if we like and just do something like
+use a delegating constructor here.
+Right.
+So we could delegate source don't name source DOD health
+and source DOD Expwy
+and I need a little colon in front of that just like before.
+So what we're doing there is we're doing the delegation and the same exact thing should happen.
+We run the debugger here and we'll walk through that real quick so you can see the delegation now happening
+before we weren't delegating because we were just initialising right in place there.
+Right.
+So at this point let's walk through it until we get to 9:45 this time which is where we're at right
+now.
+So now I'm going to call the copy constructor again to make a copy of this empty opted we just created.
+So let's step through it right here.
+I mean the copy constructor.
+But now rather than use this initializer I'm going to delegate the construction of this object to my
+constructor and which is this guy right up here.
+So in this case when I walk through it you see transferral control will transfer up to here on line
+25 and that's exactly where we are now.
+Now we're in the regular 3R constructor and it's going to say three args constructor member the first
+one was for empty.
+This is for the copy of empty.
+So we've got the two objects alive now.
+And when I'm done I'm going to come back and I said made a copy of it.
+OK so there you go.
+There's the copy constructor.
+You can see how we can get from that as well.
+ 
