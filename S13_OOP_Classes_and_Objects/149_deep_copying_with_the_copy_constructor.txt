@@ -1,0 +1,124 @@
+Now that we know what shallow copying is in the context of the copy constructor let's look at deep copy
+with a deep copy.
+We don't just simply copy the pointer instead we copy the data pointed to by the pointer.
+This usually means that we have to allocate storage for the copy data and then perform the copy with
+a deep copy.
+Each object will have a pointer to unique storage in the heap and both areas will contain the same data.
+You always want to use a copy constructor that does a deep copy when you have Rossie post post pointers.
+Let's look at the class we use in this example.
+It's exactly the class we use for the shallow copy.
+Except that I named this class deep to be clear.
+We have a raw C++ pointer that points to a single integer and here's the class will use this class has
+a constructor that expects an integer a copy constructor and a destructor is before.
+And let's see how we implemented these methods.
+Here's the constructor and you can see that this code is exactly the same as we implemented Inshalla.
+After all we want to create those objects the same way the constructor allocates storage for the integer
+and then stores the past in integer D into where that data pointers pointing since we allocated the
+storage dynamically then we have to release it in the destructor.
+So do that now.
+Here's the code for the destructor.
+Again it frees the data that was allocated by the constructor and displays a message to the console.
+Now this is where the change comes in it's with the copy constructor.
+Let's see the difference.
+So here's the copy constructor and this is where things change from the copy constructor we saw previously
+that does a shallow copy.
+Here we don't simply copy the pointer.
+Instead we allocate storage for the copy of what we're pointing to and then copy the data itself over
+so you can see we're creating a new integer and then were copying what the source data pointers pointed
+to which is an integer into our newly created area on the heap and we're also displaying a message.
+Now we have an exact unique copy of the original storage in each object since we can also delegate object
+construction from a copy constructor to another constructor within the same class.
+We can do that as follows.
+Notice that we're delegating to the constructor that expects an integer and the integer repassing in
+is the one pointed to by data.
+Now we've made a deep copy of that data pointer and both source and the newly created object each have
+an exact unique copy of the original heap storage.
+So now we'll have that function display db that expects a deep object by value.
+We make a copy yes use it and then when ESC goes out of scope we call the destructor which frees up
+the allocated storage.
+In this case there is no problem since the allocated storage pointed to by the data point to that S
+is unique to S..
+And finally here is the main that we use for the shallow example.
+Except we're using now with the DB example.
+This code will now run correctly.
+There won't be any crashes and no problems because the copy constructor is doing a DB copy and we're
+responsibly handling memory.
+Now let's head over to the idea and walk through this example.
+Now I'll drought again exactly what's happening with the deep copy.
+Ok so I'm back in the IDM in the section 13 workspace and then the deep copy project.
+In this case we're using a class called deep.
+It's exactly like the class called Shalah that we used in the last video with the exception of the copy
+constructor.
+In this case you can see the copy constructor right here on line 26 and it's doing a deep copy by delegating
+to our regular constructor.
+That's really the only difference is we're not just copying the pointer recopying the data pointed to
+by the pointer.
+So let's walk through this example using the debugger and let me move the output window over to the
+right and right now we're on 9:42.
+So we're just about to create object 1.
+Now this is just a regular simple instantiation with a constructor here on line 21 so let's step through
+it.
+We can see now we're on 9:22.
+We're creating that integer on the heap and we're storing the 100 into it.
+And now we're back.
+So object 1 at this point has been created and you can see objects one right here.
+You can see data is a pointer to an integer and the integer it's pointing to is 100.
+And you can see the address that we're pointing to is Foxtrot 98 so this is where we're at right now.
+We've got object 1 right here.
+It's got a pointer called data and it's pointing to an integer on the heap that's 100 and its address
+is ending with Foxtrot 98.
+That's the situation now.
+So the next thing we want to do is we want to call display deep display deep is this function right
+here again.
+This is a regular function not a member function we're passing in a deep object into it by value so
+we need to make a copy of it.
+So when we're in this function S will be a copy of object 1 which is what we're passing in right here.
+In order to get the copy we need to execute the copy constructor.
+So let's do that right now.
+You can see the control transfers run right here into the copy constructor and then the copy constructor
+is going to delegate construction to our regular constructor that just expects a single integer.
+And that's what's happening here.
+So now we're creating storage and we're copying that data into it.
+And now we come back to our kids our copy constructor we display our message and we're back now on 37.
+So as has been created as a copy of object.
+Now let's take a look at as you can see right up here and you can see we've got a data pointer and pointing
+to 100.
+So at this point what's really going on is s right here is an object and it's pointing to an integer.
+Obviously it's using its data pointer to do that and that integer contains We can see right here contains
+100 and it is an address Foxtrot Baker 8.
+So we've got two different areas in the heap.
+So each one of these is point to a unique area.
+This is really with deep copy's all about because what's going to happen in a second is when we finish
+this function right here we need to clean up.
+S right it's going out of scope.
+So the destructor for S is going to get called in is going to free up this area in memory.
+It's stop messing with this area.
+So when we come back from this function and come back to main object one is still pointing to valid
+data.
+This is very very different from the example we saw was shallow.
+So let's run through this and we're right here you can see we're just about to go out of scope and line
+and there it is right there the destructor is being called I'm 9:32 the destructor is going to free
+up this object right here which is Foxtrot great right here.
+We'll execute that line of code.
+My destructor just freed the data and now I'm right back to main on line 45.
+So at this point this has been taken off the stack it's all been cleaned up.
+And this is the state that we're in right now which is exactly what we expect.
+Same is true on line 45 here what we're doing is we're making object to a copy of object 1.
+So again we expect the copy constructor to be called here.
+So let's walk through this.
+There it is there's the call we're going to delegate construction to our regular constructor which happens
+here my data gets written over and I'm back now at this point you can see that object 1 and object to
+both contain 100 but you can see the addresses that are out there completely different memory addresses
+for that hundred.
+So in other words object one has a copy of 100 in its own area and object 2 has a copy of 100 in its
+own area.
+And in this case here on 947 if I set that integer value for object 2 to 1000 and let me do that right
+now you can see when I refresh that object tu's data is a thousand objects one data is still 100 again
+really different from what we had with the shallow copy since they were both pointing to the same place.
+So that's it.
+At this point one wine so we free up object 1 and up to two.
+And our program completes with no crashes at all.
+OK so that gives you a little bit of a perspective with shallow copies and deep copies later on we'll
+do this with smart pointers.
+But it's really important to understand exactly what's going on with raw pointers first.
+ 

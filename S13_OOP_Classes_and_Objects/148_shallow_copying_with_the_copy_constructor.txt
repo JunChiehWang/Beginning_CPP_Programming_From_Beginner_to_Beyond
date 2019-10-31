@@ -1,0 +1,235 @@
+In this video we'll look at the difference between a shallow copy and a deep copy in the context of
+the copy constructor first will assume that the object we're copying has a raw pointer when the object
+is constructed will likely allocate storage for the date of it that pointer is pointing to.
+And then when we're done with the copy we'll release the memory as per best practices.
+But what happens in the copy constructor we can do a shallow copy or a deep copy.
+Let's see what that means.
+Let's first look at doing a shallow copy.
+And the problem is we can run into a shallow copy as the default behavior provided by the compiler generated
+copy constructor.
+It basically does member wise copying of all the object attributes.
+So you end up with the newly created object and the object being copied both pointed to the same area
+of storage in the heap.
+So what's the problem.
+Well the problem comes into play when one of those objects is destroyed and its destructor is called
+When this happens.
+The objects destructor releases the memory allocated on the heap as it should.
+However the other object is still pointing to this released area and DC area is still valid.
+This could lead to settle errors.
+The best thing that can happen is that the program crashes while in development so that you can fix
+the air.
+But we'll learn how to do a deep copy and avoid the error completely.
+But first let's walk through an example that has a class with the pointer attribute that does a shallow
+copy.
+So we can really understand the problem.
+Here's the class we use in this example.
+The class is called shallow and it has a single data attribute called data that's a pointer to a single
+integer.
+This class is about as simple an example as we could write that demonstrates the problem with a shallow
+copy.
+But any class that has a raw pointer as a data member will have the same issues.
+This class has a constructor that expects an integer a copy constructor and a destructor.
+Let's see how these are implemented.
+Here's the code for the constructor.
+Notice that the constructor allocates storage for the integer and stores the past in integer D where
+that data pointer is pointing since we allocated the storage dynamically.
+Then we must be sure to release it in the destructor.
+Let's do that now.
+Here's the destructor.
+It simply frees the storage that was allocated by the constructor as it should.
+It also displays a message to the console.
+OK so now let's implement the copy constructor.
+Here's the copy constructor.
+This copy constructor is user defined but it provides the same semantics as the default compiler generated
+copy constructor.
+If we hadn't provided this one noticed it in the initializer list.
+We simply copy the pointer.
+This is member Y's copy.
+Now we have a problem in this case the source object and the newly created object both point to the
+same in heat that was allocated for the data.
+But why is this a problem.
+Well the problem comes into play when we make a copy of a shallow object using the copy constructor
+that's doing a shallow copy.
+Suppose we have a function display shallow that expects a shallow object by copy.
+We make the copy with the copy constructor as usual but when that local object s goes out of scope its
+destructor is called and the destructor releases the storage in the heap that is pointing to.
+You see the problem now.
+The object that was copied into this function still points to this now release storage but it thinks
+that the storage is valid so all kinds of bad things can happen now.
+Here's a sample mean we create objects one is a shallow Object object one will be created and an integer
+will be allocated on the heap and 100 stored in it.
+Now we call display shallow in a copy of object one will be created inside that function and when that
+function is done the copy of object 1 will be destroyed.
+Since object 1 and the copy that was just destroyed pointed to the same memory area object one now points
+to invalid storage.
+If we try to access that storage from object 1 our program could crash.
+Also when the destructor for object one eventually gets called it will try to release memory that's
+no longer valid and will probably crash.
+Let's head over to the idea and we'll walk through this example and I'll dry out exactly what's happening.
+OK so I'm back in the IEEE.
+I'm in the section 13 workspace in the shallow copy project and we've got a program and the class is
+called Shallow the same one that I put in the slides.
+I would a couple of little changes in the main just to streamline it a little bit.
+Anyway this program does a shallow copy in the copy constructor and I'll walk you through that right
+now.
+But first let's just run it and I'm going to run it without the debugger so you can see that it does
+indeed crash.
+And there's the crash right here in Windows and it's a bad crash.
+It's not the kind of thing we want.
+So the point of this.
+This video is to try to understand exactly why this is crashing why we need a deep copy and why we've
+got to be really careful when we use raw pointers.
+So let's take a look at the class.
+The class is shallow.
+It's got a raw pointer here to a single integer.
+We could have created an array of integers a pointer to some sort of object.
+Does it really matter in this case it's about as simple as example as you can get.
+And here we have a set value in a get value that we're using in my main.
+We have a constructor that just expects the integer and when it does is you can see the source code
+for the constructor right here on line 21.
+It allocates storage on the heap dynamically for that one integer and the integer is being passed in.
+Then I'm just dereferencing the pointer and storing that integer where data is pointing.
+Really really simple.
+OK the destructor.
+Let's take a look at that.
+Obviously whenever we allocate storage in the constructor the best practice is to release that storage
+in the destructor.
+That's what we're doing here and in this case we're just displaying destructor fring data so that we
+can see when it's being called.
+We're going to step through this in the debugger so we will definitely be able to see when it's being
+called.
+And then we've got the copy constructor.
+In this case we're doing a shallow copy and you can see right here on line 27 in the constructor initialization
+list.
+All we're doing is we're copying the value in that data variable which is the pointer from source to
+this which is the object we're creating right now.
+So it's copying the pointer not what it's pointing to it's going to happen as both these objects when
+we copy them will be pointing to the same area and I'll show you that in the debugger.
+Then we've got a real simple function right here called display shallow which we pass in an object by
+value.
+So we're going to get a copy of it and that's where the problem shows up.
+Again I walk you through that.
+OK so let's let's debug this and we'll step through it so we can see exactly what's going on.
+And I move the output window here to the right so you can see our constructors and destructors being
+called.
+All right so I'm right here on line 42 and here we're just doing a regular constructor call and we're
+passing in the integer to us of this constructor right here in line 21 will be called.
+So let's step through this and you can see now on my 22.
+We're going to allocate the new integer on the heap.
+We just did that.
+And now I'm storing 100 into that area and I'm back to line 43 So at this point J one has been created.
+It's right here and you can see that data is a pointer to an integer.
+And we just store to 100 where that integer was pointing.
+OK now we're going to run into a little bit of a problem.
+This is where the deep copy is necessary rather than the shallow copy and I'll do another video after
+this one will do a deep copy and I'll explain how that exactly works.
+But let's walk through this.
+We're going to call display shallow which is this function right here on 9:36.
+And this is just a regular function it's not a member function and we're going to pass object one into
+it.
+Well we're doing that by value.
+You can see right here there's no pointer there's no reference.
+It's just by value so we need to make a copy.
+So what we expect is that C++ needs to make a copy so it's going to call the copy constructor to do
+that.
+And let's do that right now.
+So we step through it.
+You can see right here we're in the copy constructor and we're doing that shallow copy.
+So at this point you can see them just step one more line.
+OK.
+So what we've got now is let's take a look over here.
+We've got source now remember source is what's being passed into the source in this case is O.B. J1.
+So we've got so RBJ one right here has a pointer data that points to an area in memory and we stored
+100 in there.
+Now the location of that memory is right there.
+Foxtrot 0 0 so I'll just write that in there those last three digits.
+So it's Foxtrot 0 0 that's where that data is on the heap.
+OK.
+Now what happened I just made a copy of RBJ one but I didn't copy what it's pointing to.
+I only copied the data.
+So if you can see as I expand this which is right here inside here this is the new object we're creating
+this right there.
+You can see that the address of that pointer data is exactly the same.
+So what we just did we just created a copy of this that's pointing to the same area and memory.
+So let's walk through this a couple of more steps and then we'll just keep going here.
+Great.
+Now we're here.
+We've just created the copy.
+So what we just did was we created a copy and it's called S.
+It's right here.
+Now as has a pointer called data.
+And guess what it's pointing to the same area and memory as RBJ one.
+So what we just did was yes sure we made a copy of Abi J1.
+Absolutely but we didn't make a copy of what that data pointer was pointing to.
+Ideally what we would want with a deep copy is for S to be pointing to its own copy of that data over
+here.
+But that's not what's happening here.
+And what we can see is clear the screen real quick.
+What we can see here is that if we look at the s right here that's that local variable you can see that
+fox track 0 0 is pointing to exactly the same memory location.
+So here's the problem right now as is just about to go out of scope.
+So again let me try that one more time just to be very very clear here.
+We've got Obie J1 pointing to this area right here where it's got 100 and again that's the data attribute
+that's pointing right.
+And then we've got s which is also pointing to that area well now as it goes out of scope what happens
+when ESC goes out of scope.
+We get the destructor called.
+Right.
+So let's walk through that.
+We can see that destructor being called.
+It's out of scope right now.
+Boom there's the call to the destructor on line 32 and the destructor deletes data.
+So what did the destructor just do.
+It freed up this area in memory right here.
+So as far as the C++ runtime system is concerned this is no longer valid memory.
+Right we just deleted it.
+So this guy right here now is pointing to invalid memory.
+Now hopefully you can see that that's a big problem here.
+So what's going to happen.
+Well let's keep going.
+We're going to destructor Frina data now we go back to main right here and notice where we're at right
+now at this point.
+This is now gone right because we were we're all that's been cleaned off the stack and I'll take those
+Xs off to see see what's going on here.
+This is the situation we've got we've got RBJ one now has a pointer called data that's pointing to an
+area on the heap that has 100 in it because that hasn't changed but that memory is invalid.
+So now if we try to make a copy of RBJ one and call it object again this calls a copy constructor again.
+Let's let's see what happens here.
+Let's walk through this again.
+Copy constructor gets called because we're making a copy.
+And what do we just do what we just copy it again.
+So now we've got two objects pointing to invalid data and I'll walk you through this.
+And we're back to main.
+Here is what I've got now is I've got RBJ to right here pointing to that same and valid data and that's
+not good and you can obviously see what's going on here you can see RBJ 1 and RBJ 2 are pointing to
+exactly the same memory locations right.
+Here you can see Foxtrot 0 0 Foxtrot 0 0.
+That's the situation we've got right here.
+So this could be problematic in a lot of ways.
+Suppose that on line 46 I'm setting the data value for RBJ 2 to 100.
+Right.
+So I'm coming this way.
+Sorry to 1000 some coming this way through this area here and try to put a thousand in there.
+Well what did I just do assuming that this works right assuming that we haven't allocated any other
+objects and they've used that space.
+But why did I just do I just changed RBJ one's data to two thousand indirectly without even knowing
+it because they're both pointing to the same area in memory.
+So let's walk through that and you'll see exactly what I'm talking about.
+Right now you can see they're both pointing me refresh this here.
+Since they're both pointing to the same area in memory I just changed O.B. Tuesday to 2000.
+But what happened here with one's data changed 2002 of course it did it were pointed to the same error
+in memory right.
+Now comes the problem and this is where the crash comes in and I'll clear the screen real quick as we
+unwind now and start freeing up these two objects right.
+I mean they're going out of scope right here in Maine.
+So we need to delete the data for both of them are calling both the destructors well that pointers pointing
+to invalid data.
+And when we try to delete it we're going to have a problem.
+That's where the crash comes in and I'll just step through it.
+You can see the destructors being unwound now and at some point we will crash there's the crash right
+there.
+OK.
+So you can see what's happening here you can see how important it is to really understand what's going
+on with your memory when you're using raw pointers.
+What we'll do in the next video is we'll go over deep copy and them will do.
+Another example of this that we just did now using deep copy you can see how that works better.
