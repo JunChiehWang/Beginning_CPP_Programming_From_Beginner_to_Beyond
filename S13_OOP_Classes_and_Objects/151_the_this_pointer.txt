@@ -1,0 +1,35 @@
+As we step through our code in the debugger you see an identifier named this in the debugger pane.
+This is a reserved keyword that contains the address of the current object.
+So it's a pointer to the object that's currently being used by the class member methods.
+The this keyword can only be used within the scope of the class in many other object oriented programming
+languages.
+We use the word self instead of this but in C++ we use the keyword this all member access is done via
+this pointer.
+However C++ allows you to use member names directly and behind the scenes it's actually using this pointer.
+This can be used by the programmer and in many cases we must use it.
+We can use it to explicitly access data members and methods.
+We can also use it to determine if two objects are the same.
+We use this in the next section when we overload the assignment operator to determine if we're assigning
+to ourselves.
+Of course since this points to the current object if you dereference it you'll follow the pointer and
+work with the current object.
+Here's an example of one way to write a set balance method for an Account class.
+Notice that the name of the parameter is BHL and the code in the body of the method is balanced equals
+BHL which assigns the value of the parameter be able to the class data member balance.
+Well you don't have to write this aero balance but that's exactly what the compiler is doing for us
+behind the scenes.
+Now suppose that the name of the parameter was balance.
+Now in the method body the assignment statement balance equals balance would use the parameter balance
+for both of those identifiers instead of the data member balance.
+That's because with scope rules.
+Now this statement would not accomplish what we wanted to do.
+So in order to refer to the data member balance we need to explicitly use this arrow ballots.
+Finally suppose we have a compare balance method in the account class that compares the balance of one
+object with another.
+We could check to see if we're comparing the same objects by comparing this and the address of other.
+If they're the same then we're dealing with the same object.
+In this example it wouldn't make much difference in our code since we're simply comparing balances.
+But if our compare logic is involved or computationally expensive then a quick check to see if the objects
+are the same could help performance.
+We'll use the this pointer again in the operator overloading section of the course.
+

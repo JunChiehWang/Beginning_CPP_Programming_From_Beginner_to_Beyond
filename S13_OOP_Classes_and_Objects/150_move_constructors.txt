@@ -1,0 +1,261 @@
+This video we'll learn about C++ is move constructor and move semantics these features were introduced
+in C++ 11 and they can be difficult to understand.
+So we'll take it slow and one step at a time while move semantics is not considered a beginning C++
+topic.
+It's important to understand it conceptually.
+So you can identify it in code when you see it.
+One of C++ elevons most pervasive features was probably move semantics and to really understand move
+semantics it's important to be able to tell whether an expression is an l value or an r value if you
+need a refresher about L values and our values.
+Please refer to the L values in our values video in Section 12 of this course.
+But a useful rule of thumb is that when you can refer to an object by name or you can follow a pointer
+to get to an object then that object is addressable and it's an l value and our values are everything
+else.
+But in the context of move semantics our rallies refer to temporary objects that are created by the
+compiler and objects returned from methods.
+As you can see in this slide when the expression 100 plus 200 is evaluated the compiler stores 300 and
+an unnamed temporary value.
+This value is not addressable So it's an r value the R value is then assigned to the l value total.
+The same happens with objects.
+However with objects that can be a great amount of overhead of copy constructors are called over and
+over and over again.
+Making copies of these temporary objects.
+Then when we have raw pointers and we have to do deep copies then the overhead is even greater.
+This is where move semantics and move constructor comes into the picture.
+Our value objects are the objects that move semantics addresses.
+We know that copy constructors are called whenever the compiler needs to make a copy of an object.
+We also know that if our class contains a raw pointer then we must implement deep copy.
+However this can be computationally expensive since we have to allocate space for the copy and then
+copy the data over to C++ move constructor moves the object rather than copies it.
+This can be extremely efficient.
+Move constructors are optional if you don't provide them then the copy constructor will be called.
+But it's a good idea to use move constructors for efficiency.
+Finally when you run your code and step through it in the debugger you might see move constructors being
+called.
+In fact sometimes you may not even see the copy constructor being called.
+If you experience this is probably due to something called copy elision copy elision is a compiler optimization
+technique that eliminates unnecessary copying.
+Compilers are really smart with their optimizations now and one of the common techniques is called Return
+Value optimization.
+That's when the compiler generates code that doesn't create a copy of a return value from a function
+making the code much more efficient.
+So let's start by talking about R-value references.
+We've already seen l value references which are references to L values.
+Well R-value references are references to our values in the context of move semantics.
+Think of our value references as references to those temporary objects that we were talking about.
+L value references are declared using a single ampersand like we've done but R-value references are
+declared using two ampersands.
+Let's see some examples in this example will see the difference between an l value reference and an
+r value reference.
+First we declare x as an integer and initialize it to 100.
+In this case x is an l value it's addressable and it's got a name.
+Now we can create l ref as a reference to X and since x is an l value this is an l value reference.
+We can use L ref to refer to X..
+Nothing new.
+This is stuff we've seen already.
+But now let's see what an r value reference looks like.
+Our ref is declared isn't our value ref to an integer with the double ampersand operator and we set
+it to refer to 200 since 200 is an r value.
+This makes ref an r value reference.
+Now we can actually assign 300 to our ref which stores 300 into the R value of where our ref refers
+to.
+In other words we just change that temporary variable.
+Notice that if we try to assign an l value to an r value reference we get a compiler error which makes
+perfect sense.
+So now let's look at l value references in the context of function parameters.
+This is what we've been doing all along up to this point in the course.
+We have an integer x we initialized it to 100 x is an l value.
+Now look at the function phunk it expects an l value reference as denoted by the single ampersand.
+So it wants an l value if we call func pass in x.
+Then this is OK since x is an l value and none will be the reference to an l value.
+But what happens if we call func with 200.
+Well 200 is not an l value it's an r value and the compiler will generate an error.
+You can see the error message below that the compiler generates.
+Now let's look at our value references in the context of function parameters.
+We again have defined X to be an integer and initialized it to 100.
+This time we declare func is a function that expects an r value reference and we did note that with
+the double ampersands.
+So it wants an r value.
+If we call func and pass in 200 This is OK since 200 is at our value.
+And now Gnome will be a reference to an r value.
+But what happens if we call func with X while we get an error message X is not an r value it's an l
+value.
+So the compiler generates the error and you can see the message it generates below.
+Now we can overload these functions and have both of them in our code at the same time since they have
+unique signatures and the compiler will call the correct function depending on whether the parameter
+is an l value in our value.
+We're going to take advantage of this when we defined the move constructor.
+So now let's see how this works with the move constructor in a class here I've created a class named
+move and it has a raw pointer as a data member.
+This class is similar to the shallow and deep classes we used earlier in the section the rest of the
+class methods are pretty standard and we've seen them before.
+Notice that we've included a copy constructor that does a deep copy.
+We have not defined the move constructor yet.
+We'll do that soon.
+But first let's look at the copy constructor.
+Here's the code for the copy constructor.
+Again pretty standard deep copy.
+We allocate storage and then we copy the data.
+Now we run a simple main that creates a vector of some move objects and we call the vector Veck and
+we push back to move object.
+Now notice what's happening in the argument list.
+Move 10 and move 20 or creating temporary objects.
+Unnamed.
+So they're going to be our values.
+What happens is that the compiler is going to use the copy constructor to make copies of these guys.
+So here's the sample output from that program you can see these constructors and destructors and copy
+constructor is being called.
+In fact you can see that the copy constructor is doing several DB copies which can be inefficient.
+Now let's add the move constructor to the class to make it much more efficient.
+So what is the move constructor actually do.
+Well instead of making a deep copy like the copy constructor does well instead of making a DB copy has
+the copy constructor does it simply moves the resource its on the heap.
+And the way we do that is just to assign the pointer from the source object to the current object.
+You might be thinking isn't that what default member wise copy is and yes it is.
+But now the difference is that we know out the pointer in the source object.
+So what we have now is an object who owns the data on the heap and then the original object with a pointer
+to that data.
+This is real efficient since we're not doing a copy at all.
+Before we implement the move constructor let's look at its syntax.
+As you can see it's very similar to the syntax for a copy constructor but it's got two differences.
+First there's no conc qualifier for the parameter source.
+There can't be because we need to modify it in order to null out its pointer.
+And second the parameter is an r value reference and you can see that with the double ampersands you
+can see in the last two declarations what the move constructor prototype might look like for a player
+class and the move class.
+So here we're adding the move constructor prototype to the move class declaration and now we need to
+implement it.
+Notice how simple the implementation is.
+We simply copy source dot data to data.
+That's a simple copy of a pointer data member.
+Again we're not copying what it's pointing to.
+We're not doing a deep copy.
+Then we know our source data.
+This step is really important.
+Otherwise we end up with the equivalent of a shallow copy and not to move.
+That's it.
+Many resources that describe the move constructor say that it steals or pilfered the data and then it
+nulls out the source pointer.
+And that's really a good way to think about it.
+That's exactly what it's doing.
+Now we've got our same program and when we execute it instead of the copy constructor is being called
+for those temporary objects to move constructors will be called because there are values and it's going
+to be much more efficient than doing deep copies.
+So let's took a look at the output now.
+As you can see there are no copy constructor calls at all.
+And the move constructor is indeed being called.
+You can also see when the destructors are called for no pointer that's destroying the object that we
+just moved and said it's data pointer to know.
+So there you go that's a basic introduction to R-value references in the move constructor.
+I know it's complicated you probably have to watch this video a few times but don't worry.
+Everybody goes through this it's a difficult topic to understand.
+We'll see move semantics again in the next section of the course when we overload the assignment operator
+to do both copy and move.
+There's so much more to move semantics in the move constructor that are better left for more advanced
+course but now you know the foundations and you'll be fine when you learn about them.
+So let's head over to the idea and run this program and see it in action OK.
+So I mean the idea again though in this section 13 workspace in the move constructor project and what
+I've got here is that class move that we use in the slides.
+It's kind of raw pointer to an integer.
+It's got get set methods and your typical constructor a copy constructor destructor.
+Now you'll notice that I've got a move constructor here but I've commented it out because I'm going
+to run this first with only the copy constructor so you can see what's going on.
+And you write here's the copy constructor on line 17 Here's my implemented copy constructor again I've
+commented out the move constructor will uncomment that at a moment.
+And here's my destructor.
+My district looks a little different because if my data is not equal to the null pointer then I'm just
+saying what I'm destroying.
+Otherwise I'm just saying that I'm destroying null pointer and that's important because it will let
+us know if we are destroying those objects that we just moved in or be really easy to see when it says
+no pointer.
+OK so here's my main.
+I'm creating a vector of move objects and I'm simply calling pushback and I'm supplying move in here.
+Now you'll notice there's no variable name there right so that's going to create a temporary object
+and a temporary object is an r value.
+So in this case it's going to use the copy constructor once we put the move constructor in it's going
+to use that.
+So let's walk through this example and go see what's happening.
+So I'll start the debugger.
+And I move the window over here to the right and this is where we're at right here.
+So first thing we need to do is we need to construct this object we need to create that temporary object
+and we're going to use the constructor to do that.
+So we'll step through here.
+You can see the constructor being called here.
+It's going to allocate that object on the heap and store whatever we passed it into it.
+We're going to display constructor for 10.
+And now we're in the copy constructor because remember we just created this temporary right.
+So this temporary and needs to be copied into the vector.
+So we in the copy constructor we're here we're going to construct the copy.
+So we're going right back here we're delegating to the constructor.
+We're going to create another 10.
+And it says here we just deep copy that 10 which is exactly what we did.
+Now we're back here and we need to destroy that copy we made.
+So the destructor will be called right now you can see it data will be pointing to 10 and we're going
+to destroy that copy of 10.
+That's it.
+That's pretty much exactly what's happening.
+You can see that we're using copy constructors just like we've used all the time.
+Now the fact that this is an R-value that comes into play when we use the move constructor.
+Now I'm going to stop this and I'm going to uncomment out all of these here you can see what's happening
+it might be a little surprising.
+So what I've done is I've pushed back 10 20 all the way through 18.
+Remember these are all creating temporary objects.
+So there are going to be copying copy constructed so that the vector can push them back.
+Remember the vector makes copies of these guys so it's going to make a copy of the temp.
+That's that's one of the problems that's why it's so inefficient but it's even worse than that because
+if we run this without debugging this is build and run.
+Let's take a look at what we just got here.
+I'm going to scroll all the way to the top.
+I'm at the top now so you can see that I've created that 10 right and I've copied it up done a deep
+copy that I'm destroying it and doing the same thing for 20.
+So you could see all these deep copies but if you count them you've got one two three four five six
+seven eight nine down at 10
+about 15 deep copies.
+That's much more than you would expect.
+Right.
+When you look at the code I don't think you would expect that many.
+I mean there's only 8 pushbacks here.
+But what's going on is that the vector is actually growing behind the scenes and when the vector grows
+those objects need to be copied to the new storage.
+Remember the vector is using contiguous storage.
+So it's making copies of the objects behind the scenes as well.
+So you can see that a lot of times is a lot of copying going on behind the scenes that we're not aware
+of.
+So that's the version with the copy constructor.
+Now what we'll do is we'll uncomment out the move constructor and you can see what the move constructor
+is doing the same thing that we did on the slides.
+The move constructor simply copying the source data and knowing that the pointer really really straightforward
+and uncomment out the prototype here OK.
+Now what we'll do is we'll debug this again.
+And we'll walk through that very first once you can see what's happening.
+So I'm right here on line 55.
+I need to create that move object right.
+That's a regular constructor to create that that creates that temporary R-value.
+So let's walk through there.
+I'm going to create that 10 object that 10 move object.
+Now notice what happened.
+The move constructor got called that's the move constructor right there with the double ampersand.
+So we got called rather than the copy constructor why because this is an R-value temporary.
+Now what we're going to do is we're basically mis steal the data and not the pointer to the source object.
+Right so we're going to move it rather than copy it.
+So we're here and we're sourcing winnowing out the source data and you can see the move constructor
+got called.
+Now look what happens when I go to delete that object.
+Right the one that we just moved the source were here and the destructor just said we would expect.
+But if you look at the object we're destroying.
+Notice it's unknow the data isn't all that's on we just no doubt.
+Right.
+So in this case I'm simply saying destructor freen data for null pointer.
+So that's really obvious which one is being destroyed.
+And then at this point I'm back here.
+OK so you can hopefully see the difference here.
+How much more efficient this is.
+And I think you'll really see the difference in efficiency when we just run it without the debugger.
+So let me just run that without the debugger and you can see here I get I'll scroll all the way to the
+top.
+You can see that as you scroll down here there is not one single copy constructor being called so we're
+doing no DB copies.
+We're only moving resources using the move constructor.
+OK so there you go.
+That's a introduction to move constructors and move semantics.
+And I think this is a pretty good example that you can walk through and understand what's going on.

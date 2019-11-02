@@ -1,0 +1,166 @@
+In this video we'll learn a little bit more about the Konst qualifier in the context of class methods.
+We've already learned that we can create Konst variables which can't be changed.
+And we've also seen how we can pass references and pointers into functions as Konst and they can be
+modified while in the function well and this video will learn how to create Konst objects and see what
+happens when we pass constant objects to methods that don't expect to Konst using Konst correctly in
+parameters as well as method declarations is the basis for Konst correctness in a program.
+In this example we're creating a concept object named villain.
+Now once villain is created we can't change any of attachable.
+So that's the whole idea with it being Konst.
+So what happens if we call member methods on a Konst object.
+Let's look at calling a setter method that changes the object.
+Obviously this can't be allowed since the object is declared as contest.
+And in fact this produces a compiler error.
+The compiler complains that you're passing a concert object as this to a method that could change it.
+But what about the output statement.
+In this case I'm not modifying the Konst object.
+I'm simply getting a copy of its name for display.
+While this won't compile either.
+In fact you get the same error that you get when you called Set name.
+So what's up.
+Well the compiler assumes that the get named function could potentially change the object so it gives
+an error but we need a solution to this problem since we would like to call the getter methods and other
+methods that are public that don't modify the object.
+Here's another example.
+Again we define the villain object and its a constant so it can't change.
+Now we have a display player named function that expects a reference to a contest object.
+Again we get a compiler error here the problem is that when we call P-doc get name in the displayed
+player name function this pointer isn't expecting a cost object.
+So get name could potentially change the object.
+The compiler is being very careful not to allow a concert object to lose its constants.
+So what's the solution.
+The solution is actually very simple.
+We need to tell the compiler that specific methods will not modify the object and all we have to do
+is put the Konst modifier before the semi-colon and the method prototype.
+That's it.
+Now the compiler will not only allow this method to be called on const objects.
+It will also produce a compiler error if you try to modify any of the object attributes in the method
+the idea of class methods having conc qualifiers is part of what's referred to as Konst correctness
+Konst correct this can get pretty complicated.
+But this video serves to give you a basic idea of what it is and how important it is.
+Now you can see that the call to get name works just fine.
+But the call to set name is still not allowed to set name is not a Konst function remember since you're
+telling the compiler that get name is a Konst member function.
+Then if you write code in the body of get name that modifies the object you'll get a compiler that's
+conc correctness in action.
+Let's go to the idea and see this example in code.
+Ok so I'm in the IDM in the section 13 workspace in the concert in classes project and this is basically
+the player class again you can see we've got our private attributes some public methods and so forth.
+And this is the real method that we're interested in in this example right here.
+It's a simple getter that returns the name.
+So you could see get name is the name of the method it returns name which is a string.
+Simple as that.
+That's the one we're going to have to fix so that we achieve Conn's correctness with this program.
+So let me go down to and you can see I've got constructor copy constructor all the normal stuff.
+I'm going to come at this function because we're going to use that one in a minute but this is what
+I've got so far.
+I've created a villain object that is a player type and it's constant.
+I've also created a hero which is a player type Pierro is not constant.
+So what does this mean.
+This means that I cannot change any of villain's attributes.
+So here's a real simple way to tell that this actually works.
+If I take that Expwy attribute that's private and just make it public for a minute and then I come down
+here again and I'm just going to say something really simple like villain.
+XP is a thousand.
+It should let me do that right because XP is public but it won't because villaine is constant so if
+I try to compile this i'll an right here is this assignment of member player XP in a read only object.
+Makes a lot of sense.
+That's actually a really good compiler error.
+It's telling you that that object villain is read only you can't change any of it right.
+That's what that construct does.
+So let me undo what I just did here and I'll make XP private again.
+OK.
+So let's do a couple of things.
+Now let's come down again to our main here and I'll remove that line right here.
+So we're back to where we started we've got the villain and we've got the hero now.
+Obviously I should never be allowed to change villain.
+Right so doing something like villain does set name to no super villain.
+That should never be allowed because if you look at the set named Melville right up here it is actually
+changing that name attribute.
+So if you try to compile this you would expect an error and you do get an error and the error message
+is saying passing Consta player and that's what this is right here villaine as this argument discards
+qualifier.
+So what it's telling you is that you're passing this in as a constant.
+But the class is not expecting a constant and it's going to be able to change it.
+Now you'd get the same error if you called the get named function.
+So let's try that on villaine.
+You may not.
+This one may not seem so obvious as to why but let's say we did something like that.
+Just put that in an output statement.
+So we'll say something to see out area or something like that.
+I'll come at this one out because we know that once that one should never work right ever not even once
+we're Konst correct that that should never be allowed.
+But now we're here.
+So I'm saying villaine give me your name.
+That should work.
+You really think about it right because it's not changing the object it's simply returning that string
+and display it but it won't work.
+It's going to give you an error and the error is again same error passing Konst player as this argument
+discards qualifier.
+So what's going on.
+Well that get name method could change the object right.
+There's no reason I couldn't write some code in the get method right here that change one of those attributes
+and the compiler can't guarantee that at this point so it's going to throw the error.
+The fix will come up in a little bit but now what if I did something like this when if I did the same
+output statement.
+But I did it with hero instead of villain.
+Let's compile that.
+How are you going to get a clean run right.
+That makes sense because hero is not Konst so the compiler doesn't really care if you change hero in
+that method or not.
+OK so what would make all these concert correct them a little bit.
+So there you can see some of the issues here.
+Now suppose that I'm going to comment all this out and then I'll uncommented it a little bit.
+But now suppose we have this function right here and this is not a member function it's just a regular
+function it's called display player name and it expects P which is a reference to a concert player object.
+Right.
+And all we're doing is getting up that player objects name or displaying it.
+So let's call that method.
+So we'll call display player name it will pass in villaine And what would expect it is to print up villaine
+right.
+So let's compile that we get an error Error passing Konst player this argument discards qualifiers like
+the problems right here right there.
+And OK you know we can sort of understand that air.
+But now let's try this with Hero
+and we'll just replace Villiam with hero here and I'll comment this line out.
+So we're definitely sure what's causing any errors if we get any.
+So look what's happening here.
+Hero is not a construct.
+Someone to pass hero into Display player as a contest that means this function can't change it.
+Right.
+That's the problem.
+When I call up get name as far as P-doc get name is concerned that's a contest.
+It can't change it.
+Right.
+But there's no way to guarantee that.
+So this is going to give me the same error as before.
+There's the air again.
+So what's the fix.
+Well the fix is pretty simple the fix is we come up here to our class and we come to that method get
+name and we want to tell the compiler Hey compiler I guarantee and you double check for me that this
+method get name is not modifying the object at all.
+You do that with the conc qualifier right there you put a cons right after the parameter list.
+If you've just got a prototype you just put it like right before the prototype right in there before
+the semicolon.
+That's it.
+Now you've just told the compiler I guarantee that I'm not changing that object in this method.
+So now the compiler is happy and all of this stuff will work now.
+Right.
+Let's uncomment all these out and uncomment this guy out as well because that should work as well.
+And that's it.
+So now we run this we should get a clean run villain hero villain hero just what we expect.
+Obviously this will never work.
+That should never work because it's we don't want to set anything and Villette which that should never
+be allowed.
+So I'll just leave that comment out.
+And then the other thing that's important I understand is once you define a method here as Konst you
+can't mess around with those attributes in here I can't say XP equals 100 right because now it's you're
+just violating what you just said you were going to do is no longer Kotz So if I compile and when you
+get an error right there on that line.
+Right.
+You're changing something in a read only object.
+So this is conc correctness it can get pretty complicated when you're passing things all over the place
+as Konst to non-contest here and so forth.
+But the rule of thumb is all your getters should be Cotts basically any method that you have in your
+class that doesn't modify the object should be Konst.
+OK so that's it for the Konst correctness.
