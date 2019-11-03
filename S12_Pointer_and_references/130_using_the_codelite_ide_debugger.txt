@@ -1,0 +1,369 @@
+In this video I'd like to go over the basics of using the code lights ideas to bugger all the ideas
+
+have some sort of debugger built in and they all work more or less the same.
+
+There are some differences between them but they all have points they all have watches and they all
+
+that you see are local variables which is really all we're interested in right now.
+
+So I'm in the section 12 workspace and I've got a project called debugger that's got some source code
+
+that I want to debug.
+
+So what do I do.
+
+Well the first thing you want to do is rather than build We're going to do debug.
+
+So we're going to press 5 but we're not going to do that quite yet.
+
+I want to set up this environment first because right now I'm on a single monitor system and it's much
+
+nicer to work obviously with a dual monitor system so you can you have your console in one area and
+
+the debugger on the other.
+
+But on a single monitor system you need to make a make some room here.
+
+So what I'm going to do is I'm going to grab this and just move it over here.
+
+It fills up half the screen.
+
+Move it over here so it fills up half the screen.
+
+Ok then when I debug I want the console window over here on the right but I don't really want it to
+
+take up half the screen.
+
+I don't need it to take up half this means I'm just going to have this guy over to about there and that
+
+should allow me to see all of the icons that we can use up top to control the debugger.
+
+And again this is just a personal preference you can do this whatever you like.
+
+That works for you.
+
+The next thing we need to do is we need to set a breakpoint you need to set a breakpoint for the debugger.
+
+Now I'm going to do that right in main.
+
+If you look right next to line 16 here not in this little gray gutter area right here where the arrow
+
+is but right to the left of that you can click right in there and you see that little red stop sign
+
+comes up that's a break point.
+
+What's going to happen is the debuggers is going to kick in and it's going to start executing your code
+
+then it's going to stop at that break point.
+
+From there you can go line by line you can go into functions you can look at watches you can do all
+
+kinds of stuff which is pretty cool.
+
+Right.
+
+So that's where we're at now.
+
+Now you also notice up here in perspective there's a debug way out.
+
+This is the layout that will automatically kick in when you start the debugger.
+
+So it may look different on your end and from then on what you're going to see on my end but it's totally
+
+customizable.
+
+You can do whatever you like close windows open windows and when you're done just get a perspective
+
+save.
+
+Currently out as de-bug lay out again.
+
+So next time you run it'll be in that perspective.
+
+All right so let's debug.
+
+We're going to come up to the debugger and start continue debug or you can press F5 make sure you've
+
+got a breakpoint set before you do this.
+
+Otherwise you're not going to see much.
+
+So we're going to go to the debugger and start it build and debug.
+
+Now go see the console know what I'm going to do with the console.
+
+Just move it over to the right so it fills up the rest of that space.
+
+There you go.
+
+So all the output I'm going to see over here on the right.
+
+You'll notice down here that I've got an output view and I've got a debugger view.
+
+I really don't care about this output.
+
+I just want to look at my debugger view so you can close this site if you like.
+
+You can just click that X right there and I've got only the debugger view.
+
+Now in the debugger view there's a lot of stuff in here.
+
+All we're really interested in at this level right now are your local variables and any watches you
+
+might want.
+
+And I'll talk about watches in a second.
+
+Cool.
+
+OK.
+
+So you can see here my local variables x and y.
+
+If you look at main you'll see I you'll see X and go see y x and y right here on line 22.
+
+You also see that little break point right there the red is a little green arrow and there I'm not sure
+
+if you'll be able to see it on the video but you will be able to see it in a minute when I start walking
+
+through the code.
+
+Basically that's the line that's about to execute.
+
+You'll notice right now x and J have garbage in the mess because line 16 hasn't executed yet.
+
+OK.
+
+So the debug icons appear.
+
+You can see them you can show the current line.
+
+You can step in which is what we're going to use to go into a function.
+
+Or you could just go to the next line.
+
+Don't worry about step out.
+
+These are the two main ones we're going to step in next.
+
+And if you want to stop your debugging session you can press that little stop button right here.
+
+OK.
+
+So let's do this.
+
+And again how you you may want to close your out your workspace view here.
+
+If you don't have a space on your monitor.
+
+But I've got plenty of space here.
+
+So let's start let's click on this button right here next.
+
+And you've got there is your debugger you can also put next you can press F 10 whatever it is on a Mac.
+
+I'm not sure but you can toggle breakpoints you've got a lot of different options here but I'm going
+
+to use these icons for now because it's easier to see what I'm doing.
+
+All right so we're here on line 16.
+
+Let's press that button right here next.
+
+Now when I do that you'll notice that little green arrow will go to the next line.
+
+That means that this line executes.
+
+And we should see down here change to five.
+
+OK.
+
+So I want to do that.
+
+See the green arrow is now on line 17 That's the instruction that looks next.
+
+And also notice that I is now five.
+
+OK.
+
+Sometimes you have to refresh this view down here especially when you're working with pointers if you
+
+need to do that you just click that little button right here and it refreshes that view.
+
+OK so now we're in this code while I is greater than zero we know I is five right.
+
+Sometimes it's pretty handy.
+
+You can just kind of select I right there and press control and you can see eyes five it pops up in
+
+this little tooltip right here.
+
+Right now if I look at x x is garbage because I haven't gotten to that line yet so that can be pretty
+
+handy sometimes but most of that information you'll be able to see here.
+
+OK.
+
+So that's my locals supposed I want to do a watch.
+
+I want to watch i greater than zero so I can come over here and I can select the plus sign and type
+
+the entire expression I greater than zero and press OK.
+
+You can see it's a boolean.
+
+And right now it's true because five is greater than zero.
+
+She could switch between these two.
+
+You can obviously pull this pain out and have it on a dual monitor system.
+
+But right now let's just keep going.
+
+So now i's five and we'll keep clicking on the next you can see I'm in the body of the loop now.
+
+Now we have an output statement so we 65 display out here on the console.
+
+And then you can see the five just display.
+
+Now we're going to detriment.
+
+I see.
+
+I should go down to four down here in my local variables for you and there it is four.
+
+And I'm just in the keep looping through here.
+
+All I'm doing is pressing next week to see my code executing.
+
+It's very similar to what I was doing with my pencil and marker on the screen.
+
+But here you can see it actually happening.
+
+Happening live.
+
+So at this point now becomes zero.
+
+The loop will fail and I'm out of it.
+
+Now I'm executing line 22.
+
+When I when I clicked Next those two variables x and y will be initialized right down here.
+
+So click next and you can see that there are 100 and 200.
+
+Exactly what I expected.
+
+Not execute lines 23 and 24 so we should display X and Y to the console.
+
+There's X there is y.
+
+Ok so far so good.
+
+Now I'm calling the swap function that we wrote in this section and I pass it in the address of X and
+
+the address of Y.
+
+If you just click next here and I'll just skip that and go right next to the next slide.
+
+Well actually it'll call the function but I want to go into that function.
+
+So you want to click this one right here called step in.
+
+So when I select that now I go into the functions I'm starting to execute that function you can see
+
+the green arrow right here on line 9.
+
+And you can see a and b will a and b are pointers and they've already been set.
+
+You could see them right here.
+
+There's a there's be those are the two addresses and you can see their type integer pointers.
+
+Temp is just a regular int.
+
+So if I expand day it tells me what is pointing to which is a 100 expand B.
+
+B is pointing to 200.
+
+OK so now let's walk through the swopped the first line says take what is pointing to.
+
+You know what he's pointing to right here 100 and assign it to temp.
+
+So right now temp has garbage.
+
+So let's do that we'll click next.
+
+And now you see temp has a 100 in it.
+
+Then we're taking what B is pointing to which is 200 and putting it into where it was pointing.
+
+So now I'll go next.
+
+You see right here you see how it didn't refresh.
+
+It doesn't do that with pointers sometimes that's when you have to click this little refreshed style
+
+right there and then just re expand them and you could see that it did do that now.
+
+We'll do the next and refresh one more time and you can see that they've been swapped which is pretty
+
+cool at this point I click next.
+
+This function is done.
+
+Notice that my local variables now are AB in temp.
+
+That's because I mean this function right here.
+
+Those are the local variables.
+
+My watch doesn't apply anymore.
+
+Right.
+
+It's in the main.
+
+So here I'll click Next again.
+
+Now I'm back in Maine.
+
+I'm right here on line 28 and I'm going to display X and Y again.
+
+There's x 200 there's y one hundred.
+
+And our program is done.
+
+OK.
+
+So there's a lot of options that you can do.
+
+You can learn to play with the debugger.
+
+There's really debuggers are awesome the best advice I could give you with a debugger is that they are
+
+they're called debuggers for a purpose because they really help you debug your code.
+
+I wouldn't suggest that you start using a debugger as so much of a learning aid at this moment.
+
+I think it's better just to do it with paper and pencil at the beginning because the debugger itself
+
+has a bit of a learning curve.
+
+So you're learning C++ and you're learning the ID and now you're learning a debugger all at the same
+
+time but in the context of what I just did here it's very very useful.
+
+Suppose you have a bug in your code and the bug was that you know it was greater than or equal to zero
+
+or you had a less than there and maybe you didn't see it when you're looking at your code.
+
+Well when you run it through the debugger bam you'll see the error.
+
+You can fix it right away.
+
+OK so feel free to use the debugger.
+
+Feel free to use the debugger in the challenge exercise for this section.
+
+It might come in handy.
