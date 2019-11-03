@@ -1,0 +1,267 @@
+Before we get into declaring and defining overloaded operators for our own classes let's understand
+what they are.
+We've already seen what operators are and how to use them.
+We have traditional operators with traditional meetings.
+These include the plus symbol for addition the equal sign for assignment and many more the C++ operators
+are defined to work with the primitive or built in C++ types such as integer doubles longs and so forth.
+In fact we've already seen that the C++ operators are overloaded to work with different types.
+For example the plus symbol can add two integers to doubles and integer and a double and so forth C++
+allows us to overload operators for our own user defined types.
+This allows our types to behave and feel similar to the built in types when we overload operators.
+It can make our code more readable and more rideable.
+The only operator that the compiler provides a default implementation for is the assignment operator.
+The single equal sign.
+That's because the compiler must be able to assign one object to another.
+All the other operators that can be overloaded must be explicitly defined by the program.
+So what is operator overloading look like from the perspective of using the objects.
+Well first let's see how we would write code if we were not overloading operators.
+Suppose we've implemented our own class name number and that class can model any kind of number in integer
+a double or complex number and a rational number you name it.
+If we want to be able to manipulate number object so that we can add them subtract them multiply them
+and so forth.
+We could implement nonmember functions or member functions to achieve what we want.
+So if we wanted to add n b then multiply that result by the quotient of C divided by D.
+Our code might look like the first statement if we wanted to use member methods then we need objects
+and method names so our code might look like the second statement.
+Are these statements very unreadable and very difficult to write.
+Maybe it depends on your perspective but the point is that we're adding dividing and multiply and we've
+been using these operators to do that since we were little kids in school.
+Why can't we use them now.
+Of course the answer is that C++ doesn't know what to do with our user defined types.
+In most cases it makes no sense to add or multiplier subtract your objects.
+For example what does it mean to subtract two player objects and again are multiplied to account objects.
+It's totally dependent on what you want to do.
+In many cases it doesn't make sense to overload certain operators for your classes.
+In those cases don't do it only do it if it makes sense.
+In this example I would argue that it does make sense since the users of the number class would know
+the meaning and how to use those operators who would overload.
+Let's see what our calculation would look like if we overloaded the addition multiplication and division
+operators.
+Here you can see that our user defined number class now looks and feels and behaves like the built in
+C++ types.
+Operator overloading is syntactic sugar.
+Behind the scenes we're still calling methods or functions.
+We'll see how it all works in the next video.
+So what operators can be overloaded.
+Well C++ allows you to overload most of its operators.
+There are a few exceptions and they're listed in the table.
+We can't overload the scope resolution operator.
+The conditional operator the pointer to member operator the dot operator and the size of operator.
+Remember just because an operator can be overloaded doesn't mean you should don't overload it unless
+it makes sense and makes your code more usable more readable and more readable.
+So as always there are some basic rules that must be followed when you're overloading operators.
+First the precedence and associativity of the operator that you're overloading cannot be changed.
+This makes perfect sense since C++ programmers are already familiar with the precedence and associativity
+of its operators.
+The error of an operator cannot be changed.
+So if an operator is a binary operator which means that it's applied to two arguments then this can't
+be changed.
+C++ does not allow you to change the way that the current operators work with the built in types.
+C++ doesn't allow you create new operators that are not currently used by C++ and finally C++ allows
+you to overload operators using global functions or member methods.
+However there are several operators that must be implemented as member methods as you can see.
+Notice that the assignment operator must be implemented as a member method.
+Let's wrap up this video by looking at some examples we're operator overloading could be used the left
+column shows examples of using operators with the built in types.
+For example we can use plus an equals for addition of integers doubles and mongs and assignment.
+We also use the insertion operator with many built in types so that we can easily insert values into
+streams.
+Now take a look at the right call them.
+Here we have examples of using operators on user defined types.
+The first is stood strain.
+We can use the plus operator to concatenate strings and we can compare strings using less than greater
+than less than or equal to and so forth in this section we're going to create our own version of a string
+class named my string.
+And we want to be able to overload some operators to concatenate strings compare them assign them and
+so forth.
+The last example is the player class.
+Does it make sense to overload operators for the player class.
+Maybe it depends on what we're trying to achieve.
+For example suppose we want to compare two player objects P1 and P2.
+We might only care about their health attribute and this would do just that.
+What about comparing to player objects with the equality operator.
+Are we comparing names.
+Health XP.
+All of those attributes are just some of them.
+That's one of the issues with overloading operators.
+We can make the operator mean anything we want.
+So we want to make sure that when we do overload operators it makes sense and the users of the class
+know about it.
+Finally it would make sense to overload the stream insertion operator so that we can insert player objects
+into a stream.
+So let's look at the class that we'll be using in this section of the course.
+We're going to add overloaded operators to this basic class called my string my string models a string
+and were implemented behind the scenes using a Rossie style pointer.
+I chose to include a raw pointer because that would allow us more practice with our copy and move constructors.
+And we'll also have to think about copy and move assignment when we overload the assignment operator.
+Right now the class contains no args constructor.
+A constructor that expects a C-style string or literal a copy constructor a destructor a display method
+that displays the string and to getter methods the first one returns the current length of the string
+and the other returns a pointer to the string.
+That's it.
+At this point in the course you should start feeling pretty comfortable when you see a class declaration
+such as this.
+Now let's head over to the idea and we'll take a closer look at this class and how it's implement so
+that it's clear what it does.
+Before we extend it by overloading operators.
+OK so now I mean the IDM in the section 14 workspace.
+I'm in the my string Dasch start project this project really doesn't do much.
+It's just the beginning project that initially implements that my string class that we're going to extend
+throughout but I want to take a few minutes to go over that class to make sure that you 100 percent
+understand it.
+And I encourage you to walk through it set some breakpoints step through it using the debugger and be
+sure you really really understand what's going on in this class.
+The idea with this class is that I want to model strings.
+Now we already have a standard string class I know.
+Let's do it ourselves that when we really really learn how to implement one of these things.
+So what we're going to do is we're going to create our own my string class.
+And here's an example of how you would use it in a man here I'm creating empty which is just an empty
+string object is going to call and no args constructor.
+Here I'm going to create Larry which again is a String object.
+And I'm going to initialize it to that string Larry using an overloaded constructor and then finally
+I've got to another my string called stooge and I'm initialising with Larry so there we have a copy
+constructor call and then all I'm doing is calling the display method for each one of those objects
+which is going to display empty string Larry.
+And Larry again since we copied it.
+OK.
+So let's take a look at the class.
+This is the same class that I showed you on the slides a minute ago.
+What we're doing here is we've got our mindstream class you can see it right up here and we're implementing
+a string behind the scenes as a pointer to a character is basically the way a C-style string works.
+Now we could have done this a lot of different ways.
+I chose to do it this way that way we can play around with raw pointers a little bit more understand
+the copy constructor understand the move constructor which will will do soon and understand the assignment
+operators.
+We've got a destructor we've got the display method that displays the contents of this string basically
+the string itself and its length.
+And then we've got a couple of getters.
+OK so let's go through these and see how they're implemented and I'll walk you through a couple of examples.
+And let's take a look at my string.
+OK so here you can see that I'm using behind the scenes the C string library which I need.
+I've got IO stream simply because I'm doing some output.
+And here is my string that H I need to include that because this is what I'm implementing right.
+That's my spec Here's my implementation.
+So here's my no args constructor you can see it right here.
+Remember the no args constructor gets called when it's code like this executes the semi string and let's
+say just a right so we're providing no construction information here.
+So the no arms constructor gets called you can see it expects nothing.
+And what we're doing here is we're creating an object called a and this is put a right here.
+This is that object.
+It's just a blob right now and it has in it a pointer called s tr so and we really care about now if
+we create an empty object we could simply set that pointer to a null pointer and we're done with it.
+I don't want to do that.
+I want to set an empty string to an empty string that looks like that in other words a single character
+with the null terminator in it rather than a null pointer.
+That just makes it easier later if we ever display or or print out an empty string it'll be fine.
+We don't have to check for null pointers later.
+So what are we going to do here.
+But we're going to allocate space for one character.
+Notice the brackets they're important here because we're going to delete characters in that manner as
+well.
+Someone allocate one character.
+Remember all this is happening on the heap.
+This is happening on the stack and I'm going to assign that address to as TR so as to are pointing there.
+No I'm doing is dereferencing the pointer and putting that Terminator in there that's my empty string.
+If you try to display this it will just display nothing.
+OK so that's my no args constructor.
+Now let's take a look at the overloaded constructor here that expects a seesaw string right or a string
+literal.
+So in this case this will be called with statements like this my string Let's call this again this is
+a again and we'll just say hello noticed the quotes and the Curley's at this point you can see what's
+being passed in so this constructor matches.
+And this is the country is constructed it executes in this case I'm checking to see if by any chance
+somebody sent a little pointer here if they did I'm just going to create an empty string just going
+to double check that just to be safe.
+Normally this else is going to execute and I'll show you what's going on here.
+Again we're going to create that object is right here.
+It's got an attribute called S.
+TR That's the only attribute it has actually.
+And what we're going to do is we're going to allocate this many characters on the heap.
+How many characters is that.
+Well I'm going to figure out what the length of Halo is right.
+That's what S's s is.
+Hello I want to figure out what's the length of s n add 1 to it because I need an extra character for
+that Terminator.
+Well the C string functions in C string right here there's one called as Charland that does exactly
+that.
+So what I'm doing is I'm just calling stood as TR Len which is going to return five men at one to it
+and when allocate six characters on the heap m. one accosted string copy to copy s to as TR.
+So at this point it's going to copy Hello here.
+It's going to put the null terminator.
+Those are my six characters and I'm going to point to it.
+So you can see I've indeed made a copy.
+OK.
+We never messed with hello because it's Konst and it's not mine.
+So I don't want to mess with it.
+OK so now let's make a copy constructor.
+Let's go through that real quick and you can see it defined right here on line 25 right here.
+Now when does a copy constructor get called well.
+Remember we've got an existing object and I want to copy it and construct a new object from a.
+This is not an assignment.
+It's a construction.
+So what I've got is let's say I've got that string object again my string
+and let's call it a and we'll use Hello again.
+So there's that object.
+Now I want to create a new object.
+I'll just say my string will call it B and I want to create it based on a.
+So there's my copy.
+That's my copy constructor being called.
+Also a copy constructor as you know gets called if you pass of an object by value to a function.
+Lots of different places.
+So let's see what's going on here.
+In this case this refers to the object that I'm creating and source is that guy right there.
+So source in this case is that a.
+Object Hello.
+Make sense.
+Good.
+So I'm creating the object I'm setting as TR Right.
+So here is that new object I'm creating.
+It doesn't even have a name yet but let's just call it this because it's being pointed to by that pointer.
+It's got as TR again just like before.
+And what I want to do is I want to copy that.
+Hello to this guy and I want to do a deep copy I don't want to share this.
+So what do I do.
+Well again I want to allocate space how much space the length of that source objects string right a
+dot as TR In this case which would be hello.
+So five plus one is six again and then allocate six characters on the heap.
+Remember these are unnamed it's all in the heap.
+Then I'm going to do an A.
+And again I used stood start string length to do that.
+Now I'm going to do a string copy to copy the source string to the string again a DB copy.
+So in this case I'm copying over Hello the null terminator and this guy's pointing to that.
+That's it.
+So that's where we're at right now.
+The rest of the functions you shouldn't have any issues with at this point in the course.
+Let's go through them anyway.
+Here's my destructor obviously remember this.
+You're responsible for deallocating the memory that you allocate so I have allocated some memory in
+the constructors.
+I've got to be sure to deallocated in the destructor and that's exactly what I'm doing here.
+I've got a display method.
+This is a member method and the display member method just simply displays the string which is a C-style
+string and the length separated by colon.
+And then I've got some getters one just returns the length of the string which I'm determining every
+time dynamically and masking what the string length is.
+We could have had let me just come back and the ME did as well first.
+And the string returns a pointer.
+So I can pretend it returns it as a contest.
+We could have added another attribute here called length and we could have maintained that length of
+that string all along but chose not to do that.
+I'm just going to keep it as simple as we can and that's it.
+So let's take a look at the main and we'll run it.
+There's my name.
+You mean empty my string create Larry and then copy Larry.
+So when I run this you see the run says display the empty string and it's displayed right here obviously
+it's empty and it's like the 0 displayed Larry.
+There's Larry and its length is five and there is stooge.
+It should be Larry because I use the copy constructor again.
+Did a deep copy.
+And there's a five.
+OK.
+So that's it.
+That runs through this program as I said you may want to step through it until you become really really
+comfortable with it.
+It's a very very straightforward program.
+It's Cup.
+It's using everything that we've learned so far and what we're going to do now is start by overloading
+the assignment operators.

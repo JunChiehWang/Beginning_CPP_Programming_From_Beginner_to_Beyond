@@ -1,0 +1,22 @@
+In this section of the Course will learn about overloading operators in C++.
+C++ allows the programmer to overload most operators to work with user defined classes.
+This is intended to make code more readable and ridable by allowing the use of familiar operators in
+a familiar manner.
+But with our own classes and objects First we'll look at exactly what operator overloading is and some
+of the basic rules that C++ enforces.
+We'll start with the assignment operator the assignment operator is a very important operator and C++.
+It defines the semantics of what happens when you assign one object to another.
+C++ provides a default way of doing object assignment much as it did with the copy constructor that
+we learned about in the last section.
+However many times we want to be in control of what happens during an object assignment and we can overload
+the assignment operator to do exactly that.
+For example when we use raw pointers in our classes we must provide our own version of the assignment
+operator.
+Additionally we can override the assignment operator to handle both copy and move semantics as we did
+with the copy and move constructors in the last section.
+We'll learn how to do that in this section.
+We'll also see how we can overload other operators as both member functions and as global functions
+in a way we want to choose one over the other.
+We'll finish up this section by overloading the stream insertion and extraction operators so that we
+can easily use our objects with C++ streams just like we've been doing with the built in types.
+So let's get started with operator overloading.
