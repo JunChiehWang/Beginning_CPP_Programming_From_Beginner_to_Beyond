@@ -1,0 +1,211 @@
+This video we'll learn about static class members and how to use them in C++.
+In a C++ class we can have both static data and function members when we declare class data members
+is static.
+We're telling the C++ compiler that these data members belong to the class not to any specific object.
+So they're extremely useful to create class wide information.
+For example suppose we wanted to know how many player objects we have active in our application at any
+point in time.
+We could create a global variable and then incremented decremented in the code whenever we create an
+object or delete an object.
+This is really hard to do though since we really can't be sure when constructors are called and when
+destructors are being called.
+So a better solution is to create a static variable.
+That's part of the player class.
+And then we can manipulate that variable directly within the player class and then whenever we need
+to know how many player objects there are we can simply ask the player class.
+We don't even need any objects.
+In fact if the player count is zero.
+This means that there are no active player objects at all.
+So how could we modify our player class to support this.
+Let's start with the player class will create a player that h file with the class specification in a
+player's GPP file with the class definition.
+Now we need to add a static data member to the class.
+We can do this very easily by adding a private static int named non-players will initialize this to
+zero a little bit later since we can't initialize it right here.
+We also would need to declare a static class function that returns an integer.
+It will return the static integer We just declared.
+And you can see that at the bottom it is called Get non-players.
+Now let's head over to Player C P P This is where we want to initialize the static integer non-players
+to 0.
+Notice that the syntax might look a little strange.
+This is where you define that variable and assign it to zero in this case dismiss happened exactly once
+and it typically happens in the data file for the class.
+Finally we implement the static function get non-players.
+Since this function is static it only has access to static data members.
+It does not have access to non-static class data members.
+So in this function we simply return non-players.
+Pretty easy.
+There's only one part left to do.
+We need to increment and decrement the number of players whenever we create and destroy objects.
+The best place to increment the player count is in the constructor.
+In this case we simply increment non-players by 1.
+Be careful though if you have many overloaded constructors.
+Since you might have to increment non-players in more than one place.
+Basically anywhere you create an object will only have one constructor in the player class.
+And we're delegating to it from our copy constructor.
+So this is the only place we want to increment non-players in this example our original player class
+didn't have a destructor.
+It used the compiler provided default destructor since it was all we needed.
+However now we need to define our own destructor and decrement the number of players count when the
+object is destroyed.
+That's it.
+We're all set.
+Now we can use our player class and simply call player getting some players and it will return the number
+of active player objects.
+I created a simple helper function named display active players and any time I need to display the number
+of active players I simply call it.
+Now look at the main.
+The first statement is display active players and it will display 0 as we add and remove player objects
+will display active players and it will display the current number of active player objects.
+Let's head over to the IDM will take the existing player class through the process of providing this
+behavior.
+OK so the idea and I'm in the section 13 workspace in the static class members project and what I've
+done is I've created the basic player class and you can see here I've got three files players on H played
+on CBP and maned CBP and right now we're looking at player daat H you can see we've got our include
+guard here were included stream because we're using strings inside the player class and it's a basic
+player class that we've been using all along.
+It's got the string name the integer healthy integer XP and we've got a getter here and some constructor
+that uses default parameters a copy constructor and a structure that does nothing right now.
+And the C.P. file implements the constructor the copy constructor and it's got a an empty destructor
+right now.
+So what we want to do is we want to go to the player that h file and what we want to do as I said in
+the previous slides is to know how many players are active at any time so we need a counter type variable
+we could add that to objects because then each object would have their own copy.
+So we want to use static variable at the class level so that we now have a variable that applies to
+the inclined class.
+So we'll define that right here we'll make it private.
+And once you say static and then we'll call it non-players.
+Simple as that.
+Now you think that you could initialize it right here.
+But if you try that and try to compile it or get a compiler error that says that C++ forbids in class
+initialization of nonconstant members and you can't do that.
+So we'll get rid of that and initialize it in a second.
+In the cpp file.
+So that's my static variable that member and now this does not belong to any object.
+This belongs to the class and then we need to implement a static class function and we'll do that down
+here and we'll just call it static.
+It's going to return an int and it's going to be called Get non-players.
+Simple as that.
+Now one thing to remember because this function is static.
+It only has access to static variables.
+That makes sense.
+It doesn't have access to any object variables any of these guys name Health Expwy those belong to specific
+objects static only belongs to the class.
+This is a class function and it only has access to that static non-players.
+In this example we could have a lot of other static functions if we like but we they need the one in
+this example.
+So that takes care of the header file save that you now we'll go over to the TPP file.
+Now this first thing we want to do is we want to initialize that static variable here.
+And the syntax looks something like this.
+It the class name and the name of the variable name players.
+And here we can initialize it to zero.
+And now you can see that if I compile and run now I get a clean run from that.
+So that's initialize it only happens once.
+And the best place to do that is in the CTP file for the class that you're defining.
+OK.
+And then the last thing we'll do is well not the last thing but do the next thing we'll do is we'll
+implement the end player get non-players function and it's we do that again.
+Get non-players it's that function right here and we're going to implement that function so that it
+returns the number of players it has access to that it's a static variable.
+And that's really all we care about.
+Now remember we already defined that as a static method right here in player can see it's right here.
+So we don't have to say static again down here.
+That's it.
+Now what do we need to do.
+Well we need to increment and decrement the number of players depending on when we construct or destruct
+things.
+So this is the only constructor I have even when we've got a copy constructor that we create a copy
+of an object.
+We're still delegated to a player.
+So right here I want to increment the number of players.
+And in the destructor I want to decrement the number of players so that will take care of the semantics
+that I want.
+So at that point this class is done and we can now head over to the main class and test some of this.
+So the first thing we do in the main classes we're right a real simple function and we'll just keep
+calling that function and wherever we want to display active players it would just save us a lot of
+typing.
+So we'll call it void display.
+Active players
+doesn't expect anything and all we're going to do in here is we're just going to do an output statement
+and we'll say something like active players colon.
+And so now how do I know how many active players there are I don't have any objects to call.
+That's the whole point.
+I can simply say player and we need a scope resolution operator and then we can call the static method
+get non-players right here.
+That's going to return the integer that represents that static data member that we had in the class
+and we'll just supply an inline here.
+OK so now let's go to Maine and let's call that method which is called display active players.
+All right.
+We'll put a breakpoint in here so that we can walk through this.
+And let's run this and we have an error display active players who can't find it players.
+I spelled it wrong and Essop here and now we should be good to go.
+So let's step through it through the debugger and move this output window here over to the right again.
+And so what would we expect here.
+Well we're going to call display active players and display active players is simply going to be asked
+the player class to get the number of players at this point.
+We have none.
+There's no way we could have done this if we had an object right.
+Because there are no objects.
+So in this case we're calling player and asking the player class to give us the number of players and
+we expect this to display zero when we walk through it.
+We get active players zero.
+Just exactly what we expect.
+Now let's create an object and let's create a player and we'll just call it Hero and we'll give it the
+name here and we'll default everything else and then we'll call display active players again.
+So at this point we have one active player so let's debug this we'll step through it again.
+And right now again we're displaying active players.
+We're going to get back to zero.
+I'm going to create my player object.
+It exists.
+You can see it right here.
+So we expect that we've got the number players is one and if you look right here then you are a local
+variables pain.
+You can see that we've got that non-players static variable right here and we have access to it here
+so it's nice because you can actually see it.
+So at this point we run it.
+We get back to the one which is exactly what we expect since we do have one object.
+OK so let's let's do another example here.
+Let's create a local block here and we'll create another player and we'll call that player Frank.
+And again we defaulted to Frank
+and then will display active players right in here.
+Nimble will display it again when we leave the block.
+Now what we expect to happen here is we expect that this Frank object will be created in his local block
+will display.
+Now we will have to Optix right will display two objects.
+Then it's going to go out of scope and be destroyed.
+So when we get back to here I tend to display one less again.
+So let's do that one more time.
+We'll run through the debugger it will step through this one line at a time.
+Here we go display active players we expect they'll expand this year we expect it to display zero which
+it does.
+I just created the hero and I want to display the active players.
+I have one now I'm here I'm creating Frank and I'm displaying active players.
+I've got two and obviously I can refresh over here and I can see in both places that I've got two players
+that's that static data member right there.
+Now we expect Frank to go out of scope so the destructor will be called right.
+Just got called.
+So if we refresh now we've got to zero and we're back down to 1 and we display back down to 1 eventually
+will destroy hero again as well and we'll get down to zero.
+Let's do just one more little piece of code here and what we'll do is we'll do it right here at the
+bottom.
+Again we'll say player will create an enemy which is a pointer to a player that will create a new enemy
+and we'll just call him enemy and make them pretty strong.
+OK.
+And right now what we'll do is we'll display active players
+and then we'll delete enemy and it will display the active players one more time.
+OK.
+So let's walk through this one last time
+and you can see how useful using the static data members is some displaying active players.
+I get back at 0 I create player display to players again I get back to 1 which is what I expect I create.
+Frank So that gives me two objects and when I display them I get the two.
+Frank just got destroyed.
+So I'm going to display one again.
+Now here I'm going to create that enemy object on the heap since it's a dynamic allocation and I display
+active.
+I've got to again I'm going to delete enemy back down to 1.
+And at this point the hero will be the leader not back to zero.
+OK so there you go there's a simple example that's using the multiple files here to declare some static
+data members a static class function.
+And we've got a pretty useful little technique that's used a lot.
+Sometimes you really need to know how many of your objects are out there and this is really easy way
+to do it.

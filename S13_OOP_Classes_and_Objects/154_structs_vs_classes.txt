@@ -1,0 +1,35 @@
+In this video we'll discuss another way to create objects in C++ using a struct or structure.
+The struct comes from the C programming language.
+In C we create struct as a container for data much like a record in many other programming languages.
+C++ also support structure since it has to be compatible with C..
+However it adds the ability to treat struct very much like classes.
+Everything you can do with classes you can do with struts.
+The only difference is that the members of the struct are public by default whereas the members of a
+class are private by default.
+Here's a simple class declaration for a person class that has a string attribute called name and a method
+called Get named returns that name by default.
+Class members are private so if we create a p object that's a person and try to access name or call
+get name.
+The compiler will give us a compiler error saying that we don't have access to those private elements.
+Now let's see the same as a struct.
+Here we have person declared as a struct.
+We have the same attribute and the same member method.
+But now when we create the person object p and try to access its attribute or a member function.
+The compiler is OK with it.
+That's because the default access for a struct is public.
+That's it.
+That's the only difference between structuring classes and C++.
+But there's a few general guidelines that you can use to determine if you need a struct or a class.
+It would be appropriate to use a struct when you have passive data so the struct would act very much
+like a struct in C..
+It simply holds data and that data is public and since the data is passive You really don't need to
+create any methods in the struct.
+As for a class we've already seen many examples.
+If your objects are active or they have complex behavior then you should use a class and implement getters
+and setters and member methods as needed.
+These guidelines are very general but remember other C++ programmers will likely be modifying and extending
+your code.
+So don't use C++ in a way that's very different from what C++ programmers expect.
+For example don't use a struct and then make everything private in the structure so it behaves like
+a class.
+Just use a class instead.

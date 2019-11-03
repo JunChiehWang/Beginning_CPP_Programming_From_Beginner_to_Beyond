@@ -1,0 +1,50 @@
+In this video we'll learn about friends of a class in C++.
+Friends have always been a controversial topic in C++.
+The controversy is about encapsulation and whether friends violating cancellation or enhance it.
+You can decide where you are on this issue but friends are indeed part of the C++ language and it's
+important to understand them.
+So what does a friend of a Class A friend of a class is a function or another class that has access
+to private class members and that other function or class is not a member of the class that it's accessing
+In the case of friend functions.
+These can be standalone functions or member methods of another class and in the case of another class
+the entire class will have access to the private information of the class granting friendship.
+So as you can see friends have unfettered access to both public and private data members of a class
+but they're not members of the class.
+It's important to understand how C++ treats friendship in the big picture.
+First friendship must be granted not taken a class must explicitly declare its friends in its class
+declaration using the friend keyword.
+Friendship is NOT symmetric so if a is a friend of B that doesn't mean that B is a friend Devey.
+This must be explicitly granted.
+Friendship is not transitive.
+If A is A friend of B and B is a friend of C then A is not a friend of C again unless specifically granted.
+And finally friendship is not inherited So what does declaring a friend look like in C++.
+Here you can see the case of declaring a standalone nonmember function as a friend of the player class.
+Notice that the player class grants the friendship by declaring the function prototype preceded by the
+friend keyword.
+That's it.
+Now the display player function has access to everything in the player class.
+So in the display player function we don't have to go through public getters or setters to display the
+player information or set player information we can directly access to a private class attribute.
+In fact we can change them as well if we wanted to.
+Since the object is passed by reference in this case non-contest Let's see how we would declare a method
+in another class.
+As a friend in this case we're declaring the display player method of the other class as a friend.
+That method will now have access to everything in the player class and that method might be implemented
+as follows.
+Notice that it is indeed a member of the other class but you can use the player class as private attributes
+directly within it.
+Finally we can declare an entire separate class as a friend in this case.
+We declared the class other class as a friend of player.
+So all the methods in the other class will have access to the player class as private attributes.
+As you can see.
+Friendship is very powerful.
+It can bypass function call overhead associated with getters and setters and other class methods and
+allow direct access to private attributes.
+Sometimes we have classes that use other classes and writing code using getters and setters becomes
+long tedious and sometimes gives you overhead.
+However that shouldn't be the only reason for granting friendship friendship should be granted only
+when it makes sense in the design of your system and then only the minimal necessary friendship should
+be granted.
+We'll see friend functions again when we use operator overloading in the next section.
+
+  
