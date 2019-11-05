@@ -1,0 +1,290 @@
+In this video we'll learn how to overload the copy assignment operator the assignment operator is used
+by C++ when it assigns one object to another object.
+Don't confuse assignment with initialization.
+Initialization is done by constructors when we create new objects.
+The statement my string as two equals as 1 is not an assignment statement.
+It's an initialization statement because as to hasn't been created yet C++ allows us to use the assignment
+operator in this context but this assignment is really equivalent to my string as to from s one as shown
+in the comment.
+It will invoke the copy constructor.
+Notice the same it as two equals S1.
+This is a sign that says as too has already been created and initialized previous to this statement.
+So an assignment occurs when an object has already been initialized and you want to assign another object
+to it.
+C++ provides a default way of assigning one object to another.
+And if you don't provide your own overloaded assignment operator then C++ will provide a compiler generated
+one for you.
+This is very similar to what it did with the default copy constructor.
+The behavior for the default assignment is member Y's assignment which means shallow copying.
+If your class doesn't have raw pointers then the default assignment operator will probably be just fine.
+However in my string class we have a raw pointer so will overload the assignment operator so that a
+deep copies the pointer to data on the heap.
+So how exactly do we overload the copy assignment operator.
+First the assignment operator must be overloaded as a member function so we can provide a method prototype
+that has the general pattern shown in the top declaration.
+We then simply replace type with the name of our class.
+Notice that the name of the method is operator equal.
+That's how we declare methods and overload operators.
+The keyword operator followed by the operator that we wish to overload.
+So for the String class the overloaded assignment operator method returns a reference to a String object.
+This is important since we want to avoid extra copies if we return by value and we also want to allow
+chain assignments such as P1 equals P2 equals P3 we'll define this method in the next slide.
+But once it's defined we can write code like as two equals as one which assigns object as one to object
+as to.
+That's very readable and readable code and it feels exactly like if we were signing one of the C++ built
+in types.
+But now it's working with our own user defined classes.
+That's pretty easy and pretty neat.
+The compiler will actually convert the as two equals as one assignment statement to as two dot operator
+equal and pass in s one behind the scenes.
+Let's see how we would implement the copy assignment for my string class.
+Here's the code for the overloaded copy assignment operator.
+It looks complicated but it really isn't.
+We'll break this down into the basic steps over the next few slides.
+Remember the object on the left hand side of an assignment statement is referred to by the this pointer
+and the object on the right hand side is being passed into the method I've named the right hand side
+object r h.
+As for right hand side to be clear since we're assigning the right hand side object to the left hand
+side object we must make a deep copy of the right hand side object's attributes and copy them over to
+the left hand side opposite.
+So what does this mean semantically.
+Well the left hand side object or this object will be overwritten.
+So we need to deallocate anything it refers to on the heap.
+Then we have to allocate space in the left hand side object for the right hand side object's data.
+And then we finally copy the data over to the left side from the right side.
+Let's go over this code one statement at a time.
+Since I know it can be hard to follow when you're first learning this the first thing we want to do
+is check to see if we're doing self assignment for example P one equals p 1 or a signed p one to itself.
+We can easily check for that by checking the address of the left hand side object which is in the pointer
+this and comparing it to the address of the right hand object.
+If they're the same then we really don't want to do anything and we just return dereference this which
+is the left side object.
+If we don't have self assignment then we need to deallocate storage for this string since it's pointing
+to a string on the heap.
+We need to deallocate the storage otherwise when we copy the new data over well or from this memory
+and end up with a memory leak.
+Now the left side object is ready to be assigned from the data from the right side object but we haven't
+yet allocated storage on the heat for the deep copy.
+So we need to allocate enough storage on the heap that's the size of the string and the right object
+plus one since we need the space for the stream Terminator.
+That's it.
+Now we can do the copy we can perform the copy by copying over one character of time until we see the
+null character.
+But since we're using a C-style string we can simply call the string library method stood stream copy
+which copies the string from the right hand side object to the left hand side object.
+That's it we're done all we have to do now is return the left side object so we can support chain assignment.
+This may seem like a lot at first but it's a pattern or idiom that we always use in C++ when we're doing
+deep copy assignment.
+In this case we only have a single raw pointer.
+If your class has multiple raw pointers then don't forget to copy each of them.
+Let's go over to the idea and step through copy assignment using the debugger so you can see exactly
+how this works in life code.
+Ok so I'm back in the ID and in this case I'm in the section 14 workspace and I'm in the my string Dasch
+copy Dasch assignment project what we want to do now is we've got our mystery in class and it's really
+basic right now it's only got the constructor's the copy constructor.
+The couple of getters and the display just as we've seen before and what we want to do is we want to
+add the copy assignment operator we want to overload that an added to the class but before we do that
+let's talk about the semantics of exactly what we're trying to achieve.
+So I've written four lines of code right here in my main.
+I've actually got a lot more in the main which I will comment out later.
+So let's talk about these four lines of code and talk about it in the context of assignment.
+You can see what's going on here.
+I'm instantiating my object a it's a my string object and I'm initializing a total though.
+So when this line executes I will have something like this.
+I have my object it will have an s t r attribute which is a pointer.
+Hello will be allocated on the heap.
+Remember there's a null character there and so this is really six characters big and that as TR attribute
+will be pointing to it.
+So that's the condition that I'll be in.
+After the construction of the object then when we create the B object will be in a situation like this
+where this will be B.
+This will be here again.
+In this case I'm pointing to an empty stream because that's the how we defined are no args constructor
+so will be something like that.
+Remember the empty string consists of a single character with no character in it.
+Then we're going to execute this code right here B equals or assign a to b.
+In this case this is a assignment because B already exists B has been instantiated.
+So what we want to happen is.
+Couple of things first we want to be sure that we're not assigning to ourselves B equals B or A equals
+a.
+That's easy to do then what we'll do is we really want B to contain that hello right.
+But we don't want this situation like we had with a shallow copy.
+We want to create a copy of that Helo string on the heap.
+So in order to do that there's a couple of things I need to do.
+First of all I need to deallocate this right and this can be a lot bigger than just an empty string.
+This could be a very large string.
+So I want to deallocate that.
+Then I want to allocate space for 6 characters right because I'm copying Hello in there and hello as
+H E L L O and the null terminator.
+I want to be in this situation.
+I want to copy hello over and at this point.
+What we've got is this kind of situation.
+All this is gone now that's been deallocated so we don't leak memory there.
+And this is where we want to be with B.
+OK so that's where we're headed you can see the steps that we need to do visually here.
+We're going to do them in code next.
+Now this example here is also an assignment because we're assigning something to B and B already exists.
+In this case it's a little bit different because we don't have an operator equal that expects a character
+pointer right which is what this is right here C-style string.
+So what we need to do is we need to construct a temporary object using the overloaded constructor just
+like what we did over here and then assigned that temporary object to B and then that will eventually
+be destroyed the temporary object well.
+So that's it that's where we're going.
+Let me clear this and liberals start writing the code now and then once we're done we'll walk through
+this example.
+So let's start with our header file.
+What we need to do is we need to write the prototype here and I'll leave a little bit of extra space.
+What's really clear for the overloaded assignment operator.
+So we know it returns a string object by reference.
+We know that the name is operator equal.
+That's just the way we name operator methods in C++.
+That just tells the compiler they are overloading the equal or assignment operator.
+What does it expect.
+Well the right hand side remember the left hand side is this it's a pointer or the current object.
+The right hand side is simply going to be a constant.
+My string reference and all the right hand side we don't have to provide a name here in the prototype.
+I just say copy assignment.
+That's our prototype again.
+Be really sure that you understand this.
+We're overloading the equal operator or the assignment operator.
+The left hand side is the current object.
+The right hand side is what we're signing and we want this guy because we really don't want to mess
+with it it's not our object so I don't want to mess with it at all.
+Also remember this is not construction.
+This is assignment that left hand side already exists.
+Ok so now let's write the code for that copy assignment.
+Now I've made a little room here so that I can put in the code and we've also got some break points
+so I've already gone ahead and put one in.
+So what we'll do is we're now going to implement.
+That's all my string right where returning a reference.
+And this is operator equal.
+What does it expect just like the prototype conc to my string reference right hand side.
+Now the first thing I want to do is I just want to do a little output statement so that we know when
+this is being called.
+So I'll just say stood out and will just say something like copy assignment
+just stood in line.
+Perfect.
+So what do we need to do first.
+Well first thing we need to do is make sure that we're not assigning to ourselves.
+That's simple enough.
+If this I remember this is a pointer to the current object.
+So if a pointer holds an address so if this is the address of the right hand side.
+In other words we're really the same object.
+Then all I want to do is just return this.
+OK and we need to dereference this in this case.
+Remember if we just say return this this won't compile because then that means that this guy would be
+expecting a pointer back but we're.
+We're doing a reference back not a pointer.
+So we're going to pass the reference back.
+That's it.
+Now we start doing the real work first thing we need to do is remember that this object is the one that's
+being copied into.
+So it may be pointing to something right that as TR attribute maybe pointing to a string in it.
+Actually it is pointing to a string even if it's just an empty string.
+So what we need to do is just delete and make sure you use the brackets here because it's an array of
+characters we're deleting as TR.
+OK if this makes it more clear then feel free to use this keyword right there.
+It's all the same.
+Then we're going to say s t r equals new character ready to allocate to that array of characters on
+the heap.
+And how many characters do we need to allocate.
+Well we're copying the right hand side object data into it right.
+So the right hand side object has an as TR attribute.
+So how big that string is plus one because we need space for the string Terminator.
+So how big is this going to be.
+Well it's going to be
+take the string length of not as TR Right but right hand side as TR.
+And since we're a member method we have access to that and we want to add one.
+Perfect So now we've allocated the space that we need on the heap.
+The only thing left really is to copy that string over from the right hand side and just return.
+So let's do that.
+So what do Studd string copy to.
+As TR again you could say this to your if that's clear from our H.S. right hand side string.
+So that's the string copy string copy function simply copies one character at a time until it hits the
+terminating character.
+It copies that as well when it's done and the last thing to do is just return the object that we just
+copied into the left hand side.
+That's it.
+Let's go and run this.
+But before we do that let's actually debug it.
+So I'm going to go back to my man and let's start the debugger.
+So this is where we're at.
+Let's step through this so we can really understand what's going on here.
+At this point I'm on line 10.
+I'm constructing or instantiating that object right and I'm providing some initialization information
+the string.
+So in this case I'm going to call the overloaded constructor.
+So let's do that.
+Let's step through.
+There is the call to the overloaded constructor that expects a character pointer just like we expect.
+It's not no.
+So we're going to skip the part and we're right here.
+So how many characters would we allocating for this guy.
+Well whatever the string that was being passed in by post one for the null terminator and then we're
+just copying it over.
+So let's step through this and when we get back here you can see that a right here that s t tr attribute
+is pointing to the string Hello exactly like we expected.
+The B object.
+Same idea except recalling a no args constructor since we're not providing any permission and when we
+get back we expect B's string attribute to be an empty string.
+So let's do that.
+There you can see the no args constructor.
+It's simply creating one character and putting the null terminator in there.
+So at this point you can see that Bay is hello and B is that empty string right here.
+Now is the assignment of assigning a to b.
+So let's step through this.
+We expect operator equal to be called and that's exactly what happens right here on 938 of the copy
+assignment overloaded method.
+We display copy assignment.
+We're going to check for self assignment here we don't have self assignments so that will be skipped.
+Now we're going to delete the left hand side objects.
+String on the heap.
+So we're deleting that and at this point we're going to copy and you can see that the right hand side
+is hello and the left hand side right now is just pointing to garbage right.
+Because we've deleted that so it's invalid memory we're really pointing anywhere right now.
+So what we're going to do is simply replace that with an area that I'm creating on the heap that's going
+to store the string that I'm just about to copy.
+So let's do that now and then we're going to copy that string over.
+So at this point I'll refresh here.
+You can see that right hand side was still hello and now this is also Hello.
+And there you go.
+You can see from the addresses that they are indeed two unique areas in memory returning the object
+by reference and that's it.
+I'll refresh the site again and now we've got a and b and they should be the same a as Hello B is hello.
+And there again two different areas in memory.
+This example here.
+What's going to happen is unlined 14 is going to call the overloaded operator again to create that object
+and then once that object is created will assign it over so that temporary object is going to be assigned
+to cover so let's just walk through that really quickly here and you can see right here I'm calling
+the overloaded constructor which is going to create a temporary object and now that temporary object
+will be assigned so you can see the assignment operator being called now.
+So I walk through that again.
+We see what we're at.
+We move it over and we get rid of the temporary object that's the destructor being called right there.
+That's it.
+So we're done here.
+You can see a hello and B is.
+Now this is a test.
+And as we unwind we're going to call the destructor for B and the destructor for a in our program is
+done OK.
+So that gives you an idea of the assignment operator and the copy assignment operator is pretty straightforward.
+And what I've also done is I've created some other test cases here that you can walk through and learn
+from.
+And what I'll do as I'll just uncomment them out and then I'll run the program rather quickly.
+So what I've got is I've just got some examples of creating more objects and assigning objects to vectors
+and so forth.
+And you can see that when we do things like as equals change we're going to create a copy assignment
+and that's exactly what we want we don't really want to create that guy using the conversion constructor
+and then use a copy constructor to copy stuff over.
+We're just doing assignment and we don't want to do anything related to shallow assignment right.
+We want to do deep assignment.
+Otherwise we're going to end up with all kinds of problems.
+So I'll run this and there's the output.
+You can see that we've got copy assignment happening we've got Larry a bunch of times and like I said
+you can run through this and walk through it yourselves.
+It's really important that you step through a program like this he could really really understand what's
+going on.
+But you can see that copy assignment is called all over the place here because that's exactly what we
+want.
+OK so now in the next video what we'll do is we'll do move assignment which is pretty powerful and it'll
+take care of assigning temporary values much more efficiently than capias son.
