@@ -1,0 +1,247 @@
+In this video will overload the movie assignment operator for my string class.
+Remember the copy assignment operator that we just overloaded in the previous video works with l value
+references.
+The move operator that will overloading this video works with our value references.
+Again think temporary unnamed objects.
+You don't have to provide a move assignment operator and if you don't C++ we'll use the copy constructor
+by default.
+But as we said when we talked about the move constructor move semantics can be much more efficient.
+And it's not a lot of extra work to provide a move constructor and a move assignment operator.
+First let's see when the move assignment operator will be used in the code snippet in this slide you
+can see that we create a string object as one that's basically just an empty string.
+Now we assigned to my string object with the string Frank to it.
+Notice that to my string object initialized to Frank must be constructed and once it's constructed it
+has no name.
+It's a temporary object.
+So it's an r value that means that when we assign it to S1 the move assignment operator will be called.
+Since we're providing an r value reference let's see how to do this syntactically Lolitas the move assignment
+operator declaration is very similar to copy assignment but there are a few differences.
+First we use the double ampersand operator in the parameter list to tell the compiler that the right
+side object is an r value.
+So the right side value will be a r value reference.
+Second the right hand side object reference can't be Konst Since will be modifying that object when
+we move the data.
+So the declaration for the my string class returns a string object by reference and expects an r value
+reference to a String object.
+You can see that in the two assignment statements on this slide the move assignment operator will be
+called because the right hand side of the assignment statements are our values.
+So let's look at the code for the move assignment operator for this example as you would expect the
+code is very similar to the copy assignment.
+With the exception that we're not deep copying from the right hand side object.
+Instead we're simply stealing the pointer and the nulling out the right hand side pointer.
+Again you can see from this code how much more efficient This is compared to copy assignment.
+Let's walk through this one step at a time.
+First we check for self assignment just before and if we're self assigning then we returned the left
+hand side object and we're done.
+Since there was nothing to do otherwise we again deallocate the storage pointed to by the left side
+object.
+Since we'll be overwriting this and we don't want a memory leak.
+Now the left hand side object is ready.
+So let's move the pointer over.
+First we steal the pointer from the right side object and assign it to the left side object.
+This is simply a copy of a pointer variable.
+We're not doing a deep copy here.
+Then we know that the pointer on the right side object this step is critical.
+Finally we returned the left side object.
+Now let's head over to the ID and compare the assignment operator to the copy assignment operator in
+life code.
+Ok so I'm back in the ID I'm in the section 14 workspace in the my dash move dash assignment project.
+Now what I'd like to do in this project is add a move assignment operator to are my string class.
+This can be really useful when we're assigning R-value references.
+So let me give you an example of how this would work.
+Here we've created an object A and it's using an overloaded constructor that's expecting that character
+pointer and we're just constructing a simple object.
+A That's got that string attribute pointing to hello on the heap.
+Now at this point we want to use a sign that remember already exists.
+Now this would be assignment not initialization.
+And what I want to do is construct another my midstream object off of the initialization string.
+At this point that temporary object has no name.
+So it's an R-value.
+If we don't provide any move semantics then it's going to use a copy constructor or a copy assignment
+operator to do what it needs to do.
+And if I run this right now remember I don't have any move constructors.
+Sorry I don't have any move assignment operator implemented.
+So if I run this at this point you'll see that it's using copy assignment using copy assignment.
+Now we really could use move assignment here since we got this R-value references and that's what we'll
+do.
+So let's go over conceptually what's going on here again at this point we've created that object and
+it's on the stack.
+It's got as TR attribute which is a pointer.
+And once this object has been constructed that pointers point it to the string hello which is on the
+heap.
+And again remember it's got that null terminator at the end.
+So this is the situation once we instantiate a.
+Now what we want to do is we want to assign to a the object that we created right here.
+So let's create that object that object creates created exactly the same way as we created run it using
+the overloaded constructor.
+But it doesn't have a name.
+It's an unnamed temporary object.
+So I'm just going to leave it right over here like this without a name.
+It's got an AS TR attribute and it's pointing to Ola which is on the heap.
+So that's the situation like right now.
+Now what we want to do is we want to assign this guy over to this guy but we really don't want to do
+the overhead of copying because we don't need to this temporary object will be destroyed soon.
+So let's just use move assignment so that we can steal that pointer and not have to make any copies
+of anything or copy anything over.
+OK.
+So let's do that.
+How does this work.
+What are the semantics.
+Well the first thing we need to do is deallocate the space here.
+Right.
+We need to call the lead for this guy because we're not going to use that.
+That's the whole point I want to assign to it.
+So we're going to get rid of that.
+And what that's going to do it's going to leave us in this situation.
+Where we're no longer pointing to that area and then what we want to do is we want to steal the pointer.
+So I want to make this point here point to all the and then once that's done what I want to do is not
+delete this I don't want to delete this information here right.
+I don't want to deallocate that because I'm using it now over here.
+All I want to do is just KNOW out that pointer.
+So that's what I'll do.
+I'll just know this pointer out.
+So this guy is now.
+No.
+You'll notice a is now with a stream attribute and is not pointing to the correct string in the heap
+which is what I want.
+This guy has been called out so when it gets destroyed by the destructor it won't delete anything out
+there on the heap because it's not pointing to anything on the heap.
+So once this gets destroyed we're right back to here which is exactly where we want to be.
+And the same is true with the statement right here is your will create a temporary object.
+There is the s t r and it's going to be pointing to your
+right now when we assign over we'll do the same thing.
+We want to deallocate that storage right here.
+So we want to get rid of this.
+We want to move the pointer right.
+We just want to seal this pointer let it point over here and then what we want to do is set this point
+to right here to no right so we just move the data and simply by just pointing to it from a different
+place.
+This will be destroyed.
+And that's the effect that we want.
+Okay perfect.
+So now let's write some code for this and you'll see it's actually a little bit simpler even than the
+copy assignment.
+First things first.
+Let's go to the header file and you'll notice that I've already implemented a move constructor.
+I just wanted to be complete there so the move constructor has been implemented and it's about as dead
+simple as you can get.
+I mean what the move constructor looks like.
+It's right here.
+Remember this is a constructor.
+Now this is not an assignment so this is actually creating a new object based on an r value reference.
+So you can see right here on line 35.
+I'm stealing the pointer right.
+I'm taking the source object's pointer and moving it right twist here and then I'm nullifying the source
+subject point.
+So that's it.
+We just store the pointer that other object will eventually be destroyed.
+Let's write the assignment operator.
+So let's go back to our header file and we'll do it right here and we'll do something like my string
+reference because it's the same idea here.
+We're overloading operator equal.
+We don't want to be Konst here because we do need to modify that right hand sides.
+String attribute to knock it out.
+So it's simply going to be my string to ampersands here because we wanted our value reference right
+hand side.
+That's it.
+And we'll call this guy move the sun.
+All right.
+So now let's go implement that methods will go to my string BPP file and right underneath the copy assignment
+right here.
+I'll just put it right here on the move assignment and you can see I've already set some breakpoints
+just to save a little time.
+So let's implement this here.
+So what do we do.
+We're going to return to my string reference and it's part of the my string class we're overloading
+operator equal.
+And we're expecting my string r value reference.
+OK that's it.
+So first thing we do is as usual let's just put a string out Ansted at c out and we'll just say something
+like using move assignment.
+That way we know that we're actually in here and we'll put an end line here.
+Perfect.
+Now let's check for self assignment.
+I'll scroll up just a little bit here.
+We'll check for self assignment.
+So we're going to say if the current object right the address of this object is equal to the address
+of the right hand side object if that's the case I've got self assignment.
+So all I want to do is just return this in the case that we're not doing self assignment.
+Remember the conceptual drawing I just drew.
+So what do we want to do.
+We want to delete see you from the current object we want to steal the pointer.
+So we want to assign the right hand sides pointer to the left hand side pointer and we want to nullify
+the right side pointer.
+This was really really important if you forget to do this step then there's going to be problems because
+what's going to happen is when that temporary object gets destroyed it's going to take this data with
+it.
+So you want to be sure that this is pointing to nowhere.
+So right hand side string equals null pointer that's it.
+We return this.
+Now we'll step through this in a second but let's run it first.
+And now you can see the difference in the run using move assignment using assignment.
+That's exactly what we want.
+And then we've got two destructors being called for no pointers.
+Right.
+Which is again exactly what we want.
+All right so let me put a breakpoint here.
+And let's walk through this using the debugger some and go back to my main here and I'll start the debugger
+over here.
+All right.
+So this is where we're at right now we're about to call the overloaded constructor to create the A That's
+pretty standard stuff.
+Now here we are we don't have a null pointer so we're simply going to allocate space for the string
+and copy it over and we're done.
+So now a is hello you can see the address of that string attribute right here.
+Now what we need to do here is first construct that temporary object and then call the overloaded assignment
+operator right with an r value reference.
+That's exactly what this is this is an unnamed object.
+So let's walk through this.
+So first we're going to create the object using the overloaded constructor right here.
+So we'll walk through that.
+Allocate the space.
+Copy it over.
+It's done.
+Now notice that the move assignment operator gets called right away.
+That's exactly what you expect because we have an r value reference here which is a temporary unnamed
+object.
+So we display using move assignment.
+We check for self assignment which we don't have.
+We delete this as TR.
+Right.
+Remember this is this object right here.
+So we're going to delete that and deallocate it we're going to steal the pointer and then we're going
+to nullify that other point too.
+Now the temporary OBD-II is being destructed right here.
+And we do have a null pointer now because we know that you can see it zero right there.
+So this will print out calling destructor for a null pointer will delete the area and that's it.
+Now if we refresh or see that a now is all.
+So we did exactly what we said we were going to do here it's the same idea first we're going to construct
+a temporary object based on that string.
+So let's do that.
+Here we are we're in the overloaded constructor and that's going to create a temporary object with Bonjour
+in it.
+Then we call the move assignment again because we have an r value reference.
+And what we're going to do here is we're just going to steal that Bullen's your pointer first.
+We delete what we're pointing to right.
+So all eyes gone then we steal the bones your pointer.
+We set that temporary objects pointer to NULL.
+We return the object and then we're going to destroy that temporary object again the one that we just
+stole the pointer from We'll delete it.
+We're back and you can see now that A is on your will unwind now and it will destroy a.
+There you go.
+And you can see over here that we've got to move assignments three destructors to destroy and just null
+pointers temp objects and then the final one destroying the actual object that we created.
+That's it.
+So you can see it's pretty straightforward and we'll see that in the main driver here.
+I've got a lot more code and if you recall that code running from before.
+So I'll run this code again in the main Now that I've commented it.
+And if we remember when we ran it before it was use the copy constructor and copy assignment.
+Well in this case when we run it we're going to see a lot more moves semantics going on so I scroll
+up here and you can see that we've got move assignment move assignment move assignments move assignments
+move constructors.
+So this version is much much more efficient.
+And if you again walk through it check out the statements use the debugger if you like and really understand
+what's going on.
+But it's very very straightforward.
+In the case of our values we really want those move assignments and move constructors just to make our
+code so much more efficient.
