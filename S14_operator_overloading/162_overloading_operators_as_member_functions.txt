@@ -1,0 +1,258 @@
+Welcome back.
+So we've learned how to overload the copy and move assignment operators.
+Now let's look at some of the other operators in C++ lets us overload.
+C++ allows us to overload operators as member methods or as global nonmember functions.
+In this video we'll use member methods to overload operators and in the next video who overload the
+same operators using global functions.
+So let's start with the operators unitary operators work on one operand.
+Those operators include the increment decrement unitary negation and the bag or not operator.
+Notice the basic method declaration in bold in the case that we have to return a new object from the
+method will return the new object by value.
+Also notice that you remember methods have an empty parameter list.
+This is because the object we're working with is referred to by the this pointer.
+So here you can see the prototypes for the operators.
+If we wanted them to work with our hypothetical number class.
+Also notice that we can overload both the pre and post decrement and increment operators C++ simply
+provides an int that is it used in the parameters for the post-increment at the bottom of the slide
+you can see how we can use the operators as we do with the built in types and what methods are being
+called in the comments section.
+Suppose we wanted to overload the U.N.-Arab minus operator to work with are my string class and we want
+to make the stream lowercase whenever it's used.
+So we can create a mystery object named Larry one with the initializer string uppercase Larry.
+Then we can use the minus operator on Larry one and store the result in Larry 2.
+Now Larry 1 will still contain the upper case Larry string but Larry 2 will contain the lower case Larry
+string.
+This is a simple example of unitary operator overloading using member methods.
+However the question is whether this makes sense where programmers we can make anything happen in code.
+Does it make sense for the minus operator to mean make the string lower case.
+It depends on the context of the application and the design.
+Personally I'd prefer a method named lowercase or lower cased or to lower since that's very explicit
+but this might make sense in another design.
+Let's see how the code might look.
+Here's the code for overloading the unit minus to make a string lowercase.
+Notice the method header where returning a new object that will be the lower case copy of the existing
+object were overloading the operator minus We expect no parameters to this method and it's a Konst method
+since we don't want to modify the current object.
+We want to create a new object based on it.
+So the first thing we do is allocate space for an area in memory on the heap where we want to store
+the lowercase copy of the current object string.
+Then we use the Stood string copy function to copy the string over.
+Then we simply loop through the characters in the copy and convert each character to its lowercase equivalent
+using the character function to lower in the CC type header file.
+Once we have the buffer lowercase then we construct a temporary string object using this lowercase string
+as the initializer.
+Finally we delete the buffer we created in this method so we don't leak memory and we return the newly
+created lowercase object.
+We could certainly get more optimized code here but I wrote this method to show each step explicitly
+So that's the general pattern for overloading a unitary operator using a member method.
+Now let's see how we can implement some binary operators also using member methods as we know binary
+operators are applied to two operands.
+These operators include addition multiplication division the quality operators and many more.
+The pattern for overloading these operators is very similar to the way we overloaded you unary operators.
+Except that now we have a single parameter in the method parameter list.
+I've named this parameter r h s which stands for right hand side.
+That way it's very clear that r h s refers to the parameter on the right hand side of the operator and
+the pointer points to the object on the left hand side of the operator.
+Notice the overloaded addition and subtraction operators return the newly created some or different
+objects by value.
+Also notice that the quality operators return boolean values which makes sense since they're comparing
+things you can see in the bottom of the slide how these operators might be used in a hypothetical number
+class.
+Now let's see how we can implement the equality operator in my string class.
+In the case of my string objects.
+We want to compare the strings to see if they're the same.
+We don't want to compare the pointers.
+Instead we want to compare the strings that the pointers point to.
+Rather than write all the code ourselves we can use the Stood string compare function in the C string
+header file which compares C-style strings exactly as we need when we call that function with two C-style
+strings that will return 0 if the strings are equal.
+So this method becomes almost trivial to implement.
+We compare as TR from this object to SC or from the right hand side object.
+And if the result is zero we return true.
+Otherwise we return false.
+That's it.
+Now we can write code like if s one equals as two to compare to my string objects for equality.
+What if we wanted to write an overloaded equality operator for the player class well we'd have to decide
+what we want to compare.
+Are we comparing the names of two objects or the health or the XP or everything.
+This would be an important decision and the program is using the player class would have to be clear
+as to what's being compared.
+So they can use it correctly.
+Now let's wrap up the slides by overloading the addition operator for the my string class.
+Suppose we wanted to overload the binary plus operator for the my string class so that it concatenates
+the strings from the left hand side and right hand side objects into a new object.
+Then we could use this as in the example code.
+First we can create my string objects Larry and Moe and stooges then we can write a statement like Larry
+plus Stooges which will concatenate the string Larry and the string and stooges to create a new string.
+Larry is one of the Three Stooges.
+Notice that we can also use C-style strings on the right hand side.
+This is because we have a string constructor that can construct my string objects from a C-style string.
+That's pretty cool.
+The only limitation to overloading operators is member functions is that the object on the left hand
+side must be an object of the class you're using.
+For example the last statement in this slide won't compile since the left hand side operand is not a
+String object.
+We can get this to work in the next video when we implement operators has nonmember functions.
+OK so let's take a look at the code for this method.
+It's probably exactly as you would expect.
+We allocate a character buffer large enough for both of the strings plus one for the string Terminator
+that we allocate this but from the heap first we copy over the left side string withstood string copy
+and then we concatenate the right side string withstood string cat.
+We create a new object that will contain the concatenated string using the buffer as the initializer.
+And then finally we deallocate the local buffer area so we don't leak memory and then we return the
+newly created object by value.
+You can see that first.
+This looks complicated but the more you do it patterns evolve that are very very similar.
+Great so let's head over to the idea and implement these operators for the my string class as member
+methods.
+Case went back in the ID.
+I mean the section 14 workspace in the my strained dash operator dasht methods project in this project
+what we're going to do is we're going to overload three operator and as member methods.
+And the ones we're going to overload are right here.
+The equality operator that allows us to compare two objects as we can see here the negation operator
+the unary minus operator which in our case we're going to make whatever string we want to negate lowercase.
+And finally the concatenation operator will take two string objects and make a bigger string object
+from it that contains those two strings put together just like we've done before using the regular string
+class.
+And you can see we can extend this so we can have Moe plus blank Plus Larry post-playing plus curly
+and this is a C style string right here.
+So it will be pretty flexible.
+OK so why don't we start.
+We're going to implement them as member methods.
+So let's go to our header file and create our method prototypes here.
+In the case of the concatenation and the minus where we're going to make things lowercase we're going
+to return my string objects.
+So we create a string object and it's going to be returned by value.
+We want to create a new object right.
+We're going to take those two strings make a new one.
+Return it.
+We're going to take that one string.
+Make it lowercase into a new and return it.
+We're not going to change anything that we've got going already.
+So let's do the operator minus first.
+OK.
+So it's you know be the operator overloading again is operator followed by the operator we want which
+is minus in this case.
+And what are we going to be passing into this.
+Nothing that's a unitary operator.
+So we've already got what we need and the left side of the dot.
+It's important to understand that when we're overloading operators as member methods you unary operators
+take no parameters by unary operators take one parameter because this is already a parameter on the
+left side.
+And we want this to be Konst and this will mean to say make lower case version of the string.
+All right.
+Now let's do the concatenation operator.
+This is a binary operator so we need one parameter in this parameter list and that parameter will be
+Konst my string reference and we'll call it right hand side.
+Important that it's conc because we really don't want to mess with that.
+And then the last one is the equality operator.
+It will return a boolean true false value and it will be operator two equal signs.
+It's binary.
+So it's going to expect a constant five string reference right hand side.
+And we want this to be a Consta method as well.
+So I don't want to change anything.
+Actually I want this one to be Konst as well.
+That's it.
+So those are the three prototypes.
+Now what we'll do is we'll go to the mine string see if our implementation file and will implement those
+methods so let's do that now.
+OK so going to put them right here right after the overloaded assignment operators.
+It why don't we start with the overloaded equality operator.
+So that is again bull it returns a boolean.
+It's part of my string class.
+The name is operator.
+Two equal signs and it expects on the right side of my string reference to a constant we'll call it
+R H S and the method is a Konst method as well.
+OK so what do we do here well we want to compare those two strings right.
+The string in this and the string in right hand side.
+So all we really need to do is just simply say return and then we can call stood string compare which
+is a C string function that compares to see strings which we got.
+So as TR is one of them and right hand side that as far as the other one.
+And if that returns zero will return the value there.
+OK so simple as that we could use an if statement if we like but this works just as well.
+So that takes care of that and this will be it see quality.
+Now let's do make lower case.
+And in this case we're returning a string object by value.
+It's part of the my string class there's my scope resolution operator and it's operator minus nothing
+in the parameter list because it's a unitary operator and it's conc because we don't want to change
+our current object again.
+Now what do we have to do here.
+Remember we need to make a copy of whatever is in the current object.
+Make that lowercase and then create a new object from it.
+And need to allocate space to create that copy so that I can make lower case i don't want to change
+the objects because I can't write.
+I don't want to it's a contest method.
+So what do we do.
+Well let's create a temporary area in memory called Buff and we'll create a new array of characters
+there.
+And how big is that going to be.
+Well it's going to be as big as the length of the string and as to your plus one.
+And again we're using stood stranglings here given that string so if it's Frank I'm going to get back
+five allocate one.
+This is a brand new pointer to an area on the heap that I just allocated.
+It's local to this function.
+So when we're finished with the function we need to get rid of that and deallocate it.
+So now what do I do.
+Well at this point I need to copy the string that's in as TR to buff.
+OK now we've got a copy of that string so we can do now is we can just simply loop through that and
+set equal to zero.
+And then we can go while I is less than let's say the string length
+of s here or the string length.
+But actually they're both the same right now
+and we're going to go by one.
+That's it.
+Now inside the loop what we want to do is we just simply want to say buff Sabai equals the lower case
+version of it right so stood and we're going to do to lower it which is a function in the CC type header
+file.
+So we'll say to lower and to lower while the character itself of Sabai gets it.
+Now we've got what we need but now contains a copy of that original string and we've just made it lowercase.
+So what do we want to do.
+Now I want to create a new object a temporary object right on the stack here based on that information
+so I'm going to say my string would just call it temp and initialize it from above.
+Now we want to return 10 and then we'll be done.
+But there's one thing we need to do.
+And it's really easy to forget and it's this is one of the benefits of using smart pointers which we'll
+talk about later on in the course.
+Right here I allocated this area in memory.
+I have used it right here.
+I'm done with it.
+I need to deallocate that space otherwise I'll leave that memory.
+So I want to be sure that right here I delete buff and that's it.
+That takes care of that.
+And then the last method is the concatenate method which again is really straightforward.
+We're going to create a new string from it.
+So by value it's in my string method we'll call it OPERATOR clus and it expects something on the right
+hand side which is my string
+by reference we'll call it our age as is usual and it's a contest method as well.
+That's it.
+So what do we do here.
+Well Same idea here right.
+I just need to allocate an area in memory for characters with call it but again and how big is this
+going to be.
+Well this needs to be since we're concatenating and has to be this the length of this string plus the
+length of the right hand side string plus one.
+So that's all we're going to do.
+We're going to say new char how many.
+Well the length of the TR plus the length of right hand sides as TR plus one that allocates the storage
+on the heap that I need at this point I need to copy the first string and then concatenate the second
+string to as I can build the bigger string from it.
+So we'll say stud string copy into buff from the left hand side string which is S.R..
+Then we'll do a stud string cat to concatenate again into buff from the right hand side.
+TR perfect so what we've done now is we've just copied one string and concatenated the other.
+At this point we've got the information we need in buff to create that new temporary object and I'm
+going to return something we did appear so we'll build that object we'll call it temp we'll build it
+with the buffer information.
+Remember the leap but we're done with it now and return
+that temporary object.
+So that's it.
+We should be done unless there's any typos or let's compile and run and you can see here we've got a
+copy constructor being used.
+There is five moas three.
+We got back false and true exactly what we expected and we get Larry uppercase Larry.
+Lowercase L that we have Moe and Larry Moe Larry and Curly.
+So everything looks great.
+All right so there you go.
+That's an example of implementing these three overloaded operators as member methods are get a lot more
+chance to practice this when we get into the challenge exercice what we'll do in the next video is we'll
+do the same three operators but we'll do them as nonmember functions.
+
