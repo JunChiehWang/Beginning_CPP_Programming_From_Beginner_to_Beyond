@@ -1,0 +1,208 @@
+In the previous video we saw how we can overload operators using class member methods.
+In this video we learn how to overload operators using nonmember or global functions.
+Since these are not member functions we no longer have at this point to referring to the object on the
+left hand side.
+So since we very often need access to private attributes and the objects you see these non member functions
+declared as friend functions of the class.
+In many applications this isn't absolutely necessary since we can still use getter methods to access
+attribute values.
+But as I said you often see them implemented as friends.
+I'm going to declare these overloaded operator methods as friends when we head over to the IEEE so in
+the case of unity operators a single object does in the parameter list and in the case of a binary operator
+two objects are in the parameter list.
+So let's overload the minus operator to make a string lowercase as we did in the previous video.
+We want to provide the same functionality we did before and our use of the minus operator would look
+the same.
+Let's see how we can do this using a nonmember function in this slide.
+I'm assuming that this function has been declared as a friend to my string class.
+Since I'm directly accessing the private attribute as TR.
+Notice first that this is not a member function it's a regular C++ global function.
+The function returns of my string object by value and its named operator minus and it expects a single
+parameter.
+In this case RBJ is a mere string object reference.
+Now the code is essentially same as it was in the member version except that distrained data is in RBJ
+dot as TR rather than in this TR.
+We allocate storage on the heap copy the object string data loop through a make the copied string all
+lowercase.
+Then we create a new my string object using the lowercase string as the initializer deallocate the temporary
+storage and return the newly created object.
+Of course you can't have both the member and nonmember versions of this overloaded operator at the same
+time or the compiler would know which one to use.
+You can only have one or the other.
+You probably already figured out that overloading binary operators has global functions is basically
+the same except that now we have two arguments required by the function.
+The first argument is the left hand side object and the second is the right hand side object.
+Here you can see some example prototypes for some operators.
+Notice that they all have two parameters in the parameter list.
+I have named the first L H.S. for left hand side and the second RH has for right hand side that at the
+bottom of the slide you can see how these operators can be used and the functions that C++ will call
+when it uses them.
+Let's see how we can overthrow the equality operator as a nonmember function.
+Again I'm accessing a private attribute as TR in my string class so I'm assuming this function is a
+friend of my string class.
+The code is almost the same as it was for the member version except that now I have an l h s object
+instead of the this pointer.
+So we compare the left hand side string to the right hand side string using string compare as we did
+before.
+It's as simple as that.
+Finally let's overload the binary plus operator so that we can use it to concatenate to my string objects.
+We create Larry Moe and Stooges as my string objects as we did previously.
+Now when we use the plus operator notice the methods of the compiler is calling in the comments also
+notice that each is called with two arguments as we expect.
+Finally remember that with the member version the left side argument had to be an object of the class
+type with nonmember functions.
+This isn't the case either one or both arguments can be of my string type.
+However if you have to string literals that won't work C++ assumes primitive pointer and not objects.
+So let's implement concatenation as a non member function and the next slide.
+Here you can see that the function operator plus returns and my string object by value.
+It also expects to my string objects left hand side and right hand side.
+Notice that are both constant references since we don't want to modify them.
+The code now is exactly as it was for the member version except that whenever I need the left hand side
+object I use L H.S. instead of the this pointer.
+That's it again both a member and nonmember versions achieve the desired result.
+But remember you can only use one at a time.
+Let's head over to the idea and overload some binary operators is non member functions.
+OK so we're back in the ID I am in the section 14 workspace and the project is my stream dash operator
+dash functions.
+This is the project where we're going to implement those three overloaded operators equality operator
+the minus operator which makes the string lowercase and the plus operator which concatenates two strings.
+And this time we're going to implement them as non member functions are global C++ functions.
+First thing we're going to do is we're going to make them friends.
+We don't have to make them friends but it's going to be a lot easier to write the code and I'll have
+to call those getters all the time so we can do that right in the class.
+Remember the class has to grant friendship.
+So we'll write the function prototypes here and we'll start them off with a friend and we'll do the
+first one the first one is returns a boolean.
+The operator is the quality operator and remember now since this is not a member function we need two
+parameters.
+Right.
+This is a binary operator.
+So the first one will be Konst my string ref.
+L h s for left hand side and Konst my string graph right hand side right.
+So that's one function prototype will do the next one for the minus So again friend.
+This will return to my string object by value.
+The operator overloading is the the minus operator the unary minus and it expects a single my string
+ref and we call this will be J.
+We can call this anything we like.
+I think I called it will be J the slides so I'll call it over here.
+And then we've got another operator that want to overload in this case it returns on my string object
+by value again and this is the concatenation operator so it's going to be the plus operator and it's
+a binary operator so we've got conc to my string ref.
+Left hand side and Konst my string ref right hand side.
+OK so there we go.
+It doesn't really matter where you put these friend declarations in.
+Doesn't matter if you put them in the private area the public area doesn't matter.
+So there we go.
+Unless I have any typos that looks pretty good.
+Now what we'll do is we'll go to the mystery of CPV and implement those can really implement them anywhere.
+But since they really add to the interface of the class it's common practice to implement them right
+in here in the Dotsie BP file.
+I'm trying to implement them here at the end so let's do the first one that's to the quality.
+And again this is a regular function is not a member function.
+So we're going to say bool operator double equal size for the equality is a binary operator so it expects
+same prototype we did before.
+My string ref.
+Left hand side coxed my string ref right hand side.
+OK so now we'll write the code we're going to return.
+We're going to call stood string compare and what are we comparing We're comparing the left hand sides
+string to the right hand side string.
+See the difference between this one and the member function is a member function.
+We really didn't have this guy here that was the this pointer.
+So we did this as TR simply as TR But here we've got those two objects so that's what we're going to
+do.
+It's when you compare this to zero.
+And that's what we're going to return.
+And that should be done.
+Great.
+Now let's do the make lower case
+notice again this is not a member function if it was a member function it would look something like
+that right.
+It's not this is just a regular global function.
+So here's make lowercase make lowercase returns of my string object by value it's operator minus the
+unit operator overloading.
+And it's it's it's unir it is going to be one parameter in this parameter list and it's going to be
+my string ref and we'll just call this Scoby Jaffee that's what I call it in the slides and I'll stick
+to that name.
+That's it.
+Now let's write the code again again it's the same code we had before.
+We need a buffer area.
+And what we're going to do is we're going to allocate a new array of characters in that buffer area.
+How big.
+Well we're going to ask sturdiest you Ireland to give us the length of again what is this now.
+It's RBJ got asked here.
+Right now we have access to that because we're a friend and we're going to add the one for the string
+Terminator.
+Now that we've allocated the space we're going to stray copy into the buffer from RBJ asked here again
+that function copies one character at a time and then when it hits the Terminator copies that as well
+and stops.
+That's it.
+Now we'll loop through just like we did before.
+So we'll go from an unsigned int equals zero.
+While it is less than say that string length of fuf
+by one
+and for each iteration what we'll do is we'll just simply say buff Sabai equals we'll call stood to
+lower
+and we'll make the Buff's of a lower.
+That just makes it a lower case character.
+Right so now we've got what we need to build our temporary object temporary to this function that we're
+going to return.
+So my string temp will initialize it from buff it will return buff sorry little Richard.
+Now obviously we allocated space in here which we're done with so we need to delete but that way we
+don't leak memory.
+And I think that should do it again if we have some typos I'll fix them once I compile.
+And then the last one we'll do is the concatenation.
+So now let's implement this one.
+It's going to return to my string object.
+The operator overloading is the addition plus operator which means concatenation in this context.
+And we've got a binary operator right so we've got those two objects again in the parameter list.
+The left hand side and the right hand side both references.
+OK so now what do we do.
+Well let's allocate the space.
+Remember the space needs to be big enough to hold both those strings.
+We're going to concatenate.
+So we'll just simply say char buffer again and we'll create a new character array.
+How big is it.
+Well it's the length of the left hand side string plus the length of the right hand side string plus
+one.
+Now we've got enough space to put both strings in there.
+Now what we do is we just copy the first one over the string copy into buff from the left hand side
+object.
+And then we concatenate on the end of that using string cat from the right hand side object.
+Again we've got what we need to create our object.
+We're going to return now.
+So I will create my string and we'll just call it tempo and we'll initialize it with buff and then you
+get rid of that space in there.
+Perfect.
+Again we return temp but before we do that we've got to be sure that we delete the buffer so we don't
+leak memory.
+And that should do it.
+So let's give this a compile and we get a compiler error here if I need one more colon there.
+And I've got an extra parentheses.
+See what else we have here.
+Char
+and that should do it.
+There's my run.
+So what we're doing is recreating a string Larry which is Larry with an uppercase.
+Ellen we're displaying it.
+There you can see it then we're using the unary minus operator right here and we're negating Larry what
+that means is just make Larry with all lower case letters.
+And in this case we're assigning right back to LARRY.
+So what happened here is that you can see Larry print out right here and we using move assignment.
+So there he is got a lowercase l now and then we've got some some comparison operators that we're testing
+out here.
+So Larry right now is Larry and Moe is Mo are they the same.
+No.
+Is there the same as stooge.
+Yes because I assigned Larry to students you can see so they're the same.
+And then we've got a few more test cases here which are real simple here Larry plus smoe displays Stooges
+is Larry plus Moe.
+So when I display stooges you see here Larry Moe right no space between them because I didn't provide
+one here two stooges as Moe Plus space plus Larry and I display that.
+There you see Moe in a space and Larry.
+And then finally we're going to change some of these concatenates is so we have mo space Larry space
+curly and we've got Moe Larry and Curly notice Larry still has that little lower case L and Curly is
+a C style string and it works just fine.
+OK.
+There you go you'll have some more time to practice these in the challenge exercise where you'll be
+able to do some some overloaded member functions and some overloaded operators as member functions and
+others as nonmember functions.
