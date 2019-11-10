@@ -1,0 +1,161 @@
+The last operators will overload in this section or the stream insertion and extraction operators This
+will allow us to insert and extract our midstream objects to and from streams exactly as we've been
+doing with all of the other builtin types.
+You can see in this slide what the code would look like if we could simply insert our own user defined
+objects into an output stream.
+This makes our classes feel and behave more like a built in C++ Type Of course we could also overload
+the stream extraction operator so that we can read data from a stream and assign them to our own objects.
+Here you could see that we're reading data into Larry and hero in this example and the one of the previous
+slide we're using see out and see in what we can use other streams as well as well as redirect CNN's
+out to files and so forth.
+Before we start let's see why it really doesn't make sense to implement the insertion and extraction
+operators as member methods.
+Remember when we overload an operator as a member method the left hand side object must be an object
+of the class we're overloading.
+This means that we would have to write Larry on the left hand side of the output statement.
+While this will work it will be very strange for C++ programmers to use in this manner since it's not
+the way we use these operators with other values.
+The same is true for the extraction operator.
+So we're going to overload these operators as nonmember functions.
+Let's overload the stream insertion operator first.
+You can see that this is a nonmember function named operator insertion operator that has two arguments.
+The first argument is an output stream object by reference.
+This is type stood O stream.
+The second parameter is a reference to the my string object whose data we want to insert in the output
+stream.
+Notice that the reference is constant.
+Also notice that the function returns an output stream reference.
+This is important because we want to be able to change insertions as we normally do.
+It's important that we use stream references and we don't copy the stream.
+Then comes the easy part.
+But whatever data you like in whatever form it you like on the output stream as usual if this function
+has been declared as a friend function of the mystery class then you have access to all the private
+data members.
+Otherwise you have to use the public getters to get the information you need.
+And finally the last step is to return the output stream reference.
+That's it.
+As you can see it's very simple and very useful too.
+Now let's see how we can overload the stream extraction operator.
+Let's start by looking at the function signature the name of the function is operator extraction operator.
+The function has two parameters.
+The first is a reference to an input stream whose type is I stream.
+And the second is a reference to the object we want to extract data into.
+Notice that since we're going to modify this object we don't want it to be a contest.
+So depending on the data we want to read we can get the data from the input stream and either store
+it locally or store it directly in the object.
+In this case we allocate a large array of characters that will hold the data.
+We went to construct a string object.
+Then we simply create a temporary my string object and assign it back to the object that was passed
+in.
+This assumes we have copy or move overloaded assignment operators and they're implemented correctly
+since we have a raw pointer.
+Finally we returned the stream reference so that we can change a.
+We can do all sorts of error checking and setting and getting the state of the input stream.
+So we have control of the data we're extracting as well as overrunning the size of the buffer we created.
+Now let's head over to the idea and implement these two operators in my string class.
+Ok so I'm back in the IDM in the section 14 workspace in the my string Dasch insertion Dasch extraction
+project and what I've got here is I've got the mystery class again and I've got rid of all the operators
+that we've overloaded previously just so it's a barebones class again.
+And and the reason I did this is to make this sort of bit more readable.
+And what we want to do here is overload the insertion and extraction operator so we can use this these
+objects with streams really easily.
+So here's a sample main that's going to test this.
+And you can see here I'm creating Larry and Moe as my strings and Curly is an empty string right now
+and I'm outputting into the third Stooges first name.
+I'm reading from from standard in this case Cien into Kerley.
+So we're overloading the operator right there to work with my string object then I'm displaying the
+three stooges are Larry Moe and Curly again.
+We're using the insertion operator here that we're going to overload and then we're going to grab all
+three of the Stooges names so we say into the three stooges names separated by space ambil type in whatever
+we like.
+There'll be storage of Larry Moe and Curly in them or display them out again.
+OK.
+So pretty simple.
+And you can see this main driver here looks nice.
+Now we don't have all those dot display methods that we had before.
+Cool.
+So let's go to my string header file and let's get started here.
+First we want to do is I'm going to implement these as friend functions so the class is going to declare
+them as friends.
+So why don't we do that first.
+And what we can do here is just simply say friend and provide the prototype so we we're returning a
+stood O stream reference will do the insertion operator first.
+So we've got to reference the operator overloading is the insertion operator and it's a binary operator
+so we've got two parameters here.
+The first one is a pseudo stream and we can call this anything we like we can call it a lesser out typically
+does the names that are used.
+And we've got my string of Konst my string reference and we'll just call that right hand side.
+We'll stick to that naming convention.
+So that takes care of that prototype and now we'll do the extraction operator.
+So same idea friend in this case we're returning an input stream by reference again and the operator
+is operator and we be doing the extraction operator.
+And again we've got two parameters.
+The first one is the input stream reference.
+We'll just call that in and we've got a string object also by reference called at right hand side.
+Notice how this one is not Konst because I do want to modify that object based on what I'm reading in
+from the input stream.
+OK so that's it.
+Those who are to function prototypes.
+And now what we can do is we can go to the implementation file on my strengths GPP file and will actually
+write these.
+I'm going to put them all the way on the bottom here that we have got a lot of room to work.
+So let's say that this is the overloaded insertion operator that one first.
+All right.
+So same type of function prototype Ramstad stream reference the operator overloading is the insertion
+operator and we've got the same two parameters that we had before that got an O stream reference
+and we called it O S I believe.
+Yes we did and a concert.
+My string class by reference right hand side.
+There we go.
+OK.
+So now this is probably one of the simplest methods to implement.
+All we're doing is we're putting on OS are Remember this is a friend so we can simply say all right
+hand sides as TR That's it.
+If it wasn't a friend we could use the get c r method and then we're going to return that output stream.
+That's it.
+Pretty straightforward.
+Now let's overload our extraction operator
+and we'll do the prototype again here.
+So it's a good ice cream reference.
+The operator overloading is the extraction operator and we also have two parameters right the first
+one is a stood stream reference and we'll just call that in and we've got the my string ref right hand
+side.
+Again this one can't be conc because we're going to read into it or change it.
+That's it.
+So now we're going to get a string from the input stream.
+We need to store that somewhere.
+So let's create a pretty big size buffer here and we'll do this dynamically on the heap.
+We'll just store thousand characters that should give us plenty of room.
+We could certainly do this in a different way so that we don't overrun this buffer and just do it like
+this because it's a simple example to understand.
+Now we get whatever's in the input stream and we started buffer.
+Right now we've got the buffer it's got the data that we want.
+And what we want to do is we want to update this right hand side objects string based on this data.
+Right.
+So there's a lot of ways to do this.
+One of the simplest ways to do it is just to say are a chess equals my string and initialize it with
+buff.
+Now depending on whether you've got copy assignment or move assignment that's what's going to happen
+here we've got both.
+So this is going to use move assignment which is super efficient.
+We're just going to steal that pointer when we're done.
+We make sure that we delete this temporary stores that we created and buff and we return the input stream.
+Remember this is going to return it by reference and that's it we should be done that's run this and
+see if we have any typos.
+And we do I spelled operator incorrectly I believe.
+Sure did.
+I'll fix that real quick.
+See if there's any other errors down here.
+I think correlated to that same error.
+So let's run this.
+And here we go into this the third Stooges first Nabl the third Stooges curly notice we use the move
+assignment which is what we expected that move assignment happened when I copied that object out.
+Now it says into the three stooges names separated by a space Wallaces give them different names.
+Let's say it's Frank Jim and Joe.
+So you can see three move assignments there and says the three stooges are frank Jim and Joe.
+So there you go.
+We've overloaded the insertion and extraction operators to work with our classes.
+And it really feels like it's part of the type system now.
+All right.
+So that's it for this section the next part is the challenge exercise.
+So I'll see you there.
