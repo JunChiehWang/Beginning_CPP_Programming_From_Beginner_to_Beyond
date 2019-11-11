@@ -1,0 +1,26 @@
+In this section we'll learn about one of the most useful features of object oriented programming languages
+inheritance conceptually inheritance is easy to understand.
+However inheritance in C++ can be very complex.
+We'll keep it simple in this section so that the basics of inheritance and C++ are clear and you can
+have the foundation to study more advanced concepts in more advanced courses.
+First we'll look at what inheritance is and why it's so useful.
+Think re-usability and then we'll discuss some of the terminology and notations used when talking about
+inheritance.
+Aggregation is also a re-usability mechanism and we'll see the difference between inheritance and aggregation.
+Since many times we can use aggregation instead of inheritance to achieve what we want and avoid unnecessary
+complexity.
+Then we'll get into the syntax of inheritance in C++ or learn how to derive one class from an existing
+class and discuss the three types of inheritance provided by C++.
+You may recall when we talked about the public and private class access modifiers in Section 13 I mentioned
+that there was a third type of access modifier named protected.
+Well protected is used in the context of inheritance and we will see how it can be useful in that context
+in this section.
+Then we'll look at constructors and destructors and see how they work when we've got inheritance hierarchies
+with inheritance.
+We can create new classes that modify the behavior of their parent classes so we'll see how that works
+and how it can be useful.
+Finally we'll talk about what class hierarchies are and we'll do a short introduction to multiple inheritance.
+Once we understand the basics of inheritance in this section the next section will really open up the
+power of C++.
+When we talk about polymorphism when it's used with inheritance and polymorphic methods.
+So let's head to the next video and see what inheritance is all about.

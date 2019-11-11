@@ -1,0 +1,135 @@
+It this video will learn some of the terminology and notation used with inheritance.
+
+The terminology we use is pretty straightforward but it's important that it's clear since she'll be
+
+using it throughout your career as a C++ developer.
+
+First let's review inheritance as we've already seen inheritances the process of creating new classes
+
+from existing classes.
+
+It's a mechanism that allows us to reuse existing code when we use inheritance to create a new class.
+
+There may be several classes involved in this course.
+
+We'll mainly talk about single inheritance.
+
+That is when we create a new class based on another single class multiple inheritance is when we create
+
+a new class from two or more other classes.
+
+The classes that are involved in the inheritance relationship also have terms associated with them.
+
+The base class is the class being extended or inherited from these classes also referred to as the parent
+
+class or superclass in the inheritance relationship the derived class is the class it's being created
+
+from the base class.
+
+This class will inherit the attributes and operations from the base class and this class is also referred
+
+to as the child class or the subclass.
+
+You can see in the diagram the commonly used notation used to express this inherit its relationship.
+
+We draw a solid line between the base class and the derived class with a closed unfilled arrowhead or
+
+a triangle pointing to the base class.
+
+This is a UML class diagram and can also show much more information about the classes we're modeling
+
+a very important concept to understand is that of an is a relationship with object oriented programming
+
+and inheritance.
+
+When we use Classic or public inheritance our derived classes are generally subtypes of their base classes.
+
+This implies an is a relationship so a circle is a shape.
+
+A savings account is an account.
+
+This very simple concept will provide us with a great deal of power.
+
+We learned how to leverage.
+
+This is a relationship and the next section of the course when we learn about polymorphic functions
+
+generalization is about combining similar classes into a single more general class based on the classes
+
+common attributes the more general classes is obviously more abstract and can therefore potentially
+
+be reused more easily.
+
+Specialization is the opposite of generalization.
+
+This is about creating new classes from existing classes and these new classes generally add attributes
+
+and operations to the already inherited ones as programmers and designers.
+
+We use both generalization and specialization to create inheritance hierarchies inheritance hierarchies
+
+is how we organize our inheritance relationships so that we can more effectively organize and reuse
+
+our code.
+
+Let's see a simple example in this example we have classes A B C D and D and we have public inheritance.
+
+That is is a relationships between derived and base classes.
+
+You can see that class A is not being derived from any other class.
+
+This class is often referred to as the root class in the hierarchy.
+
+B is derived from A.
+
+C is also derived from a D is derived from C and is derived from D.
+
+You can see the class hierarchy in the diagram.
+
+Notice that the higher up we go in the hierarchy the more general our classes are and the lower we go
+
+in our hierarchy the more specialized they are.
+
+Also notice the is a relationships.
+
+In this example B is an A.
+
+C is also in since they're both derived from the class A and E is a D because e is derived from class
+
+D.
+
+Now notice that E is also a c.
+
+Since inheritance is transitive.
+
+In fact in this example E is also an A.
+
+However Class B is not a C.
+
+There is no inheritance relationship directly between B and C..
+
+Let's look at a more concrete example.
+
+In this example we have a root class person.
+
+That's the most general or abstract class in this class hierarchy.
+
+We can see that student is derived from person.
+
+So a student is a person and inherits the attributes and operations of the Person class.
+
+We also see that employee is a person and faculty staff and administrators are derived from employee.
+
+So they are employees.
+
+In fact there are also persons but notice that a student is not an employee in this class hierarchy.
+
+Also notice that the is a relationships are not bi directional.
+
+For example a person is not necessarily an employee because they could be a student.
+
+You can see how useful a class diagram can be since it provides a high level structural overview of
+
+the classes and their relationships in the next video will look at another way of using classes in C++
+
+called composition and see how it differs from inheritance.

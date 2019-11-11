@@ -1,0 +1,59 @@
+In this video we'll look at how we can use both inheritance and composition to reuse existing code and
+our projects.
+We've already seen what public inheritance is and how it can help us create class hierarchies that provide
+general and specialized functionality.
+Public inheritance creates an is a relationship between the derived and base classes and with inheritance
+we automatically inherit all of our base classes attributes and operations and we can see examples like
+an employee is a person a checking account is an account.
+A circle is a shape.
+However sometimes we want to reuse existing classes but the relationship really doesn't apply.
+For example suppose that all persons have an account.
+I can't really say that a person is an account or an account is a person.
+Since that doesn't make sense.
+Instead we can use composition to model this relationship.
+Composition creates a has a relationship between classes.
+For example a person has an account.
+A player has a special attack.
+A circle has a location.
+You get the idea using a combination of inheritance and composition.
+We can express complex relationships between classes and leverage code reuse.
+But see an example in this example we have the person hierarchy we saw earlier.
+Note the inheritance relationships are modeled with the triangle pointing to the base class of the relationship.
+As we mentioned in the last slide it wouldn't make sense to introduce another inheritance relationship
+between person and account since it is a relationship just doesn't apply.
+So we use composition instead.
+Notice the association between person and account.
+It's modeled as a solid line.
+No inheritance triangled this time.
+UML provides several different types of notations to model associated classes that don't have an inheritance
+relationship.
+These are aggregation Association and composition.
+You can learn more about these in an object oriented design course but will use the term composition
+to simply mean a has a relationship and we won't be concerned about whether the account object can logically
+exist without being associated with the person object.
+So what we're describing here is that a person has an account.
+That's exactly what we want.
+So does a student also have an account.
+Yes because a student is a person.
+What about a faculty member.
+Yes because a faculty member is a person.
+Notice that we create the association at the most general class in the hierarchy where it applies.
+Since it will also apply to its derived classes we've actually been using composition all along when
+we model class data members we're using composition.
+Many times the instance variables are primitive types so we don't include them in class diagrams.
+But the concept is the same.
+So when do you choose inheritance over composition.
+Many times it's easy to decide if the is a relationship doesn't make sense.
+Then don't use public inheritance.
+Other times it's not so clear a rule of thumb when using inheritance is to step back look at your design
+and be sure that the inheritance is appropriate.
+If you can model the relationship with composition then you should consider doing that first since inheritance
+adds more complexity to your design.
+In this case an inheritance relationship between student and account simply doesn't make sense.
+So we use composition
+Here's how the class person might be declared using composition.
+Notice that it's pretty much what we've been doing so far in this course.
+Composition is a common design pattern for reuse and you'll see it used much more frequently than inheritance
+but we can use both inheritance and composition together to create powerful frameworks that allow us
+to reuse existing code.
+Ok so in the next video we'll see what the syntax of inheritance looks like in C++.

@@ -1,0 +1,81 @@
+In this video we'll see what inheritance is all about in Object Orientation.
+Inheritance provides a method of creating new classes from existing classes.
+These new classes contain the data and behaviors of the existing classes.
+So as you can see that allows us to reuse or inherit data and behaviors that already exist.
+More importantly where we're using behaviors that have been tested and have already been used in existing
+applications that's great but it wouldn't be very useful if I only inherited data and behaviors and
+that's it.
+But with inheritance we can modify the behaviors however we'd like to make our newly created classes
+unique.
+So the new class is based on an existing class but we can tweak it so that it does exactly what we want
+it to do and we can do this without modifying the source code of the original class.
+We're reusing.
+This is important since that class has already been tested and it's probably being reused by other applications.
+So we really don't want to modify it at all.
+Of course inheritance must make sense.
+We don't want to reuse a class employee and create a new class planet that contains the data and behaviors
+of an employee.
+Let's see some examples of classes that are related somehow.
+In many applications when you're designing your solution you can identify classes in your application
+that are related to one another.
+Sometimes the relationship is clear and other times the relationship might be less clear.
+This line provides some examples of related classes in a game application.
+We might have player enemy level boss hero and super player classes.
+These classes may have attributes in common such as health Expwy their position in the game world and
+so forth.
+In fact maybe the classes are all specializations of that player class in a banking application.
+You might have different types of accounts.
+Some may have specialized business rules for withdraw deposit minimum balances interest rates and so
+forth.
+But again maybe all accounts have a balance and provide the withdraw and deposit behaviors.
+Usually we can find commonality among these classes and we can leverage that in a graphics or drawing
+application.
+We may have many different types of shapes that we can draw such as lines ovals circles squares and
+so forth depending on our application.
+Maybe we can identify common attributes that all shapes have perhaps their color.
+They must be drawable you should be able to rotate and transform them and as you can see in the last
+example maybe we have an application for university personnel system.
+You might have person employee students faculty staff administrators and so forth.
+You get the idea.
+Related classes are all around us when we develop software.
+Sometimes it makes sense to extract out common elements of related classes and model them on their own
+so we can reuse them.
+Let's look at the account classes in more detail.
+Here we can see that our application has several different types of accounts.
+We have a basic account that has balance in a way to deposit and withdraw funds.
+We also have a savings account object that also has a balance but an interest rate as well and the deposit
+and withdraw behavior might be a little different from those in the account class since they have to
+consider the interest rate checking account also has a balance.
+But maybe you have to keep a minimum balance and there are per check fees so the deposit and withdraw
+behavior for the checking account will be different from both the savings account and the regular account.
+Finally maybe we have a trust account that has a balance and the deposit functionality is just like
+an account but to withdraw only allows three withdrawals per year of a maximum of 10 percent of the
+account balance.
+You can see that these types of accounts are very different but they also have some common attributes
+and behaviors.
+Let's see how we could model these accounts without any inheritance any reasonability
+what we could do here is we could create four independent classes account savings account checking account
+interest account and implement them all totally independent from one another.
+Sure this will work but we'll surely have code that's duplicated across these classes since some of
+the behavior and some of the data will be common.
+Let's see how we can use inheritance to allow us to reuse the account class.
+We'll look at proper C++ syntax for inheritance in a few videos.
+For now let's just look at this from a conceptual view.
+We have an account class that models a balance and provides a simple implementation for withdraw and
+deposit.
+Now we can use inheritance to create a new class savings account based on the account class.
+So the savings account will inherit balance and the implementations of withdraw and deposit provided
+by the account class and the idea is that now we simply add the interest rate attribute to the new savings
+account class and implement its own version of deposit and withdraw.
+The same idea applies to the last two examples.
+A checking account is created using the account class as a base and then it adds what it needs and modifies
+the behaviors to meet its requirements.
+Finally the trust account adds and interest rate and implements the logic and the withdrawal method
+that supports the business logic.
+You can see that these classes are now interrelated.
+In this case the savings account checking account and trust account classes depend on the account class
+and we have an inheritance hierarchy.
+In this case it's router that the account class will talk more about inheritance hierarchies in an upcoming
+video.
+So now that we understand what inheritance is let's go over some of the terminology and notation used
+in the next video.

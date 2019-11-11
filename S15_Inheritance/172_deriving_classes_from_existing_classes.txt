@@ -1,0 +1,206 @@
+In this video we'll learn the C++ syntax for deriving classes from existing classes using inheritance.
+First we start with the class declaration for the base class.
+This is the class that will be creating the new class from this class will have its own member data
+and methods as we've already learned in this course then we declared the new class derived in this case
+followed by a colon then an access specifier and the name of the base class the access specifier can
+be public private or protected.
+If you don't provide an access specifier private inheritance is used.
+Let's see what the access specifiers do.
+C++ allows for three types of inheritance public private and protected.
+This is very different from many other object oriented programming languages.
+Most other object oriented programming languages only support public inheritance.
+Public inheritance is the most common form of inheritance and it's the type of inheritance that will
+most often see used in C++.
+Public inheritance establishes an is a relationship between derived and base classes and it's the type
+of inheritance we'll focus on in this course.
+Private and protected inheritance establish a derived class has a base class relationship and is often
+used to implement one class in terms of another private and protected inheritance of beyond the scope
+of this course.
+Let's see an example of deriving a savings account class from an account class using public inheritance.
+Notice that we're assuming that we already have an existing account class and it's got its own member
+data and methods and we want to reuse it.
+Now suppose we want to create a savings account class that has much in common with an account class
+but it also has some more specialized behavior.
+We can declare the savings account class then provide a colon followed by the public access specifier
+and finally the name of the base class.
+This establishes an is a relationship between savings account and account.
+Now a savings account inherits everything in the account class and it's free to implement its own specialized
+behaviors based on the behaviors it inherited from account.
+Of course we now have two classes in our application so we can create account objects as in this slide.
+We assume that we have no args constructor and the deposit and withdrawal methods handle deposit and
+withdraw funds to an account we can create account objects on the stack or on the heap via a pointer
+and call these methods as we need.
+We also have a savings account class so we can create savings account objects.
+In this case the specialized deposit and withdraw methods of the savings account class will be used.
+So as you can see conceptually inheritance is pretty simple.
+However the nuances of inheritance can get very complex.
+Let's head over to the idea and create account and savings account classes and then we'll learn about
+protected member access specifiers in the next video OK so I'm in the code light IDM in the section
+15 workspace indeed driving are first class project and what I've done is I've created a real simple
+account hierarchy with two classes and it really does nothing.
+It just has a couple of deposit withdrawal methods that just say Hi I'm deposit Higham withdraw just
+so we can see them being called and then what we'll do is we'll tweak this just a little bit so that
+we can add some attribute so you can really understand what's going on here.
+So let's take a look at the account class first.
+This is our base class.
+Notice that there is nothing going on here.
+Everything's public.
+We'll worry about protected and private in the next couple of videos.
+But right now all we've got is a deposit method of withdrawal method no args constructor and a destructor.
+OK.
+So let's take a look at the implementation.
+And as you can see the constructors and the structures are just there with no code.
+Our deposit method just simply says account deposit called with whatever amount we called it with.
+And the withdrawal method says account withdraw called with that same amount.
+So can't get any easier than this.
+So now we're going to do is we're going to derive a savings account from an account.
+So what we'll do is we'll create a savings account Hetter as well as implementation files.
+And you'll notice right here in savings account we're including the countdown H.
+Right we've got to include that header file.
+Otherwise this class of the compiler won't know what an account is.
+And here's the syntax class savings account.
+That's the class we're deriving.
+And then public account account in this case is the base class and you can see that this class is also
+really simple.
+It's got no args constructor it's got a destructor and it's got its own version of deposit and its own
+version of withdraw and the implementation.
+Again the constructor and the destructor don't have any code in the body.
+The deposits simply says savings account deposit called with amount that would be the difference between
+when the account deposit method is called in the savings account deposit method is called.
+And the same for withdraw.
+OK good.
+So now let's take a look at our main It's just a real simple man that exercise is some of these classes.
+So what we'll do here is create an account object right here named A.S.C..
+And again this is an account this is our base class.
+This is not using inheritance right here right.
+This is just instantiating a base account.
+And then I'm going to call deposit and withdraw what we expect there is for the deposit and withdraw
+methods of the account class to be called and we'll do the same thing here with a pointer just so you
+can see that it works exactly the same way with the pointer.
+Then what we'll do is we'll do the same but with a savings account.
+So we'll create this object right here a savings account and it will be a savings account and we'll
+call the deposit and the withdrawal methods for the savings account and what we expect there is to see
+the output saying savings account deposit savings account withdrawal.
+And again we're doing down here with the pointer so I'm going to build and run this and we'll take a
+look at the output and then what we'll do is we'll modify these files just a little bit so you can really
+understand what's going on behind the scenes.
+Okay.
+So there's my output and I'm going to move this just next to the main So we can see exactly what's going
+on.
+Here we go so we're creating the A.S.C. object and we're calling it deposit and withdraw on it and you
+can see right here we're calling the account deposit and the account withdraw.
+That's exactly what we expect because A.S.C. is an account object.
+In this case there is no inheritance going on.
+I'm simply using a base class as I've used all along.
+And down here you can see these last two statements right there for the account is just using the pointer.
+OK so now let's take a look at the savings account.
+So here's the savings account right here and I'm creating a save account object right here and then
+I'm saying saving you count that deposit saving account withdraw.
+So in this case I expect the savings account versions of those methods to be called.
+You can see that that's exactly what's happening here.
+OK.
+So again the account is the more general class the savings account is a more specialized class.
+And since we've got those methods that we've specialized in the savings account plus those are the ones
+that are being called right here.
+OK so hopefully that's clear.
+Now let me make a couple of small changes and then we'll run this through the debugger so you can see
+the structure of these classes.
+So let's go into the account class and what we can do here and again I'm going to keep everything public
+for now will change that in the next videos.
+What I'm going to do here is I'm simply going to create a double balance and string name just for a
+real simple name for an account and let me.
+That may include the string Hetter
+OK so now we're saying that all accounts have a balance and all accounts have a name.
+We obviously need to initialize those.
+I'm just going to initialize balance to zero and name to something like an account so we can do that
+in our implementation file right here.
+We can do it right here in the no args constructor.
+We can simply say balance is zero and name is an account or something anything really.
+OK so that's it.
+So now we'll go into our savings account and we'll say OK a savings account will also provides its own
+version of functionality.
+Remember this is the specialized class.
+So let's say that a savings account has an interest rate and it's a double.
+So obviously what will initialize that is well we don't want it to have garbage data.
+So we're going to come into our implementation file and we'll do that right here using an initializer
+list will say interest rate.
+And I don't know let's say it's 3 percent interest.
+Okay perfect.
+Now if we run this we should get exactly the same output because these being changed output statements
+really on display interest rate or name or anything else.
+So let's just be sure that it runs.
+There's I believe there is a run and again nothing here has changed.
+But let's take a look at this in the debugger.
+So let me close this up real quick and I'm going to go back to my main and what I want to do is I want
+to put a couple of break points here.
+We'll put a break point right here on 9:14 where we're actually creating that account object.
+We'll put another breakpoint right here on line 29 where we're creating the savings account object.
+And what I want to do is debug this and I'll start it.
+And I'm really not interested in the output.
+What I'm interested in here is a local variable so that's where what we're going to concentrate on.
+So we're in line 14.
+I'm just about ready to execute that line that that's going to instantiate or create that account object.
+So I'm going to go next.
+Now it's created.
+Let's take a look at it.
+There's a c c it was just created you can see the balance is zero and the name is an account member
+the name is a C++ string.
+Perfect.
+Now I'm going to come down here to 9:29.
+I'll just keep hitting next as I get to it and what's going to happen when I get here is I'm going to
+create a savings account object right here.
+So I'm going to press next.
+Now that savings account has been created it's called Save underscore account.
+I'll refresh this.
+And let's take a look at it.
+Remember what account was zero an account.
+Now let's look at savings account.
+Notice that savings account has an interest rate right.
+That's what it brought to the table.
+But it's also an account because we've got inherit and so everything that was in my parent is in me.
+So there's the account part of me being a savings account and you could see that the account part of
+me is zero into account name part of me is an account.
+OK.
+So hopefully you get some insight into what's really going on here.
+We really are inheriting all that information from our parent.
+So let me just draw this out sort of to be really clear.
+Suppose that this is A.S.C. right here that's A.S.C. that's that object right up here and it's an account
+and it has two local variables right balance
+in name.
+And we would never worry about what you're set to you can kind of see that over here and it also has
+access to those two methods.
+Right.
+Deposit and withdraw as well as the constructor's and the destructor.
+But I'm not worried about those right now I'm just really concentrating on these two methods.
+So the accountant knows about its methods.
+Now down here I've got a savings account.
+So let me create that and I'll just draw a big box.
+And this is a savings account that same of the object and its type is a savings account
+that's this guy right there.
+Now savings account member is an account so it's got an account part inside it and that account part
+is going to look just like this guy right here.
+It's going to have a balance.
+Right.
+It's going to have a name.
+It's going to have access to those deposit and withdraw methods.
+I'll just write them here.
+And those are the deposit and withdraw methods for the account class.
+But then our savings account or savings account class as interest rate and it's got its own versions
+of deposit and withdraw.
+So conceptually this is really what's going on and you can obviously see it right here you can see that
+it's got the account part of it right there.
+Now obviously the methods aren't here and the methods aren't going to be copied and every single object
+they're going to be in in one place.
+But think of it conceptually this way and I think you'll be good to go because this is really what's
+happening behind the scenes.
+So when we said that a savings account is an account it sure is right there is the account part of me.
+Now a couple of things we need to talk about what in here what in here is accessible to the savings
+account.
+How do we initialize the account part of us.
+So this is where we're headed with the next few lectures because we really need to be able to know you
+know what can I access from these methods.
+Am I able to access these guys right here or not.
+I'm not sure I read it all depends on our access modifiers.
+And also I need to be able to instantiate or initialize that account.
+Part of me.
+OK so that's what we'll do next.
