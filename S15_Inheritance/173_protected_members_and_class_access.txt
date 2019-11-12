@@ -1,0 +1,178 @@
+In this video you'll learn how the class member access modifiers work with inheritance We'll also learn
+about the protected class member access modifier.
+We've already seen the public and private class member access modifiers and we know how they work.
+Well C++ provides a third access modifier name protected we define protected data members and methods
+exactly as we do public and private.
+We provide the protected keyword followed by a colon within the class declaration.
+All data and method declarations that follow the protected block will have protected access so protected
+class members are accessible to all methods of the class itself protected class members are also accessible
+by any derived classes that have been derived from the base class.
+However protected class members act like private members so they're not accessible directly from objects
+of either the base class or of the derived class.
+So you can see the protected class members act very much like private class members unless there's inheritance
+involved.
+Let's see the syntax once more so we can discuss exactly what's available to the derived class.
+You can see that we have a base class and that base class has public protected and private class members
+will use three integers a b and c each within a different access modifier to understand how inheritance
+works with access modifiers in the next few slides since C++ provides three types of inheritance.
+We have to look at each type individually since the access depends on the type of inheritance involved
+in the case of public inheritance public class members are inherited and they're also public and the
+derived class protected class members are inherited and they're also protected in the derived class.
+Finally private class members are also inherited However the derived class does not have access to them.
+Any attempt to access base class private class members from the derived class will result in a compiler
+error.
+This is the most common form of inheritance used in C++.
+You can see that the rules make sense.
+Public is public protected is protected which means that no matter how deep the class hierarchy goes
+the protected class members will be accessible by all derived classes.
+Finally something marked as private in the base class implies that the developer of the base class doesn't
+want to grant access to those class members.
+Now let's look at protected inheritance.
+Remember this is not is a inheritance.
+The public base class members are protected in the derived class protected base class members are protected
+in the derived class and private base class members are not accessible from the derived class.
+Finally let's look at private inheritance again private inheritance is not is a inheritance.
+So in the case of private inheritance the base class public and protected class members are private
+in the derived class and the private class members are not accessible from the derived class.
+This may seem confusing and a lot to remember but it's really a very logical approach to inheriting
+class members.
+As mentioned previously inheritance in C++ is a very complex topic will concentrate on single public
+inheritance in this course.
+Now let's head over to the IEEE and walk through an example using access modifiers and public inheritance
+and life code.
+Ok so I'm in the ID.
+I'm in the section 15 workspace in the protected members class Access project and what I've got here
+is a real simple class similar to the one that we created on the slides where I've got a base class
+that I'm declaring right here and it's got a public integer A which I'm initialized to zero and a method
+called display.
+I've also got a protected integer B and A private integer C both of them initialized to 0.
+Now the first thing we'll look at is this line right here.
+Line 11.
+Obviously member methods have access to everything in the class so there's no problem here accessing
+a b or c regardless of their access modifier.
+So this will be just fine.
+Something else I wanted to note was that if we have a friend of this base class write a friend function
+or a friend class that will have access to public protected and private information in this class.
+OK so let's look at this first at the object level before we even get into inheritance.
+Here we have a base class why don't we create a base object and it's right here on 931 I'm creating
+an object called base and its class is based right up here.
+We've got those three integers a b and c..
+Now that's access them all.
+So let's say base a is 100 they stop B is 200 and base C is 300.
+Now what do we expect.
+Well we've been through this before with public and private.
+The only difference here is protected.
+We expect based on a to be OK right.
+It's public in base.
+So the objects have access to it and we expect based C to give us a compiler error.
+Right because it's private.
+We don't have access to private data from our objects.
+This is nothing new.
+This is what we've learned all along.
+Now there is no inheritance in here right because we're only dealing with that base class right now.
+There is no derived class yet here.
+So in this case I also expect a compiler error because as far as the compiler is concerned the protected
+and private access modifiers really are the same when it comes to objects.
+So this object base has no business messing with B or C because they're protected and the other one
+is private.
+So if I compile this I try to build and run this.
+I should get to compiler errors and you can see him right there on the red arrows right here.
+One says B is protected and the other one should say C is private OK so that makes sense right.
+That's working with objects.
+So let me comment these two lines and we'll move on now.
+OK so now let's talk about inheritance.
+Right here we're create we've got our base class just as before.
+Now I'm creating a derived class I'm deriving this class publicly from base.
+I'm inheriting everything in base and I'm using those rules that we saw with public inheritance.
+So a is public in my parent so it's public in me.
+B is protected in my parent so it's protected in me.
+C is private in my parent so I inherit it.
+But it is not accessible.
+OK so it's important to understand that C is indeed inherited and will look at that when we walk through
+the debugger when we step through it.
+You just don't have access to it from within derived.
+It makes sense that it's part of you since it is part of your parent.
+OK so now what do we have access to here.
+What we should have access to and be right within our derived.
+We should not have access to see.
+So why don't we write a real simple method here.
+We'll just call it void access base members let's say and this won't do anything with just access those
+things and see when we get compiler errors.
+So we're going to say A equals 100 let's say right here.
+Now can we expect this to be OK because a is public and my parent it's public in me.
+We also expect to be equals 200 to be OK because it's protected and my parent it's protected in me.
+This is a member function.
+It's got access to it.
+This is the problem here.
+If I say C is 300 C is not accessible.
+So we expect a compiler error here.
+Again remember C is there if you need to access C or modify C..
+You can't do it directly from derived you'll have to go through some Geter function or set or function
+provided in the base class.
+But we'll talk about that later.
+So let's compile this now and we expect to get a compiler error right there on line 28 and that's exactly
+what happens.
+Right.
+C is not accessible.
+So you can see how these rules apply.
+Now I'll comment that out and we'll do one last thing is we'll come down here now.
+And remember what we did was we created base object and tried to access those three data members.
+Then we created a derived class and saw what the access was here.
+Now we're going to do it from a derived object so let's do that let's say derived let's just call it
+D and we'll do the same thing.
+We'll say a is 100 D.
+B is 200 and D C is 300.
+OK so take a look at a.
+I'm accessing the a data member in the derived class.
+Well let's move up here just a little bit.
+A is going to be public.
+So I should expect that to work.
+But look in B and C protected and not accessible.
+I don't have access to protect the data and I certainly don't have access to something that's not accessible.
+So we expect this line to be OK and we expect both of these to give us compiler errors right here.
+All right so let's give this a build and run.
+And there you see everything else is clean all scroll up just a little bit.
+And there you can see the compiler errors and it says just like you would expect this is protected in
+this context.
+And this guy is sorry I forgot a semi-colon.
+Let me do that one more time.
+Make sure we get the right compiler errors.
+There we go.
+So we still got the same two compiler errors but there are different errors now.
+So in this case B is protected so we don't have access to it.
+And down here C is private.
+So we certainly don't have access to it.
+OK.
+All right so that's really what I wanted to show you in this video.
+You can see that this makes sense.
+All these protected data members will be inherited inherit inherited all the way down the hierarchy.
+So you've got access to them through out.
+OK so the last thing I want to do is I want to put a break point right here on line 42 network.
+We're creating that derived object D.
+And I want to debug this and step through maybe just so we can see what data looks like.
+Ok so I'm right there line 42.
+I'm going to step and I've just created that object and let's refresh this over here and first let's
+look at base our base object which you can see right here.
+9:36 has an AB and a C in it.
+That's exactly what we expect.
+B and C are 0 and A's 100.
+Because I set that to 100 on line 37 it's you can see right here.
+But now what about the derived object.
+What would you expect that to look like internally.
+Well it is a base right because we're using public inheritance you expect a b and c to be in there and
+that's exactly what you have there is your base part.
+And there's a b and c so the derived object D has a base object within it.
+It seems obvious right.
+But a lot of students get this confused because of that one rule that says private elements are not
+accessible.
+Somehow they sometimes think that not accessible means you didn't inherit it.
+And that's not the case you can see it's really here right.
+You can see that that C is there.
+It has to be there since you are one of your parents.
+So we're not deleting stuff we're not disinheriting stuff so we're getting everything from our parent.
+So just because we don't have access to it doesn't mean it's not there I want it to be really clear
+on that because I see students misunderstanding that a lot.
+All right.
+So in the next video we'll talk about constructors and destructors and the order that stuff happens
+in with inheritance.
+
