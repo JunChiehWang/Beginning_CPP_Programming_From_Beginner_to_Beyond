@@ -1,0 +1,278 @@
+In this video we'll learn about how constructors work when we use inheritance.
+We know that a derived class inherits data and methods from its base class before C++ can initialize
+the derived object.
+It must initialize the base part of the derived object.
+This makes sense since the derived class might use base class information during its own initialization.
+So since constructors are responsible for object initialization when a Derived object is created first
+the base class constructor executes and then the derived constructor executes.
+Let's see a simple example with no arms constructors
+in this example.
+We have a base class that has a no args constructor that simply displays base constructor and we have
+a derived class that inherits publicly from base to drive.
+Class also has no args constructor and it displays derived constructor.
+Now let's create a base class object and a derived class object and see how the constructors are called.
+First let's create a base object from the base class.
+In this case there is no inheritance involved so we expect the base class constructor to be invoked.
+And that's exactly what happens.
+Now if we created derived class object.
+This is where things change.
+In this case we have inheritance.
+Since the derived class is a base class so C plus initialize is the base part of the derived object
+first and you can see on the right hand side of the slide that the base constructor is invoked first
+and then the derived constructor is invoked.
+Now let's look at how destructors are handled class destructors are invoked in the reverse order as
+the constructors so the derived part of the class must be destroyed before the base part is.
+Again this makes sense.
+So when a Derived object is destroyed first the derived class destructor executes then the base class
+destructor executes each destructor should free any resources that its own class constructor is allocated.
+In this slide we added destructors to the base and derived classes.
+The destructor simply display base destructor or derived destructor when there and vote.
+So let's create those to same base and derived objects now and see the output.
+First let's look at the base class object.
+In this case again we're not using inheritance at all.
+So the output on the right side of the slide is exactly what we expect.
+First the base constructor is invoked and then the base destructor is invoked and the object is destroyed.
+Now let's see what happens when we create a Derived object first the derived object must be initialized
+and we know that the base part must be initialized before the derived part.
+So you can see that the base constructor is invoked and then the derived constructor is invoked.
+Now when the object is destroyed the opposite happens.
+First the derived destructor is invoked and then the base destructor is invoked.
+This order of construction and destruction occurs in the same manner whether you have two classes or
+ten classes in the hierarchy.
+Finally let's talk about a few important topics in inheritance and what is not inherited automatically
+a derived class does not inherit base class constructors base class destructor.
+The base class overloaded assignment operators and base class friends.
+However we can invoke base class constructors destructors.
+An overloaded assignment operators from the derived classes.
+Sometimes you will see a using base scope operator base directive in the body of a derived class.
+This was introduced in C++ 11 to allow explicit inheritance of base class constructors.
+There are lots of rules associated with this.
+For example default copy and move constructors are not included.
+Each inherited constructor has the same access specifier as its corresponding base class constructor.
+If you provide an overloaded constructor in the derived class then the base class overloaded constructor
+is not inherited.
+A base class constructor default arguments are not inherited.
+So you can see it as a bunch of rules.
+These are just a few.
+However the using statement can be useful and save a bit of typing but I prefer not to use this feature
+and write out the constructors I need in my derived classes and invoke the base class constructors as
+needed.
+It isn't that much more typing and it's very clear to programmers that come after you to modify your
+code exactly what you're doing.
+Let's head over to the ID and I'll show you how this works in live code.
+Hello.
+So I'm in the section 15 workspace and I'm in the constructors and destructors project and what we'll
+do is we'll step through the debugger and will see exactly when these constructors are called.
+We absolutely understand you know the order that things happen in and what and what isn't inherited
+in this case.
+So here I've got a base class that has an integer attribute named vallium and it's got a simple no args
+constructor here that sets value to 0.
+It's got an overloaded constructor that expects an integer and sets the value to that integer and it's
+got a simple destructor and all of these just say what they're doing.
+Base no args base and base destructor.
+We also have a derived class which is derived publicly from base and it adds its own attribute doubles
+value which is just that value double two times the value.
+And it's got its own constructors here destructor.
+But I've commented all of them out for now and what we'll do is we'll uncomment them as we go.
+So let's start with the simple example.
+We're here in the main and let's create a base object and we'll just call it.
+Be really really straightforward.
+We're not using any inheritance at all here we're not using derived.
+We're only dealing with base so let's review that and make sure that that's very clear what's going
+on.
+So if I step through the debugger here what we've got going on is let me move this screen over here
+to the right.
+So what we've got going on here is we're right here on line 26.
+We're just about to create that base object.
+Now what we expect is for the base no args constructor be called to set that value to zero and then
+to display no Ark's right.
+And then when he goes out of scope we expect a base destructor to be called to clean it up.
+That's really what we've seen up to this point in the course.
+And it should be pretty straightforward at this point.
+So let's step through and you can see right now we're on line 26 right here.
+As I step through.
+Now I'm coming up to line 11 which is our base.
+No args constructor.
+It's going to initialize value to 0 and then just simply display base no args constructor and that's
+exactly what happened.
+Now Bigos out of scope.
+So we expect the base class destructor recalled.
+And let me step through here.
+There we go.
+Number on line 13.
+You can see the destructor is being called and obviously the value is 0 and right.
+It was set to 0 by the constructor here.
+So at this point we get the destructor called and our program is complete.
+OK that's pretty straightforward that what we can do is we can just change this just a little bit and
+what we'll do is I'll comment this out just to keep it in the code so when you guys can play with it
+on your own what would you hear and I would just say base Bill Cosby again and this time with 100 and
+I'll move the breakpoint down to here.
+So what we're doing is we're creating a B object which is a base class object and we're providing the
+100 as an initialiser.
+So what happens here.
+Well in this case again we're not working with derived Yes we're not using inheritance.
+We expect the overloaded constructor here on line 12 to execute which expects an integer.
+We expect it to set the value to 100 in this case and then just display base int overloaded constructor
+when the object is goes out of scope.
+We expect the destructor to be called.
+OK so let's do that and we'll get these these base examples out of the way so that we can definitely
+work on the derived examples and understand it better.
+Ok so I'm here in 9:27.
+I'm going to step through here I am on line 12.
+That's exactly what I expected.
+I'm providing an integer so that overloaded constructor right here that expects an integer is called.
+It's going to initialize value to 100 which is what I'm passing in and if I look at B's value.
+There you go you can see the hundred.
+Now the object goes out of scope and the destructor is called right there.
+So you see the base class destructor is called.
+OK so that's real simple examples using base object.
+Now let's create some derived objects.
+So for our first example what we'll do is we'll come at that line out and what we'll do is we'll just
+simply create a derived object we'll just call it D and we'll provide no initialization information.
+So what do we expect to happen.
+Well look at all these constructors here.
+They're all commented out.
+So when we don't provide a constructor we get a default constructor right at default.
+No args constructor that's going to be called in derived.
+But because we're in derived and it's derived from base we need to create our base part.
+So automatically the base class is a default constructor right here will be called.
+So in this case what's going to happen is that this value will be set in my base part but this double
+value will never be set because I'm not using my own version of this.
+No args constructor OK.
+So let's run through this one and we'll run the debugger here.
+And you can see what's going on here.
+I'm right on line 28.
+I'm just about to create that derived object.
+Now obviously the derived objects.
+Default constructor is going to get called It's not here right.
+That's because it's compiler provided and it's going to call the base class constructor.
+You can see right there because you heard almost really just skipped our own default constructor of
+the derived class.
+It didn't really skip it it actually got called it's just not doing anything because it's precompiler
+provided.
+So in this case I'm setting value to zero and saying Based no args constructor right here and now I'm
+back.
+But now look at the state that derived design you see derives base has a value zero.
+Right.
+That's exactly what we expected because the base default constructor was called.
+But this doubled value was never set.
+So I've got garbage here.
+OK.
+So hopefully that makes sense.
+Now what we can do is to fix this is we can uncomment out this guy right here.
+So now we've just uncommented our own.
+No args destructor.
+So let's run this again now and you'll see exactly what happens.
+OK so now in this case again I'm on line 28 I'm just about to create that derived object again with
+no information here.
+No and no initialization information.
+So I step through.
+This time our own version of our no args constructor gets called Right.
+And what's going to happen right now is the base constructor gets called because before it started executing
+anything in this derived constructor the base part of me must be initialized.
+So you can see when I select the step here.
+Now invoke that base class default constructor.
+It's going to set value to 0 and say based no args constructor then I come back down here to the constructor
+which sets my doubled value to 0 and then displays that message that happened kind of quick.
+I think I double clicked.
+So what happens here is look at my object now the base part is 0 and the doubled value part is zero.
+OK so there you can see that we are really chaining here and we're taking care of our own attributes
+and that's what you really want.
+You want the base class to handle its value.
+You want to derive class to handle its double value.
+OK so now let's do another example here.
+And again I'll comment this out so I'll leave it in there so that you can play with it.
+Create a Derived object.
+And let's pass in 2002 a move the breakpoint down here.
+OK so now what do we expect.
+Well we expect are derived classes overloaded integer constructor to be called this guy right here.
+It's commented out right now.
+So this won't compile right as far as the compiler is concerned.
+It doesn't know anything about this.
+And remember these constructors are not inherited.
+If this constructor appear on 9:12 was inherited then that would be called and will force that in a
+minute.
+But for now it's just compiled in a single C that we do get a compiler error right here that says no
+matching function call.
+So basically it can't find that constructor because it's not there.
+So let's uncomment that out and tell it that it's there.
+Now what do we expect when that what we expect is that we execute this line here on line 29 and we want
+to create that object.
+What's going to happen is the constructor here on 9:21 executes but what's going to execute up here
+what we really want is for this guy to execute right this one on line 12 the overloaded integer constructor
+but that's not going to happen because I'm not explicitly calling it.
+We'll learn how to do that in the next video.
+What's going to happen here is that the base class default constructor right here is called.
+OK so let's walk through this.
+OK so again I'm on 9:29 I'm just about to create that object and you can see now that line 21 executes
+right.
+That's my overloaded constructor that expects an integer.
+That's exactly right.
+So now the base part of me needs to be initialized the compiler is not going to guess as to which one
+of these to call.
+So it's simply going to call the no args version and set that value to zero.
+And when I step through this you can see right there that no args version of the constructor is being
+called.
+It set the value to zero.
+You can see right there based no args then the derived constructor gets called and finishes off by initializing
+its its double value to two times x.
+And if you look right now at the state of this object right here you can see that the base is indeed
+zero because that constructor took care of it.
+And the double value is two thousand.
+We probably wanted the value to be 1000 not 0 but we didn't do that because we really don't know how
+to call these constructors yet.
+Like I said we'll do that in the next video.
+OK.
+And then obviously the destructors get called.
+All right so what if we didn't have this right here I'll comment that out.
+We saw that didn't compile a second ago.
+But what we could do is we can use a using statement and we could just say using base base and what
+that will do is it will allow us to inherit the non-special constructor's from my base class.
+And this is a non-special constructor you can think of the special constructors as a default as a copy
+constructor.
+That kind of thing.
+So now this will be inherited.
+So this line right here.
+What it will do is since that's inherited it matches.
+So this will be called and again that has a problem right because it's not going to deal with the double
+value.
+So let's run this through the debugger and we'll walk through this and we're right here now we're creating
+that derived object.
+You notice it compiled right before didn't compile Well this time it compiled because I'm inheriting
+this one.
+So it's available in my derived so it does match that integer right.
+So when I execute this you'll see what happens is that this guy gets called right here on line 12.
+There you go.
+So control is right here now.
+So I'm going to initialize the base part of me to a thousand.
+But now look at the state of D.
+My base is correct the vows of my doubled value never got initialized right because I simply inherited
+that.
+And that's one of the issues with using automatically inheriting your non-special constructors.
+It'll take care of initializing the base part of you but it won't take care of initializing the derive
+part of it.
+So you really should do that yourself.
+Unless I said learn how to do all that in the next video.
+But it's important that you understand this behavior first and then I'll just uncomment these last two
+out and then you'll see the whole thing happening.
+So at this point let's run this one final time.
+So right here we're creating a derived object with a thousand as an initializer.
+And what we expect is to 9:22 to be called.
+That's exactly correct.
+Now obviously behind the scenes what's going to happen is we were not going to guess as to which constructor
+to call in the base class so it's going to call the no args.
+You can see that happening right here.
+That'll set value to 0.
+Display the message.
+Then we come back and that will set double the value to x times too.
+So in this case you can see I've got zero in 2000 again which is not what I want but then the destructors
+get called and you'll see what happens here.
+First the destructor for the derived gets called.
+And then the destructor for the base gets called.
+So the destructors happen in the order opposite from the constructors.
+OK.
+Now this isn't really what we want.
+We really would like this to be a thousand value 1000 double value 2000.
+And like I said we'll learn how to do them the next video when we learn about calling our base class
+constructors explicitly from the derived constructors.
+
