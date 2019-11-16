@@ -1,0 +1,229 @@
+One of the most powerful features of inheritance is that base class member functions are available to
+the derived class a derived class can directly invoke base class methods a derived class can also override
+or redefine base class methods.
+This concept will provide us with a large amount of power when we use polymorphic functions in the next
+section in order to redefine or override a method.
+You simply provide a method in the derived class with the same name and signature as a method in the
+base class.
+But see an example here will both use and override a base class method.
+Suppose we have an account class and it has a deposit method that simply increments a balance by an
+amount.
+Now we have a savings account class and it also needs a deposit method but its behavior will be slightly
+different in some way.
+We can override the account class deposit method in the Savings Account class by providing a specialized
+implementation using the same method signature.
+Now when the savings account objects deposit funds this specialized method will be invoked.
+But since the accounts deposit method does some of the work that we want to do in the savings account
+deposit method we don't have to duplicate code.
+We can simply call the accounts deposit method from within the savings accounts deposit method.
+You can see the syntax makes sense.
+We must prefix the method call with the account class so the compiler knows that we're calling the deposit
+method in the account class.
+It's super important that we don't try to do the actual deposit in the savings account method.
+Instead let the account class do what it knows how to do.
+If the base functionality for deposit ever changes it won't affect our savings account deposit method.
+Since all it's doing is delegating this to the account class
+let's finish up this video by talking about static binding by default C++ does static binding of method
+calls all that means is that the compiler determines which methods are called based on what it sees
+at compile time.
+Static binding is super efficient and that's why it's the default in C++.
+So if the compiler sees that a b is declared as a base object and we call B deposit then the compiler
+will call the base classes deposit.
+The same is true for a Derived object if D is a derived object and Deedat deposit is called.
+This results in a call to the derived classes deposit method.
+While this is very efficient and fine in most cases there are times when we'd like the binding to take
+place at runtime.
+We'll see that in the next section.
+Let's see a couple of examples next.
+In the first example here you can see that B.Com deposit we'll call the base classes deposit method
+because B is a base object and Deedat deposit.
+We'll call the derived classes deposit method since D is a type of derived.
+But consider the last two lines of code.
+In this case we have a pointer to a base object but we create a Derived object on the heap and assign
+it to the pointer.
+This is perfectly valid since a derived is a base.
+But now if we called the deposit method to the pointer the compiler will call the base classes deposit
+method because it sees that pointer is a pointer to a base class but perhaps it would make more sense
+to call that derives deposit method.
+In this example since the actual object pointed to is a derived object.
+As I said we learn how to achieve this kind of dynamic binding in the next section but it's very important
+to understand that by default C++ uses static binding.
+OK so I mean the idea I mean the section 15 workspace in the redefining base class methods project and
+what we've got here is a real simple account class and we'll derive a savings account class from it
+similar to what we did in the slides and we'll do it from scratch that where you can see how this works
+with using and redefining base class methods.
+So let's take a look at the account class.
+We've got a friend here that allows us just to put count objects on a stream and display them really
+easily.
+And what we're modeling is the balance right.
+That's the whole idea of an account.
+It models a balance and it's a double in this case.
+And then we've got some public methods here which are no args constructor.
+We've got a constructor right here that's overloaded where you supply the balance and then we've got
+a deposit and a withdraw method now the deposit and withdraw functionality is dead simple right.
+Give me an amount of deposit it give me an amount I'll withdraw it.
+The only thing we're checking is to make sure that there's enough balance so that we can withdraw the
+funds.
+OK so that's it.
+Let's take a look at the implementation.
+Now you'll notice that there are no copy constructor has moved constructors overloaded assignment operators
+and so forth.
+We don't need them.
+We're modeling a double.
+And it really doesn't make any sense to include them that the compiler provided ones are perfectly adequate.
+So let's take a look at the source.
+And again you can see real real simple stuff here.
+What I've got is my no args constructor right here.
+And when that is not is invoked then all I'm doing is I'm calling my regular overloaded constructor
+right here and I'm passing in a zero to it.
+So I'm delegating to it.
+And at this point that constructor just simply sets the balance to balance right.
+Simple as that the deposit method increments the balance by whatever amount was passed in the withdraw
+method expects an amount we want to make sure that you're sufficient funds if there are we're just going
+to subtract the amount from the balance.
+Otherwise we'll just display a simple message in sufficient funds.
+And here's my overloaded insertion OPERATOR OK.
+So there you go.
+Simple stuff.
+Now what we'll do is let's take a look at our savings account.
+OK so here's the savings account class header file we're including account header file and a savings
+account is an account so you can see the inheritance right here.
+Class savings account public account we are using is a inheritance here and a savings account is an
+account so it's going to provide a balance just like the account.
+But what it does add is an interest rate.
+So the interest rate is used when users deposit funds.
+So if you deposit $1000 and we've got a 5 percent interest rate the amount that you deposit will be
+one thousand plus $50.
+So we're getting folks really good bonuses here.
+I wish my bank account did this.
+So anyway so that's what we're going to do.
+Now the withdrawal method doesn't specialize.
+So the idea there is that we can use our parents our accounts withdraw method as is.
+We don't have to do anything.
+We're going to have to declare it in here because we're automatically inherited.
+All right.
+So why don't we start doing this class right here.
+So let's start writing the code for this class right here.
+First thing we want to do is declare that friend of ours might as well get it out of the way and it's
+going to return a stood output stream reference its operator and the insertion operator.
+And what does expect when it expects a stood out stream by reference and I'll just call that OS this
+design pattern here you'll see over and over used in C++ and in this case it expects a savings account
+object and we'll call it account by reference.
+So that's the prototype for that will implement that in the C++ file later.
+Hopefully I don't have any typos I'll deal with typos after when we compile that way we don't waste
+a lot of time.
+Now that's it.
+So now what do we want to do what we have to add what we add.
+We're adding in interest rates so we'll use a protected key word here and will supply our interest rate
+which will be a double and I'll just call it in rate get.
+That's it.
+And now what we'll do is we'll provide some public methods in this case our constructor's so it'll be
+a savings account constructor that will be a no Arden's constructor will also supply a savings account
+constructor.
+In this case that will expect the balance which will be handled by the account part of me and the interest
+rate which will be handled by me me being the to the savings account less.
+And we also have to handle the deposit method because we're redefining it overwriting it.
+So in this case we want the same function prototype as we had in our parent.
+So it's deposit.
+And I believe that was double the amount that it notice withdraw is inherited and the functionality
+that we were using to withdraw funds in the account class is all I need in the Savings Account class.
+All right so now let's implement this.
+Only a few methods to implement so it should be pretty quick and pretty straightforward.
+I'm including my savings account header file and let's do the no args constructor Actually let's do
+the second constructor first.
+The savings account the overloaded constructor.
+And it's this guy right here and then expects a double for balance and another double for the interest
+rate fix that typo here.
+So those are the two parameters in this particular constructor and what we want to do here.
+Well we want to we want to initialize the count part of us right.
+So we want to invoke our account part constructor right our parents constructor and that expects just
+a balance that's all it knows about it doesn't know anything about the interest rate.
+And then once that's initialized I can come back and take care of the interest rate and initialize that.
+There is nobody to this construct or you could just leave it like that if you want to type something
+you know out constructor call.
+That's fine.
+But we really don't need to do anything else here.
+OK so now how about the no args constructor.
+Well let's do that.
+That was pretty easy to do right.
+So here's my no args constructor it expects nothing.
+Now what do we want to do here.
+Well the simplest thing to do is just to delegate to my overloaded constructor right.
+So what I want to do here is delegate to my savings account overloaded constructor up here.
+And what I want to pass into it is zero point zero for the balance and zero point zero for the interest
+rate and that's it.
+That will take care of that.
+So my two constructor's are done.
+We don't have any Didi's directors or copy constructors or anything like that.
+So let's worry about the deposit method right.
+So let's say void and its savings account it's my deposit method and it expects a double which is the
+amount you deposit what we want to do here is we want to increment that amount by that interest rate.
+As I said.
+So what we want to do is we want to figure out how much do we need to deposit.
+So let's say amount that's that same amount right here.
+We could use another variable if we want but this works just fine.
+A local variable I mean amount equals amount plus it will say amount times the interest rate divided
+by a hundred that will give us the percentage and that should do it.
+We could have set amount plus equals as well be a little clearer.
+Now we know how much we need to deposit.
+So rather than do it ourselves let's just let the account parent part of us do it.
+So will say account it's got a deposit method in there and we'll pass in the amount that we wanted to
+deposit for us.
+That's it.
+And then finally will implement the friend overloaded operator.
+So this returns a raft to an O stream and we're overloading an operator our insertion operator again
+stood up stream by reference and we'll call it o.
+And we've got a cost savings account.
+Ref OK and all we're doing here is we're saying we're putting onto that output stream we'll say something
+like savings account balance
+and we'll put the accounts balance on here.
+Followed by the interest rate
+and the interest rate for the account and we know it's got it because it is a savings account right
+here
+that should do it.
+And we want to return that string.
+All right so let's compile this and see if we've got any typos.
+We probably do.
+And there's one right here
+OK.
+So we have a run.
+Let me show you the main real quick and you'll notice one thing right away it wasn't a lot of work to
+do this right.
+That's the whole point of reusing all I had to do is create these constructors right override that deposit
+method.
+The rest is just came right in the withdraw method I didn't have to touch because I mean hurting it
+from my parent.
+So let's take a look at the main quake and I just wrote a couple of simple test cases here where I'm
+creating an account a one with a thousand dollars in it and I'm displaying it and depositing $500 into
+it and withdrawing a thousand and then I'm withdrawing 5000 I'm going to get insufficient funds.
+So let's build and run that.
+And you could see here we've got a thousand 1300 500 insufficient funds and we still have 500 K and
+then we've got some test cases down here that work with these actual savings accounts that we just created.
+So let's run those.
+And you could hear see here now that I've got a savings account with a balance of a thousand and an
+interest rate of five.
+I've got after the deposit.
+Notice that 1 0 0 0 was deposited 1050 was deposited because that was our specialized deposit method.
+So now we've got a balance of 20 50 same interest rate.
+I'm going to withdraw 2000 which leaves us with a $50 balance right here.
+Then if I try to withdraw 0 0 0 Obviously I've got insufficient funds and then display it again and
+we still have 50.
+OK.
+So there you go that's an example of reusing an account class.
+And we're reducing the withdrawal method 100 percent right.
+And if you look again at the deposit method we really are reusing it we're actually calling it right
+here and what we're doing is tweaking the amount that we want deposited and then just said to get right
+up.
+Now one thing I should mention we overloaded the insertion operator here to work with the savings account
+simply to display the interest rate.
+Right.
+If you send in a savings account object to this guy right here in the account class.
+Remember a savings account is an account what will happen here is the object gets sliced and it will
+only print out the account balance not the interest rate because the compiler is going to slice that
+part out.
+So the only reason that we're implementing this guy right here on 9:18 the savings account C.P. is so
+that we can see the interest rate.
+So what we're doing the next video is I'll give you the beginnings of an account class hierarchy.
+And in the challenge what you'll do is add some more accounts to this that have you know more specialized
+behaviors you can get some experience with inheritance and remember all of this is using static binding
+which is really important.
