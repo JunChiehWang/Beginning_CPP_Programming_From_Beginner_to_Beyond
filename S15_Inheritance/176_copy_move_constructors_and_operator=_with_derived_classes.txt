@@ -1,0 +1,254 @@
+In this video we'll learn how to copy and move constructor's an overloaded assignment work with inheritance
+as we've seen.
+Copy and move constructor's and the copy and move assignment operators are not automatically inherited
+from the base class.
+First let's remember that you may not have to provide these operations at all depending on your class
+and its composition.
+The compiler provided versions may be all you need.
+However we can explicitly invoke these special constructors and the overloaded assignment operators
+in our base class from the derived class if necessary.
+First let's look at the copy constructor.
+If we need to copy a Derived object then we must ensure that the base part of that derived object is
+also copied.
+If that base class has a copy constructor then we can explicitly invoke it in our derived copy constructors
+initialization list.
+This is very similar to what we did with our non-special constructors in the previous video.
+The only part that might be confusing is that the base class constructor expects a reference to a base
+object but we have a Derived object in the derived class.
+In this case the derived object is referenced by the variable other so we can invoke the base class
+and pass in other.
+How does that work.
+Well remember we have is a inheritance.
+So a derived is a base and since a derived is a base we can pass in a drive to a method that expects
+a base.
+In this case the compiler uses slicing and slices out the base part of the derived object.
+Slicing can sometimes cause issues but in this case it's fine.
+Since what we want to do is copy the base part of the derived object.
+Let's see the entire process in context.
+In this example we have a base class and it has an integer attribute named value.
+Let's just focus on the copy constructor.
+We construct a new object based on the other object and we simply copy other value to this top value
+and display a message to the console.
+You may be wondering why we need a copy constructor at all in this example.
+And you'd be absolutely correct.
+We don't.
+The compiler provided copy constructor would be perfectly appropriate here.
+However for instructional purposes I'm writing the copy constructor so that we can see exactly what's
+being called.
+Ok so now let's see the derived class here's the derived class.
+Notice that it's derived publicly from base and it adds an integer attribute named doubled value the
+derived class has its own copy constructor that expects a ref to a derived object that will be copied.
+In this case were explicitly copying the base part of other by invoking the base class copy constructor
+in the derived copy constructor initialization list.
+Again notice that we passed the other object which will be sliced to yield its base part once we copy
+the base part.
+We can take care of copying double value and then display a message to the console.
+The move constructor works the same way now let's you know overloaded copy assignment works.
+Here's our base class again and it has an overloaded copy assignment operator in this method we check
+for self assignment and then we assign the right hand sides values to this object and we return this
+object.
+This is exactly what we've learned already and done previously.
+Now let's see the derived class.
+Here's our derived class which is publicly derived from base as before it adds a double value attribute.
+It also has an overloaded copy assignment operator.
+In this method it's important that we assign the base part of the derived object and then take care
+of the doubled value.
+So after we check for self assignment we call our base classes overloaded assignment operator and pass
+in the right hand side object that we want to assign.
+This will take care of assigning the base part.
+Then we simply set double value to the right hand sides double value to complete the assignment of the
+derived part.
+Finally we just return that this object.
+Note that if we don't explicitly call the base classes overloaded assignment operator then the base
+part will not be assigned again to move assignment works in a similar manner.
+OK so let's recap.
+Often you don't need to provide your own copy move constructors or overloaded assignment operators.
+If you do not define them in the derived class then the compiler will create them automatically and
+call the base class versions for you if you do provide them in the derived class.
+Then you must invoke the base versions explicitly yourself.
+Finally be careful when you use raw pointers and dynamically allocated memory especially if both the
+base and the derived classes have raw pointers.
+If so you'll likely want deep copy semantics for both the base and derived classes.
+So let's head over to the idea and we'll step through this example.
+Ok so I'm backing the idea.
+I'm in the section 15 workspace in the copy constructor assignment operator project.
+Now this project is very similar to what we've seen before I'll scroll up here and you can see we have
+a base class that has an integer attribute called value and then we've got no args constructor and overloaded
+integer constructor.
+A copy constructor here and an overloaded copy assignment operator and these are exactly what we've
+seen before and we also have a destructor of course down here at the bottom.
+What we're doing here is when we get no Oren's will set value to 0 when we get an integer we'll set
+value to whatever integer we get.
+In this case here's my copy constructor.
+Again this the compiler provided one would have been great.
+But I want to make sure that you see how these things are called.
+So in this case I'm just copying the others value to this value and the same thing with the overloaded
+copy assignment operator.
+I'm checking that we don't have self assignment and I'm just assigning the right hand sides value to
+this value.
+OK great.
+Let me close down this derive So we'll get to the derived in a little bit.
+So if we run this we've got Here's a real simple main.
+I've got a breakpoint right aligned 65.
+The first thing we want to do is we want to create a B object and we're providing an integer as an initializer.
+What we expect there is that the overloaded integer constructor fires and that's exactly what happened.
+Then we've got a copy constructor because we're creating a B one based on B and then finally an assignment
+operator.
+And this is copy assignment.
+Here this is an l value.
+OK so let's walk through this and this should be pretty much review from what we've done before.
+I just want to make sure that you understand the base part before we do the derived part.
+All right so I'm right here on line 65.
+I'm just about to create that object right here B.
+So let's step through this.
+And we expect the base overloaded integer constructor to be called.
+And that's exactly where we are right here on line 16.
+Will set the value to 100 which is what X is right here and it will display its base constructor and
+that's it.
+We've just constructed this object B.
+Let's take a look at it real quick.
+You can see its value is 100 and that's a base class object.
+Now we're going to construct B one which is also a base class object based on be so we're going to call
+it a copy constructor and you can see the cut because struct are right here on line 19.
+So let's do that and a double clicked.
+But you'll see what I mean here we are in base and we set this value to the others value and we just
+assume we're going to display's base copy constructor here in a second.
+So let me execute that and that's it.
+Now you can see that B and B one are indeed copies of one another and we use the base copy constructor
+to do that.
+Finally we're going to say B equals be one.
+In this case B already exists.
+So this is not a constructor.
+This is copy assignment.
+So we expect this method right here on line 24 to be called because that's my copy assignment operator.
+So I step through this.
+There it's called just say base operator equals being called.
+It's not self assignment and I'm simply assigning the right hand value to this value and returning the
+object and I'm done.
+OK so you can see exactly what's happened.
+Exactly what we expected.
+Right now we're going to unwind because these objects are going out of scope so we expect B one to be
+destroyed first and then be to be destroyed second so the first Can the first destructor is the one
+for BE1 and will execute that.
+You can see the output right here and then the destructor for the B object executes.
+And our program is done.
+OK so now let me comment these lines out.
+And what we'll do is we'll uncomment these lines and will go through this code in a sec.
+I'm willing to move that breakpoint down to line 69 and let's take a look at our derived class right
+here.
+I'll expand it.
+So here we have a derived class that is derived publicly from base.
+It adds its own attribute doubled value remember it gets value from base but we've added double value.
+And here I've got a no args constructor and it invokes the base classes.
+No args constructor because we want to make sure that the mean this won't happen automatically.
+But I'm just doing it explicitly here.
+Then we've got the overloaded constructor for the drive and what we do here is we call the overloaded
+base constructor for an int to write here and when that's done then we take care of initializing our
+own stuff which in this case is double value value which we simply initialize it to two times X and
+then we've got our copy constructor right here.
+It expects a derived and what we do here is we call our base classes copy constructor and we pass.
+Other other is a derived member base expects a base but since a derived is a base we can certainly pass
+other in here and when we go through the debugger in this case I'll show you the slicing and how it
+works.
+Then we initialize our part and we're done.
+And then finally we've got the assignment operator copy assignment operator where we check for sulpha
+assignment and this line is really important here.
+What I'm doing here is we're calling our base classes overloaded assignment operator and we're passing
+in the right hand side.
+Again that method in our base class expects a base object here read a ref to a base object.
+What we're doing here is we're passing in a derived so the same idea we're going to get slicing there.
+Then once the base is assigned I take care of assigning the part of the derived that really this method
+is only concerned about and we return this and we're done.
+OK so let's take a look at the main real quick.
+Here we are.
+It's very similar to the example with the base here recreating D which is a derived class object and
+we're using in the initializer of the integer initializer sort of call the overloaded constructor.
+Then we're copy constructing D1 from D and then finally we're going to do copy assignment from D-1 to
+D.
+Ok so I think that's.
+I think you get the picture of what's going on.
+It will definitely make sense now when we step through it.
+So let's start the debugger and step through this example.
+So we're right here on line 69.
+We're just about to construct that D object.
+We expect this constructor right here on line 43 to execute the overloaded constructor that expects
+an integer.
+So I step in and that's exactly where I'm at now.
+I need to construct the base part of me so I'm going to invoke my base classes overloaded constructor
+and pass in X to it.
+So you can see that that's what's happening now.
+I'm now in my base class constructor which is going to take care of initializing that base part of me
+so will do that will display.
+Base constructor.
+And you can see now that I'm on line 45 so I'm back in my derived constructor just initialize the base
+initialized double Vau and now it's is going to do a simple display statement and we're good.
+So we've just created that db object and you can see the object looks like 100 from my base value and
+200 for my doubled value.
+OK so now let's look at the copy constructor.
+That's what's being called here.
+Remember we're constructing the scroll up just a little bit here.
+We're constructing D-1 based on D.
+So we expect to be called Huizar copy constructor right here on line 47.
+So let's do that.
+So I think I double clicked with what really happened was that our derived copy constructor got called
+and that it immediately called our base copy constructor and we passed an other.
+Now remember other was or is it derives object here.
+But now I'm up here in my base class copy constructor.
+But look at other you can see what I passed in.
+Now it's 100 right but other originally had that doubled value as well so that got sliced out and the
+only piece we're interested in is the base part of that object.
+So that's what's happening here.
+So we'll continue executing this.
+Now we just copy constructed our base and when we come back right here on line 48 or 49 we've set double
+value and now our derived copy constructor is done.
+So you can see that the derived copy constructor will you'll see that on the output right here.
+You see that the derived copy constructor invoked the base copy constructor and it passed in that derived
+object to it which got sliced.
+OK so last thing left to do is the assignment operator copy assignment.
+So now we're going to say D equals D1 or signed d one to D.
+Right.
+So we're here we expect line 52 to it to execute right here that's our copy assignment for derived.
+So I'll click this I'll try to click it once.
+Good.
+So now that's we're in line 53 now we're simply going to display derived operator equals.
+We're going to check for self assignment.
+And now what I want to do is I want to I want to copy the right hand side to the left hand side but
+only the base part.
+So in this case I want to call my base classes overloaded operator in pass in right hand side.
+So now take a look at right hand side right hand side is a derived right.
+So it's kind of base and it's got it's derived double value here.
+But watch what happens when I call that method right here UCLA transfer control to it.
+And this is where I'm at right here on line 25.
+Look at that object.
+Now look at right hand side.
+Notice that now it's a base now.
+So it just got sliced right.
+That double part is not part of a base.
+So it's it's sliced out.
+So now we just keep executing.
+We're going to execute the base operator equal which assigns the right hand sides value to the left
+hand side.
+Vallière this in this case since it's a member function and we just assigned the base part.
+We're now in line 57.
+We're going to take care of the double the double value part of us and we're done.
+That's it.
+Pretty straightforward.
+Now obviously these values are going to be the same because we just assign them and they both have a
+base part and a derived part.
+Now we are going to go out of scope so we need to unwind and destroy these objects.
+So the destructors will be called in the reverse order of the constructors right.
+So the first destructor that will be called is the one for D-1 here and will execute that and you can
+see that to do right.
+Destructor executes followed by the base destructor right up here and 9:32 There we go.
+And then the same thing will happen with the next object.
+And our program is done.
+OK.
+So this gives you some insight into the way that did the derived constructors and copy constructors
+work.
+You could see it really make sense.
+The only thing that might be a little confusing at the beginning is that for example our derived copy
+constructor and operator equal expect a derived and the base class versions expect a base.
+Same here but that's where the slicing comes in.
+We can certainly pass a derived into here because a derived is a base.
+OK so that covers it.
+If there are any questions please let me know.

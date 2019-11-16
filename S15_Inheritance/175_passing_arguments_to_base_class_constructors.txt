@@ -1,0 +1,136 @@
+In this video we'll learn how to invoke base class constructors in passing arguments from the derived
+class.
+Remember since the base part of a derived class must be initialized first then we know that some base
+class constructor must be invoked to do that initialization.
+So in this video we'll learn how to control exactly which base constructor will be used.
+We can determine which base constructor to be is based on the arguments that we want to pass to it from
+the derived class.
+So let's see how we can do this.
+In this example we have a base class and let's assume that that base class has no args constructor and
+an overloaded constructor that expects a single integer parameter.
+Now we have a derived class which is derived from base and the derived class has a constructor that
+has a single integer parameter.
+We can invoke the base class is overloaded constructor and the derived constructors initialization list
+as shown in this slide.
+That's it.
+It's pretty simple and clear syntax.
+In this case we're passing the integer x to our base class constructor when it's invoked.
+Following this we can have initializers for the derived classes attributes as needed.
+Finally we have the code in the body but remember this code executes after both the base and derived
+parts of the derived object have been initialized.
+If we don't explicitly invoke the base overloaded constructor then the no args constructor will be invoked
+automatically since Remember the base part must be initialized.
+So let's see the complete example.
+Here we see the base class declaration.
+Pretty standard code.
+The base class has an integer attribute named value and it has two constructors.
+The first constructor is the no args constructor and it initializes value to 0 and displays.
+Base no args constructor.
+The second constructor is an overloaded constructor that expects a single integer parameter and it initializes
+a value to the integer x and then it displays Int base constructor.
+Now let's see the derived class the derived class is derived from base using public inheritance and
+it has an integer attribute named double value.
+It also has two constructors.
+The first constructor is the No ARFs constructor.
+Note that in its initializer list it explicitly invokes the base no args constructor and then initialize
+is its own double value attribute.
+Finally it displays drive no args constructor.
+The second constructor is the overloaded constructor that expects an integer parameter.
+This constructor also invokes the base class overloaded in constructor in its initializer list and then
+it initializes its own doubled value attribute to two times X. And finally it displays in derived constructor.
+Note that we could have implemented the overloaded constructors as delegating constructors but I wanted
+to keep the display message is clear so that we could follow the calls.
+So now let's create a few objects and see what is called.
+First let's create a simple base object with no parameters.
+In this case the base no args constructor is called In the second example we're creating a base object
+and providing an integer initialization argument.
+This will invoke the overloaded Int base constructor as we would expect.
+Now in the third example we're creating a Derived object with no parameters.
+This will invoke the derived no args constructor which in turn will invoke the base no artiste's constructor
+from it's initialization list.
+Once the base part is initialized then the rest of the derived no args constructor executes.
+So you can see the output is what we expect.
+First the base Norge constructor then the derived no args constructor.
+The last example works in the similar way.
+We're creating a Derived object with an integer initialization argument so the derived int derive constructor
+is invoked and then we explicitly invoke the Int base constructor from it.
+So the first Int base constructor executes and then the derived constructor.
+Of course all these objects will be destroyed by the destructors when they go out of scope.
+You can see that we have complete control as to which base class constructors to invoke from our derived
+class constructors.
+So let's head over to the ID and see this behavior in life code.
+Ok so I mean the ID and I'm in the section 15 workspace in the base class initialization project.
+This project looks very very similar to the one we did in the previous video.
+However I've spread out the code a little bit more just so it's easier to see in the debugger what's
+going on and what I'm doing here.
+I'm explicitly calling my base class initializers from my derived class so you can see here that I've
+got no args constructor my derived class and I explicitly calling my base classes no args instructor
+right here.
+Similarly in the overloaded integer constructor from my derived class I'm calling my base class is overloaded
+integer constructor.
+That way I've got explicit control over how my objects are being created not just my part but my base
+part as well.
+So let's run through some examples.
+We won't do the base ones because those are those haven't changed at all.
+We'll just worry about the derived ones.
+So in this case that's create a derived object and we'll call it D and we'll provide no initialization
+information here.
+So we'll run the debugger and step through it.
+So we're here on line 40 and we're just about to create that derived object.
+Again I've got no initialization information so I expect my no args derived constructor be called right
+here on line 26.
+And if I step through it you can see that that's exactly where I'm at.
+But now in this case I'm explicitly invoking my base class constructor.
+Also the no args constructor.
+And I'll scroll up just a little bit so it's going to be right there on line 11.
+So what's going to happen now is and it's important to understand the order here before.
+My attributes are initialized doubled values my attribute right here on the derived class before my
+attributes were initialized before the body of the derive constructor is initialized.
+The base part of me will be initialized.
+So in this case when I step three you'll see that it transfers control up to here on 9/11 and the base
+no args constructor is called.
+It will set that value right here in the base to 0 and it will display based no args constructor.
+Then I come back to where I left off initialize double value to 0 and you can see that that will indeed
+be 0 here.
+Now they're both zero right.
+The value in the base as well as the double value that just got initialized to zero right here in the
+initializer list.
+Then we display Dr. no args constructor and our object is constructed.
+So when it goes out of scope the destructors will be called in the reverse order so let's do that.
+You can see right here that derive destructors being called and that executes and then we come up to
+here and execute our base destructor right here and will display that as well.
+OK so there you go.
+That's a real simple example of how we can invoke our base class initializers.
+Now comment this out and what we'll do now is we'll do the same thing but we'll do derived D and we'll
+use an initializer of a thousand.
+So I've moved the breakpoint to this line 41 and what we're doing now is we'll start the debugger again
+and we'll walk through this example.
+So what do we expect in this case.
+Well in 9:41 we're creating a D object which is a derived object and repete we're using a thousand and
+his initialiser.
+So we expect this constructor right here on 09:30 to be invoked because it expects that's the overloaded
+integer constructor.
+So let's step through and you'll see that that is that's exactly what happens.
+But now before we initialize our own variables before we do anything in the body of the constructor
+our base needs to be initialized.
+So in this case I'm explicitly invoking my base class constructor with the variable x that was passed
+into me.
+So it going to happen here is this constructor right here on line 14 will be invoked.
+So we step through that and you can see that's exactly where we are.
+The value for the value will be set to x in this case a thousand.
+And then I'll display the message.
+Then I come back to my derived overloaded constructor and finish off here.
+What just happened was that my doubled value was initialized to 2000 and I'm just about to display this.
+So at this point my object has been fully initialized and if I look at D you can see that the base part
+of me is is 0 0 0 0 0.
+And the doubled value part of me is 2000 which is exactly what we wanted and that's the issue we had
+in the previous video that we couldn't get that quite to work that way.
+And of course as I destroy this object the derived destructor gets invoked first and then the base destructor
+gets that vote.
+And our program is complete.
+OK so there you go.
+That's a real simple example of how to initialize the base part of us when we're using inheritance in
+the next video.
+What we'll do is we'll look at the way that copy and move constructors and overloaded assignment operators
+work with inheritance.
+_
