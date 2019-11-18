@@ -1,0 +1,315 @@
+Hello everyone.
+I'm in the idea in the section 15 workspace and i'm mean the challenge project.
+And before I go over what the challenge is for this section I'd like to go over the account class that
+has been modified slightly and this is the account class hierarchy that we're going to use for the challenge.
+So I'd like to go through it in detail so you understand exactly what's going on.
+It's very very similar to the account class that we've been using all along.
+But I've made a couple of changes to it.
+So why don't we start here with the account class you can see I've got my account header file and my
+account implementation file.
+But let's talk about this account class as you can see there's my class account and I've got my overloaded
+insertion operator which allows me to put accounts on a stream really really easily that I've declared
+these two consecrations and think of these as constants that are available only to the class or within
+the class scope.
+Sure we could have defined these outside of class scope.
+But then what we do is we pollute the global namespace and we really don't want to do that.
+And the reason we're doing that is because we're providing default parameter values in the constructor
+here.
+So you can see that we've got default name here as well as to false balance here.
+So by using these I can do it like this and I could just change them in one place.
+The other option is just to do the constructor like this.
+Just that we've done before where I supply the default parameter unnamed count and the balance is zero.
+OK.
+So again you could do it either way.
+I kind of like doing it this way because it gives me all my constants in one place.
+They are within class scope and you can decide whether you want to make a private or protected or public
+and you've got a lot of flexibility.
+So there's my constructor.
+And obviously we've got an account in this case I added the name right.
+That name is a stud string a C++ string.
+So in this case what an account is it's got a name and it's got a balance.
+So here's my constructor.
+It expects a name and a balance.
+If we don't get a name we get a name to count.
+We don't get a balance.
+We get zero for the balance.
+And at this point we've got our deposit withdraw and I've just put in a good balance method here which
+could be handy to use.
+I don't think I'm using them in the code but you may want to use it.
+So I've got a deposit method and a withdrawal method.
+Real basic functionality here right.
+Simply add whatever is given to you to the balance and withdraw whatever is given to the balances to
+me that we don't run into a negative balance when it's over.
+So just like we've seen before.
+Now let's look at the implementation for this.
+So we look at accounts GPP.
+So here's the count and it's going to be again very very familiar implementation I think.
+So here you've got your account constructor.
+Notice that it expects these two parameters and those have defaults associated with them.
+So in this case this constructor fires and I'm just setting my name and my balance to whatever was passed
+in real simple constructor.
+Here's my deposit method it's expecting an amount you can see the amount right here.
+If the amount is less than zero on returning false this is one of the little changes that I made to
+these methods.
+Notice that deposit and withdraw both return true false values right boolean.
+So this will return true if the deposit was successful fault's otherwise.
+Same here.
+This would return true if the withdrawal was successful fault.
+Otherwise this is a pretty rudimentary way of doing error checking because you're just returning true
+false.
+That could be a lot of different reasons for failure.
+And we'll talk about that when we talk about exceptions and exception handling.
+But for now this would serve us just fine.
+So here's my deposit method.
+Given an amount if the amount is less than zero I'm going to return false because that really doesn't
+make sense.
+I don't want to deposit negative amounts which would be kind of like withdrawals if the amount is not
+less than zero then I'm simply incrementing the balance by the amount and returning troops successful
+Here's my withdraw same idea I'm getting an amount to withdraw.
+I'm checking to see if I subtract that from the balance if I still have the balance in which case if
+I do I do the withdrawal and I return True it was successful otherwise I return false right here.
+All right here's my get balance which simply returns the balance.
+Notice that's a Konst method.
+And then the very last function down here is my overloaded insertion operator which is a friend of this
+class.
+It expects a stream and it expects an account and all the displays is the account followed by the account
+name.
+Notice that I have access to these guys because I'm a friend so all it's displaying is he can't name
+the account balance.
+So hopefully that makes sense you can walk through it and study it a little bit before you start the
+challenge.
+And like I said I'll explain the challenge in the next video.
+So now let's take a look at our savings account.
+We've got two classes in this hierarchy we've got an account we've got a savings account.
+So here's my savings account and notice set in a savings account is a type of account.
+So that's kind of a clue as to what we're going to do.
+Right right here public inheritance so it's an account.
+But what it does is it adds an interest rate and you can see the interest rate right here.
+It's a protected data member and the withdraw is the same as a regular account so you can see that the
+withdraw isn't here right.
+There's no need to override withdraw because the accounts withdraw it works just fine.
+So all we want to do.
+We have no specialization for that.
+So I commented right here inherits the account withdraw method the deposit does specialize.
+It's a little bit different.
+So the amount supplied to the deposit will be incremented by the amount.
+I should say here sorry about that.
+I will fix that by the amount of times the interest rate divided by 100 rates of the interest rate is
+five.
+Then that would be point 0 5 which is the 5 percent times the amount.
+And we're going to put that right back in.
+OK.
+That's pretty much it hit here the rest is pretty self-explanatory.
+I think I've got three consecrations here.
+The first one is unnamed savings account which is my default name.
+Notice that it's right here if it's not supplied.
+That's it.
+My default balance and my default interest rate are over here and right here again you don't have to
+do this here.
+You can simply put them in right in here 0 0 0 0 and a named savings account right here.
+This has got to be c suppose plus 11 to do this kind of thing.
+And let's see what else what else do we have.
+We have the constructor which expects all three of those guys as I said and I've got my deposit which
+I have to override to support this kind of deposit behavior.
+OK.
+So one of the things that hopefully you'll notice and this is one of the ideas with inheritance is that
+as you derive classes you really should have to do a lot less than the previous class did.
+Right.
+Which makes sense because after all what we're doing is we're specializing we're not redoing.
+So let's take a look at the implementation for the savings account.
+So you see a lot of code here and that's the whole idea.
+Mean if you find yourself writing a lot of code in the specialization classes that you're deriving then
+either it's a really complex derivation or something is not quite right.
+So let's take a look at the constructor.
+Here you can see the constructor it's expects a name a balance and an interest rate.
+And remember a savings account is an account so I need to take care of that account.
+Part of me.
+So right here I'm invoking my base classes constructor and I'm passing in name and balance.
+Remember that's when an account has a name and a balance.
+So I'm going to let the account class take care of that.
+It knows about that.
+Those are not my instance variables here.
+I'm only putting in the rate.
+Once that's done I'll come back and I will initialize the the interest rate to whatever is passed in
+right over here and that'll do it.
+Notice that none of these constructors have bodies to them and said Did you have bodies to them you
+can see the body right here there's no code in the body.
+You could simply put out statements in there if you want to see them execute.
+Also there's no destructors there's no copy constructor is just overloaded assignment operators because
+we don't need any of those.
+The balance is double the interest rate as a double and the name is a STD string.
+They know how to take care of themselves so we don't have to worry about that.
+We don't have any raw pointers here.
+All right so now let's take a look at the deposit method.
+Here's the deposit method you can see we expect an amount to deposit and we're going to increment that
+amount by the amount itself times the interest rate divided by 100 that's what the business logic says.
+Once we know the amount that we want to deposits right here then we really don't want to do that ourselves.
+We want to ask our account class to do it for us.
+So we're going to call the deposit method in the account class which is right here and you need to put
+this piece right in front here.
+Otherwise the compiler will call this method right here and you can end up with recursion forever.
+And so be be real careful about that.
+You to be sure that you call the account class's deposit method and we pass in the amount.
+That's it.
+And noticed something else here.
+This returns a boolean right.
+Well I'm returning whatever my base class is deposit method returns to me.
+And so if it failed over there I'm just returning fail here if it worked over there I'm returning true
+here.
+OK so again we're leveraging on the fact that all of these deposit and withdraw methods will return
+booleans.
+Notice there is no withdraw method because we're inheriting our parents.
+It's public in the account so it's public and me.
+So I've got access to it.
+And here is the overloaded insertion operator for a savings account.
+I mentioned slicing before if we don't provide this and we pass a savings account into the account overloaded
+insertion operator it'll slice and this piece here won't print.
+It'll still print name and balance because all accounts have names and balances.
+But this piece here this is what my savings account brings so this will just display savings account
+the account name account balance and whatever the interest rate is in Perceptor.
+Okay perfect.
+So now I wrote a little bit more code just to make our lives a little easier.
+And it's right in these two files right here created two files one is called Account underscore you
+till that header file and then the count underscore you still implementation file.
+And these are utility functions that we're going to use with these classes.
+They're not part of the class.
+They're simply utility functions.
+Let's take a look.
+Let's take a look at the header file.
+Ok so I've got some simple utility helper functions for the account class and the savings account class.
+You'll see a lot of duplicated code here and a lot of this duplicated code is going to go away in the
+next section.
+When we talk about polymorphic functions but here we're doing everything statically So we've got to
+do it this way.
+So take a look at this.
+I've got a display function.
+I remember these are regular functions.
+These are not class member functions these are just plain old global C++ functions.
+It's called display and it expects a vector of accounts write a bunch of accounts by ref.
+Then I've got all that does is just loops through them and displays each one of them and I'll show you
+the code for that in a moment.
+These are just the prototypes that we're going to use in man here have got to deposit.
+And all that's going to do is give me a list or a vector in this case of account objects and I'm going
+to deposit this amount into all of them.
+So this is going to really be nice for us to test our code.
+Same thing here with withdraw.
+Withdraw a thousand dollars from all of these accounts that I sent you.
+So those are the ones for the account class.
+These are the ones for the savings account class you can see that I've got savings accounts here and
+accounts here.
+Also notice that the names are the same display display deposit deposit withdraw withdraw right so we're
+overloading here.
+We're using what we learned a long time ago when we talked about functions we're overloading the functions
+the compiler can tell them apart because of this first argument right here.
+This is a vector of savings accounts.
+This is a vector of accounts.
+OK.
+So let's take a look at some of the code for this.
+Like I said it's a bit long and repetitive but hopefully you'll get the idea.
+Here's the display.
+So if you send me a vector of account objects by reference.
+And again this is Cotts because I don't want to modify it I'm just displaying it then I'm just going
+to print this line accounts and then I'm going to loop and say use arr. base for loop and for every
+account in that vector.
+I'm just printing it out just like that.
+That's using the overloaded insertion operator and that'll display them real nicely.
+Here's the deposit.
+In this case I don't want this to be Konst as we did over there.
+Up up top here because I do want to modify it and it's as simple as loop through the accounts for each
+account deposit that amount into it.
+If it came back true that means the deposit was successful and I just display deposited however much
+amount to whatever account if it fails for whatever reason.
+I'm just saying failed deposit to this this account and last method here is the withdraw.
+Same idea.
+I want to withdraw this amount from all of the objects in that vector.
+So all I'm going to do is loop through I'm going to call the withdraw method on each account and if
+it comes back true then the withdrawal is successful and I'll display.
+I withdrew $1000 from each count.
+If it fails I'll say that as well.
+OK so you can see it's pretty standard it's nothing we haven't done before.
+The only thing that's different maybe is the organization that we're doing.
+So I've got those three functions for account and then I've basically got the same three functions for
+savings account.
+You can see savings accounts right there.
+So it's really pretty much the same the only difference is that this deposit and this withdrawal right
+here will use these specialized versions of the deposit and withdraw from the savings account.
+So that's it.
+Let's look at the main.
+Here's my main and not that long but we're got a lot going on here though.
+Notice that I'm including account utility H right because I need those utility functions.
+And let me scroll up just a little bit and see what's happening here with the count.
+I'm creating a vector we've used the vector before we'll learn more about the vector in the list and
+other things when we talk about the C++ standard template library.
+But we've used vectors so we should be pretty familiar with it.
+So I'm creating a vector here called accounts a vector of account objects and I'm just simply creating
+an empty account.
+Right that's going to be an unnamed account with a zero balance.
+I'm creating another account called Larry with zero Moe with 22000 and Curly with 5000.
+And I'm pushing those accounts at the back of that vector.
+So all we're doing there is creating a vector and creating four account objects and putting putting
+them in the vector.
+Once we're done with that we're going to use those utility functions.
+You can see this is where it comes in real handy.
+Display the accounts deposit 1000 into each one of those accounts and withdraw 2000 from each one of
+those accounts.
+So that's going to deal with accounts and then we're going to do the exact same thing with savings accounts.
+So in this case I've got a vector of savings account objects and I'll call it safe accounts and the
+same idea I'm going to create a savings account object that's empty.
+I'm going to create a savings account object that Superman and another one for a Batman with 2000.
+And finally one woman with five thousand and five percent interest these get the default values for
+both the balance and the interest.
+These guys right here and this guy gets all three default values right.
+It's going to be an unnamed savings account with no balance and no interest rate.
+And then we'll do the same thing with this saving display deposit and withdraw.
+You can see that we've got the same code here and here but different functions will be called because
+of the overloading.
+So let's run this and you'll see the output and hopefully you'll see why I did those utility use those
+utility function because it's just going to make our lives much much easier and make our main very clear.
+So let me run this build and run.
+And here you can see the output.
+I'll scroll to the top and right here I'm displaying the accounts and this is what you're seeing here
+on the right side account unnamed account.
+That's from this guy right here.
+Then we see Larry with no balance then we see mode with 2000 and then we see with 5000.
+Then I call the deposit function.
+And what that's going to do is it's going to loop through all these four accounts and deposit a thousand
+dollars into each one.
+So you can see here I'm deposited all of the returns successful so I deposited a thousand to the unnamed
+account and its balance is now a thousand.
+I deposited a thousand to Larry he's a thousand Moe is now three thousand and Curley's six thousand.
+And then what I'm going to do is I'm going to withdraw $2000 from each one of those accounts as I do
+through them and I'll scroll this up just a little bit.
+And you can see that right now I'm withdrawing $2000 from the unnamed account but the named account
+only had a $1000 balance.
+So it failed and the balance is still frozen.
+I tried to withdraw $2000 from Larry.
+Well Larry only has a thousand so that failed as well.
+And I tried to withdraw 2000 from Moe and Curly.
+They have enough balance so Mo is now a thousand Kerley is now 4000.
+And now the savings.
+Let me scroll up just a little bit so you can see it better here.
+Now we're doing the same thing but with savings accounts.
+So I'm creating four savings account objects in this case the empty one that Superman with zero zero
+Batman with 2000 and 0 and Wonderwoman with 5 0 0 0 0 and 5 percent interest and then displaying them
+you can see them being displayed here on display the unnamed savings account 0 0 Superman 0 0 Batman
+2000 0 and then Wonderwoman 5 0 0 0 0 0 and 5 percent interest.
+Then I'm calling the deposit method for each one of those guys again in the loop using the utility function
+and what's happening is I'm going to deposit a thousand dollars into each one of those counts.
+And notice that I'm depositing a thousand into unnamed writes and now it's kind of thousand balance
+under Pazin a thousand into Superman.
+So it has a thousand Husni a thousand into Batman so it was 2000 here now it's 3000 notice.
+It had a zero percent interest rate so we didn't get that extra little bonus that we want but in this
+case I'm depositing a thousand to wonder woman and wonder woman who's got a 5 percent interest rate
+so you can see that that indeed took that into account.
+So it's really using that specialized deposit method.
+And then what we're doing is we withdraw some $2000 from each one of those accounts.
+In this case it's going to fail with the unnamed account because the unnamed account only has a balance
+of a thousand.
+It's going to fail again with the Superman account because it also only has a balance of a thousand.
+But with Batman and Wonder Woman it'll be just fine because Batman at 3000 and wonder woman had 60 50.
+So you can see that now we've got a thousand Batman and 40 50 in wonder woman.
+Hopefully that makes sense and that gives you an idea of these classes.
+Study these look at them play with them.
+Run through the debugger throw some statements in there and what do you think you know what we're going
+to do we're going to add a few new classes to this hierarchy and I'll talk about that in the next video
+when I talk about the actual challenge.
