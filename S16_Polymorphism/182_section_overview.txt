@@ -1,0 +1,18 @@
+In this section of the course we'll see how we can use polymorphism in inheritance to provide us with
+the power to create reusable and flexible programs.
+We'll start by understanding the different types of polymorphism available in C++.
+And then we'll focus on dynamic polymorphism in this section Some will learn how to use base class pointers
+to really take our class hierarchies to a new level and see how we can now think more abstractly and
+not have to worry about details throughout this section of the course.
+We'll see examples of static and dynamic binding of function calls and we'll understand the pros and
+cons of each.
+Then we'll use virtual functions to achieve polymorphic functions.
+That is functions that are bound at runtime.
+We'll see how important it is to have virtual structures.
+We'll see how important it is to have virtual destructors and use the C++ 11 override and final specifiers.
+Then we'll see how we can use base class references to also achieve dynamic polymorphism.
+Finally we'll learn what pure virtual functions and abstract classes are and why we would want to use
+them as is and in interfaces is a lot to cover.
+But I think you'll find this section pretty easy to grasp since you have a pretty solid foundation already.
+So let's get started with polymorphism.
+
