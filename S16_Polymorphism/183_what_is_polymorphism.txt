@@ -1,0 +1,266 @@
+In this video we'll learn what polymorphism is and how we can help us better develop our Object-Oriented
+applications.
+Polymorphism is a fundamental part of object oriented programming.
+There are several types of polymorphism in C++ and we've already learned about two of them.
+When we overloaded functions and when we overloaded operators these are considered forms of compile
+time polymorphism.
+You might see the terms compile time early binding and static binding these terms all mean the same
+thing.
+They simply mean before the program executes.
+In other words something the compiler takes care of way before the program runs runtime late binding
+and dynamic binding all refer to the Association of what the programmer wants to do with how to do it.
+But at runtime as the program executes we'll see some examples in a few slides that will make this very
+clear.
+Polymorphism allows us to think more abstractly when we write programs we can think deposit or print
+or draw.
+Instead of thinking in specific versions of deposit print and draw so I can simply think deposit a thousand
+dollars to this account and I don't have to worry about what kind of county it is.
+I'll be sure that the correct deposit function will be called depending on what type of account I have.
+And this is all determined at runtime in C++ the default type of binding is static binding.
+This makes sense since C++ is all about efficiency and static binding is done before runtime.
+So programs can be as fast as possible.
+However sometimes we want to defer decisions until runtime in C++ we can opt into this behavior by using
+base class pointers or references and declaring our functions as virtual functions.
+We'll see the details in syntax of this later in this section.
+But first let's look at the types of polymorphism that C++ provides so that we can put this section
+in context.
+Here's a simple chart that shows the types of polymorphism and C++.
+There are two types of polymorphism.
+Compile time and runtime compile time polymorphism includes what we've already learned in this course.
+Function overloading and operator overloading.
+We also have runtime polymorphism and that's what this section of the course will focus on.
+We achieve runtime polymorphism by overriding functions and using inheritance using virtual functions
+and then having base class pointers and references.
+I think the best way to understand dynamic polymorphism is to use a simple example
+First let's look at a non-polymorphic example that uses static binding in this case we have an account
+hierarchy using public inheritance as you can see on the right side of the slide.
+We'll assume that every type of account class has its own version of the withdrawal method and each
+withdrawal method is different depending on the type of account.
+So let's create four objects one for each type of account and call their withdraw methods when we call
+account A's withdraw when we call account A's withdraw method.
+It will call accounts withdraw.
+This makes sense since a is an account object.
+The compiler knows this and binds this method call at compile time or statically.
+The same applies to objects B C and D.
+In each case the compiler is binding the calls to withdraw based on the information that it has about
+the objects when they were declared in the source code.
+So B withdraw calls savings withdraw C withdraw calls checking withdraw and deal withdraw calls trusts
+withdraw.
+So far so good.
+It's what we've done and what we expect.
+But now let's take a look at the pointer p p is a pointer to an account object.
+So P contains the address of an account object.
+Now we create a trust account dynamically on the heap and assign its address to P..
+Is this legal.
+Sure Pekan hold the addresses of accounts and trust is an account.
+The inheritance hierarchy tells us so.
+So what happens when we call the withdraw method for the object pointed to by P.
+Well we're using static binding by default.
+So the compiler doesn't really know what type of account object is pointing to at runtime.
+It doesn't really care.
+All it knows is that P is pointing to an account so it will call the account withdraw method.
+This is probably not what we expected.
+It certainly isn't what we wanted since we want the trust object on the heap to use its own version
+of withdraw.
+Please be sure that you understand this simple example since it's fundamental to understanding dynamic
+polymorphism.
+Remember all the compiler knows is that P is a pointer to an account so it will bind the withdraw method
+to the account classes withdraw method at compile time.
+Let's see another problem with static binding in the same context.
+In this example we have the same class hierarchy.
+And let's suppose that each account class has its own version of a display method that displays account
+information based on the type of account we have.
+So let's create a simple C++ function called display account and it expects a reference to an account
+object.
+Since all our derived classes are accounts we can pass any of them into this function and this function
+will call the display method for the account object passed in.
+So you can see that the code creates for objects A B C and D one for each type of account and then it
+calls display account and passes in each of these objects to the function.
+The behavior you get from the display account function may not be what you expect but by default C++
+is doing exactly what it's supposed to do.
+Static binding when the compiler sees the call to A.S.C. display in the display account function it
+will bind the call to accounts display so accounts display method will be called regardless of what
+object was passed in in our display will only display whatever is in the account part of us.
+There is a way for C++ to ask the account object being passed in.
+Hey what kind of account are you.
+And then depending on that we can have.
+If else statements that call the appropriate display methods that's bad coding practice and it also
+makes us program less abstractly.
+Since then we've got to figure out what kind of object we've got and then call its functions.
+There's a better way.
+That's where runtime polymorphism comes in.
+Let's see how this same example works with runtime or dynamic polymorphism.
+Now let's see the same example using polymorphic functions.
+Here we see the same account class hierarchy.
+Except that this time we've opted into runtime polymorphism.
+We'll see how and a few videos but notice that the withdraw methods in the class diagram are now virtual
+functions.
+This allows us to use runtime polymorphism when using base class pointers or references.
+Let's look at the same example as before.
+Notice that the four count objects A B C and D have exactly the same behavior.
+Since we're not using base class pointers or references these examples are all statically bound.
+Just like before but now let's look at the pointer p.
+In this case when we call the withdraw method of the object pointed to by p the trust withdraw method
+will be called.
+That's what we want.
+And that's pretty cool.
+The idea of using virtual functions tells the compiler not to bind the call compile time but instead
+defer the binding to runtime and at runtime a check will occur see exactly what P is pointing to and
+then that object's method will be called.
+In this case the trust withdraw method but see the other example again.
+Now we have virtual display functions in our account class.
+So whenever we use a pointer or a reference to a base class the binding is done at runtime not at compile
+time.
+So now we create four objects A B C and D.
+Each has a different type of account.
+Now when we pass these objects to the display account function the binding of a CC dot display will
+take place at runtime and call the display method based on the type of object being passed in.
+That's pretty cool and very very powerful.
+I can now write functions methods and data structures that use pointers and references to base class
+objects and I know that to correct methods will be called at runtime.
+Remember that account class hierarchy we did in the last section's challenge is static binding since
+we hadn't learned about dynamic polymorphism yet.
+Remember all those utility functions that we wrote were all pretty much the same.
+Now we could write just one version and the work with all the account types once we convert that hierarchy
+to use polymorphic functions.
+Fantastic.
+In the next video we'll go over how we can use base class pointers in a little more detail before we
+do the next video.
+Let's go over here to the ID and walk through this problem.
+This is same problem we had with the account class.
+And what I'm doing here I'm just creating a base of a derived class to absolutely show you and walk
+you through what's going on here.
+I'm in the Section 16 workspace in the problem project.
+So what have I got.
+Well you can see here it's Can't get much simpler than this hierarchy.
+I've got a base class right here and it's got one public method called Say hello that's all and all
+it says is Hello I'm a base class then I've got a derived class that's derived publicly from base and
+it's got the same method.
+Boyd say hello.
+But it says hello I'm a derived class object.
+That's it.
+Then I've got this function right here that I've written.
+This is not a member function.
+This is just a regular C++ function it's called greetings and it expects a base object by reference.
+Now remember a derived is a base.
+So I can pass in either a derived object or a base object to this function and this function is simply
+to say greetings and then it's going to call the specific objects say hello method.
+So what do we expect here.
+Well the idea would be that if I have a Derived object and I pass it into this function right here I'd
+say greetings and then hello I'm a derived class object but that's not what happens because we're doing
+static binding.
+So let's walk through this example it's really important that you understand the static binding version
+before we start talking about the dynamic binding version.
+Here's my main.
+Let's create a base object we call it be it will simply call beat.
+Say hello.
+What do we expect here.
+Exactly what you would think right.
+Let me just scroll up just a little bit.
+And I'm the compiler I'm looking in here.
+There is no virtual.
+We haven't really talked about virtual yet but to see the word virtual in here.
+When we buy into dynamic polymorphism so the compiler sees this class hierarchy it doesn't see anything
+virtual So there's not going to be any dynamic polymorphism here it knows that it needs to bind everything
+statically.
+And also we're not coming at this with a base pointer we have to have a base pointer.
+Well talk a little bit about base pointer more in the next video.
+So this is really simple for the compiler right.
+B say hello.
+OK which say hello method do I bind this guy right here.
+How does it know wellby is a base.
+That's all the compiler knows is this right here.
+So that's what it's using.
+And that's just going to say hello I'm a base class object and let's do the same thing before we run
+it would do it again and we'll do it this time for a derived object.
+So let's do that elysée say derived.
+And we'll say say hello again same exact thing happens.
+The compiler knows that D is a type of derived derived type is derived.
+So in this case it's going to bind this method right here.
+Again there's no pointers when there's no pointers and no virtual methods.
+Everything is static.
+So if we run this what we expect is we expect this say hello to say hi I'm a base class object and say
+hello here 9:29 say Hi I'm a derived class object.
+So let's run that.
+And there's the output.
+Hello I'm a base class object and hello on the derived class object.
+Exactly as we expect.
+OK so now let's run into some of the issues that we'll run into when we start using base class pointers
+and references.
+But we do this function first right here.
+So suppose that I want to call that function remember this is a regular C++ function greetings and an
+pass in the base class to it.
+I can do that because B is a base and then I'm going to call it again and I'm going to pass in D.
+I can do that because a derived is a base right.
+That's what my inheritance hierarchy is doing for me.
+So what I expect here would be for the b to say greetings Hello I'm a base and D to say greetings Hello
+I'm a Dr but that's not what happens because we've got static binding going on.
+So let's run this and you'll see the problem.
+There you go.
+You can see that right there those two greetings is right here.
+There's the OP.
+Greetings.
+Hello I'm a base and then greetings Hello I'm a bass again even though I'm passing a derived into it.
+And we know now that the reason that this is happening is a scroll up just a little bit is right.
+Here's the problem we're not using dynamic polymorphism.
+And as far as the compiler is concerned.
+RBJ is a reference to a base that's all it knows that's all it cares about.
+So right here that will always bind to base say hello and that's why we're seeing that behavior get
+the same thing happens when we've got a base pointer and let's do that really quickly.
+So suppose we have a point turn and we'll just call it PCR.
+And in this case PCR is a pointer to a base object right.
+An object of that type.
+And we can say new Derived.
+Now this sometimes confuses students but this makes perfect sense right because think about it sometimes
+you think about the hierarchy you get all confused.
+Think about what this really says this really says that BTR can hold the address of any base object.
+Right.
+Well derived is a base object a derived is a base.
+That's what the inheritance is telling me.
+So what happens here is here is Peetie are.
+Here is my derived object that I'm creating on the heap.
+Right.
+And there's really nothing in there right now because there's no attributes or anything but this guy's
+pointing here and that's OK because this is a base so that's valid.
+The compilers happy about that.
+But the problem comes in now when I try to call TTR say hello.
+We've gotten no dynamic polymorphism no polymorphic functions.
+So what's going to happen is the compiler sees TTR as a pointer to a base.
+It's all it knows it's going to bind this to base.
+Hello always.
+So always bind that to base say hello.
+And again this is probably not what we want.
+We want dynamic polymorphism to figure out what I'm pointing to at runtime and call that appropriately.
+So let's run this one last time and see if we get a run here.
+We do.
+So here we go.
+Let's walk through this one more time.
+Here's B.
+Say hello.
+Hello I'm a bass.
+There's Deepcut say hello hello I'm a Dr That's all using static binding that's perfectly fine.
+Now here in passing an A B and A D to this method greetings in both cases the compiler doesn't know
+anything except that that's a base.
+So it's binding it to say hello right here on 9:21 of the base class and then here's my pointer and
+I'm calling say hello through the pointer again even though I'm pointing to a derived object the compiler
+doesn't care.
+This is not being deferred to runtime so the compiler is binding at right now at compile time.
+OK.
+This also you don't have to use raw pointers for this we haven't talked about smart pointers yet but
+we will.
+And suppose I include memory that's where the smart pointers live.
+And I could scroll down here and I could say something like I may just close this up a little.
+I could say something like stood unique pointer
+and you can have a unique pointer to a base and we can call these Peacher are one and then we could
+call make unique which creates that pointer and the pointer is a derived this time and we'll just empty
+constructor right here.
+So then to create a smart pointer this will talk about smart pointers later and then we could just say
+Peachi are one and we can call the say hello method there.
+Right now obviously we've got a pointer here.
+So we really should free or delete that pointer just so we're we're consistent with best practices here.
+We don't have to delete smart pointers that take care of themselves.
+So we run this you can see that even with a smart pointer there's a regular pointer there's a smart
+pointer they're both being statically bound just like you would expect.
+All right so in the next video we'll talk about this base class pointer and see a little bit more about
+how that works.
+
