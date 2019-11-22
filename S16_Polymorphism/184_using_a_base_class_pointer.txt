@@ -1,0 +1,201 @@
+We've already seen that in order for the C++ compiler to use dynamic binding of method calls we must
+have an inheritance hierarchy.
+We must be using a base class pointer or a base class reference and we must declare the methods we want
+dynamically bound is virtual.
+In this video we'll look at the base pointer requirement and see why it's so useful and so powerful.
+We'll use the account class hierarchy on the right side of the slide as our example.
+Let's also assume that this class hierarchy is now using dynamic polymorphism.
+We're learning how to do that in this section of the course.
+For now let's just concentrate on the effects and the power it gives us.
+So we'll create four pointers to account objects and we'll initialize each one to a different type of
+account created on the heap.
+So as you can see P1 holds the address of an account object.
+P2 holds the address of a savings account object.
+P3 holds the address of a checking account object and P4 holds the address of a trust account object.
+We've already seen that this is valid semantically since there are all accounts due to the public is
+a inheritance we're using.
+Now we can call the withdraw method using the base class pointers and C++ will figure out which method
+to bind at runtime based on the type of the object being pointed to by each pointer.
+This is pretty cool.
+There's nothing else you need to do.
+Once the hierarchy is set up of course we need to delete the storage allocated by the point is when
+we're done with them.
+OK so now let's see a more compelling use case for using base class pointers.
+In this case we have the same four pointers we created in the previous slide but I've declared an array
+that holds pointers to account objects.
+These will be the base class pointers.
+I then initialize the array to hold the four pointers we declared previously.
+Now I can simply loop through the array and call the withdraw method for each element in the array and
+the correct withdraw method will be called based on the type of the object that each pointer points
+to.
+You can see how powerful this is.
+It doesn't matter how many base class pointers initialized the array with or what type of accounts they're
+pointing to.
+It will work as expected.
+Also if we replace one array element for another it will also work as expected.
+This is what I was talking about when I said programming more abstractly or more generally.
+Here I'm simply thinking call the withdraw method for each account in the array.
+That's it.
+No more details required.
+Of course this also works with other collections such as a vector.
+Here we have the same four pointers.
+And then we create a vector of pointers to account.
+So the vector holds.
+Base class pointers we can then initialize the vector to P1 P2P 3 and 4.
+Then we can simply loop through the vector using a range based for loop or an iterator and call the
+withdraw method for each vector element.
+Think about what would happen if we added another class to our account hierarchy say a bond account.
+None of the code that we have that works where the count objects needs to be changed since a bond account
+is an account.
+It will automatically work with our existing code.
+A little note here though.
+Be careful when you use raw pointers in collections such as vectors.
+It's better to use smart pointers in this type of example.
+But you haven't really learned about them yet.
+We will soon.
+So there you go.
+I hope you can see the power of the base pointer and how much more abstractly we can think when writing
+our code.
+Let's head over to the idea and we'll run these examples so you can see firsthand.
+OK so I mean the ID I'm in the U.S. 16 workspace in the base class pointer's project.
+Now let me explain what's going on this project.
+I've already gone ahead and taken that account hierarchy account checking account savings account and
+trustee account and I've made it so that it works with dynamic polymorphism.
+So I've done the virtual functions I've done all that already.
+I just want to show you how to use this and see how powerful it is in the next video will learn about
+virtual functions and will start implementing it ourselves.
+But let's take a look at the main.
+This is really what the point of this video is.
+If you look at the main You can see that first we're going to do the pointers and we'll deal with the
+Rays and vectors but it's just plain pointers first US.
+Here you can see that I've got the four pointers P1 P2P 3 MP for each one points to a different type
+of account.
+But they are all accounts right because we've got public inheritance in our hierarchy.
+And then what we're doing is we're calling the withdraw method for each one of those objects.
+And the idea is if we've done our dynamic polymorphism Correct p one we'll call the account withdraw
+P2 we'll call the savings withdraw P3 we'll call the checking withdraw and P4 we'll call the trust withdraw.
+OK so let's give this build and run and you can see the output right here I'll just move it over so
+we can see it we can see pointers and then the withdrawal methods are called right down here and you
+can see that we're calling the accounts withdraw.
+Then the savings withdraw and the checking is withdrawn.
+And finally a trust withdraw.
+So exactly what we expected.
+We've got a binding now happening at run time.
+That's really really powerful stuff.
+We also have the cleanup here I'll show you what that looks like that's just deleting those four pointers.
+So we free up the storage that we allocated for them.
+All right so now let's take a look at how this would work with a raise and uncomment this out.
+And in this case I'm just putting out a line that says array so we know what's going on and what I'm
+doing here I'm creating an array.
+And this is the declaration right here.
+I'm creating an array.
+That's what the brackets say of pointers to accounts.
+So when you create an array in this case and it's going to have four pointers in it each one of these
+pointers is going to point to an account object.
+So that's what it looks like.
+P1 here.
+Right.
+The one is the account so this will be an account
+P2 will be a savings account you get the idea right.
+That's a checking account and a trust account.
+And then what I'm doing is I'm simply looping through this array right here and I'm calling the withdraw
+method for each one of those pointers.
+So this will call the account this will call the savings this will call the checking and this will cover
+the trust withdrawal methods.
+OK.
+So the real powerful piece here is that as you can see I don't have to worry about that in the loop.
+All I'm doing here is simply calling the withdrawal method for each one of those guys and whatever happens
+to be there will be dynamically bound and it'll be called the correct method which is super super powerful.
+So let's give this one a run and we can see that here's the run and you can see the array right here.
+And notice what's happening here.
+I put people in P2 P3 MP for the array.
+Those are base class pointers.
+I'm not putting a count objects in the array and putting pointers to count objects in the array.
+And they all happen to be base class pointers.
+That's why this works.
+So in this case I'm calling this four times right.
+0 1 2 and 3.
+And you can see here in a count in savings in checking and interest.
+So we're getting the exact behavior that we want.
+So let's modify this just slightly and what we can do is we can take and I'll just copy this again so
+we can see that output one more times we can separate it and keep it keep it nice and clean.
+What I want to do here is I simply want to say let's set Auray Sub-Zero.
+That first item in the array.
+Let's set that to p for p for is a pointer to a trust account and then let's just loop again and call
+the withdraw method for all of those guys.
+Now her output should be a little different now right.
+Because our first array element that one at index 0 is no longer an account that was appeared when he
+won in there.
+Now it's a trust account.
+So what we expect in the output now would be trust savings checking.
+Trust right.
+So let's try that out.
+And let's see what we get here.
+Trust savings checking trust you see that's exactly what we wanted really doesn't matter what these
+pointers point to.
+It will get bound correctly.
+And the real powerful thing here is I never really changed that loop right.
+The loop was exactly the same as it was before.
+I didn't have to do any checking for anything.
+All right so now let's take a look at the vector version.
+And as I mentioned in the slides be really really careful when you use raw pointers and any kind of
+collection but especially a vector what you want to do is if you're going to use them use them this
+way where you create your initialize the vector this way.
+Don't put like something like a new account or something in here because that could be problematic when
+it comes to destroying those objects.
+You'd have to loop through the vector and destroy them yourself.
+But anyway.
+But just go look at this example real quick.
+So here's my vector.
+What am I doing.
+Well in this case I'm creating a vector and what is the vector of write my template parameter is a pointer
+to an account.
+So what if I got decide we had an array right.
+We have a vector of pointers to accounts.
+That's my base class pointer.
+I'm initializing it to P1 P2P 3 P4.
+And at this point all I'm doing is a range based for loop right here and it just using the auto keyword
+is going to figure out that that's an account pointer and I'm looping through there and that's it.
+I'm just calling the withdraw method for each one of those pointers that's in the vector.
+Again what we expect here because we've got P1 P2 P3 P4 we expect a count let me go back up and make
+sure I get this right.
+We expect a count savings checking.
+Trust that's where we're putting them in.
+So when this runs that's what we expect.
+Let's give this a run and there is our vector case right here and in here we've got a count savings
+checking trust exactly what we wanted.
+All right.
+So let's just do one more little quick change here and what we can do is let's add two more items to
+that vector and what we can do is we can add that trust point to again we can get it two times at the
+back.
+So why don't we do that.
+Let me copy you this again just so we have some separation in the output and we can better follow it.
+So what we'll do here is we'll just say my vector's is called accounts.
+So I'm going to say accounts push back and let's push back p 4 so we're adding P for the end and let's
+do it again and we'll add P4 again.
+So now when we loop through that vector this time we expect those first four output statements to be
+the same but we expect to more output statements at the end for the trust withdraw being called right
+because now we've got six items in this vector.
+So let's keep that around.
+And here we go you can see one two three four five six items in the vector we're calling the withdraw
+for each one of them and you can see how the last three are trust right.
+The fourth one was one that was already in there and then the two that I just added right here as I
+said be really careful when you're using raw pointers in these things it's better to use smart pointers.
+Well talk about smart pointers in the next section.
+We could have used a shared pointer here even a unique pointer which would make things a lot more safe.
+All right so there you go.
+Hopefully you can see the power here.
+Remember if I come up here and I've got my accounts and I decide to add a new account here and some
+like I said a bond account or something any kind of account as long as I tied into this hierarchy and
+make sure that the methods that are being called are virtual there as well then I can create an account
+count object right here P5 that set a bond account and all this will work right.
+All these loops everything will work exactly the same.
+I won't have to modify any code because that's the point I can think generally I can think of strategy.
+If you think of this vector right here this code right here what does this say.
+It's basically saying loop through the vector and call the withdraw for everything in the vector.
+That's pretty high level thinking and that's pretty powerful if I've got a drawing program that's drawing
+shapes I can just loop through all my shapes and ask each shape to draw itself or move itself or transform
+itself.
+So I'm really able to think abstractly and not get bogged down with details.
+And that's the power of dynamic polymorphism.
+

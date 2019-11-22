@@ -1,0 +1,83 @@
+In this video we'll learn about the virtual keyword virtual functions and how to declare them in your
+own class hierarchies.
+When we derive a class from a base class we can redefine the base classes functions behaviors in the
+derived class.
+This creates a specialized version of the function specific to the derived class.
+If we don't use the virtual keyword with these functions then they're statically bound at compile time.
+As we've already seen overridden functions are bound dynamically.
+We do this by declaring the function to be virtual.
+So virtual functions are overridden functions and they allow us to think abstractly by treating all
+objects in the hierarchy as objects of the base class.
+Let's see the syntax for declaring a function as virtual.
+First we declare the function we want to override in our derived classes as virtual in the base class.
+You can see in the code snippet that were in the account base class and we declared the withdraw method
+as virtual by preceding the function's prototype with the virtual keyword.
+This makes withdraw a virtual function which means it can be overridden in derived classes and it will
+be bound dynamically at runtime when we use a base class pointer or reference.
+Once we declare a function is virtual then that function is virtual all the way down the class hierarchy.
+From this point forward here we can see an example of overriding the withdraw function in the derived
+class checking the derived withdraw function will be implicitly virtual.
+So we don't have to use the virtual keyword again but it's best practice to do so.
+It's important to understand that in order to override a base class is function the function's signature
+and return type must match exactly.
+If you don't match it exactly the compiler will treat it as a redefinition and statically bind it.
+That's it.
+It's pretty simple and provides so much power.
+Remember virtual functions are dynamically bound only when we call them via a base class pointer or
+reference.
+Otherwise they're statically bound.
+So let's head over to the idea.
+Make that simple account class hierarchy dynamically polymorphic with virtual functions.
+It's so easy to do.
+OK so I mean the IDM in Section 16 workspace and I in the virtual functions project.
+All right.
+So here we've got the simple account hierarchy you can see we've got an account class a checking account
+a savings account and a trust account and there are all accounts and right now we've all we've only
+got the withdraw method and it's been redefined in every single class and all we're doing is just displaying
+an account withdraw and checking withdraw.
+You've seen this one before.
+This just tells you which one is being called so that we can better follow it.
+So there are my four classes and right now it's you can see there's no virtual keywords in here at all.
+So this is not going to use dynamic binding.
+Here are pointers again.
+P one P2P 3P for each one pointing to a different each one pointing to a different type of account.
+And we're just simply calling the withdrawal method for each one and then we're cleaning up our pointers.
+Now since we don't have dynamic polymorphism when we run this we expect all four of these methods to
+be bound to the account class is withdraw.
+So let's run that and be sure that that's our starting point.
+And that's exactly what we see here.
+Those are the withdrawal methods executing right here where executing a count withdraw for all four
+of them because we're using static binding.
+All right so now let's make this polymorphic.
+What do we do.
+So we go to a base class and we look at the functions that we want our derived classes to be able to
+override.
+And those are the ones that we want to make virtual.
+There's only one example here.
+But typically you would have several in a base class.
+In this case this is the one withdraw.
+So all you need to do is put virtual in front.
+That's it.
+That's a virtual function now.
+Whenever I come at any derived object via a base class pointer or a base class reference it will be
+dynamically bound.
+That's as simple as that is pretty powerful.
+Now I don't have to put the virtual keyword down here but it's best practice to do so because many times
+users will be looking at this function.
+At this class here and it's nice for them to see that it is indeed virtual.
+So let's do this virtual here.
+Just copy that will do it here and we'll do it one more time right here.
+So now every one of these classes has overridden that withdrawal method.
+All right that's it.
+That's all we really have to do.
+If we run this now we'll get our polymorphic behavior which is exactly what we want.
+See that in account withdraw and savings withdraw and checking withdraw interest withdraw.
+This is awesome.
+I mean one simple keyword you get a lot of bang for your buck here.
+There's a lot going on.
+Now you'll notice a few things.
+We're getting some warnings here and we're getting four warnings and they're all about destructors whenever
+you have a virtual function you need to have virtual destructors.
+And that's what we're going to talk about in the next video so you can see how simple this was to do
+and the power that it gives you in the next video will address these warnings and we'll talk about virtual
+destructors.
