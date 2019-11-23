@@ -1,0 +1,110 @@
+In this video we'll see how we can use base class references and dynamic polymorphism in addition to
+base class pointers.
+We can also use base class references and have polymorphic function calls.
+This is very useful when we pass objects to functions by reference and the functions expect a reference
+to a base class object.
+First let's see how we can use references directly and achieve dynamic binding or virtual methods.
+We use the same account class hierarchy that we use throughout this section.
+So let's create an account object A.
+And then we'll create a reference ref that's a reference to an account that's the base class reference
+and we initialize ref today.
+Now if we call the withdraw method using the ref reference we're calling the account withdraw method
+but the binding is dynamic.
+Let's see another example with a trust account.
+In the second example we create a trust object t.
+And then we'll create ref 1 as a reference to an account object.
+That's the base class reference and we initialize ref 1 to T.
+Now if we call the withdraw method using the reference ref 1 we call the trust withdraw method.
+You can see that this method was bound dynamically.
+Let's see a more useful example.
+Suppose we have a method called do withdraw.
+And it expects a reference to an account object.
+Note this is our base class reference.
+It also expects a double with the amount to withdraw in the function body we call the withdraw method
+of whatever account object was passed in.
+And we also use the amount supplied.
+So let's call this method with a few objects.
+First we create an account object A and we pass a and 1000 to do withdraw in the body of the do withdraw
+function we bind the withdrawal call to account withdraw dynamically.
+Now suppose we create a trust account object named T and we pass t and 1000 to do withdraw the withdraw
+method that will be called in to do withdraw method is the trust withdraw says we're binding it dynamically.
+You can see that function is expecting based class references allow us to think in the general again
+and not have to worry about details.
+So let's head over to the idea and try some base class references.
+So I'm in the IDM in the Section 16 workspace in the base class references project.
+And let's go through a couple of simple examples here.
+First of all this is similar to what I did on the slide here.
+Let's take a look at three these three lines of code right here.
+Here we're creating an account object A and we're using the same account hierarchy we've been using
+throughout this section.
+So that creates the account object.
+You know I've got a ref that's my variable name and it is a reference to an account that's my base class
+reference.
+And I was initializing it to a right here.
+So when I call ref withdrawal that's going to bind it dynamically.
+And in this case I happened to be referring to an account.
+So it will call a count withdraw.
+Now in this case here on line 50 and through 52 we've got a trust object now which is a little bit different.
+So ref 1 again is a reference to an account that's my base class reference and I'm initializing it to
+T.
+T is a trust account.
+So that's perfectly valid.
+In this case when I call ref ones withdraw what's going to happen is a method call will be bound dynamically
+because it will realize that ref 1 is currently referring to a trust account.
+So it will bind binded to trust withdraw because they're all virtual methods.
+OK.
+So that's pretty straightforward I think.
+Now let's take a look at this function call I've got to see post-poll function appear on 940.
+So when we did on the slides It's called do withdraw and it expects a reference to an account object.
+That's my base class reference right there.
+It also expects a double which is going to be passed in and then in the body of this function.
+I'm just calling a count and a withdraw.
+So the idea here is since the withdraw function is a virtual function this will be bound dynamically.
+And here's an example we're creating for accounts a one to a three and a four.
+There are all different types once that account one's a savings account checking account and trust account
+as you can see.
+And then I'm calling to withdraw and then passing in a one to three and a four.
+These methods will be bound dynamically and we'll see this behavior which is exactly what we expect.
+Now every compiler vendor is free to implement dynamic polymorphism using virtual functions however
+they wish.
+But most implementations are pretty similar.
+So let's take a look at this.
+Let's run the debugger and I put it a couple of break points already and what's important here we'll
+look at all these variables there is a lot of variables here are only interested in a couple.
+Now at this point we have ref and we have ref 1 and all my code already executed.
+But let's take a look at ref you can see ref right here and you can see that ref is referring to an
+account right.
+That's the whole idea.
+Now you also see this bunch of code in here and you see that VTR lets your virtual pointer.
+So this tells you that there is dynamic polymorphism going on but now take a look at ref 1.
+Here's ref 1 and if we expand ref 1 here you can see that ref 1 while it is a reference to a base class.
+It's actually referring to a trust account right now and you could see it right there.
+So you can see the trust account has the account part of it.
+So that's pretty cool that you can see all that information right in here.
+And it really gives you a good idea of what's going on.
+Now let's take a look at the do withdraw.
+We're right here on line 59.
+We're about to call do withdraw.
+We're about to pass that account a one in with a thousand someone to step through it and now I'm in
+the do withdraw.
+So let's take a look at what account is all about.
+In this case the account that was passed in is a reference to an account.
+Right of course it is a base class reference.
+But in this case when I expand it you can see that it's actually referring to an account object since
+it didn't expand out.
+Let's try it one more time and we'll do it with a two a two as a savings account.
+So I step through that.
+And now if we look at a account you can see that account while it is still a reference to the base class
+it is currently referring to a savings account.
+And you can see that the savings account has the account part within it.
+So when we execute this and I'll just step through it real quickly with you the last two.
+And when we see the output and here you can see the output.
+So we're doing a count withdraw trust withdrawing that we're saying account savings checking and trusts
+withdraw right down here.
+So it's exactly like we expect.
+So you can see that when you use a base class reference you still get the polymorphic behavior which
+is pretty cool and writing functions like these that expect references to base class objects is really
+handy to do.
+And it saves you from thinking in detail again.
+So I'm thinking here just I want to deposit that amount to whatever account was passed into me so I
+can think very very abstractly.

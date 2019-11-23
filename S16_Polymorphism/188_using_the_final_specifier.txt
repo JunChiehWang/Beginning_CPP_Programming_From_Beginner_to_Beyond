@@ -1,0 +1,20 @@
+In this video we'll learn about the C plus plus 11 final specifier we can use the final specifier in
+two contexts at the class level the final specifier prevents a class from being derived from or subclassed.
+Sometimes frameworks have final classes it can't be subclassed.
+In some cases this is done for better compiler optimization.
+Other times it may be done to ensure that objects are copied safely without slicing when used that the
+method or function level the final specifier prevents the method from being overridden.
+In derived classes this can also be done for better compiler optimization.
+The syntax for using the final specifier at the class level is pretty simple.
+We simply add the final specifier after the class name when we declare it in the first example my class
+cannot be derived from.
+And in the second example derived cannot be derived from.
+If you try to drive a class from these classes the compiler will generate a compiler error.
+Now let's see the final specifier in the context of a virtual function.
+In this case we have a simple class hierarchy with three classes A B and C.
+The base class A declares the function do something is virtual.
+Class B is derived from AA and it overrides do something.
+But it also marks it as final.
+So do something can no longer be overridden.
+Further down in the hierarchy.
+Notice that if Class C tries to override do something the compiler generates an error.

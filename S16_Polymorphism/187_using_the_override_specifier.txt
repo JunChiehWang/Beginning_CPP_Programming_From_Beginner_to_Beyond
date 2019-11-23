@@ -1,0 +1,108 @@
+In this video we'll learn about the C++ 11 override specifier.
+We know that we can override base class virtual functions in our derived classes.
+We also know that we must provide the exact function signature in the derived class including the return
+type.
+But what if we don't.
+What if we inadvertently make a small change to the function signature by mistake.
+If this happens then the function we intended to override doesn't get overridden at all.
+Instead it gets redefined and we know that redefined functions are statically bound not dynamically
+bound.
+This type of error is really hard to find some times since the function's signatures may look very very
+similar and it may not be easy to spot the difference.
+C++ 11 addresses this issue by providing the override specifier.
+You can add the specifier to the method you're writing in your derived class and the C++ compiler will
+ensure that you're indeed overriding and not redefining.
+This is a simple addition to the language but a very useful one.
+Let's see what it looks like in code.
+Here we have two simple classes in a class hierarchy.
+The base class has a virtual function named say hello.
+It returns nothing expects nothing and is a Konst function in the derived class.
+I wanted to override dysfunction but when I wrote the function prototype I forgot the concept at the
+end of the prototype.
+Since the function signatures are not exactly the same the C++ compiler considers this function redefinition
+and not overriding it will compile just fine since this is perfectly legal.
+Let's see the difference between the methods.
+Here it might be easier to see that the function signatures are indeed different.
+So the say hello function of the derived class will be statically bound not dynamically bound as we
+expected.
+This will cause unexpected behavior when we use a base class pointer.
+Here we have two pointers to a base class object P1 and P2 p one is pointing to a base object and P2
+is pointing to a derived object.
+When I call say hello via one this will be bound dynamically and it will call Bass's say hello.
+However when I call say hello via pointer to.
+I expected to display hello on a derived class object because I expected dynamic binding but I messed
+up when I created the function by not matching the signature Exactly so the function call is statically
+bound to base.
+Say hello.
+We can easily prevent this error by using the C++ 11 override specifier
+notice the say hello function of the derived class we can place the override specifier after the function
+prototype.
+This tells the compiler that you intend to override this function and it should make sure that you do
+so in this case the compiler will produce an error and you can add that Konst to fix the problem.
+Let's head over to the idea.
+See this example in life code.
+I mean the idea I'm in the Section 16 workspace in the using override project.
+You can see here that I've got a simple base class and all it has inside is a virtual function right
+here called Say hello.
+And notice that this is a Konst function and all it says is Hello I'm a base class object.
+Now I've got a derived class here that's derived publicly from the base class.
+And what I meant to do here was to override this say hello function right here but I messed up and I
+forgot that Cotts right there.
+So should have had a Konst there but it doesn't.
+So now as far as the compiler is concerned this function right here my derived class is redefining the
+base class function not overriding it.
+So it's going to statically bind it rather than dynamically bind it.
+OK so let's take a look at the main and we'll walk through this.
+You can see exactly what's going to happen.
+OK so here's P1 and P One is a pointer to a base object and instantiating a base object and point a
+right to it.
+So now when I call say hello via that P1 pointer.
+Obviously this is going to do dynamic binding and it's going to bind it to my base class and that's
+what I'm pointing to.
+So this will call base say hello.
+In this example this is a little different than what we've seen here have.
+P2 is a pointer to a derived object and instantiating a Derived object.
+So in this case what's going to happen is this is not a base class pointer.
+This is just a regular old pointer to an object.
+So in this case it's going to be statically bound.
+And we're going to call derived say hello.
+This is the problematic one right here.
+P 3 The problem here is since we did not override Instead we redefined.
+This will not be bound dynamically to be bound statically.
+So as far as the compiler is concerned I've got a base pointer right here.
+So it's going to bind it to base say hello but I really wanted it to bind to derive say hello.
+Right so let's run this.
+And then what we'll do is we'll fix this with the override keyword.
+So let me run this.
+And here's our output.
+And you could see our main enemy scroll up just a little bit right here.
+She could see here P1 points to a base and it's looking at a base so high a base class object.
+In the case of P2 we're statically binding because we were pointing to a derived object and that's exactly
+what we have.
+So to say hello I'm a derived class object.
+Here's the problematic one on 09:30 P3 is pointing to a base object and it's currently pointing to the
+derived right.
+Here is where the problem is because I redefined that function was going to be statically bound rather
+than dynamically bound.
+So it's called base say hello and you could see right there.
+Hi I'm a base class opti.
+That's not what I wanted.
+I wanted it to say hello I'm a derived class object because I wanted to use dynamic polymorphism.
+So how do we fix this.
+Well the fix is easy or we just come up here and put Konst in there but we can also use the override
+keyword in C++ 11 which is really handy.
+You really should do this every time that you're going to override a function or a derived class.
+Simply put the override word in there.
+Right.
+You can put the override specifier right at the end of the function prototype.
+So now when you compile let me just build this real quick.
+Now you get an error and the error says virtual void derive say hello marked as override but it does
+not override that gives you a really good clue as to that you're not overriding anything here.
+So you can come in here and say OK I got it.
+There's my Konst you can put your concert in there now and then when you run.
+You can see that now let me scroll up just a little bit.
+Now you can see that third statement this says hello I'm a derived class object.
+That's what we want.
+So now we've got our polymorphic behavior so real handy really easy to do.
+Use it all the time and it'll save you a lot of grief with debugging.
+

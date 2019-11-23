@@ -1,0 +1,78 @@
+In this video we'll talk about virtual destructors in the previous example.
+We got four warning messages when we compiled our simple account class hierarchy.
+These warnings were the compiler telling us that deleting a polymorphic object that doesn't have a virtual
+destructor could lead to unexpected behavior.
+In fact if we have a derived class object that's destroyed by deleting its base class pointer and that
+class does not have a virtual destructor then the behavior is undefined by the C++ standard.
+That's not good.
+Remember derived objects must always be destroyed in the correct order and starting at the correct destructor.
+So how can we address these warnings.
+Thankfully the solution is simple and intuitive.
+If we have a class and that class has virtual functions then that class must always provide a virtual
+destructor.
+Once we provide a virtual destructor in the base class then all destructors in the derived classes are
+also virtual.
+We don't have to provide the virtual keyword again although it's best practice to do so.
+Here's the code snippet for the account base class.
+Since this class has a virtual function withdraw then we must declare the destructor to be virtual as
+well.
+That's it.
+Simple solution to a potentially serious situation.
+Let's head over to the ID and see what happens on my system when we don't provide virtual destructors.
+And then we'll add them and see the difference.
+Welcome back so I mean the IDM in the Section 16 workspace in the virtual destructors project.
+So we've got the same account class we've had all along and what I've done here is I've added destructors.
+Now these are not virtual destructors yet they're just plain old destructors.
+CKC Here's a destructor for the account class and it's simply printing out a count destructor.
+The checking account displays checking destructor Selby's destructor and trust destructor.
+OK and that we've got our same example that we've been using.
+We're creating four pointers to two a base class object.
+We're creating an account a savings account a checking account a trust account dynamically on the heap
+and then we're calling the withdraw method.
+All that will work perfectly fine right now.
+The problem comes in right here.
+When we delete those pointers right we're free the storage for them.
+When we build this project we're going to run into the same four warnings that we had before the warnings
+are about the leading object of polymorphic class type account which has non-virtual destructor might
+cause undefined behavior.
+It sounds pretty ominous and it's a potentially serious warning actually.
+All the compiler knows is that we've got pointers to account objects so it really doesn't know which
+destructor to call.
+And this is undefined in the C plus plus standard.
+If we run this will get one behavior on this compiler and this is pretty standard.
+You can see what's happening here when I'm calling the delete.
+Right here I'm under four pointers.
+We're getting a count destructor destructor so you can see that the base class destructor is being called.
+Now that's a real problem because the one that's ok for P1 right P1 is an account but P2 right now points
+to a savings account Petris a checking P4 as a trust.
+So there could be a lot of memory leaks going on those destructors maybe or so are you know closing
+files and writing buffers out and none of that stuff is being called.
+So potentially we could have a serious problem here.
+Thankfully the fix is really easy.
+All we need to do is provide virtual destructors and really easy to do.
+We can just use the virtual keyword right in front of the destructor and we only have to do it here
+in the base class.
+But as I mentioned it's good practice to do it everywhere.
+So over my virtual destructors I may just finish up one more to go.
+And here we go.
+Now if we run this now we build and run.
+You'll see we get no errors.
+And now watch what happens.
+This is more like it right here we're deleting the one which cause the account destructor has before.
+Now when we delete P2 P2 is a savings so you can see that the savings destructor is being called followed
+by the base class destructor which is exactly what we want.
+So if we're freeing memory and those destructors if we're closing files writing buffer is taking care
+of resources now everything's going to work as we want.
+You can see P three here is doing the checking destructor followed by the account destructor and then
+following the trust destructor and the account destructor for P4.
+Remember we all get going we're only going one deep here in the inheritance hierarchy.
+If you are going 5 6 10 deep then you've got a lot of destructors that weren't called.
+That will be called now.
+They'll take care of memory take care of resources and so forth.
+The rule is really really simple.
+If you've got a class and it's got a virtual function give it a virtual destructor as well.
+Sometimes students hands about virtual constructors.
+You can't have virtual constructors they're not allowed and they really don't make any sense at all.
+OK so that's it about virtual destructor is in the next video what we'll do is we'll talk about the
+override specifier that gets the compiler to help us out just in case we make some errors.
+
