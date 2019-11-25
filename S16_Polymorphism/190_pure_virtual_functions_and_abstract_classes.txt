@@ -1,0 +1,255 @@
+In this video we'll learn about a specific type of virtual function called a pure virtual function and
+how it lets us create abstract classes before we learn about pure virtual functions.
+Let's see what an abstract class is an abstract class is a class that cannot be instantiated.
+So if we have an abstract class shape then we cannot directly instantiate shape objects.
+You might be thinking.
+So what good is a class like that.
+Well abstract classes are used as base classes in inheritance hierarchies and they're often referred
+to as abstract base classes.
+So what do we call classes that you can instantiate from these classes are called concrete classes.
+And those are the ones that we've been using all along in this course.
+All of their member functions must be to find examples of these classes might be a checking account
+and a savings account in an account hierarchy of faculty and staff classes in the employee hierarchy
+and enemy and level bosses in a player hierarchy and abstract base class is usually too generic to be
+useful to directly derive objects from.
+But it serves as a parent to be derived from.
+And those could be concrete classes.
+So in an account hierarchy we're providing savings accounts checking accounts and trust accounts.
+But do we ever provide just an account.
+Probably not.
+If a customer walked in and said they'd like to open an account they'd be asked what type of account
+they'd like to open.
+So we would never really have account objects directly instantiated in our system.
+We would have checking accounts savings accounts or trust accounts.
+So the account class can be thought of as a general class that's the parent to all of the classes.
+The same can be said for the player class in a player hierarchy and the Employee class in a university
+personnel system.
+In order for a class to be an abstract base class it must contain at least one pure virtual function.
+So let's see what a pure virtual function is a pure virtual function is a virtual function that you
+use to make a class abstract.
+We declare pure virtual functions just like virtual functions but we add the equals zero after the prototype.
+Typically pure virtual functions don't have any implementation since it's really up to the derived concrete
+classes to define this behavior.
+But it is possible to give them an implementation in the code snippet in the slide you can see that
+we declared a pure virtual function named function whatever class this function is declared in is now
+an abstract class and cannot be instantiated.
+So we see that a pure virtual function makes a class abstract which means we can't directly instantiate
+them.
+But when we derive a class from an abstract class we must override the pure virtual functions in the
+base class in order to be a concrete class if we don't override all the virtual functions in the base
+class then the derived class will also be abstract.
+This is very useful when it does make sense for a base class to have an implementation but it does make
+sense in concrete classes.
+For example suppose we have a shape hierarchy.
+The concept of a shape is too general or too abstract to have shape objects in our system so we can
+define the draw method as a pure virtual function in the Shape class and that not only makes it an abstract
+class but it also forces all derived classes to implement the draw method if they want to be concrete
+classes and we can say the same thing for the defend method in a player class.
+Here we see an example of a shape hierarchy.
+Suppose we're creating a simple application that allows us to draw and manipulate shapes on the screen.
+The shapes that we would be drawing in manipulating would be lines circles squares and probably many
+others.
+So we will have circle objects line objects square objects and so forth.
+Would we ever have a shape object know a shape object is just an abstraction that we can use as a base
+class if we declared to pure virtual functions.
+Draw and rotate in that shape class then all derived classes must override these methods or they will
+also be abstract.
+You can see in this class hierarchy that shape open shape and close shape are all abstract classes.
+Since their names are italicized and line circle and square are concrete classes.
+Here's the partial code for the Shape class.
+Notice the declarations for the pure virtual functions.
+It makes no sense to provide implementations for draw and rotate in the shade class since we have no
+idea how to draw or rotate the abstraction shape.
+We'll leave that up to our concrete classes.
+In this example we drive a circle from a shape.
+If this class overrides the draw and rotate virtual functions then it becomes a concrete class and we
+can instantiate circle objects.
+In this case we're overriding the pure virtual functions.
+So the circle class is a concrete class so remember abstract base classes cannot be instantiated directly.
+If we create a shape object shape the compiler will give us an error.
+Also if we create a shape object dynamically on the heap we will also get a compiler error but we can
+use base class pointers and references as we've already learned to achieve dynamic polymorphism and
+have some very powerful reusable and flexible class hierarchies.
+Notice that PTO is a pointer to a shape and then we create a circle object on the heap and point to
+it from Peter.
+Now we can call draw and rotate via the pointer.
+How do we know this will work.
+Well it has to because all concrete classes derive from shape must have overridden the draw and rotate
+methods.
+That's pretty awesome.
+Let's head over to the ID and see an example that uses pure virtual functions and abstract base classes.
+So I mean the idea I mean the Section 16 workspace in the pure virtual functions project.
+What I've done here is I've created a shape hierarchy and I'm using pure virtual functions to establish
+an abstract base class.
+So let me walk you through this and then what we'll do is we'll run some examples.
+When we write a main and we'll create some shape objects and call some of the methods so that you can
+see exactly how this works.
+OK so here's my Shape class.
+Notice that the Shape class has these two pure virtual functions one is called draw one is called rotate.
+That makes this class shape an abstract class.
+In this case it's going to be an abstract base class because I'm going to derive from it I cannot instantiate
+shape objects.
+I can't say shape s can I can't say I can't even go out through a pointer I can't say pointer p equals
+new shape OK right.
+I'm trying to create a shape object directly.
+I can't do that.
+So both of these will give me compiler errors in error I'll say something like.
+You can't instantiate an abstract class or something like that.
+Which which is a good error makes sense.
+So that's my abstract base class.
+Notice the virtual destructor always use that when you've got virtual functions perfect.
+So now let's create an open shape an open ship would be a line of spline things like that in close shapes
+would be circles and squares and so forth.
+So here we're creating a class called Open shape.
+Notice it's derived publicly from shape.
+Also notice that I did not override those two virtual functions.
+So that makes this class abstract.
+I cannot instantiate open shape objects.
+Same idea here.
+Here I've got a close shape that's derived publicly from shape.
+I am not overwriting those two methods.
+You can see in the base class in here.
+So this class again is an abstract class.
+OK so now let's look at our concrete classes those are the ones that obviously know how to do things.
+It makes no sense for me to write code here that draws a shape or rotates a ship.
+I have no idea what a shape is right this is just an abstraction for a shape rotating a square versus
+a line is very different and drawing a line versus a square is very different.
+So the concrete classes are the ones that take care of that.
+OK so let me scroll down just a bit to read two concrete classes right here.
+So these concrete classes right here you can see I've got a line I've got the circle and I've got this
+square right here.
+So in this case I'm not deriving directly from shape I'm in line is an open shape so I'm taking advantage
+of that.
+It's a concrete class this time because you can see right here I'm overwriting both of those pure virtual
+functions.
+That makes me a concrete class.
+Now I can have line objects.
+Same with circle.
+You can see here.
+Circle is a closed shape and right here I'm overwriting those two pure virtual functions and then down
+at the bottom you can see exactly the same thing with the square right here you can see that square
+is a closed shape and I'm overwriting those two pure virtual functions so I can have square objects
+out there.
+OK so this is the same hierarchy that you saw in the slides that were displayed in the UML diagram.
+Now let's write some code that will allow us to use these.
+OK so let's write some code in the main we can start off by just trying to create a shape object and
+create a shape object yes or we can come at it with a pointer just like we did a little bit ago.
+We'll just call it P is in the shape and you can see that if I try to compile this it's not going to
+compile.
+There's a compiler error and says cannot declare variable as to be of an abstract type shape and same
+thing here with this new shape.
+I'm not allowed to instantiate shaped objects.
+OK.
+So we've seen that before and that's a function of those pure virtual functions.
+The fact that they're in there makes the classes abstract.
+I'll comment these two lines of code out and if we also tried to instantiate open shapes and closed
+shapes we'd also get the same error because they are all so abstract classes.
+Now suppose we create a circle right.
+We can certainly do that.
+We can say Circle C and we can call it draw.
+We know it's there.
+Now in this case.
+So in this case you can see it says drawing a circle right.
+But this is not coming at it with a base class pointer.
+This is all being statically bound we're not using dynamic polymorphism here and that's ok sometimes
+you want to do that but the real purpose of creating that abstract base class is so that we can come
+at this class hierarchy with base class pointers or references.
+So let me comment that code out as well and let's create a base class pointer.
+So the base class in this example is shape right.
+So we'll create a shaped pointer which is called TTR.
+And what we'll do is remember I can't say new shape here but I can certainly instantiate derived concrete
+classes.
+So what I'll do is create a circle.
+And now if I do draw or picture or rotate so you can see now that if I called the draw and rotate methods
+through the base class pointer what's going to happen is we're having dynamic polymorphism So the function
+call will be bound at runtime and we're going to call the draw on the rotate for the circle because
+that's what I'm pointing to.
+So if we run this we can see that we're drawing and rotating the circle which is pretty cool.
+And now this is exactly what we've been doing before.
+The only difference here is that we're using those pure virtual functions to define an interface if
+you will at that base class level and all our concrete classes must implement those pure virtual functions.
+Otherwise they are abstract themselves.
+OK so let's look at a couple of other examples.
+And you come at this out again real quick so it doesn't clutter up our display.
+And let's just create a few shaped objects so let's say this create a few sharp objects through pointers
+so let's say at Swanage and you circle
+as to is a new line.
+And finally we'll just say s three is a new square.
+OK.
+Now remember we've got all shaped pointers here at all base class pointers and what we're actually pointing
+to are our concrete derived classes.
+So that's pretty cool.
+Now what we can do is let me write the code here to lead these guys down at the bottom so we definitely
+don't want to leak.
+OK so I've written the code to free up that allocated storage out at the bottom.
+And now we're free to use these guys.
+And now we're free to use these guys so what do we want to do.
+Well why don't we put them in a vector and then loop through the vector and call each one of their shape
+methods that say the draw method.
+So let's create a vector.
+And what does that factor have a vector of what my template parameter there will has to be a shape pointer
+right.
+It can't be a shape coming at it from a base class pointer.
+So in this case I have a shaped pointer.
+And again I'm using a raw pointer here in the shapes you got to be really careful when you do that in
+the next section we'll learn about smart pointers.
+You should probably be using a unique pointer here or a shared pointer but in this case this will be
+this work just fine.
+So there's my shapes.
+And let's set it to one as two in history.
+So there's my vector A.
+It contains pointers to shapes.
+And I've got all three of them in there.
+And now what do we do.
+Well let's loop through that vector.
+Right so we use a range base for loop and we'll say for let's say Konst auto p p is going to be the
+pointer to the shape and shapes.
+And when I'm here I can just simply call piece draw.
+That's it.
+Simple as that.
+If I run this now I should get three lines of output one for each of those objects.
+So in this case I'm calling drawing a circle drawing a line and drawing a square.
+So you can see that's pretty cool.
+Imagine you have a collection of base class pointers and they're all pointing to objects on the screen.
+Right.
+All of those objects are going to be concrete objects.
+And then let's say you want to refresh your screen.
+What do you do when you just loop through that collection and say drudged radhe radhe radhe draw for
+each one of those objects right.
+And each one of them knows how to draw itself makes it super easy to think abstractly and think in the
+general.
+So why don't we actually do that why don't we write a function just a basic function right here we'll
+call it let's say it's FOID It's called screen refresh.
+OK.
+So it's called screen refresh and what are we going to do what we're just going to pass that vector
+into here and let the vector do its thing.
+So Konst he insisted vector of shape based class pointers.
+We'll pass it by reference so we don't copy it.
+That's it.
+Right.
+That's pretty cool.
+So now I'm going to say stood out.
+Just say refreshing.
+Just so we know it's being called
+and now we'll just loop through that vector right.
+So I'm going to say for Again same thing we did before for Konst we use OTOP again and shape's is my
+collection.
+And right here all I'm doing is P draw.
+That's awesome.
+I mean think about the power that we have here right.
+Remember we're coming at this with an a vector of base class pointers so we know we've got dynamic polymorphism
+kick in and we know that each one of those derived classes that are concrete most have implemented draw.
+So I can simply call this while we're worrying about what I'm pointing to.
+So I know it will be bound correctly at runtime.
+And all we need to do now is let's come at this loop out here and let's just call that screen refresh.
+It will pass in the shapes vector
+and there you go.
+Refreshing drawing a line circle drawing a line drawing a square.
+That's pretty cool.
+So you can see the real power here.
+And again the real power of the pure virtual functions is to really force all your derived concrete
+classes to implement those methods.
+Now you know that they must be implemented.
+So you can create base class pointers and just call any of those guys and you know that they're there.
+They have to be there.
+
