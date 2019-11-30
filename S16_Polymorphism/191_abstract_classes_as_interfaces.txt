@@ -1,0 +1,281 @@
+In this video we'll see how we can use abstract classes as interfaces in C++ and interface class and
+C++ is a class that has only pure virtual functions.
+These functions provide a general set of services that users of the class can use in order to be useful.
+These pure virtual functions must be declared as public.
+Any class that wants to be a concrete class and support the interface provided by the interface class
+can override the pure virtual functions and implement these services as needed.
+Remember every service must be implemented and C++ will strictly enforced type information.
+So when overriding the function prototypes must match exactly.
+Unlike Java C-Sharp and other languages C++ does not provide a specific keyword or way to create an
+interface as part of the C++ core language.
+So in C++ we use abstract classes with pure virtual functions to achieve the concept of an interface.
+Suppose we want to be able to provide any user defined object.
+The ability to be printed on a stream like C out we can do this by creating a printable interface class
+that provides the service in terms of a pure virtual function and then our user defined classes can
+simply be derived from printable and override this pure virtual function.
+Let's see an example here you can see that we have a class named printable and it has a pure virtual
+function named print.
+This makes this class an abstract class.
+The printable class also adds a friend function that will use to allow us to print any type of object
+that conforms to this interface.
+You can see that the overloaded operator function.
+You can see the overloaded operator function at the bottom of the screen and it calls RBJ.
+Print this would dynamically bind to the print function of whatever object type was passed in.
+Since we know that that object is printable and we have a reference to it that's pretty powerful stuff.
+At the end of the slides we'll head over to the idea and I'll show you how we can use this interface
+with the account hierarchy as well as with non-A account classes.
+So for any class to be printable it must be derived from printable and it must override the pure virtual
+function print that's in the printable interface.
+That's it.
+So in this case you can see that any class is derived from printable and it does override the print
+pure virtual function.
+Now any class is a printable.
+So let's create some any class objects and print them.
+First we create TR as a point to 20 class and create an any class object then we dereference the pointer
+to get that object and we use it in an output statement.
+This will call the overloaded insertion operator which will in turn call the function print of any class
+and this will display.
+Hi from any class.
+Now suppose we have two functions function one in function to function one expects in any class object
+by reference and function 2 expects a printable object by reference.
+Well we can call both these functions in passing the object Peachi are pointing to.
+Why.
+Because that object is an instance of any class and because that object is a printable.
+In both cases we get the same output.
+The print function in any class is bound dynamically.
+Let's see another example.
+Here we have a shape class that only has pure virtual functions so it's an abstract class and it can
+also be used as an interface class.
+What we're saying is if you want to be a concrete shape then you must be derived from shape and you
+must override the draw and the rotate pure virtual functions.
+So let's do that.
+Here we declare a circle class derived from the shape class.
+We know that if we want a circle to be a concrete class then we must override draw and rotate and that's
+exactly what we're doing in this example.
+Sometimes you'll see classes that are intended to be used as interface classes named with a capital
+i.e. preceding the host name.
+This makes it easy to know just by the name that the class is intended to be used as an interface.
+As you can see in this example shape was renamed to ice shape.
+Now when you see circle being derived from ICE shape you know that shape is intended as an interface
+class.
+This isn't a requirement but you tend to see that out there so we can now use pointers to shape objects
+to use dynamic polymorphism.
+Here we create a vector of pointers to shape objects and then we create three pointers and initialized
+them to point to three different types of shapes in order to call the overridden functions in the concrete
+classes.
+We simply loop through the vector and call the functions.
+You might be thinking isn't this the same as we did before.
+Yes since we must use inheritance in pure virtual functions it's interfaces in C++.
+But there's another difference and I'll show you that example in code let's head over to the idea now
+and we'll see.
+OK so I'm back in the IDM in the section 16 workspace in the interface's dash start project.
+We're going to do eventually is to implement that printable interface so that we're able to print any
+kind of class objects on a stream any kind of class objects that conform to the printable interface.
+So let's use this account hierarchy as a starting point.
+This is similar to what we did in the previous sections challenge I've gotten rid of a lot of the other
+stuff that's not necessary but let's just look at the key elements here.
+Here we've got a classic count right here and you can see that we have a friend function that overloads
+the insertion operator.
+It expects an output stream and an account object by reference.
+Perfect.
+Now we're going to implement that.
+We're going implement that right here.
+You can see that it's obviously a friend is not a member of the class and it expects an account.
+So if we have an account object and we put it on a stream this should fire and print it out and that
+absolutely works.
+And all it does is just says account display.
+Ok so now let's look at a checking account.
+You can see the checking kind of doing the same thing where we do we're duplicating this code all over
+the place and it's right here.
+There's my checking account.
+It is an account.
+Well I've got to do this now with a checking here so I'm implementing it over here.
+So this definitely works with the checking account and the displays checking display.
+The reason that we have to do this is because a friend functions are not inherited.
+So even though I've got this guy appear I am not getting him down here or further down the hierarchy.
+So that's one issue.
+The other issue is that in order for us to implement this operate operator the insertion OPERATOR It
+really doesn't make sense for it to be a member function.
+Remember if it was a member function I'd need the object on the left followed by insertion operator
+and then the stream.
+Well that's not how we do it right.
+We're doing something like stream object.
+So this really would work for sure but it would feel really clunky and nobody would ever use it.
+So we've run into a problem now.
+We're doing the same for the savings account class right here and the trust account class right here.
+So that's all we're doing is we're just creating these four classes overloading the insertion operator
+for each one of them and each one of them will display you know savings display trust display and so
+forth.
+So we can have a simple main and this is what main looks like right here.
+Give me an account a put it on the stream give me an account see.
+Same thing same thing you get the idea.
+A C S T we should see a display checking display Selby's display trust display.
+So let's run that and be sure this works.
+And that's what we get we've got our four objects the account the checking the savings the trusts everything
+works like it should.
+But it really doesn't.
+There's one problem here and that me copy some code that I've already written in here just to save a
+little time.
+So here's the code we've got now we've got P1 is a pointer to an account right.
+That's a base class pointer and I'm creating an account and pointing to it from P1 and then I'm going
+to put the object 20 to dereference P. one because one is a pointer.
+I want the object Despoina to and I want to put that on the stream.
+This will call the overloaded operator for the account.
+Now I want to do the same thing with P2 except P2 this time he's actually pointing to a checking account
+although again we're coming at it through a base class pointer and I want to dereference P2 and put
+it on the stream.
+So what we expect is to say a count display checking display but that's not what happens.
+And let's see what happens.
+You see what happens is a count display account display.
+Why does this happen.
+Well it happens because we've got no virtual functions going on right.
+The only virtual functions we've got are close this down so you can see it exactly.
+Let's go up to my account class and the only virtual functions we've got are withdraw.
+Right.
+That's it.
+That's the only virtual function we have.
+We have no virtual function that's going to allow us to work with any kind of account object in the
+context of this operator here and it's really clunky to do so because of the syntax so what we could
+do is we could certainly add some kind of print function to this account class and it's inherited all
+the way down and make it virtual.
+And that's kind of what we'll do.
+But what we'll do is we'll create a separate interface class rather than put all the stuff in account.
+And what that buys us is that not only am I able to use that principal interface class that we want
+to create with this account hierarchy.
+I can use it with any kind of class not just these account classes.
+So let's do that.
+What I'm going to do is I'm going to switch over to the interfaces dash complete project.
+Right now it looks just like this one but what we'll do is we'll modify and get this working with the
+printable interface.
+Ok so I'm back in the interface's dash complete project and you can see that right now that's exactly
+what we did earlier.
+I haven't changed this code at all.
+So this is exactly what was in interface's dash start.
+So we want to do is we want to create an interface class called printable or I printable.
+We want to define a virtual function in there and then we want to extend it so it makes more sense and
+it works better.
+So first thing we're going to do is we're going to clean up this mess that we've got going on here.
+So I'm going to delete all these friend functions right here and I'm going to lead their implementations
+as well so I'm going to get rid of the account one.
+And this will definitely clean up our code a lot.
+I'll get rid of this guy right here.
+I'll get rid of that implementation for the checking account.
+I'll get the one in savings and I'll delete the implementation for the savings.
+And then finally we'll do the same for trust so I'll get rid of that and I'll get rid of this as well.
+OK so now we've got a much cleaner look.
+Let me scroll way up here.
+So what we have now is the account class with its virtual void withdraw virtual destructor checking
+with its virtual void withdraw virtual destructor and so forth.
+So it would a really clean place to start.
+So what do we do.
+Well the first thing we want to do is we want to create that printable class interface so let's do that.
+And of course you would normally do this in header files and not CPV files.
+But I'm going to do it all in one just so it's easier and I don't have to switch between files to be
+able to explain this.
+So this do that so we'll create a class called this just call it principle you can call it with or without
+that it's really up to you.
+So that's my class and I'll close it off down here.
+And what do I want in this class.
+Well I need a friend rent a have to have a friend because of the way that insertion operator works where
+the left side is the stream and the right side is the object.
+I really can't have member functions that do that kind of thing.
+So what I want to do is I want to have a friend function that's very similar to the ones we had before.
+So let's say friend and it's going to return a pseudo stream by reference we're going to overload the
+insertion operator and the two parameters are the pseudo stream and the printable object.
+That's where things really change.
+So that's create the studio stream by reference and Konst I printable object by reference
+we just call that LBJ or our right hand side would be like.
+So that's my function prototype.
+And now what we want is we want to have a public pure virtual function that all classes that conform
+to this interface must implement.
+That's the one that's going to allow them to put whatever they want on the stream however they want.
+So in this case it will be virtual in a safe way and will call it print we can call it anything we like
+and we're going to put stuff I don't know stream.
+This should be Konst since we really don't want to modifying any objects.
+And here's the important piece.
+That's a pure virtual function there.
+OK so now let's implement that front function.
+Copy this.
+So I don't have to type it all out again.
+And what we want this function to do is really pretty straightforward.
+Or we want this function to do is do that say Oh B.J..
+Right that's the object and we want to print onto that stream.
+That's the virtual function that all of my concrete classes must implement.
+And then I just simply return the stream.
+That's it.
+Now let us see what's happening here.
+This function gets called with a printable or an printable.
+And it's going to call print on that object.
+So this will go.
+We're coming at it with a baseline reference right if you will because they're all going to be printable
+and we're going to use dynamic polymorphism to match the appropriate one.
+So that's really all we need to do here.
+So that's a really really simple class interface.
+We only need to do this with the account class because we've got a hierarchy here.
+But another way to do it is well a second.
+So we could say public eye principle.
+So now we're saying that that account class conforms to this principle protocol which means that it
+must implement this guy right there that virtual void function.
+So we can do that right here.
+We could say virtual void print.
+Right.
+It expects a pseudo stream
+by reference we can call it OS and it is a Konst method.
+And I want to override it definitely put that in there sort of the compiler can help me in case I messed
+up.
+That's it.
+And what do we do here.
+We just simply say oh yes count this just say display.
+That's it.
+That's all we have to do.
+Now for all the other classes that are derived from this account class what we need to do is implement
+that virtual function in them in whatever way makes sense to display a checking account in this case
+I'll just say checking right.
+In this case I'll just say savings.
+But again whatever makes sense you want to display interest rates whatever whatever makes sense for
+a display of a savings account and here will do the same thing with it.
+With the trust account.
+Ok that should do us enough we build and run.
+You can see that we got what we wanted right.
+There's the two pointers.
+So the one that points to an accounting of displaying accounts display and P2 is pointings We're checking
+and I'm getting checking display.
+That's pretty cool.
+And obviously these guys will still work since they're doing static binding so that's easy.
+But here's the difference.
+Again you might still be wondering you know so far so what.
+Well the difference here is that suppose we want to create a class called Dog and that dog class wants
+to be printable.
+So would these derive from printable.
+So all these dog class has to do is implement that interface.
+So let's do that right here.
+I'll say public and the interface is right up here I'll just copy this guy to save myself a little time.
+That's the same function.
+And how does a dog display itself or maybe the dog says Wolf Wolf.
+Simple as that.
+So now what I can do here is I can create a dog object
+and I can do it dynamically.
+So I need to put a pointer in there that's it.
+Now I can simply put that dog object on the stream so I can cut and paste.
+I'll copy from here.
+And rather than the one this time it's dog.
+I'm dereferencing dog.
+And when I run now there you can see Wolf Wolf right there.
+So that's pretty powerful.
+The last thing is we can take it a step further and what we can do is we can actually write a function.
+And I'll just copy it here so you can see what it would look like right here.
+This is just a regular C++ function and it's called print.
+And what does it expect it expects an eye printable so it will take anything or take a dog object an
+account object a savings account object because they're all printable.
+So again we could pass all of those guys into there to say I'm right here my dog.
+I could say print and I can pass a dog into it and if I run that I should see Wolf Wolf twice.
+And there you can see it right up here.
+You could do the same thing with the objects.
+This is where this is different from just regular inheritance from a base class.
+In this case I can use this principle across hierarchy's across anything I want.
+I could just say that whatever I'm creating is principal overload that print pure virtual function and
+I'm good to go.
+I'm a printable So remember in this case dog is a printable.
+An account was a printable savings account was a principal a savings account was also an account.
+This is a really good use case for it.
+
