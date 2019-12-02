@@ -1,0 +1,252 @@
+Let's start by exploring C++ 11 smart pointers with the unique POINAR the unique pointer is a simple
+smart pointer that's very efficient and it can be a drop in replacement in many cases for your typical
+point to use case where you allocate storage use it and then free it in the same block.
+A unique pointer declaration uses a template parameter which is the type of the object that the smart
+pointer will manage on the heap.
+So this allows us to declare a unique pointer objects that point to any type we need as the name dates
+unique pointers are unique.
+So you can't have multiple unique pointers pointing to the same object on the heap.
+This implies a strong ownership relationship between the pointer and what it points to unique pointers
+can't be copied or signed.
+So their copy constructor and copy assignment operators are not available.
+If you try to copy or assign them you'll get an error but unique pointers can be moved.
+So they're great for placing a standard template library containers such as vectors.
+And since the ownership is unique you're guaranteed that when the pointer goes out of scope the object
+that it points to will automatically be cleaned up from the heap.
+That's pretty powerful stuff.
+So let's see one way we can create a unique pointer here you can see that we're declaring P1 to be a
+unique pointer to an int.
+We're also initializing it to point to a new ant that we create on the heap and that integer has been
+initialized to 100.
+Now P one owns that object on the heap when one goes out of scope the INT on the heap will be deallocated.
+You don't need to call delete with the smart pointer.
+Now as far as using the pointer The syntax is pretty much like using a raw pointer.
+You can see that if we dereference P. one we get the integer that it points to.
+In this case.
+One hundred and we display it.
+We can also modify the integer re-appointed to in a similar manner.
+There's another better way to initialize a unique pointer and I'll show you that in a little bit.
+It's also possible to create a raw pointer variable and then initialize unique pointer variable using
+that raw pointer.
+I'm not going to describe that since it's not good practice to do since you're referring to an object
+on the heap from a smart pointer and from a raw pointer not something you typically want the unique
+pointer has many methods.
+But here are some useful ones.
+In this case we again have a unique pointer p one that points to the integer 100 on the heap.
+The get method returns a pointer to the managed object.
+You don't often need to use this method but it can be useful when you're working with libraries that
+use raw pointers.
+The reset method sets the pointer to NULL pointer in the memory it points to will be released.
+Also notice that we can check if a pointer is initialized using a simple IF statement as in if P1 in
+this example the if block won't execute since we just reset the pointer to NULL pointer we can also
+compare unique pointers using relational operators.
+Of course unique pointers as well as other smart pointer types allow us to point to user defined types.
+In this example we're creating a unique pointer that will point to an account object and we initialize
+it to point to the Larry account.
+Notice the syntax is as you would expect.
+We use a count as the template argument in the unique pointer declaration.
+What this says is that the unique pointer P1 will manage an account object on the heap and we're creating
+that account object in the initializer list.
+Now we can use this pointer as we would use a raw pointer.
+We can dereference to get the account object as well as access the account object member methods via
+the member selection or error operator and again when P one goes out of scope.
+The heat storage associated with the account object is deallocated as we said unique pointers can't
+be copied or assigned.
+In this example we create a vector that will contain unique pointers to integers and we also create
+a pointer which is a unique pointer to an int and it points to the image on the heap which has been
+initialized to 100.
+We can't simply push back that unique pointer to the vector because that implies a copy of the object.
+And since any pointers can't be copied this will give you a compiler error.
+However we can use move semantics to move the pointer.
+In this case PCR gives up ownership of the pointer and it's moved to the vector.
+The vector now owns the pointer and Peter will be set to NULL pointer when the vector goes out of scope.
+It will deallocate all its elements in the integer on the heap will be deallocated correctly.
+Now let's see another better way to initialize unique pointers since C++ 14.
+We can use the make unique function.
+This function returns a unique pointer of the specified type and it allows us to pass initialization
+values into the constructor for the managed object.
+So in the first example we declare P1 as a unique pointer to an integer and use make unique to initialize
+the pointer and create the managed object all in one step.
+Notice that in this case we're not using the new keyword in the second example.
+P2 is a unique pointer to an account object.
+And again we use make unique and provide the template argument account as well as the initialization
+values which will be used by the account constructor.
+Again in this case we don't use the new keyword.
+The last example works the same way except we're using the auto keyword.
+Let the compiler deduce the type of P3 based on what makes unique returns.
+In this case you need a pointer to a player object.
+The auto keyword can be very useful here since it makes the code more readable and more readable.
+Now let's head over to the ID and go through some examples of using unique pointers in life code.
+Ok so I'm back in the IDM and the Section 17 workspace in the unique pointer's project.
+Now there's a lot of stuff going on here but it started out slow.
+You can see that in the source tree.
+Here we have our account hierarchy including our printable interface so this is the one that's using
+dynamic polymorphism with that abstract base class account.
+I'm going to use that in a minute using unique pointers in a vector.
+But before we get there.
+Let's just play around with a real simple class called test that I wrote right here.
+It starts on 9:12 you can see that I get a class test and it's got an integer as an instance variable.
+It's got a couple of constructors one just initializes data to zero.
+That's the no args constructor and the other constructor just initializes data to whatever is passed
+in.
+I've got to get data a method that returns that data and a destructor that just says Hi I'm a destructor
+real simple so let's create a test object just to be sure that this works OK.
+So let's create a test object called T-1 will initialize it to a thousand and when we run this because
+it's on the stack we should get the constructor and a destructor being called.
+And you can see that's exactly what's happening here.
+Test constructor with the thousand tested structure with a thousand perfect.
+Now let's do it with a pointer and what we'll do is we'll just modify this slightly we'll say Prince
+T-1 is a new test and will still use the thousand.
+Now obviously if I don't delete it I'm going to leak memory secrecy.
+That's exactly what happened here right.
+My test constructor was called but the destructor was never called.
+So as we've already learned what we have to do is we have to say delete T-1 And now when we run we'll
+have both the constructor and the destructor called in we're not going to leave any memory.
+That's exactly what we want.
+This is using raw pointers what we want to do now is use different kinds of smart pointers in the next
+couple of videos.
+In this video we're using a unique pointer so I'm going to comment this code out and we'll do the same
+thing using a unique pointer.
+So the first thing we want to do is we want to declare the unique pointer.
+So we're going to say Studd unique pointer and now we need a template parameter.
+This is the type of class that we want to reference.
+In this case it's test.
+Later on we're going to use a count but it can really be any class you want and we want a call pointer
+let's call it T-1 And now we'll use the new way of creating it will say new test and give it the constructor
+parameter.
+All right so what's that going to do.
+Let's walk through this one.
+We're creating a variable called T-1 which is a unique pointer to a test object and we're instantiating
+that test object right here and initializing it to 100.
+So in this case we've got that unique pointer pointing to this heap object right here.
+Notice there's no delete T-1 necessary.
+What's going to happen here is the constructor will be called and then the destructor will be called
+automatically like we've seen.
+So let's run that.
+And you could see right here.
+Test constructor for 100 test destructor for 100.
+We never called Delete.
+We did call on you because that's the style that we used to run that one.
+So now let's use the make unique function.
+Do the same thing so we'll say again stood.
+And again we're going to point to a test object to call this T-2 and it will simply say equals stood.
+Make unique and the first thing we want to do is we want to pass in the template argument which is test
+followed by whatever constructor or data we want to pass it.
+So let's say this is a thousand and this syntax might look a little odd but it really is pretty straightforward.
+Again I'm creating a unique pointer to a test.
+It's called T-2 and I'm using the make unique function to do it while the make unique function can make
+any kind of unique pointer.
+So we have to tell it what kind of unique pointer we want and that's what we're doing right here.
+Once we do that the piece here inside the Perrin's we're here the thousand that is the argument that
+you want to pass into the constructor.
+That's going to call this constructor right here on line 17.
+So now what we'll have is we'll have to.
+You need pointers both on the stack.
+Both will be constructed and when they're in they go out of scope the heap memory that they point to
+will be destroyed automatically so we don't have to call delete and let's run that.
+And you can see here test constructor for 100 for a thousand.
+And then we're destroying both of them.
+So that's pretty cool.
+We really had nothing to do in this case right here on 9:28 with the make unique function we didn't
+even have to use the new keyword at all and that's one of the things that you'll hear about modern C
+post-flood.
+You don't have to use new you don't have to use delete you just use smart pointers and they handle it
+all.
+And for the most part that's true but there are some cases where you still have to use it.
+OK so that's that's a good example right here.
+Now let's do another example.
+Suppose that I want to create another unique pointer and we'll call this one T-3 and it will also be
+to a test.
+Let's just call it T-3.
+Just like that and it's initialized.
+Remember this is an object so it's going to call a constructor for the unique pointer just not pointing
+anywhere now.
+So now what do we do.
+Can we say T-3 equals t one.
+Well I can't do that because I am not allowed to assign unique pointers and you can see the error right
+here use of the deleted function.
+It's a long winded error basically telling you that that operator error you kind of see it over here.
+The error message is kind of telling you that that operator equal has been deleted.
+You don't have access to it.
+Same thing if you tried to copy construct it won't let you because you you're not allowed to copy or
+assign unique pointers.
+You can move them.
+So what we can do is we can say stood move to one and what that's going to do it's going to move the
+ownership of that test object on the heap from 2083.
+So now T-3 will be referring to it owning it and T-1 will have a null pointer in it.
+So we can run this and you can see everything works exactly the same.
+And we can actually test right here we could say if not T-1.
+So if T1 is not pointing anywhere in other words if T1 is a null pointer then we could just simply say
+See out and do something like T-1 is null pointer.
+So the way that this is possible or X will end that line here.
+And we should see that display helps me put that present back in and there you go you can see the output
+right there is one is no pointer.
+That's exactly what we expect right.
+Because when you move the ownership from T1 to T-3 T-3 now owns that object.
+The one is now.
+It can't own the object because we're not sharing ownership.
+Now let's create some unique pointers to accounts and the way we can do that is really really straightforward
+again and either me at this or.
+So it does not keep displaying and what we could say is we could say that we want a unique pointer to
+an account.
+I remember this is a base class pointer now which is what we want because we want dynamic polymorphism.
+And what do we want to call it let's call it a one and we'll use make unique.
+So now what are we pointing to we can't say a count because it counts as an abstract base class.
+So we have to have one of those types of account one of our concrete classes.
+So in this case that said we want to point to a checking account
+in now what are the constructor parameters for a checking account where we can semo.
+And let's say $5000.
+And that should do it at this point we can use that object however we want but we have to get to the
+object.
+So if I want to display that object I could simply say dereference a one member.
+A One is a pointer.
+So if I dereference a want I get that checking account object and it's going to call our overloaded
+insertion operator that we've defined.
+So let's see if it does let's get rid of that extra Pirenne right here.
+And let's give this a run.
+And there you go checking account.
+Moe $5000.
+Pretty cool.
+Of course we can use the object in any which way we want.
+We could say a one and we could say deposit another $5000 and let's display the object again.
+So you can see we're using dereferencing and we're using the arrow operator here as well to access the
+actual object that we're pointing to.
+So now we can build and run and you could see that mow has 5000 and 10000.
+All right.
+Pretty cool.
+Now let's do a couple of more.
+Let's create a vector and what we can do here is we can create a vector in that vector is going to be
+a vector of unique pointers and those unique pointers will point to account objects.
+OK so again it's a vector of unique pointers and those unique pointers are going to be referencing account
+objects.
+And we could just call this accounts simple as that.
+And then what we can do is we can create some account objects right.
+But in this case we're going to create them on the heap because we've got pointers to them and we're
+going to create a savings or checking and a trust and I'll copy that code over just to save a little
+typing time.
+OK so I copied it over and you can see what I'm doing.
+I'm adding checking account James with the thousand balance to the accounts vector and I'm doing that
+using the push back method and I'm also using make unique because remember this is a vector of unique
+pointers.
+So I'm adding James Billiam Bobby a checking a savings and a trust account.
+So that's pretty easy no.
+We need to do is loop through that vector and display those account objects right.
+So let's do that.
+We'll say for then we can we can use a arranged base for loop here and I can say for auto.
+And let's just call that a CC in accounts which is my collection.
+And at this point we really need to do is just say stood out.
+Right.
+Dereferenced A.S.C. which is my account and display a new line.
+Now this won't compile when I try to compile this.
+I want to get an error right here and the problem is this is doing copy right where copying each of
+those unique pointers that's in the account vector.
+But we can't we're not allowed to copy unique pointers so we have to do this by reference and it's even
+better if we do it by Consta reference.
+So now we can run our program and you'll see that we're displaying James Billie and Bobbi's accounts.
+OK.
+And notice that we didn't do a single delete here right.
+Memory is being cleared up automatically for us if we really wanted to see those destructors called
+we can go into our account classes and just change that destructor from the default destructor to actually
+just put some code in there that says hey I'm being destructed or something like that but they are being
+called and that's pretty cool.
+In the next video what we'll do is we'll learn about shared pointers.

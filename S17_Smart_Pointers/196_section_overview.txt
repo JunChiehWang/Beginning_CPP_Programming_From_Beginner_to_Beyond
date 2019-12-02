@@ -1,0 +1,29 @@
+In this section of the Course will learn about the various types of smart pointers and C++ and how to
+use them first will understand why we need smart pointers at all.
+After all there must be an issue with the way that raw pointers work that motivated the need for smart
+pointers.
+So we'll review some of the problems associated with raw pointers then we'll see what smart pointers
+are and understand how they address the issues with raw pointers.
+One of the most important concepts to understand in this section is that of ownership and RAII or resource
+acquisition is initialization.
+I'll go over this idiom since it's central to understanding not only smart pointers but resource management
+in general.
+Then we'll look at each type of C++ smart pointer and see how they work and how to use them.
+Ultimately we want to write code that has no news and no deletes.
+So all the memory management is handled by C++ if C++ can automatically clean up the heap whenever a
+pointer is no longer needed then we'll never leak memory and we don't have to worry about needing to
+know when a pointer is no longer needed.
+That's the idea anyway.
+Smart pointers aren't perfect but they can certainly make our code better in most cases.
+First we'll learn about the unique pointer which is exactly what it sounds like a unique pointer to
+heap storage that is not shared and the ownership is clear when you know who owns the pointer.
+Then you know who needs to delete the pointer or at least C++ knows.
+Then we'll learn about shared pointers shared pointers pointers that share common heap storage and can
+be very useful.
+Then we'll learn about weak pointers and how they can help us avoid a problem associated with shared
+pointers.
+Finally we'll see how we can use custom to leaders so that C++ can call a specific version of delete
+that does exactly what we want.
+Smart pointers are a very important part of modern C++ and we want to use them whenever we can to help
+us manage memory.
+

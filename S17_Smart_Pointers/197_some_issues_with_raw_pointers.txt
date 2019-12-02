@@ -1,0 +1,23 @@
+We've already seen during this course that raw pointers are extremely powerful and C++.
+They allow us to have absolute flexibility with memory management with this flexibility however comes
+complexity.
+We must explicitly allocate and deallocate storage for HEAP dynamic variables as well as manage their
+lifetimes.
+And that's where we often see problems.
+In fact most defects in programs written in programming languages that provide raw pointers are pointers
+related defects we've already discussed some of these errors in this course.
+Errors such as uninitialized or wild pointers that could be pointing anywhere in memory.
+And if you store data to where they're pointing you could have a potentially catastrophic result.
+Another error is when we don't deallocate the storage that we previously allocated on the heap.
+In this case will leak memory.
+We've also seen dangling pointers that's where one pointer is pointing to storage that it thinks is
+valid but in fact has already been deallocated using this invalid memory can lead to all sorts of problems
+that are sometimes very very difficult to find and fix.
+And finally even if we do everything correctly our program could throw an exception and the code that
+releases are allocated memory never execute and we leak memory anyway.
+We'll talk about exceptions and exception handling in an upcoming section of the course.
+That's where smart pointers come in.
+Smart pointers can help us prevent these types of errors.
+They can help us be more clear about who owns the pointer and when a pointer should be deleted to free
+up allocated memory and the good news is that they're pretty intuitive and easy to use in the next video.
+We'll see what a smart pointer is and the types of smart pointers provided by C++.

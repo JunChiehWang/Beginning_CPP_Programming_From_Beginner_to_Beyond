@@ -1,0 +1,52 @@
+So what are smart pointers well smart pointers are objects in fact smart pointers are implemented as
+C++ template classes which we can instantiate smart pointers can only point to heap allocated memory
+and they automatically called the Leite when that's no longer needed.
+Also very importantly smart pointers adhere to RAII principles as previously mentioned C++ has several
+types of smart pointers unique pointer shared pointer weak pointer and auto pointer auto pointer has
+been deprecated.
+So you shouldn't use this going forward and we won't discuss it in this section.
+So now let's see how we can create a smart pointer.
+First we need to include the memory header file since it defines a smart pointer classes and functions
+will use.
+As previously mentioned smart pointers are implemented as class templates.
+Very similar to the way that the vector class is implemented and we create them using a template parameter
+much as we did with vectors.
+Smart pointers are basically wrapper classes that contain and manage a raw pointer.
+The actual implementation of smart pointers is compiler dependent and it's beyond the scope of this
+section.
+Once we create a smart pointer we can use the smart pointer much in the same way as we use raw pointer.
+The smart pointer classes provide overloaded dereference and member selection operators as well as methods
+to get the raw pointer and more.
+However you can't do pointer arithmetic on smart pointers like you can with raw pointers.
+Finally we can have custom Do leaders with smart pointers where we can explicitly defined the exact
+behavior we want when the pointer is about to be destroyed.
+Now let's see the syntax for declaring a smart pointer.
+Here's an example of how you might create a smart pointer variable.
+Of course you would replace smart pointer with one of the C++ smart pointer types like unique pointer
+shared pointer or weak pointer.
+In this case the smart pointer PGR will manage an object of type some class that's been allocated on
+the heap.
+Once we create a smart pointer object we can use the dereference operator the member selection operator
+or any of the other smart pointer member methods.
+Notice that we don't have to explicitly delete the pointer when we're done with it.
+In this example when the pointer goes out of scope the smart pointers destructor is called automatically
+and it takes care of deallocating any heap storage that was used.
+That's pretty cool.
+You can see how powerful smart pointers are they can prevent memory leaks.
+Make your code easier to read and write and maintain with less errors.
+Now let's talk about a common idiom or design pattern used in C++ programming.
+It's called RAII or are a lie and it stands for Resource Acquisition is initialization a complicated
+acronym for a pretty simple concept.
+First RAII objects are allocated on the stack.
+The resource acquisition part is pretty straightforward.
+It means that RAII objects will acquire some sort of resource that could be opening a file allocating
+memory acquiring a lock and so forth.
+The initialization part is also straightforward.
+This means that the resources acquired an object initialization time.
+So in other words it happens in the object's constructor.
+Now at some point we need to relinquish that resource that we acquired and that happens in the destructor.
+Here we can close the file deallocate any allocated memory release locks and so forth.
+Smart pointers are examples of RAII classes since this is the idiom they follow with regard to memory
+resources.
+A simple concept but a very powerful concept.
+So let's start our exploration of the C++ smart pointers with the unique pointer in the next video.
