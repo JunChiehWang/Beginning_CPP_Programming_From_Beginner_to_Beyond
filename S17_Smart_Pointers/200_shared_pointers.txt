@@ -1,0 +1,293 @@
+Next let's look at the shared pointer the shared pointer is a smart pointer that provides a shared ownership
+model of the heap object.
+So like a unique pointer a shared pointer points to an object on the heap.
+However unlike a unique pointer that heap object may be shared among many shared pointers.
+So we can have one heap object referenced by multiple shared pointers that manage it unlike unique pointers
+shared pointers can be copied and assigned.
+This is exactly how we make them access the same he objects for efficiency shared pointers also support
+move semantics while unique pointers can be used to allocate arrays of objects on the heap shared pointers
+do not support this by default.
+So you might be thinking we can have multiple shared pointers all referencing the same heap object.
+So how do we know when that object needs to be destroyed.
+And that's a great question.
+There are different ways it does can be accomplished.
+The most common technique is to use reference counting.
+The idea is simple.
+Every time we instantiate a shared pointer object and have it point or reference to the heap object
+we increment to counter this counter simply has the number of shared pointers referencing that heap
+object when the reference count becomes zero that we know nothing is referring to the heap object.
+And it can be safely destroyed.
+It's a pretty simple but effective model.
+But it does introduce some overhead to the process.
+However the overhead introduces in most cases not a big deal compared to the benefits provided by having
+the system manage the shared objects for us.
+Let's see how we can declare and used shared pointers.
+First we'll see the same technique we used when we created unique pointers and then we'll see a more
+efficient technique using the make shared function.
+Here you can see that we're declaring P1 to be a shared pointer to an integer.
+We're also initializing it to point to a new integer that we create on the heap and that integer has
+been initialized to 100.
+Now P one owns the object on the heap.
+When one goes out of scope the INT on the heap will be deallocated.
+That is unless other shared pointers are referencing it.
+You don't need to call delete with a shared pointer.
+Now as far as using the shared pointer the syntax is pretty much like a raw pointer or unique pointer.
+You can see that if we dereference P. one we get the integer that it points to.
+In this case 100 and we display it.
+We can also modify the integer 1.2 in a similar manner.
+In this case since we only have one shared pointer referencing the integer on the heap when P one goes
+out of scope the integer will be deallocated from the heap before we see how we can create other shared
+pointers and have them reference the same heap object.
+Let's look at a very useful method in the shared pointer class called use count the use count method
+returns the number of shared pointer objects that are currently referring to the heap optics.
+In this example we'll have two shared pointers P1 and P2 that both reference the same heap object.
+So first we declare P1 as a shared pointer that will manage in it to draw the heap and we initialize
+at it to get to 100.
+Now we call the use count method on P1 and we see that it displays 1.
+That's what we expected since p 1 is the only shared point we're referencing the integer on the heap.
+Now we create another shared pointer P2 and we use the copy constructor to initialize it so that it
+refers to the same object as P1.
+Now we call the use count on P1 and we display 2 since both P1 and P2 are now referencing that same
+integer.
+But notice that if we call use count on P2 we'll also see a two which makes perfect sense.
+Now suppose that I call reset on P1.
+Recall that with a unique pointer this destroyed the heap object and set the unique pointer to NULL.
+However with shared pointers this decrements the use count by one and sets p one to know.
+Now the use count for P1 is zero.
+And the use count for P2 was 1.
+So just because we reset p 1 does it mean that we deallocate the integer on the heap.
+We can't.
+In this case because P2 is still referring to it.
+Finally when P2 goes out of scope the integer on the heap is deallocated since it's no longer being
+referenced.
+So you can see that reference counting is pretty simple in concept of course Sharepoint pointers also
+allows to point to user defined types.
+In this example we're creating a shared pointer that will point to an account object and we initialize
+it to point to the Larry account.
+We declare a count as the template argument and the shared pointer declaration.
+What this says is that the shared pointer P1 will manage an account object on the heap and we're creating
+that account object in the initializer list for P1 now we can use this pointer as we would a raw pointer
+we can dereference it to get the account object as well as access the account object member methods
+via the member selection or error operator.
+And again when P one goes out of scope the heap storage associated with the account object is deallocated.
+As you can see this code looks exactly the same as the code that we use with the unique pointer unlike
+unique pointers shared pointers can be copied assigned and moved.
+In this example we create a vector that will contain shared pointers to integers and we also create
+PCR which is a shared pointer to an integer and it points to an integer on the heap which has been initialized
+to 100.
+We can now push back that shared pointer to the vector.
+Remember we couldn't do this with a unique pointer since they don't allow copying but we can do it with
+shared pointers.
+Also notice that if we display the use count for pointer we'll see a 2.
+This is because that integer on the heap is being referenced from pointer as well as from the shared
+pointer in the vector.
+Now when the vector and pointer both go out of scope we're sure that the last one referring to that
+integer on the heap will clean it up.
+There's no need to call delete or to figure out when and from where to call delete.
+This is a huge deal.
+It makes writing this kind of code so much easier and less error prone.
+Now let's see a better way to initialize shared pointers.
+The make unique function was introduced in plus 14 but to make shared function has been around since
+C plus plus 11 to make shared function returns a shared pointer of the specified type and it allows
+us to pass initialization values into the constructor for the managed object.
+This is the preferred way to create shared pointers.
+Not only do we not have to use the new keyword but the compiler will generate much more efficient code.
+Since remember the compiler has to generate a data structure that holds information about the reference
+count.
+The raw pointer the actual heap object and other data as well.
+So this creates all of this in one shot when the pointer is initialized.
+In this example we create three shared pointers P1 P2 and P3 P1 is created using make shared and we
+reference an integer on the heap and we initialize it to 100.
+Now we can create P2 as a shared pointer to an int and use its copy constructor to initialize it to
+p one p one and p to refer to the same integer on the heap and it's use count will be to the third pointer
+P3 is initialized as empty so it doesn't point to any shared object yet but it is initialized.
+It's no so there's no chance that we can have an uninitialized or a wild pointer when we use smart pointers.
+Then we assign P to P3.
+Now P1 also refers to the shared integer in our use count increases to three.
+All three pointers.
+Now go out of scope which shared pointers responsible for cleaning up the heap storage.
+Well it's the last one that references it.
+In this case it will be P1 since P2 and P3 will be destroyed before P1.
+But the point is that you don't have to worry about it.
+So now let's head over to the idea and we'll see some examples of using shared pointers in life code.
+Ok so I'm back in the IDM in the section 17 workspace in the shared pointers project this project has
+three sections.
+The first section is all about using a shared pointer to an integer and sharing pointers so that we
+can see these reference counts moving up and down.
+The second section we're going to create test objects now and then the third section will use vectors.
+So let's start with this section first and I want to walk through it with the debugger so you can actually
+see what's going on.
+So I'm going to debug this program.
+OK so we're going to start right here on 931.
+You can see what we're doing here we're creating P1 as a shared pointer to an integer and we're setting
+that integer to 100.
+Now if I step through that you can see the one over here I'll refresh and you can see that P1 has a
+reference count of one you could see it right there I know it's kind of small but I couldn't make this
+font any bigger on this window here.
+So there is the counter of one.
+So this tells you that P1 is pointing to that shared integer right and that's the only thing pointing
+to that shared integer right now.
+So on line 32 if I display to use count point for that shared pointer I am going to get one so I'll
+execute that.
+And you can see appear on the display they use count as one which is actually the same thing we're seeing
+right in here.
+OK so now on 9:34 we're doing is we're creating P2 in terms of P1.
+So that's my copy constructor.
+Now we're sharing ownership.
+Remember this is one of the things that we could not do with unique pointers.
+So in this case then we execute that line and you can see now that P1 and P2 are both referring to that
+same storage.
+So when I refresh here you'll see that they both have a reference count of two right there.
+And so again P1 and P2 are managing that same area in memory.
+They have co-ownership.
+So at this point when I display the use count we'll see a two now in line 37 I'm resetting p 1.
+What is that going to do.
+Well it's going to set P 1 point nowhere.
+So we're going to have that set to NULL pointer and Peter's reference count will go down by 1 because
+now P2 is the only shared pointer that owns that memory.
+So let's execute that line.
+And let's refresh over here and you can see now that P1 is a null pointer basically and p to its reference
+count went down to 1.
+So if we display these last two statements we'll see that P ones use count to 0 and P2 is used count
+is 1 and the program is complete now.
+OK so now let's do part 2.
+Ok so now let's execute the second section of this project.
+You can see the second section starts here on line 41 f commented out the section one that we just ran.
+So let me walk through this with the debugger so we can see what's going on again with these reference
+counts.
+OK so we're here on line 42 and we'll step through that.
+All that's doing is creating PCR as a variable.
+It's a shared pointer to a test object and we're using make shared this time to create that test object.
+So I step through that and you can see that right now when I refresh my local variables PNTR has a reference
+count of 1.
+So we've got one reference to that shared test object on the heat.
+Now we're going to call this function and we're going to pass TR into it.
+This function expects a shared pointer to a test and it expects it by value.
+So what we expect is for it to make a copy of that shared pointer.
+Remember we're making a copy of the shared pointer object not of the test object on the heap that's
+important to understand the difference there.
+So let's walk through this.
+Now we're in the function you can see we're right up here on line 23 at the top of the screen and right
+now we've made a copy so if you look at p p as a shared pointer to that same test objects we expect
+PS use count to be two because we just created a copy.
+So let's take a look at that and you can see the use count is 2.
+So now when P goes out of scope in this function what happens is that the reference count to get is
+reduced.
+So let's take a look at that.
+Now we're back here right back to where we were we're online 44.
+And if I refresh you can see that pizzicato now is back down to 1.
+So we temporarily increase that reference count while we were in that function because we just made
+a copy of something else that using that same resource.
+So now we print out to use count for PCR which we expect to be 1 and that's exactly what this plays.
+Now notice what happens I've created a block here and then there's another block here.
+This just establishes scope so that we can see these inner shared pointers going in and out of scope.
+So in this case we've got PTO are one and we're creating peach or one based on.
+So now we've got Peter and Peter you are one both pointing to that shared resource.
+So let me execute that line.
+And what we expect now is the use COUNT TO BE 2 and I'll refresh here and you can see that the count
+right there is two for both of them which is exactly what we expect it will display to.
+Now right over here on the output what happens now is we create another block.
+So we're creating P-T or two also referring to that same test object.
+So now we've got these three pointers right.
+These three shared pointer objects all referring to the same managed object on the heap.
+So if I execute this line here on 9:49 what we have is we've got TTR Peachi are one or two all with
+a reference count of three which is exactly what we expect.
+And we can display that reference count.
+You can see the three red here.
+Now what we'll do is we'll reset pointer right.
+So this pointer right here will be no doubt which means that that will become No.
+And then the reference count for the other two pointers.
+Peter you are one and Peter or two will go down to two.
+Since Now there's one less shared pointer.
+So let's execute that line and refresh and you can see that not Peachi is no Peter you are one and you
+are to have a reference to this is we expect.
+All right.
+So now TTR is going to go out of scope right now and it just did.
+So now we're going to print out the use count for P-T are in this case which will be zero.
+Right because we reset it.
+OK so now let's walk through this one more time and we're right here right now and let's step through
+this one more time on this last statement.
+And what's the use count for PCR.
+Well let's refresh here.
+You can see that Peter's use count is now zero right now.
+Not referring to any managed object.
+So that's it.
+That's part 2.
+We'll do next is part 3 where we'll create a couple of shared pointer which will create three shared
+pointers to account objects and then we'll put them on a vector and print out the vector.
+OK so let's wrap up this video by going over the third section of the Sharepoint project.
+In this case you can see we're starting on line 58 and what we're doing is we're creating 3 account
+pointers and these are shared pointers to account objects.
+We're using the same account framework that we've been using all along.
+This is the one that's using dynamic polymorphism.
+So we're coming at this with a base class pointer right here and we're using stood make shared here
+we're creating a trust account Larry.
+We're creating a checking account.
+So we're creating a savings account Kerley.
+So there you go.
+At this point we've created three objects then what we'll do is we'll take those three shared pointers
+and we'll put them in a vector.
+So notice this vector declaration here.
+A vector is a vector of shared pointers to account objects move it accounts and will simply push back.
+A.S.C. one two and three.
+Remember we're not pushing a count objects we're pushing shared pointer objects that point to account
+objects and then which is loop through that vector and display them.
+OK so let's step through the debugger with this example and see exactly what's happening.
+OK so here we are we're on 959 but we want to do is we want to create those three shared pointers.
+So let's do that we'll step through the first one.
+The second one and the third one refresh my screen here and you can see that account 1 is a shared pointer
+with the reference count of one account two is the same and count three is the same.
+So each one of them is pointing to its own managed object right in one case it's a trust account a checking
+account and a savings account.
+Now what we're going to do is we're going to instantiate that vector of shared pointers to accounts
+and we'll do that right now step through that one line right now.
+And there it is.
+There's nothing in there right now.
+Now what we want to do is we want to add those three shared pointers to the vector.
+Remember A.S.C. 1 2 and 3 are shared pointers.
+They're not accounts they're not raw pointers they're shared pointers to accounts.
+So our vector holds shared pointers to accounts that's how we declared it.
+So what's interesting here is remember these guys right now all A.S.C. one two and three all have a
+reference count of 1.
+But when we add them to the vector the vector is going to make a copy.
+So now we have shared ownership A.S.C. one shares the ownership with that trust account with accounts
+which has a vector that has a copy of that.
+OK.
+So let's walk through this step three times through this code here and we've just added all three accounts
+refresh and you can see the actual accounts right here.
+You can see that it's got three entries and notice the reference count for them too.
+If I look at A.S.C. 1 2 and 3 you can see they also have a reference count of two because we made copies.
+So now we've got shared ownership again.
+A.S.C. 1 2 and 3 have shared ownership to that trust account checking and savings account and so does
+the vector.
+Now let's loop through this and display them.
+So what we're going to do is we're going to use a range base for loop here and we're going to iterate
+over the accounts object which is that vector.
+And we're just using Konst auto here.
+But remember the vector is a vector of shirred pointers.
+So this A.S.C. variable is going to be a shared pointer.
+And if we want to display the account would just dereference the pointer to get to the account.
+So we expect this to print out the trust to have the checking account and a savings account and the
+use count as we go.
+Now the use count should be 2.
+We we're using a reference to a base class.
+So the dynamic polymorphism will be just fine.
+So let's walk through this and you'll see that we've got right here you can see a peer trust account
+Larry and display the reference count for that which we expect to be to right because a CC one is managing
+it as well as the vector then we'll executed again we'll see the second object is that checking account
+use count as is also 2 and then the last one is the savings account for Kerley and the used count is
+2.
+Now what happens when the vector goes out of scope what happens when these pointers go out of scope
+while the vector is going to go out of scope first.
+So it's going to be destroyed but the objects that the trustee account checking account savings account
+objects on the heap won't be destroyed yet.
+What will happen is that those shared pointers in the vector will be destroyed and then the reference
+counts for those three options will go down by one.
+Then when A.S.C. three two and one are destroyed that's when the heap storage will be dynamically allocated
+and that's it.
+That's the program it's done.
+You can walk through this and use the debugger you can see the big difference here between using unique
+pointers and shared pointers.
+When we had a vector of unique pointers that vector exclusively owned those resources here were sharing
+those resources and the use cases are different.
+Obviously it all depends on what you're trying to accomplish.
