@@ -1,0 +1,99 @@
+This video we'll learn about the weak pointer the weak pointer provides the non owning or weak reference
+to a shared managed object like a shared pointer a weak pointer points to an object on the heap.
+But unlike a shared pointer it doesn't participate in the owning relationship weak pointers are always
+created from shared pointers and since weak pointers are not only references they do not affect the
+reference count for the managed object.
+So weak pointers don't affect the lifetime of the objects they're pointing to.
+There are a few use cases for the weak pointer.
+One is to prevent strong reference cycles between two objects.
+We'll see this visually in the next slide.
+Another use case is when we have a pointer that we use to temporarily reference another object something
+like an iterator pointer that traverses a list of nodes it really doesn't own them just visit's them
+temporarily.
+Let's see the problem with strong circular references.
+Sometimes when we design programs we may have two classes where each class refers to the other.
+This implies a one to one relationship between the classes.
+And this will be reflected in the class objects when we instantiate them.
+In this case we have two objects A and B which are instantiated from two different classes.
+Notice that A has a shared pointer to a B and B has a shared pointer today.
+Now we have a bit of a chicken and egg problem.
+When they go out of scope they will be destroyed from the stack but they're shared resources on the
+heap will not be destroyed and will leak memory keeps me alive and keeps alive.
+This is exactly where the weak pointer comes in.
+Let's see now we need to decide who owns who.
+Let's say that a owns B.
+Then we replace the shared pointer and B with a weak pointer and now everything works as expected and
+we don't need memory in the next video.
+We'll complete the section with a brief introduction to custom the leaders for smart pointers.
+But first let's head over to the idea and see this example in life code.
+Ok so I'm back in the idea.
+I mean the Section 17 workspace in the week pointer's project and what we'll do here is we'll do that
+Semb example that we did visually in the slides where I've got an A reference A B and A B reference
+CNA and we've got that strong circular reference that we can't break.
+So let's take a look at how we do this.
+First of all you can see that I've got a class A declared right here on line tend to 17.
+And the class A has a shared pointer to a B.
+Now since we haven't seen the B yet we need to put this forward declaration in here.
+I'm not sure if we've done that in class before or not but since the compiler needs to know about A
+B we're just simply saying hey you know what compiler.
+I've got a class B declared later.
+Just assume it's here.
+It's similar to a function prototype in a sense that just tells the compiler don't worry about it.
+You'll see this later.
+So in this case again the class A has a shared pointer to a B.
+And here's my set method that just sets that pointer.
+It's got a real simple constructor and destructor that just simply display you know when they're called
+so we can see them actually being called.
+And then my class B is defined down here and the class B has a shared pointer to an A.
+So there's that relationship between the two right.
+So an aone to B and B owns an age of that.
+That's the problem that we have.
+And here's my set method that sets that a pointer.
+And again my constructor.
+So really really simple.
+Let's take a look at the main and you can see the main here on line 31.
+I create that a shared pointer using make shared and 9:32 I create to be shared pointer using make shared.
+Then right here I'm going to say set the be part of a to b and set the A part of b to say that's establishing
+that circular reference.
+So what happens here is.
+Here's my a here's my b remember these are shared pointers.
+So we've basically got a pointer here and a pointer here.
+Remember it's a shared pointer so this is just an object and this guy's pointing to an object on the
+heap.
+This guy's pointing to a B object on the heap and what we just did here is we did this.
+He points to that one and this guy points to that.
+OK so you can see the problem.
+This guy has a reference count of one.
+Or use count of 1.
+This guy has a use count of 1.
+So what happens when a and b go out of scope while Ed goes out of scope and he tries to destroy this
+piece here right.
+But it notices that something else is referencing and so it's not zero.
+So it's not going to destroy it.
+Same thing with B.
+So what ends up happening is what actually gets destroyed is a and b that are on the on the stack right
+to shared pointers but not the area on the heap and there is your memory leak right so all this is going
+to leak and we've got no way to get to it.
+So that's the problem and the problem is because of this implied shared ownership.
+So the fix is really simple.
+The fix is that using a pointer.
+So we determine who owns what.
+Let's just assume that we're going to change this guy right here and actually let me run this you can
+actually see the leak build and run and there's the run you can see the constructor today I constructed
+a beep at the destructors.
+Never got called because we leaked the memory.
+That's what we want is we want a constructor of B's constructor that we want obviously destructors for
+both of them being called.
+OK so let's do that.
+So what we can do is you can see the comment right here.
+Make it weak to break that strong circular reference and that's exactly what we're going to do.
+We're going to come right here.
+We're going to make this shared pointer a weak pointer that won't affect the reference count.
+So now when we run this you can see a constructor that B constructor than the the destructors being
+called.
+Now we're no longer leaking memory so this is a real real common use case for the weak pointer and this
+kind of stuff happens more often than you would think.
+When you've got very complex data structures and graphs and you're traversing and doing all kinds of
+manipulation it's very possible you can end up with strong circular references like these and the weak
+pointers the solution.
+
