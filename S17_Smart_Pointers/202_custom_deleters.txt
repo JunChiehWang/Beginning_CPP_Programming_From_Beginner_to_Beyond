@@ -1,0 +1,130 @@
+In this last section of the course we'll talk about custom the leaders for smart pointers.
+This isn't something you're likely to see very often but I wanted to cover it for completeness since
+they are a feature that C++ smart pointer support.
+Sometimes when we destroy a smart pointer we need more than to just destroy the object on the heap.
+Sometimes when we use pointers to see structures from C frameworks we have to provide a specialized
+way of destroying them since in many cases they don't have destructors.
+As I said these are special use cases that you won't run into very often but if you do the C++ smart
+pointers allow you to provide custom to leaders that will be called when the smart pointer is destroyed.
+If you use custom to leaders you can't use make shared or make unique when you create your smart pointer
+objects since we need to provide our custom the leader and these functions don't support that.
+The idea is that if you need a specialized way to let your objects you probably need a specialized way
+to create them to.
+There are lots of ways to provide custom to leaders.
+I'll show you two ways in these slides.
+First using a function and then using a lambda in the case of a function we write or deleter function
+that will be called automatically when the smart pointer will be deleted.
+This function will be provided with a raw pointer to the managed object that the smart pointer is referencing.
+Then in this function you do whatever you need to do to relinquish your resources.
+In this example I'm simply deleting the raw pointer.
+That's it.
+So now when you declare your smart pointer you provide your deleter function.
+In this case I'm declaring PNTR as a shared pointer to some class and in the initializer I'm creating
+the managed object using you.
+But then I'm also passing in the name of my custom deleter function.
+That's it.
+Now when the pointer is destroyed it will call my leader.
+Let's see a real code example using the test class that we've been using in this section.
+So here we're creating a deleter function that will be passed in a raw pointer.
+In this case it's a raw pointer to a test object and that pointer is the pointer that the smart pointer
+is managing in this function.
+I'm simply displaying in my custom the leader and then I'm deleting the raw pointer that was passed
+to me.
+That's it.
+Now when I create the smart pointer object in this case TTR as a shared pointer I pass in my the leader
+in the initialization list.
+It's as simple as that.
+This will also work for unique pointers Now let's see how this works using a lambda expression.
+We haven't seen lambda expressions in this course since they're more of an intermediate C++ topic.
+If there's interest in learning more about lambda expressions please let me know and I'll add a section
+to the course.
+In a nutshell a lambda is an anonymous function that is a function that has no name and can be defined
+inline where you expect to use it.
+There's a lot more to lambdas but you can see in this example that the function name parameter has been
+replaced with a code block that looks very similar to what we originally wrote in the might lead or
+function.
+The syntax might look a little odd but now this code will execute whenever the pointer object is destroyed.
+That's pretty cool.
+We defined right where we will use it and not need to write another function have to worry about it
+well that completes the section on smart pointers.
+I hope you can see how powerful smart pointers are.
+There are many opinions as to what types of smart pointers you should use when and the answer is usually
+it depends.
+I would encourage you to use unique pointers as often as you can.
+Since they're simple efficient and in most cases the drop ins for many of the common pointer use cases
+then use shared pointers when you have more complex object management semantics involving shared ownership
+in the next video will do a simple challenge that uses a unique pointer to a vector of shared pointers.
+It should be fun.
+Ok so I'm back in the IDM and the section 17 workspace in the custom to leaders project and in this
+project what would you as well write a couple of different ways to have our custom the leaders being
+called.
+And it's really really straightforward.
+Let's do the function one first.
+We've got the same test class that we've been using throughout this section.
+You've seen it before so it should be pretty easy to understand what's going on there and what we want
+to do is we want to create our own deleter that will be called when our objects are deleted.
+This is it right here.
+This name can be anything you like.
+I just call it my dear leader it has to return void.
+And what what's being passed into here is the raw pointer that's being managed.
+So in other words if I've got a shared pointer to a test object on the heap we're going to get a pointer
+to that test and is going to be the raw pointer.
+If this was an account we'd get a pointer to an account object.
+Again a raw pointer.
+So that's the raw pointer that's being wrapped by that shared pointer.
+OK so what do we do in here.
+Well this is going to be called with that pointer we can do whatever we like in this case I'm just going
+to say using my custom function to leader and then I'm actually going to delete that pointer right.
+The whole point is for me to delete that storage.
+Now this gets much more complicated when you've got raw pointers to see structures that are used in
+C frameworks where they don't have destructors.
+You've really got to manage that memory yourself and this is a nice way to do it and still be able to
+use unique pointers and shared pointers and so forth.
+So what do we do now.
+Well now we can create our pointers.
+It's called TTR one and it's a shared pointer to a test object.
+Member the test objects on the heap.
+We have to use new here to do this we can't use make shared and what we do is we pass in the regular
+information that we're used to to create that object on the heap and then we pass in the name of our
+leader.
+In this case it's my deleter you can see the same name.
+You don't have to put address of in front.
+It doesn't hurt if you do but it is not necessary.
+The name of a function already defaults to the location of the function.
+So in this case what's going to happen behind the scenes is that when this pointer is delete when these
+pointers delete it and has to clean up the memory it's going to call this function to do it.
+And you can have complete control of how you do it.
+So that's the function method.
+The second way is using a lambda expression and what you'll see here is you could see our output statement
+in our delete and you can see here output statement or delete.
+The only difference is that it's being wrapped up in this construct right here and this is called the
+lambda expression which creates a closure object.
+And what's going to happen is when it's time to delete this rather than call a function.
+This code right in here executes.
+So this is real nice because you can write your code exactly where it's going to be used not somewhere
+else.
+Obviously this function could be anywhere but this is alright here it's real nice so when you're reading
+this you can see exactly whats going to happen right and it's right there rather than having to find
+a function to see what it does and that's it.
+There's two different ways to do it.
+If we run this now and actually you know what.
+Let me change this to a thousand here so we can see the difference.
+So what's going to happen here.
+I notice I have created this block right here.
+This is just an artificial scope here so that we can see that this PCR one will be deleted right here
+ready to be destroyed and Peacher are to be destroyed right here.
+So we expect TTR one to live inside this block and TTR to inside this block that we can really see them
+and we can really see these leaders being called.
+So let's execute this and will build and run and you can see right here.
+I mean move this over here just a little bit.
+This is this block right here you can see that we're constructing that test object with one hundred
+and then we're using our custom function.
+The leader.
+You can see that that output statement is displaying we're deleting the pointer and then we're calling
+the destructor.
+Same thing here we're calling the test constructor with a then we're using our custom lambda the leader
+which is this line right here and we're destroying our pointers while there and then we're calling the
+test destructor.
+So there you go.
+Real simple example of using custom the leaders you don't often need these.
+But it's nice to know that they're there and they're pretty easy to use actually.
