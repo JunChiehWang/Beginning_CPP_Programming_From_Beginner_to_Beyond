@@ -1,0 +1,113 @@
+In this video I'd like to briefly talk about exceptions in the context of a post-process class exceptions
+can be thrown from class methods constructors and destructors.
+Let's talk about the last one first.
+Do not throw exceptions from a destructor.
+The destructor is marked in C++ as no except by default which means that it does not throw exceptions
+if a destructor is called as a result of an exception being thrown elsewhere and then the destructor
+throws an exception.
+Then there's a problem since the original catch block will never be reached.
+This is a very bad situation.
+The only time a destructor might throw an exception is if it handles it itself.
+And that's a very unlikely use case.
+So remember best practice is to not throw exceptions from a destructor.
+OK so now let's talk about methods and constructors.
+In the case of class methods exception handling here works just as we've seen with regular functions.
+What about constructors constructors could certainly fail and since constructors don't return values
+we can't return a boolean or an error code.
+Constructors may fail for many reasons.
+For example suppose you're allocating memory dynamically and you're unable to allocate it.
+Or if you open a file in the constructor but the file doesn't exist.
+In cases such as these the constructor can throw an exception.
+The rest works just as you would expect.
+Let's see an example of throwing an exception from a constructor.
+In this slide we're using the account classes that we've been using throughout the course.
+Suppose we cannot have accounts with negative balances.
+So in the account class constructor we can check the balance in if it's less than zero.
+Throw an illegal balance exception object.
+In this case we're assuming that we've created our own illegal balas exception class.
+That's it.
+Now let's see how we can catch this exception if it occurs.
+So here we have a try block and in that try block we're declaring a unique pointer to an account object
+and using make unique to create a checking account object for MO with a negative balance on the heap.
+Since the account balance is negative the account constructor is going to throw an illegal balance exception
+which we're ketching in our catch block we display an error in our program continues.
+Now there's a lot more to class level exceptions but for the purpose of this course this is the basic
+information necessary to use and understand class level exceptions.
+In the next video we'll look at the exception class hierarchy that the C++ standard library uses internally
+and we'll see how we can tap into that hierarchy for our own exception classes.
+But first let's head over to the IDC and let's throw a class level exception from our account class.
+Welcome back.
+I mean the ID and I mean the still in the Section 18 workspace and I'm in the constructor exception
+project.
+And what I've done here is I've copied all those files that we created for the account class that we've
+been using throughout the term.
+So I've got accounts and checking accounts and portables and basically everything we've done this is
+the latest version of it.
+But what I've done is I've added a new header file right here called illegal balance exception and I
+don't need the CBP file because everything can be done in this header file.
+Notice what I've done here.
+I've created a class called illegal balance exception which represents the condition where we've got
+an illegal balance in this case a negative value.
+This is the exception object we're going to throw.
+And then we've got a constructor and destructor and I've tagged them both as default that we were using
+just regular default constructor and regular default destructor.
+That's it.
+Now what we want to do is go to our accounts file.
+And what we're going to do is in the account constructor right here we're going to check to see if the
+balance is less than zero if the balance is negative then we're going to throw in a legal balance exception.
+That's that class that we just created.
+This will throw an object of that class.
+OK.
+Now I mentioned that there was a lot more to a constructor level exception handling.
+One of the things that you can do with instructors is you can try.
+Remember we have an initializer list here.
+We could try to execute some of that.
+So it's possible to put trial statements in there as well.
+In this case we didn't do that but you might want to do that in subclasses.
+Again that's a little bit beyond the scope of the class.
+But I just wanted to bring it to your attention in case you see that up there.
+So this is it here.
+Right we've got an account.
+If the balance is negative we're going to throw an exception.
+So now let's look at our main and let's test this out.
+So here's my man.
+And notice what I've done in the main I've got a try block right here.
+Let me grab my pen so I can mark this up.
+Make it a little clearer.
+I've got to try block right here.
+And in the try block I've got a unique pointer to the base class I call it Mo's account and I'm using
+stood make unique to create a checking account on the heap that checking account contains the name Mo
+and notice that negative balance right there.
+That's going to throw an exception.
+We're using this in the try block because that constructor for the account class in this case remember
+it's checking it out but it's calling the base class constructor as well.
+And that's the guy that's going to throw the exception.
+So in this case this will throw an exception.
+It'll it'll throw a illegal balance exception which I'm catching here by Konst ref.
+If it doesn't throw an exception then we simply dereference Mo's account and print it out to stand it
+out.
+If it does throw an exception we're going to catch it right here.
+And we're going to deal with it.
+How do we deal with it.
+We're just going to say couldn't create account negative balance.
+That's it.
+But the point is our program completes successfully this will execute.
+It doesn't crash.
+OK now let's do this two different ways.
+Let's run this test case and first let's create it with a positive balance a $10 balance.
+Let me build and run and the output says checking account mode $10 program completed successfully.
+Just what we'd expect.
+But now let's create the negative balance and we'll build and run again and notice the output now says
+couldn't create account negative balance and again program completed successfully.
+That's pretty cool.
+So that works really really well.
+And that pretty much does it for the section challenge in this section.
+It's actually a pretty easy challenge.
+Although some of the things will be a little bit advance.
+The challenge is pretty easy to do.
+What I'd like you to do for that challenge and I'll talk about it and the challenge video is to provide
+an exception when we've got insufficient funds.
+Remember before we created right here this withdraw that was true false.
+Well rather than do True False let's throw an exception and catch it.
+But we'll get to that in the next video.
+We'll talk about the C plus plus standard exception class hierarchy.
