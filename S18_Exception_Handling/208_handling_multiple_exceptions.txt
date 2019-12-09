@@ -1,0 +1,81 @@
+In this video we'll see how we can throw and catch multiple exceptions.
+Suppose we have a function such as the one in this slide.
+The function is called calculate miles per gallon and it expects a number of miles and the number of
+gallons is parameters.
+And it just simply divides miles by gallons and returns the result.
+This function will fail if the number of gallons is zero because we'd have a divide by zero error.
+That's what we did in the previous video.
+But it would also produce incorrect results if either miles or gallons is negative.
+In this case we can check for both of these situations and throw a different exception for each case.
+Let's see how we can write this function.
+So it does just that the code is pretty much what you would expect.
+We check if gallons is 0 and if it is we throw in a teacher zero exception.
+We also check if either miles or gallons are negative.
+And if they are we throw a stood string object initialized to the string negative value air.
+Otherwise we simply perform the division and return the result.
+Let's see how we would call this function.
+Notice in the try block we're calling calculate mpg and that function may or may not throw an exception
+if it does not then we simply assign the result of the function two miles per gallon.
+Display it and then we display by at the end of the program and we're done.
+However what if calculate miles per gallon does throw an exception.
+Remember it could throw an INT or a stood staring so we create to catch handlers one for each exception
+type and we write our exception handling code in the catch box.
+If an exception is thrown then one of these catch handlers will handle it.
+If we don't handle a particular exception type here then C poster posts will terminate this function
+and proceed up the call stack looking for a handler until it finds one or the program terminates.
+It's also possible to have a catch all handler this catch handler will fire no matter what type of exception
+is thrown.
+If this is used it's common to place it as the last of your catch blocks since it really serves to catch
+anything that wasn't handled before.
+Notice the three dots are ellipsis in the catch all parameter list.
+You don't have access to the exception object thrown in this case but you can deal with the exception
+in the body of the catch all Block.
+Now let's head over to the ID and we'll rewrite that calculate miles per gallon to throw multiple exceptions.
+OK so I mean the Kotler idea in the Section 18 workspace and I mean the MPG function multiple exceptions
+project what we've got is the same calculate mpg function that it's simply throwing an exception when
+gallons was 0 and what we want to do is we want to extend this a little bit so that will also throw
+a different exception when Miles or gallons is less than zero.
+OK so right now we've got it throwing 0 if gallons is zero and we can simply add another check that
+says if Miles is less than zero or gallons is less than zero then we want to throw an exception here.
+Now it can't be another integer we're already throwing an integer type.
+So in this case I simply want to throw a std string
+and I'll just initialize it to something like negative value error or something like that.
+And that might include string appear.
+That's it.
+So in this case if we're getting in a division by zero error right here with gallons equals zero I'm
+throwing the integer.
+In this case if I've got an illegal negative value I'm just going to throw a.
+String that's been initialized to that string negative value air.
+That's it.
+Now down here if I run this now and throw a string it's going to terminate right because I'm not catching
+a string.
+So what I need to do down here is add another catch handler for that stood string.
+So I can add that right down here and I can say I'm catching a string by reference we can call it anything
+we like.
+I just I always call them X for exception.
+A lot of people call them e whatever you like.
+It's just a variable name.
+And in this case I'm going to display two standard error.
+The actual exception which is a string so I don't really have to type anything here for the for the
+string it's just going to display that string value that's in that exception object.
+That's it.
+So let's try this.
+Let's run it and let's do something like 120 divided by zero which gives us the try to divide by zero
+error.
+And now we've got to buy.
+So that's correct.
+And now let's try to throw on negative So let's say negative 1 and 123 negative value error just like
+we expected.
+And we'll test it with negative 1 for gallons or negative anything actually.
+There's your negative value there.
+That's it.
+Simple as that.
+So you can see here we're throwing multiple exception types and down here we're catching multiple exception
+types.
+Now if I had to catch all händler here if I didn't have this handler right here and I simply had a catch
+something like this with the ellipsis and not have this string here then that would certainly catch
+the string.
+I just wouldn't have access to the object that's all.
+OK.
+So that's it for this video.
+See you in the next video.

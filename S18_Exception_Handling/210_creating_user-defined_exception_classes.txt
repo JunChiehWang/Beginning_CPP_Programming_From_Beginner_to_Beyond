@@ -1,0 +1,104 @@
+In this field you will see how we can create our own exception classes and throw and catch them.
+This has the advantage of making the type of the exception thrown very explicit and also very specific
+for our application.
+Best practice is to throw objects not primitive types.
+Also we want to throw by value and catch by reference or Konst reference.
+There are several other best practices that we'll talk about in a few videos.
+So let's see how we can create our own exception classes.
+Here we create two exception classes for our simple example.
+The first is a class called divide by zero exception.
+And the second is called negative value exception.
+That's it.
+Now when we throw an exception or our code we create an object of one of these types and throw it.
+Of course we can provide constructors attributes and methods for these classes as we would for any other
+class.
+And sometimes it's a good idea to provide information about the exception in these attributes.
+But as I said let's keep it simple in this example.
+So now let's see what our code would look like.
+Throwing these exception objects.
+Here's the calculate mpg function that we saw earlier in this section.
+The code is pretty much what you would expect.
+We checked to see if gallons is 0 and if it is we throw a divide by zero exception object by value.
+We then check if either miles or gallons are negative.
+And if they are we throw a negative value exception object by value.
+That's all there is to it.
+Now let's see how we'll call this function.
+Noticed it in the try block.
+We're again calling calculate miles per gallon and the function may or may not throw an exception if
+it does not then we simply assign the result of the function two miles per gallon.
+Display it.
+Transfer control all the way to the bottom and display by and we're done.
+However what if calculate miles per gallon does throw an exception.
+Remember it could throw a divide by zero exception where a negative value exception.
+So we create to catch handlers one for each exception type and we ride our exception handling code and
+the catch blocks.
+If an exception is thrown then one of these catch handlers will handle it.
+Notice how we're catching the exceptions by Konst ref.
+If we had provided attributes or methods in the exception classes we would access them here as before
+if we don't handle a particular exception type here then C++ will terminate this function and proceed
+up the call stack looking for a handler until it finds one or the program terminates.
+Let's head over to the IEEE and we'll see this example in action.
+All right so I'm back in the ID and what I've got here is the section 18 workspace and I don't mean
+the MPG function exception classes project.
+And what we're doing here is we're creating a couple of user defined exception classes which we're going
+to throw and catch.
+Same thing we did in the slides.
+You can see here that on lines 5 through 8 we're creating two classes.
+One is called divide by zero exception.
+The other is called negative value exception.
+Notice there are no attributes no methods no constructors nothing.
+These are just plain old classes and we're getting the default constructor and that's good enough for
+me right now.
+We could provide attributes and methods and all kinds of good stuff but the names of the classes in
+this case give us all the information we need about the exception.
+So what do we do.
+What we have to throw these exception objects when we have an error.
+So in this case we check to see if gallons is equal to zero and if it is we throw a divide by zero exception
+object does cause the default constructor we checked to see if Miles is less than zero or gallons is
+less than zero right.
+If either one of those is negative then the result won't be valid.
+So we can throw a negative value exception object if none of those is true and we're good to go.
+We simply do the calculation and we return miles divided by gallons.
+OK.
+Just like we've done before.
+So now down here let's look at our tri block here we're just grabbing the information from the user.
+They've typed in the number of miles number of gallons.
+And here's our try block right here.
+This is the function we're calling calculate miles per gallon.
+It could throw an exception if it does not throw an exception.
+We simply assigned two miles per gallon the result of that function call.
+We print out the result we're done and then we come down here and we're finished with the program and
+we terminate normally if it does throw an exception.
+Calculate miles per gallon could throw a divide by zero exception or a negative value exception.
+So I've got to catch handlers here.
+One for each if I get a divide by zero exception it's coming in here.
+There's my exception object if my class did have attributes and methods.
+I would certainly be able to call them and use them here.
+But in this case I'm just saying sorry you can't divide by zero at that point.
+I transfer control down to here it says by and I terminate normally.
+Same thing with negative value exception if I get a negative value exception.
+I catch that object here and notice I'm catching both of these by Konst ref.
+Now I just play sorry one of your parameters is negative.
+The catch handler completes and I again I come back here and I finish normally.
+So I don't have any abnormal termination in this case.
+So let's run this and we'll give it a test real quick.
+So let's do a normal test case 123 miles and let's say I used 13 gallons.
+So my result is nine point four six exactly what we expect that's running again this time we'll say
+123 with zero gallons so we expect a divide by zero message.
+Sorry you can't divide by zero.
+Notice the bi also happens which means our function terminates our program terminates normally that's
+run it one more time with negative for miles and something else for gallons.
+Sorry one of your parameters is negative and actually we'll do it one more time for the gallons be negative
+as the last test case and we'll say negative three.
+Sorry one of your primers is native.
+So that's handling all the cases that we've got and we're basically creating our own user defined exception
+classes.
+Now this is pretty common.
+And you can see that it's real nice it's far it's very readable you're throwing an object as you're
+supposed to you're catching it by Konst ref like you're supposed chip in a few videos.
+We'll talk about see post pusses standard exception hierarchy where it's possible for us to derive our
+exception classes from one of C++ is exception classes.
+If you're coming from the world of Java and other programming languages that's pretty much what you
+do in C++ you have the option of creating the standalone exception classes or buying into the standard
+exception class hierarchy that's provided by C++.
+But we'll talk about that in.

@@ -1,0 +1,130 @@
+This video we'll see a use case that's commonly seen in C++ and we'll see how we can use exception handling
+with it.
+Suppose we have a function.
+Of course this will also work with methods and that function is called calculate average it expects
+a sum of integers that we can assume has already been calculated somewhere else and the total number
+of elements used to get that sum.
+And what we want to do is determine the average and return it as a double from this function.
+Pretty straightforward stuff.
+Also notice that we don't want integer division since we want to return a double.
+So we're using a static cast to convert one of the division operands to a double call.
+So so far pretty easy right.
+Well almost what if total is zero.
+What do we do.
+What do we return.
+We could return 0 but 0 might be a valid average.
+We could return negative 1 but negative one might be a valid average.
+We could return some other double that represents an error but which one.
+Since just about any double could be a valid average we could rewrite this function to return a boolean
+and that boolean would indicate success right.
+True if it worked false if it didn't.
+But then how do we return the average we'd have to use a reference parameter and do it that way or use
+a tuple makes the function really clunky to use.
+So let's see how we can write this function using exceptions and exception handling.
+We can rewrite the function without changing its interface and still provide a guarantee that the function
+will not divide by zero by throwing an exception.
+First we check if total is equal to zero if it is we don't want to do that division.
+Instead we throw zero.
+In this case we could throw anything in C++ allows us to throw just about any type but let's use zero
+again which is an integer and we've done it previously.
+If we throw the exception the division will not happen and the function will terminate.
+Now C++ will try to find an exception handler to catch that integer that the function threw.
+How does it do that.
+Well the handler isn't in this function so where else might it be.
+It may not exist at all in which case the program would terminate.
+But if an exception handler exists it must be in one of the functions on the call stack that called
+this function right.
+And C++ will unwind the stack looking for it.
+We'll see how this works in a few videos.
+So let's see how this function might be called in a way that would allow us to deal with the exception.
+Now this code could exist in any function anywhere in your program.
+Notice that we have a try block and in the try block we call the calculate average function.
+We know this function might throw an exception and if it does we'll deal with it in the catch block.
+But first let's see what happens if no exception is thrown.
+Again we're assuming that some in total have been declared and initialized.
+In this case average is assigned the return value from the function and we display it.
+Then we skip the catch block completely since no exceptions were thrown and we execute the last statement
+that displays by if calculate average does throw an exception then the remaining code in the try block
+is not executed.
+So we do not do the division by zero and C++ searches for a catch block that expects an integer since
+that's the type of the exception that was thrown in this case it finds it noticed that our catch handler
+expects a reference to an integer.
+Again best practice is to throw by value and catch by reference.
+We'll talk more about that later.
+So in this case the code in the body of the catch handler executes displays an error message to the
+airstream when the catch block completes we transfer to the last statement and we display by that's
+it it's possible to have multiple catch handlers as well as catch all handlers that will catch any type
+of exception.
+We'll do that in the next video.
+But first let's head over to the idea and we'll rewrite the MPG example as a function and use exception
+handling with it.
+OK so I'm backing the idea again I'm in the section 18 workspace and I'm in the MPG function project
+what I've done here is I've taken the calculation for miles per gallon and I've made it a function.
+So in this case it expects miles and gallons which are both integers and returns the double which is
+the miles per gallon.
+And I'm simply abody miles by gallons.
+And again I'm casting miles to a double so that we do double division and get an accurate result.
+That's it.
+My main is just like it was before the user enters the miles the gallons and the only difference now
+is that on line 19 right here you can see that I'm calling calculate miles per gallon and I'm passing
+in the user entered valleys.
+So let's run this as is without any exception handling without any error checking at all.
+So we'll run this and let's say I entered 120 miles and I entered 0 there is my result which is infinity
+that's not what I want and we'll deal with that in just a sec.
+So we know that we don't want to divide by zero.
+So what we can do appear in the function is we can say if gallons is 0 we want to throw an exception
+and we'll just throw again we'll throw 0 which is a simple integer.
+Now let's run this.
+You'll see something that's a little bit different now.
+When I call calculate miles per gallon here and I use a zero for the gallons it's going to throw this
+exception that exceptions not being caught anywhere.
+So it's going to go all the way up to the top.
+My main that's where I'm at now and our programs going to terminate.
+It's going to terminate abnormally.
+So let's run this so you can see what that looks like.
+So again I'm going to enter 120 and enter 0 for the gallons and you can see right there it says.
+I'll cancel that.
+You can see it's terminate called after throwing an instance of it.
+This application has requested the runtime to terminate it in an unusual way a bad termination right.
+Basically an exception was thrown that was not handled that will always terminate your program.
+So how do we handle that exception.
+Remember the mile to calculate mpg function appear has no clue what to do when it gallons is zero.
+All it knows is I can't do a divide by zero and should I just print an error message.
+I don't know what to do.
+So someone else do it.
+I'm just throwing the exception.
+So what we can do down here is we can write a try block around this code that could potentially throw
+an exception.
+So let's do that.
+I'll say try and I'll close off the tribe walk here and we'll indent this area right here.
+So I'm going to try to execute that function.
+If the function works properly then I just print out miles per gallon if that function throws an exception
+then we're not going to divide right because it's thrown out before the division.
+It's not going to assign miles per gallon basically the tribe will stop and it's going to look for a
+catch handler.
+Right.
+So let's write the catch handler our catch handler looks kind of like this.
+What am I going to catch.
+Well I'm going to catch an integer by reference and right here I'm simply going to print stood Sierre
+tried to divide by zero or something like that.
+OK.
+That's it.
+So you can see now that the errors detected in one place and it's all in one file here just for instruction
+purposes.
+But this could be anywhere in your program right.
+The error has been detected here and it's been handled here.
+So let's run this now.
+And we'll do it again 120 and 0 tried to divide by zero by our program terminated.
+Normally we handle the exception in a controlled manner.
+And that's really what it's all about.
+Now in this case there could be some issues that we need to catch some other exceptions and that's what
+we'll do in the next video.
+What if Miles is negative but that doesn't make sense.
+I traveled negative 100 miles per gallon.
+So we want to also throw an error if Miles is negative or if gallons is negative for that matter right
+how can you have negative gallons.
+So in this case we're just doing a simple test so we don't divide by zero but in the other cases which
+will do in the next video we're going to check to make sure that we've got valid values here.
+So if Miles is negative or gallons is negative then my calculation cannot be correct.
+So we'll throw another exception there and we'll catch multiple exceptions.
+So we'll do that in the next few.

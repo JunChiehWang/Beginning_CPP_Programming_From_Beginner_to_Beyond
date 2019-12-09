@@ -1,0 +1,163 @@
+In this video we'll see how C++ looks for catch handlers when an exception is thrown.
+Suppose we have a function and it throws an exception if the function doesn't handle its own exception
+then the function terminates and it's removed from the call stack then C++ looks at the cost stack to
+determine the function.
+That's now at the top.
+Since that function must have called the function that just terminated if this function used the try
+block then the catch handlers are checked for a match.
+And if one is found it fires and we keep processing as we've seen in the examples already.
+But if there is no try block or there is a try block but it doesn't have a catch handler that matches
+then the function is removed from the call stack and the process repeats.
+This is called stack unwinding.
+If we get to the main function and the exception is handled there either then the program terminates.
+Since the exception was not handled remember what happens when a function is removed or pop from the
+stack all of its local variables are destroyed.
+This means that for local objects there are destructors are called.
+If we have to free memory with delete then these statements may not execute at all and we will leak
+memory.
+This makes it critical that you implement classes that require resources as are a classes.
+We talked about RAII in the smart pointers section of the course.
+Make sure that you clean up your resources and your destructors.
+Since you never know when they might be called and you don't want to leak any memory or leave files
+or resources in unstable states stack unwinding is one of those things that's best understood with an
+example.
+So let's head over to the idea and show you an example of a program and how stack unwinding works.
+OK so I mean the idea I mean the Section 18 workspace in the stack unwinding project and what I've got
+here is some really simple function calls.
+There is no exception handling there's no throwing there's no ketching there's nothing special going
+on here.
+We will add that in a minute.
+This is our base case so I just want to go over this to make sure that you understand what happens when
+we've got this function calling.
+So let's start here.
+Here's my stack.
+Remember all this happens in the stack.
+So here's my stack.
+Remember all the function calls happen on the stack.
+So I've got my main.
+So that means that I've got main on the stack.
+So main is activated on the stack.
+We print out starting main and then we call function.
+A function as a peer function gets pushed on the stack.
+So this would be function here and it displays starting functions.
+Then it calls function B.
+So we go to a function B now function B gets pushed on the stack it displays starting function B it
+calls function C and functions C is put on the stack.
+So you can see it's a real nice orderly process of function calling it displays starting function c
+then it displays any function C then it's popped off the stack B completes now and says ending function
+B and it's popped off the stack a says ending function a.
+It's popped off the stack.
+Finally we're back here and we end up printing finishing main.
+OK so each function announces itself and then it says I'm done.
+And if we run this project to clear the screen here and if we run this project what we'll get is exactly
+what I just said.
+Let me move this over here so we can see it here you can see we're starting main then we're calling
+function a function B functions C and now we're starting to unwind write our programs finishing so function
+C's done function B is done function is done and then Man this is what you would expect.
+This is normal control flow when there is no exception handling.
+Now we're going to do is we're going to add a couple of throws in here and a catch.
+So you can see exactly what happens when we're doing stack unwinding with exception handling remember
+exception handling.
+Definitely could change the normal control flow of your program.
+So this is the normal flow of our program assuming we've got no exception handling and no exceptions
+and no problems at all.
+All right.
+So let's say that functions C throws an exception and would just throw 100 we could throw anything.
+The point is we're throwing an exception.
+So I'm just going to throw a hundred here and in my main where I call function a right here I'm going
+to enclose it in a try block.
+So there's my try block
+and I'll indent that.
+And then what I'll do is put a catch handler here and that will expect an integer by ref will call it
+X and we'll just write something like stood out.
+Let's just say caught air in main something real simple like that.
+Now let's walk through this and see what we expect to happen.
+We're here.
+Maine begins and it prints out starting May actually let me close this up just a little bit so I've
+got a little bit more room to work
+OK.
+Perfect.
+Everything fits just right.
+OK so we're here in Maine and we're going to print out starting May.
+Now we're going to try function a function could throw an exception.
+So I'm coming over here.
+I call function and it prints out starting functions and it calls function B function B begins displays
+function b starting function B it calls function C which displays starting functions C now it throws
+an exception what does that mean.
+That means that this function is now done because it's not catching its own exception here.
+So this code right here will not execute.
+We will never see this function complete normally because it's being pulled off the stack right now.
+Now what happens.
+Well now we go back to whoever called function C which was function B.
+So now we're back here and doesn't have a catch handler for an integer no.
+So this guy gets popped off the stack.
+Right so this won't execute either.
+We go back to a.
+Right because a call be it doesn't have a catch handler.
+This won't execute either.
+And now we finally get back to the main the main does have a catch handler.
+This will fire and our program will finish normally.
+But what's happened on the stack is real real different.
+Right.
+You notice these three functions got ripped off the stack immediately.
+All its local variables were destroyed destructors were called.
+If if any.
+So you've got to be real careful with your objects here make sure that are destructors are correct because
+they're just got called and they didn't get called as you expected them to be called.
+So let's run this and see the output now.
+And notice the output how different it is from before we're Main.
+We're starting a we're starting beat We're starting see right just as we said now see throws an exception
+right here on 9:23 it doesn't catch it.
+So Saez gone right now.
+Notice how the ending function C is never called.
+We go back to be it doesn't catch an integer it's gone.
+We never see the ending function B.
+We go back to function a.
+It doesn't catch it either.
+So notice what happens here.
+Right we never see the ending function message.
+We finally come back to the main main catches the exception.
+There you go caught error in Maine and it finishes normally.
+So this is a good example of stack unwinding you can see exactly what's going up at that chain right
+now.
+If I do something like Let's try in function B let's say right here
+let's say that we're going to call function c.
+Let's just try to call function see and see what happens.
+And in this case we can catch the integer.
+And what I'll do is I'll copy that output statement that I created just down here in main real quick.
+And I'll paste it right in here.
+And I'll just simply say caught error in this function be.
+OK so now let's walk through this example and see what's going on.
+Let me close this up again and I'll scroll up just a little bit.
+So hopefully we can fit it all in here.
+OK.
+That's a function a laptop.
+All right.
+So here's main portraying functioning function a could throw an exception or anything called by function
+it could throw an exception as well some calling function.
+It says starting a function and it calls function B function B displays starting function B and it tries
+to execute function c.
+So what's going to happen here is function c executes and it throws an exception.
+This will not execute function c is now gone.
+But now we come back and function B is handling the exception.
+So now this will work and this will work.
+And from now on.
+Function B and then function a.
+All execute normally.
+OK.
+So let's run this and see what we get.
+All right look at this.
+What have we got we've got starting main than we're starting.
+A We're starting B and we're starting see now C throws that error right.
+So C is gone.
+Notice how the ending C is never printed.
+We catch the error right here on line 21 and then we continue normally because we've handled the exception.
+So we've got Ending B and then we come back here and say and finally we finish off our man.
+So this is stack unwinding.
+I encourage you to play around with this example put some throws and catches.
+It's really the only way to really understand it is to play with it put some try some ketches throw
+in different places and see what's happening and you'll be able to trace through this and once you really
+understand what's going on you'll definitely understand exception handling and end up stack unwinding.
+And it's critical that you understand that because remember things are going to get thrown off the stack
+so you've got to be sure that you're handling your resources correctly.
+

@@ -1,0 +1,259 @@
+In this video we'll learn about some of the concepts terminology and syntax of exception handling and
+C++ and then we'll see a simple example that uses exception handling to deal with a divide by zero condition.
+Let's start with one exception handling is all about.
+First exceptions in C post-purchase should be used only for synchronous code not asynchronous code exception
+handling is about dealing with extraordinary situations how we define what an extraordinary situation
+is is really dependent on the application and the designer.
+We want to be able to detect when an extraordinary situation has occurred or is about to occur so that
+we can deal with it.
+Again what does deal with it mean.
+It depends on the application.
+In some cases we'll be able to recover and continue.
+But in other cases maybe the only alternative is to terminate the program.
+But in this case we can control how we terminate the program.
+Perhaps we can close files save as much data as we can and fail soft.
+So what can cause these exceptional or extraordinary situations one cause could be insufficient resources.
+Maybe we're out of memory or we have no external storage left and we need that to continue.
+Another cause is missing resources.
+Suppose we need to open and read a file but that file doesn't exist if this file is critical to our
+program.
+Then we have to decide how we're going to continue if it's even possible invalid operations range violations
+under flows and overflows.
+There are many many causes for exceptions our programs is said to be exception safe when our code handles
+exceptions.
+This is very difficult to do completely in C plus plus.
+Now let's learn about the terminology used in C++ when we talk about exception handling this terminology
+is fairly consistent with many other popular programming languages that you might be familiar with.
+However the way it works with C++ tends to be different.
+First an exception is an object or a primitive type such as an int a double a boolean and so forth and
+it signals that an error condition has occurred in many cases this exception object also contains information
+about what happened when your code determines that something is wrong.
+Then it can throw an exception object.
+Why can't the code just deal with the problem.
+Well in some cases it can and it doesn't throw an exception it just handles it itself.
+However the more common use cases that the problem is detected in one place in your program.
+But that part of the program doesn't know what to do about it.
+So it throws an exception and hopes that some other part of the program can deal with it.
+That's where ketching and exception comes in some other part of the program could contain the code that
+catches the thrown exception and handles it in some cases dealing with this simply means displaying
+or logging an error message and terminating the program.
+That's OK if the program can't continue and we fail soft in other cases we may be able to handle the
+exception recover and continue processing.
+For example suppose I want to allocate some memory dynamically but there isn't enough memory available.
+The part of our code that allocates the memory would throw an exception since it couldn't allocate any
+more memory but it doesn't know what to do.
+That in some other part of our program we can catch this exception and maybe we can clear out some buffers
+or caches and then release some memory and then try to allocate it again.
+Now let's see the keywords that C++ uses to achieve exception handling in C++.
+We use three keywords to work with exception handling.
+These are throe.
+Try and catch the throw key word is used to throw an exception object or primitive type and it's usually
+followed by an argument which is the exception that we're throwing the try keyword is followed by a
+code block in curly braces.
+The code in the code block is code that could potentially throw an exception.
+So we place that code in the try block.
+If the code does not throw an exception then the code executes as normal.
+However if the code in the try block throws an exception then the rest of the code in the block does
+not execute and C++ looks for a block of code that can handle that thrown exception.
+That's the catch block which is the catch keyword followed by the type of exception object that it handles.
+It also has a code block where the code that handles the exception executes catch blocks only execute
+if an exception is thrown and the type of the thrown exception matches the parameter in the catch block.
+We can write multiple catch handlers that expect different types of exceptions.
+The best way to understand exception handling is to really just look at some examples.
+Let's start with a very simple example that divides by zero.
+Here we have a code snippet that divides some by total and stores the result in average.
+Let's assume that sum and total have been declared and initialized.
+So what happens when total is zero.
+Does the program crash.
+Do we get an undefined result.
+The answer is yes to all of them.
+It really depends because the result of a division by zero depends on the types of the arguments in
+the division operation.
+Integer divide by zero and floating point divide by zero may provide different result.
+We'll see this in a minute in the ID.
+Regardless we can't let that statement ex-secret So what do we do.
+Well that's pretty easy.
+We check to see if total is zero and if it is we owe it to the division and if it is not equal to zero
+we go ahead with the division.
+That's pretty easy.
+The harder question is what do we do in total is equal to zero.
+Well that totally depends on the application.
+And this question becomes much more difficult if this code existed in a function and that function calculates
+and returns the average.
+What are we return from that function if total is zero.
+So we can use exception handling to deal with the situation.
+This is an example to show you the syntax for exception handling.
+You wouldn't write code like this since we could print an error message easily with a simple if else
+statements in the previous slide.
+But let's look at this code together.
+Again let's assume that sum total and average have been declared and initialized.
+First we have a try block inside the code in the try block.
+We write code that could potentially throw an exception in this case if total equals zero.
+We throw an exception the type of the exception in this example is an integer and we set it to zero.
+Best practice is to throw objects not primitives but we'll get to throwing objects.
+Let's first look at the case where total is not equal to zero.
+In this case the try block executes the division occurs and we can use the average in the try block
+is normal when the code in the tribe what completes we transfer control to the last statement that displays
+program continues.
+Notice that the catch block does not fire since no exception was thrown.
+OK now let's suppose that total is equal to zero.
+Now the code in the try block throws zero no further code in that try block is executed.
+So the divide by zero does not happen.
+Now we transfer control to a catch handler that expects an exception object of the same type as the
+one we threw.
+In this case an integer the code in the catch block now executes.
+And when it's done we transfer control to the last statement that displays program continues again.
+Notice that we prevented that divide by zero error and we handled it in a controlled manner.
+Now let's head over to the idea and we'll see this example in action.
+OK so I'm back in the code like ID.
+I mean the Section 18 workspace and then the MPG project mpg stands for miles per gallon and that's
+what we're going to calculate.
+Apologies to my kilometers per liter friends out there.
+So what do we do.
+We've got Miles we've got gallons we're going to ask the user for those two values they're both integers
+and then we're going to calculate miles per gallon which is a double.
+Pretty straightforward stuff that we've done already.
+So in this case notice on line 15 here I'm calculating miles per gallon equals miles divided by gallons.
+Now there's a problem here we're going to get some truncation because you can see that Miles right here
+and gallons are both integer.
+So this is going to be integer division and we're going to truncate the the decimal part right.
+But the reason I'm doing it this way is to show you the error that happens when you do integer division
+by zero.
+OK.
+So but before we do that let's run this with just some normal data.
+So let's say we have 13 miles and three gallons.
+Our result is four you can see it's not four point something because we're doing integer division but
+that's ok we can fix that in a minute.
+Now let's do a division by zero and see what happens.
+So I'm going to run this again and let's say I put in 13 and this time I put in 0 for gallons.
+Now when I press Enter it's going to try to divide 13 by 0 and it's going to crash.
+So I pressed Enter.
+There's the crash on Windows.
+I'll cancel that.
+I closed the program and I'll terminate this program.
+We don't want to crash.
+OK.
+Now if I comment this out and we do a division by zero with a floating point number and what we're doing
+here is what we did a while back in the course where we had a static cast.
+Remember these are both integers right here Miles and gallons.
+So I really don't want to do integer division so I just need to make one of them a double and then double
+division will occur.
+So I'm statically casting miles to a double I could have statically cast had gallons or both of them.
+So in this case we're doing double division and the behavior is different here and I'll show you why.
+Let me run this again.
+OK so let's.
+Again let's do something valid let's say 130 divided by 30 gallons.
+Result is forty three point three miles per gallon.
+That's fine.
+Now let's do it with zero.
+So I'll get a 123 this time is 0 gallons so we're going to get a divide by zero here.
+We're not going to crash though.
+You can see that the result that Prince is infinity and that's the standard and C plus plus when you
+do floating point division by zero.
+If I run this again and I enter negative for miles and obviously we would have to do checks for all
+of this stuff and zero and I'll get a negative infinity.
+You can see that result right here.
+And the last thing if we type 0 0 0 divided by zero we get not a number.
+And that's the error that you see here.
+All those are bad outcomes.
+We really don't want those.
+So the easy fix is not to execute line 16 if gallons is equal to zero.
+Right.
+It's really that simple.
+So let's do that to an IF statement if gallons is not equal to zero
+then we do want to execute this code right.
+We're safe
+and we'll use an else statement here.
+C-code light puts an extra Kerley in there for me.
+So.
+Else we've got an error.
+So we want to display the error and what we'll do is we haven't used standard error or see error yet.
+It's another output stream that's pretty much reserved for error messages or error logging.
+And I'll talk about that a little bit more when we talk about file IO by default sea air.
+Is your console just like sea out.
+So we should see this on the screen and we'll do an end line here.
+OK.
+So far so good.
+Like Again nothing we haven't done before but in this case which is handling this error and we're not
+using exception handling here we're just using our regular old logic to handle the air.
+So let me run this and say 130 miles by zero.
+Now we should have Sorry can't divide by zero.
+Right.
+Just like one would expect.
+OK so now let's rewrite this program so that we use exception handling and what we'll do is we'll load
+the MPG exception project right here and I'll load that and I'll be right back.
+OK so I loaded the MPG exception project in the section 18 workspace and you can see that right now
+is has no exception handling and it has no if else logic either.
+Now here's the commented code that does does the integer division I'm just going to get rid of that
+because I really don't want to clutter up.
+And I'm still doing our floating point division here.
+So what do we do to get exception handling working here.
+Well we have to have a try block.
+So we're going to say right here try to execute this code and I'm going to wrap this code up right here
+inside the try and all indent this.
+So what we do here is we try to execute code that could potentially throw an exception.
+And when do we throw the exception will we throw the exception of gallons is equal to zero.
+So let's do that right in here I'm going to say if gallons is equal to zero that's where I want to throw
+and what do I throw an exception could be anything it could be an integer or a character or a pointer
+or an object.
+Right here we're just going to throw an integer.
+Later on we'll use objects.
+It's best practice is to use objects.
+But let's just use an integer here so it's easy to understand.
+So what do I want to throw I could throw any integer I could throw zero right.
+I could throw gallons I could do anything I want.
+But let's just throw zero.
+Now what happens if gallons is equal to zero.
+Then we're throwing this zero if gallons is not equal to zero then our code executes as normal.
+But what if we do throw this zero here if we do throw this exception right here this piece of code here
+is not executed at all.
+Ok totally skipped.
+And then what happens is that the C++ system is looking for that exception that was just thrown.
+If you don't catch it then the program will terminate.
+But if you catch it then you can deal with it.
+So how do you catch it while you catch it using a catch block and you can put that right here.
+I'll say catch.
+And what's the type of the exception we want to catch.
+In this case it's an integer and you always want to catch by reference.
+That's the best practice.
+Name this thing any thing you want we really aren't going to use it.
+And now whatever code we want to execute in here is what's going to happen when the error is thrown
+when the exception is thrown.
+And I'm just going to paste that same see error message that I had earlier.
+OK so now again let's walk through this with you really carefully because when the next few videos it'll
+get a little bit more complicated.
+So here's my try block.
+You can see it between lines 15 and 20.
+And here's my catch handler right here my catch block.
+I tend to use both names synonymously.
+So again if the user entered zero we throw it right.
+This code is not executed thankfully otherwise we'd have a divide by zero right here.
+We try to catch an integer if there is a catch block but it doesn't catch an integer or even if there's
+no catch block then we've got our program will terminate.
+Right on the spot.
+In this case it will because we're right in our man then if we do throw 0 and we do have a catch handler
+for it we'll catch it right here.
+Now I could print out the X if I wanted to write and will print 0.
+That's what was thrown here.
+That's what this guy is right here.
+That's the object that was thrown the exception.
+So in this case there's my catch handler.
+In either case my program will not crash because.
+Let me walk again right through me clear this and this.
+If I do throw an exception it's handled here.
+If I don't throw an exception it's handled here.
+In both cases this line will execute.
+My program will continue.
+Normally it won't crash.
+All right.
+So let's give this a run and say 130 and we'll do zero again.
+Sorry you can't divide by zero sorry exception is being handled.
+Now you might ask.
+So what.
+Same thing I could've done with an if statement.
+Yes and this is not typically the way that we do exception handling this is just showing you the syntax
+and what's going on.
+Usually we do the exception handling when a function throws an exception and that function has no idea
+what to do with it.
+And we catch that exception somewhere else and that's what we're going to go into the next few videos.
+OK I'll see you there.
