@@ -1,0 +1,57 @@
+In this video I'd like to briefly talk about the C plus plus standard exception class hierarchy C++
+provides a class hierarchy of exception classes these exception classes are used throughout the C++
+standard libraries this exception class is the base class in all other exception classes are ultimately
+derived from it.
+Exception provides a virtual function named.
+What that returns a C-style string with a description of the exception that occurred.
+We can create subclasses of the exception classes and then implement the virtual function so that it
+displays whatever exception message we want.
+Let's take a look at the exception class hierarchy.
+Here's the C plus plus standard library exception class hierarchy.
+The classes that are in orange are the C++ 17 additions to the class hierarchy.
+Notice that the common base class in the center is stood exception.
+And then we have many classes derived from it.
+Exceptions that are runtime errors logic errors bad allocation errors out of range errors and many more
+we aren't going to study these classes in detail but we can create our own user defined classes that
+are derived from the exception classes.
+This can be very useful in some situations since by being derived publicly from stood exception our
+classes are now part of this hierarchy and can be used wherever a good exception is expected since your
+class is an exception.
+Also thanks to dynamic polymorphism.
+All you have to do is implement the what virtual function and it will be bound dynamically at runtime.
+Let's see an example of how we could create an illegal balance exception for our account class.
+But this time let's derive it from stood exception.
+Here's a simple example that shows how we create our user defined exception class named illegal balance
+exception and this might be thrown if the account is created with a negative balance.
+Notice that we derive the class publicly from stood exception and we simply provide a default constructor
+and a default destructor.
+Finally we implement the what.
+Virtual function and return a C-style string describing the exception.
+This is a really simple implementation we could provide all sorts of error information codes descriptions
+and so forth as class attributes and initialize them in the constructor when we create and throw the
+object.
+There's a keyword here that I haven't talked about yet.
+That is the No except keyword.
+This tells the compiler that the method will not throw an exception.
+So don't throw exceptions from these methods.
+The destructor is no except by default.
+If you do happen to throw an exception from a no throw method the program will terminate.
+The exception will not be handled.
+Let's see how we might use the account class hierarchy that we've used throughout the course.
+Here's the code for our count constructor.
+We're checking to see if the account balance is less than zero and if it is we're throwing in a legal
+balance exception which is our user defined exception class derived from state exception.
+This code should look pretty familiar since it's more or less the same code that we wrote when we created
+our own standalone illegal balance exception class.
+Now we can try to create an account object.
+In this case will create a unique pointer and create a checking account object dynamically.
+Notice that we're creating Moze account with a negative 100 balance.
+This is not legal so we expect that the account constructor will throw in a legal balance exception
+object and that's exactly what we're catching in our catch handler.
+In this case the catch handler fires and we call X dot what which will display illegal balance exception.
+That's pretty powerful and not too difficult to understand or use.
+Well that's it for exception handling the challenge exercise for this section is next.
+And although it would involve some more advanced exception handling techniques than you'll find in most
+courses I think you'll be able to do it just fine.
+Let's get to it.
+
