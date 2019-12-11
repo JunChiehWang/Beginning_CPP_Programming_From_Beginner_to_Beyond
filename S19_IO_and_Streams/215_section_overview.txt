@@ -1,0 +1,31 @@
+In this section of the Course will look at how C++ uses streams for IO first will learn what streams
+are and how they help abstract the complexity away from working with different types of input and output
+devices.
+Then we'll learn about some of C++ history manipulators.
+These are functions that can affect how we read and write data to and from streams them will learn about
+some of C++ history manipulators.
+These are functions that can affect how we read and write data to and from streams will learn about
+stream manipulators that affect boolean integer and floating point values and then we'll use some manipulators
+that work with any type of data to help us format or output these manipulators give us the ability to
+align text fill blank areas with specific characters and set the width of output fields.
+Then we'll do a challenge where we'll use the manipulators to format a report containing information
+about tours to South America after the stream manipulators will learn about input files how to open
+them check to see if they were open successfully read from them and then close them.
+Read from using both formatted and an formatted IO and we'll do two challenges using input files.
+The first is to create an automated grader that would grade student quiz responses from a text file
+and produce a report of the results for the second challenge.
+Well as a user for a word and see how many times that word appears in Shakespeare's play Romeo and Juliet
+which is stored on a file and disk then we'll learn about output files and how they work well or to
+open them right to them in both formatted and informatic modes and close them and then we'll do another
+challenge that creates a copy of Romeo and Juliet but adds like numbers to the play that will wrap up
+this section by looking at string streams.
+This allows us to use in-memory strings as streams and use the same techniques that we use with files
+with in-memory strings.
+It's very powerful.
+And we'll also see how we can use string streams for Data Validation as you'll see in this section.
+IDS differ in where they store files for use within the IEEE.
+In the last video of the section I'll show you how to set up external text files for reading and Visual
+Studio code blocks Sea-Lion and X code.
+OK we've got a lot to get to.
+Let's get going.
+

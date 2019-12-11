@@ -1,0 +1,69 @@
+In this video we'll learn about how C++ uses streams and files for IO writing and IO library for any
+programming language is an extremely difficult task.
+There can be all sorts of devices providing data to your program and your program can send data to many
+types of devices as well.
+These devices may be physical devices such as hard disks the console and the keyboard.
+Or they can be virtual devices such as some connection to a web server C++ provides a stream abstraction
+to work with IO devices a stream is an interface that's independent of the actual device.
+So from the programmers perspective we can code to the stream interface and not worry too much about
+what device is connected to the stream stream is exactly as you would expect.
+It's a sequence of bytes.
+C++ provides different types of streams depending on whether we want input or output.
+But we can also use a stream that does both.
+Let's see what this looks like visually.
+In this slide you can see that the C++ program is on the right side the upper stream is an input stream
+that provides input to the program from some input device this device can be the keyboard a file a connection
+to a web service and more the lower stream is an output stream that takes output from the program and
+sends it to the output device.
+Again the output device can be a file.
+The console a connection to a web service and more.
+So let's see some of the C++ header files that we typically include to allow us to work with IO streams.
+In this slide we can see three of the most commonly included header files that allow us to work with
+stream audio.
+There are others but these three are the most commonly used first.
+We've already seen and used IO stream IO stream provides the definitions required for formatted input
+and output to and from streams.
+The stream include file provides definitions for formatted IO to and from file streams and the IO manip
+header file provides definitions for manipulators that allow us to format IO streams in specific ways
+we'll use the IO manip functionality first in this section when we include these header files will have
+access to many C++ classes that we can use for file IO.
+So let's see a few of them be Iowas class provides basic support for formatted and formatted IO.
+It serves as a base class for most other classes in the IO stream hierarchy the stream class provides
+high level input operations from files.
+So if you want to read from a file you can declare your object to be an extreme object the O.F. stream
+class provides high level output operations from files.
+And again if you want to create a new file or write to a file you can declare it as an object of O.F.
+stream the stream class provides high level IO on file based streams that stream is derived from stream
+and O.F. stream using multiple inheritance.
+If we need to do both input and output to a file at the same time we can declare an F stream object
+to do it.
+Finally we have the string stream class.
+This is a very useful class that provides high level IO on memory based strings just like we can use
+insertion and extraction with CNN C out.
+We can use them with strings to get input and provide output into a string in memory.
+That's pretty powerful stuff and we'll see some examples later on.
+Finally let's visit our old friends see in and see out and see exactly what they are.
+The fact that we've used them all along without worrying about how to create them how to connect them
+and so forth is a testament to the design of the C++ IO library and the device independence model C
+in C out c air and sea log our global objects.
+They're initialized before Maine begins to execute.
+And all you need to do is include IO stream to use them.
+CN is the standard input stream and is by default connected to the keyboard.
+It's an instance of the I stream class C out is the standard output stream and by default it's connected
+to the console.
+It's an instance of the stream class.
+This class should sound familiar since we used it when we overloaded the insertion operator in the overloading
+operator section of course C in and C out are generally buffered streams.
+This means that input from CNH won't be automatic until the user presses enter and output to see out
+occurs only when the stream buffer fills up or we provide a stood and line or we flushed a stream.
+Now Sea Air and Sea log or the standard error stream and the standard log stream respectively by default
+they're both connected to the console.
+They're both unbuffered which means that we get input or output from them as we need it.
+Best practice is to use Sierre for error messages and see log for log messages.
+Those of you who are familiar with the unix terminal shell or the Windows command prompt know that we
+can redirect these streams easily.
+So input comes from a file or up goes to a file.
+I will be covering this in this course but if you're interested do an internet search for redirecting
+hiyo and you'll see how easy and powerful it can be.
+OK so that concludes this video in the next video we'll see how we can use the IO manipulators to help
+us format our IO.
