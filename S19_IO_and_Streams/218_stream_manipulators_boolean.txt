@@ -1,0 +1,126 @@
+In this video we'll see how to format boolean types to output streams.
+Note that we're using C out in these examples but any output stream will work including file output
+streams which we'll learn about later in this section.
+By default a boolean value is displayed as a 1 if the value is true or is zero.
+The value is false but sometimes we'd like to display the strings.
+True or false.
+And I really don't want to write if else logic all over our code every time we need to do that.
+Instead we can tell our output stream to display boolean values as 0 1 or as true false whichever we
+want first.
+Let's see an example of the default behavior for boolean values.
+First we display the value of the expression 10 equals 10.
+Since this is true a 1 will be displayed then we display the value of the expression 10 equals 20 which
+is false.
+And as you see a zero is displayed.
+Now let's use a stream manipulator to switch this to true false mode in the first statement.
+We're setting the output stream C out to Boutelle alpha mode.
+This means that all further output to see out will display.
+True or false as strings and you can see the output from the same program now displays true and false.
+It's important to understand that with Boolean formatting once we set it with bool alpha or noble alpha
+then all further boolean values will be displayed that way we can toggle back and forth as appropriate
+as shown in this slide.
+We can also set the format for boolean types using the set f method.
+In this case we have a bunch of flags that can be used to set and reset formatting directives.
+In this example we can pass stood IRS bull alpha or Stewart iOS noble alpha to the C or object to change
+its formatting.
+Finally we also have a method named reset.
+AOS flags that expects the flag to reset.
+In this case we can pass in studio as bool Alpha and it will reset the stream to whatever the default
+is for that flag.
+In this case it will go back to displaying booleans as zeros and ones although you sometimes see this
+type of code in production.
+It's more common to see the manipulator version and that's what I focus on in this section.
+So let's head over to the IDM will do a couple of examples using bool Alpha and noble Alpha.
+OK so you mean the ID.
+I mean the section 19 workspace in the manip underscore Bouley in project and in this project.
+I've got a bunch of simple test cases here that just display certain values just pointed out or see
+out.
+In this case those values are boolean values and we're going to manipulate them using the noble Alpha
+and bhool Alpha manipulators.
+So here's the default what we're doing here we're going to use this same test case throughout.
+You can see what we've got here we've got word is 9:39.
+That's either true or false.
+Obviously this is true so this will always display true and 10 equals 20 will never be true so that
+will always display false.
+In this case we're using an expression but we can certainly use a variable.
+Anything that evaluates to a true false value.
+So by default this will display true which is a 1.
+And this will display false which is zero.
+So by default that is the way that we display boolean values as we saw in the slides.
+So why don't we run this program.
+And then we'll start modifying it just a little bit so we can start displaying the actual string true
+false.
+So let me run this and you can see right here.
+I'll move this over here so you can see what's going on.
+Noble Alpha is the default.
+I didn't set it but it was just the default you can see I've sent nothing here.
+All I'm doing is those to see out statements and I'm getting a one here and I'm getting zero here exactly
+what I expect.
+OK so now let's make a few changes here so you can see what I'm doing here on line 14.
+I'm inserting stood Alpha onto Seow.
+It's a manipulator.
+This will switch the the default formatting in this case now to true false.
+Now it's important to understand it will show you on lines 19 and 20.
+That this is true.
+Once we set that everything else whenever you need to display a boolean value.
+This is the setting that'll stick there so if we need to go back to 0 1 we have to do that manually.
+All right so what we expect here now is to actually display the word true in the word false so let's
+give this a run.
+And who you go you can see the original two statements 1 0 but now we're seeing true false.
+Ok so here all we're doing is showing that once we set it it's set.
+Right.
+So here it's set to true false and we just displayed two statements to see out.
+Now we've got another two and we expect those to be true false as well.
+There you go.
+True False True False.
+It's going to keep doing this until you change it.
+And that's what we're going to do here on this lines 23 to 25 I'm using stood no bull Alfonso this is
+toggling back to the default of 0 1 and at this point we should be getting 0 1.
+So I should get again 1 0.
+TRUE FALSE true false.
+And then 1 0 again and that's exactly what I'm getting 1 0.
+TRUE FALSE true false.
+And then 1 0 here.
+OK.
+So that's pretty straightforward.
+And believe it or not what you're seeing here holds for every one of the manipulators that we're going
+to see.
+So it's the same kind of behavior not the part of once you said it it's set some of them just work for
+one insertion but we'll talk about those.
+But I'm talking about the syntax and the general flow here.
+It's pretty much the same for all of them.
+So let me comment out these lines 28 to 30 and in this case I'm doing the same thing except I'm not
+using the manipulator I'm using the set f method.
+So you can see him saying stood out.
+Dot set f set f is the method and it expects a stood iOS bhool Alpha.
+Now that looks maybe kind of intimidating and nasty it's not so bad.
+Stood is the namespace iOS is a class and bhool Alpha is a flag that's defined in that class.
+OK so C++ is doing exactly what it is expected to do.
+If you just type bool Alpha it won't know where to find it so you have to say it's stood namespace I
+Os class bool Alpha flag.
+If you're using namespace standard then you don't need to put stood here or here or anywhere here that
+you see it lighting up right.
+You could just use iOS Alpha.
+OK so in this case again I'm sending it back to true false but I'm doing it with this method now.
+So you should see those last two statements display the words true false and there they are right.
+Here you can see there is true and here is false and then the last one is used to reset certain flags.
+All of these flags that we're going to use have default values so when we talk about left and right
+justification and you know the way we display numbers or the way we display booleans as in this case
+they have default ways of doing it.
+We know the default for booleans is the number is 0 or 1 right.
+So there is a manipulator here called reset U.S. flags and again it's understood namespace reset Iowas
+flags and then you pass into it whatever flag you want to reset and it will reset that.
+Not to Alpha but reset it to the default behavior for displaying booleans which in this case will be
+numbers right 0 1.
+So when we run this we expect that to be reset to the default.
+And what's nice about this is suppose you've got a modifier that has there aren't any like this.
+But suppose you had 8 different values right.
+One of them is obviously the default.
+You don't have to worry about which one it to set.
+You could just basically call this with the flag you want and reset it to the appropriate behavior.
+So let's run this in now we expect that those last two statements to print out one in zero.
+And there you go so that's it.
+The basics of everything else we're going to do with most with the manipulators are here.
+We can use them in line we can use them with functions and what we'll do next is we'll talk about integer
+output so we'll be right back to do that.
+

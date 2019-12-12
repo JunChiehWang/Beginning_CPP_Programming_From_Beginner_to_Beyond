@@ -1,0 +1,43 @@
+In this video we'll learn about some of the C++ stream manipulators C++ streams have many useful member
+methods that can be used to control formatting.
+There are methods that work on input and output streams but formatting output is much more common and
+important concept to understand is that when we manipulate a stream for formatting sometimes the settings
+we make will be set for the remainder of the program.
+Other times they'll only affect the next object placed on the stream and sometimes her effect is immediate.
+When we go over the individual formatting method to manipulators I'll show you the fecht each one has
+as well as how long the effect lasts.
+Most of the stream formatters come in two versions a method version and a manipulator version the method
+version is simply a method call that you use with a stream object.
+For example see outdoors with 10.
+I'll explain what this does in a later section.
+But for now you can see the syntax it's calling the width method on the C out object.
+There's also a manipulator version which is designed to be used in line as a stream insertion.
+In this case set w 10 as you probably guessed the manipulator versions are simply overloading the insertion
+operator to make this easier to use to use the manipulators you must include IO manip.
+The code will write will focus mainly on manipulator usage but I'll also show you how to use the methods
+in the next few videos.
+I will go over some of the most commonly used stream manipulators.
+Here's a preview.
+We'll first start by looking at formatting boolean types.
+We've already seen this used in the course and a few places we can use bool Alpha and noble Alpha to
+display boolean values as either the strings.
+True or false or the integers 1 and 0 then we'll look at formatting integer types.
+These manipulators allow us to display integers base 10 base 16 or base 8 as well as to decide whether
+we want the base prefix to show and in uppercase or lowercase.
+We can also decide if we want positive numbers to show the plus symbol in front of the number.
+Then we'll switch over to floating point numbers again.
+We've already seen some of these manipulators used in the course.
+We can use fixpoint we can set the precision we can show the number in scientific notation format.
+And again we can decide whether we want trailing zeros printed and whether we want the plus symbol displayed.
+Then we'll learn how to output numbers and strings in fields of fixed width and we can see how we can
+left or right justify them within that field.
+We'll also be able to fill empty space within the field to a specific character.
+Finally there are several other formatters they can be very useful and we've already seen and used flush
+can be useful when we want to be sure that we flush out any stream buffers but it doesn't add a new
+line like inline does.
+The last few we really won't talk about much but I'm including them here for your reference.
+Skip whitespace no skip whitespace and whitespace are typically used with input streams.
+When you have very specific use cases about dealing with whitespace.
+OK so in the next video we'll start with the boolean formatters.
+I'll see you there.
+
