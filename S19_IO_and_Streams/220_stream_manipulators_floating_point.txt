@@ -1,0 +1,232 @@
+In this video we'll see some of the stream formatting options available for floating point numbers formatting
+floating point numbers focuses mainly on the amount of precision used to display the number by default.
+The precision is set to six digits will cover the specifics of what that exactly means in this lecture.
+We can also set the number of digits to display to the right side of the decimal point by default.
+There is no fixed set size.
+We can also choose to show trailing zeros up to a certain number and we can also decide if the floating
+point number four should be displayed as four or four point zero or 4.00 and so forth.
+But by default these trailing zeros are not displayed and then we have some of the same options that
+we had when we used integers by default a lowercase e is use when we're displaying floating point numbers
+using scientific notation and the plus sign is not displayed when we display positive floating point
+numbers.
+All of these manipulators persist once they're set.
+So first let's take a look at how precision works.
+By default the precision used to display floating point numbers is six digits and rounding always occurs.
+In this example we have the number one two three four point five six seven eight.
+If we display this number it's C plus plus we use 6 as the default precision and started the most significant
+digit which is the one and it will display six digits starting from there.
+Rounding at the end.
+In this case one two three four point five seven will be displayed.
+If C++ can't display the number in the given amount of significance the interval use scientific notation
+and we'll see that in a bit.
+Here's another example.
+We have a large number.
+One two three four five six seven eight nine point nine eight seven six five four three two one.
+I did it that way just so it's really easy to keep track of these digits.
+If we display this number C++ we'll try to do it with six significant digits but this won't work since
+it will display one two three four five six.
+And the number displayed wouldn't be accurate.
+So in this case the number we displayed using scientific notation and notice one point two three four
+five seven has got the six digits of precision.
+That's the default and notice that we're still using precision 6 but this time using scientific notation.
+Suppose we wanted to display the number using precision nine.
+We can use the set precision manipulator with the 9 as the argument to do just that.
+In this case the number will display as 1 2 3 4 5 6 7 9 D.
+Note the rounding at the end.
+Also notice how no trailing zeros are displayed in this example.
+So that's the way precision works when we're not fixing the number of digits to the right of the decimal.
+When we use the fixed manipulator precision is handled differently.
+Now we're looking at precision starting from the right side of the decimal point.
+In this case we still have a default precision of six but we're also using the fixed manipulator.
+This will use a precision of six starting with the digits after the decimal and all round is necessary.
+So in this case exactly six digits are displayed after the decimal point and zeros are added if necessary.
+As you can guess set precision two and fixed are commonly used to display currency amounts.
+We actually did this in a few of the course lessons in this example.
+We're still using that very large number but we're setting the precision to three.
+And also using the fixed manipulator.
+So now this will display exactly three digits after the decimal point and rounding will occur.
+So we've got a point nine eight eight after the decimal point.
+In this example we want to set precision to 3 and also use scientific notation.
+You can see the manipulators being use in the displays exactly as we expect.
+One point two three times ten to the eighth notice the precision is three.
+We see that with the 1.2 three we can display the E in the scientific notation format as a capital G
+by using the uppercase manipulator.
+Remember by default it's no upper case.
+Now let's see how the show positive manipulator works with floating point numbers.
+The behavior is the same as we saw with integers.
+If we use to show puzzlement if the later then we'll get a preceding plus sign on positive floating
+point numbers.
+Note that we can toggle back to not showing the plus sign with the no show pause manipulator with floating
+point numbers.
+We can also use the sharp point manipulator.
+This will display trailing zeros based on the level of precision used.
+For example if our number is twelve point thirty four and we display it using only the defaults then
+twelve point thirty four with display.
+We're using a precision of six but only four digits for display in this case.
+If we wanted to add trailing zeros up to precision we can use the show Point manipulator.
+Now you can see that two zeros are added to the number being displayed.
+Again you can use the no show point to toggle back to the default behavior.
+Finally if you want to reset the floating point format back to the general format you can do that in
+one of two ways.
+You can use the unset F. method or you can use the reset Iowas flag manipulator.
+There are a bunch of other flags.
+But at this point you know what you would need.
+So rather than list them all here I'll refer you to the C++ reference docs.
+Now let's head over to the IDC and we'll format some floating point values.
+Then in the next video we'll finish off formatting was setting field with justification and filling.
+OK so I'm backing the idea again and am and still in the section 19 workspace and I mean the manip underscore
+floating project and what we'll do here is we'll play around with some floating point numbers.
+Now let's take a look at the numbers that we'll be using for this example.
+We've got three numbers right here they're all doubles and you can see I've got one that's going from
+one up to nine and then from nine down to one after the decimal point that I just make it really easy
+for us to see which digits are being rounded.
+I've got another one that's a little smaller one two three four five six seven eight and I've got this
+last one right here one two three four point zero.
+OK.
+And what we'll do first is we'll just do normal displaying these guys out to the console with absolutely
+nothing fancy no manipulation of all just using pure defaults.
+And that's what's going on right here on lines 14 to 16 I'm displaying them one them to name three.
+Now remember by default we've got six digits of precision.
+We're not showing the positive sign.
+We're not showing trailing zeros and we're not showing uppercase letters in scientific notation.
+OK that's the default.
+So let's run this first.
+Now what do we expect here we expect number 1 to not be able to work right I mean if you think about
+this for a second here you can see that no one has.
+Let's assume we wanted to display six different figures right here.
+We would just play one two three four five six.
+And that would really give us problems right.
+Because that's not even close to being an accurate number.
+So C++ won't do that.
+What you will do is it'll display that number in scientific notation and it will still use 6 for precision.
+I'll show you how that works in a second.
+Now this guy can be right we've got there's four digits right here and then two.
+So we expect those six digits to display in those last two would be rounded.
+And this guy here remember by default we don't display trailing zeros.
+I just get to display one two three four.
+So let's run this and we'll verify that we got what we expected.
+OK.
+Let me move this window over here so we can see what's going on and we do that again.
+There we go.
+So in this case we're displaying them one right.
+And notice what happens one point two three four five seven you can see the rounding you can see all
+six digits being displayed here.
+But we're using scientific notation because there's no way that it can be properly displayed or accurately
+displayed I should say in six digits.
+This next one though number two right.
+Twelve thirty four point fifty seven that's exactly what we expect.
+There you see the six digits and then some three.
+One two three four it's ASPI there's no zero or zero zero unless we use a modifier which we use in a
+little bit.
+So that's the default and it's really important that you understand the default and how it begins.
+So that's using the default settings.
+Now let's try something let's we're going to set the precision to two.
+So what we're asking for is two significant digits.
+It can't do that with any of these.
+Right.
+One point to 12 you know where is it going to stop.
+So what it'll do is it'll display all three of them in scientific notation using a precision of two.
+So I'll show you how that looks.
+And you can see exactly what's going on 1.2 for all of them those are the two significant digits of
+precision right times 10 to the eighth.
+The third and so forth.
+So let's set a precision of five and we'll be able to do some of them with a precision of five others
+that was so uncomment this block out
+and let's execute that.
+And now you can see what's going on.
+Number one cannot be displayed in five significant digits here.
+So the precision is going to be five digits here but it's going to be a scientific notation.
+The other number appears scroll up so you can see it went to three four point five six seven.
+There are five significant figures here right.
+Your precision is five.
+So what it's doing is it's rounding that fifth one from which is point fifty six to six.
+And then again the last one is one two three four.
+We're not adding any zeros or anything.
+So that's the default kind of behavior.
+So that really gives you an idea of what's going on in this case.
+We're going to set precision to 9.
+Everything will fit here.
+So that's try that.
+And you can see what's happening with precision 9.
+I get one two three four five six seven instead of eighty nine I'm getting 90.
+It's rounding that this guy is displaying all of it because it can display all of it right.
+Twelve thirty four point five six seven eight.
+And the one two three four still displays the same way because we're not adding any zeroes.
+OK so now now you understand precision.
+Now let's talk about fixed and how it changes precision.
+So what we're doing here is we're setting precision to three.
+You can see that happening right here on line 40 and we're fixing the decimal point.
+So now the precision happens after the decimal point.
+OK.
+So let's run this and take a look at the output.
+OK so take a look at the output here.
+Again I'll scroll up so we can see these numbers up top.
+So now we're just playing one two three four five six seven eight nine.
+That would explain all of that.
+And the precision now applies after the decimal.
+So I noticed that all three of these guys are displaying three digits after the decimal because that's
+the precision and we're fixing that size.
+So it's going around in this case 9 8 7 6 Get it becomes 9 8 8 and 5 6 7 8 becomes 5 6 8.
+And in this case here you can see that it's displaying all the zeros on the end.
+OK.
+Because we set the fixed formatter.
+All right.
+So hopefully that makes sense.
+Let me stop that and we'll run a couple more.
+Let's take a look at this example.
+What we're doing here is we're setting the precision to three and we want to do a scientific notation.
+So this should be very similar to what happened before with the precision to win stuff wouldn't fit.
+So again precision is three and scientific notation.
+So what we get is right down here 1 point two three five.
+Notice the precision is three right.
+But what happened because it's fixed.
+I set fixed up here and fixed is persistence so it carries down even though I didn't say fixed right
+here it's fixed because I've set it up here.
+So this case I get the three decimals after the decimal point the three digits I should say after the
+decimal point and it's all in scientific notation and then couple of more examples.
+You notice that that E and the exponential notation in scientific notation was lower case.
+I can make it a capital E by simply using stood up or case here and this is run that to be sure that
+we get it.
+And there you go right down here at the bottom you can see one point two three and you can see the e
+is capitalized here right it was lowercase here in the previous example.
+In this case I'm using the show positive and what I'm doing is I'm just setting with precision three
+fixed and show positive.
+So this will show a positive plus sign in front of positive numbers.
+Let's run that.
+And then you can see down here at the bottom again.
+Move this up just a little so you can see it a little better.
+You can see the plus symbol being displayed in front of all these positive floating point numbers.
+If they were negative obviously the negative sign would show.
+Now we can set these guys back to the defaults either by doing an unset f calling that method and we
+can pass in scientific and fixed setting them back to the defaults.
+And what we're doing here is just a binary or or we could use to reset U.S. flags manipulator here and
+pass in Show position that will unset that.
+All right.
+So let me end this up here.
+Now notice what I'm doing here I'm setting precision to 10 and I'm telling it to show point.
+OK what this is going to do is going to add these trailing zeros up to 10 spaces.
+All right we're up to 10 precision.
+So let's run that and we can see number one number two and I'm three.
+There you go.
+You can see right here 1 2 3 4 5 6 7 8 9 0.
+It's round here.
+And then one two three four point five six seven eight we've got a couple of zeros on the end.
+But you notice all of them now are in precision 10 right.
+And in this case we have one two three four point and then six zeroes at the end.
+We'll set these guys back to the defaults and I'll show you how to do that right here.
+And then we'll run one more time when we should get that same behavior we got to the very beginning.
+So what I'm doing here is I'm setting this back to the general notation here.
+I'm setting the precision to six which was the default and I'm setting show position show positive and
+show point back to their defaults and then I'm just displaying them one them to number three at the
+end.
+And what we should get back is what we got at the beginning.
+So down at the bottom here you go.
+We get the scientific notation for this guy.
+We've got the six precision digits here.
+And we've got the 1 2 3 4 right here.
+OK.
+So that's it.
+That's a good example of these floating point formatters.
+They're pretty powerful they're pretty easy to use in the next really what we'll do is we'll learn about
+setting field widths and justifying things left or right and you can use those along with these to really
+format tables and get your format looking really nicely for up.

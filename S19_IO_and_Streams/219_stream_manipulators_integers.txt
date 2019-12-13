@@ -1,0 +1,178 @@
+In this video we'll see some of the stream formatting options available for integers.
+Integers have four basic formatting options.
+And let's see what the defaults are for those options first integers are displayed in base 10 by default.
+This makes sense since base 10 is what most people in the world uses their base system.
+However we also have the option of displaying integers in base 8 which is called octal and base 16 which
+is called hexadecimal.
+Remember computers worked in base 2 or binary and that's difficult for humans to understand.
+So we need alternate base systems base 10 is what we learned in school and that's the way we count and
+do math.
+But it's not so intuitive to convert decimal to binary the alternate bases are often used in computing
+since they allow us to group information more like a computer would.
+For example since octal is base 8 we can group consecutive binary digits into groups of three.
+Starting from the right and we can easily convert between octal and binary and back again hexadecimal
+is base 16 which allows us to represent locations in memory since each hexadecimal digit represents
+8 bits or one byte.
+If you recall earlier in the course when we displayed addresses that were displayed in hexadecimal format.
+We also have the option to display the base as a prefix for Hex and octal values for Hex we start with
+0 X followed by the hex number and for octal we start with zero.
+This clearly tells the reader that the number is hex or octal since in some cases it would be impossible
+to tell otherwise the default is not to show the base.
+We can show the letters in hex numbers as well as the hex prefix in upper or lower case and lowercase
+is the default.
+And finally we can choose to display the plus sign when we have positive integers the default as we've
+seen already is not to display the plus sign when an engine is positive.
+This might sound complicated and intimidating but it's easy as pie.
+Let me show you how we can use the Io's tree manipulators to change the way we format integers.
+First let's see an example of displaying integers using different bases.
+Here we initialized numb to 255.
+That is 255 in base 10 just like we're used to doing.
+Now we can use the base manipulators to change the way the integer is formatted.
+Remember even though the output changes 255 is still stored and numb and we're not going to change it.
+First we you stood Yes and that means decimal.
+And that displays the number in base 10.
+We really don't have to specify this at all since the default.
+But I wanted to show you how to do it and this would display 255.
+The second display statement uses stood hex.
+In this case we display F F which is the hexadecimal value for 255.
+Also note that the f's are in lowercase which is also the default.
+Finally we have the Octa manipulator and we display 277 which is the octal value for decimal 255.
+Once we set the base using the manipulator that base will be used for all future insertions of any integer
+on the output stream.
+So that setting will persist.
+Now if we see 255 and 2 77 out of context it would be virtually impossible to tell whether they were
+base 8 or base 10.
+So that's where the show base manipulator comes in handy I'll show you that in the next slide.
+So in this example we have the same code except we're using the show based manipulator.
+Now when we execute the same code.
+Notice that 2:55 is unchanged but the hexadecimal F F now has a 0 x prefix and it's in lowercase.
+Also the octal 377 now has a zero preceding it.
+Now it's very clear what the base of each of these numbers is.
+Also note that the show base is applied to all further integer stream insertion so it also persists.
+We can toggle back to not showing the base by using stood no show base sometimes we want to be able
+to display hexadecimal digits in uppercase as well and sometimes we want to display the 0 x prefix in
+uppercase.
+We can do this with the uppercase manipulator in this case we're using show base and upper case and
+then we use the hex manipulator and display the number.
+Notice how we display 0 x f f and all the letters are uppercase like show base upper case will you be
+used for all further hex output.
+And we can go back to lower case using no upper case.
+Now let's see how the show positive manipulator works if we use show pause or show positive then we'll
+get a preceding plus sign on positive integers.
+You can see in the provided code that we have two integers.
+Number one which is initialized to 255.
+And number two which is initialized to minus 255 without using the Chopins manipulator.
+If we display these integers we get 255 and negative 255.
+Note that there is no plus sign in front of the positive 255.
+However when we use this show doesn't appear later.
+Now we see the plus sign in front of the positive 255.
+This can be useful sometimes depending on the application.
+Some accounting software wants that plus sign in front of the number.
+Again this setting also persists.
+So it will apply to any other entity or stream output.
+And again we can go back by to not showing the plus side with the no show pause manipulator.
+That's it.
+I told you it was easy.
+There are also several variations using the F method and we can also reset to defaults using stood reset
+as flags and providing the flies we want.
+I encourage you to do as I do that is not memorize any of these things but just know where to look them
+on the C++ reference documentation is pretty good.
+And everything's there.
+Unless of course you want to memorize them that's up to you.
+OK so let's head over to the ID and try some of these combinations out.
+OK so I mean the idea I mean the section 19 workspace in the manip underscore integer project.
+And what I'm doing this project just manipulating integers just like we did in the slides and converting
+them to different bases and then I'm playing around with some of these manipulators.
+So let's start by first of all including IO stream and IO manip we need to do that too in order we use
+our manipulators.
+And I've got an integer here that I've defined and initialized to 255 It's called name.
+OK so let's start right here.
+Here what we're doing is we're displaying numb.
+And again it's only the one variable we're going to use throughout this example.
+We're displaying it in decimal format.
+Again we don't really need to do this here since it's the default.
+And then in hex and then in octal and so when we run this we see 2:55 F-F which is the Hecht's and 377
+which is awful just like we saw in the slides.
+So that's pretty pretty straightforward.
+And now like I said sometimes if you see those two integers or those two series of numbers you really
+don't know what the base is so we can use the show base manipulator right here as I'm using right here
+on line 18.
+And now when I run it we'll see the base.
+So now we're going to see the 0 x right here in front of the hexadecimal number and the zero in front
+of the octal number which is pretty nice that way you know exactly the context right.
+So you know this is hecks and you know that this is octal and obviously you know that just has a decimal
+up here.
+I'll tell you a funny story a couple of years ago I was interviewing a candidate for a C++ programming
+position and he was an entry level position.
+You know you asked him to write code and to ask him some questions about the language.
+So I asked him to write a program that accepted an integer and converted it to a text decimal number
+and every other candidate that had ever asked that kind of question to goes off and writes a function
+and does all kinds of stuff.
+This kid went over wrote the program in like 30 seconds and told me he was done and I couldn't believe
+it.
+So I went over there and just ran at his output was correct and what he did was this which was pretty
+clever right.
+All he did was ask me for the integer did a stood hex and printed it out.
+I was very very clever very bright kid.
+I never would've thought about doing that in an interview.
+But anyway he got the job and he did he did really well in the end.
+So that's a good way to think outside the box sometimes you don't want to go for the fancy algorithms
+just do it the easy way.
+I'm all for that.
+But anyway so here now what we're going to do is notice them and run this again so that you can see
+that the 0 x and the F F here and the hex number are lowercase.
+If you need to have them in upper case we can use stood upper case just like we are here on line 25.
+And when I run that now you'll see that then put that comment back.
+So when I run this now you can see that now it's a zero x f.f.
+And those are capitalized.
+That only applies to hexadecimal numbers because the hex numbers are the only ones that have letters
+in them.
+OK.
+The show pause are show positive modifier right here.
+So let me uncomment this code out.
+And what this does it only works with decimal values.
+And if the number is positive then it displays the plus sign in front of the number by default.
+We don't display a plus sign in front of the number.
+So let's run this and you can see that right here on the 255 you can see that plus sign right in front
+of it.
+And that's exactly what that does.
+Notice that it has no effect on hex or octal.
+It only works on decimals.
+And in this case there is a method called set F and what we can see.
+And this isn't a manipulator.
+This is a method call.
+So we're saying stood out.
+Dot set f so said F is a method and then we can pass in these format flags.
+And what this will do is it'll set it to show base or no show base or upper case or no upper case whatever
+you really want here.
+So it's an alternate way of doing what we did up here and you tend to see this style more often than
+this style but you'll see this sometimes out there just wanted to show you.
+And also we can use stood reset Iowas flags to set these back to normal.
+So for example this one right here stood AOS based field that'll set your integer base back to decimal
+to show base we'll set it back to the default for show base which is not to show the base right.
+That's the default.
+Again remember this resets it back to the defaults.
+This one show positive says it sets it back to not showing the positive and the upper case goes back
+to not showing upper case again so don't let that confuse you is not we're not setting it to those flags.
+We're just telling it to set it to the default.
+OK.
+So in this last example I'm just using a real simple input statement and comment de-code out and I'm
+asking the user for an integer and I'm putting it right back into that no Verrier what we had before
+and I'm just using default to display it as a decimal and then has a hex and then hex uppercase and
+then hex again.
+And the point here is so that you can see that the setting stick.
+So this upper case will still be upper case even though we've already used it because they are persistent
+and then no upper case.
+And then finally octal hex we're going to show the base and octal at the end.
+So again really really straight forward.
+Let me run it and we can use a number like let's say 135 and then you go in integers 135 the decimal
+value is 135 in hex.
+It's 87 and you can see the show based here because I've got no show based right because that was my
+default right here.
+I said it back to the default to not show base and that's why we're not seeing it.
+I notice that when we're not showing the base this upper case has no effect at all which is exactly
+what you would expect right.
+So that's it in the next video.
+What we're going to do is we're going to look at the manipulators for floating point numbers and see
+how they work.
+
