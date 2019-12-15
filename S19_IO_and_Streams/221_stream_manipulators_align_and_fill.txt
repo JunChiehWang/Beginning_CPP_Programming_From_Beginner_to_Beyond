@@ -1,0 +1,219 @@
+In this video we'll see some of the stream formatting options that are available that work with any
+type of data.
+These are very powerful and easy to use.
+They give you the ability to define a field with and then display the next data item either left justified
+or right justified within that field.
+We can also specify the Phil character that will be used to fill up any unused space by default.
+There is no field with defined in all output occurs right after the previous output as we've seen already
+in this course.
+If you do set a field with then the next data item displayed will default to right justified within
+that field with it's important to understand that if you set the field with and justification they're
+only applied to the next data item placed on the output stream.
+When we set the Phil character that will persist until you change it.
+Again this all might sound really complicated but it's pretty easy.
+And a few examples will show you exactly how it works.
+But first let's get the defaults.
+Here's an example that uses absolutely no stream manipulators or methods.
+This is the default behavior when you put data on a stream.
+As you can see we're displaying the floating point number one two three four point five six seven eight.
+And then the string hello.
+The number will display with six digits of precision and it all round and then hello is displayed immediately
+following the number.
+If we modify this program slightly so that it prints the number and the string each on a new line then
+we get the number displayed as before on the left side with no padding up front followed by the string
+on the next line.
+So far this is what we've seen.
+And it should be pretty clear.
+So now let's set the field with the next data item placed on the stream using set W.
+In this case we're using set W with a tennis parameter.
+This will create a field with of ten for the next data item only.
+In this case that data item is numb.
+Notice that none will be displayed right justified by default in a field with of 10 I'm displaying a
+ruler of numbers just above the actual display.
+So you can see the alignment this ruler is displayed by the code is only there so you can better follow
+the examples.
+Notice that the last digit in number seven in this case is displayed in position 10.
+That's the rightmost side of the field with.
+We said earlier but now look what happens when we display halo.
+It just plays right next to the number starting in column 11.
+That's because the field with the justification only apply to the next data item placed on the stream.
+In this case that data item was numb.
+So Halo has no field with associated with it and it uses just the defaults in this example we set the
+field with of each of the three data items to 10.
+And remember when we have a field with the default justification is right.
+So in this case no is displayed right justified in a width of 10.
+The first Halo is displayed right justified.
+Also in a field of ten in the last Helo's also displayed right justified and with of 10.
+And you can see from the display in the ruler exactly what's happening
+this example shows how the field with only applies to the next data item put on the stream.
+In this case we set up a field with of 10 and we want left justification for the next data item which
+is numb and we get what we expect is displayed in a field with of 10 and it's left justified.
+Now we want to display halo.
+Notice that halo has no field with associated with it.
+So it will display starting in column 11.
+In this example we'll set the field widths for all three items displayed.
+None we'll have a field with of 10 and it will be right justified by default the first Halo will have
+a field with of 10 and we're explicitly setit right justification.
+We don't have to do this since it's the default.
+But we can do it to be very explicit.
+And the second Telo have a field with a 15 and it will also be right justified.
+You can see the output is exactly as we expect.
+Numb is right justified in a field with of 10.
+The first Halo is right justified in a field with of 10.
+And the final Halo is right justified in the field with a 15.
+Now let's take a look at the set Phil for formatter.
+This only works when a data item has a field with associated with it.
+We supply the character that we want to fill any empty space in the given field with here's a simple
+example we're setting the fill character dash with the set filled manipulator and we're setting the
+field with to 10.
+This will apply only to numb which is the next data item on the stream.
+So we expect not to be right justified in a field with of 10 and the remaining space in that field to
+be filled in with dashes that's exactly what we see.
+But what about the halo that we display next.
+We said that set Phil was persistent but we don't see any dashes with that halo.
+That's because that Halo doesn't have a field with associated with it.
+So says Phil only applies when we've set the field with so let's look at one final example.
+In this case we're setting the Phil character to an asterisk and then setting the field width of numb
+to 10 we expect him to be displayed right justified in a field with of ten and asterisks to fill in
+the remaining space.
+And you can see by the output that that's exactly what we get.
+Now we said to Phil character to a dash in the field with 10 for the first hello we expect hello to
+display right justified in a field with of 10 and the blank space filled in with dashes.
+Again that's exactly what we get.
+And finally we set the field width of the last talo to 15.
+We expect halo to display right justified in a field with 15 and since set Phil is persistent and the
+last haloed does have a field with.
+We expect that those blank spaces will be filled in with dashes and as you can see that's what we get.
+So you see it's really not that complicated and the rules are very consistent using the formatting manipulators
+that we've seen in the last few videos.
+We can have a good amount of control over how our output looks.
+Now let's head over to the idea and we'll see the stream formatters in life code.
+Ok so I'm back I'm back in the IDM in the section 19 workspace and I'm in the manip underscore fields
+project and what we'll do here is we'll play around with the field with the justification and the set.
+Phil you'll notice on line 7 here that I've got a function called ruler and on that function does is
+just display a line of numbers and that way we can line up our columns easier when we see them.
+OK.
+You don't have to do this but it just makes it easier to learn exactly what's going on.
+And then I've got these three data items here that amusing.
+Amusing number one which is an integer and it's one two three four.
+I've got number two which is a double.
+One two three four point five six seven eight.
+And just a simple string hello first thing we'll do is just like we did in the slides it's just due
+to defaults.
+So all we're doing is we're putting number one number two and hello on to seek out and when we run that
+you'll see everything just runs up together.
+So let me build and run.
+And then we see one two three four.
+That's the integer.
+And then one two three four point five seven rounded six significant figures here that's her precision
+and then the halo everything jumbled up together at one right after the other.
+That's exactly what we expect.
+OK.
+We can obviously comment this code out.
+We can obviously display one on each line and sure that will help us read a little nicer because now
+we'll see each one on each line.
+But remember the defaults are being applied.
+So we're getting one two three four is the integer.
+One two three four point five seven which is round into the sixte precision for the digit.
+And hello again.
+Now let's play around with the field widths and here's a simple example.
+What we're doing is again we're displaying the ruler and then we're setting the field with to 10 for
+the next data item that's being put on the stream which happens to be numb in this case right here.
+So numb will be displayed in a width of 10.
+And if you recall number is that integer 1 2 3 4.
+So that will be displayed in the width of 10 and the default is right justified.
+But then when Number 2 in hollower displayed there is no field with associated with them that field
+with only associates with the next item.
+So these two should print right next to each other and right next to them one.
+So let's take a look.
+And there you go you can see one two three four right here.
+And let me grab my pencil and I'll draw in white.
+I think it'll be easier to see.
+You can see right here the one two three four right there.
+That's our integer and that's the tenth right.
+The tenth column.
+So it's being right justified in the tenth column.
+But then after that we're seeing are both double and our string all printed run right next to the other
+no formatting applied.
+Now let's do one more example actually actually do a few more examples.
+Let's do this one here.
+And the source code is available to you I encourage you to go in there and play around and change things
+around that's really the best way to learn it.
+OK so now look what we're doing we're setting the width to 10 for number one and for number two.
+So now we expect someone to be right justified in a with the 10.
+Number two to be right justified and with a 10 and then hello with no formatting just put right on the
+end of it.
+Number two.
+So let's run this and here down at the bottom you can see that that's exactly what happens here.
+There's my field of 10 and there's one two three four right justified in there.
+Here's the other with of 10 right here the next field and you see one two three four point five seven
+right justified in there as well.
+And there's my hello I'm going to put a couple of new lines at the end just so that you will separate
+that time message a little bit.
+So be a little bit easier to see what's going on.
+And there they are at his hadn't commented out.
+So uncomment them OK.
+So let's take a look at this example now.
+I will uncomment this code and notice what's happening here.
+I'm starting to feel with 10 for each one of those items by default.
+We're going to right justify everything.
+So number one number two and Hella will each display right justified in a field of 10 and let's give
+that a run.
+And there you go you can see one two three for the integer in the field with 10.
+One two three four point fifty seven in its own field with them 10.
+And hello you can see the zero right there right.
+That would be the 30th column the third field with of 10 and it's right justified.
+Comment this out and see what this is doing.
+Now this is doing exactly the same thing except we're left justifying each one of these.
+Remember we have one left justified then we have to say it explicitly right justified is the default.
+I always like to put in left and right that way.
+Whoever's reading my code afterward understands exactly what's going on even though we know it's the
+default.
+Somebody might have forgotten so it's nice to see that there.
+So here with the ten left justified number one with of 10 left justified number two and with the ten
+left justified.
+Hello.
+So let's give them a run and you'll see the difference between this guy right here where they were right
+justified and now down here were the left justified.
+So you can see that one two three fourths displaying in column one.
+One two three four point fifty seven in column 11 and hello in column 21.
+Just like we expect.
+OK so now let's do a couple with the set.
+Fill in or comment this out.
+We'll walk through this in a minute.
+So notice what I'm doing here.
+I'm setting the Phil character to the dash.
+Now this is a persistent set in this persistence a light change.
+And what I'm doing here is I'm setting the width to 10 left justified.
+Number one.
+Now number one was only four digits right.
+So the rest of the space in net field of ten is going to be padded or filled with that Dasch character
+and the same thing will happen to these guys.
+Remember if we don't have a with set then the set feel doesn't apply.
+It only applies when we set in the field with.
+So in this case we expect to see all three of these guys left justified in a field with of 10 and all
+the spaces that are left over other blank spaces in that field of 10 filled with dashes.
+So let's take a look.
+And you can see right down here you see one two three four and then dashes all the way to the tenth
+position.
+And then one two three four point five seven dashes all the way to the 20th position and then below
+and dashes all the way to the 30th position.
+OK had we justified them the dashes would have been on the left who would fill any empty space in that
+field with.
+And the last example is we're doing now is we're using different set fill characters.
+So we're setting the go filled with 210 for each one of them again and we're left justifying.
+And in this first example for numb I'm using asterisk as the fill character for number two.
+I'm using the hash mark or the pound symbol and for Hello I'm using the dash.
+We should see three different fill characters filling up all that space.
+Remember once this statement is done this is the Phil character that sets and that's going to persist
+until I change it otherwise.
+All right so let's run this.
+And there you can see that I'm using the asterisks for the first field.
+The pound sides of the hash symbols for the second field and the dashes for the final field.
+OK.
+So that's it for this video in the next video.
+We've got a challenge where we're going to put some of this stuff together to display a table.
+Now you get a chance to play with them and put them together and understand how you can use your precision
+your left your right your fixed and so forth all together to create a table of tour prices for trips
+to South America.
+So that's the challenge coming up the next video.
