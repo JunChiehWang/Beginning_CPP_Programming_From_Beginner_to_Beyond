@@ -1,0 +1,170 @@
+In this video we'll talk about the steps needed to read input from text files using C++ streams.
+In the following slides I'll talk about the main classes and methods that we can use to read from files
+and then I'll go over a bunch of examples in live code so that you can see alternative ways to read
+text data from files depending on the type of data we want to read.
+First of all talk about input files and reading from them and then in another video we'll discuss output
+files and writing to them.
+The two classes that I'll discuss for text file input are F. stream and stream.
+There are a few steps that we must always perform when we read from files.
+The first is to include the F stream header file then we declare a stream object of either stream or
+stream type.
+We then connect the stream object that we just created to the file that we want to read from on our
+file system.
+File systems are very different.
+So we have to be sure that we get the file name and the path correct.
+I'll talk more about that later.
+Once the file is connected and open then we can read from it.
+There are many many different ways to read from a file.
+We can read in binary mode we can read in text mode.
+We can read one line at a time one character at a time.
+We can use methods like getline and we can use the extraction operator like we've been doing with C
+in then when we're done processing the file.
+We have to close the file.
+This should sound pretty easy and for the most part it is in the next few slides.
+We'll discuss the details of opening a file checking to make sure that the file was opened correctly
+reading from the file in various ways and then closing the file.
+So let's get started creating the stream object.
+In this example we're creating an object named infile in we're using the F stream class as its type.
+Notice that I'm initializing the object as well.
+The initializer takes two arguments.
+The first is the name of a file.
+This can sometimes be very operating system specific and also very ideally specific in the code like
+we always open our files one directory up from where the executive lives.
+That's why we're using dot dot forward slash before the phone and I'll talk more about filenames in
+the live code session and also include a video at the end of the section that talks about the file path
+used for some other ideas.
+But for now let's assume the file is where it's supposed to be.
+The second parameter specifies the mode and any other properties of the this being opened in the first
+example we're using stood iOS in.
+This means to open the file in input mode.
+So we're able to read from it but not write to it by default.
+Files are opened in text mode in the second example.
+We're opening the file in input mode and in binary mode this is necessary when reading non-text files
+that contain binary data.
+We won't be doing that and this course will work strictly with text files.
+Notice the vertical bar or the pipe operator between studio s in and studio s binary.
+This is the bitwise OR operator when used with Bit fields such as these.
+It sets both the input and the binary modes to true.
+At this point the file will be opened if it was found in this slide we used the stream class the stream
+class can actually open up a file for reading and writing at the same time.
+We won't be doing that but if you have a file that you use only for input it's more common to use the
+F stream class.
+Let's see that in the next slide.
+In this slide reusing the stream class as the type for file Lifestream is used for input files only.
+We can create an extreme object the same way we created an extreme object.
+However in the case of an extreme object the Stood IOAS in is optional since it's already the default.
+So the first two declarations of infile have the same effect.
+The last declaration opens in file in binary mode.
+There's another way to open a file that's commonly seen in code.
+So let's take a look at that next.
+In this example notice that we're creating infile as an extreme but we haven't provided any file name
+to associate with it yet.
+This is a common use case since many times we don't know the file name and we have to get it from a
+user or from some other source at runtime.
+Once we have the file name we can then use it and use the open method on the stream object to open the
+file so we can say infile dot open and provide the filename or in file open file name and then any flags
+we need to set.
+Now that we attempted to create the stream and connected to a file we have to be sure that this was
+successful before we start reading from the file.
+So let's do that next so we have to be sure that the file was open successfully.
+Maybe it wasn't founded there was some sort of hardware or permission issue.
+There are a few ways that we can check to see if the file was open successfully.
+We can call the is open method of the file stream object that we created.
+This will return a boolean indicating whether the file is open for processing or not.
+If we get back.
+True.
+We're good to go if we get back fault something happened that we can't read from the file.
+In the case of this error what do we do.
+Well it depends on the application.
+We might just display an error message and terminate the program.
+We might see if weeks and somehow recreate that file from a backup.
+It's totally application dependent.
+In our examples we'll simply display an error message and terminate the program.
+If there was no such error then we can go ahead and read from the file.
+Now let's see another way that we can test to see if the file was opened successfully.
+In this case we can simply test the stream object itself.
+If we couldn't open the file then this would return false.
+And then we can decide what to do.
+Otherwise it's good and we can proceed reading from the file.
+But let's talk about the last step first.
+That is closing the file once we finish reading from the file we must close it.
+This is a simple method call to the close method with input files.
+It's not so critical but when we talk about output files closing them is very important.
+OK so now that we know how to open a file check to make sure that it's open and close it.
+Let's do the part that's the most fun reading from.
+There are many many ways to read from a file.
+And these examples we'll be using text files.
+We can read formatted data from the text file using the stream extraction operator.
+Remember that one we've used that all along with CNH to get input from the keyboard.
+Well now we can use it again to get input from the file stream.
+In this example let's suppose that we have an integer a double and a string in a text file.
+And we want to read these into our programs.
+You can see the text files content to the little box here on the slides.
+We can assume that infile was created successfully.
+Notice that we create three variables.
+Numb is an int.
+Total is a double and name is a string.
+Now we can read from infile using the extraction operator.
+The first statement will read 100 and stored in the second statement we're read in 255 point 6:07 and
+stored in total and then read Larry unstored a name.
+That's it.
+Simple as pie.
+We can have these three separate read statements on a single line.
+We can chain them all together just like we did when we worked with S.N..
+Sometimes we want to read files an entire line at a time and we know that the extraction operators will
+stop when they see any white space.
+So in this case we can use the getline method.
+Remember that method we used it when we read lines from the keyboard using CN.
+In this case suppose our file contains the string.
+This is a line we create a string object called line and then we use getline with the name of the stream
+we're reading from and the stream we're reading into.
+That's it an entire line of text up to the new line will be read from the file and stored in the string
+named line.
+Really a single line from a file isn't too useful unless the file only has one line but usually files
+have many lines of text.
+So let's see how we can wrap this up in a loop to read all the lines in a text file.
+Here's the sample code.
+We can assume this code is in Main in all the necessary header files have been included.
+First we declare infile as an I-F stream and we connect it to my file.
+Text we also declare line to be a string object.
+That's where we'll store each line that we read from the text file.
+Ok so first let's make sure the file is open successfully.
+You can see in the if statement that we're checking to see if not in file not in file will be true if
+the file was not open successfully and if so we display an error message and we return something other
+than 0 and our program terminates.
+Otherwise we have an open file and we can start processing it we'll read the lines from the file in
+a while loop.
+And while we're in the while loop you'll see the condition while I'm not infile dot E O F F is a method
+that returns true when we reached the end of the file so we're looping while we have not seen the end
+of file at each loop iteration we use getline to read from in file and store an entire line of text
+into a line.
+Then we display line to the console and we iterate again at some point we'll reach the end of the file
+and the loop terminates then we close the file and we're done.
+So as you can see this program will read a text file from some file on disk and display its contents
+to the console.
+Pretty easy.
+Now let's see a variation of this program that does the while loop condition a bit differently.
+In this case the loop is while get line in file line.
+At first you might think what's going on there.
+Well we can embed many of the string input statements right into the while condition.
+We can also embed statements that have the extraction operator in there since these statements return
+a reference to the stream object.
+They'll only return a true value when the read was successful.
+So when we reached the end of file or some other error condition is encountered there will not return
+true and the loop will terminate.
+You could write code either way.
+OK so one more example and then we'll see some examples in live code in the next video.
+In this example we're again using infile as an extreme object but this time we're reading the file in
+an informative manner.
+In other words one character at a time.
+Sometimes this is very useful since the extraction operator getline and other methods depend on white
+space or new lines to be able to work correctly and formatted input reach one character at a time regardless
+of what that character is.
+The code in this example is exactly the same except that in the while loop condition we're reading a
+single character into the variable c with the get method.
+Then we simply output the character.
+So as you can see this example also reads a file from disk and displays it to the console but it does
+it in an unfortunate manner or one character at a time.
+OK so in the next video we'll head over to the idea we'll read some files and I'll talk some more about
+those file names.
+
