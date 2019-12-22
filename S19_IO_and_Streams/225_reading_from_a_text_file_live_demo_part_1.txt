@@ -1,0 +1,239 @@
+In this video we'll go over some examples of reading text files.
+So I'm in the section 19 workspace and I'm in the read file.
+Underscore one project.
+And right now I've got nothing in here.
+The only thing I've done is I've included IO stream and I've included extreme we obviously need to include
+lifestream to work with files.
+That's all I've got here is my project you can see it's open and the file that I'm going to read is
+not there yet.
+I wanted to show you how to create it first.
+And we want to do is let's write the code to open the file then it will obviously fail because the file
+is not there.
+And then we'll put the file in there and will read it.
+OK.
+So first thing we need to do is we need to create an input file stream and we'll just call it in file
+just like we've done in the slides and I'll initialize it on the next line up open it on the next line.
+That way you can see that kind of syntax so we'll say in file open and here we give it a file name.
+Now this is the part that's pretty operating system specific.
+It's specific if you're in Windows.
+You might be tempted to do this kind of thing.
+See colon backslash and then some directory and then some other directory may be followed by some test
+text or something like that right.
+That's the way that Windows filenames look.
+The problem with this is you remember that it's that character literal that starts with a slash that
+won't work because that right there becomes a character.
+So we want to do if you do it this way you want to use two slashes don't forget.
+That's really really important.
+You would want to use two slashes everywhere if you're on Windows.
+Now if you're on Mac or Unix or some other operating system then you really don't do that you kind of
+just know slash forward slash forward slash directory names to the file.
+Now the good thing about this is even if you're on Windows you can still use this slash and behind the
+scenes it will be mapped to the proper ones so that's what I would recommend you do.
+I would not recommend that you do anything like Seacole energy Colin does that really really ties your
+code to your computer.
+So for example if you trying to open a file in C colon slash Frank slash test and then someone else
+tries to run this program unless they've got a frank directory.
+It's not going to work that file won't be there.
+So the best thing to do is just to do something like that.
+That way to look in the current directory no matter what computer system you're on.
+Now this is where the ID issues come in and I'll talk about that a little bit.
+For now let me just leave that just like that I want to open a file called test data.
+It doesn't exist yet here as you can see but worry about that a little bit.
+So we're trying to open that here.
+The next thing we need to do is we need to see if it was open.
+So let's say if not infile.
+And remember here we could say we could have said if not in file is open like that.
+Either one will work.
+This is the style I like and that's the one I've been using a long time.
+I'll keep you in it.
+So if not infile that means we could not open this.
+OK so in this case we're just going to say stood.
+See air.
+We're going to display an error message that says
+open a file it's just something real simple like that.
+What do we do here.
+I want to get out of here.
+I've got nothing else to do.
+I need this file to run my program.
+So I've got a couple of options.
+I can say return anything other than 0 0 means the program completed successfully I could return I want
+I could return a negative one.
+It really depends on what number you're looking for.
+That means I couldn't find a file.
+So we could I'm just going to say return one.
+Sometimes you'll see code that looks like this.
+It says Exit 1 or more properly stood exit.
+And in this case that calls a function named X it that closes up certain things and you know destroys
+static variables and things.
+But right now I'm just going to simply return one.
+If I were having some sort of problem opening the file.
+Now if I get beyond this piece right here I've got the file.
+It's good to go so I'm just going to say stood out.
+File is going to go.
+I'm ready to read from it.
+That's it.
+That's the program.
+This will fail when I run it.
+So let's try it.
+I'm going to build and run.
+And it says problem opening file.
+How come.
+Because the file is not there.
+OK so let's create the file.
+What I'll do is I'll come in here into my project and I'm going to click on the source directory.
+This is what I would recommend that you do whatever files you create create them in the same directory
+where your data files are.
+OK so in this case I'm going to put it right where my main CGP file is.
+When I right click on that source folder and I'm going to select Add new file.
+You could also do it from up here add new file and then I'm going to select any file and just give it
+a name and I'm going to give it this name right here test that TXI.
+So I'm going to say test dot the x t.
+I'm going to press enter.
+And now you can see that test the ex-chief file right here.
+And I can type some data into there and I will in a moment.
+So now I've got the file.
+So now let's run it still problem.
+Opening file.
+How come.
+Well this is where the ideas are all different.
+If I open this file up this project right here I'm on the right click on it and I'm going to say open
+the containing folder just so I can open it up and explore here and look at it and move it over from
+my other monitor.
+You can see that here's my C++ source file right here my C.P. file right there.
+And here is that test he actually followed just created right.
+But the executor is not here.
+The file is not here.
+It's in de-bug.
+It's right here.
+That's my ex he filed the application.
+So when it runs it's looking for that THC file in here and it's not finding it.
+That's why with code like we have to do something like this dot dot slash.
+So in other words I'm in Debug I need to go one level above one directory above me.
+Now if I try to run this file is good to go found.
+Usually this is what you want to do.
+Most ideas will work this way.
+Code like does not I believe code blocks and Visual Studio will all work if you just type in the file
+and just like that.
+And then what you do is when you create your file you create it where your CPV file is and it'll find
+it depending on what you're using you're just going to have to play around with it and to get it.
+It opens it means you're good to go.
+OK.
+Next code if you're using X code we'll talk about that in the video.
+The x is x code is a little bit little bit different Sea-Lion it'll just a regular test that.
+He will also work.
+OK.
+So that's it.
+So now we've got a file we're able to open it so that's perfect.
+That's the first step.
+Right.
+We can't open it we can't read it.
+So I'm going to get rid of this file is good to go statement.
+I really don't want to say that again because I've got it.
+Now what I want to do is I just want to read some information from that file.
+So let's put something in there.
+I'm going to go into t test he t.
+And it's just a text file.
+Someone to say hello.
+That's it.
+And I just saved it just now and I want to go back to main CPV and I'll create these variables up here
+just sort of they're all in one place.
+So let's create a stud string and let's just call it line and it's just any variable name will do.
+And down here what I want to do is remember when we had C and we would say C in into mine.
+Well it's the same thing except we're not reading from CN we're reading from infile.
+So what that will do is it'll read one string it is going remember of the way the extraction operator
+works he'll stop at a space or at end of file at a stop as soon as it sees some white space.
+Now we should have that string in line and we could just simply display it
+right to the consul.
+OK so let me go through this again before I run it.
+I'm opening the file.
+I'm testing to be sure that it's open.
+If it's not open I'm displaying problem opening file and I'm out of here.
+Otherwise I'm reading from the file into line.
+Line is a string and then I'm displaying whatever I just read.
+Remember the file contains hello So that's what I should see.
+Right.
+So let's give it a run there's Hello.
+So that came from that textfile.
+OK so now what we'll do is let's read a couple of other things in here so I'm going to have an aunt
+we'll call it numb and we'll have a double and let's just call it total just like we did in the slides.
+So now what we'll do is we'll modify that file here so that it's got a string in it did a double it's
+already got a string.
+So we'll give it an int and let's give it a double
+three.
+Two hundred point three forty five.
+So that's my father's got a string and then did a double.
+OK so now we'll come down here and what we'll do is we can read the string and we could do this in separate
+lines.
+We could just do it all in one I'm just going to do it all in one to save a little time.
+Someone to read the string that I'm going to read the integer and then I'm going to read the total and
+what I'm going to do here is I'm going to display the line I'll just display them in three lines.
+Copy that one.
+So here we're displaying the line here we're displaying the number.
+And then finally we'll be displaying the total down here.
+OK.
+So all we've done now is rather than just read Hello we're reading Hello the integer and the double.
+And when I run this I should get three pieces of information displaying.
+There they are.
+Hello.
+One hundred and two hundred point three four five.
+Pretty cool.
+And if we modify this file to look like this
+this will still work.
+Right because we're using that extraction operator and it's going to stop right here when it sees a
+white space in X and a stop right here when it sees a white space.
+So we were pretty flexible as far as the format of this file.
+So if I run this again you can see I still got those numbers right there OK so that takes care of that
+example and what I'll do next is we're going to read file to and will do exactly the same thing.
+It will create more data here and we'll read these insightful.
+OK so I'll be right back to do that.
+And actually before we go to the next example I forgot to close the file.
+So I wanted to be sure that you know that we need to close this file so I'm just going to do in file
+close.
+OK that's very very important.
+I got carried away with showing you how to read I forget the simple things to close the file.
+So make sure you close the file at the end.
+OK so I've switched over to Section 19 workspace read file underscore to project.
+OK.
+So what we want to do now is rather than just read those three data items we want to continuously read
+three data items and show you what I did to the test file.
+Now we've got Frank 100 and a double Larry an integer and a double M-O an integer and a double and so
+forth.
+So what I want to do is rather than just read the one line I want to read as many lines as there there.
+So we need to do this in some sort of loop right so we're going to use a while loop.
+And let me go back to my main and I'll show you what's happening here.
+Everything else is exactly the same I have included IO manip here just because I want to display those
+guys out at the end and a little bit of a formatted column that where you can see it a little better.
+So I'm just displaying line numb and total a little bit formatted.
+So here I've opened the file and I've checked that it's open.
+I'm assuming it's open right here otherwise I can't get here because the return one would kick me out.
+So what do I want to do.
+Well I want to have some sort of while loop here.
+I want to loop while not infile dot and of file e o f and that's a function that will return true if
+it's end of file or no not true if it's not the end of file.
+And what I want to do in there is basically display this.
+But first I want to read the input.
+Right.
+So again I'm reading from infile And first I'm reading the line actually should be name right but would
+just keep the name line the nom which is the INT and the total and that should do it.
+So again while we're not at the end of the file we're reading three items displaying them looping back
+up reading another three items displaying them and so forth.
+They were done this time I remember to close the file.
+OK so let's run this.
+And when it runs.
+That's the information you get you get Frank Larry Moe Curly and you get the integers and the doubles
+here nicely formatted because I'm using the set w manipulator so we can do that with end of file but
+we can also do that by putting that extra this statement right here read inside the while.
+So what we can do is we can refactor this a little bit and what we'll do is we'll put this statement
+right in there and just move it up here just like that.
+All right.
+So now this is a little different and we have to wrap your head around this a little bit.
+So there's my infile and I'm reading those three items.
+If I hit and defile if anything fails if I've got illegal data anything this will fail in the while
+loop will fail and I'm out of here if I'm able to read all those three items.
+Remember this is using formatted input because I'm using those extraction operators.
+So that's it you will read them and then I'll display them.
+So if I run this I should get exactly the same output as before.
+And there it is ok cool.
+So now in the next video this will get a little bit long so I cut it off here and the next video what
+would you lose we'll read one of Shakespeare's poems.
+Line by line display it out to the consul.
