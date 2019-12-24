@@ -1,0 +1,84 @@
+OK in this video what I want to do is read a poem from a text file and just display it to the console.
+And we're going to use getline to do that.
+So I'm in the section 19 workspace in the read file.
+Underscore three project and what I've done here is I've got a poem already and I created a file called
+poem that text just like we did before and this is Shakespeare's son and 18 poem and you can see it's
+14 lines.
+And what I want to do is read each line and display it out to the console.
+Now if we tried to do this with the extraction operator reading one of these words at a time it's much
+trickier because you know when do we hit the end of line.
+We really don't want to deal with any of that.
+The simplest way to do it is just to read one line at a time and then display that line right out.
+So let me show you where the main is.
+This is about as simple as it gets.
+I've got I O stream extreme included.
+You can see here I've created my in file and I'm opening poem text in my parents directory which is
+exactly where I wanted to be in code like if the file is not able to be opened displaying an error again
+and I'm outta here and I'm closing the file at the end.
+So what I need to do here is simply process that file.
+So how do we do this.
+It's really just two lines of code it's really really straightforward.
+So what I'm going to do here is say while I'm going to use to get line and there's two versions of getline
+by the way there's a getline that works with character pointers or C-style strings.
+And there is a version that works with C++ strings were using C++ strings.
+From now on in the course so that's what we're going to be using.
+So we're using stood getline give it the name of the input stream which in this case is infile and Wardwell
+want this read into what this read into line.
+We haven't defined line yet so let's define line.
+I'll do that right here.
+I'll say stood string line.
+That's it.
+That's where the input is going into.
+So what do we do.
+Well while we're getting a line and it's successful this will be true.
+So what do we want to do with that line.
+We just want to display it right to the console so can't get much easier in this out line and I need
+a new line.
+That's it that's really that simple.
+So if I run this there's the poll right one line at a time till I hit the end of the line.
+I'm reading that in and I'm just displaying it right back out OK.
+Pretty easy right now you can see how easy it would be to write a file copy utility.
+We haven't learned about writing files yet thinking you know where we're going right.
+We can just like we write to stood out we can write to a file so we could easily write a utility that
+will copy a file that will actually going to do that we're going to when we get to the output files
+section will read this file and maybe this one a Romeo and Juliet or something a bigger one and we'll
+write it out with line numbers and so forth that way we can modify it a little bit.
+So that's it.
+This is using getline reading one line at a time.
+Now what I want to do next is I want to go into read file underscore for project and what we'll do is
+we'll do the same thing but we'll use an formatted input so we'll do it one character at a time.
+So I'll set that up here at back.
+OK so I'm back in the read file underscore for Project for the section 19 workspace and what we're going
+to do here is we're going to read Sonnet 18 again except we're going to use an formatted input in this
+case we're just going to use the get method and what that'll do is it will return one character at a
+time and we'll just display that one character out.
+So the advantages of using an formatted input are you don't have to worry about newlines you don't have
+to worry about files you don't have to worry about fancy characters and different things that could
+maybe break the way that you're reading because it's formatted and it's just going to process characters
+and formatted it's pretty cool.
+It gives you a lot of flexibility and that's what we'll do now.
+So this is where we are again.
+We've got streaming extreme exactly what we're before we've created our infile object and open the file
+and we've tested to be sure we've got an open file.
+We're closing it down here.
+So right in here is where we're going to do our processing of the file.
+How do we do this.
+Well pretty simple again while in file that get some character C..
+OK.
+We need to define C as the characters.
+We'll do that right here.
+We'll say char.
+See that's it it's really pretty simple.
+So while this is true what do I do.
+Stood out the character and then that's it.
+I mean down here I guess we could print a new line here.
+So we get a little bit of space at the end so we can see a little better but that's it.
+So while we're reading a character and it's true right we haven't hit the end of file.
+We haven't hit some bad bits we haven't read some we haven't had any hardware issues.
+While this is good we've got that C.
+We're just going to display it.
+So if we run this there's the poem exactly like it was before.
+That's it.
+Now you're ready for the challenge and the challenge is going to be a fun one there's a couple of challenges
+actually.
+So I'll see you in the next video and I'll explain the challenge to you.
