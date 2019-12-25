@@ -1,0 +1,235 @@
+In this video we'll talk about string stream's strings dreams allow us to use in-memory String objects
+as streams.
+That means that we can read and write data strings in the same way that we can read write data to any
+stream.
+This is a very powerful concept and it's very useful for data validation.
+It's also very easy to use since we already know how to use streams.
+There are three classes that we can use when using string streams the string stream class allows us
+to read and write from string streams the string stream class allows us to read from string streams
+and the O stream string class allows us to write to string streams for all of these we must include
+the stream header file.
+The rest is very much like using any other stream.
+First we declare a string stream object of one of the three types that I mentioned.
+Then we connected to a string.
+That's it.
+Now we can read or write to that string stream using formatted IO and stream manipulators if we wish.
+Let's see an example of how we could read from a string stream.
+Suppose we have three variables declared an integer named Naam a double named total and a string called
+name.
+Now suppose that we have a string info with the string Moe one hundred one two three four point five
+is its contents.
+Remember we did this example in this section and that same data was in a file.
+Well now it's in memory in a string.
+We can create an ice stream stream object we'll call it ISIS and connect it to the info string.
+So now we can read from the string stream now we can use the stream extraction operator to extract those
+data from the string.
+That's pretty cool.
+I'm sure you could see lots of applications for this especially in Data Validation So now let's see
+how we can write data to a stream stream.
+In this case we've initialized our variables name total and name to 100.
+One two three four point five and Mo respectively.
+We can create an o string stream object named o ss and we can write to the stream object.
+In this case I'm inserting the three values onto the string stream.
+Remember we can use any stream manipulators to format that data that we're putting on the stream.
+So now how do we display the string that we just formatted.
+Notice I didn't notice that in this case we didn't connect the stream stream to any string object we
+could have just like we did with the string stream example in the previous slide the string stream has
+a string buffer that it uses internally and we can use that.
+So if we want to display that string Oh we have to do is call the string streams dot as our method.
+In this last example we'll do some basic data validation.
+The idea is that I want to ask the user to enter an integer.
+The idea is that I want to ask the user to enter an integer and I want to be sure that they do enter
+an integer not some invalid data like a name.
+So we have a string named input and we read the user's input into that string.
+We don't read it into an integer.
+Again we read it into a string.
+Then what we want to do is to try to convert that string to an integer if possible.
+There are many ways to accomplish this in C++.
+Some are better than others.
+Let's do it with a string stream it's pretty easy.
+What we can do is we can create a string stream object we'll call it s s and we can connect it to the
+input string that the user just entered.
+Then we can try to extract an integer from SS and store it in value.
+We can do that using the stream extraction operator if the extraction was successful.
+That means that we have a valid integer stored in value.
+If the extraction was not successful we know that the user didn't enter an integer and we can ask them
+to enter the number again or we can do whatever else makes sense in our program.
+So now let's head over to the IDC and we'll see these examples and we'll do a more complete data validation
+example as well.
+Ok so many the IDM in the section 19 workspace in the string Stream project what we'll do here is we'll
+do a few examples using strings James will read from them or right from them and then I'll show you
+a little bit better data validation example then the one in the slide a little more complete.
+So what we're doing here is we've got some includes And we were including limits and I'll show you what
+that's about later.
+But right now we have IO stream I manip are extreme for our string streams and the string class.
+OK.
+So here's what we've got.
+We've got these three variables just like we saw on the slides numbers and in totals a double and name
+as a string and we've created this string right here called info that just has those three pieces of
+data in there.
+It's all a string right now but what we want to do is we want to be able to read that or extract that
+information from the string as a string an integer and a double and store them into these variables
+right up here.
+It's really easy to do.
+All we have to do is create an AI string Stream we'll call it ISIS and we're going to hook it up to
+that string info.
+This guy right here.
+And what we can do is we can extract information from ISIS which is a stream the same way that we extracted
+information from C in the same way we extract information from a file.
+Same idea member we're using the stream abstraction.
+And we really don't care what the stream is connected to.
+In this case it's connected to an in-memory string and that's what we're doing here.
+We're reading name numb and total.
+The compiler knows the types for these guys because they're defined right up here.
+So it's going to try to read a string from the string ISIS which is connected to this guy right here
+and he's going to grab Moe and stored a name and it's going to get 100 stored and numb and it's going
+to get 123 4.5 and stored in total will display this information out to the console right here and see
+out and we'll get a nice formatted output so let's see what it looks like.
+And there you go mo one hundred and one twenty three point forty five.
+That's the data that was in this string.
+So you can see how easily we really what we were doing is actually parsing that string and parsing information
+out of there type it which is kind of cool.
+And it was so easy to do we really had to do very little.
+We had to do this one line 17 right here.
+Once we hooked up the strength stream.
+OK.
+So that's an example of input.
+An example of output I'll comment.
+This piece of code out or comment and I should say.
+Notice what we're doing here.
+We're going to use an output string stream here and we'll call it.
+Oh yes.
+And we're not going to hook it up to anything behind the scenes the stream stream class has its own
+string buffer and that's what we're going to use.
+So in this case what we're doing is we're instantiating o ss right here and then we're just going to
+write to the stream and the stream is going to store that information in that string buffer that it
+has.
+So what we're going to do is we're going to display name.
+We're going to display Namma when display total we still have those from this piece of code up here
+and we're going to display them using these three manipulators.
+And then when we're done we want to display the string.
+Right but all we have is that stream o ss and a string and stream sounds like it's hard for me to say
+them because I confused them myself.
+So all we have is a stream o ss it's connected to a string.
+So what we want to do is display the string and the way we get to that string is we use the as our method
+for the Stream.
+And that will return that internal string buffer that it's got and will display it.
+So what we're doing here is where we're putting all of this information to that stream which is connected
+to its own string.
+And then we're displaying the string.
+So when we display the string you should see this display in a formatted manner.
+So let's try that.
+There it is.
+Mo one hundred twenty three point forty five it's the same formatting that we used right up here.
+Makes sense of what we're doing is where we're displaying this member before it went to see out.
+Now it's not going to see that now it's going to that string stream.
+They're both streams right out is an output stream and SS is an output stream.
+It just happens to go to a string.
+And now let's do an example for data validation you guys had a lot of questions about data validations
+on the forums.
+So I decided to do an example using the stream stream.
+All right.
+So let's go through this one really slowly here.
+This is the value at the end of this.
+I want the user to enter an integer and I want that integer to be in that value variable right here.
+OK.
+But I can't.
+And you've seen how we can't just ask the user for an integer and then do something like C in.
+So we could read the console input into that value variable.
+That doesn't work for a right when they type strings and when they type silly stuff on the keyboard
+it's going to fail.
+So we've got to have a better way to do that.
+We have to be able to validate the type that are entering.
+So that's what we're going to do here rather than read directly into an integer.
+We're going to read into a string right here entry.
+OK.
+And we're going to do this in a loop and we're going to keep doing it until they enter something that's
+valid.
+So let's talk about the loop.
+What we're doing what we'll do first is we're going to create a boolean flag right here called done
+and we're going to see that done to fault's because we're not done.
+We're done when we're done right when we're starting out.
+Obviously we're not done when we first start.
+So we've got to loop or do wollop here and what we're going to do first is we're going to say hey user
+please enter an integer and we're going to read the integer into entry.
+Remember entry is that string.
+So now we're allowing them to enter anything they want.
+We're going to grab a string so they can type in numbers letters decimals whatever they want and what
+we'll do is we'll try to validate that to make sure that what they typed in is an integer.
+This is where the string stream comes in and we're going to use an ice string stream here we have just
+used a regular string string it doesn't really matter cause it goes both ways.
+But this is an input string stream and we're going to call a validator called it anything you want.
+Typically you see these things called s s out there in real code.
+I don't know why but it's very very common to see strings James named.
+SS So I call a validator and I'm looking at up to entry.
+So now I remember entry is suppose entry has a user entered one instead of the number one.
+They entered the string one.
+What we're doing is we're hooking up this string right input sorry entry right here to that validator
+string stream and then this is the key right here.
+I'm going to try to extract value once value an integer.
+I'm going to try to extract a value from the stream.
+There's no way.
+Right we've got a string here that's all o n e.
+That's not an integer.
+This will fail if this fails we're going to say sorry that's not an integer.
+Done is still false.
+We're going to loop again and I'll talk about this statement here in a second.
+But now suppose that they do enter a valid integer suppose they enter 123.
+Remember it's a string they're entry strings but that's a valid integer in that string.
+When we get to here and we try to extract that integer from that entry that they put in through the
+stream we're going to get back 123 and that's going to be stored right in value.
+So that's going to be perfect.
+This will pass we'll set Dunta true and we're looping while we're not done so we're done right.
+Our loop will finish and then I believe there's a statement done here at the bottom that says you entered
+the integer value and I'll run this for you in a minute.
+Now let's talk about this statement right here.
+This is something I hadn't talked about yet and this is these are the more advanced edge cases and nuances
+of C++.
+Suppose that the user entered something like twelve point thirty eight.
+Well this right here will extract the 12 and 12 will be put into value.
+But then we have all this stuff left over on the stream.
+So the next stream read doesn't really know that that's there.
+So what we're doing here is we're saying stood CN and we're using C-n here because that's where we're
+reading data from.
+We're going to ignore everything in that stream up to the new line and that's what we're doing here.
+And that's where that limits header file comes in.
+So we're using student numeric limits up to whatever the Studd stream size is and that's dependent on
+your platform.
+So how big that stream is the maximum number I'm getting rid of all of this stuff I'm just ignoring
+all them clearing up that stream so that the next time I read from the stream it's clean and there's
+nothing left over.
+They remember that the user could have typed in 12.
+Hello there.
+Right.
+And that space right there Rab's that 12 and that 12 goes into value this passes this is true.
+So we've got an integer.
+They did that to type in an integer.
+They typed in a bunch of other stuff as well.
+But what we do is we can grab the 12 and just delete that rest of that stuff so the next time we read
+we're clean.
+All right so let's run this example.
+And please enter an integer 12 you entered into your 12.
+Good.
+That wasn't until just what we expected.
+So let's run this again.
+Please enter an integer.
+Let's say I typed in Frank.
+Sorry that's not an integer.
+How about point 0 1.
+Sorry that's not an integer.
+But notice now that when I loop around whatever was left in that input stream is gone because I ignored
+it I got rid of it all.
+So that really helps us with with future input.
+So now if I did something like 10 Frank is a good teacher.
+Something like that you entered 10 notice it grabbed the integer but then it just discarded everything
+else.
+So we're ready to read again and our stream will be in a known state and not some unknown state.
+All right.
+So that's it.
+I hope you enjoyed this.
+This section on stream streams they're very very powerful.
+They're not used that often out there but sometimes you'll see them used and they used a lot in GUI
+work sometimes when you want to display strings too gooey a graphical user interface elements.
+We tend to format them in memory and then display them out.
+That's it.
+So let me know if you have any questions about this.

@@ -1,0 +1,88 @@
+It is go over some of the popular ideas and where you should place the input files that you're going
+to read from code like I won't do because we're been using it throughout the course but we've got Windows
+Visual Studio code blocks Sea-Lion the next code and I do a really short video on all of them it's the
+same little program that all it tries to do is open a file called testee XTi.
+And what I found was that in code like we need to do a dot dot slash test that text in Windows Visual
+Studio is just a filename and code blocks is also just the filename in sea lion just like in code like
+we need to go up a directory and then provide the name of the file and X code is a little different.
+So please watch the video if you're using X code and I'll show you how to set it up so that you can
+use input files.
+Ok so first let's start with your studio.
+So this example I've got visual studio and you can see when I run this sample it says error opening
+file because the founders exist.
+So what we want to do is create the file so we can click the resource area and click add new item and
+then select text file and give it the name test.
+T x t it's lowercase
+and press add.
+And at this point that files Banat and we can go back to our C++ file and executed at this point.
+And notice we're just using tests he exceeds the filename and we should get good to go.
+There we go.
+Good to go.
+So it's all set.
+So that's the way you would create an input file in Visual Studio.
+So now let's see how we can get this to work using the code blocks ID for this example I mean the code
+blocks ID and you can see I've got the same file here where I'm trying to open an input file stream
+name test that TXI T.
+It's not here right now so if I try to run it says problem opening file to 6 we expect.
+So what we'll do is we'll come up here.
+So what we can do is we can come up here to select our project and say file new empty file.
+Do you want to add this new file to the active project.
+I'll save the project first.
+And all we're doing here is we're just creating that file.
+Test Dot T S T and make sure that it's in the file test directory or whatever the project directory
+is and where basically where you see your source file right here save that it's going to ask me to select
+a target so that's important make sure those are checked selected and at that point you can see it creates
+this folder called others with the test in it.
+And now if we run this we're going to go.
+OK so that's how you would create a file for input in code blocks.
+Next up is Seelye And let's see how we can get the input files to read using Sea-Lion.
+I mean the sea lion ID on Windows.
+And you can see I've got a real simple program that's going to test opening a file the file name is
+test TXI.
+If I run this.
+He just clicked that little green arrow right here.
+Or I can click the green arrow up here.
+I'll just do it right here.
+You'll see that what we'll have is we'll have an error says problem opening file just as we expect because
+the file doesn't exist.
+So I'm going to come up here to the project right click and say new file the file name would be.
+Test t x T.
+I'll save that and will try to run it again and I'll click the CBP file again.
+Again we're seeing a problem opening file.
+And if we look at the directory structure you'll see the problem is that the file is being created in
+here you can see it right here.
+File tests are easy.
+So it's a level up.
+So you need to do the same thing with didn't code light we just basically say dot dot slash will save
+it.
+We're running again and we're good to go.
+So that's how you do this in Sea-Lion and we'll finish up this section with X code x code is a little
+bit different.
+So what's the value of using X code and you need to have input files.
+Ok so I'm on a Mac running X code and I've got that simple program here I'm trying to open a file and
+text 16.
+If I try to run this I'll get an error out here same problem opening file.
+So that part of the file is not there.
+So let's add the file.
+So let's right click here.
+Will say new file.
+So like Mac OS and Austro all the way to the bottom two says empty
+and we'll create test that T.
+That sits the files there now.
+So if we run again it still won't find it will have a problem opening files the way the tax code works
+and Mac works is that you see file that app is stored in some derived data directory really really far
+removed from the project.
+So the best way to do this on a Mac is to come up to product
+then select scheme and end it's game and then look for this working directory right here.
+It's under options on run debug.
+You select working directory and you select.
+You say use a custom working directory.
+And what we want to choose is we want to suits that one to and what you want to do is select the working
+directory where those files are humane CVP and your test he Eckstine you selected.
+We closed this up now and now we run.
+We should be good to go.
+And we are and it will find the file just fine.
+Most of the other IDs will also allow you to change the working directory but it's much easier just
+to change the file path on those but on a map.
+This is the best way to do it.
+
