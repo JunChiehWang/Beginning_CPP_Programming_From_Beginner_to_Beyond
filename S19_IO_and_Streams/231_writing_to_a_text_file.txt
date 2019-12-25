@@ -1,0 +1,125 @@
+In this video we'll talk about the steps needed to write output to text files using C++ streams and
+the following slides.
+Talk about the main classes and methods that we can use to write to files and then I go over a few examples
+in life code the two classes I've discussed for textfile output are extreme and O.F. stream.
+We must always include string.
+Then we declare a stream object of either extreme or O.F. stream type.
+We then connect a stream object we just create it to the file we want to write to and our file system
+once the file is connected and open we can write to it by default.
+C++ will create the file if it does not exist and if it does exist the contents of the file will be
+truncated or removed unless we state otherwise we can write the files in binary or text mode and we
+can use any of the stream manipulators that we've already learned about then when we're done processing
+the file we must close the file.
+This is very important for output files since it flushes any buffers that may not have been written
+out to the file yet.
+It's pretty easy in the next few slides will discuss the details of opening a file for output checking
+to make sure the file was opened correctly.
+Writing to the file in different ways and then closing the file.
+It's important to remember that by default output files will be created if they don't exist but we have
+to make sure that if we provide a path along with the file name when we open the file that that path
+must exist.
+Otherwise we'll get an error when creating the file.
+If the file already exists then it will be overwritten or truncated.
+Unless we specify that we want to append to the contents of the existing file.
+Finally we can write in text mode or in binary mode in this section we're only concentrating on textmode.
+So in this example we're creating an object named out file and we're using the stream class as its type.
+Notice I'm also initialized in the object as well.
+The initializer takes two arguments the first is the name of the file as we've already seen with input
+files.
+This can be very operating system and Id dependent so in code like we're going to use dot dot slash
+So it puts the file in our parent directory.
+The second parameter specifies the mode and properties of the file that's being opened in the first
+example we're using stood iOS out.
+This means to open the file in output mode.
+So we're able to write to it but not read from it by default.
+Files are opened in text mode in the second example we're opening the file and output mode and in binary
+mode this is necessary when we're writing non-text files that contain binary data.
+Notice the vertical bar pipe character between stood out and stood I always binary.
+This is the bitwise OR operator.
+And when we use it in context like this it sets both output and binary modes to true.
+At this point the file will be opened if it was found and truncate it or will be created.
+In this slide we use the extreme class the extreme class can actually open a file for reading and writing
+at the same time.
+We won't be doing that.
+But if you have a file that you need to read from and write to we can use the stream class to do that
+in this line.
+Be Using the O.F. stream class is the type of our file o f stream is used commonly for output files
+only.
+We can create an off stream object the same way we created an extreme object.
+However in the case of a O.F. stream object stood iOS out is optional since it's already the default.
+So the first two declarations of our file have the same effect.
+There's another way to open the file as commonly seen in code we saw it with input files so let's see
+those next
+when we open a file for output we have a few choices as to how we want to open the file butterfat the
+file is opened for truncation and we can explicitly specify that as in the first example if we want
+the output file open but we want all further output to append to the end of the file.
+Then we can use this stupid iOS app flag when we open the file.
+Finally we can use the Stood iOS 8 flag when we want to open a file that exists and we want to set the
+initial position of the next right to the end of the existing file.
+But we're free to move around using random access.
+We're going to use random access files and this course will focus solely on text based sequential files.
+Now just as we saw with input files we can first create the stream object and then open it.
+So let's see that
+in this example notice that we're creating out file as an o f stream object but we haven't provided
+any file name to associate with it.
+This is common use case since many times we don't know the file and when we have to get it from the
+user or from some other resource at runtime once we have the filename we can then use the open method
+on the stream object to open the file so we can say out file that open and give it the file name or
+out file open file name and any flags we need.
+Now we attempted to create the output stream and connected to a file.
+We have to be sure this was successful before we start writing to the file and we'll do that next.
+The process here is exactly as it was with input file streams.
+We have to be sure that the file was opened successfully so we can call the is open method on the file
+stream up to it.
+We created this returns a boolean indicating whether the file is open for processing.
+If we get back.
+True we're good to go if we get back fault's some error occurred if no error occur.
+Then we can go ahead and write to the file.
+Let's see another way that we can test to see if the file was open successfully.
+In this case we can simply test a stream object itself if the stream object was not instantiated then
+this would return false and we can decide what to do next.
+Otherwise it's good to go and we can proceed writing to the file
+once we finish writing to the file we have to close it.
+This is a simple method call to the close method without put files.
+This is very important since it flushes out any buffers that may not have been written out to file yet.
+OK so now we know how to open a file check to make sure that it's open and close it.
+Now let's write to it.
+There are many ways to write to a file and these examples we're going to use text files.
+The most common ways to use formatted output using the stream insertion operator.
+So in this example we have an integer a double and a string and three variables.
+If we want to write them out to our output file we can assume that outfought was created successfully.
+All we have to do is use the insertion operator as we've been using all along with C out except that
+we insert the values into our file.
+That's it.
+Very simple very powerful.
+Remember the stream manipulators we learned about in the beginning of the section we can use them all
+as well to format our output however we want.
+Also notice that end line flushes out any unwritten buffers
+so let's write a program that copies one txt file to another we'll assume the existing file is my file
+that text and we want to copy it to another file named copied text.
+First we create an extreme object in file and initialized it to our input file.
+Then we create an o f stream object out file and initialize it to our output file.
+In this case if the output file does not exist it will be created.
+If it does exist it will be truncated.
+We need to be sure that both files were opened successfully So we checked using two if statements and
+if there's any error we terminate in the next slide will complete the program and actually do the copying.
+So at this point our input file and output files are open and ready for processing.
+We can use a while loop with a getline to read the input file one line at a time into the stream variable
+line.
+If the read was successful the while loop condition will be true and we write the line to out file.
+Then we close both files.
+That's it really really easy to copy one file to another.
+OK so let's see one more example this time will use an formatted read and write and then we'll see some
+examples in life code.
+In this example again we're using infile as an extreme object an out file as an o a stream object.
+We go through the same steps necessary to open the files check to be sure they are open and so forth.
+And then in the next slide we'll do the actual copying but this time in an formatted manner one character
+at a time.
+So here in the while loop we read a character from infile using the get method and if it's successful
+we write that character to file using the put method.
+When we reach the end of file the loop terminates and we close the files.
+That's it.
+So there you go two different ways to copy text files one that's doing it one line at a time and another
+one that's doing it one character at a time using an formatted read and write.
+Great.
+So now let's head over to the idea and we'll see some examples of creating and writing to text files.
