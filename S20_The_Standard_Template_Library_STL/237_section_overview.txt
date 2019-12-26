@@ -1,0 +1,22 @@
+Welcome to the standard template library section of the course in this section of the Course will learn
+about the C++ standard template library or as T.L. for short.
+The FCO provides a rich set of containers iterators and algorithms that we can use with just about any
+type of data we wish.
+We've already worked with one of the SBL workhorses the vector First we'll see what the ACL is all about
+and then we'll learn a little bit about generic or metaprogramming which is what the ACL uses to allow
+us to use its components on just about any type of data.
+We'll see how C++ can use preprocessor macros function templates and class templates to achieve generic
+programming.
+We'll also learn what generic programming is and why it's so powerful.
+Then we'll look at the types of containers iterators and algorithms provided by the SBL and we'll look
+at each of the main containers such as Array vector deck list set map stacks queues and priority his
+Finally we'll learn about some of the commonly used algorithms in the SPL.
+The cool thing about the ACL is that once you learn how to use one container one iterator and one algorithm
+then the rest follows the same pattern.
+So they become easy to learn.
+There will also be several challenges in this section that will allow you to solve more problems using
+the ACL containers iterators algorithms.
+Most beginning See post post courses don't cover the ACL but I think it's important to cover it since
+it's used very often in C++ programming.
+Great.
+So let's see what the ACL is all about.

@@ -1,0 +1,125 @@
+In this video I'd like to do an overview of the basic elements of the C++ standard template library
+and see what it's all about the SPL is a library of powerful reusable adaptable generic classes and
+functions.
+OK so what do all those words mean.
+Well the SBL is powerful.
+We've already seen a bit of that power when we use the vector class the FCL is reusable.
+Remember when we created vectors of integers and doubles in accounts and so forth we didn't have to
+do anything except tell the vector what we wanted it to hold the ASIO's adaptable.
+It provides containers iterators in algorithms that we can adapt to make them do whatever we need them
+to do with our programs.
+Finally the ACL is implemented using template functions and classes.
+We learn about C++ templates in the next few videos.
+They are one of the features that makes the post so powerful.
+The ACL is a huge class library will only be scratching the surface in this section.
+But once you understand how to use DSTO the principals will learn will apply across the entire SPL.
+The ACL was developed around 1994 by Alexander Stepanov and even today it's considered one of the best
+designed generic class libraries ever created.
+So what is the best deal.
+Well at its core the SBL is an assortment of commonly used containers.
+We'll see some of these containers in the next slide.
+The algorithms provided by the SBL have published and well understood time and size complexity information.
+That means that when you use the containers and algorithms in the CEO there are no surprises.
+You know exactly how the algorithms behave as the size of the collection increases.
+Complexity theory is beyond the scope of this course but it's an important part of software development.
+The SCA has been around a long time it's been tried and tested across many millions of lines of code.
+The ACL is consistent.
+Fast typesafe as well it's extensible.
+The ACL has three main components container's algorithms and iterators.
+Containers are collections of objects or primitive types.
+These include array vector deck stack set map and more algorithms are functions for processing sequence
+of elements from containers.
+The SPL has about 60 algorithms that can be used and extended to work with any type of data.
+These algorithms allow us to find a specific element in a container find the max or min element in a
+container count the number of elements in a container accumulate or sum up the values of container elements.
+Sort containers and that's just a few examples we can do much much more.
+Finally iterators generate the sequences of elements from the containers that the algorithms use.
+There are several types of iterators that allow us to generate sequences of elements in various ways.
+Note that one of the beautiful aspects of the design of the SBL is that the containers algorithms and
+iterators are designed totally independently from one another yet they work together seamlessly.
+Also note that I said the SBL has three main components.
+It also has a few other components such as functors and allocators.
+But we won't be covering those in this section before we get into the details of the SPL.
+Let's see a simple example of how we could use some of its functionality will use a vector of integers
+for these examples.
+Since we're already familiar with vectors in this example I'm including the vector and algorithm header
+files.
+Vector allows me to work with vectors an algorithm allows me to use the ECL algorithms.
+So let's create a simple vector of integers we'll call it V and initialize it to 3 integers 1 5 and
+3.
+Now suppose we want to sort that vector.
+We can use the FCL sort algorithm to do that but the sort algorithm needs a sequence of objects to sort.
+That's where the iterator comes in.
+We provide the sequence using vidette began and V.
+This provides the sort outgrow them with the integers in the vector v from the beginning element to
+the ending element.
+In other words the entire vector.
+That's it.
+Now we can display the vector using a range base for loop and we can see the elements in the vector.
+Now sorted.
+Pretty easy right.
+The iterator we used produced a sequence of all the integers in the vector but we could have easily
+provided only a subset if that's what we needed.
+So suppose we had need to only sort the first half of a vector.
+We could modify the iterator to produce just the first half of the elements.
+Also we aren't restricted to using a vector.
+We can sort just about any as T.L. container exactly the same way.
+Also we can extend the sorda algorithm to tell them exactly how to compare the elements when sorting.
+For example maybe we have a vector of account objects and we want to sort them by balance suppose that
+now we want to reverse the order of the integers in this vector we can use the SBL reverse algorithm
+to do that.
+The code is exactly the same but we use the reverse function instead of sort.
+And when we display the fact as elements we get 5 3 1 as we expect.
+Also I should mention that behind the scenes the range based for loop is itself an iterator.
+We'll talk more about that later.
+Now let's see a different type of algorithm function the accumulate function.
+In this case I want to add up all the integers in the vector and store the result in a variable called
+sum.
+To do this I can use the accumulate function.
+Notice that the function has parameters.
+The first two are iterators.
+Where do I start.
+Where do I end.
+This produces the sequence of elements that the accumulate function will process the third parameter
+0 in this case is what the running sum will start at Typically 0.
+But we can use any number we want the type of this third parameter is very important.
+So if you want to sum integers use 0 if you want to sum doubles use zero point zero the total is stored
+in sum and in this case we display 9 which is one plus three plus five.
+The sum of the elements in the vector from these simple examples you can see how powerful using containers
+iterators and algorithms can be.
+Now let's talk about the various types of containers provided by DSTO.
+We have three basic categories of containers.
+Sequence associative and container adapter's sequence containers are containers that maintain the ordering
+of inserted elements.
+These containers include array vector list forward lists and deck will discuss each of these containers
+in this section of the Course associative containers insert elements in a predefined order or no order
+at all.
+For example a set is a collection of elements where there are no duplicates but there may be an order
+associated with it or not.
+We've got the option to choose whatever one we want.
+A map is like a dictionary where we associate a word with its definition.
+There are many variants of this category so we can have ordered sets an ordered sets sets that allow
+duplicates maps that allow duplicates and so forth.
+These are very powerful data structures that are often underused.
+We'll talk about them in this section and I'll show you how to use them.
+The last category.
+Container adapters are variations of the other containers.
+This category does not support iterators so they can't be used with as T.L. algorithms but they're so
+commonly used in programming that DSL provide support for them.
+These include the stack the queue and the priority queue.
+In this slide you can see that the ACL has several types of iterators input iterators make container
+elements available to your program output iterators can iterate over a sequence and write an element
+to a container for iterators can iterate forward over a sequence and can rewrite any element by directional
+iterators are like forward iterators but they can iterate over a sequence in both directions and finally
+random access iterators can use the subscript operator to directly access elements.
+We saw that with the Vector class.
+Finally we have the ACL algorithms as I mentioned previously there are about 60 algorithms in the SPL
+and the algorithms are classified into two major groups not modifying and modifying algorithms depending
+on whether the algorithm modifies the sequence it acts upon.
+As you can see there is a lot to the T.L. and we can't possibly cover it all in detail in a single section.
+In fact entire books have been written about the ACL but by the time you get to the end of this section
+you'll understand the fundamentals of the ACL and be able to use this heal containers iterators and
+algorithms to solve real problems.
+But before we get to the ACL Let's talk a little bit about generic programming and templates so that
+we can understand the design behind DSTO.
+

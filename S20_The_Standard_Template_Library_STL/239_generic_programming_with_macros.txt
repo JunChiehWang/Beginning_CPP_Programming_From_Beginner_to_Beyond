@@ -1,0 +1,111 @@
+According to Bjarne Stroustrup the inventor of C++ generic programming is quote writing code that works
+with a variety of types as arguments.
+As long as those argument types meet the specific syntax and semantic requirements end quote.
+So why is generic programming such a big deal.
+Well it's because if I have code that's written to be generic then I should be able to use any types
+with that code as long as it makes sense and it should work.
+We'll see this specific example later.
+But what if I wanted to have a function that took some number as a parameter and returned the square
+of that number with generic programming I should be able to pass in any numeric type into that function
+and it will return the correct result so it should work with its short ints longs long longs floats
+doubles and so forth you get the idea.
+But we have a bit of a problem.
+The C++ compiler is statically typed so it needs to know the type being passed into that function so
+it can type check it.
+So if I write the function to expect an integer then I will be able to call it correctly with a double.
+So how can we get this to work in C++.
+There's a couple of ways in this video.
+Look at macros and then the next several videos will learn about function and class templates.
+Notice the note on the macros bullet.
+Be very careful when you use macros.
+In practice especially macros that use arguments.
+So why am I showing it to you then.
+Well sometimes the best way to teach how to do something correctly is to first teach how to do it in
+a way that's inferior.
+Second.
+You'll likely see this out there in production code.
+There's a ton of legacy C++ code out there and macros are used in much of that code.
+Macros are used more extensively in C code though and we sometimes see C code use with C plus plus code.
+Now we've actually already used a macro.
+Remember when we created the include guards around our DOT h header files we used poun define.
+Well that's a macro in the context of Hetter guards and conditional compilation.
+It's OK to use macros but don't use macros in your code as I'll show you here.
+OK so let's see how these macros work.
+First the macros begin with the pound sign.
+And we know that all directives that begin with the pound sign are preprocessor directives and what
+else do we know.
+Well we know that the preprocessor doesn't know C++.
+So there is no type information associated with macros.
+The preprocessor is just doing simple substitution noticed the first poun define defines the name Max
+size to be 100.
+Notice that the 100 has no type associated with it.
+It's just a 100 the second poun define defines the named pi to be three point 1 4 1 5 9.
+Now if we use these names in our program the preprocessor will replace the names with what we defined
+them to represent.
+Notice that there is no semi-colon at the end of the macros.
+If there was then the semi-colon would also be copied.
+And that's not usually what we want in this.
+We can see Max size being used in the expression and the if statement and pi is being used in a calculation
+the preprocessor will first remove the pound to find statements from our code.
+Then it goes through the program and replaces any defined names with what we defined them to be.
+You can see the values being replaced here in the if statement and the calculation.
+Now the process file is sent to the compiler.
+It looks simple and it is but there's a better way to do this.
+And we learned it a long time ago.
+We used constants constants are typed and they're known to the compiler.
+I know what you're thinking what does this have to do a generic programming.
+I'll show you in the next line.
+Suppose we want to write a function that expects to integers and returns the maximum of those to integers.
+We could easily write that Max function as you can see in this slide.
+Note that we're using the conditional operator so it evaluates a greater than B and if it's true then
+A is returned otherwise B is returned.
+Simple if else logic.
+Now we can define two ints x and y.
+Call the max function with X and Y as parameters.
+And it works perfectly OK so what.
+Whereas the generic programming.
+Now suppose we need a max function for doubles and another one for characters and we could have another
+one for floats and long as you get the idea we could end up writing many of these max functions.
+The code is the same for all of them.
+It's that code with the conditional operator.
+The only thing that changes is the types of the parameters.
+Remember the idea behind generic programming I should be able to use max with any types as long as they
+make sense.
+But how can I do that without writing many versions of this function like we did here.
+But one way is to use macros with parameters in this slide we're defining a macro named Max that expects
+two arguments A and B and we can define it to be the conditional expression we saw earlier.
+So when the preprocessor sees Max with two arguments it will replace it with what we defined it in the
+macro and it will also replace the arguments A and B.
+So now we have no functions defined just a single macro called Max.
+We can now use max in our code with arguments as you see in the examples.
+It works fine.
+That's an example of generic programming.
+Remember the preprocessor is simply substituting.
+It doesn't know C++.
+So problems can occur once the compiler tries to compile the process code.
+We have to be very careful with macros.
+Here's an example.
+Suppose we want a simple macro that's defined as poun defined square with a single argument.
+And it's defined as a times a.
+Looks simple and it is but there's a few problems here.
+Now we can use that macro.
+End result equal square with the five square 5 were be replaced with five times five and all is good.
+But look at the next example.
+Result equals 100 divided by square 5.
+What we expect is 100 divided by 25 which is four.
+But that's not what we get.
+We get 100 divided by five times five.
+Again blind substitution.
+So how can we make this better when we use macros.
+We can wrap up all the arguments in parentheses.
+This is the best practice.
+Now we give ourselves a better chance that the result will be correct.
+In this case we now get what we expect.
+OK so why don't we want to do this because the compiler isn't doing it.
+The preprocessor is doing it and it doesn't know the syntax or semantics of C++.
+Don't use macros with arguments in your code.
+If you have legacy code understand how it works or that you can better test the code.
+So what's a better way to write these Max and square functions so that we can use generic programming
+and let the compiler do the work.
+We can use templates in this case function templates and we'll learn about them in the next video.
+
