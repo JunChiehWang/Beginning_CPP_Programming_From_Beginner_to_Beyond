@@ -1,0 +1,206 @@
+We've seen how we can write generic functions using C++ templates in this video will take it a step
+further and we'll learn how we can you see post plus templates to create generic classes.
+So what is the C++ class template a class template is similar to a function template.
+But instead of creating a generic function we'll be creating a generic class.
+So this implies generic attributes constructors destructors methods and so forth.
+Just like we can plug in any type to a function template.
+We can do the same with a class template.
+We've already used class templates in several places in this course.
+The most obvious is when we created vector objects we didn't just say I want a vector we said I want
+a vector of a specific type and that's where the class templates come in.
+So the class template is a generic blueprint that the compiler uses to create specialized classes.
+That's what metaprogramming is all about.
+As I mentioned in the previous slides templates can be very complex class templates in particular can
+be very complex.
+Imagine combining inheritance dynamic polymorphism operator overloading templates and other advanced
+C++ features together.
+Super powerful but also complex.
+So let's see how we can use class templates.
+Let's say we want a class that will hold an integer and a string and we want that class to be called
+item we can write a simple class as follows.
+Note that we have two private attributes.
+Name and value.
+A constructor that initializes attributes to those provided by the user.
+And we have a get name and get value getter methods.
+Of course we could add other methods but we won't in this example since the purpose is to focus on how
+we can make this class generic.
+So let's suppose that now we need a class that's similar to the Item class except instead of an int
+and a string.
+We want a model a double and a string.
+What can we do.
+Sure we can create a new class just like we did for item that has a double in the string but we'd have
+to name it something other than items since we can't overload class names in the same namespace and
+we don't want to create a complex hierarchy with dynamic polymorphism.
+So let's see how we can use class templates to allow us to just write the blueprint for the class
+for us we can replace the type of the value attribute from int to T in this case.
+But remember this can be any name.
+Then we go through the class and wherever we used value or return values type we replace it with a T.
+That's pretty much it.
+Now of course this won't compile.
+We need to tell the compiler that this is a template class and we can do this by adding the template
+declaration before the class declaration and provide the template parameter.
+This is a pretty simple example but it sure makes the item class much more generic and much more useful.
+Now if we want to create instances of items we can simply provide the type of the value in the template
+parameter and the compiler will take care of generating the correct class from the template in the first
+example we're creating.
+Item 1 is an item with a value of type int and a name of type String name will always be of type strings
+so we don't have to provide it as a template parameter in the second example value will be of type double
+and the third example value will be a stud string.
+And in the final example we're creating a vector that holds items and those items will have value as
+an integer.
+That's it.
+Just as with function templates there's no limit to the number of template parameters you can have.
+And of course there may be of different types in this example.
+We're creating a class template called my pair that models a pair of data items.
+The types of these data items can be different if we wish or they can be the same.
+Note that in this case we use a struct.
+Since all we want to do is associate first with second.
+We're just modeling data so we won't bother with constructors methods and so forth.
+Now if we wanted to create my Peyre objects is really easy in the first example we create P1 as a my
+pair of stood string and integer and we initialize it to Frank and 100 in the second example we create
+P2 as a pair of integer and double and we initialize it to 124 and thirteen point six.
+And in the last example we create a vector that holds my pair objects and those objects are in double
+pairs.
+This my pair class can be a very handy class since it can associate any two pieces of data of any type.
+In fact it's so useful that it's already defined for us and stood pair.
+We need to include the utility header file and then we can use this to pair class which is implemented
+very much like the way we implemented my pair.
+In addition to the pair template class C++ also has a template class named tuple.
+It allows you to have a fixed number of elements of any type.
+It's not just limited to two items like the pear class.
+OK so let's head over to the idea and we'll see these class templates will also implement our own template
+based array class.
+Ok so I mean the IDM in the Section 20 workspace and I mean the class templates project in this project
+what I'd like to do is go over those two templates that we talked about in the slides and then we'll
+switch to this other project up here a class template array and will implement an array class based
+on a template.
+OK so first things first I put a little a note here that's important.
+Template classes are typically completely contained in header files.
+So we would have the template class in item dot age and I'm talking about this template class and I
+want to talk about right here and there would be no item see Peepy file associated with it.
+Now that makes sense because what we have is a blueprint.
+The compiler is not compiling this blueprint.
+It's basically using it to create a specialized version of it that will be compiled.
+So it's important if you start putting stuff in the files you're going to run into all kinds of issues.
+There are ways to get it to work but they're beyond the scope of this course so for this course put
+all your template classes in their own dot h file.
+Let's talk about this template class this is the one we did in the slides and we'll do this one first
+and then we'll do this smaller one downhere second.
+So what have I got here.
+I've got a template class I know it's a class right here is not a function it's called item.
+And here's my template parameter right here.
+So what do I know about this.
+Well I know I've got a class called item and it's got two private attributes one is a string called
+name and one is a value of type T and that's what's going to be replace or plugged in.
+I've got a constructor here that just constructs it based on my name and my values that are being passed
+in I've got to get name and I've got to get value and notice to get value returns t.
+So that's pretty straightforward I think.
+And now let's look at this second template down here.
+This is the pear template that we created.
+And we're going to use a struct here instead of a class.
+But that's again it's perfectly fine.
+We're only modeling data in this case.
+So we've got this template parameter list right here where we've got a T1 and a t to.
+And they could be the same or they could be different.
+So all we're doing is we're saying the first item here.
+In other words this is this and this is just a name and attribute name first is the T-1 second is a
+T-2.
+So what we're really doing is associating two data types and calling it my pair.
+Just like we did in the slides.
+So let me go down to the main and I'll show you some examples of this and I'll walk through these one
+at a time.
+So first thing on 09:30 right here I'm creating an item one object and it's of type item.
+That's my class value is going to be an integer.
+So remember I have a string and I have a value.
+In this case I always have a string first and then this guy right here that's going to be the t that
+can be replaced with any type I want.
+So in this case item one will look something like this.
+Item 1 is an object.
+It has a name attribute and it's got a value attribute.
+The name is always going to be a strain in this case it's going to be frank and the value.
+That's our template parameter that can be any type I-PASS into this right.
+That's what I'm doing right here.
+So in this case it's going to be an integer and it's going to be 100.
+So that's kind of what's going on.
+So when I display item 1 Get name I'm getting this guy right here.
+And that's going to display Frank.
+And then when I say Item 1 to get value it's going to get to 100 here OK.
+So that's that example.
+This tickle like this one here 9:33 and we'll run these in just a bit.
+So here I'm creating again an item.
+That's my object name and it's an item.
+But look at my template parameter here.
+I'm saying the second one is a string.
+So what that will look like is.
+Now I've got item 2 it has a name.
+It also has a value.
+In this case they're both going to be strings.
+The first one will be frank.
+That's my name.
+And value will be Professor.
+Now in the output statement item to get name we'll get Frank right here an item to get value we'll get
+professor.
+That's what will be displayed.
+Frank professor now this one.
+Here's a little more complicated and I did this one on purpose just so you can see how you can build
+these things up because sometimes you'll see these defined this way.
+Now let's walk through this one really slowly.
+Item three is my optics.
+Let me write that down right here.
+This is item 3.
+And we know that item 3 is an item.
+OK so it's going to have a name and it's going to have a value but what are we saying that the value
+is.
+Well in this case the value is another item but that other item has a string as the value makes sense.
+So this value here in Beletski name is Frank let's get rid of that one for us.
+This too that really easily here.
+And I'm using my initialiser right here to do it and that my value is going to be an item and that item
+has a name and a value.
+OK as you can see them I'm just building them up I'm nesting one within the other.
+So in this case the name will be C++.
+And the value will be Professor in this case.
+All right so now when I say Item 3 Get name I'm getting this guy right here.
+That's item three's name in order to get to these guys in here I've got to go through the value.
+So in this case I'm saying Item three get the value.
+Now I've got this item and then I'm saying get the name.
+So now I've got C++ and over here I'm just saying Item three get value.
+That takes me to the value that is an item remember that I'm going to get the value from the value which
+is going to be Professor in this case.
+So when I print this I should get Frank one hundred Frank.
+Professor Frank C++ professor.
+All right so let me clear the screen and we'll give it a run.
+And what we've got here is we've got Frank 100 Frank Professor Frank C++ professor.
+Just what we expected.
+OK.
+So let me make a little bit more room here.
+And now what I'm going to do is I'm simply going to take some items and create a vector of those items.
+So in this case I'm creating a vector and that vector is going to hold item objects.
+And in this case the values will all be doubles.
+Remember the names are always strings.
+But in this case the values will be doubles and I'm just going to push back three of them so I'm going
+to say Larry one hundred point zero most 100.0 and Curly three hundred point zero.
+I'm creating items here and I'm pushing those items on this on the vector and then all I'm doing is
+looping through the vector with they arranged base for loop right here.
+So for each item in that vector get its name get its value.
+That's it.
+Now that's pretty cool because I'm doing all of this using a template class.
+So if we run this we should see Larry 100 Moe 200 and Kerley 300.
+So let's give that around and there you go.
+Larry is 100 most 200 and Curly is 300.
+Just what we expected.
+OK so now let's look at the pair.
+That's this last piece right here.
+So uncomment that out and we will run this now and you can see what's happening here I'm creating my
+pair and my pair is going to associate a pair of types right in this case a string and an integer.
+There's a string there's the integer here I'm associating an integer and a double there's the integer
+there's the double.
+This guy is how he won.
+This is called P2.
+And if I want to display those values all I have to say is P 1. first to display the second.
+I would just say one second and that will display Frank one hundred.
+Then for P2 we could do the same two first P2 second display 124 and the thirteen point six.
+Let's give this one a run and you could see down here we've got Frank 100 124 thirteen point six.
+So this gives you an idea of using two pretty simple template classes that we've created.
+Now I'm going to pause this for a second and I'll be right back and I'm going to jump right into this
+class template array project and what we'll do there is we'll create another class template for an array.
+
