@@ -1,0 +1,226 @@
+In this video I'd like to implement a class template for an Array class but this is going to be a little
+bit more complicated than anything we've done before but I'm sure you'll be able to follow along if
+you've been following along with the course.
+I'm in the Section 20 workspace and I'm in the class template a rate project.
+Now I've started this a little bit already and the idea here is we'd like to create an array class ok
+not an array raw array and not a dynamic array just a class Array and eventually we want it to be of
+any size and of any type that would be pretty cool.
+And we want this to be a fixed size array.
+And basically it would be a replacement for using a raw array.
+C++ already has this for us and C plus plus 11 we have an array class in the standard template library.
+And I'll talk about that in a couple of videos.
+But let's see how we could implement the beginnings of this if we can really learn from it.
+So we want to we want to have an array of something right.
+In this case this just stick to integers and then later on what we'll do is we'll make this generic
+you raise a fixed size and that fix sizes.
+And and I've got this end right here.
+None of this will compile yet but I just want to get this point across here.
+The question is how do we get this end while the user knows how big the array needs to be let's say
+it's 10 integers or 20 integers or 100 integers.
+They could pass that in through a constructor argument right.
+The problem with that is that the compiler needs to know what the value of N is right here in order
+to create this array.
+Now we're not doing something like using a pointer and creating a new array of integers like we did
+before we're not doing that.
+That's not what I want to do.
+I want to create it on the stack so the compiler needs to know the value of that N and it can't know
+that if we pass it in through a constructor argument because it could be a variable could be any value.
+So one of the first things we want to do is figure out how to do this.
+So I want to be able to create an array class and let me show you the way I want to do it.
+I want to do something like this.
+I want to be able to say Give me an array.
+Let's say it's a r r.
+Right now it's an array of integers by default.
+You can see right here and I'll just do that.
+Now that's not good enough because there's no size information.
+But if I can do something like that that's pretty cool.
+So I can pass in the size of the array as a template parameter.
+Well how do we do that.
+Everything we've seen so far has been type parameters right.
+Well it's possible to have non type template parameters.
+And let me show you how that works.
+And basically what we're doing here is we just have a regular array class is going to constructor default
+constructor is a constructor with a initial value.
+So what we're doing here is just setting all the values of the array Tibet value a method called Phil
+which will just change all those array elements to whatever value was passed in here.
+Then I've got a couple of more methods and I'll talk about in a little bit.
+So first thing first let's make this a re class a template class.
+So what we can do is we can come up here and we could say template and now we've got our template parameters
+here right now what do we do here.
+We're not passing in a type will do that later when we make this a generic type.
+But what we want here is the size of the array so we can supply and write here.
+Now when I use the syntax that I use earlier I've got my end.
+That's pretty cool.
+So that's how we get the end the user provides the end at compile time the compiler can actually create
+that array.
+Now we've got a friend function here that just used to display the array.
+And in this case here it needs to know what that end is.
+So I was going to put an end right in here.
+So he needs that template première.
+Now as I come down here none of this code really needs to be changed.
+There might be a couple of new things that you haven't seen before this one here I don't know if we
+ever overloaded the subscript operator but we're doing it right here and it's the subscript operator
+right.
+The two square brackets so that we can use it as array indexing and all we're doing is returning a reference
+so that we're able to change as well.
+So now let's go down to the main and see how we can actually use this.
+And here's a couple of examples now.
+All right the rest of this in a little bit.
+But take a look at how useful this array is.
+Here I'm creating an array of five integers.
+These are all integers right now right.
+I haven't made a generic yet but here I have an array of five integers and I can display what the array
+size it should display 5 and then it will display the the integers because I've overloaded the insertion
+operator.
+I can fill the array to zeros.
+I can't fill it to tens and display again.
+And this is where the overloaded subscript operator comes in.
+So I can specifically set and remember what's going to happen here it's going to call Nom's dot operator
+subscript operator and it's going to pass in zero in this case.
+So that's what's being called.
+And I'm just setting those values in this case.
+If this is on the left side where using the L value if it's on the right side will be using the R-value.
+That's it.
+And here in this case here we're actually using an initializer where initialize in 100 integers.
+All right so let's let me run this you can see the output and this is all we did and it's so powerful
+we really needed it.
+We did was pass in that integer n as a non type template parameter.
+So you can see what's happening here I've got five integers and that array is called names.
+And notice when I display it I get five pieces of garbage right here.
+Right.
+That's exactly what I would expect.
+Now here I'm filling it to zero and then I'm displaying it again and I'm getting this output right here
+all of a bunch of zeros.
+Then I'm filling it to tens and you could see them display right here and then in this case I'm setting
+some zero or two thousand and some three to 2000 and you can see right in this line when I display it
+you can see it in some zeros here.
+And number three is right here.
+OK.
+So let me scroll just a little bit down and this last example we're creating 100 integers member they're
+all integers or creating 100 integers.
+This right here is that template parameter and this right up there when we created the top one was the
+template parameter.
+And so in this case we're creating an array of 100 integers.
+It's a fixed size array.
+We're not doing any memory allocation it's happening on the stack which is pretty cool.
+The compiler's handling the sizing and we're initializing all of those elements to one display I'm all
+right here.
+This 100 of them OK.
+So that's it.
+Now we've got a pretty powerful little array class here that allow us to create an array of any size
+but only of integers.
+So let's take this to the next step and make it totally generic which is really where we want to go.
+So let me close this window down up here and a couple of things I'll scroll all the way to the top so
+I can give you these little notes here.
+Since C plus plus 11 the ACL has been around before C++ 11 but in C++ 11 we have stood array.
+And this is an array with a lowercase a.
+Here and I'll explain what that array is and a couple of videos for now when we go over some of these
+container classes.
+This is a template based array class.
+The idea here is in modern C++ we really shouldn't be using arrays raw arrays we should be using stood
+arrays instead vectors.
+Now the vector is great.
+Right but the vector can shrink and it can grow and it varies in size depending on what you need.
+That's one of the great things about the vector.
+You don't have to worry about that but sometimes you know exactly what you have you know that you have
+10 integers you have 20 integers or five strings and the vector might be overkill and it could be a
+little less efficient in a case like that.
+You really want to use stood array.
+It's much more efficient.
+It's not going to shrink.
+It's not going to grow.
+It's exactly that fixed size and sometimes that's exactly what we need.
+We've got 12 months in the year.
+That's not going to grow right.
+So it's a good example of using instead array.
+Now let's make this template class generic.
+So what do we have to do.
+It's really all about this guy right here.
+It's not about size size is always going to be an integer probably be even better if we made that a
+size t type since it's going to be an unsigned but we'll just leave it in it for now.
+Values is the one that's going to change.
+It's not just going to be integers could be anything.
+So that's where we want to replace our placeholder right are type named T.
+So we'll do that right now.
+So let's start right here in the template parameter right here and would say type name and Wookey is
+t again we can use anything we want.
+Now that's going to be what's going to be replaced by whatever type the user wants right.
+So let's walk through this and make sure we get them all.
+This is fine.
+This guy is going to be a team because now we've got values is an array that and size of T types.
+OK here we've got two template parameter so we need to split the comma and then this is just my friend
+operator that allows you to display these things on an output stream easily.
+So that should take care of that.
+Now let's take a look down here.
+We've got the initial value that we want to set the array elements to that can no longer be an int because
+it could be anything.
+So we want that to be a T here the same idea we want to fill the array with whatever T's are provided
+to us remember the is just a pluggable type could be an int a double a character or something more complicated.
+Get sizes OK it's going to return an integer.
+But this guy right here overloaded subscript operator is not going to return an integer reference it's
+going to return a reference to a T OK.
+Now this won't compile any longer.
+Let me compile it just so you can see what's going on.
+We're going to get errors right here.
+Why.
+Because look at our template definition right here it's expecting 2 items.
+It's expecting a type and it's expecting an integer.
+But right now we're only providing the integer here.
+So we need to provide the type so we could say int comma and then the 5.
+And now we've got exactly what we did before.
+Right.
+So let's try that again.
+Same here we've got a hundred but that's try integers and we'll modify this to a different type of just
+a second.
+That's it.
+Now if I run this I've got a clean run it looks like I didn't do much but there's a lot going on here
+because in this case the compiler is providing two template classes for me right.
+One is using integers with five and one is using integers with 100.
+So now what we can do is we can modify this.
+Let's say we want to modify it so that we can hold stood strings and not just integers.
+So we're going to create an array provide the type which is going to be stewed string and how many do
+we want.
+So we want ten of them.
+That's it you can really see the power of templates here.
+So now what do we do let's call this guy strings and let's give it an initial value we'll call that
+constructor with the initial value and what we'll do is we'll just say stood string and we'll construct
+a string let's just call it.
+Frank makes it easy.
+That's it.
+And then I'm going to just copy and paste this right here and rename a few variables so that we know
+now that the size of strings now Nom's.
+That's my array right here that I just named is strings that get size and what we want to do is display.
+That's it.
+Let's run this bears.
+There it is the size of strings is 10 and I've got 10 stood strings in there they're pretty cool right.
+I mean I didn't really do much all I did was make this class generic.
+That's awesome.
+Now suppose I want to change that first string.
+Right.
+The zeroth index so I could simply say strings Sub-Zero equals and we'll create a stud string I can't
+use a character pointer literal right here because the typing would be wrong.
+So I'm going to create a string for let's say Larry.
+And that is going to be put in for the 0 if item and then I just display them again and we should be
+able to see that first item in that strings array should not be Larry's.
+Let me run that real quick and there it is you see right there is Larry.
+That's pretty corny.
+All right last thing is let's fill this array with some X's let's say.
+So all six strings dot fill.
+And again I want to fill this with less than string and it's just say X and we'll display it one more
+time.
+Now we should see all x's when it displays and there they are right down here.
+So that really finishes this video up and this little mini section about templates including function
+templates and class templates you can see the power here right.
+It's so so powerful.
+Now obviously let me scroll up right here.
+Obviously you would never do this right here.
+We're just doing this to learn if you need an array use stood array.
+It's part of the SPL everything's baked into it.
+It supports algorithms and iterators and all kinds of good stuff that we'll talk about soon.
+So again if you need a fixed size array and modern C++ use stood array.
+So the next video will start talking about.
+Containers iterators algorithms.
+And then we'll look at each one of the containers.
+In other words array vector lists sets and maps and everything and we'll go through some examples for
+those.
+
