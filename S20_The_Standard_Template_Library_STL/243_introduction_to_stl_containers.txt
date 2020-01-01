@@ -1,0 +1,66 @@
+In this video I'd like to go over some of the basics of the standard template library containers.
+We will go over the details of specific containers in this video.
+We'll get to that soon enough.
+Instead it's important to understand what the containers have to offer as far as functionality is concerned
+and understand what types of elements we can store in them.
+First we know that the ACL containers are data structures that can store almost any type of object and
+they're implemented as template base classes each container has a set of member functions that we can
+use.
+Some of these member functions are specific to a particular container but there are quite a few member
+functions that all containers implement move over a table with some of these methods in the next few
+slides.
+Finally each container has an associated header file that must be included in order to use the container.
+We've already seen this with vector and string.
+I'll tell you what the specific header files are for each container class.
+We go over.
+OK so let's take a look at some of the common methods provided by the ACL containers this table and
+the table in the next slide show some of the functionality provided by the ACL containers.
+Let's start with the default constructor.
+All containers provide default constructors and it results in an empty container.
+They also provide many versions of overloaded constructors that allow you to initialize the containers
+in many ways.
+You have to refer to the specific container you want to use to see the various overloaded constructors.
+Containers also provide copy and move constructors so we can create a new container based on an existing
+container.
+We can choose to copy it or move it.
+Of course containers provide destructors.
+The container destructors cleanup the container and delete all the objects in it.
+Containers also provide copy and move assignment.
+This of course will allow you to copy or move an existing container into another existing container.
+Remember this is not initialization and containers provide the last three methods in the table which
+are used very often.
+Size returns the number of elements in the container.
+Empty returns true or false depending on whether the container is empty or not and the insert method
+allows us to insert an element into a container in this table.
+We can see that we also have the ability to compare two containers.
+We can test to see if the elements of one container are less than the elements of a second container
+and we can also test for less than or equal to greater than and greater than or equal to.
+We can also check to see if the contents of two containers are the same or not.
+Using the equality operators we have the swap function which swaps to containers and we can remove one
+or all elements from a container using erase and clear.
+And finally we can get iterators to elements in containers.
+Not all container support all these iterators but I listed them anyway so you could see them here.
+We'll talk about iterators in more detail in the next video so don't worry you'll learn about them in
+a few minutes.
+This last slide is super important now that we know a little bit more about the functionality provided
+by containers.
+Let's talk about what types of objects we can store in containers.
+First we can store all of the primitive types in containers.
+Int float double.
+All of them.
+But what about our objects.
+It's important to remember that when we store an element in a container the container makes a copy of
+that element so we must be sure that our objects are copyable and assignable.
+This means they must have default copy constructors or our own copy constructors as well as copy assignment.
+We can also provide move semantics for efficiency.
+Finally the ordered associate of containers must be able to compare objects.
+They do this using the less than and the equality operators.
+So your objects must support these operators via operator overloading.
+OK I hope you can see that everything we've learned and done in this course comes together right here.
+We now know exactly what we have to do to make our own objects work with the SBL.
+And you know what it's not that complicated.
+In most cases we can use all of the compiler provided functionality unless we have raw pointers and
+we already learned how to handle classes with raw pointers.
+Well that completes this video in the next video we'll learn about iterators which give us something
+to do with these containers.
+I'll see you there.
