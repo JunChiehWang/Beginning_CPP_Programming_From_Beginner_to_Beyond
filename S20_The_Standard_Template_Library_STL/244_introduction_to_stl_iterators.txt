@@ -1,0 +1,150 @@
+In this video I'd like to go over the basics of iterators in the standard template library iterators
+allow us to think of a container as a sequence of elements.
+It doesn't matter what the container is.
+For example we might have a vector or a set or a map.
+There are very different containers but iterators allow us to process sequence of elements from these
+containers without worrying or even needing to know about how the container is implemented behind the
+scenes.
+That gives us so much power.
+Iterators are implemented as template classes so we create iterator objects and use them to iterate
+through our containers.
+The syntax we use with iterators will remind you of pointers.
+We can use the dereference operator the increment and decrement operators and so forth.
+This was done intentionally.
+C++ programmers are comfortable with the pointer syntax and it's very easy to learn how to use iterators
+without having to learn some other arbitrary syntax.
+Most of the ACL containers can be traversed with iterators.
+There are a few exceptions such as a stack in a queue and we'll see them later.
+So what do iterators looked like and how do we use them an iterator must be declared based on the type
+of container type that it will iterate over.
+So if I have a vector of integers then my iterator must know that when I create it.
+The syntax is very straightforward.
+We provide the container type the scope resolution operator the iterator type and then the name of our
+iterator object.
+That sounds complicated I know but it's not.
+Let's see some examples and you'll see the following declarations I'm declaring for iterator objects.
+The first one is an iterator that will iterate over a vector of integers.
+It can only be used on vectors of integers.
+The second two can iterate over a list of strings.
+A list is a container in the SPL which we'll see later in this section.
+The third 83 can iterate over a map of string string pairs.
+Maps are like dictionaries will also see them in this section.
+Finally I-84 is an iterator that can iterate over sets of characters as you can see we must be very
+specific when declaring iterators.
+Now let's look at an example using a vector.
+So we can see how to initialize iterators in this example.
+We've created a vector of integers named Veck and initialized it to 1 2 and 3.
+Remember a vector is a container in the SPL that stores elements in contiguous memory and can resize
+itself to accommodate elements dynamically how this is implemented in the SPL doesn't really matter
+to us what we do need to know is that a container has a beginning and an end.
+The FCL defines the beginning as the first element in the container.
+In this case the one and the child defines the end as one after the last element in the container this
+is very important and it's consistent throughout TSTO the end is not the last element.
+It's one after the last element.
+Almost all of the steel containers have begin and methods when we call these methods they return an
+iterator object that's pointing to either the first element in the container or one past the last element
+in the container.
+In this case vector begin will return an iterator that's pointing to the element 1 and vector and will
+return an iterator pointing 1 past the element 3 in this case.
+When we write code we use vector.
+End as the sentinel so that we know when we're at the end of the list.
+Now suppose we have a set a set may or may not be implemented in contiguous memory.
+It doesn't matter.
+And that's the point.
+We don't need to know if we want to iterate over a set of characters names suits in this case.
+We know that suits that began we'll return an iterator to the first element in the set and suits that
+and we'll return an iterator one past the last element in the set.
+We can use this information to initialize our iterators.
+For example we can declare an iterator named I-T that will iterate over a vector of integers and then
+initialize I-T to point to the first element in that vector.
+We do that by calling vector.
+Again in this case I will point to the element 1 in the vector.
+If the vector had been empty then it would point to vector and now the syntax can get long when we do
+this so we can use auto to let the compiler deduce the type of the iterator.
+This is really handy and it's used very often so the compiler deduces the type of I-T is an iterator
+to a vector of integers based on the result returned by vector.
+Again this is much more readable and much more rideable and easier to debug.
+There are a bunch of operations that we can use on iterators.
+Most will feel very similar to using pointers in this table we have a few of the most commonly used
+operations for iterators.
+The first column is the operation.
+The second column explains what it does.
+And the third column shows what type of iterators supports the operation.
+In this table will assume that I-T is an iterator and is an integer.
+Notice the first two iterator operations pre-increment and post-increment.
+When we increment an iterator we're asking it to point to the next element in the container.
+How is that determined.
+It's up to the container we're using.
+The third operation is assigning one iterator to another.
+Of course the types of the iterators must be the same.
+These three operations are supported by all iterators.
+The Forth OPERATOR Is the dereference operator.
+Just like when we dereference a pointer when we dereference an iterator we get the element in the container
+that it's pointing to and we can also use the error operator when we're pointing to objects and we want
+to access their attributes and methods.
+Both input and output iterators support this and we're able to read and write elements to containers
+for the rest of the operators.
+You can pause the video and look at them on your own.
+Notice that we have ways to compare iterators and we can also decrement operators.
+Some container support bidirectional iterators which means that we can move forward and backwards through
+the container.
+Others support random access iterators like arrays and vectors.
+So how can we use these operators to work with iterators.
+Here's a really simple but common example.
+First we declare VEC as a vector of integers and will initialize it to 1 2 and 3.
+What we want to do is use an iterator to iterate over the vector and display the contents of the vector.
+So we declare our iterator I-T as an iterator over a vector of integers and we initialize it to the
+first element of Veck by calling vector begin.
+Now we simply iterate through the vector while I-T is not equal to Vicot end and at each iteration we
+display the element the iterators pointing to by dereferencing the iterator.
+Then we moved to the next element by incrementing the iterator.
+That's it.
+Simple as pie.
+I know what you're thinking.
+Why not just use a range base for loop or counter control for a loop.
+We absolutely could and we often do.
+We'll see in a bit that arr. base for loop is converted to an iterator based loop behind the scenes
+by the compiler.
+But the real answer is that in the case of a vector we could do it a lot of different ways but other
+containers don't allow us to randomly access elements like a vector does.
+So for those containers iterators are necessary.
+We can achieve the same result with a for loop instead of a while loop.
+Here we declare I-T using auto.
+This makes the code much more readable.
+We start at Vector that begin with loop while t is not equal to vector on end and we display the element
+by dereferencing the iterator that we increment the iterator and do it all over again.
+This is exactly how range base for loops work.
+In fact sometimes we might mess up the code in a range based for loop that iterates over a container
+and the compiler gives us an error message saying that something is wrong with the iterator.
+This error is really confusing to beginning students but no more.
+If you ever get an error like that you'll know exactly what's going on.
+Now let's iterate over a set of characters using an iterator.
+Here we define suits to be a set of characters and we initialize it to the character C-h SD.
+We can also declare our iterator I-T is auto and let the compiler deduce its type based on the result
+of suit stop begin.
+Then we loop while I-T is not equal to suits that end and display the character increment the iterator
+and loop again.
+The pattern should look familiar.
+Finally let's wrap up these slides by looking at a reverse iterator or reverse.
+Iterator is exactly what you would expect.
+It works in reverse.
+So the last element is the first and the first is the last and when we increment the iterator we move
+backwards to the container in reverse when we decrement the iterator we move forward.
+Here's the same example with Veck as a vector of the three integers 1 2 and 3.
+We then declare I t as a reverse iterator and initialize I-T to vector begin.
+Since it's a reverse iterator I will be pointing to the last element in the list not the first.
+Now we can write code as we did before and this will display the vector elements in reverse 3 to one
+in this case.
+In addition to the reverse iterator there's a few variants that are constant raters that are read only
+iterators.
+Let's take a look at those really quickly.
+So in this slide I will wrap up the iterators by learning about the constant raters.
+These are methods in the appropriate container class that returns specific types of iterators.
+You can see that we used begin and end for regular iterators.
+We can also use C begin and see end for constant raters are began in our end for reverse iterators as
+we saw in the previous slide and see our begin and our end for Konst reverse iterators.
+OK so that's a basic introduction to the ACL iterators.
+There is much much more to learn but this foundation will let you use iterators with containers and
+algorithms and solve a bunch of problems.
+So let's head over to the idea and I'll go over some of the simple iterators in life code.
+
