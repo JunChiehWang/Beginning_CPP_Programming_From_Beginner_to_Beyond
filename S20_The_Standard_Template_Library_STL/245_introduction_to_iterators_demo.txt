@@ -1,0 +1,264 @@
+This video I'd like to go over some live examples of how to use iterators.
+There'll be a bunch of examples here and I'll go through them one at a time so that you can really understand
+what's going on.
+I'm in the Section 20 workspace in the iterators project and first things first so notice them I'm including
+a bunch of header files here.
+Set map and list.
+These are all containers in the SPL.
+We haven't really talked about set map and list too much but that's the whole point we really don't
+need to know that much about them to be able to iterate through them.
+We'll talk about them in detail in future videos.
+So the first thing we'll do is we'll have a couple of functions and here's a function that we're going
+to use and we're going to use it too much.
+But if we ever need to display a vector of integers we're going to call this function it's just going
+to display a nice little format.
+OK.
+Someone to close that up and that way you know what it is.
+So here's my first function and what I did was I broke this up into I think five different functions.
+That way it's all more self-contained rather than having one just huge main with all the examples in
+it.
+So in this case let's walk through this.
+We're creating a vector right here of integers called Numbers 1 and we're putting 1 2 3 4 and 5 into
+that vector.
+So this is where we're at right now 1 2 three four and five.
+And remember the end of the vectors after the last element.
+So we want to create an iterator now and that's what I'm doing right here.
+I'm using I-T.
+And notice I'm using Auto I'm letting the compiler deduce the type of the iterator obvious it's going
+to be an iterator that iterates over vectors of integers right.
+That's the idea here.
+So I'm going to call numbers 1 began.
+That's going to give me the iterator to the first element and assign it to I-T.
+So I t's here and it's going to be pointing there.
+I remember is not a real pointer.
+This is an object.
+OK but the syntax and the way it feels is very pointier like and that's by design.
+So that's pointing to the one in order to get to the one I need to dereference that iterator right there.
+And what that's meant to do is it's going to give me the one the the object in the container.
+And in this case I'm going to display it.
+OK.
+So it's as simple as that.
+Now what I want to do is move this iterator so I'm incrementing the iterator right here and I'm incrementing
+it by 1.
+So what's going to happen the iterator now will be pointing to two.
+What do we do.
+We're displaying it again.
+So I want to display it to not notice what's happening in the next line I'm saying.
+Iterator plus equals to some increment the iterator by 2.
+Was it to someone to go 1 2.
+Now it's going to be pointing to the limit number four what do I do.
+Display it.
+Now I'm going to move it right back down by to someone to move it back to the two
+and display that and then the last thing I'll do is I'll city iterator to point to the element.
+That's not a dn.
+Remember there is no element in the end just means you're at the end of the list.
+But I want to go one back from it.
+So I really want to point to the end of the list the five in this case.
+So what we're doing is in this case we're going over here and there we're back and up one so that.
+So if I run this this test function right here there should be the output 1 2 4 to 5.
+And what's interesting here is you can see how these integrators feel just like pointers right.
+And that's real handy.
+I'm using the auto here it saves a lot of makes it a lot easier read.
+I'll use it in some places I won't use.
+Another is that where you can actually see both styles.
+So that's it.
+If I run this program now let me go through my main and make sure that I'm calling tests 1 am right
+there.
+So if I run this now what I've got is I should get one to 4 to 5 exactly like we thought.
+So let's test once let me collapse this guy will move on to test to and I'll go down to my main and
+I'll just make sure that I comment about tests 1 and uncomment test to perfect.
+So now let's take a look at a test to see what's going on in there.
+So here's test two who we're doing the same thing we're creating a vector of integers and initializing
+it from 1 to 5.
+So we've got one two three four five.
+And here is the end right here.
+Croak created another iterator I'm calling it again this way and this time I'm doing it long style I'm
+not using auto and you can see it's really pretty straightforward it's just a lot of extra typing.
+So we're creating a stood vector of integers and that's the iterator and we're calling it I-T and we're
+initialising it comes one dot began which is the first element in this vector which is that one right
+there.
+So that's where we're at now.
+And now you can see what's happening here I've got a while it gets really simple I'm saying while the
+iterator is not pointing to this guy over here the end.
+In other words while the iterators in the real list in the container in this case a vector what I want
+to do is display what is pointing to and then increment.
+So you can see what this is doing is just going here and then here and then here and then here and then
+it says stop.
+So this will print out one two three four and five write just like that.
+So let's take a look at this loop right here.
+What we're doing here it's really the same thing I remember this iterator.
+Now it is over here.
+It's pointing to the end.
+So if I want to go back to the beginning I could just simply say it's equals numbers 1.
+Begin right from resetting that iterator to points in the beginning of this container.
+This vector.
+So what I'm doing is Acemoglu while I'm not at the end of the list this time I'm doing this right here.
+Now that's an interesting statement.
+Members dereference the iterator equals zero.
+Just like we did with pointers.
+What are we doing we're storing 0 where the iterators pointing here were looping through.
+So what we're doing is we're doing this.
+We're changing all of those values in that vector to zero.
+And then I'm just calling display Nom's which should display a bunch of zeros.
+All right so let me raise this and give this a run and see what we get there is our output 1 2 3 4 5
+just like we expected.
+And then a bunch of zeros when we call the display function.
+Hopefully you all are with me.
+These iterators are pretty straightforward but it's important to understand them because we really need
+to use them with the algorithms so we have to be able to make sure that what we're getting is what we
+want.
+So let's take a look at test three.
+Let me take care of main real quick and I'll comment this one out so we can run test three.
+And here's test three.
+Now what we're going to do here is a constant iterator all the concentrator is is an iterator by it
+can't change what it's pointing to it's constant.
+So we can do this a couple of different ways.
+We're doing the same declaration here of number ones.
+That's my vector of integers.
+Again one two three four five.
+Now what I'm doing here is I'm saying I-T one is a contest iterator noticed Konst underscore iterator.
+What that's doing is it's creating a constant iterator not just an iterator again a constant iterator
+and it's starting at the 1 again.
+Number one to begin.
+And I'm not going to write that again because you guys kind of know what's going on.
+Now if I wanted to not use this long style I just use the auto.
+I can't just say auto I-T one equals numbers one dot begin.
+Because I'll give me a regular iterator I have to say See begin.
+That's going to give me the constant iterator.
+So these two lines would be equivalent.
+Hey we could do it either way.
+Now what we're doing here is we're just looping through and printing out again one through 5.
+But let's see if we can change things right member here.
+We're trying to change each one of those elements to zero just like we did in test two a little while
+ago.
+I can't do that and I'm not allowed to do that because it's a Konst iterator right here.
+So if I try to do that let me comment that line out right here if I try to do that I should get a compiler
+and it's exactly right.
+This is one of the things that you'll notice about compiler errors for the standard template library.
+They're not exactly readable compiler.
+Here are some of them are really really nasty or hard to understand but this one is not too bad.
+It says error assignment of read only location that gives you a clue.
+Right.
+We've got a constant iterator here you're trying to write through it.
+So that's the rest of the error message which is kind of nasty to read so I'll comment this back out
+and if I run it now I should just get the one through the five just like we did before.
+Perfect.
+Now let's take a look test for which adds a few more little things to the mix.
+Well we'll use some containers that we haven't used yet.
+So any comment tests for.
+And let's take a look at test for this.
+A lot going on here.
+First thing is we're going to use a reverse iterator first.
+So what we're doing here we've got a vector.
+One two three four.
+Probably should put the 5 in there I forgot.
+So but doesn't matter.
+We've got a vector one two three four and it's vec.
+It's a vector of integers.
+Now I'm creating i t one is my iterator.
+And notice that I'm using auto and I'm using R begin right there.
+That's a reverse iterator.
+That's what the R stands for.
+And then what I'm doing is while I-T one is not equal to Veck dot our end.
+So now we're just going the other way around.
+So we're going for three to one and the end is actually over here now and we're simply displaying and
+notice I'm incrementing right you may want to decrements and you're going the other way but we're using
+a reverse iterator so incrementing here really means detrimental here.
+And the other way around as well.
+Now let's look at a couple of more examples here what we've got is a container we haven't used yet.
+We'll use it a lot later on watching and do a nice little challenge with it.
+It's a list a list is basically a doubly linked list.
+So remember how a vector was a bunch of data contiguous in memory.
+Well a list is some items that kind of look like that are elements.
+And then we've got pointers back and forth so that we can move from one to the next one really easily.
+So that's all it is.
+We don't really have to worry too much about how it's implemented behind the scenes to use it which
+is really cool.
+So what I'm doing here declaring name I should call that names but that's ok name is a list of strings
+and then initializing it to Larry Moe and Curly.
+Now what I'm doing is I'm setting.
+Teach and this would be Larry here.
+This would be moe here and this would be curly over here.
+Then I'm saying I T-2 is a constant reverse iterator.
+That's the C R.
+So right now I T-2 is pointing right over here and it's its reverse iterator.
+If I dereference it it's going to print out curly.
+Now I'm going to increment it which simply means move it over here incrementing means going reverse.
+So in this case I'm coming over here in a mo and right here I'm going to display Mo over here I displayed
+Curly.
+So that takes care of that one.
+And then let's do a few more.
+Now this is a data structure that we haven't used yet a container we haven't used.
+It's a map.
+What is a map.
+A map is a map is a key and a value.
+So it's a pear and I talked about this earlier.
+There's a class called stood pear and that's basically what's happening.
+The first item in there is called first and the second item in the pair is called second.
+And we can access them directly.
+So look what I'm doing here I'm creating favorites and favorites is a map of string string pairs.
+And I would just say initializing them.
+So all we're doing here is creating an association between two strings of Frank like C++.
+Bill likes Java.
+James likes Haskell or Frank hate C++.
+Bill hates just whatever makes sense here.
+So that's the map.
+You know what we're going to do we're going to have another iterator in this case I T-3 and it's favorite's
+not began.
+So it's going to go to the first item in that map which in this case is phrenic.
+And I'm going to loop while I T-3 while that iterator is not pointing to the end of that map.
+Now how is a map stored behind the scenes.
+It's a complex data structure.
+It doesn't matter.
+I don't need to know that to use this kind of logic.
+That's the beauty of this.
+I don't really doesn't matter what and how it's implemented.
+Behind the scenes.
+So in this case while I haven't hit the end of that map for each one of those guys I'm going to take
+83 first and 83 second make sense right.
+So we're basically using the arrow operator dereferencing the iterator getting to that pair and then
+taking the first item and the second item in the pair.
+And then we're incrementing the out in the iterator.
+So let's run this.
+And here are results.
+Let me scroll up just a little bit here.
+Here we're displaying this reverse iterator.
+We're using the reverse iterator to display this vector VEC and we're getting four three two one.
+Over here we got curly and Moe remember we're starting at the back so we're getting curly and then we're
+incrementing which means move to the left and I've got mo.
+And then I'm just iterating over this map so I'm getting built Java Frank C++ James Haskell.
+Now notice the order here.
+It's not the order I put them in.
+The last one we'll do is we'll do test 5 and test 5 is pretty easy so far everything we've done we've
+iterated through an entire container.
+Well we're going to do here was just going to iterate over a subset of the container.
+So we have a vector of integers.
+Again one two three four five six seven eight nine and 10.
+And here's the end.
+And now I've got two iterators I'm using auto for both so the compiler can figure out the type and I'm
+saying start that's the name of my iterator is equal to VEC that begin plus two vector begin is this
+guy plus two would be the three and finish
+vector and minus three.
+Well here's Vicot end minus one two three.
+That's what we've got that's starting to finish.
+So now what I want to do is I just want to display the elements between them.
+So right there is the logic while start is not equal to finish.
+Display what start is pointing to.
+So it's going to display three and then increments start.
+Display for display five display six display seven.
+Now they are equal.
+So this fails and we're done.
+So this will display this subset of that vector.
+Right.
+So let's run this.
+And you can see three four five six and seven being displayed right here.
+OK.
+So play with these examples.
+I've broken them up into these small test cases.
+That way you can tweak them a little bit rather than having one huge man that's going to get really
+complicated.
+So come in here comment them out add your own logic.
+Play around with reverse iterators constant iterators regular iterators.
+You saw how I created the map so you can kind of figure out based on my code what I did.
+Obviously I'm going to talk about lists and forward lists and maps and vectors and sets and everything
+else in the upcoming videos.
