@@ -1,0 +1,155 @@
+In this video I'd like to go over the basics of algorithms in the standard template library the ACL
+algorithms work on sequences of elements that are obtained from as T.L. containers using iterators.
+It's really a beautifully designed library.
+The SBL has many common and useful algorithms.
+Once you learn how to use them you'll keep coming back to them over and over again.
+There are many algorithms and the algorithms themselves have many variants way too much to describe
+in a single section of a course.
+I'll go over some useful algorithms.
+But more importantly I'll teach you the techniques involved so that you can use any FCL algorithm you
+can refer to online references such as C-p reference dot com for details about the entire algorithms
+library.
+Many of the algorithms in the ACL require the programmer to provide extra information in order for them
+to work.
+For example suppose we want to display all the even numbers in a container.
+We can use an algorithm called for each that will apply a function to each element in the container
+but it depends on the program are providing that function.
+So there are three main ways in the SPL to provide such information to algorithms.
+They are functors or function objects function pointers and lambda expressions.
+I'll show you a simple example of each.
+So you know them but I'll be using lambda expressions for the examples in this section.
+You should also use lambda expressions in your code.
+Since this is how to do it going forward in modern C plus plus.
+So what do these algorithms look like and how do we use them.
+We saw a simple example of using the accumulate algorithm a few videos back.
+But in this video I want to show you a few more and then will code some in the ID first in order to
+use the FCL algorithms we must include the algorithms header file.
+It's also important to understand that different containers support different types of algorithms and
+since algorithms depend on iterators this determines the types of out rhythms we can use with certain
+containers.
+I know this sounds complicated but it's really not so bad.
+As you become more experienced with the SPL it all becomes second nature.
+So before I show you some examples of ASL algorithms in action let's talk about iterator invalidation
+this topic can get quite complex.
+But let's look at it in its simplest terms.
+We know that iterators point to container elements we need to understand that it's possible that an
+iterator may become invalid during processing.
+Let's see a very obvious example.
+Suppose we have an iterator and we're iterating over the elements of a vector and displaying the elements
+as we go.
+Then as we're doing this we call the vectors clear method.
+This deletes all of the elements from the vector but the iterator doesn't know that the iterator will
+happily continue iterating until it sees the end of the vector.
+But this is no longer valid if something like this happens then the behavior is undefined in C++ Every
+as T.L. container has documentation about when iterators become invalid.
+We don't worry too much about it in this section but it's something to be aware of as you move onto
+more advances T.L. work after this course.
+OK so let's see some examples of FCL algorithms.
+First let's look at the find function the find algorithm tries to locate the first occurrence of an
+element in a container like most as T.L. algorithms.
+There are many variants available so let's keep it simple.
+If the function finds the element it returns an iterator that points to the element it just found.
+If the function does not find the element it will return an iterator pointing to the end of the container.
+Pretty simple.
+So let's see this in code.
+First we declare a vector of integers we'll call it Veck and we initialize it to the integers 1 2 and
+3 we then call stood find and pass in the iterators we need to get the sequence of elements we want.
+After that we pass in the element we want to find.
+In this case we call find with Venkat began vector and end three.
+So we want to find three and we want to search the entire vector the result of the function will be
+stored in a variable EHLO see I'm using auto to let the compiler deduce the type of ellos.
+But you know what it must be an iterator to a vector of integers.
+That's it.
+Now we can check the value of EHLO C and if it's not vector end we know EHLO C's pointing to the first
+occurrence of 3 and we can do whatever we want with it.
+In this case I'm just displaying it.
+OK so let's take a breath here.
+Understand the power we have.
+We just found the first occurrence of an element in a vector.
+What if we wanted to find the first occurrence in a list or another type of container.
+It works exactly the same way.
+That's the power I'm talking about.
+We don't need to know the details about how the container is implemented or how complicated fighting
+element might be behind the scenes.
+Remember find needs to be able to compare two elements in order to see if they're the same in order
+to do this.
+It will use the equality operator for primitive types like ants.
+We don't have to do a thing since the compiler knows how to compare primitive types.
+But if we're using our own user defined objects in containers then we must provide the overloaded equality
+operator for objects since that's what the algorithm will call.
+In this case you can see we have a vector of player objects.
+Let's assume it's initialized to a bunch of players and we define P to be the player we want to find
+in the vector.
+Notice the code for the find function.
+It looks the same as for any except for the P.
+The only difference is that the compiler will compare P to the container elements using the overloaded
+equality operator that you must provide in the player class.
+Also we can define what equality means we might want all player attributes to match or only the name
+or only the expwy we have all the power to decide.
+Now let's look at a more complex algorithm for each function.
+This function applies a function to each element in the iterator sequence.
+OK but what function does it apply whatever function you tell it to apply.
+That's pretty cool.
+So how do we provide this function to the for each function.
+There are three ways and I'll show you each way in the following slides we can use functors function
+pointers and lambda expressions functors and function pointers have been around since the beginning
+of the as T.L. lambda expressions were added in C++ 11.
+And they're really the way to go in modern C++.
+So let's write a for each function that displays the square of each integer element in the vector.
+First let's do it with a functor.
+In this slide we'll see how we can use a functor or function object.
+But let's start at the bottom first.
+In the last statement we're using it for each function and providing the iterator parameters as usual.
+So this will iterate over the entire vector vec.
+OK.
+Now look at the last parameter Square.
+In this case Square is an object a function object of type square functor.
+You can see where I created the square object in red type and square functor is a structure.
+It can also be a class that has a single public method.
+I know this might look a little strange.
+The method that's being overloaded is the function call operator.
+That's the open and closed parentheses.
+It expects a single item.
+That's the same type as the elements in the container we're processing.
+And in this case it executes the code for each integer passed into it.
+OK I know this sounds pretty complicated but let's walk through it.
+We're going to iterate through each element in the vector and in each iteration the overloaded function
+call operator function for the square object will be called and the current container element is passed
+to it.
+In this case we'll call square and each container element will display.
+So in this case we get 1 4 9 and 16 since they're squared.
+Note that the original container elements are not modified.
+Now let's do the same thing but using function pointers instead of a functor.
+Again let's start at the bottom.
+Notice that the code for the for each algorithm is exactly the same.
+But in this case the square parameter is not a function object it's the name of a regular function and
+we declared that function at the top of the slide and read what's being passed into the for each function
+is a pointer to the square function which is really the address of the function square itself.
+So at each iteration of the for each loop the square function will be called in the current container
+element passed into it.
+So we get the same output as with the functor 1 4 9 and 16.
+Notice that we only use the function name as the parameter.
+We don't place parentheses after it says that would call the function.
+That's not what we want.
+Finally in the next slide we use a lambda expression to accomplish the same thing.
+In this example we use the lambda expression directly in the function call lambda expressions were introduced
+in C++ 11 as I said and they're widely used in modern C++.
+If you come from another language you may know them as lambdas closures blocks or anonymous functions.
+It's basically all the same.
+First notice that we have no other code except the call to the for each algorithm.
+One of the benefits of lambda expressions is that we can define them right where they're being used.
+The first part of the for each function is the same.
+We're providing our iterators the last parameter is what changes.
+In this case we're using a lambda expression the syntax of the land expression will become more clear
+with time and practice.
+But it consists of a pair of square brackets followed by the parameters that will be passed into the
+lambda expression in parentheses.
+In this case a single integer which will name x.
+Then this is followed by the body of execute.
+That's it.
+It's really pretty easy and all in one place.
+So we know exactly what's happening in each iteration by looking right in the function call.
+I'll go over a couple of other SCEA algorithms and I'll use lambda expressions and walk through them
+and the next.
+So let's head over there in the next video.
+
