@@ -1,0 +1,300 @@
+In this video I'd like to go over some of the algorithms in the SPL.
+Now there are a lot of algorithms in the TLM where they're going to cover a few of them but the techniques
+you'll see apply to many of them and you can be very productive with them very quickly.
+I'm in the Section 20 workspace and I mean the algorithms project and let me just go over these includes
+real quick.
+I am including algorithm we need that to use these algorithms.
+I'm also including a vector list and CC type.
+Now CC type are going to use for the two upper function that converts a character from lowercase to
+uppercase.
+That's the only reason we're going to do it.
+And most of the examples we use a vector.
+But there's one that's going to use the list just to change things around a little bit.
+OK.
+So that's that we're also going to use this person class that I created right here is a really really
+simple person class person has a name and age I think we've used a class like this are very similar
+to this before have a default constructor that piler will generate.
+For me I've got an overloaded constructor that expects a name or an age.
+And then I've got these two operators these are really important whenever we use the T.L. it's got to
+have a way to compare our own objects.
+I use raw user defined types so I need to provide less than and the equality operators and all I'm doing
+here is I'm saying that one person is less than another person if as if their age is less than the other
+person's age.
+It's just totally arbitrary in this example.
+This really would depend on whatever business logic you are using and how do I compare two persons.
+Well their names have to be the same and their age has to be the same.
+So we've got that and here.
+So that's a real simple person class that we're going to use in here.
+So I've also divided this into functions just like I did with the iterators lecturer.
+So let's take a look at this first one here.
+What is the algorithm we're using the algorithm is right there.
+That function is the find function it finds an element in a container.
+OK the first occurrence of the element in the container.
+So what are we going to do.
+Let's create a vector of integers 1 2 3 4 5 and then I'm going to call stupid find I'm going to give
+it the beginning and the end.
+Now I notice that the syntax here is a little different.
+I just wanted to show you that syntax in case you run into and it's equivalent to Veck dot begin and
+Vector.
+And like we've seen before but in this case it stood began in the pass in the vector or the container.
+It was just another way to do it means exactly the same thing.
+So let's get back to this.
+I'm calling the Find function I'm passing in where I want to start where I want to end.
+Right that's the sequence that I'm going to get back from the container and I'm using these iterators
+and that's what I want to find I want to find that element 1.
+I know it's there it's right here and now what does this return.
+Well if it finds it it will return an iterator pointing to it.
+If it doesn't find it it will return an iterator to the end.
+So it's really simple to check.
+OK so let me clear this and let's look at the logic here.
+So we're really executing that function.
+And if the location remember location I'm using auto but location is an iterator to a vector of integers.
+If the location is not equal to the end of the vector and then we found it we found the number and we
+could just the reference it and print it out.
+In this case it'll print out one.
+Otherwise we couldn't find the number.
+So let's execute this and then we'll change the code just a little bit.
+So we run this real quick.
+We found the number one absolutely it's in there.
+Let's change the one to something like a 7.
+We know that the 7 is not in the vector.
+So let's execute this again.
+Couldn't find the number just what we expected.
+Now I'm going to change this back to 1 so you guys can play with it when you have the source code on
+your end.
+That's as simple as it gets and the really cool thing about this is I'm finding the first occurrence
+of an element in any container that's mind blowing right because you're not worried about how this stuff
+is implemented you've got all these different containers.
+How easy is this.
+I just want to find something just got called Find where do I start.
+Where do I end.
+What do I want to find.
+That's real classic abstraction.
+That's pretty cool.
+That's using a primitive type an integer.
+What would it look like if we're trying to find a player.
+So that's what this example right here is going to show you.
+So let's take a look at that.
+In this case I'm not using a vector.
+I'm using a list but it's all the same.
+I've got a list of persons I'm calling them player and initializing it to Larry is 18 years old Moe
+is 20 and Curley's 21.
+Remember that person classes showed you a little bit ago.
+I want to find that person in that list.
+Look at the code.
+Auto location 1 equals stood find where do I start.
+Where do I and what do I want to find the best algorithms he's going to use the equality operator that
+I've overloaded for my person class to compare these guys.
+So hopefully it'll find this guy right here right.
+So if location 1 is not equal to the end then I found ammo.
+Otherwise I didn't find Mo.
+And how do I know that Mo is Mo Mo has to be his name it has to be Monee has to be 20 members are equalitie
+operatives checking for both.
+All right so let's give this one a run and we should see found mo.
+That's exactly what we get.
+Now if I change Mo's age here let's him make them 18 or 12.
+That's not in there.
+I don't have a 12 in there.
+So at this point when I run it I should not find MO and it says Mo not found.
+That's exactly what we expected.
+So let me change this again back to 20.
+OK so that is the test that shows you how to use the Find function superpowerful.
+I mean when you think about it how hard is it to write a Find function for an array.
+It's not really you started to begetting and you move along and found it.
+I'm done.
+But what about a list a doubly linked list of priority cueist set.
+Wow that's a lot of code you would have to write yourself.
+You don't have to worry about any of that you just call find it tell it where to start.
+Tell it what it word and tell it what you want to find and you're done.
+It's as simple as that.
+OK so that's the fine test.
+Let me show you the count test now so uncommon that out and let's take a look for the count test.
+This one is really really dead simple.
+All it does is it counts the number of elements in a container.
+But it takes you can take it a little bit further.
+You can actually count the number of occurrences of that specific element.
+Or we could just use size for the count of the elements but in this case how many times does the one
+appear in this container.
+Well I've got it here here and here it occurs three times.
+So what's my algorithm count from the beginning to the end.
+And again you can use a subset if you like.
+I'm always going to do beginning to end in these examples.
+This will return an integer we get back to zero.
+Didn't find it.
+Forget back a one or two or three.
+That's how many times the one occurred.
+So in this case I expect back of three that's run this and there it is three occurrences founts of the
+one was there three times.
+Again if I put something that's not in there like a 10 in this case and I run this you should get back
+zero occurrences found.
+And that's exactly what we get.
+OK.
+Simple as that.
+So let's close this one down and let's take a look at a more powerful one called the count if test.
+So here's the count if the count if is a little bit different We're going to use the lambda expression
+for it.
+This was superpowerful.
+We're only going to count how many times that element occurs if it matches some condition.
+That condition is called a predicate.
+It's something that returns a true false value.
+So here's my vector and you can see that what's my condition.
+Well you can see right here look at the lambda that tells you exactly what I'm doing.
+I'm only looking for numbers that made two or zero money looking for even numbers here right.
+That's what that predicate right here is doing.
+So I'm starting at the beginning and here's my Lamda write it up here and just we understand exactly
+what's going on.
+There's my Lamda and here's the code for the lamb though which is this piece right here and I won't
+write that again.
+That's my LAMDA.
+So what's going on I'm starting at the beginning of that VAK I'm going toward the end of the vac.
+And for each element in that sequence I'm passing it in to here and that's going to return true or false
+depending on what it's returned it's going to include in the count here.
+So in this case what's being passed into this Lamda here is one and then two and then three and then
+four and then five and so forth and all it's doing is if this is true if this predicate right here is
+true it's just counting them up.
+So in this case how many even numbers do we have we have one.
+We have two we have three we have four.
+So I would expect the four coming back over here you can see it's the same idea except this time what
+am I looking for.
+I'm looking for odd numbers.
+How many odd numbers do we have.
+We have 1 2 3 4 5.
+So we've got five I expect four from here.
+I expect this to identify.
+Now let's write another function we'll write this one together.
+How can we determine how many elements in the VEC are greater than or equal to 5.
+So what do we do.
+What we write the statement real simple numb equals stood count if that's my algorithm we're going to
+do vector began.
+Let's search the entire vector way to go to vector on end.
+Now we could have used a constant iterator here we could use a lot of things I'm just going to do real
+simple.
+So I'm going from beginning to end and at this point this is where I need my lambda.
+So all these elements are being passed into this what am I going to do.
+I'm going to put my lambda in here.
+It's going to expect a single integer.
+I'm going to write my code right in here.
+You don't want to close this and close it like that with a semi-colon.
+So what is the predicate.
+I'm going to return true if x is greater than or equal to 5 just like that.
+And I just copy this line right here.
+Move it down here.
+So all I'm going to do is I'm going to output numb numbers are greater than 5.
+How many of those do we expect.
+Well we've got to a greater than or equal to five sorry.
+So we have the five and the 100 so there's only two.
+So let's run this.
+We have four even numbers just what we expected.
+We've got five odd numbers and two of the numbers are greater than or equal to five I'll change that.
+There you go.
+Pretty simple.
+These lambdas take a little get used to but you get used to them really quickly and are so powerful
+it makes programming much much simpler.
+OK.
+So that's count if the next one will do is replace test.
+So let's take a look at replace testing them and comment that out here.
+So what does this doing.
+Well this is looking through a vector in this case where any container and it's going to replace one
+number with another.
+Pretty cool.
+So here I've got a stood VAK and I've got one two three.
+Notice the ones that's all I really care about in this case.
+I've got three of those ones right in here.
+I'm just displaying them out right now and will display them out and then I'm calling stood replace
+and I'm starting at the beginning going to the end and I'm replacing one with 100.
+And remember I'm using primitives here but we can use our own objects if you like.
+So in this case I'm replacing those three ones with 100 and then I'm just displaying it again.
+So let's give that a run and we'll be able to see that we've got one to make move this over just a little
+bit.
+One two three you can see the three ones here and you can see that the three ones have been replaced
+with hundreds.
+Really cool really easy.
+Let's do a couple of more.
+And the point of this is not to show you these specific algorithms.
+There's like I said over 50 probably closer to 90 algorithms out there.
+If you look at the numeric Hetter as well they all work in a similar way they all use iterators many
+of them use predicates So this gives you a pretty good feeling for the power that's out there and the
+things you can do.
+So this is the all of test.
+This is really cool.
+Let me show you this one.
+So here's my Veck one and I've got a 1 to 3 or 5 or 7 or 9 a 1 to 3 or 13 19 if I'm just some arbitrary
+numbers in there.
+What this is doing there is the function all of it's going to see whether all of the elements in that
+container match this predicate that superpowerful.
+So in this case I'm saying if all of those elements are greater than 10 then this will return true.
+Otherwise they will return false.
+So obviously then they're not all greater than 10 right.
+I've got a one in a three to five so I expect this to return false and I expect this to print up.
+In this case here all of them starting at the beginning going toward the end I'm checking to see if
+all the elements are less than 20.
+You can see in here they are less than 20.
+Every single one of them has less than 20.
+So I expect this guy to display right now.
+We have the all of.
+There's also another algorithm called.
+Any of which.
+So if any of them is greater than 10 it will be true.
+So you've got the power to compare them all or just compare one of them.
+So let's execute this and we can see here not all of the elements are greater than 10.
+Absolutely.
+We've got some there less than 10 but all the elements are less than 20 and I can impress upon you the
+fact enough times about how powerful this is we don't really care about the container and that's the
+cool part.
+I don't need to worry about it.
+It could be implemented in a really really complex way doesn't matter.
+The algorithms library handles it for us.
+All right so the last example is a string transform test.
+This is pretty cool.
+There is an algorithm called transform that works not just with strings it works with or with containers
+obviously but it's used very often with strings.
+Let me show you what it does.
+And this is where that two upper function comes in.
+So here I've got as one is a stood string and it's initialized to this is a test and all I'm doing is
+I'm displaying before the transform I'm displaying the strings so that's just going to display.
+This is a test just like that.
+Then I'm going to call the Stood transform function and want to tell it where to start.
+And as TR one began where to end.
+In other words it's processing the entire string and then we're to start policing its results at the
+beginning of the string again.
+And what do I want to do.
+Well I want to make each character too upper and I can pass my own function here.
+But we already have the two upper function defined in CC type.
+So may as well use it whenever you put that scope resolution operator in the front of something with
+nothing here just that guy followed by something else that means global scope.
+And that's what's going on here.
+So I'm using the two upper method or function actually that's in the global scope.
+So what do you think this does.
+It makes every single character in that string uppercase superpowerful we can process strain's if you
+remember that one example we did a while back with the way back in the course right where we encrypted
+a string.
+This makes it really easy because you can transform that string you can play all kinds of games with
+it.
+And the algorithm becomes much cleaner.
+So let's run this example and we should see the string and lowercase and then the string in uppercase
+there it is.
+This is a test.
+This is a test.
+All right.
+So that gives you a little bit of introduction and let me uncomment this out set it up just like that
+so I'll save it like that for you guys to be able to download it and play with this from the beginning.
+So here you can see the find the count the count if the replace the all of you can play around with
+the any of.
+And what I would encourage you to do is let me just close this up a little bit.
+What I would encourage you to do is play with these lambdas give yourself different conditions make
+them a little bit more complicated if you like and just get used to the lambda syntax.
+One of the things that we're not going to do in this course or maybe I will in a different section later
+on I can add a section just on lambdas that guy right there those two square brackets that's the lambdas
+capture block.
+That's a real important piece of the lambda that allows you to capture the context so if I have variables
+in here I can catch them in there and set them and use them.
+We're not doing that in here.
+We're just keeping the lambdas really simple.
+Hopefully you do understand these lambdas and how powerful they are.
+Play around with them get comfortable with them.
+It's really the way to go with modern C++.
+All right.
+So that's it for the algorithms demo.
+Now we're going to start talking about the actual containers the first one we'll talk about is stood
+a ray.
+So I'll be right back to talk about that.
