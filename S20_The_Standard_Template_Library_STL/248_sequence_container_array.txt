@@ -1,0 +1,372 @@
+ In this video I'd like to go over one of the most basic of the SBL containers the array container I'll
+call it stood a in this video so we don't confuse it with a raw array.
+In order to use this array container we must include the array header file the array container allows
+us to create fixed size arrays of any type.
+So what makes this different from a raw array.
+A lot.
+First it's an object type stood array always has its size associated with it.
+Unlike a raw array a stood array doesn't decay to a pointer to the first element of the array when we
+pass it into a function.
+It's also very efficient element access happens in constant time constant time means that the time it
+takes to access an element is independent of the number of elements in the container.
+So instead array has five elements and you want it to access one of them.
+The time required would be the same as if it had a hundred thousand elements.
+Also since it stood arrays implemented behind the scenes by the SBL as a wrapper class around a raw
+array we can't get access to that raw array address if we need to.
+And we can use it with libraries that use raw pointers.
+But the biggest benefit is that it's part of the ACL.
+So we can use it with iterators and algorithms the Array class wasn't part of the original list T.L.
+it was added in C plus plus 11.
+You should always first consider using stood array in modern C plus plus when you have a need for a
+fixed size array don't use raw arrays unless you have a compelling reason to do so.
+All of the ACL iterators are available withstood array and they don't invalidate.
+And that makes sense because to raise a fixed size structure.
+OK so first let's look at a few ways to initialize it arrays and then we'll see some of the common member
+methods.
+Stood array is a very simple template class since the size of the array must be known at compile time.
+We have to provide both the type we want to store in it as well as the size this is exactly what we
+did a few videos ago when we created a Mirei class in the first example in the slide I declared a r
+r one as a stood array of 5 integers and I initialize these five integers to 1 2 3 4 and 5.
+If we have more than five integers in the initializer list we'll get an error if we have fewer than
+5 the remaining integers omitted will be set to zero.
+Now there is a quirk with the initializer list in C plus plus 11 you need to provide double curly braces
+in C plus plus 14 and 4.
+You don't just a single curly brace.
+So in the second example I'm declaring Stooges as a stewed array of three strings and I'm initializing
+them to Larry Moe and Curly.
+Not that I can use C-style string literals and they'll be converted to stood strings.
+There's also a very handy way to assign multiple values to an existing stood array.
+We can use an assignment statement in an initializer list.
+This is really cool and extremely useful.
+So now let's see some common methods provided by stood array in this section.
+I'm not going to exhaustively go over all the methods provided by all of the ACL containers that would
+be pretty boring for me and it would probably be even more boring for you.
+So what I want to do is go over some of the most common methods used in some of the methods particular
+to specific containers.
+So let's start with the size method.
+This method is available to all containers in the studio array.
+It's pretty simple.
+It's the size of the container and it's fixed arrays.
+Also let us access individual array elements.
+We can use either the subscript syntax or the DOT method.
+Now if you remember from the vector subscript operator does no bounds checking but the method does do
+bounds checking and an exception is thrown if we're out of bounds you can see an example code that A-R
+are at 0 will refer to a 1 in the array or R and R R someone refers to the two this array also provides
+front and back methods.
+Now these methods return references to the element at the front of the array and of the element at the
+back of the array respectively.
+In this example our front refers to the one and a r r back refers to the five the empty method will
+return true if the array is empty and false otherwise this doesn't mean how many elements out of the
+elements you are using it basically means it's the size of the array.
+This is rarely ever use withstood array but it is with other SDL containers.
+The fill method is very handy and fills the Stood array with whatever element is provided.
+Remember I'm using ints here for these examples but these could be almost any data type.
+We can also swap two stood arrays of the same size and type.
+All we have to do is simply call swap with one and pass the other in.
+And finally we can use the dot data method to get access to the underlying raw array.
+In this case data returns the address of the raw array of integers which we store in a pointer variable
+as you can see stood arrays are very straightforward.
+Now let's head over to the idea.
+We'll see some more examples of using stood erect before we head off to the ID and run some examples
+with the array.
+I'd like to refer you to this Web site and I've mentioned this Web site a couple of times in the course.
+It's the reference dot com.
+I'm here in the United States so I'm getting the English version.
+I'm not sure if this is localized for other countries it seems like it would be because you see the
+end of the beginning here.
+In any case.
+Good to see Peepy reference dot com and it's got all kinds of good information about C++.
+Up to now we really haven't needed it too much but with the container's library in the SPL your algorithms
+and your iterator is this is a really useful reference.
+I'm right at the main page here and you can see the container's library is right here so I'll just select
+that and it shows you all the containers in the house for example array.
+That's what we're going to talk about now.
+Vector a deck of forward lists will talk about all of these in this section but this is a good theory
+and this gives you a lot of really good reference and documentation on the array you can see it's implemented
+as a template class here.
+And if you scroll down just a little bit all of these containers we're talking about iterator invalidations
+So if you're not sure about if you've got an iterator and you've removed an item is it invalid now it'll
+it'll say it all throughout the documentation here.
+Also the other important piece are these right here these member functions.
+This tells you what member functions are available for this particular container and you can see here
+I can be constructed and destructed and so forth.
+But these are the real important ones here.
+This is a really simple container the array container.
+So you've got the method you've got the overload or subscript operator.
+I noticed this one does bounds checking and the operator script is not the front the back the data the
+things I talked about in the slides.
+We've also got iterators you can see all the iterators are available to us here.
+And then we've got some capacity methods and the fill in the swap that I also mentioned.
+So this gives you a lot of really good information.
+Now if you're not sure about what the front method does it mean it says here access the first element
+which is makes sense right the front but if you want more information you can click on here and not
+all of these things are going to be easy reads When you're first starting out with C++ but you'll understand
+that soon enough and little by little you'll understand more and more and more and then these references
+become very very handy.
+In this case you can see what does it do.
+Well it provides a reference to the first element.
+That's kind of what I said earlier right.
+The complexity is constant time which is cool.
+Usually most of these methods will have a complexity associated with them and they will be listed here.
+I mentioned before that with the SPL You know what you get.
+So when you using these methods you know other complexity.
+So if you're using something that's in linear time you'll understand that if it's constant time it'll
+say it as well.
+And then it's got usually some kind of sample code here that you can run right inside your browser.
+So it's a very handy site.
+I think you're going to refer to this a lot when I go to the idea I'll be playing with a lot of source
+code that you can play around with and it covers the majority of these but obviously it's impossible
+to cover them all especially as the containers and the algorithms and the iterators all come together
+the permutations just go skyrocketing.
+So play on your own and go through here study this this is the best way to really learn the SBL but
+watch the videos first and then you'll be able to understand this a lot better.
+All right.
+So let's head over to the ID.
+OK so I'm back in the IDM in the section 20 workspace in the array project and what I've done is I've
+broken this project up into nine test functions and each one of these functions is independent and deals
+with specific methods or iterators or algorithms that we can really learn.
+My perspective on the SBL is the more examples you can see the better you're going to learn it and the
+more you can apply what you're learning.
+Two other examples you haven't seen yet.
+OK so why don't we start rather than jump back and forth and running and compiling and so forth.
+I've already run this and the output is over here on the right.
+I've run all nine functions over here on the right and there's the output and what I'll do is I'll go
+through them so you can understand exactly what's going on this will save a little time.
+And that way you can stop the video and look at them as well.
+So let's start with test one.
+First thing we're going to do here is we're going to create two stood arrays.
+They're both the same size and they're both of the same type.
+So I'm creating an array right here called A-R are one of five integers and initializing it to 1 3 3
+4 and 5.
+I'm also creating a rate to the same size same type but I'm not initializing it.
+And then of displaying both arrays.
+Now the display function is right up here.
+Let me clear this and show that to you.
+And the way the display functions work for stood arrays.
+Notice the parameter right here the perimeter type.
+You've got to supply the information.
+So we've got to supply the type and the size for all it's doing is just using arranged base for loop
+to display it.
+All right.
+So let's get back to this.
+Let's go through test case one here.
+So we've got those two arrays A-R one or two I'm displaying both of them.
+They're out right.
+Here you can see there's my test one output right here.
+Notice the first one printout.
+One two three four five.
+Exactly.
+We expect no notice.
+A r r to.
+We're displaying it right here.
+We've got five garbage values so nothing is initialized when we do something like this.
+We're initializing this to the array but we're not initializing the elements of the array.
+That's important.
+Understand now what we have here is a really nice way to assign a bunch of values to a state array.
+And the syntax is dead simple and it's so handy.
+So what we're doing here is we're assigning 10 20 30 40 and 50 to our two that's the one that had all
+those garbage values in it.
+And then were displaying those two arrays again.
+So you can see them displaying right here.
+One two three four five and now 10 20 30 40 and 50 which is really nice.
+Here we're just displaying both sizes now they're both the same size right so we should we expect a
+5 and a 5.
+And that's exactly what we get here.
+There are both sides 5 size isn't really used very often stood a raise the size is fixed right so it
+is what it is.
+It's right here but it's used a lot in other containers.
+Let me clear this little bit and let me scroll up just a bit so we can get to these guys right down
+here the last couple of lines.
+You can see here in this example that we can subscript into are one or two and he stood erect.
+This does not do bounds checking.
+So what we're doing here is we're drawing a thousand into our one Sub-Zero and that's this guy we're
+basically placing that one with a thousand.
+And then over here what I'm doing is I'm replacing a R are at one with 2000.
+That would be the two.
+So replacing the two with two thousand.
+This does no bounds checking.
+This does do bounds checking.
+So if I'm out of bounds right here I'm going to get an exception thrown in.
+Out of range.
+Exception.
+And all I'm doing now is displaying a or one and you can see they are displaying right here.
+Notice the 1000 to 2000 have been updated as still have the three four in the five.
+And then the last two examples are right here at the bottom where I'm saying what is a r r front and
+what is a R are are up front and back.
+So what's the front element of array and what's the back element of a right to.
+Well array 2 is right here.
+The front element is A10 the back element is a 50 that's exactly what we expect.
+That's exactly what Prince right here.
+OK so some really simple examples.
+And again I'm going to do a lot of examples in this section so you can better understand how some of
+this stuff works.
+Let's take a look at the next one now.
+And you could see the output for test two.
+Right over here on the right.
+Right here that so what are we doing here.
+Same idea I've got two arrays already one in Ray 2MB initialising the first one one to five and 10 20
+30 40 and 50 for a rate to displaying both of them.
+And there they are right there just as you would expect one two three four five and 10 other way through
+50.
+Now I'm using the fill method I'm filling a re one with zeros.
+This could be any integer.
+I'm just passing a zero into it.
+And again remember I'm using integers for these examples.
+This could be almost any type.
+So I'm using a zero here and filling array one with zero and then I'm displaying those guys again.
+Notice how array one right here is all zeros now.
+So it's a real handy way to fill an array with whatever value we want.
+Now we're coming here and what we're saying is let's swap those two arrays I could say array one that
+swap array two or array to that swap array one ram and swapping is swapping.
+So in this case I'm swapping those two arrays and I'm displaying them again and you can see that they
+have indeed been swapped right.
+First it was a 0 there was 10 to 50.
+Now it's 10 to 50 and the zeros are second.
+OK.
+So let's move on to the third test and let's take a look at this one.
+The results are right here.
+I had another line that printed that header right here but I removed it.
+That's why you're seeing that test three twice.
+All right so I've got a re one.
+One two three four five.
+Again it's a good array of five integers.
+Now what's going on here.
+The data method returns the raw pointer that points to the behind the scenes raw array.
+What happens is remember a r r one is an object.
+So it has some data associated with it.
+One of the pieces of data is 5 right it knows its size.
+The other piece of data that has is the actual array in this case 5.
+So this guy is what's returned the address of that element.
+So when we say are one dot data what we're returning is the address of that first element in the raw
+array behind the scenes member the Stood arrays with a wrapper around a raw array.
+And I'm storing that into a pointer which is a pointer to an integer the address of an integer if display
+pointer.
+You can see right there that's a memory address being displayed.
+That's the memory address of that first element in the array.
+Now I can change that through the pointer I could say the reference point to equals 10000.
+And I just put a 10000 here and if I display A-R one you can see it right here.
+See that 10000 is being updated right there.
+Now you don't do this very often.
+Obviously the whole point of using a stick to write is not to use a raw array but sometimes we use libraries
+that use raw arrays so we can still use stood arrays for our work.
+And then when we need to pass in the raw array we can use the data method and send them what they want
+but we can still have the safety and ease of use on our end and what's really cool about using this
+tool to raise on our end is because they are SDL containers so we can use them with iterators we can
+use them with algorithms and so forth.
+So that's that's the real power will go to test for and test for is a real simple example we're going
+to sort this array it's really really cool.
+Here's the array 2 1 4 5 3 and all of these are stood arrays and I've defined this one to five integers
+again displaying it right here and this is Task Force.
+You can see the output right here.
+So I'm displaying array 1 2 1 4 5 3.
+That's what we get right here 2 1 4 5 3.
+Then I'm sorting it.
+Now this sort is an algorithm right.
+That's my sort function and it expects to iterators where do I start where and why end.
+Well I'm starting at the beginning and I'm ending at the end I'm sorting the entire array and then I'm
+displaying it.
+So you can see right here displaying the sorted array.
+One two three four five easy is that.
+All right so let's take a look at test five.
+And for each one of these tests I tried to add a little bit different functionality.
+Again the more examples you see the better.
+Hopefully you'll start seeing the patterns of use and it makes it much much easier to understand.
+All right so here's test five.
+You can see the output right here is just one line of output.
+Here's my array are 1 2 1 4 5 3.
+And what we want to do is we want to find the minimum the maximum in there.
+So we have an algorithm called Min element.
+We have another one called Max element.
+It expects iterators right.
+It's an out.
+So array one began array one end.
+I want to search through the entire array for the minimum element and this doesn't return the minimum
+element.
+This returns an iterator to the minimum element.
+So this is how you would declare that variable M. is an iterator to a array of five integers.
+Now that ugly that's really ugly looking coded it's readable but it's kind of ugly.
+This is much nicer.
+Let the compiler figure it out.
+So I did it the long way for the minimum number and I did it the short way using auto for the max number.
+So all I'm saying is auto Max Nahm Hey compiler figure out that the max numbers type based on the return
+here and I'm doing the same thing.
+And remember we get back iterators so we dereference the iterators and we get back the min number which
+in this case is 1 and the max number which in this case is 5.
+And that's exactly what we expected here.
+So let's move on to test 6 and test 6 is a real simple test you can see it again right over here there's
+only one line about.
+There is another algorithm called adjacent find.
+And what it does it searches through a container and returns the first occurrence of two adjacent values.
+Now these two adjacent values are compared with the equality operator which we would overload if we
+had our own classes.
+But here we're using integers again.
+So you can see here it is right here.
+Two three is one right next to another.
+That's what I expect.
+So this also returns an iterator.
+I'm using auto and I'm saying adjacent equals stood adjacent find from beginning to the end.
+Give me the first occurrence of any two adjacent items.
+It's possible there are no adjacent items so I would check if adjacent is not equal to array and I found
+something that is equal to array and there were no adjacent elements.
+So in this case we found them and there is the iterator which we dereference and you can see right here
+adjacent element found with value 3.
+Pretty cool and pretty easy and pretty powerful as well.
+Hopefully if you're starting to see the real power of the TLM it's actually awesome.
+He does so much with it.
+All right test 7.
+Here's the output for test 7 right here.
+Really easy we're using the accumulate algorithm we've used this before as an example in order to use
+this you have to include numeric hey it's not an algorithm it's an include numeric so make sure you
+do that and all that does is it accumulates from this iterator to that iterator.
+And this is where it starts if you started it 10 it would start adding from 10.
+In this case I'm starting from zero.
+What's really important here is that this type and this type and this type are the same.
+So double double zero point zero make sure they're all the same of way you can run into some really
+really weird little errors.
+We do this it sums them up one super triples purpose five we display it and we get the sum is 15 which
+is just what we would expect.
+And let's do a couple of more.
+We're almost done with these.
+Hopefully you will.
+You're following along I think you are because it's pretty straightforward stuff.
+The last two will do is the count and then would you account if using a lambda and test 9.
+So here's test 8.
+This time I've got a studio array of 10 integers and I get to call that array 1.
+And in this case I've got one two three four five six threes.
+I just want to count them.
+So I'm going to use the algorithm count.
+So I'm going to say stood count.
+They always use iterators from beginning to end.
+What am I looking for the three.
+That's it.
+What do I expect that I expect back six right.
+I just count them up here.
+So this is an integer.
+You get back to the integer of the number of occurrences it says I found three six times.
+Something we would expect.
+And then the last one is the count if which is very similar to count except it's using a predicate.
+And what we're going to do is we're going to supply a lambda expression.
+So here's what I've got.
+I've got a r r 1 again is 10 integers it's a stud array.
+And those are the 10 integers you can see them right here.
+And what I want to do is I want to find out how many numbers are between 10 and 200.
+So there's one there's two there's three there's four I don't want to include 200 in this case so I
+expect back of four.
+So what do we use.
+We use COUNT IF.
+Where do we start at the beginning where do we end.
+At the end and what's the predicate.
+Well I want to return true when x is greater than 10 and X is less than 200.
+That's it.
+And there's my lambda expression you can see my x is being passed into here for each element.
+So the one will be passed in here is X and we're going to check that the two the three all the way from
+whatever are iterators say.
+So in this case how many matches we expect for display them right here and that's what you get right
+there in the upper.
+OK so again a lot of examples.
+I did a lot of examples on purpose because I want you to have a lot of examples on your end in the source
+code that you can play with.
+And as I said you're probably going to get tired of seeing these examples but the more examples you
+see the better.
+All right so that covers stood array in the next video.
+We'll start talking about stood Vektor which you know a lot about already.
