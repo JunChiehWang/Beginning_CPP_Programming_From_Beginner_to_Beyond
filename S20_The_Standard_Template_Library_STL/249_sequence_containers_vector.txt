@@ -1,0 +1,391 @@
+This video we'll learn more about the vector container.
+We already know a lot about it since we've been using it since very early in the course as you know
+in order to use the vector container you have to include the vector header file.
+The vector is probably the main workhorse of the SPL.
+It's used in a lot of applications.
+The vector allows us to create dynamically sized arrays.
+The cool thing is that the vector can expand and contract is needed and it's handled automatically by
+the SPL.
+We don't have to worry about the details but the vector does give us some control as to how it can grow
+the vector elements themselves are stored in contiguous memory.
+So as the vector expands a new larger area and memories allocated in the current elements are moved
+to it like the dude array the vector provides fast direct access in constant time.
+It also allows for rapid insertion and deletion at the back of the vector in constant time.
+However inserting elements into any other part of the vector other than the back is not as efficient.
+It happens in linear time which means that the running time increases nearly with the size of the vector
+the vector supports all of the iterators and the iterators may become invalid.
+This is especially true when the vector resizes and a new area and memory is allocated for the extra
+storage.
+In this light we see a diagram of what a simple vector might look like.
+We declare VEC as a vector of integers and initialize it to 1 2 and 3.
+The vector has a front end to back the front.
+In this case is Element 1 and the back is element 3 we typically add elements to the back of the vector
+using the pushback method.
+So in this case we're adding the element for using pushback and the force added to the back of the vector
+we can add elements anywhere in the vector but the back is the location where the addition of elements
+is most efficient.
+If there's no room and the vector needs to allocate more space it will automatically usually twice the
+amount of the current space is allocated and the current elements are moved over to the newly allocated
+area and then the new element is placed at the back.
+Let's look at a few ways to initialize vectors and then we'll see some of its member methods.
+In the first example in this slide I declare vec is a vector of integers and initialize it to 1 2 3
+4 and 5.
+The second example I declare Veck one is a vector of integers and amusing an overloaded constructor
+here to create 10 integers and initialize them all to 100.
+Of course the vector supports copy and move semantics for initialisation and assignment in the third
+example I'm declaring Stooges as a vector of stood strings and I'm initializing those strings with both
+strings and C-style strings.
+Vectors also support assignment via an initializer list just like we did with the array.
+So let's look at some other methods provided by the vector
+again please refer to the C++ as T.L. documentation for more detail on these and other methods.
+There's a lot there and that's the place to look for information.
+But let's see some other methods.
+Let's start with size.
+This method returns the number of elements that are in the vector.
+That's pretty straightforward.
+The capacity method tells us the current capacity of the vector when this capacity is exceeded.
+That's when the vector will expand dynamically and the max size tells us what the max size of a vector
+would be in our system.
+And that's the number of elements that it can hold.
+You see this is a really large number.
+Vectors also let us access individual elements either using the subscript operator or the dot at method
+just as we've seen before the subscript operator does not do any bounds checking and the DOT method
+does.
+You can see in the example code that Veck at 0 will refer to the one and Veck someone will refer to
+the two
+as previously mentioned.
+The vector allows for efficiently inserting elements at the back of the vector.
+This is done with the pushback method.
+In this case we have a vector of person objects.
+We can create a person P1 named Larry who is 18 years old and we can use the pushback method to insert
+P1 at the back of the vector.
+Remember all container classes make copies of the elements they store.
+So in this case a copy of P1 is made in the second example we're creating an unnamed person object and
+adding it to the back of the vector using move semantics.
+The last method we haven't seen yet and it's awesome.
+It's called emplace back.
+This method expects the parameters that would normally be passed into the person constructor and that's
+what it does.
+It constructs the person object using a person constructor right in place where it's supposed to be
+in the vector.
+That's really efficient no moves no copies it just puts it right where it's supposed to be.
+Use this method it's awesome.
+The empty method will return true if the vector is empty and false otherwise.
+Just as we saw withstood arrays we can swap two vectors but in the case of vectors the vector elements
+have to be the same type but the sizes can be different.
+And finally we can use the sort algorithm in any kind of algorithm to sort vectors with iterators to
+copy vectors.
+We'll see some of those examples in the ID.
+So let's see how we can insert elements into a vector at a place other than the back first will create
+two vectors of integers.
+Vec one VEC to VEC one is one two three four five and vector is 10 20 30 40 and 50.
+Now let's say we want to insert some data before the three and Veck 1.
+First we need an iterator to point to the location of the vector we want to insert the data before.
+In this case the three we can use the find algorithm to easily find the three as we've already seen.
+Once the iterator is pointing to the three in the one then we could call the insert method and pass
+in the iterator it and the element we want to insert before it.
+In this case the 10.
+That's it.
+Now Veck 1 contains 1 to 10 3 4 and 5.
+So we inserted the 10 before the 3.
+That was pretty easy but we can also insert a sequence of elements how with iterators.
+Let's insert the entire contents of VEC two before the four in VEC one.
+We first find the four and get an iterator to it we'll call it I-T then we can use the insert algorithm
+and pass in the iterator I-T that we want to insert before and the two iterators that will provide the
+sequence of elements from vector to that we want to insert.
+In this case all a victim.
+That's it.
+Now Veck 1 will be 1 to 10.
+3 10 20 30 40 50 4 and 5.
+We inserted a copy of Veck two before the four very powerful and easy to do.
+All right so let's head over to the idea will see these examples and we'll see some more complex examples
+as well.
+OK so I'm backing the idea.
+I mean the Section 20 workspace in the vector project and this project has a lot of examples I really
+believe that the best way to learn the CEO is through the examples are real example driven approach
+maybe a little boring sometimes as I'm giving you example after example after example.
+But I think it's really the best way to learn it.
+I've got a lot of examples here.
+I'm going to go through them pretty quickly.
+So please feel free to pause the video look at the example and then continue again.
+Let's get started.
+I'm including IO stream vector and algorithm obviously I'm going to use vectors in this example and
+we're going to use some algorithms as well.
+And I'm going to use integers mostly but I'm going to use this person class in a few places.
+It's the same kind of person class we've used before a person has a name and an age it's a string and
+an integer.
+I've also overloaded the stream insertion operator just to make life easier.
+I've got a default constructor.
+I've got an overloaded constructor.
+And remember when we're using our own classes with the SBL always always overload less than and the
+equality operator.
+Those are the two boolean operators that are being used by the as T.L. on your own objects.
+So that's it I'm comparing two people and I'm comparing the the one is less than the other.
+I'm not really using them in this demo but it's good habit to do as far as the operator.
+The insertion operator is right here.
+Same as we've always done.
+And then what I did was I created these two display functions.
+One is called display two and one is just called display and want to use display mostly.
+But I'm going to use display too.
+And the reason I did display two just so you can see a different way to write this.
+Of course I could use a range base for loop to do this and I'm doing that right here.
+But I wanted you to see the For Each rhythm we've seen this before as well.
+So give me a vector of integers and I'm going to do for each.
+What's my sequence from the beginning to the end of the vector that was passed in.
+So in other words the entire vector at each iteration this lambda expression is going to be called X
+will be passed into it X will be each one of those elements in that sequence.
+He says despite.
+So it's really the same effect as arranged based Foreland.
+This function here I wrote as a template function because sometimes I want to be able to print vectors
+of integers.
+Other times I want to be able to print vectors of persons.
+So it's nice just to have one function to let you do it.
+Here's my template parameter right here t.
+So I can pass in a vector of anything and I can loop through here using my range based for loop and
+the auto takes care of figuring out the type for me.
+So it makes life really really easy.
+OK so let's start going through these examples the first few are going to be really straightforward
+I'm sure you've seen them before.
+What I've done is about ready run this and the output is over here on the right side you can see here
+in the console.
+But what we'll do is we'll go through these examples and then we'll look at the console.
+And like I said the first few are really really straightforward.
+So let's look at this first one I've got Veck as a vector of integers and I'm initializing it to 1 through
+3 4 and 5 and I'm calling that display function that's the template function.
+It's going to display the vector and you can see the vector being displayed right appear.
+One two three four and five.
+Now what I'm doing is remember vector has already been initialized so right now I'm using assignment.
+This is assignment using initialization which is really really cool and handy.
+So now vec is two four five six and I'm displaying it using that other display function.
+So here I am displaying Veck again and you can see vec is now 2 4 5 6.
+And then in this case I'm creating one.
+It's an object and it's also a vector of integers but I'm not using the Curley's here right so I'm not
+using an initialization this I'm using an overloaded constructor.
+That's part of the vector class.
+This tells me how many do I want.
+This tells me what is each one going to be.
+So this is going to create 10 100s and on display at Quon you can see them right up here all 10 100.
+There are other constructors is a lot of different ways to do that refer to the documentation.
+Some of them are really interesting.
+These are the ones that I use all the time.
+OK so now let's look at test to test two is all about the size the capacity so we understand how this
+works.
+So what I'm doing here is I'm saying vec is again a vector of integers 1 2 3 4 5 I'm displaying it because
+he's displaying right here that I'm asking what's the size of the vector.
+What's the max size of the vector and what's the capacity of the vector.
+So he could see here the size is five.
+I've got five elements in there right now the max size is a really big number that's how many elements
+that vector can hold and the capacity is five.
+In this case.
+What does that mean.
+That means that if I exceed that capacity this vector will increase in size right.
+In other words the SBL is going to allocate space for a larger vector.
+Remember it's all contiguous in memory and copy stuff into it.
+So that's exactly what I'm going to force right now.
+I'm going to push back six so I'm going to add six to the back of this vector is going to be a 6 right
+in there now that I'm going to display it again and then display the size Max sizing capacity we would
+expect Max sized not to change right now because I'm not doing anything else.
+So I'm pushing it back and displaying it.
+So right here you can see the six at the end here.
+What's the size of the vector six max size is the same.
+But look at the vector capacity here.
+Now it's 10.
+This is pretty typical whenever you exceed the capacity to do it'll double.
+So the next time the capacity will be 20 and then 40 and then 80 and so forth that's a very very typical
+behavior.
+Keep that in mind because if you've got ten thousand elements in here and you add that ten thousand
+one it's going to go to 20000 big when you only maybe need 10000 and a little bit.
+So there's ways to help that.
+And I'll show you a couple we've got this method called shrink to fit which is pretty cool and this
+has came about in see Puss Puss 11.
+So if I call shrink to fit it will shrink the amount of storage allocated to exactly the vector size.
+And so remember right now we had capacity 10 that I called shrink to fit and I'm displaying it again
+and see what's happening here.
+Notice it now the capacity is exactly six.
+There's one more method I wanted to talk about we don't use it very often but some it's nice to know
+that it's there it's reserve 100.
+What you're doing here is you're reserving 100 spaces for elements contiguous in memory and of displaying
+this memory is a vector again here.
+And you can see right here the only differences right there.
+This vector now has a capacity of 100 so it won't expand until it hits that hundred in one element.
+All right so now let's take a look at test three I'll scroll both of these up again I've got my vec.
+One two three four five.
+I'm displaying it.
+You can see it displaying right here and here all I'm doing is using the subscript operator and the
+dot at Methot remember the subscript operator does no bounds checking the AT method does do bounds checking.
+So if we exceed the bounds we get an exception.
+So all I'm doing is I'm putting 100 here and I'm putting 200 here and I'm displaying the vector.
+And you can see that's exactly what we expect.
+So let's move on to test for.
+And again I know these are a lot of examples.
+But after doing this for many many years I think this is the best way to really learn this for test
+for We've created Stooges is a vector of person objects.
+Remember we created that person class earlier.
+One is Larry and he's 18 that's a person that's display Stooges right now it should be empty.
+Right.
+There it is empty.
+Now I'm going to push back the one that's Larry and display it again.
+So now you can see that the Stooges vector has just one person in it.
+Larry in this case I'm going to push back.
+Mo mo Mo's 25.
+I'm not creating a named object here so this is going to use move semantics and it's going to push the
+back when I display again you can see that now I've got Larry and Moe.
+And then the last example I'm using the place back and this is awesome as I said in the slides.
+What we do here is we pass in the arguments that we put a passed into a construct you can see right
+here right the name and the age and what it's going to do behind the scenes is actually call the constructor
+for us and put curly at the back.
+And then when I display again you can see I've got Larry Moe and Curly.
+Let's move on to test five.
+In this case I've got the Stooges vector again right here and I initialize it till they remount curly
+and I'm displaying it and you can see it displaying right there.
+You can see Larry Moe and Curly being displayed.
+We can have the front method and we have a back method the front method returns a reference to the front
+of the front element of the vector the back to the back element while the front one is Larry and the
+back one is curly.
+You can see front and back.
+So when we display that we can see front is Larry back is curly.
+We also have the pop back and it removes the element from the back of the vector for vectors.
+When we insert and delete from the back it's very very efficient.
+And that's typically how we use vectors.
+So we're going to get rid of curly in this case and then display the Stooges and you can see here there
+and moare there Curley's gone.
+So here in test six there's my vector of integers 1 2 3 4 5 and I'm displaying it right there.
+I can use the clear method to get rid of everything in the vector.
+So I just removed everything and I'm displaying the vector right here.
+It's empty.
+I'm assigning those 10 integers to the vector and displaying it again.
+You can see that being displayed right over here and now what I want to do is I want to use the erase
+method to erase a piece of this vector.
+So I'm going to say Veck Doddie race.
+And where do I want to start at the beginning where do I want to stop right before that guy.
+Begin plus two.
+So here's VEC again.
+Here's Veck begin plus two.
+So what is going to do is going to get rid of those two elements.
+And then when I display you can see right here the one in the two are gone great Now this example is
+a little bit more complicated but it's really straightforward as well.
+And just using a while loop here.
+I'm assigning one through tend to the vector again and then I'm getting an iterator to the beginning
+of it and I'm calling it I-T and all I'm doing is moving along that vector and if I see an even number
+I'm deleting it or erasing it.
+So in this case while I t is not equal to VEC and if what I'm pointing to with the iterator is even
+then I'm erasing it.
+Now I don't want to increase the iterator here right because I just erased is that would kind of skip
+items.
+Otherwise I do want to increase the iterator because I didn't see an even number.
+And then when I'm done I just want to display that.
+And you can see right there.
+Vectors even numbers are all gone for test seven.
+We've got two vectors and all we're going to do is swap them.
+So here's VEC one.
+Here's is to displaying both of them and you can see them right here.
+Then I'm just saying to swap Veck one.
+And I'm displaying those two again and you can see that they've swapped.
+What's cool about vectors is they both have to be the same type in this example.
+But they can be different sizes so it's a little different from the array that we saw intestate.
+What we're doing is we're sorting.
+So we've got a vector of a bunch of integers they are unsorted displaying that guy right here and you
+can see test Raeder here testate.
+So that's displaying the vector I'm calling the sort algorithm.
+Veck one 1. again VEC want and are my iterators are the whole vector and then displaying it again and
+it's sorted.
+We can use reverse to sort it in reverse.
+Let's take a look at this one this is really cool.
+This is one of my misspelled that right here instructs.
+This is one of my favorite insert or she use is called the back inserter.
+So Michelle what's going on here.
+What we want to do is we've got Veck one which is one two three four and five and we've got Vektor which
+is 10 and 20.
+So what I want to do is I want to basically insert one two three four and five right after the 10 and
+20.
+Now we can do with this a whole bunch of different ways.
+But I wanted to show you the back inserter because it's a really really cool inserter to use.
+First thing we do is this display the two vectors affect one vector.
+Remember we're in test 9 so we're right here.
+We just displayed them.
+Now I'm going to use the copy algorithm put in we're going to copy one when a copy Veck one from Veck
+one began to VEC one and some copying the entire vector one.
+But where my copying it to vector to and I'm using this guy right here which is a really cool output
+iterator called back inserter and what it'll do is it'll insert everything that's passed into it based
+on vectors to what it's going to do.
+Remember the sequence we're going to get is every integer in Veck one here that's what we're saying.
+Each one of those is going to be passed into the back inserter and it's going it into the back of Veck
+too.
+So when I display Veck wanted to again the what happened right here.
+See the 10 and the 20.
+Now you see the one two three four and five.
+This is really cool.
+Let's do the same thing now except that's only copy if the elements are even.
+So in order to do that we can start from scratch right here.
+So here's my Veck one and two I'm displaying both of them you can see them being displayed right here
+and then I'm saying copy if this is a little different from copy this as a predicate.
+I'm going to copy from Veck one again to.
+So sorry.
+Let me say that again I'm going to copy from Veck one began to VEC one.
+And that's why I'm copying from in other words the entire vector 1 and I'm copying it to vector 2 using
+this back inserter.
+Now we're all on a copy.
+That's where the predicate comes in and we're doing it with a lambda.
+So what does that say even.
+Only right to zero.
+So even only then I'm displaying these two guys again.
+You can see right here I'm displaying VEC one hasn't changed but look at Vector.
+It had a tenant of 20 but now it has the to the for the 68 and the 10 that came from Veck 1.
+These two guys the back inserter and the copy in copy if really get to know those things and if you're
+ever in a technical interview or a job interview and you're asked one of these questions blow the person
+away by using this you'll get the job.
+Trust me I do that all the time.
+Just a couple of left here test 10 is a really interesting one we're going to use the transform algorithm
+right here.
+And the idea here is I've got these two vectors and I want to transform over both ranges.
+So what I want to do is I want to transform over the ranges so I want the one in the 10 and the two
+in the 20 and the three in the 30 in the four in the 40 and the 5 in the 50 being handled at the same
+time.
+So this is what's going on here I'm using transform and I'm starting at Veck Wannop began.
+And I'm going all the way to the end of Veck one and I'm just starting at Vector began.
+You don't have to say the end here because it's only going to do this five times.
+This guy could be really long.
+So what's going to happen.
+Well I'm going to use my back inserter and insert the results of this into Veck 3 which is empty but
+what am I inserting.
+Well that's the really cool part.
+This is going to be called this lambda here will be called with both the one in between the two in the
+20.
+So that would be X and Y and all I'm doing is multiplying them and then I'm putting those back into
+Veck 3 using this back inserter.
+So when I display Veck three you could see right here this is test 10.
+Check it out 10 40 91 62 50 What is that.
+Well that's one times ten is ten.
+Two times twenty is forty three times 30 is 90.
+You can see what's happening here.
+This is really really neat.
+We actually did a challenge that was similar to this when we did a raise way back when you could tweak
+that to make this like a one liner.
+It's not exactly the same but you can certainly get it to work that way.
+All right.
+And the last one is inserting and that would be test 11.
+And that's where we're at right here.
+We've got Veck 1 and VEC 2 VEC 1 is 1 through 10 and 2 is 100 200 300 400.
+And what do we want to do.
+We want to insert the contents of vector 2 into Veck 1 before that 5 right here.
+So here I'm displaying the two vectors.
+You can see them right here just as we would expect.
+So how do I do this while I have to use an iterator to do this.
+Remember it's not as efficient to insert things into the center of a vector as it is on the back of
+the vector back is really efficient.
+So what I'm doing here is I'm finding that 5 in Veck one right begin and the entire vector I'm finding
+the 5 and I get back an iterator if the iterator is not equal to the end I found the 5.
+Otherwise I display this.
+So in this case I did find the five and I'm outputting inserting You can see that right here.
+And then what I'm calling is I'm calling Veck one dot insert.
+I'm passing in the iterator and I'm passing the sequence of elements I want to iterate to insert rather
+the entire vector too.
+So what that's going to do is it's going to insert all of VEC to be for the five.
+And you can see right here one two three four.
+Then there's Veck two and then five six seven eight and 10.
+So that covers this lecture.
+There's a lot here to understand.
+Please take your time going through this.
+Pause the video go back try some examples.
+Make these your own and really learn from this.
+That's the best way to do it.
