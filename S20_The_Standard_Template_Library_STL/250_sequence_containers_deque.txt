@@ -1,0 +1,222 @@
+This video we'll learn more about the T.L. deck container in order to use the deck.
+We must pound include the deck header file.
+The deck acts like a double ended cue the deck size is dynamic and it's handled by the SPL so that's
+very much like a vector but unlike a vector the elements in the deck are not stored in contiguous memory
+the deck allows direct element access using the subscript operator and the dot at method.
+But unlike a vector that allows efficient insertion deletion only at the back of the deck allows efficient
+insertion and deletion at the back and at the front.
+However inserting elements into any other part of the deck other than the front or back is not as efficient.
+The deck supports all of the iterators and the iterators may become invalid again especially when the
+deck changes size.
+Let's first look at a few ways to initialize decks and then we'll see some of its member methods.
+In the first example in the slide I declared as a deck of integers and initialized it to 1 2 3 4 and
+5.
+And the second example I declared D1 is a deck of integers and I'm using an overloaded constructor to
+create 10 integers and initialize them all to 100.
+Of course like all the ACL containers the deck supports copy and move semantics for initialisation and
+assignment.
+In the third example I'm declaring Stooges as a deck of stewed strings and I'm initializing it to Larry
+Moe and Curly.
+Now I notice that Moe is a C-style string.
+Like vectors and stood to raise decks also support assignment via initialiser list.
+So let's see some common methods provided by the deck container.
+In this slide we'll see what a simple deck looks like.
+We declare D is a deck of integers and we initialize it to 1 to 3.
+The deck has a front end to back the front.
+In this case is the element one and the back is element 3 with a deck we can efficiently add elements
+and remove elements from both the front and the back.
+In a deck the pushback method works very much as it does in a vector.
+The element to be added is pushed at the back of the deck.
+And the push front method adds the element to be inserted at the front of the deck.
+Now let's see how the elements in the deck might be stored in memory.
+Remember the decks elements are not in contiguous memory so usually a deck is implemented as a collection
+of memory blocks and these memory blogs contain elements that are in a contiguous memory but the blocks
+themselves are not in contiguous memory.
+So a good way to think of a deck is as a linked list of vectors.
+So when we add an element at the front it adds it if there is space.
+If not it will allocate a new block add the element to that block and then link in the block.
+The same happens when we had an element at the back again please refer to the C++ as T.L. documentation
+for details on all of the methods for the deck.
+There's a lot there and that's the place to go to the documentation is your friend.
+Don't think programmers keep all these details in our heads.
+We don't.
+We refer to the C++ docs very often.
+Generally it's open on a second monitor.
+It's the same for Java programmers.
+Usually they've got the Java docs open and a second monitor.
+And that's where all the good information is.
+So let's see some of these methods.
+Let's start with the size method.
+This method returns the number of elements that are in the deck.
+The max size we've already seen with vectors and stood arrays pretty big number that just says how many
+elements can I store decs also allow individual access using either the subscript operator or the DOT
+method.
+And the rules are the same here if you use the subscript operator no bounds checking is done.
+But if you use the dot method bounds checking will happen and an exception will be thrown if you're
+out of bounds.
+In this case you can see that I'm using Didcot at 0 that refers to the one in the deck D and D of one
+refers to the to the deck also provides front and back methods that return references to the elements
+at the front of the deck.
+And at the back of the deck.
+So in this example the up front refers to the one and drop back refers to the five as I previously mentioned
+the deck allows for efficiently inserting and removing elements at the front and at the back.
+Inserting is done with the push back method and the push front method.
+We also have a pop back and a pop front which you efficiently remove elements from the back of the front.
+In this slide we have a deck of person objects him called it de we can create a person P1 named Larry
+who's 18 years old and we can use the push back method to insert one at the back of the deck.
+We can also remove it using putback.
+Similarly we can out a person object to the front of the deck with push front and remove it with pop
+front.
+Remember all container classes make copies of the elements they store the deck container also supports
+and place front end in place back which are super efficient ways to create initialize objects and store
+them in the deck right in place.
+So now let's head over to the ID.
+We'll see some examples.
+And in the video after that we'll have some challenge exercises that use decs.
+OK so I mean the idea I'm in the section 20 workspace in the deck.
+Project and this is a really simple example.
+The idea behind using a deck is that we're going to use the front of it or the back of it.
+We're not really going to be inserting things into the middle of it if you need to do that kind of thing.
+You're probably better off using a list.
+We'll talk about the list later.
+So I'm not going to go into any of the fancy stuff where you can insert things into the middle of a
+deck I'm just going to keep it really simple because that's usually the way we use a deck.
+So let's start with looking what we've got here we're including a deck of vector and an algorithm we're
+using the vector in a minute just to do a little simple example.
+And here I've got my display function that will display any type of deck.
+I'm only using decks of integers in this example but it's nice to have this template function.
+You can play around with it and practice writing these actually.
+This is a really really easy one to write.
+I went over this one in the previous video and watched the video for A-factors.
+OK so let's take a look at test one I've already run the program the output is over here on the right
+and the console.
+And let's walk through these tests.
+You can understand what's happening here.
+So this is test one right here you can see the output of test one right up here.
+First thing we're doing is we're declaring D as a deck of integers and we're putting one to five in
+there and then we're displaying the deck so there it is right here just as we would expect then then
+I've got an assignment.
+I'm using the initialiser list to assign which again is really handy.
+So now D is 2 4 5 6 on displaying that you can see two four five six right here.
+Now just like we did with the vector here I'm creating 10 100s and I'm putting them in the deck and
+displaying them you can see all ten hundreds right here.
+And the last thing is right here we're doing direct access to the deck.
+You don't often do this with a deck.
+Remember the deck.
+The whole point of a deck is to be doubly and ended cues you're going to work on the front you're going
+to work at the back.
+That's the idea but it lets you have random access to the elements within it.
+Add in constant time which is cool.
+So the Sub-Zero with the index operator is this is D-Nev..
+So it's going to put a 100 in here and D at one we'll put 200 in there.
+And when we display that you can see right here the 100 to 200 replaced the one in the two.
+All right so that's pretty straightforward.
+Let's look at test to test two is the real workhorse here.
+This is the way you typically use a deck we're using push back and push front and putback and so forth.
+So let's go over this one.
+These are the methods that you're going to really use a lot with the deck.
+So what I'm doing here is creating creating a deck called again of integers and it's 0 0 0.
+And the reason I put 0 0 0 in there is just so we can have these three zeros in the center.
+That way you can really understand how things are being pushed in and we're displaying it.
+You can see right there the three zeroes.
+Now we're saying push back a 10 and then push back a 20.
+That means that the back.
+So first I push back the 10 and then the 20 and are being pushed back this way and display them.
+And you can see what we've got three zeros 10 and a 20 now I want to push front so now I'm going to
+push these guys at the front 100 and then I push 200 I'm pushing them this way and then displaying it
+again and I've got right here two hundred.
+One hundred.
+The three zeros and then the 10 and 20 of course are still there.
+We've got our front method which returns a reference to the front element which in this case is that
+guy right here.
+I've got my back method which returns a reference to the back element which is the 20 read here and
+decide which is seven.
+So when we look at the output right here you can see the back the front is 200.
+The back is 20 and the size is seven and we display it right after we pop a few things off.
+So let's try that.
+So first thing we do is we pop the back.
+That guy's gone.
+And then we pop the front.
+That guy guy's gone and we display it again.
+So now we're going to display 100 0 0 0 10.
+Notice how the two hundred and twenty are gone.
+So this is really the way you're going to use the deck if you find yourself using a deck and fiddling
+around with the middle elements and inserting things into the middle and doing all kinds of stuff like
+that.
+Maybe the deck is not what you should be using.
+Consider using a list and we'll talk about a list in the next section of the horse.
+OK so that takes care of tests too.
+Let's take a look at test three and what I've got here and test three.
+This is what I want to do.
+I've got a vector of 10 integers right here 1 through 10 and I've got a deck which is empty.
+And what I want to do is I want to insert all the even numbers into the back of the deck and all the
+odd numbers into the front.
+It's pretty easy to do.
+I could just use arranged base for loop right here and I can iterate over that vector member we're coming
+from a vector to a deck this time.
+And if the element Montu is zero that means it is even.
+And if it's even pushing it onto the back right so where we start we're starting with the numbers.
+Even We're pushing it in the back.
+The numbers are all pushing to the front so we're going to have the one the two the three four five
+six this is what's going to happen.
+Yate the nine and the 10 that's the result right there.
+And when we look at the display for test three right here that's exactly what we've got.
+We've got all the odd numbers here and all the even numbers right there.
+Now let's take a look at test for test fours.
+Simple but important.
+It shows you the ordering of things.
+When we push stuff on the front versus we push on the back.
+The order is obviously different but this confuses people sometimes.
+And I've seen a lot of little mistakes from programmers that use decks this way and it comes up a lot
+in code reviews.
+So let's take a look here we've got a vector again.
+Through 10.
+And what I'm doing is I'm going through the entire vector this time there's no if statement there's
+no or even stuff that's all I'm doing is I'm going through that vector and grabbing each element and
+I'm pushing it in the front.
+So we're starting at the one so we're pushing it one two three four five remember pushing things on
+the front.
+So this is the result that's in line right there.
+That's the results when I display this and again I mean test for.
+You can see it's 10 9 8 all the way down to 1.
+I'm going to clear the deck here.
+Then I'm going to do the same thing except now I'm going to push back.
+This time we're pushing this way right.
+So we're going to have one two three four five six seven eight nine and ten.
+And when we display that you can see that that's exactly what we get.
+Obviously the order is going to be different.
+Right one is going to be going from one to 10 the other from 10 to 1 depending on whether we do a push
+front or a push back.
+And as I said this is sounds simple but I've seen a lot of little mistakes using this because somehow
+people get confused.
+Let's take a look at the last test test five.
+So what we're going to do now is we're going to do the same thing we did didn't test for except we're
+going to use to copy to do it.
+So what do we have we have the same vector.
+And we have a deck that's empty again and what we're going to do is we're simply going to copy everything
+into vector from begin to end and we're going to use the front or iterator to do it.
+Or one line of code handles this really really easily.
+So again a loop through the vector at the entire vector and for each element that vector insert it to
+the front of the deck.
+So this is test five.
+When we display that this is what we get right here.
+Notice it's the same as test for because we're starting at the front and we can clear the deck and do
+it again.
+So copy vext up began to vector and this time we're going to do the back inserted were inserting at
+the back this way.
+And what we're going to get is the same thing we got with test 4.
+So what should you use.
+I tend to like this.
+This is much more expressive.
+Most programmers will understand this.
+A lot of programmers are not real familiar with the algorithms.
+So this kind of code right here is foreign to them and they could really mess things up especially junior
+programmers junior programmers.
+Yes T.L. is a complicated beast and a lot of junior programmers just know the very basics of it.
+So when you get a lot of algorithms put together with iterators in his sergers it's likely a lot of
+the junior programmers haven't seen that.
+So there you go.
+That's it.
+So that takes care of the deck in the next video.
+We'll do the first challenge for the deck.
+
