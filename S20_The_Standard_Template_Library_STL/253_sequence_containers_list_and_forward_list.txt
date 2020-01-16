@@ -1,0 +1,337 @@
+In this video we'll learn more about the SBL list and forward list containers.
+These are both sequenced containers and store the elements in noncontiguous memory that will provide
+direct access to elements via the app method or subscript operator.
+But they're very efficient when we need to insert and delete elements in the lists.
+Once an element is found let's first talk about the list and then we'll talk about the forward list
+after.
+In order to use the list container we have to include the list header file the list x is a doubly linked
+list of elements so we can go from element to element in either direction.
+Remember lists do not support direct element access.
+The list has a front and a back and we can use all of the iterators but the iterators may become invalid
+when deleting elements.
+So let's see what a doubly linked list looks like conceptually
+in this slide.
+We see a diagram of what a simple list looks like.
+Notice that the elements are not contiguous in memory and element has a reference to the element after
+it and before it if they exist.
+That's why it's referred to as a doubly linked list.
+So there is some overhead involved with maintaining these links.
+We declare L is a list of integers and initialize it to 1 2 and 3.
+The list has a front and a back to front in this case is the element one and the back is the element
+three with a list.
+We can efficiently add or remove elements from the front and the back and we can also efficiently remove
+insert elements from anywhere in the list.
+All we really have to do is remove or insert development and then really the links to the other elements
+around it.
+Inserting and removing elements other than at the ends is very efficient.
+But in order to do that we need to have an iterator to the element that we want to remove or insert
+before.
+This is usually done with the find method and it's done in linear time.
+If you need a container where you will have lots of insertions and removals from the container and you
+don't need direct access to the elements then the list is a good choice.
+In the first example in this slide I declared L as the list of integers and initialized it to 1 2 3
+and 4 in the second example I declared l 1 is a list of integers and I'm using an overloaded constructor
+to create 10 integers and initialize them all to 100.
+In the third example on declaring Stooges as a list of strings and initializing them withstood strings
+and C-style strings like vectors stood array's index lists also support assignment via initializer list.
+So let's see some other common methods provided by the list.
+Let's start with the size method.
+This method returns the number of elements that are in the list and max size tells us what the maximum
+number of elements a list can contain.
+Remember list do not allow direct access to elements so we can't use a subscript operator or the dot
+at method.
+These are not available for lists.
+The list also provides front and back methods that return references to the element at the front and
+the element at the back of the list.
+In this example elde up front refers to one and elde up back refers to the five the list allows for
+efficiently inserting elements at the back and at the front.
+This is done with the push back method and the push front method.
+We can also have pop back and pop front which he Fishell remove elements from the back or the front.
+In this slide we have a list of person objects called L..
+We can create a person P one named Larry who is 18 years old and we can use the pushback method to insert
+the one at the back of the list.
+We can also remove it using putback.
+Similarly we can add a person object to the front of the list with push front and remove it with pop
+front the list container also supports in place front and in place back which are efficient ways to
+create and initialize objects that we want to store in the list right in place.
+Inserting elements into a list works a little differently from what we've seen with other containers.
+We can add a certain element before an existing element using the insert method but the insert method
+expects an iterator that's referencing the element we want to insert before.
+In this example L is a list of ints and I initialize L to 1 2 3 4 and 5.
+Now I need an iterator to point to an element in the list.
+We can do this lots of ways but let's use the Find function we can call fine with Elda begin l.com.
+And we're looking for the three in this case the iterator I-T now is referencing the element 3 in the
+list.
+If we now call l.com insert in Pessin I-T which is the iterator and the number we want to insert in
+this case 10 the 10 will be inserted very efficiently before the three the iterator will not be invalidated
+it still references the 3.
+Now if we call Ellicot erase and pass in the iterator the three will be removed from the list and the
+iterator will become invalid.
+Now this also allow resizing we can resize to a size of two in which case all the elements after the
+second will be removed.
+If we resize to a value larger than what we currently have the list will be expanded to that many elements
+and the default initializer for the type of object the list contains will be called and those elements
+stored in a newly created element.
+So in this case if we resize L to 5 we'll add 3 new elements to the list and they'll all be initialized
+to zero in this case because they are integers.
+Finally how do we traverse a list.
+We can use a range based for loop or we can use iterators since lists are bidirectional.
+We can iterate in both directions.
+So in this case we have a list L initialized to the end.
+One two three four and five and we have an iterator I-T that will be referring to the three when we
+dereference I-T and display the element.
+We get a 3 when we dereference I-T and display the element we get a three then we can increment the
+iterator and now refers to the four we can display the four in the same way.
+Finally we can decrement the iterator and we get right back to the three.
+Now let's see what some of the differences are between a list and a forward list
+the forward list was added to the T.L. and C plus plus 11 in order to use the forward list.
+We must include the forward list header file.
+The forward list x is a singly linked list so the list can only be traversed in one direction.
+The forward list incurs less overhead than the list but the downside is that we can only use it in one
+direction.
+But in many cases this is exactly what we want.
+Similar to the list the forward list allows for rapid insertion and deletion of elements.
+Once we have an iterator to one of the elements.
+Also the forward list does not support direct element access as we'll see in a moment the forward list
+has no concept of back only front.
+It doesn't make much sense to get to the back of a list and then not be able to traverse backwards so
+it's not available.
+Obviously reverse iterators make no sense either so they're not supported.
+So let's see what a forward list might look like in this slide.
+We see a diagram of what a simple forward list might look like.
+We declare L as a forward list of integers and initialize it to 1 2 and 3.
+The forward list has only a front no back the front.
+In this case is the element 1 with a forward list.
+We can officially add elements to the front using push front.
+You can see the pointers are going in only one direction so let's see some of the common methods used
+with forward lists.
+Let's start with the size method.
+It's not available.
+There's an interesting discussion about why the decision was made to not provide a size method if you're
+interested let me know in the Q&A and we can talk about it.
+The max size will tell us the maximum number of elements the forward list can store.
+Also notice that we have a front method but no back method.
+In this case the front method returns a reference to the element 1.
+Since the forward list only uses front and not back we have pushed front pop front and emplace front
+available for quick insertion of elements at the front of the forward list.
+So since the forward list has a singly linked list it makes sense to insert elements into the forward
+list after an iterator reference.
+So the forward list supports methods named explicitly like what they do in this example.
+L is a forward list of the integers 1 2 3 4 5 and we have an iterator I-T that points to the three.
+We can now use Ellicot insert after and pass in the iterator and the object we want to insert.
+In this case the 10 will be inserted after the 3.
+Notice that there are no insert in place erase method 0 called insert after and place after erase after
+the iterator doesn't invalidate.
+In this case it still points to the 3 so we can also use in place after any race after in the same way.
+And the foodless allows resizing in the same way that the list does.
+OK so let's head over to the ID and we'll see some examples using a list and then we'll have a challenge
+exercise using a list OK.
+BECK any idea I mean the section 20 workspace and I mean the list project and what I'd like to do here
+is do the same thing we've been doing the previous videos go over some examples of using the list container.
+Now there's a couple of differences here.
+One is I'm including this iterator header file here and that's for this advanced function.
+I'll talk about that in a second.
+It basically allows us to advance an iterator.
+We can't really do a plus equals or minus equals on list iterators but we can advance them using the
+advanced function.
+So I'll say that when I get to it we have the person class that we've had before.
+And in this case the only difference from the person class that you've seen before is the default constructor
+before we just use the default way that the compiler generated for us here I want the name to be unknown
+and I want the H to be zero when nothing is provided and you'll see why in a little bit when we resize
+a list it creates objects by using a default and want you to see those that were in that age so you
+can actually see when that happens.
+Other than that it's exactly the same.
+I've got the overloaded constructor here.
+I am overloading the less than operator and equality operator.
+Those are the two real important operators for the SPL and I've got a friend insertion operator right
+here for a stream insertion.
+All right.
+I've got a template function right here that allows me to display any list of any type.
+So the template parameter is t that's being replaced.
+Again you've seen this before with Tex and vector so it's just another example here with a list.
+So let's go through these examples.
+I've got some tests here and I'm start with test one or you can see the output over here as I said I've
+already run this so the test is right there.
+That's where we're at right now.
+Here we're creating a list of integers and you can see the syntax is exactly as you would expect.
+I hope that by now you're seeing these patterns right and it's not like oh my goodness in order to use
+a list I've got to learn all this new stuff.
+The patterns are the same if you know how to use a deck you know how to use a vector you know how to
+use a list.
+It's just a matter of going to the documentation and see the nuances in the specifics for each container.
+But the general patterns are the same.
+So in this case I'm creating one as one two three four five and I'm displaying.
+You see that being displayed right here and now creating L2 as a list of strings.
+And what I'm doing is I'm pushing back to the back and front to the front and then a display and you
+can see exactly what you can expect to remember a list has a back and it's got a front.
+So we're taking advantage of that.
+It's very efficient inserting on both ends.
+Here I'm creating three is a list of integers and I'm using the assignment using the initializer list
+just like we've done with the other containers and then I'm displaying all three.
+And you could see it right there.
+And then we're using the same constructor that we've used before and again I know this is becoming old
+hat but I do I'm doing this.
+There's a method to my madness I'm doing this on purpose so you can see the consistency between all
+these containers.
+So that's the constructor.
+We've got 10 100s and then we're displaying all four of the 10 100s.
+Okay perfect.
+So let's move on to the second test.
+And that's right.
+Here you can see the output right over here.
+In this case I've got l as a list of integers from 1 through 10 AM initialising and I'm displaying it.
+There's the display right there.
+What's the list size.
+Well it's 10 What's the front the front is the one what's the back.
+The back is the 10.
+Remember these are references we're getting to them so we can actually change them if we like.
+There's the sizes 10 in the front the back.
+We can clear the list.
+That removes all the elements from it and display it again.
+Now it's empty and its size is zero so you can see right there.
+Again very very consistent.
+So let's look at that.
+Take a look at test the.
+And artistry has a couple of things that are going to be different for a list.
+Here's Elle and we're displaying L which is one through 10.
+You can see right here is test three.
+And right there is the one through the 10.
+Now what we're saying is let's resize this to five.
+So what happens here.
+What's going to resize it to five.
+Basically it's going to stop it right here and all this is gone.
+So at this point if I display Well you can see one two three four five here in the output.
+Now this is interesting.
+If I resize it to 10 what's going to happen well it says remember right now it's 1 2 3 4 and 5.
+So he's going to resize it to five new elements.
+One two three four five.
+But what's it going to put in there.
+What it's going to do it's going to call the default initialize for each one of those objects for integers
+and for primitive types it's 0.
+So you're going to get something like that when I display it.
+That's exactly what we see.
+One two three four five and five zeros.
+But when we have object types it's a whole different story.
+In this case that what I'm doing have created persons is a list of person objects right now it's empty.
+But if I resize it to five.
+Now I've got five person objects.
+Which ones does it create.
+It uses the default constructor for them.
+So if I display it you can see those strings that I talked about earlier in the person class.
+Unknown age 0 unknown age 0.
+It's exactly what's happening.
+This is one of the things that I talked about I think at the beginning of this section was it's very
+important when we use the ACL that we overload the less than that we overload the equality operator
+that we overload the default constructor.
+This is why this is a real important reason why if we provide an overloaded constructor and we don't
+provide the default constructor this will error out because the default constructor wouldn't be provided
+for us so we've got to be sure that we we've got all our bases covered there tests for let's have a
+list here of integers 1 through 10 and display it you can see test for is right on here I should scroll
+that up just a little bit so it's a little easier to see if we up.
+So here's test for.
+Those are my integers 1 through 10.
+That's where I'm at right here.
+Now I've got an iterator and obviously I'm using auto But obviously if I had to declare that the long
+way it would be stood list.
+Iterator I.
+But in this case the compiler is deducing it based on the return value of the find.
+So what am I doing.
+I'm finding that 5 in L from beginning to end.
+So my iterator I-T is going to be pointing to 5.
+Now I know it's there but it's good practice to check.
+So if I-T is not equal to the end that means I found it and what I want to do is I want to call the
+insert method on the list L and I want insert a 100 where I need the iterator that stop.
+This is really important with lists both list and forward list.
+So what do I need that iterator the iterator is pointing to the 5 in the case of a list it's going to
+insert the 100 before the iterator so it's going to stick 100 right in there.
+And then when I display the list you can see right here that the 100 has been inserted between the four
+and the 5 right to the left or previous or before the iterator everyone to think about it.
+In this case I've got L2 which is a list from 1000 2000 3000.
+And now what I'm doing I'm inserting into L member L is this guy right here now it's male is one two
+three four then 100 and then five six seven eight nine and ten.
+That's L right here.
+So what I'm doing is I mean I remember my iterator still pointing to the five it's not invalid because
+I haven't deleted it so my iterator is still pointing right here.
+So what I want to do is I want to say I want to insert into El starting at that iterator right here
+to the left of the iterator What do I want insert I want I insert the entire list L2 from beginning
+to end.
+So do you think that's going to do right in here it's going to put in 1000 2000 and 3000 and it's in
+a do that super efficiently.
+Then when I display this here again you can see what's happening.
+One two three four.
+There's your Hundred and then 1000 2000 3000.
+And then the five Where's iterator pointing to now still pointing to the five it's still valid.
+OK let me clear this because as a lot of stuff here and this is the advanced function that I was talking
+about this is in the iterator header file.
+So what we can do here is we can advance any iterator positive or negative assuming it's a bi directional
+iterator in this case it is.
+There's my iterator and I want to advance at minus 4.
+So remember iterator was pointing to the 5 right.
+So now the 5 is over here.
+I want to move it four to the left.
+One two three four it's going to be pointing to the hundred.
+That's what the advance lets me do I can also do positive for obviously are positive 2 or anything I
+want.
+So in this case it's going to be pointing to the 100.
+If I display what is pointing to there's 100 and then I can say l dot erase I t.
+What's that going to do it's going to erase the element that the iterators point to that I'm displaying
+it again you could see the 100 is gone.
+At this point my iterator becomes invalid.
+I just deleted the element it was pointing to.
+So don't use that iterator again if you need it.
+Reset it ok.
+Test four is good.
+Now let's take a look at test five in test five we'll do a couple of things to test five just has a
+couple of pieces of input you'll see here it's actually waiting for me to type something in.
+So we'll do that in a second in test five.
+I've got Stooges which is a list of person objects and initializing it to Larry Moe and Curly and I'm
+displaying them that remember the person class overloaded the stream insertion OPERATOR So that's what's
+happening here and I'm displaying them that's what I've got right here Larry Moe and Curly.
+Now I've got a couple of variables here.
+Name and age and what I want to do is I want to ask the user to enter the name of the next stooge and
+then enter their age and let's do that right now when to type in right in here I'm just going to type
+in James and let's say that James is 50 years old.
+Now when I press enter what's going to happen is we're coming right in here online 1:30 right here and
+I'm in placing back and I remember here I'm not creating an object here.
+I'm letting the list create the object for me that's what the emplace does.
+So what's going to happen is James 50 is going to be passed into this method.
+This method will create that stooge object and inserted at the back for me.
+So when I press Enter I'll display Stooges and I should see James 50 at the back right in here right
+after Curly.
+So let's do that.
+Let me come over here.
+I'll press enter and you can see now that we've got Larry Frank Moe Curly and James right at the back.
+Super efficient.
+And then the last thing we want to do here is we want to insert Frank before Mo.
+OK.
+So where is Mo I need to find it.
+So I need an iterator that's going to point to Mo.
+I'm a search stooges from beginning to end and I'm looking for that object.
+What's it going to use.
+Operator equality operator which I've overloaded.
+So it's going to look from Moe 25 mo 25 is right here.
+I know it's there.
+So my iterator if it's not equal is to just then I found it.
+So what I'm going to do is I'm going to insert at that iterator before the iterator everything on the
+list happens before the iterator I'm going to insert Frank 18 and then I want to display Stooges again
+and you can see right here Frank 18 is right before the mo.
+Which is exactly as I expected.
+All right.
+And then the last test is test six and this one's pretty cool.
+What we're doing is sorting real real simple.
+So in this case I've got Stooges is a list of persons and I've got Larry Moe and Curly.
+I'm displaying Stooges.
+And you can see it right here Larry Moe and Curly that I'm sorting it.
+I'm saying Stooges not sort of displaying it again.
+And look what happened.
+Curly Larry Moe what operators being used here operator less than we overloaded that and what we're
+doing and our operator less than let me go back in case you didn't don't remember the our operator less
+than it's comparing ages.
+So here we've got 17 18 and 25.
+That's how we decided that we were going to sort out we're not sorting by name.
+We could have we could have written this name but we decided oh well let's sort by age.
+So this is going to sort by that.
+OK.
+So that's it in the next video we'll do a challenge well we'll simulate a music player using a link
+but it's.
+
