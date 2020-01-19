@@ -1,0 +1,245 @@
+In this video we'll learn about the T.L. set containers.
+These are associate of containers associate of containers or collections of stored objects that allow
+for fast retrieval using a key.
+The seal provides both sets and maps.
+In this video we learn about sets and we'll learn about maps in the next video depending on the type
+of the soci container.
+They're usually implemented behind the scenes as a balanced binary tree something like a red black tree
+or as a hash that these are very efficient data structure.
+So operations on sets and maps are very fast.
+The ACL has four types of set containers the set the unordered set the multiset and the unordered multiset
+will focus mainly on the set.
+Since it's the one most often used but also described the others as well.
+Let's first talk about the set in order to use a set you must include the set header file.
+The class is similar in concept to a mathematical set.
+The elements in the set are ordered by key and no duplicate elements are allowed.
+All iterators are available for sets.
+Let's initialize a few set objects in the first example in this slide.
+I declare s as a set of integers and initialize it to 1 2 3 4 and 5.
+And the second example I declare Stooges as a set of stood Strange's and I initialize it to some strings.
+Then at the bottom of the slide you can see that sets also support assignment via an initialization
+list.
+But there are some differences with sets on the first line commercialising S is a set of integers and
+then providing the initializers.
+But notice that the initializer list contains duplicate elements that's not allowed in a set.
+This won't cause an error there.
+The duplicates are simply ignored and we end up with a proper set.
+Also notice that the set is sorted the size method returns a number of elements that are in the set
+and max size tells us what the maximum number of elements a set can hold.
+Remember sets do not allow direct access to elements so we can't use the subscript operator or the method
+as we have with other containers sets also don't have a front and back.
+So methods like push back and pop back into front versions do not apply to sets.
+So how do we add elements to sets.
+Simple we use the sets insert method.
+We can also use the emplace method if we want.
+In the last statement on the slide we insert 7 into the set.
+If 7 is in the set it won't be added again.
+If it's not in the set then it will be added and or will be added in order.
+So let's talk a little bit more about the insert method.
+Suppose I have an object P1 that's a person object.
+In this case Larry 18.
+I also have to as a person object mo 25 we can insert P1 into the Stooges set by simply calling Stooges
+insert and passing in P..
+If the element is not in the set it will be added.
+Otherwise it won't be added.
+The set class uses the overloaded less than operator to determine if the element exists in a set.
+That's fine but sometimes we want to know whether an element was inserted successfully or not.
+The insert method returns a string pair remember where we talked about it a few times in this section
+and we'll talk about it some more and the maps video as well.
+The pair object that's returned has its first attribute as an iterator to the element that we just inserted
+or an iterator to the duplicate element that's already in the set and then the second attribute is a
+Boolean that indicates whether the operation was successful or not.
+That's pretty cool.
+Now we have all the information we need and we can do whatever we need in our program.
+We can also erase elements in a set very easily estat erase three will erase the 3 and the set as if
+it exists.
+We can use the set find method to find the five and if it exists delete it by passing the iterator to
+the erase method.
+Notice that the set's fine method is different from the find function in the as T.L. algorithms library.
+You should use the sets find because this sets fine knows all about the internal implementation of the
+set and it's going to be much more efficient.
+Finally we can use the count method to see how many times an element appears in a set.
+If you think about that it doesn't make a lot of sense right.
+I mean a set can only have an element in there once at most.
+But in this case it's real handy to tell whether an element is in the set or not.
+For get back to zero we know it's not in the set.
+If we get back a one it isn't the set we're going to use this in multiset because multi sets can have
+duplicates.
+So this method is really useful there as well.
+Finally as with all other ACL containers as not clear removes all of the elements from the set and estat
+empty returns true if the set is empty or false otherwise.
+Well that's a quick summary of the set class.
+Please refer to the set documentation since there is more.
+And many of the methods I show you have variants as well.
+So let's talk about the other set classes.
+First let's talk about the multiset class.
+It's also defined in the set header file.
+A multiset is a set that's ordered by key but it allows duplicate elements all iterators are available
+the unordered set is in the unordered set header file the ordered set is a set that's unordered and
+it does not allow duplicate elements due to the way that unordered sets are implemented.
+Elements can't be modified in place.
+If you need to change an element you have to remove it and then insert the updated one also.
+Unordered sets do not allow reverse iterators.
+The last type of set provided by the ACL is the unordered multiset the unordered multiset does not order
+elements and it does allow duplicates.
+Again no reverse iterators are allowed.
+As you can see the SL provides powerful set classes for nearly every need.
+However by far the most used is the set.
+And that's when we're going to focus on.
+So let's head over to the idea and we'll look at examples of using sets.
+Ok so I'm back on the idea again I'm in the Section 20 workspace and I'm in the set project and what
+I've got here is I've got the same person class and I won't bother going over it again we've gone over
+to a bunch of times.
+I have made any changes to it since the last time but I do want to bring that to your attention again.
+The operator that we're using for the operator less than is comparing ages.
+OK so we're considering one person less than the other based on the age not the man and that's going
+to be important because the set uses that operator.
+So when we see these guys sort of you're going to see them sorted by age rather than by name.
+And that's important understand a lot of people think that it's this operator right here that's doing
+it and it's not OK.
+So let's get started.
+There's four tests or actually three tests here.
+Some Not as long as the other videos but let's start with Test 1 and you can see the output right up
+here.
+On the right up here you can see that's where the test one is right here.
+So let's start.
+I'm going to create a set called S1 and you can see it's a set of integers.
+You can see this the consistency with the syntax across the entire as well.
+And I'm putting in 1 4 3 5 2.
+Notice I did that on purpose had changed the order.
+The sets are ordered by default.
+So when I display a swan you can see that it's being displayed in order in this case it had your order.
+If I had to put in the Stooges with ages then we get a different order.
+I'm doing that in the next test and this example here I'm assigning this initializer list to us 1.
+But notice there are duplicates in here right.
+Just to piss all over the place here.
+Diplomats aren't allowed in sets.
+This will still work.
+This works just fine.
+When I go to display a swan you can see that duplicates were not handled of course there omitted.
+So it's not going to add duplicates to a set that's not going to allow duplicates.
+Then we've got right here we're inserting 0 and we're inserting 10 and then we're displaying it again
+and you can see that right there is the output.
+You can see the zero at the beginning and the 10 at the end.
+So there were inserted where they should have been inserted which is exactly right.
+Now let me just scroll up here just a little bit and we're right about here on line 50 I'm seeing how
+many times has 10 occur in the list.
+This is going to return an integer.
+It's either going to return 0 or 1 in this case of a set because a set either has the element in it
+or not.
+There is the multiset which allows multiple entries right duplicates.
+In that case this could return two or three or four depending on how many times that element exists.
+But in this case I'm saying is the 10 in the list is either return a 1 or 0 1 being true 0 being false.
+So 10 is in the set or 10 is not in the set.
+We know 10 is in this set because we just added it right here.
+So I expect to get back 10 is in the set.
+And now I'm using the find method here I'm using as one find them that I'm not using stood find which
+is in the algorithms library I'm using the set's version of find a lot of people use the other one.
+The other one is a very generic type fine that's going to use an iterator and just search through the
+entire set.
+This guy is real smart.
+This one understands how the set is implemented.
+Behind the scenes.
+So if it's implemented as a balanced binary tree it's going to use it's going to be pretty smart about
+finding things.
+So let's find the five in the set is the five in there.
+Absolutely it's in there right here.
+So what are we going to do.
+We're going to assign the results of that.
+Iterator if we get back the end of the set.
+Obviously it wasn't there.
+If we don't get it back then we found the five and with pointing to it.
+So that's what we got right here we know it's in there and that's what we got back.
+We can clear the set and then display it again and obviously that clears out the set just like it does
+with all the containers.
+OK.
+So there you go.
+Hopefully the consistency is paying off.
+Like I said there was a method to my madness with all of these examples.
+Usually when you see a lot of them and more and more you'll see the pattern and it just really clicks.
+So now let's see the test to what we've got here is a set of person objects and we'll call them Stooges
+and we said the person had a name or an age.
+I just put one two three here because I want to show you the order that these are going to be put in.
+So now when I display stooges look at them right here.
+That's the order Larry one Motu Kerley 3.
+Notice that it's ordering by age 23 it's not ordering by name otherwise Curly would be the first one.
+Right.
+So that's important.
+Understand it's using operator less than to do the ordering.
+All right.
+So that's what it's using right here.
+So we can emplace James 50 and we can display the Stooges again and you can see that at this point James
+50 was added at the end because the 50 is what it's using to order.
+So this really drives the point home.
+Suppose I went to emplace Frank 50.
+It won't let me because it's using the 50 to decide whether to put it in there or not.
+So it's according to this that 50 is already in there.
+Now had I checked to see that the that the less upward or less than was the name and the key and the
+age I'm sorry then this would have definitely worked.
+But when I display it again right here there's no Frank in there as far as this is concerned it already
+exists.
+All right so now we've got a couple of more output statements.
+Scroll up a bit and I'll show you how these work in this case.
+I'm finding Moe two in the list.
+I know Motu is there.
+I'm going to get an iterator back and if it's not equal to the end of the list then what I'm going to
+do is erase mo.
+That's all I'm doing.
+And that display Mowlam me racing mode that I'm displaying Stooges.
+And you see right here that MO right there is gone.
+Which is kind of cool.
+Now this is the one that really shows you have the power that operator in this case I'm finding a person
+whose name is X and whose age is 50.
+This doesn't come into play because I'm not using that in my in my overloaded less than operator.
+So it's going to find James there at 50 and it's going to erase James.
+And then I display Stooges again and you can see that James is gone.
+This gets a lot of people when you're first starting out with the T.L. a lot of these containers some
+of them use quality some of them use less than the set uses the less than so be aware of that.
+The final test is this guy and this is important one because it shows you what happens when we insert
+some data into a set.
+Let's just start up here first.
+I'm creating a set of stood strings and it's called this and I'm putting in there ABC.
+Now obviously we're using strings so it's going to use the string order to sort of display as and you
+can see ABC right here display.
+I see you know what that means scroll that up just a little bit.
+So it kind of aligns a little better.
+There we go.
+So we're displaying ABC right here.
+Now I'm inserting the D and I'm displaying.
+And you can see the D has been inserted in here.
+But notice at this time I assign the return value of the insert method to this guy right here.
+Result.
+And I'm using auto what I'm getting back here is a stupid pair.
+Remember this pair has two attributes first and second.
+In this case first is an iterator that's pointing to either the D that we just inserted or the D.
+That's already a duplicate in there that didn't allow me to insert in either case I'm getting an iterator
+to the element that I'm inserting or it's copy that's already in there.
+Hopefully that makes sense.
+Then the second part of the pair the second attribute is going to have a boolean true false was the
+insertion successful.
+So I've changed this to Alfonso displays the true false value.
+And here I'm displaying first and we expect to see it right there.
+So we either got a D that we inserted or the deal that was already there.
+That's when we look here.
+So if this guy's true it is right here.
+That means our insertion was successful.
+Had it been false that means that I already had a duplicate in there can or can be a little confusing
+but it's it makes sense when you think about it.
+And this is pretty cool if you think about it what's going on here is I've got a return from a function
+that's returning multiple items right which is kind of neat.
+It's really wrapping it up into a one pair.
+But even so I has to get to those pieces of the pair.
+Some other functions return tuples which can have even more than two.
+OK so let's do that last one right here.
+And in this case I am inserting the a in a right here.
+This is where I'm at right now inserting the in and displaying s.
+Now the 8 was already in there some displaying it right here and now what I'm doing is what's first
+what first was the A It's the iterator is pointing to the A that was already there.
+That's why I'm getting that.
+And when I display the results with the second that should be now I'm getting the faults.
+So right here I know that that insertion was not successful because there was a duplicate in there are
+any.
+So that covers that's what we're going to do in the next video as cover maps and then the challenge
+for the sets and the maps is going incorporate using sets and maps together which is kind of cool.
+All right.
+So in the next video we'll talk about maps.
