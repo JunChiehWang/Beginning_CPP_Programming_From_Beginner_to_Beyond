@@ -1,0 +1,254 @@
+It this video we'll learn about the ACL map containers.
+These are also associative containers.
+They're collections of stored objects that allow for fast retrieval using a key the shell provides both
+sets and maps we saw sets in the last video in this video.
+Learn about maps.
+The ACL has four types of map containers the map the unordered map the multimap and the unwatered multimap
+will focus mainly on the map since it's the one that's most often used
+in order to use the map you must include the map header file.
+The map is like a dictionary where we have a key a word in the case of a dictionary and an associated
+value which would be a definition map store their elements is key value pairs using this could Pair
+objects the elements in the map are ordered by key and no duplicate keys are allowed.
+We can directly access an element in the map using that key and all iterators are available.
+Let's initialize a few map objects in the first example in this slide.
+I declare one is a map of string integer key value pairs.
+The key is the string and the value is the integer.
+Then I initialize one with two key value pairs.
+Larry 18 and Mo 25 in the second example I declare M2 as a map of string string key value pairs and
+I'm initializing it to Bob butcher and baker George candlestick maker.
+We'll use the map M and this slide for the next several examples.
+The size method returns the number of elements that are in the map three in this case and max size will
+tell us the maximum number of elements the map can contain.
+Maps have no concept of front or back.
+We'll see how we can add elements in the next slide.
+So let's see how we can insert elements into a map we can use the insert method.
+Remember maps consist of stood Pair objects where the first attribute is the key and the second attribute
+is the value.
+We can create P1 as a stood pair object of type string string and initialize it to James mechanic.
+James is the key mechanic is the value.
+We can then insert p one into the map M since M is a map of string string key value pairs.
+Pretty easy.
+We can also use the Stood make pair function to make it even easier for us to create those key value
+pairs and we can insert them right into the map.
+You can see in the last example how easy it is in this case we're adding the key value pair Roger Ranger
+to the map.
+So let's see another way we can insert elements into the map.
+We can use the subscript operator and the dot at method to make the syntax pretty easy.
+Suppose I want to insert the Frank teach your key value pair into the map m.
+I can provide the key Frank in this case.
+Inside the square brackets and assign the value to it.
+This will insert the key value pair into the map m if it doesn't exist.
+I can also modify existing map values in the same way.
+And the syntax is dead simple.
+If I wanted to change the value associated with the key Frank from teacher to instructor I can simply
+use the subscript operator to do it the dot method does the same thing with different syntax of course
+but it will throw an exception of the keys not in the map.
+We can also erase elements in a map very easily and I'm done.
+Erase and will erase the key value pair whose key is an A from the map.
+We can also use the find method to get an iterator to A map's element as with the set.
+For efficiency use the member method find not the find in the algorithm library in the second example.
+I'm finding the key Bob in the map.
+If I get back an iterator that's not pointing to the end of the map then I found the matching element
+for I wanted to erase that element.
+I can simply call em daddy race and pass in the iterator in the last example.
+That's exactly what I'm doing.
+I'm looking for the key George in the map and if it's in there I'm erasing it.
+Finally we can use the count method the same way we did with sets.
+It's an easy way to see if an element exists in the map.
+If it does exist count will return one and if it doesn't count will return 0 as we've seen with all
+the ACL containers.
+The clear method removes all elements from the map and the empty method returns true if the map is empty
+false otherwise.
+Well that's a quick summary of the math class.
+As I mentioned previously with all the SDL components there is much more to learn.
+Please become familiar with the basics and then take your learning to the next level by studying the
+SBL documentation.
+Let's see some of the other map containers provided by the SDL the multimap class is also defined in
+the map header file.
+A multimap is a map that is ordered by key but does allow duplicate elements all iterators are available
+to the multimap the unordered map is in the unordered map header file.
+The unordered map is a map that's an ordered unordered maps do not allow Reversi iterators the last
+type of map provided by the CEO is the unordered multimap the unordered multimap does not order elements
+and it does allow duplicates.
+Again no reverse iterators are allowed.
+These maps are very powerful and pretty easy to use.
+Let's head over to the idea.
+We'll see some examples of using the map OK so I'm back in the IDM in the section 20 workspace in the
+Map Project and what I'd like to do is go for a couple of map examples and one in particular that I
+think is going to help you out a lot with the challenge that's coming up in the next video.
+So let's start with Test 1 and there's only I think two Tests in this example.
+This one's a little ball but we'll go through it slowly and then what we'll do is we'll talk about spy
+function I wrote.
+OK so we're here in test one.
+And what I've got here is I've defined M to be a map of string integer key value pairs.
+The string is the key.
+And the integer is the value.
+These guys can be just about anything.
+I'm just going to use strings for the key because they're really easy to understand but those keys can
+actually be our own custom objects as well and the value can be more complicated as well.
+What we're going to do is in the next test what we're going to do is we're going to have the key be
+a string and the value be a set of integers.
+So again you can build these things up to get really complicated and very very very powerful.
+So again M is a map of string integer key value pairs.
+Here are my pairs right here.
+These are not person objects.
+I don't mean how a person class in this demo.
+So there's a string Larry and there's the value in the integer three mo one Cur-Lee to.
+What this means.
+Who knows if you're just associating a string with an integer it could be how many times Larry went
+to the movies today.
+Could be just about anything.
+Ok then I'm displaying em and you could see that right up here.
+It's just plain Curly to Larry three mo one.
+Now look at the ordering there.
+It's ordering by key and the key in this case is the string.
+So you're going to get curly first Larry second third.
+It's using string order perfect.
+Now let's add another 10 to that map.
+Remember what we're doing is we're adding stewed pairs.
+So in this case we're creating a good pair object right here and it's got to be of the same key value
+pair type.
+It's got to be string into Can't be anything else.
+Or I can insert into this map here.
+So in this case there's my key there's my value.
+I'm creating a pair and I'm inserting that pair into em and then I'm displaying them.
+So when you see that next display statement here you can see Anna is in there now with the 10 and Anna
+is at the beginning of the list because it's being sorted by the key.
+That is a handy little function called Make pair that makes this really easy so we can insert call make
+pair it's going to create that stood pair for us and it's going to be the key is Joe the value is five.
+So that'll automatically do kind of what we did up here without all the template parameter.
+There Any that it will figure it all out.
+So in this case it's going to make the pair Joe five and insert that into the map and then we're going
+to display the map right here.
+You can see that Joe five is now in the map.
+Pretty easy right now here.
+This is really easy here in this case.
+I'm saying m and I'm providing the key.
+This is the key inside the subscripts.
+So what it's going to do is it's convincer.
+Frank is in there right now it's going to insert the key value pair Frank 18 into the map using this
+syntax which is really really easy to read and then displaying it and you can see right here that there
+is Frank 18.
+Now what's really cool is if I wanted to change the value associated with the key Frank right now it's
+18.
+Suppose I wanted to add 10 to it.
+All I have to say is give me the value for that key and the math.
+That's what I'm doing here.
+And add tend to it display again.
+So now you could see that Frank is 28 right here right.
+So I've added 10 to the 18.
+Pretty cool.
+Let me clear this and that scroll up just a little bit.
+A couple of more examples.
+Let's do this one right here.
+All I want to do here is erase Frank from the map I'm just providing the key right here where this is
+all key base.
+So in this case MDD race Frank and then I'm displaying the map again.
+You can see the output right here on this line.
+Frank is gone.
+Frank was here was 28 and now it's gone.
+And then we can call the count methods here just to see how those ront I'm displaying the count for
+Joe.
+How many times does Joe appear in the map.
+Well it's either there or it's not there.
+In this case Joe is there.
+So we're getting back a one and Frank is no longer there because I just the lead of Frank right here.
+So I should get back to zero and that's exactly what I get back right here.
+And then what we can do is we can call the find method.
+Remember this is the find method for the math class not these the find method and the algorithms library.
+So I want to find that Larry in this map.
+I'm going to get back an iterator that iterator is an iterator not to Larry not to.
+There is value which is three but to this stood pair.
+So if I get back an iterator and I'm not at the end then I've got a pair so I can access the first element
+in the pair and the second element in the pair makes sense the first element is the key.
+The second element is the value.
+So this right here will display Larry this right here will display three.
+And that's what's happening right here found Larry 3.
+Then of course we're clearing the map and displaying the map.
+And now we've got an empty map right here.
+So go through these slowly you can play them with your own you can modify this and learn from it.
+Let's take a look at test two and we're here in test.
+You can see the output actually me scrolling up as well.
+Perfect.
+You can see that test to output is right over here on the right and the console.
+Now this one's a little bit more complicated so let's go through this slowly.
+I've got a map.
+It's called grades and it's a map of string is the key and the value is a set of integers.
+So in this case grade's is a map.
+The key is a string and the value is a set of integers.
+So I can have values in there like.
+Frank is the key and I could have a set of integers 10 20 30 that say make sense.
+So this is pretty cool.
+So in this case let's say that I'm trying to model the top three grades that Frank got this semester.
+Number we can't have duplicates in here so we're just having three grades.
+So what we're doing is we're saying the key is Frank right.
+That way I can identify that that key value pair once I have that I can get the value part of it.
+It's a set of integers and then I can process a set of integers.
+So that's what we're doing here right.
+So let's go through this again.
+Here is Key value.
+Here's the key here's the key here's the key.
+There's the value it's a set of two integers.
+Here's a set of one integer.
+Here's a set of three integers and then what I'm doing is I'm just displaying grades and I'll show you
+how that display function works in a minute.
+But you can see I'm displaying grades right here and it's sorting ordering rather by the key which is
+a string.
+So Curly 80 90 100.
+There it is Larry.
+90 100 and Mo 94.
+Now suppose I want to insert ninety five into that set of integers for Larry I can get Larry right here.
+That's when I return a reference to that element and I can insert 95 into it's value.
+Well remember it's value is a set.
+So I'm actually inserting 95 into that set of integers.
+So now you can see that Larry originally was 190.
+Now Larry is 90 95 and 100 right here right.
+So I just added that 95 right in here.
+And remember that set of integers is ordered as well so we get that benefit as well.
+So we've got the map as ordered and the set within the map is ordered as well.
+So my last example here is let's say that we want to find mo.
+So let's look for Moe.
+We're going to get back an iterator right if that iterator is not at the end.
+Then I found Mo Mo is in there I know he's in there he's right over here.
+So now what I want to do is using the iterator I want to access the second attribute right remember
+the first is the key.
+Ever.
+I know what the key is it's Mo what I want is the second attribute which is the set of integers and
+I want to insert a thousand in there.
+So it's similar to this example right here.
+Except that in this case we're using an iterator somewhere on sort of thousand into the set of integers
+associated with Mo member Mo is the key the set of integers is the value and you can see right there
+is the thousand and that's from displaying the grades.
+Now let me show you the display function.
+There's actually two display functions.
+I've got this one right here which is a template function that is displaying any two types.
+This is the one that's really being called in this case.
+So again in this case I might be getting my it's a map right.
+It's a map of key value pairs.
+The key is this guy right here.
+That could be curly and the value is the set of integers associated with curly.
+So that could be the set 80 90 and 100.
+In this case.
+So that's the information I'm getting.
+What I have to do is display it out nicely like this.
+So the first thing I'm doing I'm just displaying that little the left bracket which is this guy right
+here.
+Then for each element each element L.M. I called it in that map.
+The first item is the key.
+So that's Curly.
+That's Larry.
+That's moe.
+And then each time I get one of those what I'm doing is here I'm iterating over the second which is
+the set of integers makes sense.
+So remember the outer loop here is iterating over Curly Larry Moe and then each time I have one of those
+I'm iterating over their values set right here.
+So that's just displaying that information nicely.
+I know this may be a little confusing if you sit down and walk through it.
+It'll be really clear I hope in the next video we're going to do a challenge we're going to use something
+that's almost exactly like this.
+We're going to use a map where the string is the key and we have a set of integers as the value.
+And what we're going to do is we're going to grab words from a document and we're going to figure out
+how many times they occur and then we're going to figure out how many times what lines they occur on.
+So it's going to be pretty fun.
+So I'll see you in the next video.
+
