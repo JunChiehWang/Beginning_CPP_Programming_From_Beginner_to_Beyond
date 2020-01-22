@@ -1,0 +1,155 @@
+In this video we'll learn about our first as T.L. adapter container the stack the stack is a last in
+first out data structure.
+It's an adapter because it's implemented in terms of already existing as T.L. containers.
+Since all operations on a stack happen on only one end of the top we can easily implement a stack based
+on any container that has a back.
+These are vector lists and deck.
+So the way that the stack methods work is they use delegation and they call the back push back and putback
+methods of the underlying container.
+Stacks have wide applications in computer science and the ACL provides a simple concise implementation.
+You can think of a stack as a stack of books or a stack of plates.
+If we stack plates one on top of the other we can't pull out a plate from the middle or from the bottom.
+Instead we add plates at the top and remove them from the top.
+Since stacks are limited to insertions and deletions and only one end iterators really don't make sense
+and they're not supported.
+So we can't use stacks with AS HE'LL.
+In order to use the stack container.
+We have to include the stack header file.
+The stack provides a handful of methods that have well-defined behavior.
+The push method inserts an element at the top of the stack.
+The pop method removes an element from the top of the stack.
+The top method access is the top element of the stack but it doesn't remove it.
+Finally we have the empty incise methods that we've already seen in the other ACL containers
+since the stack is an adapter class.
+We can choose what underlying container will be used when we create our stack objects.
+In the first example I'm providing no information about the underlying container.
+So the T.L. will use a deck by default.
+You can see in the next three examples that I'm explicitly stating which underlying container to use
+in a template parameter
+so let's see how the push method works.
+Suppose we have a stack of integers named s and it's empty.
+When we push 10 onto the stack we add 10 at the top of the stack.
+You can see the top of the stack is a shaded box in the diagrams.
+We then push 20 now 20 becomes the top of the stack.
+Finally we push 30 and the 30 becomes the new top of the stack.
+Once we have a stack that contains elements we can access the element at the top of the stack with the
+top method.
+This returns a reference to the element at the top and does not remove it.
+In this example estat top returns 30 which we display.
+Now if we pop the stack the element at the top is removed in this case to 30 and now the 20 becomes
+the new top of the stack.
+If I pop the stack again the 20 is removed and now the 10 is the new top of the stack if we call the
+size method for as here it will display one since there is just one element left in the stack as you
+can see the stack API is very straightforward.
+But a stack is extremely useful and it's used in computer science to solve many types of problems.
+Let's head over to the idea and we'll see some stack examples.
+Ok so I'm back in the IDM in the Section 20 workspace in the stack project.
+This is a really simple example there's not really a lot we can do with a stack push pop and top.
+That's about it.
+So let's go over a few examples here.
+I'm including stack right here.
+Someone to use in a must including vector list.
+I'm going to show you how you can create those stacks based on vector and the list underlying container.
+So that's the reason I'm including them.
+I'm really not using it.
+I just wanted to show you how you would declare it here.
+But let's talk about this template function.
+This is the one that's going to display a stack.
+We can't use iterators with stacks.
+So there's no real way to display a stack easily.
+The only way to display a stack is to let's say we've got a stack here with the 10 and a 20 and I want
+to display it.
+I need to get the top.
+Display it pop it hit the top display it pop it.
+So it's a destructive process because of that I'm passing in this stack by value.
+I don't want to upset the stack as being passed into me at all.
+I don't want to modify it at all.
+So that's making a copy.
+And what I'm doing over here is I'm destroying that copy which is fine once I finish this function the
+stack has been passed into me has not been modified at all and you could see the code it's pretty straightforward.
+This is a template function.
+There's the type right here.
+We're using integer stacks in this example.
+And while the stack is not empty I'm getting the top element of the stack that I'm deleting it from
+the stack and then displaying it.
+That's it.
+So this is going to display my stack and you could see the output over here I'd go over that in just
+a second.
+All right so let me scroll up and there's no test here is just amazing.
+Which is pretty straightforward.
+Let's go over these examples here.
+Here I'm creating a stack of integers.
+Call it s.
+That's someone we're going to use in these examples.
+But I can also create a one as two and three that are stacks of integers.
+But the underlying container would be a vector or list or a deck whatever you choose on 925 here you
+can see that I'm just not providing anything in which case it defaults to a deck.
+All right so let's push some values on the stack and pop them off and play around with it a little bit.
+Then we'd just scroll up just a little bit right about there.
+OK.
+So I've got that stack S10 have already defined.
+And what I want to do is I want to use arr. base for a loop is going to loop over this range right here
+one two three four five and push those numbers onto that stack.
+Yes.
+Remember that.
+Assume that this is my stack right here.
+The numbers are being pushed this way and then popped off.
+So for someone to push one and then two and then three and then four and then five.
+So that's the situation right now.
+Then I'm going to call display remember display is going to make a copy of this stack.
+It's not going to mess with this one.
+And what it's going to do is it's going to pop the elements off the stacks and pop off the five the
+four the three the two in the one member everything happens appear at the top.
+So it's going to display exactly what I just said.
+Five four three two one you could see five was the top of the stack in that copy.
+Now if I pop two elements off of this stack the five and the four up sorry I missed one step right here.
+Let's back up to that.
+In this case I'm pushing 100 onto the stack so I'm pushing 100 on to here and then I'm displaying that
+stack again and then you can see that the 100 is there.
+The 100 is now at the top of the stack.
+Now I'm popping off two elements off the stack.
+The hundred and five are being popped off the stack.
+So the top of my stack now is the four.
+And when I display my stack right here on line 39 you can see it's displaying four three two and one
+in this code here on line 41.
+I'm just looping while the stack is not empty.
+So as long as the stack is not empty I'm deleting stuff in it.
+This is how we can clear a stack.
+There is no clear method for a stack.
+So this is how you would clear it you would just have to pop everything off of it.
+Then when we display the stack here on line 43 we get the empty stack which is exactly what we expected.
+What's the size of that stack.
+It better be 0 right because it's empty and that's exactly what it is right here.
+Zero.
+And the last thing I wanted to show you was suppose I push 10 onto the stack from that stack is gone
+it's empty now.
+So I said I want to push 10 onto the stack just like I did right here.
+And then I display the stack I get back at 10 top returns a reference to the top of the stack the top
+of the stack right now is the 10.
+It's a reference so I can modify it.
+I could say that top is 100.
+So I can change that top to 100 now.
+So when I display the stack you can see it's display a hundred right here OK.
+I think that's about it that's really all there is to a stack.
+It's a very very specific data structure that we're going to use when you use it.
+All you care about is pushing popping top checking to see if it's empty.
+That's it.
+You're not concerned with anything else.
+Those are the only methods that are important and most only methods you actually want if you've got
+a stack that gives you a bunch of other methods.
+It's not really a stack and they're you know be careful because you don't want and you don't want to
+have a stack of integers let's say 10 20 and 30 and that whatever thing you're using that you think
+might be a stack is letting you have access to these guys.
+That's not a stack stack all.
+Everything happens right up here at the top.
+Sometimes you'll see these data structures defined by programmers that have pushes and pops and inserts
+stack and all kinds of things and it's not really a stack.
+It's just a mess.
+In this case this is a true stack.
+It supports exactly what a stack is supposed to support.
+All right in the next video we'll talk about the Q which is a waiting line and of course here you can
+see that the last one in was the first one out.
+That's why the stack is called a life flow data structure.
+The cue is called a five fold data structures.
+The first one in is the first one out like a waiting line or waiting queue.
+And that's what we're talking about in the next video.
