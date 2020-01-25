@@ -1,0 +1,118 @@
+In this video we'll learn about the queue.
+The queue is a first in first out data structure like the stack.
+The queue is an adapter class because it's implemented in terms of already existing ACL containers.
+Since operations on the q happen on both ends the front and the back we can easily implement to queue
+based on any container that has a front in the back.
+These are the list in the deck so the queue methods use delegation and call the methods of the underlying
+container.
+Like stacks queues have white applications in computer science and the ACL provides a simple concise
+implementation.
+You can think of a queue is awaiting mine.
+Elements enter on one end and are removed from the other.
+As with stacks iterators really don't make sense with queues and they're not supported.
+So we can't use the SPL algorithms either
+in order to use the queue containers.
+We must include the queue header file like the stack the queue provides a handful of methods that have
+very well defined behavior.
+The push method inserts an element at the back of the queue.
+The pop method removes an element from the front of the queue.
+The front and back methods access the front and back elements of the queue but does not remove them.
+Finally we have the empty incise methods that we've seen with the other containers
+since the queue is an adapter class.
+We can choose what underlying container will be used.
+Same thing we did with the stack in the first example.
+I'm providing no information about the underlying container.
+So the T.L. will use a deck by default.
+You can see in the next two examples that I'm explicitly stating which underlying container to use as
+the template parameter.
+Now let's see how the push method works.
+Suppose we have a queue of integers named Q And it's empty.
+When we push 10 onto the queue we add tend to the back of the queue.
+In this case the queue was empty.
+So 10 is both the back and the front element in the queue.
+Then when we push 20 we push it at the back of the queue.
+So now 10 is at the front of the queue and 20 is at the back of the queue.
+You can see the front of the queue as the shaded box in the diagrams.
+The back of the queue is the other end.
+We then push thirty at the back of the queue.
+Once we have a queue that contains elements we can access the elements at the front and at the back
+without removing them with the front and back methods.
+In this example queue up front display 10 and queued up back will display 30.
+Now when we pop elements from the queue they're removed from the front.
+The first queued up pop removes the 10 from the front of the queue and now 20 becomes the new front
+of the queue the second cue that pop removes the 20 from the front of the queue and now 30 becomes the
+new front of the queue.
+If we call the size method for the queue here display one since there's one element in the queue as
+you can see the queue is really a very simple data structure.
+But like the stack it's used extensively in computer science to solve many types of problems.
+So let's head over to the IEEE and we'll see some examples.
+Ok so I'm back in the IDM in the Section 20 workspace and I'm in the queue project and I just like to
+stack the queue is really really simple.
+So let's go over some of these examples.
+First thing you'll see is I've already got the run over here on the right and I'll discuss that in just
+a second.
+First thing you'll see is I've got this template function that displays the queue very similar to what
+we did with the stack.
+In this case I'm passing by value because I don't want to reference to the real Q And I don't want to
+destroy it.
+So this is going to make a copy of the qued that's passed in and that's the one I'm going to process.
+So how do I display this.
+Well while the queue is not empty I'm going to get the element from the front.
+Remember with the queue we push on the back and we pop from the front.
+So this is first in first out.
+That's the second waiting line.
+Somebody gets in at the back of the line.
+They come off in the front of the line so I'm getting the element from the front.
+I'm removing it from the queue I'm displaying it.
+That's it.
+Really really simple.
+OK so let's talk about the main again there's only one test here right in my main.
+First thing I'm doing is I'm creating a queue right here and it's a queue of integers.
+Again this could be just about any time and I'm pushing one two three four and five onto the queue.
+Now remember I'm pushing at the back.
+So when I push one I'm pushing it at the back then two and three and four than five I displayed the
+cue and this is what I'm getting right here.
+Now what's different what's the back.
+Let's be sure that we understand what's going on here.
+We can say cued up front cued up back and you can see that the front here is the one.
+Makes sense right it's the first one that I pushed on first customer in line is the first customer out
+of the line.
+So that's the front the back is the five.
+Now I want to push a hundred onto the back of the queue and display the queue again.
+And you can see the output right here you can see the 100 here is at the back of the queue.
+I want to pop two elements from the front of the queue.
+So what happens is the one in the two get removed from the front and they're gone.
+So now what's left is three four five and a hundred three is at the front.
+One hundred is at the back.
+If I want to remove everything from the queue I need to use some sort of loop like this we can't use
+iterators with the cues.
+So while the queue is not empty pop the front element out of there.
+And when I'm done it'll be empty and I display the queue and I will get an empty queue just like you
+see right there.
+When I display the size of that Q I'm right here in 9:42 I will get a zero because it's empty right
+now and let me just clear this and I'll scroll up and there's a few more lines not too many.
+So right here we're on line forty four I've got an empty queue at this point.
+I just printed out the size right here.
+So going to push 10 one hundred and then a thousand onto the queue and display the queue.
+There you go you can see tennis at the front.
+1 0 0 0 0 is at the back and you can see that.
+That being displayed right here tennis at the front 1000 is at the back.
+Now I have access to the front in the back the front method and the back method return references.
+So if I wanted to change the front or change the back I can.
+So in this case I'm setting whatever element it is different to five.
+And at the back to 5 0 0 0 0.
+You can see them change right there right there were 10.
+Now it's 5 1 0 0 0 0 and now it's 5000 and you can see again that the front of the cue is the five in
+the back of the cue is the 5000.
+So that's it in a nutshell that's the cue.
+So remember this is first in first out as opposed to the stack which was the last in first out and there's
+uses for all of these.
+First in first out cues are used all the time for scheduling job scheduling tasks scheduling and operating
+systems.
+Stacks are used a lot in compiling.
+There used a lot to solve problems where you have to calculate expressions and you have to figure out
+how many parentheses are there.
+Do they balance and things like that.
+Okay so that's it in the next video what we'll do is we'll do a challenge that's going to use stacks
+and Qs and you remember that palindrome example we did a while back with a deck.
+We're going to do the same thing except we're going to use a stack and a Q to solve it.
