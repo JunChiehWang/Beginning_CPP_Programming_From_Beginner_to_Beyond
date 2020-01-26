@@ -1,0 +1,126 @@
+In this video we'll learn more about the priority queue the priority.
+Q Is a container adapter just like the stack in the queue.
+The Priority 2 allows insertions and removal of elements in order from the front of the container.
+Elements are stored internally and vectors by default but a data structure called the heap is used behind
+the scenes.
+Don't confuse a heap data structure with the heap that we used to store dynamically allocated data in
+our program.
+There are totally different elements are inserted in priority order so the largest priority element
+will always be at the front of the priority queue.
+That's pretty cool.
+We can insert elements at the front end when we get an element from the front.
+We're guaranteed that it will be the largest element in the container and it's super efficient.
+Iterators make no sense with priority queues so they're not supported and neither are the ACL algorithms.
+In order to use the priority queue we must include the queue header file the prior to to has just a
+couple of methods that are superpowerful the push method inserts an element into the priority queue
+in sorted order.
+The pop method removes the top element from the priority queue and the top method accesses the top element
+without removing the top element will always be the highest priority element which defaults to the element
+with the greatest value.
+Finally we have the empty inside methods as we have seen before.
+So let's see a simple example of using the priority queue.
+First we create a priority or call it P.
+Behind the scenes it's using the vector as the underlying container.
+Then we push for integers onto the priority queue and then we display the top with P-Q top.
+In this case 20 will be displayed because 20 was the largest element inserted into the priority queue.
+We can remove the element from the top with P-Q up pop and if we display the top again will display
+10.
+Since 10 is the next largest integer that was added to the priority queue that's it.
+It's really very simple and very powerful.
+Let's head over to the idea and I'll show you an example of using a priority queue.
+OK so I'm back in the IDM in the Section 20 workspace and I'm in the priority queue project so what
+we'll do here is we'll play around with the priority here will do it both with integers and will do
+it with an object here a person objects.
+So I'm including you.
+That's where the priority queue lives.
+So I need to include that to make sure that we have access to it.
+We got our good person class that we've been using throughout this section and again it's same as it
+has been before.
+This is the really important one right here and that an operator less than an overload less than operator.
+That's what we're going to use in a moment.
+So remember what it's doing.
+Well actually what we'll do is we'll use that name will change it.
+So remember what it's doing here it's comparing ages so that's the ordering that it's going to use and
+that's what the priority uses as well.
+And let's see we've got the overloaded insertion operator exactly like we did before.
+I've got a template function here that expects a priority queue of any type and it displays it.
+This is destructive so I'm passing by value.
+You've probably seen this a bunch of times now with queues in stacks and you're getting used to it.
+So I'm just getting that while it's not empty.
+I'm getting the top which is the biggest element.
+I'm popping it and printing it until it's empty.
+All right so that's what's happening there.
+So let's take a look at these two tests.
+Test 1 I'm creating a priority queue and I'm looping through this collection of integers here and I'm
+pushing it onto the queue.
+The priority here should say remember what's happening here is when they're being pushed in everything
+the pushing all happens at the top.
+But behind the scenes it's ordering so it's using a data structure behind the scenes so the top of this
+priority queue will always be the largest integer.
+Now in this case notice I have 3 5 7 here and I have three 5:7 here.
+The duplicates will be put in there and it's OK to have duplicates in priority so that's why I put them
+in there so that's what we're doing here we're pushing all of those integers and then what's the size.
+Well I pushed 12 of them.
+What's the top one.
+It's the biggest one that hundred right there.
+When I display the priority queue you can see 123 12 12 7 7 all the way down to zero.
+He could see the ordering is exactly as we would expect the top which is right there is that hundred
+right there.
+That is the greatest or the largest integer in the prior to q.
+So let me clear this up.
+So now what I do is.
+Pop that Max element from the priority queue.
+So that's going to take the hundred off and then when I display the priority queue.
+Now the new top is 23.
+The next largest number that was there.
+That's really all there is to a priority queue.
+Superpowerful a lot of times you will have needs for something like this.
+Let's say we're doing operating systems and we're skell scheduling jobs and they have to run based on
+a certain priority.
+This is awesome news priories use all the time because they make a lot of sense and they're super efficient.
+So let's take a look at test to test to have created a priority queue right here P-Q again.
+Of Person objects this time and I'm pushing a bunch of person objects now.
+I named these people A through F just so we can see the ordering with the string and then I've got some
+just random numbers here.
+We can see that the largest number is 27 remember before we said that the operator less than for the
+person class was checking age.
+That's the discriminant.
+So in this case when we put these things on these personal objects on the priority queue what we display
+the priority to the quote we're getting here notice that it's not ordered by name we're get a and CNA
+and Ian be it's ordered by that age.
+So the person with the largest age is at the top of the priority queue.
+So we've got 27 18 14 10 7 and down to 1.
+That's it.
+That's pretty cool.
+So if I decided to just stop this in if I decided to change the order remember right here as ordered
+by age so if I decided to come up here to my person class and we scroll up a little bit right here and
+let's say that I want to change this so it doesn't check.
+Age Instead it will do the same name.
+So we're going to return this to this dash name less than the right hand side name something like that.
+Now when we run this again you can see the output right over here.
+I move that over a little bit so I can write.
+You can see the output right here now.
+He's no longer by age right.
+He just happens to be 27 there because of the F but it's F E D C B.
+Right.
+So f is the largest name.
+The other way we've got ABC right.
+So there you go.
+So if I remove the top it's going to remove 27 right there.
+That's it.
+That's it for the priority queues.
+Very useful data structure to know about dead simple to use in C++ with the standard template library.
+A lot of other programming languages have libraries that support just about everything that's in the
+SPL and they're all pretty easy to use actually.
+What's really important is that you practice and you understand the SPL.
+You just do a lot of examples.
+I did a lot of examples in these videos and I did that like I said for a reason that's really the best
+way to learn this is to just go along with me and tweak yours and makers different and change like I
+just did right here.
+You know change this and see what the effect is.
+And that's how you really really learn this stuff.
+All right.
+So that is actually the end of the horæ right.
+It ended up being a lot longer than I thought it was going to be I rerecorded some videos and I hope
+it's useful to you all.
+
